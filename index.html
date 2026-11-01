@@ -135,8 +135,13 @@ form{max-width:620px;margin:auto;background:#fff;padding:22px;border-radius:12px
 </section>
 
 <footer><h2>Junior School Learning Hub</h2><p>Empowering learners through knowledge, skills and innovation.</p><p>Contact: <a href="https://wa.me/254741274957">0741 274 957</a></p><p>Online and physical tuition available.</p><p class="small" style="color:#cbd5e1;margin-top:15px">© 2026 Junior School Learning Hub. All rights reserved.</p></footer>
-
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script>
+ const SUPABASE_URL = "https://hqbqhnhgrgfxpedjzmnm.supabase.co";
+const SUPABASE_PUBLISHABLE_KEY = "sb_publishable_uaOcRVaIwnvRl_wZhMhJ-Q_DhrqZyS_";
+
+const { createClient } = window.supabase;
+const supabase = createClient(SUPABASE_URL, SUPABASE_PUBLISHABLE_KEY);
 const noteData = {
  "Mathematics": {
   "Grade 7": `<h2>Topic: Number – Understanding integers</h2><p><b>Learning outcomes:</b> By the end of the lesson, the learner should be able to identify integers, represent them on a number line, compare integers and perform addition and subtraction involving integers.</p><h3>1. Meaning of integers</h3><p>Integers are whole numbers that include positive numbers, negative numbers and zero. Examples include −5, −2, 0, 3 and 8. Fractions and decimals such as ½ and 2.5 are not integers.</p><h3>2. The number line</h3><p>On a horizontal number line, zero is the reference point. Positive integers are placed to the right of zero while negative integers are placed to the left. A number farther to the right is greater than a number to its left.</p><div class="example"><b>Example 1:</b> Compare −3 and −7. Since −3 is to the right of −7, −3 is greater than −7.<br><b>Example 2:</b> Arrange −4, 2, 0, −1 in ascending order: −4, −1, 0, 2.</div><h3>3. Addition and subtraction</h3><ul><li>Adding a positive integer moves to the right on the number line.</li><li>Adding a negative integer moves to the left.</li><li>Subtracting an integer is equivalent to adding its opposite.</li></ul><div class="example"><b>Worked example:</b> (−3) + 5 = 2. Start at −3 and move five steps right.<br><b>Worked example:</b> 4 − 7 = −3.</div><h3>4. Real-life application</h3><p>Temperatures below zero, debts and heights below sea level can be represented using negative integers. If the temperature rises from −2°C by 6°C, the new temperature is 4°C.</p><h3>5. Learner practice</h3><ol><li>List five integers less than zero.</li><li>Arrange −8, 3, −2, 0 and 5 in descending order.</li><li>Evaluate (−6) + 9 and 7 − 12.</li></ol><p><b>Key reminder:</b> Zero is neither positive nor negative. Always consider the position of a number on the number line when comparing integers.</p>`,
@@ -197,8 +202,7 @@ document.getElementById('quizSubject').addEventListener('change',buildQuiz);buil
 document.getElementById('markQuiz').addEventListener('click',()=>{const s=document.getElementById('quizSubject').value,qs=quizBank[s];let score=0,answered=0;qs.forEach((q,i)=>{const chosen=document.querySelector(`input[name="q${i}"]:checked`);const fb=document.getElementById(`fb${i}`);if(chosen){answered++;if(Number(chosen.value)===q.a){score++;fb.textContent='✓ Correct. '+q.e;fb.style.color='#17633b'}else{fb.textContent='✗ Review: '+q.e;fb.style.color='#a33'}}else{fb.textContent='Not answered. '+q.e;fb.style.color='#a33'}});const pct=Math.round(score/qs.length*100);document.getElementById('quizResult').innerHTML=`<div class="score">Your score: ${score} / ${qs.length} (${pct}%)</div><p>You answered ${answered} of ${qs.length} questions.</p><p>${pct>=80?'Excellent work. Keep extending your understanding.':pct>=50?'Good effort. Review the feedback and practise the weaker areas.':'Keep practising. Read the notes again and retry the quiz.'}</p>`;});
 document.getElementById('resetQuiz').addEventListener('click',buildQuiz);
 document.getElementById('registrationForm').addEventListener('submit',function(e){e.preventDefault();const name=document.getElementById('name').value.trim(),phone=document.getElementById('phone').value.trim(),grade=document.getElementById('grade').value,programme=document.getElementById('programme').value,message=document.getElementById('message').value.trim();const text="NEW LEARNER REGISTRATION\n\nName: "+name+"\nParent/Guardian Phone: "+phone+"\nGrade: "+grade+"\nProgramme: "+programme+"\nAdditional Information: "+message;window.open("https://wa.me/254741274957?text="+encodeURIComponent(text),"_blank");});
+
 </script>
- const SUPABASE_URL = "https://hqbqhnhgrgfxpedjzmnm.supabase.co";
-const SUPABASE_PUBLISHABLE_KEY = "PASTE_YOUR_PUBLISHABLE_KEY_HERE";
 </body>
 </html>
