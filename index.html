@@ -47,7 +47,11 @@ footer{background:#102b49;color:#d9e6f4;padding:34px 0;margin-top:30px}.foot{dis
  <div class="wrap nav">
   <a class="brand" href="#"><span class="logo">📘</span><span>JUNIOR SCHOOL<small>LEARNING HUB</small></span></a>
   <nav><a href="#grades">Grades</a><a href="#subjects">Subjects</a><a href="#learning">Learning Centre</a><a href="#tuition">Tuition</a></nav>
-  <div class="actions"><button class="btn outline" onclick="openModal('login')">Log in</button><button class="btn primary" onclick="openModal('signup')">Join free</button><button class="menu" onclick="document.getElementById('mobileNav').hidden=!document.getElementById('mobileNav').hidden">☰</button></div>
+  <div class="actions" id="authActions">
+<button class="btn outline" onclick="openModal('login')">Log in</button>
+<button class="btn primary" onclick="openModal('signup')">Join free</button>
+<button class="menu" onclick="document.getElementById('mobileNav').hidden=!document.getElementById('mobileNav').hidden">☰</button>
+</div>
  </div>
  <div id="mobileNav" class="wrap" hidden style="padding:0 0 14px;display:flex;gap:15px;flex-wrap:wrap;font-size:13px"><a href="#grades">Grades</a><a href="#subjects">Subjects</a><a href="#learning">Learning Centre</a><a href="#tuition">Tuition</a></div>
 </header>
@@ -77,9 +81,12 @@ footer{background:#102b49;color:#d9e6f4;padding:34px 0;margin-top:30px}.foot{dis
 <section id="tuition"><div class="wrap"><div class="tuition"><div><h2>Need extra learning support?</h2><p>Explore affordable online and physical tuition, revision sessions and guided practice.</p></div><div style="display:flex;gap:10px;flex-wrap:wrap"><a class="btn gold" href="https://wa.me/254741274957?text=Hello%20Mr.%20Israel%2C%20I%20would%20like%20to%20enquire%20about%20Junior%20School%20Learning%20Hub." target="_blank" rel="noopener">WhatsApp Mr. Israel →</a><button class="btn outline" onclick="openModal('tuition')">Tuition enquiry</button></div></div></div></section>
 </main>
 <footer><div class="wrap foot"><div><div style="font-weight:850;color:white">📘 Junior School Learning Hub</div><small>Learn • Practise • Assess • Excel</small><br><small>Contact: Mr. Israel | WhatsApp: +254 741 274 957</small><br><small>© <span id="year"></span> Junior School Learning Hub. All rights reserved.</small></div><div class="foot-links"><a href="#grades">Grades</a><a href="#subjects">Subjects</a><a href="#tuition">Tuition</a><a href="https://wa.me/254741274957" target="_blank" rel="noopener">WhatsApp Mr. Israel</a></div></div></footer>
-<div class="modal-backdrop" id="modal" onclick="if(event.target===this)closeModal()"><div class="modal"><div style="display:flex;justify-content:space-between;align-items:center"><h2 id="modalTitle">Welcome</h2><button class="btn outline" style="padding:5px 10px" onclick="closeModal()">✕</button></div><p id="modalDesc">Join the learning community.</p><form id="modalForm" onsubmit="submitDemo(event)"><div id="formFields"></div><div class="modal-actions"><button class="btn primary" type="submit" id="modalSubmit">Continue</button><button class="btn outline" type="button" onclick="closeModal()">Cancel</button></div></form><div class="notice">Demo interface only. Secure registration, password storage and payments are not connected yet.</div></div></div>
+<div class="modal-backdrop" id="modal" onclick="if(event.target===this)closeModal()"><div class="modal"><div style="display:flex;justify-content:space-between;align-items:center"><h2 id="modalTitle">Welcome</h2><button class="btn outline" style="padding:5px 10px" onclick="closeModal()">✕</button></div><p id="modalDesc">Join the learning community.</p><form id="modalForm" onsubmit="submitDemo(event)"><div id="formFields"></div><div class="modal-actions"><button class="btn primary" type="submit" id="modalSubmit">Continue</button><button class="btn outline" type="button" onclick="closeModal()">Cancel</button></div></form><div class="notice">Learner accounts are secured by Supabase. Email verification may be required. Payments are not connected yet.</div></div></div>
 <div class="toast" id="toast" role="status"></div>
- <script>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+<script>
 const subjects=[
  ["➗","Mathematics","Numbers, algebra, geometry and data"],
  ["🔬","Integrated Science","Scientific inquiry and discovery"],
@@ -403,10 +410,17 @@ function toast(msg){
  t.textContent=msg;t.style.display='block';
  setTimeout(()=>t.style.display='none',3000);
 }
+const SUPABASE_URL = "https://hqbqhnhgrgfxpedjzmnm.supabase.co";
 
+const SUPABASE_KEY = "sb_publishable_uaOcRVaIwnvRl_wZhMhJ-Q_DhrqZyS_";
+
+const supabaseClient = window.supabase.createClient(
+    SUPABASE_URL,
+    SUPABASE_KEY
+);
 const configs={
  login:['Learner login','Access your learning space.',[['Email address','email'],['Password','password']]],
- signup:['Create your learner account','Join Junior School Learning Hub for free.',[['Learner full name','text'],['Parent / guardian email','email'],['Create password','password'],['Grade','select']]],
+signup:['Create your learner account','Join Junior School Learning Hub for free.',[['Learner full name','text'],['Learner email address','email'],['Create password','password'],['Grade','select']]],
  tuition:['Tuition enquiry','Tell us how we can support your learning.',[['Parent / guardian name','text'],['Phone number','tel'],['Learner grade','select'],['Subject(s) of interest','text']]],
  contact:['Contact the Learning Hub','Send an enquiry to the learning team.',[['Your name','text'],['Email or phone','text'],['Message','text']]]
 };
@@ -422,16 +436,129 @@ function openModal(type){
 }
 
 function closeModal(){document.getElementById('modal').classList.remove('show')}
-
-function submitDemo(e){
+async function submitDemo(e){
  e.preventDefault();
- let type=e.target.dataset.type;
- closeModal();
- toast(type==='tuition'?'Enquiry preview complete. Contact service is not connected yet.':type==='login'?'Learner login needs a secure account backend.':'Registration preview complete. Secure registration is not connected yet.');
+
+ const type=e.target.dataset.type;
+
+ if(type==='tuition' || type==='contact'){
+   closeModal();
+   toast('Thank you. Your enquiry has been received as a preview.');
+   return;
+ }
+
+ const fields=e.target.querySelectorAll('#formFields input, #formFields select');
+ const values=Array.from(fields).map(field=>field.value.trim());
+ const submitButton=document.getElementById('modalSubmit');
+
+ submitButton.disabled=true;
+
+ try{
+   if(type==='signup'){
+     const [fullName,email,password,grade]=values;
+
+     const {data,error}=await supabaseClient.auth.signUp({
+       email:email,
+       password:password,
+       options:{
+         data:{
+           full_name:fullName,
+           grade:grade
+         },
+         emailRedirectTo:'https://chimerical-tapioca-a28280.netlify.app'
+       }
+     });
+
+     if(error) throw error;
+
+     closeModal();
+
+if(data.session){
+  updateAuthUI(data.session);
 }
 
+toast(data.session?'Account created successfully!':'Registration successful. Check your email to verify your account.');
+   }else if(type==='login'){
+     const [email,password]=values;
+
+     const {data,error}=await supabaseClient.auth.signInWithPassword({
+       email:email,
+       password:password
+     });
+
+     if(error) throw error;
+
+     closeModal();
+     toast('Welcome back!');
+     updateAuthUI(data.session);
+   }
+
+ }catch(error){
+   toast(error.message || 'Something went wrong. Please try again.');
+ }finally{
+   submitButton.disabled=false;
+ }
+}
+function updateAuthUI(session){
+ const actions=document.getElementById('authActions');
+
+ if(!actions)return;
+
+ if(session && session.user){
+   const name=session.user.user_metadata?.full_name || session.user.email;
+   const grade=session.user.user_metadata?.grade || '';
+
+   actions.innerHTML=`
+     <span id="learnerGreeting" style="font-size:12px;font-weight:700;color:#12345a"></span>
+     <button class="btn outline" onclick="logoutLearner()">Log out</button>
+     <button class="menu" onclick="document.getElementById('mobileNav').hidden=!document.getElementById('mobileNav').hidden">☰</button>
+   `;
+
+   document.getElementById('learnerGreeting').textContent=
+     'Hi, '+name+(grade?' • '+grade:'');
+
+ }else{
+   actions.innerHTML=`
+     <button class="btn outline" onclick="openModal('login')">Log in</button>
+     <button class="btn primary" onclick="openModal('signup')">Join free</button>
+     <button class="menu" onclick="document.getElementById('mobileNav').hidden=!document.getElementById('mobileNav').hidden">☰</button>
+   `;
+ }
+}
+
+async function logoutLearner(){
+ const {error}=await supabaseClient.auth.signOut();
+
+ if(error){
+   toast(error.message);
+   return;
+ }
+
+ updateAuthUI(null);
+ toast('You have logged out.');
+}
+
+async function initialiseAuth(){
+ const {data,error}=await supabaseClient.auth.getSession();
+
+ if(error){
+   toast('Could not check your login status.');
+   return;
+ }
+
+ updateAuthUI(data.session);
+
+ supabaseClient.auth.onAuthStateChange((event,session)=>{
+   updateAuthUI(session);
+ });
+}
+
+initialiseAuth();
 document.getElementById('year').textContent=new Date().getFullYear();
 addLearningInterface();
 renderSubjects();
 </script>
-</body></html>
+
+
+</body>
+</html>
