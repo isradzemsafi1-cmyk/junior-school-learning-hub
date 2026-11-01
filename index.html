@@ -436,25 +436,77 @@ function openModal(type){
 }
 
 function closeModal(){document.getElementById('modal').classList.remove('show')}
+
 async function submitDemo(e){
  e.preventDefault();
 
  const type=e.target.dataset.type;
 
- if(type==='tuition' || type==='contact'){
-   closeModal();
-   toast('Thank you. Your enquiry has been received as a preview.');
-   return;
- }
+ const fields=e.target.querySelectorAll(
+   '#formFields input, #formFields select'
+ );
 
- const fields=e.target.querySelectorAll('#formFields input, #formFields select');
  const values=Array.from(fields).map(field=>field.value.trim());
+
  const submitButton=document.getElementById('modalSubmit');
 
  submitButton.disabled=true;
 
+ let whatsappTab=null;
+
  try{
-   if(type==='signup'){
+
+   if(type==='tuition'){
+
+     const [parentName,phone,grade,subjects]=values;
+
+     const message=
+`Hello Mr. Israel,
+
+I would like to enquire about tuition at Junior School Learning Hub.
+
+Parent/Guardian name: ${parentName}
+Phone number: ${phone}
+Learner's grade: ${grade}
+Subjects of interest: ${subjects}
+
+Please share the tuition details. Thank you.`;
+
+     const whatsappUrl=
+       'https://wa.me/254741274957?text='+encodeURIComponent(message);
+
+     // Open a WhatsApp tab while the form click is still active.
+     whatsappTab=window.open('about:blank','_blank');
+
+     // Save the enquiry in Supabase.
+     const {error}=await supabaseClient
+       .from('tuition_enquiries')
+       .insert({
+         parent_name:parentName,
+         phone:phone,
+         learner_grade:grade,
+         subjects:subjects
+       });
+
+     if(error) throw error;
+
+     closeModal();
+
+     toast('Enquiry saved successfully. Opening WhatsApp...');
+
+     if(whatsappTab){
+       whatsappTab.location.href=whatsappUrl;
+     }else{
+       window.location.href=whatsappUrl;
+     }
+
+   }else if(type==='contact'){
+
+     closeModal();
+     toast('Thank you. Contact enquiries are not yet connected.');
+
+   }else if(type==='signup'){
+
      const [fullName,email,password,grade]=values;
 
      const {data,error}=await supabaseClient.auth.signUp({
@@ -473,12 +525,18 @@ async function submitDemo(e){
 
      closeModal();
 
-if(data.session){
-  updateAuthUI(data.session);
-}
+     if(data.session){
+       updateAuthUI(data.session);
+     }
 
-toast(data.session?'Account created successfully!':'Registration successful. Check your email to verify your account.');
+     toast(
+       data.session
+       ? 'Account created successfully!'
+       : 'Registration successful. Check your email to verify your account.'
+     );
+
    }else if(type==='login'){
+
      const [email,password]=values;
 
      const {data,error}=await supabaseClient.auth.signInWithPassword({
@@ -494,11 +552,20 @@ toast(data.session?'Account created successfully!':'Registration successful. Che
    }
 
  }catch(error){
+
+   if(whatsappTab){
+     whatsappTab.close();
+   }
+
    toast(error.message || 'Something went wrong. Please try again.');
+
  }finally{
+
    submitButton.disabled=false;
+
  }
 }
+
 function updateAuthUI(session){
  const actions=document.getElementById('authActions');
 
