@@ -204,5 +204,166 @@ document.getElementById('resetQuiz').addEventListener('click',buildQuiz);
 document.getElementById('registrationForm').addEventListener('submit',function(e){e.preventDefault();const name=document.getElementById('name').value.trim(),phone=document.getElementById('phone').value.trim(),grade=document.getElementById('grade').value,programme=document.getElementById('programme').value,message=document.getElementById('message').value.trim();const text="NEW LEARNER REGISTRATION\n\nName: "+name+"\nParent/Guardian Phone: "+phone+"\nGrade: "+grade+"\nProgramme: "+programme+"\nAdditional Information: "+message;window.open("https://wa.me/254741274957?text="+encodeURIComponent(text),"_blank");});
 
 </script>
+ <!-- LEARNER ACCOUNT SECTION -->
+<section id="learner-account" style="max-width:700px;margin:40px auto;padding:25px;background:#f4f8ff;border-radius:12px;">
+  <h2>🎓 Learner Account</h2>
+  <p>Create an account or log in to access your learning dashboard.</p>
+
+  <div id="learner-signup">
+    <h3>Create Learner Account</h3>
+    <input id="learner-name" type="text" placeholder="Full name" required style="width:100%;padding:12px;margin:6px 0;">
+    <select id="learner-grade" required style="width:100%;padding:12px;margin:6px 0;">
+      <option value="">Select Grade</option>
+      <option>Grade 7</option>
+      <option>Grade 8</option>
+      <option>Grade 9</option>
+    </select>
+    <input id="learner-email" type="email" placeholder="Email address" required style="width:100%;padding:12px;margin:6px 0;">
+    <input id="learner-password" type="password" placeholder="Create password (at least 6 characters)" required minlength="6" style="width:100%;padding:12px;margin:6px 0;">
+    <button id="learner-signup-btn" style="padding:12px 20px;background:#0756a5;color:white;border:0;border-radius:6px;">Create Account</button>
+  </div>
+
+  <hr style="margin:25px 0;">
+
+  <div id="learner-login">
+    <h3>Learner Login</h3>
+    <input id="login-email" type="email" placeholder="Email address" required style="width:100%;padding:12px;margin:6px 0;">
+    <input id="login-password" type="password" placeholder="Password" required style="width:100%;padding:12px;margin:6px 0;">
+    <button id="learner-login-btn" style="padding:12px 20px;background:#16833b;color:white;border:0;border-radius:6px;">Log In</button>
+  </div>
+
+  <p id="learner-message" role="status" aria-live="polite"></p>
+
+  <div id="learner-dashboard" hidden>
+    <h3>Welcome to Your Learning Dashboard!</h3>
+    <p id="learner-welcome"></p>
+    <p>Your learning resources and activities will appear here.</p>
+    <button id="learner-logout-btn" style="padding:12px 20px;background:#b42318;color:white;border:0;border-radius:6px;">Log Out</button>
+  </div>
+</section>
+
+<script>
+(function () {
+  const message = document.getElementById("learner-message");
+  const signup = document.getElementById("learner-signup");
+  const login = document.getElementById("learner-login");
+  const dashboard = document.getElementById("learner-dashboard");
+
+  function showMessage(text, error = false) {
+    message.textContent = text;
+    message.style.color = error ? "#b42318" : "#16833b";
+  }
+
+  function showDashboard(user) {
+    if (!user) {
+      dashboard.hidden = true;
+      signup.hidden = false;
+      login.hidden = false;
+      return;
+    }
+
+    signup.hidden = true;
+    login.hidden = true;
+    dashboard.hidden = false;
+
+    const name = user.user_metadata?.full_name || user.email;
+    const grade = user.user_metadata?.grade || "Not specified";
+    document.getElementById("learner-welcome").textContent =
+      "Hello " + name + "! Your registered grade is " + grade + ".";
+  }
+
+  document.getElementById("learner-signup-btn").addEventListener("click", async function () {
+    const name = document.getElementById("learner-name").value.trim();
+    const grade = document.getElementById("learner-grade").value;
+    const email = document.getElementById("learner-email").value.trim();
+    const password = document.getElementById("learner-password").value;
+
+    if (!name || !grade || !email || password.length < 6) {
+      showMessage("Please complete all fields. Password must have at least 6 characters.", true);
+      return;
+    }
+
+    this.disabled = true;
+    showMessage("Creating your account...");
+
+    try {
+      const { data, error } = await supabaseClient.auth.signUp({
+        email,
+        password,
+        options: {
+          emailRedirectTo: window.location.origin,
+          data: { full_name: name, grade: grade }
+        }
+      });
+
+      if (error) throw error;
+
+      if (data.session) {
+        showDashboard(data.user);
+        showMessage("Your account has been created successfully.");
+      } else {
+        showMessage("Account created! Please check your email and confirm your account before logging in.");
+      }
+    } catch (error) {
+      showMessage(error.message, true);
+    } finally {
+      this.disabled = false;
+    }
+  });
+
+  document.getElementById("learner-login-btn").addEventListener("click", async function () {
+    const email = document.getElementById("login-email").value.trim();
+    const password = document.getElementById("login-password").value;
+
+    if (!email || !password) {
+      showMessage("Enter your email address and password.", true);
+      return;
+    }
+
+    this.disabled = true;
+    showMessage("Logging in...");
+
+    try {
+      const { data, error } = await supabaseClient.auth.signInWithPassword({
+        email,
+        password
+      });
+
+      if (error) throw error;
+
+      showDashboard(data.user);
+      showMessage("Login successful. Welcome!");
+    } catch (error) {
+      showMessage(error.message, true);
+    } finally {
+      this.disabled = false;
+    }
+  });
+
+  document.getElementById("learner-logout-btn").addEventListener("click", async function () {
+    const { error } = await supabaseClient.auth.signOut();
+
+    if (error) {
+      showMessage(error.message, true);
+      return;
+    }
+
+    showDashboard(null);
+    showMessage("You have logged out successfully.");
+  });
+
+  supabaseClient.auth.getSession().then(({ data, error }) => {
+    if (error) {
+      showMessage(error.message, true);
+      return;
+    }
+    showDashboard(data.session?.user || null);
+  });
+
+  supabaseClient.auth.onAuthStateChange((_event, session) => {
+    showDashboard(session?.user || null);
+  });
+})();
+</script>
 </body>
 </html>
