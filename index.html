@@ -90,7 +90,7 @@ function openModal(type){let c=configs[type];document.getElementById('modalTitle
 function closeModal(){document.getElementById('modal').classList.remove('show')}
 function submitDemo(e){e.preventDefault();let type=e.target.dataset.type;closeModal();toast(type==='tuition'?'Enquiry form preview complete. Connect a contact service to receive enquiries.':type==='login'?'Learner login needs a secure account backend.':'Registration preview complete. Connect a secure backend to create accounts.')}
 document.getElementById('year').textContent=new Date().getFullYear();renderSubjects();
-</script>
+<script>
 const subjects=[
  ["➗","Mathematics","Numbers, algebra, geometry and data"],
  ["🔬","Integrated Science","Scientific inquiry and discovery"],
@@ -444,5 +444,5 @@ function submitDemo(e){
 document.getElementById('year').textContent=new Date().getFullYear();
 addLearningInterface();
 renderSubjects();
-
+</script>
 </body></html>
