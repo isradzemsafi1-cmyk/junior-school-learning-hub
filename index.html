@@ -198,5 +198,7 @@ document.getElementById('markQuiz').addEventListener('click',()=>{const s=docume
 document.getElementById('resetQuiz').addEventListener('click',buildQuiz);
 document.getElementById('registrationForm').addEventListener('submit',function(e){e.preventDefault();const name=document.getElementById('name').value.trim(),phone=document.getElementById('phone').value.trim(),grade=document.getElementById('grade').value,programme=document.getElementById('programme').value,message=document.getElementById('message').value.trim();const text="NEW LEARNER REGISTRATION\n\nName: "+name+"\nParent/Guardian Phone: "+phone+"\nGrade: "+grade+"\nProgramme: "+programme+"\nAdditional Information: "+message;window.open("https://wa.me/254741274957?text="+encodeURIComponent(text),"_blank");});
 </script>
+ const SUPABASE_URL = "https://hqbqhnhgrgfxpedjzmnm.supabase.co";
+const SUPABASE_PUBLISHABLE_KEY = "PASTE_YOUR_PUBLISHABLE_KEY_HERE";
 </body>
 </html>
