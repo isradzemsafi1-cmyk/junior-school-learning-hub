@@ -107,7 +107,54 @@ form{max-width:620px;margin:auto;background:#fff;padding:22px;border-radius:12px
   <div class="notice"><h3>Get information about premium access</h3><p>Contact the Learning Hub to ask about available revision packs, pricing and payment arrangements.</p><a class="btn" href="https://wa.me/254741274957?text=Hello%2C%20please%20share%20the%20premium%20revision%20papers%2C%20marking%20schemes%20and%20subscription%20details.">Ask about Premium Access on WhatsApp</a></div>
  </div>
 </section>
+<section class="alt" id="payments">
+  <div class="heading">
+    <h2>💳 Premium Learning Access</h2>
+    <p>Choose a product and pay securely using M-Pesa.</p>
+  </div>
 
+  <div class="cards">
+    <div class="card">
+      <div class="icon">👩‍🏫</div>
+      <h3>Online Tuition</h3>
+      <p>Access online tuition support.</p>
+      <h3>KSh 100</h3>
+      <button class="btn" onclick="buyProduct('online_tuition')">Pay with M-Pesa</button>
+    </div>
+
+    <div class="card">
+      <div class="icon">📝</div>
+      <h3>Premium Quizzes</h3>
+      <p>Access premium revision quizzes.</p>
+      <h3>KSh 20</h3>
+      <button class="btn" onclick="buyProduct('premium_quizzes')">Pay with M-Pesa</button>
+    </div>
+
+    <div class="card">
+      <div class="icon">📘</div>
+      <h3>Grade 8 Notes</h3>
+      <p>Access premium Grade 8 notes.</p>
+      <h3>KSh 30</h3>
+      <button class="btn" onclick="buyProduct('grade8_notes')">Pay with M-Pesa</button>
+    </div>
+
+    <div class="card">
+      <div class="icon">📙</div>
+      <h3>Grade 9 Notes</h3>
+      <p>Access premium Grade 9 notes.</p>
+      <h3>KSh 30</h3>
+      <button class="btn" onclick="buyProduct('grade9_notes')">Pay with M-Pesa</button>
+    </div>
+  </div>
+
+  <div class="panel">
+    <h3>M-Pesa Payment</h3>
+    <label for="mpesaPhone">M-Pesa phone number</label>
+    <input id="mpesaPhone" type="tel" placeholder="0712345678" style="width:100%;margin:10px 0;">
+    <p id="paymentMessage" role="status" aria-live="polite"></p>
+    <p class="small">Each successful purchase provides 24-hour access. Sandbox testing only.</p>
+  </div>
+</section>
 <section class="alt" id="services">
  <div class="heading"><h2>More Ways We Support Learners</h2></div>
  <div class="cards">
