@@ -94,10 +94,23 @@ export default async (request) => {
       return respond(200, { ResultCode: 0, ResultDesc: "Received" });
     }
 if (payment.status === "success") {
-  return respond(200, {
-    ResultCode: 0,
-    ResultDesc: "Payment already processed."
-  });
+  const entitlementCheck = await fetch(
+    `${supabaseUrl}/rest/v1/entitlements?user_id=eq.${payment.user_id}&product_id=eq.${payment.product_id}&select=id&limit=1`,
+    { headers: dbHeaders }
+  );
+
+  if (!entitlementCheck.ok) {
+    throw new Error("Could not check existing access.");
+  }
+
+  const existingAccess = await entitlementCheck.json();
+
+  if (existingAccess.length > 0) {
+    return respond(200, {
+      ResultCode: 0,
+      ResultDesc: "Payment already processed."
+    });
+  }
 }
     // Record unsuccessful transactions without granting access.
     if (callbackCode !== "0") {
