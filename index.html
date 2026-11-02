@@ -152,6 +152,8 @@ form{max-width:620px;margin:auto;background:#fff;padding:22px;border-radius:12px
     <label for="mpesaPhone">M-Pesa phone number</label>
     <input id="mpesaPhone" type="tel" placeholder="0712345678" style="width:100%;margin:10px 0;">
     <p id="paymentMessage" role="status" aria-live="polite"></p>
+    <div id="verifiedAccess" aria-live="polite"></div>
+    <div id="premiumMaterials" aria-live="polite"></div>
     <p class="small">Each successful purchase provides 24-hour access. Sandbox testing only.</p>
   </div>
 </section>
@@ -192,6 +194,7 @@ const supabaseClient = createClient(SUPABASE_URL, SUPABASE_PUBLISHABLE_KEY);
  window.buyProduct = async function(productId) {
   const message = document.getElementById("paymentMessage");
   const phone = document.getElementById("mpesaPhone").value.trim();
+  if (window.paymentInProgress) return;
 
   const products = {
     online_tuition: "Online Tuition",
@@ -218,6 +221,8 @@ const supabaseClient = createClient(SUPABASE_URL, SUPABASE_PUBLISHABLE_KEY);
     return;
   }
 
+  window.paymentInProgress = true;
+  document.querySelectorAll("[onclick^=\"buyProduct\"]").forEach(button => button.disabled = true);
   message.textContent = "Sending payment request. Please wait...";
 
   try {
@@ -234,6 +239,7 @@ const supabaseClient = createClient(SUPABASE_URL, SUPABASE_PUBLISHABLE_KEY);
     });
 
     const result = await response.json();
+    if (result.paymentId) sessionStorage.setItem("pendingPayment:" + session.user.id, JSON.stringify({productId, paymentId: result.paymentId}));
 
     if (!response.ok || !result.success) {
       throw new Error(result.message || "Payment request failed.");
@@ -242,10 +248,129 @@ const supabaseClient = createClient(SUPABASE_URL, SUPABASE_PUBLISHABLE_KEY);
     message.textContent =
       "Payment request sent for " + products[productId] +
       ". Check your phone and enter your M-Pesa PIN to complete payment.";
+    await pollPayment(productId, result.paymentId);
   } catch (err) {
     message.textContent = err.message || "Unable to start payment. Please try again.";
+  } finally {
+    window.paymentInProgress = false;
+    document.querySelectorAll("[onclick^=\"buyProduct\"]").forEach(button => button.disabled = false);
   }
 };
+
+async function paymentStatus(productId, paymentId) {
+  const { data: { session } } = await supabaseClient.auth.getSession();
+  if (!session) throw new Error('Please log in to verify access.');
+  const response = await fetch('/.netlify/functions/payment-status?product_id=' + encodeURIComponent(productId) + (paymentId ? '&payment_id=' + encodeURIComponent(paymentId) : ''), {
+    headers: { Authorization: 'Bearer ' + session.access_token }, cache: 'no-store'
+  });
+  if (!response.ok) throw new Error('Payment verification is temporarily unavailable. Access remains locked; do not pay again.');
+  return response.json();
+}
+async function refreshPremiumAccess() {
+  const panel = document.getElementById('verifiedAccess');
+  panel.replaceChildren();
+  const { data: { session } } = await supabaseClient.auth.getSession();
+  if (!session) return;
+  const userId = session.user.id;
+  for (const [product, label] of Object.entries({premium_quizzes:'Premium Quizzes',grade8_notes:'Grade 8 Notes',grade9_notes:'Grade 9 Notes',online_tuition:'Online Tuition'})) {
+    try {
+      const result = await paymentStatus(product);
+      const { data: { session: current } } = await supabaseClient.auth.getSession();
+      if (current?.user.id !== userId) return;
+      const line = document.createElement('p');
+      line.textContent = result.unlocked ? label + ': payment verified. Access expires ' + new Date(result.expiresAt).toLocaleString() + '. Receipt: ' + result.receipt : label + ': locked — verified successful payment required.';
+      panel.appendChild(line);
+      if (result.unlocked) {
+        const button = document.createElement('button');
+        button.className = 'btn outline';
+        button.textContent = 'View ' + label;
+        button.addEventListener('click', () => showPremiumMaterials(product));
+        panel.appendChild(button);
+      }
+    } catch { /* Keep content locked when verification is unavailable. */ }
+  }
+}
+async function showPremiumMaterials(productId) {
+  const panel = document.getElementById('premiumMaterials');
+  panel.replaceChildren();
+  try {
+    const { data: { session } } = await supabaseClient.auth.getSession();
+    if (!session) throw new Error('Please log in to view premium materials.');
+    const endpoint = '/.netlify/functions/premium-materials?product_id=' + encodeURIComponent(productId);
+    const response = await fetch(endpoint, { headers: { Authorization: 'Bearer ' + session.access_token }, cache: 'no-store' });
+    if (!response.ok) throw new Error('Premium access is locked or cannot currently be verified.');
+    const result = await response.json();
+    const { data: { session: current } } = await supabaseClient.auth.getSession();
+    if (current?.user.id !== session.user.id) return;
+    const text = document.createElement('p');
+    text.textContent = result.message;
+    panel.appendChild(text);
+    for (const file of result.files) {
+      const button = document.createElement('button');
+      button.className = 'btn outline';
+      button.textContent = 'Download ' + file;
+      button.addEventListener('click', async () => {
+        button.disabled = true;
+        try {
+          const { data: { session: latest } } = await supabaseClient.auth.getSession();
+          if (!latest) throw new Error('Please log in again.');
+          const download = await fetch(endpoint + '&file=' + encodeURIComponent(file), { headers: { Authorization: 'Bearer ' + latest.access_token }, cache: 'no-store' });
+          if (!download.ok) throw new Error('Download denied. Check your premium access.');
+          const url = URL.createObjectURL(await download.blob());
+          const link = document.createElement('a'); link.href = url; link.download = file; link.click();
+          setTimeout(() => URL.revokeObjectURL(url), 60000);
+        } catch (error) { text.textContent = error.message; }
+        finally { button.disabled = false; }
+      });
+      panel.appendChild(button);
+    }
+  } catch (error) { panel.textContent = error.message; }
+}
+let accessRefreshRunning = false;
+async function recheckPremiumAccess() {
+  if (accessRefreshRunning || document.hidden) return;
+  accessRefreshRunning = true;
+  document.getElementById('premiumMaterials').replaceChildren();
+  try { await refreshPremiumAccess(); } finally { accessRefreshRunning = false; }
+}
+setInterval(recheckPremiumAccess, 60000);
+window.addEventListener('focus', recheckPremiumAccess);
+async function pollPayment(productId, paymentId) {
+  const message = document.getElementById('paymentMessage');
+  for (let attempt = 0; attempt < 36; attempt++) {
+    const result = await paymentStatus(productId, paymentId);
+    if (result.unlocked) {
+      message.textContent = 'Payment verified. M-Pesa receipt: ' + result.receipt;
+      const { data: { session } } = await supabaseClient.auth.getSession();
+      if (session) sessionStorage.removeItem('pendingPayment:' + session.user.id);
+      await refreshPremiumAccess();
+      return;
+    }
+    if (['failed', 'reversed', 'refunded', 'cancelled', 'chargeback'].includes(result.status)) {
+      message.textContent = 'Payment is not valid for premium access.';
+      const { data: { session } } = await supabaseClient.auth.getSession();
+      if (session) sessionStorage.removeItem('pendingPayment:' + session.user.id);
+      await refreshPremiumAccess();
+      return;
+    }
+    message.textContent = 'Awaiting verified M-Pesa confirmation. Do not pay again.';
+    await new Promise(resolve => setTimeout(resolve, 5000));
+  }
+  message.textContent = 'Confirmation is still pending. You can return later; do not pay again.';
+}
+supabaseClient.auth.onAuthStateChange((_event, session) => {
+  document.getElementById('verifiedAccess').replaceChildren();
+  document.getElementById('premiumMaterials').replaceChildren();
+  setTimeout(async () => {
+    await refreshPremiumAccess();
+    if (!session) return;
+    try {
+      const pending = JSON.parse(sessionStorage.getItem('pendingPayment:' + session.user.id) || 'null');
+      if (pending && !window.paymentInProgress) await pollPayment(pending.productId, pending.paymentId);
+    } catch { /* A new server check is required before displaying access. */ }
+  }, 0);
+});
+
 const noteData = {
  "Mathematics": {
   "Grade 7": `<h2>Topic: Number – Understanding integers</h2><p><b>Learning outcomes:</b> By the end of the lesson, the learner should be able to identify integers, represent them on a number line, compare integers and perform addition and subtraction involving integers.</p><h3>1. Meaning of integers</h3><p>Integers are whole numbers that include positive numbers, negative numbers and zero. Examples include −5, −2, 0, 3 and 8. Fractions and decimals such as ½ and 2.5 are not integers.</p><h3>2. The number line</h3><p>On a horizontal number line, zero is the reference point. Positive integers are placed to the right of zero while negative integers are placed to the left. A number farther to the right is greater than a number to its left.</p><div class="example"><b>Example 1:</b> Compare −3 and −7. Since −3 is to the right of −7, −3 is greater than −7.<br><b>Example 2:</b> Arrange −4, 2, 0, −1 in ascending order: −4, −1, 0, 2.</div><h3>3. Addition and subtraction</h3><ul><li>Adding a positive integer moves to the right on the number line.</li><li>Adding a negative integer moves to the left.</li><li>Subtracting an integer is equivalent to adding its opposite.</li></ul><div class="example"><b>Worked example:</b> (−3) + 5 = 2. Start at −3 and move five steps right.<br><b>Worked example:</b> 4 − 7 = −3.</div><h3>4. Real-life application</h3><p>Temperatures below zero, debts and heights below sea level can be represented using negative integers. If the temperature rises from −2°C by 6°C, the new temperature is 4°C.</p><h3>5. Learner practice</h3><ol><li>List five integers less than zero.</li><li>Arrange −8, 3, −2, 0 and 5 in descending order.</li><li>Evaluate (−6) + 9 and 7 − 12.</li></ol><p><b>Key reminder:</b> Zero is neither positive nor negative. Always consider the position of a number on the number line when comparing integers.</p>`,
