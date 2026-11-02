@@ -267,18 +267,416 @@ const noteData = {
   "Grade 8": `<h2>Topic: Crop production and field management</h2><p><b>Learning outcomes:</b> Describe basic crop-production practices and explain the importance of timely field management.</p><h3>1. Land preparation</h3><p>Land preparation creates suitable conditions for planting. Activities may include clearing unwanted vegetation, primary cultivation, breaking clods, levelling and preparing planting stations. Methods should suit the crop and local conditions.</p><h3>2. Planting materials</h3><p>Crops may be established using seeds, seedlings, cuttings, tubers or other vegetative materials. Healthy planting materials improve the chances of successful establishment.</p><h3>3. Crop management</h3><ul><li>Weeding reduces competition for water, light and nutrients.</li><li>Thinning reduces overcrowding where too many plants emerge.</li><li>Mulching conserves moisture and can suppress weeds.</li><li>Timely watering supports growth where rainfall is inadequate.</li><li>Monitoring helps detect pests and diseases early.</li></ul><h3>4. Safe and responsible practice</h3><p>Use tools correctly, follow product labels and adult guidance when handling farm inputs, and avoid contaminating water sources.</p><h3>Practice</h3><ol><li>Why is timely weeding important?</li><li>Give two examples of vegetative planting materials.</li><li>State three crop-management practices.</li></ol>`,
   "Grade 9": `<h2>Topic: Sustainable agriculture and food security</h2><p><b>Learning outcomes:</b> Explain sustainable agriculture, identify threats to food production and propose practical conservation measures.</p><h3>1. Sustainable agriculture</h3><p>Sustainable agriculture aims to produce food and other farm products while conserving natural resources and supporting the well-being of present and future generations.</p><h3>2. Soil and water conservation</h3><p>Practices include terracing on suitable slopes, contour farming, cover cropping, mulching, agroforestry, proper drainage and harvesting rainwater.</p><h3>3. Climate-smart practices</h3><p>Farmers can consider drought-tolerant crop varieties suited to the area, water-efficient irrigation, diversified crops, timely planting and weather information.</p><h3>4. Food security</h3><p>Food security involves reliable access to sufficient, safe and nutritious food. Production, storage, distribution, affordability and stability all matter. Post-harvest losses can reduce the amount of food available.</p><div class="example"><b>Scenario:</b> A farmer experiences soil erosion and irregular rainfall. Possible responses include maintaining ground cover, harvesting rainwater, using suitable terraces and selecting locally appropriate crops.</div><h3>Practice</h3><ol><li>What is sustainable agriculture?</li><li>State three ways of conserving soil and water.</li><li>Explain how proper storage contributes to food security.</li></ol>`
  }
-};
-function showNotes(){const g=document.getElementById('noteGrade').value,s=document.getElementById('noteSubject').value;document.getElementById('notesContent').innerHTML=noteData[s][g]+'<p class="small"><b>Study tip:</b> Read the notes, write a short summary in your own words, attempt the practice activities and ask a teacher to clarify any difficult concept.</p>'}
-document.getElementById('noteGrade').addEventListener('change',showNotes);document.getElementById('noteSubject').addEventListener('change',showNotes);showNotes();
 
-const quizBank={
- "Mathematics":[
-  {q:"Evaluate (−6) + 9.",o:["−15","−3","3","15"],a:2,e:"Starting at −6 and moving nine units to the right gives 3."},
-  {q:"Simplify 3x + 5x − 2.",o:["8x − 2","8x + 2","15x − 2","8x"],a:0,e:"3x and 5x are like terms, so they combine to 8x; the constant −2 remains."},
-  {q:"Solve 3x + 5 = 20.",o:["3","5","8","15"],a:1,e:"Subtract 5 to get 3x = 15, then divide by 3. Therefore x = 5."},
-  {q:"Find the gradient between (1,2) and (3,6).",o:["1","2","3","4"],a:1,e:"Gradient = (6 − 2)/(3 − 1) = 4/2 = 2."},
-  {q:"A learner scores 12, 15 and 18 in three tasks. What is the mean?",o:["14","15","16","18"],a:1,e:"Mean = (12 + 15 + 18)/3 = 45/3 = 15."}
- ],
+noteData["Mathematics"]["Grade 7"] = `
+<h2>GRADE 7 MATHEMATICS – TERM 1</h2>
+<p><b>Learning area:</b> Mathematics | <b>Strand:</b> Number</p>
+<p><b>Introduction:</b> This unit develops number sense and accuracy in calculations. Learners will apply mathematical skills to shopping, sharing, measurement, time and everyday problem-solving.</p>
+
+<h2>1. WHOLE NUMBERS</h2>
+<h3>1.1 Meaning and classification</h3>
+<p>Whole numbers are 0, 1, 2, 3, 4 and all positive counting numbers. They do not include negative numbers, fractions or decimals. Natural numbers are counting numbers beginning with 1, while whole numbers include zero.</p>
+<p><b>Examples:</b> 0, 7, 25, 1,000 and 3,456 are whole numbers. Numbers such as −4, 2.5 and ¾ are not whole numbers.</p>
+
+<h3>1.2 Place value and total value</h3>
+<p>The position of a digit in a number determines its place value. Its total value is the digit multiplied by the value of its position.</p>
+<p>Example: In 5,382,614:</p>
+<ul>
+<li>5 is in the millions position: value 5,000,000.</li>
+<li>3 is in the hundred-thousands position: value 300,000.</li>
+<li>8 is in the ten-thousands position: value 80,000.</li>
+<li>2 is in the thousands position: value 2,000.</li>
+<li>6 is in the hundreds position: value 600.</li>
+<li>1 is in the tens position: value 10.</li>
+<li>4 is in the units position: value 4.</li>
+</ul>
+<p><b>Worked example:</b> What is the total value of 7 in 4,765,219?</p>
+<p>7 is in the hundred-thousands position. Its total value is 7 × 100,000 = <b>700,000</b>.</p>
+
+<h3>1.3 Reading, writing and comparing numbers</h3>
+<p>Read large numbers in groups of three digits, starting from the right: units, thousands, millions and billions. Use commas to separate the groups where appropriate.</p>
+<p><b>Example:</b> 3,405,018 is read as three million, four hundred and five thousand and eighteen.</p>
+<p>To compare whole numbers, first compare the number of digits. If they have the same number of digits, compare corresponding digits from the left.</p>
+<p><b>Example:</b> 456,820 is greater than 456,280 because the hundreds digit in the first number is 8 while that in the second is 2.</p>
+
+<h3>1.4 Rounding off whole numbers</h3>
+<p>Rounding gives an approximate value. Identify the place to which you are rounding and look at the digit immediately to its right. If it is 5 or more, increase the rounding digit by one. If it is less than 5, leave the rounding digit unchanged. Replace following digits with zeros.</p>
+<ul>
+<li>6,483 rounded to the nearest 10 = 6,480.</li>
+<li>6,483 rounded to the nearest 100 = 6,500.</li>
+<li>6,483 rounded to the nearest 1,000 = 6,000.</li>
+<li>74,650 rounded to the nearest 10,000 = 70,000.</li>
+</ul>
+<p><b>Worked example:</b> Round 387,649 to the nearest thousand.</p>
+<p>The hundreds digit is 6. Increase the thousands digit from 7 to 8 and replace the following digits with zeros. Answer: <b>388,000</b>.</p>
+
+<h3>1.5 Operations on whole numbers</h3>
+<p><b>Addition:</b> Arrange numbers according to place value and add from right to left, carrying where necessary.</p>
+<p>Example: 24,685 + 13,749 = <b>38,434</b>.</p>
+<p><b>Subtraction:</b> Arrange place values correctly and regroup where necessary.</p>
+<p>Example: 50,000 − 27,856 = <b>22,144</b>.</p>
+<p><b>Multiplication:</b> Multiply using place value or a written multiplication method.</p>
+<p>Example: 246 × 35 = (246 × 30) + (246 × 5) = 7,380 + 1,230 = <b>8,610</b>.</p>
+<p><b>Division:</b> Share a quantity equally or find how many times one number is contained in another.</p>
+<p>Example: 1,248 ÷ 24 = <b>52</b>, because 24 × 52 = 1,248.</p>
+
+<h3>1.6 Order of operations</h3>
+<p>When an expression has several operations, follow the correct order: brackets first, then multiplication and division from left to right, then addition and subtraction from left to right.</p>
+<p><b>Example:</b> 18 + 6 × 4 = 18 + 24 = <b>42</b>. Multiplication is done before addition.</p>
+<p><b>Example:</b> (18 + 6) × 4 = 24 × 4 = <b>96</b>. Brackets are evaluated first.</p>
+
+<h3>1.7 Number patterns and sequences</h3>
+<p>A sequence is an ordered list of numbers following a rule. The rule may involve adding, subtracting, multiplying or dividing by a fixed number.</p>
+<ul>
+<li>4, 8, 12, 16, 20: add 4 each time.</li>
+<li>50, 45, 40, 35: subtract 5 each time.</li>
+<li>3, 6, 12, 24, 48: multiply by 2 each time.</li>
+<li>1, 4, 9, 16, 25: square numbers.</li>
+</ul>
+<p><b>Worked example:</b> Find the next two terms in 7, 12, 17, 22, ...</p>
+<p>The common difference is 5. The next terms are 27 and 32.</p>
+
+<h3>1.8 Application of whole numbers</h3>
+<p>A school buys 36 boxes of chalk at KSh 145 per box. Total cost = 36 × 145 = KSh 5,220.</p>
+<p>If the school pays KSh 6,000, the balance is 6,000 − 5,220 = <b>KSh 780</b>.</p>
+<p>Always check whether a problem requires addition, subtraction, multiplication or division. Estimate first to see whether your answer is reasonable.</p>
+
+<h2>2. FACTORS</h2>
+<h3>2.1 Factors and multiples</h3>
+<p>A factor of a number divides that number exactly without leaving a remainder. A multiple is obtained by multiplying a number by a whole number.</p>
+<p>Factors of 12 are 1, 2, 3, 4, 6 and 12. The first five positive multiples of 4 are 4, 8, 12, 16 and 20.</p>
+<p><b>Important:</b> A factor is never greater than the number it divides, while a positive multiple can be greater than the original number.</p>
+
+<h3>2.2 Divisibility tests</h3>
+<ul>
+<li><b>Divisible by 2:</b> The last digit is 0, 2, 4, 6 or 8.</li>
+<li><b>Divisible by 3:</b> The sum of the digits is divisible by 3.</li>
+<li><b>Divisible by 4:</b> The number formed by the last two digits is divisible by 4.</li>
+<li><b>Divisible by 5:</b> The last digit is 0 or 5.</li>
+<li><b>Divisible by 6:</b> The number is divisible by both 2 and 3.</li>
+<li><b>Divisible by 8:</b> The number formed by the last three digits is divisible by 8.</li>
+<li><b>Divisible by 9:</b> The sum of the digits is divisible by 9.</li>
+<li><b>Divisible by 10:</b> The last digit is 0.</li>
+</ul>
+<p><b>Worked example:</b> Is 4,572 divisible by 3 and 9?</p>
+<p>Sum of digits = 4 + 5 + 7 + 2 = 18. Since 18 is divisible by both 3 and 9, 4,572 is divisible by both.</p>
+
+<h3>2.3 Prime and composite numbers</h3>
+<p>A prime number has exactly two different positive factors: 1 and itself. Examples are 2, 3, 5, 7, 11, 13, 17 and 19. The number 2 is the only even prime number.</p>
+<p>A composite number has more than two positive factors. Examples include 4, 6, 8, 9, 10 and 12. The numbers 0 and 1 are neither prime nor composite.</p>
+
+<h3>2.4 Prime factorisation</h3>
+<p>Prime factorisation expresses a number as a product of prime numbers only. You may use repeated division or a factor tree.</p>
+<p><b>Worked example:</b> Express 60 as a product of prime factors.</p>
+<p>60 = 2 × 30 = 2 × 2 × 15 = 2 × 2 × 3 × 5.</p>
+<p>Therefore, 60 = <b>2² × 3 × 5</b>.</p>
+<p><b>Worked example:</b> Express 84 as a product of prime factors.</p>
+<p>84 = 2 × 42 = 2 × 2 × 21 = 2 × 2 × 3 × 7 = <b>2² × 3 × 7</b>.</p>
+
+<h3>2.5 Greatest Common Divisor (GCD/HCF)</h3>
+<p>The GCD, also called the highest common factor (HCF), is the greatest positive number that divides two or more numbers exactly.</p>
+<p><b>Worked example:</b> Find the HCF of 24 and 36.</p>
+<p>Factors of 24: 1, 2, 3, 4, 6, 8, 12, 24.</p>
+<p>Factors of 36: 1, 2, 3, 4, 6, 9, 12, 18, 36.</p>
+<p>The greatest common factor is <b>12</b>.</p>
+<p><b>Prime factor method:</b> 24 = 2³ × 3 and 36 = 2² × 3². Use common prime factors with the smaller powers: 2² × 3 = 12.</p>
+
+<h3>2.6 Lowest Common Multiple (LCM)</h3>
+<p>The LCM is the smallest positive number that is a multiple of each of the given numbers.</p>
+<p><b>Worked example:</b> Find the LCM of 6 and 8.</p>
+<p>Multiples of 6: 6, 12, 18, 24, 30, ...</p>
+<p>Multiples of 8: 8, 16, 24, 32, ...</p>
+<p>The first common multiple is <b>24</b>.</p>
+<p><b>Prime factor method:</b> 6 = 2 × 3 and 8 = 2³. Use the highest powers: 2³ × 3 = 24.</p>
+
+<h3>2.7 Real-life applications of HCF and LCM</h3>
+<p><b>HCF example:</b> A teacher has 24 pencils and 36 pens. The items are to be packed into the greatest possible number of identical packs with no item left over. HCF(24,36) = 12 packs. Each pack contains 2 pencils and 3 pens.</p>
+<p><b>LCM example:</b> Two bells ring every 4 minutes and 6 minutes. If they ring together now, they will next ring together after LCM(4,6) = 12 minutes.</p>
+
+<h2>3. FRACTIONS</h2>
+<h3>3.1 Meaning and parts of a fraction</h3>
+<p>A fraction represents part of a whole or a quantity divided into equal parts. In ¾, 3 is the numerator and 4 is the denominator. The denominator must not be zero.</p>
+<ul>
+<li><b>Proper fraction:</b> Numerator is smaller than denominator, e.g. ⅗.</li>
+<li><b>Improper fraction:</b> Numerator is equal to or greater than denominator, e.g. 7/4.</li>
+<li><b>Mixed number:</b> A whole number together with a proper fraction, e.g. 1¾.</li>
+<li><b>Equivalent fractions:</b> Fractions with the same value, e.g. ½ = 2/4 = 3/6.</li>
+</ul>
+
+<h3>3.2 Simplifying fractions</h3>
+<p>Divide the numerator and denominator by their greatest common factor.</p>
+<p><b>Example:</b> Simplify 18/24.</p>
+<p>HCF of 18 and 24 is 6. Divide both by 6: 18/24 = <b>3/4</b>.</p>
+
+<h3>3.3 Comparing and ordering fractions</h3>
+<p>For fractions with the same denominator, compare their numerators. For different denominators, express them using a common denominator or compare their equivalent forms.</p>
+<p><b>Example:</b> Compare ⅔ and ¾.</p>
+<p>Using denominator 12: ⅔ = 8/12 and ¾ = 9/12. Therefore, ¾ is greater.</p>
+
+<h3>3.4 Addition and subtraction</h3>
+<p>For fractions with the same denominator, add or subtract the numerators and keep the denominator. For different denominators, first find a common denominator.</p>
+<p><b>Example 1:</b> 2/7 + 3/7 = 5/7.</p>
+<p><b>Example 2:</b> ½ + ⅓ = 3/6 + 2/6 = <b>5/6</b>.</p>
+<p><b>Example 3:</b> ⅚ − ⅓ = ⅚ − 2/6 = <b>½</b>.</p>
+<p><b>Example 4:</b> 2¼ + 1½ = 2¼ + 1²/₄ = 3¾.</p>
+
+<h3>3.5 Multiplication of fractions</h3>
+<p>Multiply the numerators together and multiply the denominators together. Simplify the result where possible.</p>
+<p><b>Example:</b> ⅔ × ¾ = 6/12 = <b>½</b>.</p>
+<p><b>Example:</b> ⅗ × 10/9 = 30/45 = <b>⅔</b>.</p>
+
+<h3>3.6 Division of fractions</h3>
+<p>To divide by a fraction, multiply by its reciprocal. The reciprocal is obtained by interchanging the numerator and denominator.</p>
+<p><b>Example:</b> ⅔ ÷ ¾ = ⅔ × ⁴/₃ = 8/9.</p>
+<p><b>Example:</b> ⅘ ÷ ⅖ = ⅘ × ⁵/₂ = 20/10 = 2.</p>
+
+<h3>3.7 Fractions of quantities</h3>
+<p>To find a fraction of a quantity, multiply the fraction by the quantity.</p>
+<p><b>Example:</b> Find ¾ of 32 learners.</p>
+<p>¾ × 32 = 24 learners.</p>
+<p><b>Example:</b> A farmer sells ⅖ of 60 kg of beans. Quantity sold = ⅖ × 60 = 24 kg.</p>
+
+<h3>3.8 Reciprocals and fraction sequences</h3>
+<p>The reciprocal of ⅗ is ⁵/₃. The reciprocal of 7 is ⅐. Zero has no reciprocal because division by zero is undefined.</p>
+<p>In a fraction sequence, identify the rule between consecutive terms.</p>
+<p><b>Example:</b> ½, ¼, ⅛, ¹/₁₆, ... Each term is obtained by dividing the previous term by 2. The next term is ¹/₃₂.</p>
+
+<h2>4. DECIMALS</h2>
+<h3>4.1 Place value in decimals</h3>
+<p>Digits to the left of the decimal point represent whole-number places. Digits to the right represent tenths, hundredths, thousandths and so on.</p>
+<p>In 24.375: 2 represents 20, 4 represents 4, 3 represents 0.3, 7 represents 0.07 and 5 represents 0.005.</p>
+<p><b>Example:</b> The total value of 8 in 6.284 is 0.08 because it is in the hundredths position.</p>
+
+<h3>4.2 Comparing and ordering decimals</h3>
+<p>Line up decimal points and compare digits from left to right. You may add zeros at the end without changing a decimal's value.</p>
+<p><b>Example:</b> Arrange 0.7, 0.07 and 0.77 in ascending order.</p>
+<p>Write them as 0.70, 0.07 and 0.77. Order: <b>0.07, 0.70, 0.77</b>.</p>
+
+<h3>4.3 Addition and subtraction of decimals</h3>
+<p>Align decimal points vertically, add or subtract the digits and bring the decimal point straight down.</p>
+<p><b>Example:</b> 12.45 + 3.8 = 12.45 + 3.80 = <b>16.25</b>.</p>
+<p><b>Example:</b> 9.2 − 4.65 = 9.20 − 4.65 = <b>4.55</b>.</p>
+
+<h3>4.4 Multiplication of decimals</h3>
+<p>Multiply as whole numbers first. Count the total number of decimal places in the factors and place the decimal point accordingly in the product.</p>
+<p><b>Example:</b> 2.4 × 1.5 = 24 × 15 = 360. There are two decimal places altogether, so the answer is <b>3.60</b>, or 3.6.</p>
+<p><b>Example:</b> 0.35 × 0.2 = 35 × 2 = 70. There are three decimal places altogether, so the answer is <b>0.070</b>, or 0.07.</p>
+
+<h3>4.5 Division of decimals</h3>
+<p>When dividing by a decimal, multiply both the dividend and divisor by the same power of 10 to make the divisor a whole number.</p>
+<p><b>Example:</b> 7.2 ÷ 0.6 = 72 ÷ 6 = <b>12</b>.</p>
+<p><b>Example:</b> 4.5 ÷ 0.15 = 450 ÷ 15 = <b>30</b>.</p>
+
+<h3>4.6 Multiplying and dividing by 10, 100 and 1,000</h3>
+<ul>
+<li>3.46 × 10 = 34.6.</li>
+<li>3.46 × 100 = 346.</li>
+<li>3.46 ÷ 10 = 0.346.</li>
+<li>3.46 ÷ 100 = 0.0346.</li>
+</ul>
+<p>Think of the digits shifting place value when multiplying or dividing by powers of 10.</p>
+
+<h3>4.7 Applications of decimals</h3>
+<p>A learner buys a book for KSh 125.50 and a pen for KSh 35.75. Total cost = 125.50 + 35.75 = KSh 161.25.</p>
+<p>If the learner pays KSh 200, change = 200 − 161.25 = <b>KSh 38.75</b>.</p>
+<p>Decimals are useful in money, length, mass, capacity, temperature and measurement.</p>
+
+<h2>5. SQUARES AND SQUARE ROOTS</h2>
+<h3>5.1 Squares of whole numbers</h3>
+<p>The square of a number is the number multiplied by itself. It is written using the power 2.</p>
+<p>Examples: 2² = 2 × 2 = 4; 5² = 5 × 5 = 25; 12² = 12 × 12 = 144.</p>
+<p>The first ten positive square numbers are 1, 4, 9, 16, 25, 36, 49, 64, 81 and 100.</p>
+
+<h3>5.2 Square roots of whole numbers</h3>
+<p>The square root of a number is a value which, when multiplied by itself, gives the original number. The symbol is √.</p>
+<p><b>Example:</b> √81 = 9 because 9 × 9 = 81.</p>
+<p><b>Example:</b> √196 = 14 because 14 × 14 = 196.</p>
+<p>A perfect square is a whole number whose square root is a whole number. Examples include 1, 4, 9, 16, 25, 36 and 49.</p>
+
+<h3>5.3 Squares and square roots of fractions</h3>
+<p>To square a fraction, square its numerator and denominator.</p>
+<p><b>Example:</b> (⅔)² = 2²/3² = 4/9.</p>
+<p>To find the square root of a fraction, find the square roots of its numerator and denominator when both are perfect squares.</p>
+<p><b>Example:</b> √(9/16) = 3/4 because 3² = 9 and 4² = 16.</p>
+
+<h3>5.4 Squares and square roots of decimals</h3>
+<p><b>Example:</b> 0.4² = 0.4 × 0.4 = 0.16.</p>
+<p><b>Example:</b> √0.81 = 0.9 because 0.9 × 0.9 = 0.81.</p>
+<p><b>Example:</b> 1.2² = 1.2 × 1.2 = 1.44.</p>
+
+<h3>5.5 Applications of squares and square roots</h3>
+<p>The area of a square is found by multiplying its side by itself.</p>
+<p><b>Example:</b> A square garden has a side of 8 m. Its area is 8 × 8 = 64 m².</p>
+<p><b>Reverse example:</b> A square floor has an area of 121 m². Its side is √121 = 11 m.</p>
+
+<h2>COMMON MATHEMATICAL ERRORS TO AVOID</h2>
+<ul>
+<li>Do not confuse the place value of a digit with its total value.</li>
+<li>When rounding, examine the digit immediately to the right of the required place.</li>
+<li>Do not assume every odd number is prime. For example, 9 is composite.</li>
+<li>Do not add denominators when adding fractions. Find a common denominator first.</li>
+<li>When dividing fractions, use the reciprocal of the divisor.</li>
+<li>When adding decimals, align the decimal points.</li>
+<li>Remember that the square root of 81 is 9, not 40.5.</li>
+</ul>
+
+<h2>END-OF-TOPIC ASSESSMENT – 50 QUESTIONS</h2>
+<p><b>Instructions:</b> Attempt all questions in your exercise book. Show your working for calculations. Check your responses using the answer guide after completing the assessment.</p>
+
+<h3>A. Whole Numbers</h3>
+<ol>
+<li>Write 6,304,025 in words.</li>
+<li>What is the place value of 8 in 4,582,731?</li>
+<li>State the total value of 7 in 3,746,205.</li>
+<li>Arrange 45,609; 45,096; 46,509; and 40,659 in ascending order.</li>
+<li>Round 684,729 to the nearest ten thousand.</li>
+<li>Evaluate 345,678 + 129,456.</li>
+<li>Evaluate 900,000 − 458,675.</li>
+<li>Calculate 36 × 24.</li>
+<li>Calculate 864 ÷ 12.</li>
+<li>Find the next two terms: 5, 10, 20, 40, ...</li>
+</ol>
+
+<h3>B. Factors</h3>
+<ol start="11">
+<li>List all the factors of 24.</li>
+<li>Write the first six positive multiples of 7.</li>
+<li>Determine whether 5,436 is divisible by 3. Give a reason.</li>
+<li>State whether 37 is prime or composite.</li>
+<li>Express 72 as a product of prime factors using index notation.</li>
+<li>Find the HCF of 30 and 45.</li>
+<li>Find the LCM of 9 and 12.</li>
+<li>Find the HCF of 24, 36 and 60.</li>
+<li>Find the LCM of 4, 6 and 10.</li>
+<li>Two bells ring every 8 minutes and 12 minutes. If they ring together at 8:00 a.m., at what time will they next ring together?</li>
+</ol>
+
+<h3>C. Fractions</h3>
+<ol start="21">
+<li>Identify the numerator and denominator of 7/9.</li>
+<li>Simplify 24/36 to its lowest terms.</li>
+<li>Convert 17/5 into a mixed number.</li>
+<li>Convert 3¾ into an improper fraction.</li>
+<li>Arrange ½, ⅔ and ¾ in ascending order.</li>
+<li>Calculate 3/8 + 2/8.</li>
+<li>Calculate ⅔ + ¼.</li>
+<li>Calculate ⅚ − ⅓.</li>
+<li>Calculate ⅗ × ⁴/₉.</li>
+<li>Calculate ⅘ ÷ ⅔.</li>
+</ol>
+
+<h3>D. Decimals</h3>
+<ol start="31">
+<li>State the place value of 6 in 14.263.</li>
+<li>Write 0.75 as a fraction in its simplest form.</li>
+<li>Arrange 0.8, 0.08, 0.88 and 0.808 in ascending order.</li>
+<li>Calculate 14.75 + 8.6.</li>
+<li>Calculate 20 − 7.85.</li>
+<li>Calculate 3.2 × 1.5.</li>
+<li>Calculate 8.4 ÷ 0.7.</li>
+<li>Evaluate 0.056 × 100.</li>
+<li>Evaluate 7.25 ÷ 10.</li>
+<li>A learner buys items costing KSh 45.75 and KSh 68.50. How much does the learner spend altogether?</li>
+</ol>
+
+<h3>E. Squares and Square Roots</h3>
+<ol start="41">
+<li>Find 9².</li>
+<li>Find 15².</li>
+<li>Find √144.</li>
+<li>Find √225.</li>
+<li>Is 121 a perfect square? Give its square root.</li>
+<li>Calculate (⅗)².</li>
+<li>Find √(25/49).</li>
+<li>Calculate 0.6².</li>
+<li>Find √1.44.</li>
+<li>A square playground has an area of 196 m². Find the length of one side.</li>
+</ol>
+
+<h2>ASSESSMENT ANSWER GUIDE</h2>
+<p><b>Whole Numbers:</b></p>
+<ol>
+<li>Six million, three hundred and four thousand and twenty-five.</li>
+<li>Ten-thousands.</li>
+<li>40,000.</li>
+<li>40,659; 45,096; 45,609; 46,509.</li>
+<li>680,000.</li>
+<li>475,134.</li>
+<li>441,325.</li>
+<li>864.</li>
+<li>72.</li>
+<li>80, 160.</li>
+</ol>
+<p><b>Factors:</b></p>
+<ol start="11">
+<li>1, 2, 3, 4, 6, 8, 12, 24.</li>
+<li>7, 14, 21, 28, 35, 42.</li>
+<li>Yes. Digit sum = 5 + 4 + 3 + 6 = 18, divisible by 3.</li>
+<li>Prime.</li>
+<li>2³ × 3².</li>
+<li>15.</li>
+<li>36.</li>
+<li>12.</li>
+<li>60.</li>
+<li>8:24 a.m.</li>
+</ol>
+<p><b>Fractions:</b></p>
+<ol start="21">
+<li>Numerator 7; denominator 9.</li>
+<li>⅔.</li>
+<li>3⅖.</li>
+<li>15/4.</li>
+<li>½, ⅔, ¾.</li>
+<li>⅝.</li>
+<li>11/12.</li>
+<li>½.</li>
+<li>4/15.</li>
+<li>6/5 or 1⅕.</li>
+</ol>
+<p><b>Decimals:</b></p>
+<ol start="31">
+<li>Hundredths.</li>
+<li>¾.</li>
+<li>0.08; 0.8; 0.808; 0.88.</li>
+<li>23.35.</li>
+<li>12.15.</li>
+<li>4.8.</li>
+<li>12.</li>
+<li>5.6.</li>
+<li>0.725.</li>
+<li>KSh 114.25.</li>
+</ol>
+<p><b>Squares and Square Roots:</b></p>
+<ol start="41">
+<li>81.</li>
+<li>225.</li>
+<li>12.</li>
+<li>15.</li>
+<li>Yes; √121 = 11.</li>
+<li>9/25.</li>
+<li>5/7.</li>
+<li>0.36.</li>
+<li>1.2.</li>
+<li>14 m.</li>
+</ol>
+
+<h2>END-OF-TERM REVISION CHALLENGE</h2>
+<ol>
+<li>A school has 1,248 learners. They are arranged into equal groups of 24. How many groups are formed?</li>
+<li>Find the HCF and LCM of 18 and 30.</li>
+<li>A water tank is ⅘ full. If its capacity is 250 litres, how much water does it contain?</li>
+<li>A trader buys 12 exercise books at KSh 42.50 each. Find the total cost.</li>
+<li>Evaluate 48 − 6 × (5 + 2).</li>
+<li>Find the square root of 324.</li>
+<li>A square plot has a side of 15 m. Find its area.</li>
+<li>Two buses leave a station every 15 minutes and 20 minutes. If they leave together at 9:00 a.m., when will they next leave together?</li>
+<li>Calculate 2⅓ + 1⅙.</li>
+<li>A learner scores 37 out of 50. Express the score as a simplified fraction and as a decimal.</li>
+</ol>
+<p><b>Revision answers:</b> 1. 52 groups. 2. HCF = 6; LCM = 90. 3. 200 litres. 4. KSh 510. 5. 6. 6. 18. 7. 225 m². 8. 10:00 a.m. 9. 3½. 10. 37/50 and 0.74.</p>
+<p><b>Study guidance:</b> Read one sub-strand at a time, copy and solve the worked examples without looking at the solutions, then attempt the assessment. Correct mistakes and repeat questions that you found difficult.</p>
+`;
+
  "Integrated Science":[
   {q:"Which variable is deliberately changed in an investigation?",o:["Dependent variable","Controlled variable","Independent variable","Responding measurement"],a:2,e:"The independent variable is the factor deliberately changed by the investigator."},
   {q:"Which state of matter has a fixed volume but takes the shape of its container?",o:["Solid","Liquid","Gas","All states"],a:1,e:"A liquid has a fixed volume but flows to take the shape of its container."},
@@ -301,12 +699,130 @@ const quizBank={
   {q:"Food security includes access to:",o:["Only one crop","Sufficient, safe and nutritious food","Only imported food","Food during harvest alone"],a:1,e:"Food security includes reliable access to sufficient, safe and nutritious food."}
  ]
 };
-function buildQuiz(){const s=document.getElementById('quizSubject').value;const qs=quizBank[s];document.getElementById('quizResult').innerHTML='';document.getElementById('quizContent').innerHTML=qs.map((q,i)=>`<div class="question" data-q="${i}"><p>${i+1}. ${q.q}</p>${q.o.map((o,j)=>`<label class="option"><input type="radio" name="q${i}" value="${j}"> ${String.fromCharCode(65+j)}. ${o}</label>`).join('')}<div class="feedback" id="fb${i}"></div></div>`).join('')}
-document.getElementById('quizSubject').addEventListener('change',buildQuiz);buildQuiz();
-document.getElementById('markQuiz').addEventListener('click',()=>{const s=document.getElementById('quizSubject').value,qs=quizBank[s];let score=0,answered=0;qs.forEach((q,i)=>{const chosen=document.querySelector(`input[name="q${i}"]:checked`);const fb=document.getElementById(`fb${i}`);if(chosen){answered++;if(Number(chosen.value)===q.a){score++;fb.textContent='✓ Correct. '+q.e;fb.style.color='#17633b'}else{fb.textContent='✗ Review: '+q.e;fb.style.color='#a33'}}else{fb.textContent='Not answered. '+q.e;fb.style.color='#a33'}});const pct=Math.round(score/qs.length*100);document.getElementById('quizResult').innerHTML=`<div class="score">Your score: ${score} / ${qs.length} (${pct}%)</div><p>You answered ${answered} of ${qs.length} questions.</p><p>${pct>=80?'Excellent work. Keep extending your understanding.':pct>=50?'Good effort. Review the feedback and practise the weaker areas.':'Keep practising. Read the notes again and retry the quiz.'}</p>`;});
-document.getElementById('resetQuiz').addEventListener('click',buildQuiz);
-document.getElementById('registrationForm').addEventListener('submit',function(e){e.preventDefault();const name=document.getElementById('name').value.trim(),phone=document.getElementById('phone').value.trim(),grade=document.getElementById('grade').value,programme=document.getElementById('programme').value,message=document.getElementById('message').value.trim();const text="NEW LEARNER REGISTRATION\n\nName: "+name+"\nParent/Guardian Phone: "+phone+"\nGrade: "+grade+"\nProgramme: "+programme+"\nAdditional Information: "+message;window.open("https://wa.me/254741274957?text="+encodeURIComponent(text),"_blank");});
+ 
+const grade7MathTerm1Quiz = [
+{q:"What is the total value of digit 8 in 4,582,731?",o:["8,000","80,000","800,000","800"],a:1,e:"The digit 8 is in the ten-thousands position: 8 × 10,000 = 80,000."},
+{q:"Round 684,729 to the nearest ten thousand.",o:["680,000","685,000","690,000","600,000"],a:0,e:"The thousands digit is 4, so the ten-thousands digit remains 8. The result is 680,000."},
+{q:"Calculate 345,678 + 129,456.",o:["465,134","475,134","475,124","485,134"],a:1,e:"345,678 + 129,456 = 475,134."},
+{q:"Evaluate 900,000 − 458,675.",o:["451,325","441,325","441,425","451,425"],a:1,e:"900,000 − 458,675 = 441,325."},
+{q:"What is 36 × 24?",o:["824","844","864","884"],a:2,e:"36 × 24 = 36 × (20 + 4) = 720 + 144 = 864."},
+{q:"Calculate 864 ÷ 12.",o:["62","68","72","76"],a:2,e:"12 × 72 = 864, so 864 ÷ 12 = 72."},
+{q:"Find the next number in the sequence 3, 6, 12, 24, ...",o:["30","36","42","48"],a:3,e:"Each term is multiplied by 2. Therefore, 24 × 2 = 48."},
+{q:"Evaluate 18 + 6 × 4.",o:["96","42","72","24"],a:1,e:"Multiplication comes before addition: 6 × 4 = 24; 18 + 24 = 42."},
 
+{q:"Which list contains all the positive factors of 18?",o:["1, 2, 3, 6, 9, 18","1, 2, 4, 6, 9, 18","1, 3, 5, 6, 9, 18","2, 3, 6, 9, 18"],a:0,e:"Each listed number divides 18 exactly: 1, 2, 3, 6, 9 and 18."},
+{q:"Which of the following is a prime number?",o:["21","27","29","33"],a:2,e:"29 has exactly two positive factors: 1 and 29."},
+{q:"Is 4,572 divisible by 3?",o:["No, because it is even","Yes, because its digit sum is 18","No, because it ends in 2","Yes, because it ends in 2"],a:1,e:"4 + 5 + 7 + 2 = 18. Since 18 is divisible by 3, 4,572 is divisible by 3."},
+{q:"Express 60 as a product of prime factors.",o:["2 × 3 × 10","2² × 3 × 5","2 × 3² × 5","2² × 5²"],a:1,e:"60 = 2 × 2 × 3 × 5 = 2² × 3 × 5."},
+{q:"Find the HCF of 24 and 36.",o:["6","8","12","18"],a:2,e:"The greatest number that divides both 24 and 36 exactly is 12."},
+{q:"Find the LCM of 6 and 8.",o:["12","18","24","48"],a:2,e:"Multiples first common to 6 and 8 include 24. It is the smallest common positive multiple."},
+{q:"Two bells ring every 4 minutes and 6 minutes. After how many minutes will they ring together again?",o:["8","10","12","24"],a:2,e:"LCM(4,6) = 12, so they next ring together after 12 minutes."},
+{q:"Find the HCF of 30 and 45.",o:["5","10","15","30"],a:2,e:"The common factors include 1, 3, 5 and 15. The greatest is 15."},
+
+{q:"In the fraction 7/9, which number is the denominator?",o:["7","9","16","2"],a:1,e:"The denominator is the bottom number of a fraction. In 7/9 it is 9."},
+{q:"Simplify 18/24.",o:["2/3","3/4","4/5","6/8"],a:1,e:"Divide the numerator and denominator by 6: 18/24 = 3/4."},
+{q:"Convert 17/5 into a mixed number.",o:["2 2/5","3 1/5","3 2/5","4 1/5"],a:2,e:"17 ÷ 5 gives quotient 3 and remainder 2. Therefore, 17/5 = 3 2/5."},
+{q:"Calculate 1/2 + 1/3.",o:["2/5","2/6","5/6","1/6"],a:2,e:"Using denominator 6: 1/2 = 3/6 and 1/3 = 2/6. Their sum is 5/6."},
+{q:"Calculate 5/6 − 1/3.",o:["1/2","2/3","4/3","1/3"],a:0,e:"Convert 1/3 to 2/6. Then 5/6 − 2/6 = 3/6 = 1/2."},
+{q:"Calculate 2/3 × 3/5.",o:["2/5","5/2","6/8","1/5"],a:0,e:"Multiply numerators and denominators: 6/15. Simplifying gives 2/5."},
+{q:"Calculate 4/5 ÷ 2/3.",o:["8/15","6/5","5/6","2/5"],a:1,e:"Multiply by the reciprocal: 4/5 × 3/2 = 12/10 = 6/5."},
+{q:"Find 3/4 of 28 learners.",o:["7","14","21","24"],a:2,e:"3/4 × 28 = 3 × 7 = 21 learners."},
+
+{q:"What is the place value of 8 in 6.284?",o:["Units","Tenths","Hundredths","Thousandths"],a:2,e:"The first digit after the decimal is tenths; the second is hundredths. The 8 represents 0.08."},
+{q:"Which decimal is the greatest?",o:["0.07","0.7","0.077","0.707"],a:3,e:"0.707 is greater than 0.700, 0.077 and 0.070."},
+{q:"Calculate 3.75 + 2.8.",o:["5.55","6.45","6.55","6.65"],a:2,e:"Write 2.8 as 2.80. Then 3.75 + 2.80 = 6.55."},
+{q:"Calculate 8.4 − 3.76.",o:["4.54","4.64","5.36","5.64"],a:1,e:"8.40 − 3.76 = 4.64."},
+{q:"Calculate 2.5 × 0.4.",o:["0.1","0.9","1","10"],a:2,e:"25 × 4 = 100. There are two decimal places in the factors, so the product is 1.00 = 1."},
+{q:"Calculate 7.2 ÷ 0.6.",o:["1.2","6","12","120"],a:2,e:"Multiply both numbers by 10: 72 ÷ 6 = 12."},
+{q:"Evaluate 0.35 × 100.",o:["0.0035","0.35","3.5","35"],a:3,e:"Multiplying by 100 moves the digits two place values to the left in the written number: 0.35 × 100 = 35."},
+{q:"Convert 5.6 kilograms into grams.",o:["56 g","560 g","5,600 g","56,000 g"],a:2,e:"1 kilogram = 1,000 grams. Therefore, 5.6 × 1,000 = 5,600 grams."},
+
+{q:"Find the square of 12.",o:["24","124","144","169"],a:2,e:"12² = 12 × 12 = 144."},
+{q:"Find the square root of 169.",o:["11","12","13","14"],a:2,e:"13 × 13 = 169, so √169 = 13."},
+{q:"Which of these is a perfect square?",o:["120","144","150","180"],a:1,e:"144 = 12 × 12, so it is a perfect square."},
+{q:"Calculate 0.5².",o:["0.10","0.20","0.25","1.00"],a:2,e:"0.5 × 0.5 = 0.25."},
+{q:"Find the square root of 0.81.",o:["0.08","0.09","0.9","9"],a:2,e:"0.9 × 0.9 = 0.81, so √0.81 = 0.9."},
+{q:"Calculate (3/4)².",o:["3/8","6/8","9/16","9/8"],a:2,e:"Square the numerator and denominator: 3²/4² = 9/16."},
+{q:"Evaluate √144 + √81.",o:["17","20","21","25"],a:2,e:"√144 = 12 and √81 = 9. Their sum is 21."},
+{q:"A square has a side length of 8 cm. What is its area?",o:["16 cm²","32 cm²","64 cm²","80 cm²"],a:2,e:"Area of a square = side × side = 8 × 8 = 64 cm²."}
+];
+
+
+function getActiveQuizQuestions(){
+ const grade=document.getElementById('quizGrade').value;
+ const subject=document.getElementById('quizSubject').value;
+
+ if(grade==='Grade 7' && subject==='Mathematics'){
+  return grade7MathTerm1Quiz;
+ }
+
+ return quizBank[subject] || [];
+}
+
+function buildQuiz(){
+ const qs=getActiveQuizQuestions();
+
+ document.getElementById('quizResult').innerHTML='';
+ document.getElementById('quizContent').innerHTML=qs.map((q,i)=>`
+  <div class="question" data-q="${i}">
+   <p>${i+1}. ${q.q}</p>
+   ${q.o.map((o,j)=>`
+    <label class="option">
+     <input type="radio" name="q${i}" value="${j}">
+     ${String.fromCharCode(65+j)}. ${o}
+    </label>
+   `).join('')}
+   <div class="feedback" id="fb${i}"></div>
+  </div>
+ `).join('');
+
+ document.getElementById('markQuiz').disabled=false;
+}
+
+document.getElementById('quizGrade').addEventListener('change',buildQuiz);
+document.getElementById('quizSubject').addEventListener('change',buildQuiz);
+buildQuiz();
+
+document.getElementById('markQuiz').addEventListener('click',()=>{
+ const qs=getActiveQuizQuestions();
+ let score=0;
+ let answered=0;
+
+ qs.forEach((q,i)=>{
+  const chosen=document.querySelector(`input[name="q${i}"]:checked`);
+  const fb=document.getElementById(`fb${i}`);
+
+  if(chosen){
+   answered++;
+   if(Number(chosen.value)===q.a){
+    score++;
+    fb.textContent='✓ Correct. '+q.e;
+    fb.style.color='#17633b';
+   }else{
+    fb.textContent='✗ Review: '+q.e;
+    fb.style.color='#a33';
+   }
+  }else{
+   fb.textContent='Not answered. '+q.e;
+   fb.style.color='#a33';
+  }
+ });
+
+ const pct=qs.length ? Math.round(score/qs.length*100) : 0;
+
+ document.getElementById('quizResult').innerHTML=`
+  <div class="score">Your score: ${score} / ${qs.length} (${pct}%)</div>
+  <p>You answered ${answered} of ${qs.length} questions.</p>
+  <p>${
+   pct>=80?'Excellent work. Keep extending your understanding.':
+   pct>=50?'Good effort. Review the feedback and practise the weaker areas.':
+   'Keep practising. Read the notes again and retry the quiz.'
+  }</p>
+ `;
+
+ document.getElementById('quizResult').scrollIntoView({behavior:'smooth',block:'nearest'});
+});
+document.getElementById('resetQuiz').addEventListener('click',buildQuiz);
 // GRADE 7 INTEGRATED SCIENCE - TERM 3 EXPANDED NOTES
 noteData["Integrated Science"]["Grade 7"] = `
 <h2>GRADE 7 INTEGRATED SCIENCE – TERM 3</h2>
