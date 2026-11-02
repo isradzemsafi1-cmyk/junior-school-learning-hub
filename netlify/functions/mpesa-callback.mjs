@@ -1,81 +1,258 @@
 
 export default async (request) => {
-  const headers = {
-    "Content-Type": "application/json"
-  };
-
-  const respond = (data) =>
+  const respond = (status, data) =>
     new Response(JSON.stringify(data), {
-      status: 200,
-      headers
+      status,
+      headers: { "Content-Type": "application/json" }
     });
 
   if (request.method !== "POST") {
-    return new Response("Method not allowed", {
-      status: 405
+    return respond(405, {
+      success: false,
+      message: "Method not allowed."
     });
   }
+
+  const supabaseUrl = Netlify.env.get("SUPABASE_URL");
+  const serviceKey = Netlify.env.get("SUPABASE_SERVICE_ROLE_KEY");
+  const consumerKey = Netlify.env.get("MPESA_CONSUMER_KEY");
+  const consumerSecret = Netlify.env.get("MPESA_CONSUMER_SECRET");
+  const shortcode = Netlify.env.get("MPESA_SHORTCODE");
+  const passkey = Netlify.env.get("MPESA_PASSKEY");
+
+  if (!supabaseUrl || !serviceKey || !consumerKey ||
+      !consumerSecret || !shortcode || !passkey) {
+    console.error("Callback configuration is incomplete.");
+    return respond(500, { success: false });
+  }
+
+  const catalog = {
+    online_tuition: 100,
+    premium_quizzes: 20,
+    grade8_notes: 30,
+    grade9_notes: 30
+  };
+
+  const dbHeaders = {
+    apikey: serviceKey,
+    Authorization: `Bearer ${serviceKey}`,
+    "Content-Type": "application/json"
+  };
+
+  const normalizePhone = (value) => {
+    let phone = String(value || "").replace(/[\s+-]/g, "");
+    if (phone.startsWith("0")) phone = "254" + phone.slice(1);
+    return phone;
+  };
+
+  const getTimestamp = () => {
+    const parts = new Intl.DateTimeFormat("en-GB", {
+      timeZone: "Africa/Nairobi",
+      year: "numeric",
+      month: "2-digit",
+      day: "2-digit",
+      hour: "2-digit",
+      minute: "2-digit",
+      second: "2-digit",
+      hourCycle: "h23"
+    }).formatToParts(new Date());
+
+    const get = (type) =>
+      parts.find(part => part.type === type).value;
+
+    return get("year") + get("month") + get("day") +
+      get("hour") + get("minute") + get("second");
+  };
 
   try {
     const body = await request.json();
     const callback = body?.Body?.stkCallback;
 
-    if (!callback) {
-      console.error("Invalid M-Pesa callback structure");
-
-      return respond({
-        ResultCode: 0,
-        ResultDesc: "Callback received"
-      });
+    if (!callback?.CheckoutRequestID) {
+      console.error("Invalid M-Pesa callback received.");
+      return respond(400, { success: false });
     }
 
-    const checkoutRequestId = callback.CheckoutRequestID;
-    const merchantRequestId = callback.MerchantRequestID;
-    const resultCode = callback.ResultCode;
-    const resultDescription = callback.ResultDesc;
+    const checkoutId = callback.CheckoutRequestID;
+    const merchantId = callback.MerchantRequestID || "";
+    const callbackCode = String(callback.ResultCode);
 
-    console.log("M-Pesa callback received", {
-      checkoutRequestId,
-      merchantRequestId,
-      resultCode,
-      resultDescription
-    });
+    const paymentResponse = await fetch(
+      `${supabaseUrl}/rest/v1/payments?checkout_request_id=eq.${encodeURIComponent(checkoutId)}&select=*`,
+      { headers: dbHeaders }
+    );
 
-    if (Number(resultCode) === 0) {
-      const items =
-        callback.CallbackMetadata?.Item || [];
-
-      const receipt = items.find(
-        item => item.Name === "MpesaReceiptNumber"
-      )?.Value;
-
-      const amount = items.find(
-        item => item.Name === "Amount"
-      )?.Value;
-
-      const phone = items.find(
-        item => item.Name === "PhoneNumber"
-      )?.Value;
-
-      console.log("Successful payment callback received", {
-        checkoutRequestId,
-        receipt,
-        amount,
-        phone
-      });
+    if (!paymentResponse.ok) {
+      throw new Error("Could not retrieve payment record.");
     }
 
-    return respond({
+    const payments = await paymentResponse.json();
+    const payment = payments[0];
+
+    if (!payment) {
+      console.error("No matching payment record:", checkoutId);
+      return respond(200, { ResultCode: 0, ResultDesc: "Received" });
+    }
+if (payment.status === "success") {
+  return respond(200, {
+    ResultCode: 0,
+    ResultDesc: "Payment already processed."
+  });
+}
+    // Record unsuccessful transactions without granting access.
+    if (callbackCode !== "0") {
+      await fetch(
+        `${supabaseUrl}/rest/v1/payments?id=eq.${payment.id}`,
+        {
+          method: "PATCH",
+          headers: dbHeaders,
+          body: JSON.stringify({
+            status: "failed",
+            result_code: callbackCode,
+            result_desc: callback.ResultDesc || "Payment was not completed."
+          })
+        }
+      );
+
+      return respond(200, { ResultCode: 0, ResultDesc: "Received" });
+    }
+
+    // Do not process an unexpected product or amount.
+    if (
+      !Object.prototype.hasOwnProperty.call(catalog, payment.product_id) ||
+      Number(payment.amount) !== catalog[payment.product_id]
+    ) {
+      throw new Error("Payment product or amount does not match.");
+    }
+
+    // Extract details supplied in the successful STK callback.
+    const metadata = callback.CallbackMetadata?.Item || [];
+    const getMetadata = (name) =>
+      metadata.find(item => item.Name === name)?.Value;
+
+    const receipt = getMetadata("MpesaReceiptNumber");
+    const paidAmount = Number(getMetadata("Amount"));
+    const paidPhone = normalizePhone(getMetadata("PhoneNumber"));
+
+    if (
+      !receipt ||
+      paidAmount !== Number(payment.amount) ||
+      paidPhone !== normalizePhone(payment.phone)
+    ) {
+      throw new Error("Payment details could not be matched.");
+    }
+
+    // Obtain a Safaricom access token.
+    const credentials = Buffer.from(
+      `${consumerKey}:${consumerSecret}`
+    ).toString("base64");
+
+    const tokenResponse = await fetch(
+      "https://sandbox.safaricom.co.ke/oauth/v1/generate?grant_type=client_credentials",
+      {
+        headers: { Authorization: `Basic ${credentials}` }
+      }
+    );
+
+    const tokenData = await tokenResponse.json();
+
+    if (!tokenResponse.ok || !tokenData.access_token) {
+      throw new Error("Could not authenticate with Safaricom.");
+    }
+
+    // Independently query Safaricom for the transaction result.
+    const timestamp = getTimestamp();
+
+    const password = Buffer.from(
+      shortcode + passkey + timestamp
+    ).toString("base64");
+
+    const queryResponse = await fetch(
+      "https://sandbox.safaricom.co.ke/mpesa/stkpushquery/v1/query",
+      {
+        method: "POST",
+        headers: {
+          Authorization: `Bearer ${tokenData.access_token}`,
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+          BusinessShortCode: shortcode,
+          Password: password,
+          Timestamp: timestamp,
+          CheckoutRequestID: checkoutId
+        })
+      }
+    );
+
+    const queryResult = await queryResponse.json();
+
+    if (
+      !queryResponse.ok ||
+      String(queryResult.ResultCode) !== "0" ||
+      queryResult.CheckoutRequestID !== checkoutId
+    ) {
+      console.error("Safaricom transaction verification is pending or unsuccessful.");
+      return respond(200, { ResultCode: 0, ResultDesc: "Received" });
+    }
+
+    // Save the verified payment.
+    const paymentUpdate = await fetch(
+      `${supabaseUrl}/rest/v1/payments?id=eq.${payment.id}`,
+      {
+        method: "PATCH",
+        headers: dbHeaders,
+        body: JSON.stringify({
+          status: "success",
+          merchant_request_id: merchantId || payment.merchant_request_id,
+          mpesa_receipt: receipt,
+          result_code: "0",
+          result_desc: "Payment successfully verified."
+        })
+      }
+    );
+
+    if (!paymentUpdate.ok) {
+      throw new Error("Could not update the verified payment.");
+    }
+
+    // Grant or renew this product for exactly 24 hours.
+    const expiry = new Date(Date.now() + 24 * 60 * 60 * 1000);
+
+    const entitlementResponse = await fetch(
+      `${supabaseUrl}/rest/v1/entitlements?on_conflict=user_id,product_id`,
+      {
+        method: "POST",
+        headers: {
+          ...dbHeaders,
+          Prefer: "resolution=merge-duplicates,return=minimal"
+        },
+        body: JSON.stringify({
+          user_id: payment.user_id,
+          product_id: payment.product_id,
+          payment_id: payment.id,
+          active: true,
+          expires_at: expiry.toISOString()
+        })
+      }
+    );
+
+    if (!entitlementResponse.ok) {
+      throw new Error("Payment verified, but access activation needs attention.");
+    }
+
+    console.log("Verified payment and activated product:", payment.product_id);
+
+    return respond(200, {
       ResultCode: 0,
-      ResultDesc: "Callback received successfully"
+      ResultDesc: "Payment processed successfully."
     });
 
   } catch (error) {
-    console.error("Callback processing error:", error.message);
+    console.error("M-Pesa callback processing error:", error.message);
 
-    return respond({
+    return respond(200, {
       ResultCode: 0,
-      ResultDesc: "Callback received"
+      ResultDesc: "Callback received."
     });
   }
 };
