@@ -1421,6 +1421,25 @@ buildQuiz();
 .dash-badge{display:inline-block;padding:4px 9px;border-radius:20px;background:#e8f8ef;color:#137448;font-size:11px;font-weight:800}
 .dash-note{background:linear-gradient(100deg,#fff7df,#fff);border:1px solid #ffe5a3;padding:16px;border-radius:14px;color:#684d0a}
 .dash-foot{color:#64748b;font-size:12px;text-align:center;margin:14px}
+
+/* Learner dashboard upgrade: weekly goal and achievements */
+.dash-focus{display:grid;grid-template-columns:1.15fr .85fr;gap:16px;margin:18px 0}
+.dash-focus-card{background:#fff;border:1px solid #e0e9f3;border-radius:18px;padding:20px;box-shadow:0 7px 22px #0c326b0b}
+.dash-focus-card h3{color:#102b50;margin:0 0 8px;font-size:18px}
+.dash-focus-card p{color:#64748b;font-size:13px}
+.dash-goal-head{display:flex;align-items:center;justify-content:space-between;gap:10px;margin:13px 0 9px}
+.dash-goal-count{font-weight:900;color:#0756a5;font-size:20px;white-space:nowrap}
+.dash-goal-track{height:13px;background:#e8eef6;border-radius:20px;overflow:hidden}
+.dash-goal-track span{display:block;height:100%;width:0;background:linear-gradient(90deg,#0877d8,#13b981);border-radius:20px;transition:width .35s ease}
+.dash-achievements{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:9px;margin-top:13px}
+.dash-achievement{padding:12px 8px;text-align:center;border:1px solid #e4ebf5;border-radius:13px;background:#f8fbff;opacity:.48;filter:grayscale(1)}
+.dash-achievement.earned{opacity:1;filter:none;background:#fff8df;border-color:#ffe3a0}
+.dash-achievement span{display:block;font-size:25px;margin-bottom:3px}
+.dash-achievement strong{display:block;color:#243247;font-size:11px}
+.dash-achievement small{display:block;color:#718096;font-size:10px}
+@media(max-width:850px){.dash-focus{grid-template-columns:1fr}}
+@media(max-width:520px){.dash-achievements{grid-template-columns:repeat(3,minmax(0,1fr))}.dash-focus-card{padding:16px}}
+
 @media(max-width:850px){.auth-shell,.dash-grid{grid-template-columns:1fr}.auth-art{min-height:260px}.dash-stats{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:520px){#learner-account{padding:12px!important}.auth-forms{padding:22px}.auth-art{padding:28px 23px}.dash-top{padding:22px}.dash-stats{gap:9px}.dash-stat{padding:13px;min-height:115px}.dash-subjects{grid-template-columns:1fr}.dash-progress-row{grid-template-columns:110px 1fr 35px;font-size:11px}}
 </style>
@@ -1474,6 +1493,25 @@ buildQuiz();
    <div class="dash-stat" style="--bg:#eafaf2;--bd:#bcebd2;--fg:#07945d"><div class="ico">🧠</div><strong id="stat-attempts">0</strong><small>Quizzes completed</small></div>
    <div class="dash-stat" style="--bg:#fff6df;--bd:#ffe2a0;--fg:#b77908"><div class="ico">⭐</div><strong id="stat-average">—</strong><small>Average quiz score</small></div>
    <div class="dash-stat" style="--bg:#f2eaff;--bd:#d9c2ff;--fg:#7136c9"><div class="ico">🏆</div><strong id="stat-best">—</strong><small>Personal best</small></div>
+  </div>
+
+  <div class="dash-focus">
+   <div class="dash-focus-card">
+    <h3>🎯 Your weekly learning goal</h3>
+    <p>Try to complete five quizzes every seven days. Every attempt helps you build confidence.</p>
+    <div class="dash-goal-head"><span>This week's completed quizzes</span><strong class="dash-goal-count" id="weekly-goal-count">0 / 5</strong></div>
+    <div class="dash-goal-track" role="progressbar" aria-label="Weekly quiz goal" aria-valuemin="0" aria-valuemax="5" aria-valuenow="0" id="weekly-goal-progress"><span id="weekly-goal-fill"></span></div>
+    <p id="weekly-goal-message" style="margin-top:9px">Your weekly progress will appear here after your first quiz.</p>
+   </div>
+   <div class="dash-focus-card">
+    <h3>🏅 Learning achievements</h3>
+    <p>Earn milestones as you practise and improve.</p>
+    <div class="dash-achievements" id="learner-achievements">
+     <div class="dash-achievement"><span>🌱</span><strong>First Step</strong><small>1 quiz</small></div>
+     <div class="dash-achievement"><span>🔥</span><strong>Practice Star</strong><small>5 quizzes</small></div>
+     <div class="dash-achievement"><span>⭐</span><strong>High Achiever</strong><small>80% best</small></div>
+    </div>
+   </div>
   </div>
 
   <div class="dash-grid">
@@ -1543,6 +1581,30 @@ buildQuiz();
       if (error) throw error;
       const attempts = data || [];
       document.getElementById("stat-attempts").textContent = attempts.length;
+
+      // Weekly goal is based on attempts recorded in the last seven days.
+      const sevenDaysAgo = Date.now() - (7 * 24 * 60 * 60 * 1000);
+      const weeklyCount = attempts.filter(item => new Date(item.created_at).getTime() >= sevenDaysAgo).length;
+      const weeklyTarget = 5;
+      const weeklyPercent = Math.min(100, Math.round((weeklyCount / weeklyTarget) * 100));
+      document.getElementById("weekly-goal-count").textContent = `${Math.min(weeklyCount, weeklyTarget)} / ${weeklyTarget}`;
+      document.getElementById("weekly-goal-fill").style.width = weeklyPercent + "%";
+      document.getElementById("weekly-goal-progress").setAttribute("aria-valuenow", String(Math.min(weeklyCount, weeklyTarget)));
+      document.getElementById("weekly-goal-message").textContent = weeklyCount >= weeklyTarget
+        ? "Amazing work! You have reached your weekly quiz goal. Keep it up! 🎉"
+        : `${weeklyTarget - weeklyCount} more ${weeklyTarget - weeklyCount === 1 ? "quiz" : "quizzes"} to reach this week's goal. You can do it!`;
+
+      const bestRecorded = attempts.length ? Math.max(...attempts.map(item => Number(item.percentage || 0))) : 0;
+      const achievementItems = [
+        { earned: attempts.length >= 1, label: "First Step" },
+        { earned: attempts.length >= 5, label: "Practice Star" },
+        { earned: bestRecorded >= 80, label: "High Achiever" }
+      ];
+      document.querySelectorAll("#learner-achievements .dash-achievement").forEach((item, index) => {
+        item.classList.toggle("earned", Boolean(achievementItems[index]?.earned));
+        item.setAttribute("aria-label", achievementItems[index].label + (achievementItems[index].earned ? ", achieved" : ", not yet achieved"));
+      });
+
       if (attempts.length) {
         const avg = Math.round(attempts.reduce((sum, item) => sum + Number(item.percentage || 0), 0) / attempts.length);
         const best = Math.max(...attempts.map(item => Number(item.percentage || 0)));
@@ -1561,6 +1623,11 @@ buildQuiz();
           return `<div class="dash-progress-row"><span>${safeText(subject)}</span><div class="dash-bar"><span style="width:${mean}%;background:${colors[i]}"></span></div><strong>${rows.length ? mean+"%" : "—"}</strong></div>`;
         }).join("");
       } else {
+        document.getElementById("weekly-goal-count").textContent = "0 / 5";
+        document.getElementById("weekly-goal-fill").style.width = "0%";
+        document.getElementById("weekly-goal-progress").setAttribute("aria-valuenow", "0");
+        document.getElementById("weekly-goal-message").textContent = "Complete your first quiz to begin your weekly goal.";
+        document.querySelectorAll("#learner-achievements .dash-achievement").forEach(item => item.classList.remove("earned"));
         document.getElementById("stat-average").textContent = "—";
         document.getElementById("stat-best").textContent = "—";
         activity.innerHTML = '<div class="dash-empty">🎯 No quizzes yet. Choose a subject and complete your first quiz to start building your progress record!</div>';
