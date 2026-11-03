@@ -32,23 +32,81 @@ select,input,textarea{padding:11px;border:1px solid #cbd5e1;border-radius:7px;fo
 footer{background:var(--navy);color:#fff;padding:32px 7%;text-align:center}footer a{color:var(--gold)}
 form{max-width:620px;margin:auto;background:#fff;padding:22px;border-radius:12px}form input,form select,form textarea{width:100%;margin:7px 0 14px}
 @media(max-width:650px){header{justify-content:center}nav{justify-content:center}.hero{padding:48px 6%}section{padding:35px 5%}}
+
+/* JUNIOR SCHOOL LEARNING HUB — refreshed graphic dashboard theme */
+:root{--hub-navy:#09275b;--hub-blue:#0757b8;--hub-cyan:#10a7d8;--hub-gold:#ffd329;--hub-ink:#102344;--hub-muted:#61718a;--hub-paper:#f3f7ff;--hub-line:#e1e9f6}
+html{scroll-behavior:smooth;scroll-padding-top:92px}
+body{font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",Arial,sans-serif;background:#f4f7ff;color:#142544}
+.site-header{min-height:78px;padding:10px clamp(16px,4vw,58px);display:flex;align-items:center;justify-content:space-between;gap:18px;background:linear-gradient(100deg,#08275e,#0754ae);box-shadow:0 5px 22px #09275b24;border-bottom:3px solid #ffd329}
+.brand-lockup{display:flex;align-items:center;gap:10px;color:#fff;text-decoration:none;font-size:16px;font-weight:800;line-height:1.08;white-space:nowrap}
+.brand-lockup b{color:#ffd329}.brand-lockup small{display:block;font-size:8px;letter-spacing:1.4px;color:#d9eaff;margin-top:6px;font-weight:700}
+.brand-mark{width:48px;height:48px;border-radius:15px;background:linear-gradient(145deg,#fff,#dceeff);display:grid;place-items:center;font-size:27px;box-shadow:0 5px 14px #001b4b55}
+.main-nav{display:flex;align-items:center;justify-content:center;gap:clamp(8px,1.4vw,22px)}.main-nav a{color:#edf6ff;text-decoration:none;font-size:12px;font-weight:750;white-space:nowrap;transition:.2s}.main-nav a:hover{color:#ffd329;transform:translateY(-1px)}
+.header-actions{display:flex;align-items:center;gap:9px}.header-login,.header-join{padding:10px 14px;border-radius:12px;text-decoration:none;font-size:12px;font-weight:850;white-space:nowrap}.header-login{color:#fff;border:1px solid #ffffff55}.header-join{color:#09275b;background:#ffd329;box-shadow:0 5px 12px #001b4b30}
+.hero-showcase{position:relative;text-align:left;padding:48px clamp(18px,5vw,72px) 0;overflow:hidden;background:radial-gradient(circle at 76% 16%,#19b9dc66,transparent 27%),linear-gradient(120deg,#08275e 0%,#0755a9 56%,#087f9d 100%);isolation:isolate}
+.hero-showcase:before{content:"";position:absolute;inset:0;background-image:radial-gradient(#ffffff2b 1px,transparent 1px);background-size:22px 22px;opacity:.25;z-index:-1}
+.hero-inner{width:min(1240px,100%);margin:auto;display:grid;grid-template-columns:1.12fr .88fr;align-items:center;gap:30px;position:relative;z-index:1;min-height:410px}
+.hero-copy{padding:20px 0 42px;color:#fff}.hero-kicker{display:inline-flex;align-items:center;gap:9px;padding:8px 13px;border:1px solid #ffffff42;background:#ffffff13;border-radius:30px;color:#e8f5ff;font-size:10px;font-weight:850;letter-spacing:1.1px}
+.live-dot{width:8px;height:8px;border-radius:50%;background:#ffd329;box-shadow:0 0 0 5px #ffd32928}.hero-copy h1{font-size:clamp(42px,6.2vw,76px);line-height:.99;letter-spacing:-2.7px;color:#fff;margin:23px 0 17px;font-weight:950}.hero-copy h1 span{color:#ffd329;text-shadow:0 5px 20px #001c5540}
+.hero-lead{font-size:clamp(14px,1.5vw,17px);line-height:1.75;color:#e3f2ff;max-width:620px;margin:0 0 25px}.hero-ctas{display:flex;gap:11px;flex-wrap:wrap}.hero-primary,.hero-secondary{margin:0;border-radius:13px;padding:14px 19px;font-size:13px;box-shadow:0 8px 20px #001c5540}.hero-primary{background:#ffd329;color:#09275b}.hero-primary b,.hero-secondary b{font-size:18px}.hero-secondary{background:#ffffff15;border:1px solid #ffffff6b;color:#fff}
+.hero-trust{display:flex;gap:16px;flex-wrap:wrap;margin-top:22px;color:#d8ecff;font-size:11px;font-weight:700}.hero-trust span{white-space:nowrap}
+.founder-feature{position:relative;min-height:420px;display:flex;align-items:flex-end;justify-content:center;padding:16px 18px 0}.founder-glow{position:absolute;width:min(390px,85%);aspect-ratio:1;border-radius:50%;background:radial-gradient(circle,#54d8ee88,#ffd32935 57%,transparent 70%);bottom:15px;filter:blur(3px)}.founder-photo-wrap{position:relative;width:min(410px,100%);height:410px;overflow:hidden;border-radius:180px 180px 24px 24px;border:5px solid #ffffffb8;box-shadow:0 22px 45px #001b4d65;background:linear-gradient(145deg,#e9f7ff,#d7e9f8)}.founder-photo{width:100%;height:100%;object-fit:cover;object-position:center 37%;display:block}
+.founder-caption{position:absolute;left:0;bottom:22px;display:flex;align-items:center;gap:10px;padding:12px 18px;border-radius:15px;background:#fff;color:#09275b;box-shadow:0 10px 25px #001b4b45;border:2px solid #ffd329}.founder-cap-icon{width:34px;height:34px;border-radius:10px;background:#fff2b8;display:grid;place-items:center;color:#a87500;font-size:19px}.founder-caption strong{display:block;font-size:14px}.founder-caption small{display:block;color:#5d6d83;font-size:10px;font-weight:700}.founder-quote{position:absolute;right:0;top:36px;width:190px;padding:16px 17px;background:#fff9d9;color:#233653;border-radius:14px 14px 14px 4px;box-shadow:0 10px 25px #001b4b35;font-size:12px;font-weight:800;line-height:1.5;transform:rotate(3deg)}.founder-quote span{display:block;color:#ed9f00;font-family:Georgia,serif;font-size:34px;line-height:.7}
+.hero-bottom{width:min(1240px,100%);margin:0 auto;min-height:60px;border-top:1px solid #ffffff35;display:flex;align-items:center;justify-content:space-between;gap:14px;color:#fff;font-size:12px}.hero-bottom>div:first-child{font-weight:700}.hero-bottom>div:first-child b{color:#ffd329}.hero-bottom-links{display:flex;gap:18px;flex-wrap:wrap}.hero-bottom-links a{color:#f3f8ff;text-decoration:none;font-size:11px;font-weight:700}.hero-bottom-links a:hover{color:#ffd329}
+.hero-orbit{position:absolute;border:1px solid #ffffff20;border-radius:50%;pointer-events:none}.orbit-one{width:480px;height:480px;right:-170px;top:-220px;box-shadow:0 0 0 35px #ffffff08,0 0 0 75px #ffffff06}.orbit-two{width:260px;height:260px;left:-170px;bottom:-170px}
+.quick-tools{width:min(1240px,calc(100% - 34px));margin:-1px auto 30px;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:12px;position:relative;z-index:2}.quick-tool{min-height:116px;padding:17px 13px;background:#fff;border:1px solid #e4ebf7;border-radius:17px;box-shadow:0 8px 24px #0c326b12;text-decoration:none;display:flex;flex-direction:column;align-items:flex-start;gap:3px;transition:transform .2s,box-shadow .2s}.quick-tool:hover{transform:translateY(-5px);box-shadow:0 14px 26px #0c326b1e}.quick-tool span{font-size:27px;margin-bottom:2px}.quick-tool b{color:#102b50;font-size:13px}.quick-tool small{font-size:10px;color:#728098}.quick-purple{border-top:4px solid #8955e8}.quick-orange{border-top:4px solid #f29a23}.quick-blue{border-top:4px solid #168de0}.quick-green{border-top:4px solid #16a477}.quick-pink{border-top:4px solid #e65c9b}
+section:not(.hero-showcase){padding:52px clamp(18px,5vw,72px)}.heading{margin-bottom:30px}.heading h2{font-size:clamp(24px,3vw,34px);font-weight:900;letter-spacing:-.7px}.heading p{font-size:14px;max-width:780px;margin:5px auto 0;line-height:1.7}
+#grades .cards{grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}#grades .card{min-height:210px}#grades .card:nth-child(1){border-top:5px solid #20ad70}#grades .card:nth-child(2){border-top:5px solid #1888db}#grades .card:nth-child(3){border-top:5px solid #7648d7}
+#grades .card,#subjects .card{border-radius:18px;box-shadow:0 9px 25px #0d326b10;transition:transform .2s,box-shadow .2s}#grades .card:hover,#subjects .card:hover{transform:translateY(-4px);box-shadow:0 15px 30px #0d326b1c}#grades .card h3,#subjects .card h3{font-size:18px;color:#102b50}#grades .card p,#subjects .card p{line-height:1.65}
+#grades .card .btn{border-radius:10px;background:#0a5eb8;color:#fff;margin:15px 0 0;font-size:12px}#grades .card:nth-child(1) .btn{background:#15945d}#grades .card:nth-child(3) .btn{background:#6944c6}
+#subjects{background:linear-gradient(180deg,#edf5ff,#f7f9ff)}#subjects .cards{grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}#subjects .card{min-height:168px;padding:20px;border:1px solid #e1e9f5;border-left:5px solid #ffd329}.subject-coming{position:relative}.subject-tag{display:inline-block;margin-top:10px;padding:4px 9px;border-radius:20px;background:#edf5ff;color:#38618f;font-size:10px;font-weight:800}
+#learning .panel,#quiz .panel,#revision .panel{max-width:1180px;border:1px solid #e1e9f5;border-radius:20px;box-shadow:0 12px 35px #0c326b0d}#learning .notice{border:1px solid #c8e6ff;background:linear-gradient(110deg,#e6f6ff,#f6fbff);border-radius:16px}#quiz{background:#f0f6ff}#quiz .panel{background:#fff}#revision .paper-row h3{color:#102b50}
+#services .cards .card{border-radius:17px;border-top:4px solid #168bd2}#services .cards .card:nth-child(2){border-color:#19a578}#services .cards .card:nth-child(3){border-color:#8c58d9}#services .cards .card:nth-child(4){border-color:#efa32c}
+#learner-account{max-width:1320px!important;padding:28px clamp(14px,3vw,36px)!important}#learner-account .heading h2{font-size:clamp(25px,3vw,34px)}.auth-shell{border-radius:22px;box-shadow:0 16px 40px #09275b16}.auth-art{background:radial-gradient(circle at 82% 10%,#43d4ed 0,transparent 31%),linear-gradient(135deg,#09275b,#075bb7 62%,#08a4a2)}.dash-top{background:radial-gradient(circle at 85% 0%,#28c1d855,transparent 32%),linear-gradient(110deg,#08275e,#0759b6 68%,#078c9b);border:1px solid #ffffff28}.dash-stat{border-radius:18px;box-shadow:0 7px 18px #0c326b0b}.dash-panel{border-radius:18px;box-shadow:0 7px 22px #0c326b0b}.dash-subject{transition:transform .2s,box-shadow .2s}.dash-subject:hover{transform:translateY(-3px);box-shadow:0 8px 18px #0c326b12}
+@media(max-width:1080px){.main-nav{gap:9px}.main-nav a{font-size:11px}.header-actions .header-login{display:none}.hero-inner{grid-template-columns:1fr .8fr}.founder-photo-wrap{height:360px}.founder-feature{min-height:370px}.founder-quote{width:165px;right:-4px}#subjects .cards{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(max-width:760px){.site-header{padding:10px 15px;flex-wrap:wrap}.main-nav{order:3;width:100%;overflow-x:auto;justify-content:flex-start;padding:7px 0 3px}.main-nav a{font-size:11px}.header-actions{margin-left:auto}.header-join{padding:9px 11px}.hero-showcase{padding:30px 18px 0}.hero-inner{grid-template-columns:1fr;gap:0}.hero-copy{padding:18px 0 8px}.hero-copy h1{font-size:clamp(43px,11vw,66px)}.hero-lead{font-size:14px}.founder-feature{min-height:330px;margin-top:0}.founder-photo-wrap{height:320px;width:min(340px,82%)}.founder-quote{right:2px;top:28px;width:145px;font-size:10px}.founder-caption{left:2px;bottom:16px}.hero-bottom{align-items:flex-start;flex-direction:column;padding:13px 0}.hero-bottom-links{gap:12px}.quick-tools{grid-template-columns:repeat(2,minmax(0,1fr));margin-top:16px}.quick-tool:last-child{grid-column:span 2}#grades .cards{grid-template-columns:1fr}.#subjects .cards{grid-template-columns:repeat(2,minmax(0,1fr))}section:not(.hero-showcase){padding:38px 17px}}
+@media(max-width:430px){.brand-lockup{font-size:13px}.brand-mark{width:40px;height:40px}.brand-lockup small{font-size:7px}.header-join{font-size:10px}.hero-trust{gap:8px;flex-direction:column}.founder-feature{min-height:300px}.founder-photo-wrap{height:290px}.founder-quote{width:130px}.#subjects .cards{grid-template-columns:1fr}.quick-tool{min-height:105px}}
+
 </style>
 </head>
 <body>
-<header>
- <div class="logo">🎓 Junior School Learning Hub</div>
- <nav>
-  <a href="#home">Home</a><a href="#grades">Grades</a><a href="#learning">Learning Notes</a>
-  <a href="#quiz">Automated Quiz</a><a href="#revision">Revision Papers</a><a href="#register">Register</a><a href="grade7-complete-detailed-learning-library.html">Grade 7 Full Library</a>
+<header class="site-header">
+ <a class="brand-lockup" href="#home" aria-label="Junior School Learning Hub home"><span class="brand-mark">🎓</span><span>Junior School <b>Learning Hub</b><small>LEARN • PRACTISE • REVISE • EXCEL</small></span></a>
+ <nav class="main-nav" aria-label="Main navigation">
+  <a href="#home">Home</a><a href="#grades">Grades</a><a href="#subjects">Subjects</a><a href="#learning">Study Notes</a><a href="#quiz">Quizzes</a><a href="#revision">Resources</a><a href="#services">Tuition</a><a href="#learner-account">My Dashboard</a>
  </nav>
+ <div class="header-actions"><a class="header-login" href="#learner-account">Log in</a><a class="header-join" href="#learner-account">Join free <span>↗</span></a></div>
 </header>
 
-<div class="hero" id="home">
- <h1>Learn Today. Lead Tomorrow.</h1>
- <p>Quality CBC-aligned learning support for Grades 7–9. Explore detailed notes, practise with instant-feedback quizzes and prepare confidently for school-based assessments.</p>
- <a class="btn" href="#learning">Explore Learning Notes</a>
- <a class="btn blue" href="#quiz">Try an Automated Quiz</a>
-</div>
+<main id="home">
+<section class="hero hero-showcase">
+ <div class="hero-orbit orbit-one"></div><div class="hero-orbit orbit-two"></div>
+ <div class="hero-inner">
+  <div class="hero-copy">
+   <div class="hero-kicker"><span class="live-dot"></span> CBC / CBE LEARNING • GRADES 7–9</div>
+   <h1>Learn today.<br><span>Lead tomorrow.</span></h1>
+   <p class="hero-lead">A brighter way to learn, practise and grow. Explore engaging lessons, interactive quizzes, revision resources and guidance for your next big achievement.</p>
+   <div class="hero-ctas"><a class="btn hero-primary" href="#grades">Explore learning <b>→</b></a><a class="btn hero-secondary" href="#learner-account">Create learner account <b>＋</b></a></div>
+   <div class="hero-trust"><span>✓ Learner-friendly resources</span><span>✓ Learn at your pace</span><span>✓ Grades 7, 8 & 9</span></div>
+  </div>
+  <div class="founder-feature">
+   <div class="founder-glow"></div>
+   <div class="founder-photo-wrap"><img src="assets/founder-israel-bosire.webp" alt="Mr. Israel Bosire, Founder and Education Mentor of Junior School Learning Hub" class="founder-photo" fetchpriority="high"></div>
+   <div class="founder-caption"><span class="founder-cap-icon">✦</span><div><strong>Mr. Israel Bosire</strong><small>Founder &amp; Education Mentor</small></div></div>
+   <div class="founder-quote"><span>“</span>Be curious. Stay disciplined. Work hard and believe in yourself.</div>
+  </div>
+ </div>
+ <div class="hero-bottom"><div><b>One hub.</b> Many ways to shine.</div><div class="hero-bottom-links"><a href="#learning">📚 Study notes</a><a href="#quiz">🧠 Practice quizzes</a><a href="#revision">📝 Revision papers</a><a href="#services">🎯 Tuition &amp; guidance</a></div></div>
+</section>
+
+<section class="quick-tools" aria-label="Learning shortcuts">
+ <a class="quick-tool quick-purple" href="#learning"><span>📖</span><b>Study Notes</b><small>Understand every topic</small></a>
+ <a class="quick-tool quick-orange" href="#quiz"><span>🧠</span><b>Practice Quizzes</b><small>Test what you know</small></a>
+ <a class="quick-tool quick-blue" href="#revision"><span>📝</span><b>Revision Papers</b><small>Prepare with confidence</small></a>
+ <a class="quick-tool quick-green" href="#services"><span>🎮</span><b>Learning Activities</b><small>Learn by doing</small></a>
+ <a class="quick-tool quick-pink" href="#services"><span>🎯</span><b>Career Guidance</b><small>Discover your strengths</small></a>
+</section>
+</main>
 
 <section id="grades">
  <div class="heading"><h2>Choose Your Grade</h2><p>Learning resources are organised by grade, subject and topic.</p></div>
@@ -66,6 +124,12 @@ form{max-width:620px;margin:auto;background:#fff;padding:22px;border-radius:12px
   <div class="card subject"><h3>🔬 Integrated Science</h3><p>Scientific investigation, living things, matter, energy, forces, health, environment and technology.</p></div>
   <div class="card subject"><h3>⚙️ Pre-Technical Studies</h3><p>Design process, materials, tools, safety, drawing, production, entrepreneurship and digital technology.</p></div>
   <div class="card subject"><h3>🌱 Agriculture</h3><p>Soil, crop production, livestock, farm tools, conservation, food security and agribusiness.</p></div>
+  <div class="card subject subject-coming"><h3>📚 English</h3><p>Reading, writing, speaking, listening and communication skills.</p><span class="subject-tag">Learning area</span></div>
+  <div class="card subject subject-coming"><h3>🗣️ Kiswahili</h3><p>Lugha, sarufi, kusoma, kuandika na mawasiliano.</p><span class="subject-tag">Learning area</span></div>
+  <div class="card subject subject-coming"><h3>🌍 Social Studies</h3><p>People, places, citizenship, history and the environment.</p><span class="subject-tag">Learning area</span></div>
+  <div class="card subject subject-coming"><h3>✝️ CRE</h3><p>Values, character, faith and responsible living.</p><span class="subject-tag">Learning area</span></div>
+  <div class="card subject subject-coming"><h3>🎨 Creative Arts &amp; Sports</h3><p>Creativity, performance, movement and healthy living.</p><span class="subject-tag">Learning area</span></div>
+  <div class="card subject subject-coming"><h3>💻 ICT Skills</h3><p>Digital literacy, safe technology use and problem-solving.</p><span class="subject-tag">Learning area</span></div>
  </div>
 </section>
 
@@ -266,7 +330,7 @@ const noteData = {
   "Grade 7": `<h2>Topic: Soil and its importance</h2><p><b>Learning outcomes:</b> Explain the importance of soil, identify basic soil components and describe simple soil conservation practices.</p><h3>1. Meaning of soil</h3><p>Soil is the upper layer of the Earth's surface in which plants grow. It contains mineral particles, organic matter, water, air and living organisms.</p><h3>2. Importance of soil</h3><ul><li>Anchors plant roots and supports plant growth.</li><li>Stores water and supplies some nutrients.</li><li>Provides a habitat for organisms.</li><li>Supports agriculture and many human activities.</li></ul><h3>3. Soil care</h3><p>Mulching reduces evaporation and protects the soil surface. Contour farming slows water movement on slopes. Cover crops protect bare soil. Proper drainage helps prevent waterlogging.</p><div class="example"><b>Activity:</b> Observe soil from different locations. Compare colour, texture and the presence of organic matter without tasting or inhaling dust.</div><h3>Practice</h3><ol><li>Name four components of soil.</li><li>Give three ways soil supports agriculture.</li><li>Explain how mulching helps conserve soil moisture.</li></ol>`,
   "Grade 8": `<h2>Topic: Crop production and field management</h2><p><b>Learning outcomes:</b> Describe basic crop-production practices and explain the importance of timely field management.</p><h3>1. Land preparation</h3><p>Land preparation creates suitable conditions for planting. Activities may include clearing unwanted vegetation, primary cultivation, breaking clods, levelling and preparing planting stations. Methods should suit the crop and local conditions.</p><h3>2. Planting materials</h3><p>Crops may be established using seeds, seedlings, cuttings, tubers or other vegetative materials. Healthy planting materials improve the chances of successful establishment.</p><h3>3. Crop management</h3><ul><li>Weeding reduces competition for water, light and nutrients.</li><li>Thinning reduces overcrowding where too many plants emerge.</li><li>Mulching conserves moisture and can suppress weeds.</li><li>Timely watering supports growth where rainfall is inadequate.</li><li>Monitoring helps detect pests and diseases early.</li></ul><h3>4. Safe and responsible practice</h3><p>Use tools correctly, follow product labels and adult guidance when handling farm inputs, and avoid contaminating water sources.</p><h3>Practice</h3><ol><li>Why is timely weeding important?</li><li>Give two examples of vegetative planting materials.</li><li>State three crop-management practices.</li></ol>`,
   "Grade 9": `<h2>Topic: Sustainable agriculture and food security</h2><p><b>Learning outcomes:</b> Explain sustainable agriculture, identify threats to food production and propose practical conservation measures.</p><h3>1. Sustainable agriculture</h3><p>Sustainable agriculture aims to produce food and other farm products while conserving natural resources and supporting the well-being of present and future generations.</p><h3>2. Soil and water conservation</h3><p>Practices include terracing on suitable slopes, contour farming, cover cropping, mulching, agroforestry, proper drainage and harvesting rainwater.</p><h3>3. Climate-smart practices</h3><p>Farmers can consider drought-tolerant crop varieties suited to the area, water-efficient irrigation, diversified crops, timely planting and weather information.</p><h3>4. Food security</h3><p>Food security involves reliable access to sufficient, safe and nutritious food. Production, storage, distribution, affordability and stability all matter. Post-harvest losses can reduce the amount of food available.</p><div class="example"><b>Scenario:</b> A farmer experiences soil erosion and irregular rainfall. Possible responses include maintaining ground cover, harvesting rainwater, using suitable terraces and selecting locally appropriate crops.</div><h3>Practice</h3><ol><li>What is sustainable agriculture?</li><li>State three ways of conserving soil and water.</li><li>Explain how proper storage contributes to food security.</li></ol>`
- }
+ }};
 
 noteData["Mathematics"]["Grade 7"] = `
 <h2>GRADE 7 MATHEMATICS – TERM 1</h2>
@@ -677,6 +741,7 @@ noteData["Mathematics"]["Grade 7"] = `
 <p><b>Study guidance:</b> Read one sub-strand at a time, copy and solve the worked examples without looking at the solutions, then attempt the assessment. Correct mistakes and repeat questions that you found difficult.</p>
 `;
 
+const quizBank = {
  "Integrated Science":[
   {q:"Which variable is deliberately changed in an investigation?",o:["Dependent variable","Controlled variable","Independent variable","Responding measurement"],a:2,e:"The independent variable is the factor deliberately changed by the investigator."},
   {q:"Which state of matter has a fixed volume but takes the shape of its container?",o:["Solid","Liquid","Gas","All states"],a:1,e:"A liquid has a fixed volume but flows to take the shape of its container."},
@@ -821,6 +886,22 @@ document.getElementById('markQuiz').addEventListener('click',()=>{
  `;
 
  document.getElementById('quizResult').scrollIntoView({behavior:'smooth',block:'nearest'});
+ // Save this attempt to the signed-in learner's Supabase account.
+ if (window.saveLearnerQuizAttempt) {
+   window.saveLearnerQuizAttempt({
+     grade: document.getElementById('quizGrade').value,
+     subject: document.getElementById('quizSubject').value,
+     score: score,
+     total: qs.length,
+     percentage: pct,
+     answered: answered,
+     questions: qs.map((q,i) => ({
+       question: q.q,
+       selected: document.querySelector(`input[name="q${i}"]:checked`)?.value ?? null,
+       correct: q.a
+     }))
+   });
+ }
 });
 document.getElementById('resetQuiz').addEventListener('click',buildQuiz);
 // GRADE 7 INTEGRATED SCIENCE - TERM 3 EXPANDED NOTES
@@ -1292,42 +1373,139 @@ quizBank["Integrated Science"] = [
 buildQuiz();
 
 </script>
- <!-- LEARNER ACCOUNT SECTION -->
-<section id="learner-account" style="max-width:700px;margin:40px auto;padding:25px;background:#f4f8ff;border-radius:12px;">
-  <h2>🎓 Learner Account</h2>
-  <p>Create an account or log in to access your learning dashboard.</p>
+ <!-- LEARNER ACCOUNT & DASHBOARD -->
+<style>
+#learner-account{max-width:1240px!important;margin:42px auto!important;padding:24px!important;background:transparent!important}
+#learner-account *{box-sizing:border-box}
+.auth-shell{display:grid;grid-template-columns:1.05fr .95fr;gap:0;background:#fff;border:1px solid #dce7f5;border-radius:24px;overflow:hidden;box-shadow:0 18px 50px rgba(16,43,80,.12)}
+.auth-art{padding:42px 36px;color:#fff;background:radial-gradient(circle at 80% 15%,#3eb8e8 0,transparent 30%),linear-gradient(135deg,#102b50,#0756a5 60%,#11a6a0);position:relative;overflow:hidden;min-height:390px}
+.auth-art:after{content:"✦  ✧  ✦";position:absolute;right:20px;bottom:16px;font-size:55px;color:#ffffff45;letter-spacing:12px}
+.auth-art h2{font-size:clamp(27px,4vw,40px);line-height:1.15;margin:22px 0 12px;color:white}
+.auth-art p{max-width:430px;color:#e8f6ff}
+.auth-art .art-icon{font-size:66px;display:inline-grid;place-items:center;width:108px;height:108px;border-radius:30px;background:#ffffff20;border:1px solid #ffffff55}
+.auth-points{display:flex;gap:10px;flex-wrap:wrap;margin-top:28px}
+.auth-points span{background:#ffffff1d;border:1px solid #ffffff40;padding:8px 12px;border-radius:30px;font-size:13px}
+.auth-forms{padding:34px;display:grid;grid-template-columns:1fr;gap:22px}
+.auth-forms h3{color:#102b50;margin-bottom:5px}
+.auth-forms input,.auth-forms select{width:100%;margin:7px 0 12px;padding:13px;border:1px solid #cbd8e8;border-radius:10px;background:#fbfdff}
+.auth-forms button,.dash-btn{border:0;border-radius:10px;padding:12px 18px;font-weight:800;cursor:pointer;background:linear-gradient(90deg,#0877d8,#0756a5);color:#fff;box-shadow:0 6px 15px #0756a533}
+.auth-forms button:disabled{opacity:.6;cursor:wait}
+.auth-divider{height:1px;background:#e6edf5}
+#learner-message{margin:12px 0;font-weight:700}
+#learner-dashboard{margin-top:24px}
+.dash-top{background:linear-gradient(115deg,#102b50,#0756a5 60%,#14a6a0);color:white;border-radius:22px;padding:28px 30px;display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap;box-shadow:0 14px 30px #102b5025}
+.dash-top h2{color:white;font-size:clamp(25px,4vw,36px);margin:4px 0}
+.dash-top p{color:#e4f5ff}
+.dash-avatar{width:74px;height:74px;border-radius:24px;background:#ffffff24;border:1px solid #ffffff60;display:grid;place-items:center;font-size:38px}
+.dash-welcome{display:flex;align-items:center;gap:18px}
+.dash-actions{display:flex;gap:8px;flex-wrap:wrap}
+.dash-actions button,.dash-actions a{border-radius:10px;padding:10px 14px;font-weight:700;text-decoration:none;border:1px solid #ffffff66;background:#ffffff1b;color:white;cursor:pointer}
+.dash-stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;margin:18px 0}
+.dash-stat{border-radius:17px;padding:18px;border:1px solid var(--bd);background:var(--bg);min-height:128px}
+.dash-stat .ico{font-size:27px}.dash-stat strong{display:block;font-size:30px;line-height:1.2;color:var(--fg);margin:7px 0 2px}.dash-stat small{color:#52647b}
+.dash-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:18px}
+.dash-panel{background:#fff;border:1px solid #e0e9f3;border-radius:18px;padding:20px;box-shadow:0 5px 18px #102b5009;margin-bottom:18px}
+.dash-panel h3{color:#102b50;margin:0 0 15px;font-size:19px}
+.dash-subjects{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.dash-subject{padding:16px;border-radius:15px;background:var(--bg);border:1px solid var(--bd)}
+.dash-subject .subject-icon{font-size:29px}
+.dash-subject h4{margin:5px 0;color:var(--fg)}
+.dash-subject p{font-size:12px;color:#52647b;margin:0 0 12px}
+.dash-subject a{display:inline-block;text-decoration:none;background:#fff;border:1px solid var(--bd);border-radius:9px;padding:8px 12px;font-size:12px;font-weight:800;color:var(--fg)}
+.dash-progress-row{display:grid;grid-template-columns:145px 1fr 40px;align-items:center;gap:10px;margin:13px 0;font-size:13px}
+.dash-bar{height:10px;background:#e8eef6;border-radius:20px;overflow:hidden}
+.dash-bar span{display:block;height:100%;width:0;background:linear-gradient(90deg,#0877d8,#10b981);border-radius:20px}
+.dash-empty{padding:20px;border:1px dashed #c8d7e8;border-radius:14px;text-align:center;color:#64748b;background:#f8fbff}
+.dash-activity{display:flex;justify-content:space-between;gap:12px;padding:12px 0;border-bottom:1px solid #edf1f6;font-size:13px}
+.dash-activity:last-child{border:0}
+.dash-badge{display:inline-block;padding:4px 9px;border-radius:20px;background:#e8f8ef;color:#137448;font-size:11px;font-weight:800}
+.dash-note{background:linear-gradient(100deg,#fff7df,#fff);border:1px solid #ffe5a3;padding:16px;border-radius:14px;color:#684d0a}
+.dash-foot{color:#64748b;font-size:12px;text-align:center;margin:14px}
+@media(max-width:850px){.auth-shell,.dash-grid{grid-template-columns:1fr}.auth-art{min-height:260px}.dash-stats{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:520px){#learner-account{padding:12px!important}.auth-forms{padding:22px}.auth-art{padding:28px 23px}.dash-top{padding:22px}.dash-stats{gap:9px}.dash-stat{padding:13px;min-height:115px}.dash-subjects{grid-template-columns:1fr}.dash-progress-row{grid-template-columns:110px 1fr 35px;font-size:11px}}
+</style>
 
-  <div id="learner-signup">
-    <h3>Create Learner Account</h3>
-    <input id="learner-name" type="text" placeholder="Full name" required style="width:100%;padding:12px;margin:6px 0;">
-    <select id="learner-grade" required style="width:100%;padding:12px;margin:6px 0;">
-      <option value="">Select Grade</option>
-      <option>Grade 7</option>
-      <option>Grade 8</option>
-      <option>Grade 9</option>
+<section id="learner-account">
+ <div class="heading">
+  <h2>🎓 Your Learning Journey Starts Here</h2>
+  <p>Create your free learner account or sign in to see your personal learning space, quiz history and achievements.</p>
+ </div>
+
+ <div class="auth-shell" id="learner-auth-shell">
+  <div class="auth-art">
+   <div class="art-icon">📚</div>
+   <h2>Learn. Practise.<br>Shine!</h2>
+   <p>Every quiz you complete is a step forward. Build confidence, explore your subjects and celebrate your progress.</p>
+   <div class="auth-points"><span>✨ Instant quiz feedback</span><span>🏆 Track your growth</span><span>📖 CBC learning</span></div>
+  </div>
+  <div class="auth-forms">
+   <div id="learner-signup">
+    <h3>🚀 Create your learner account</h3>
+    <p class="small">Join the Learning Hub and start exploring.</p>
+    <input id="learner-name" type="text" placeholder="Full name" autocomplete="name" required>
+    <select id="learner-grade" required>
+     <option value="">Choose your grade</option><option>Grade 7</option><option>Grade 8</option><option>Grade 9</option>
     </select>
-    <input id="learner-email" type="email" placeholder="Email address" required style="width:100%;padding:12px;margin:6px 0;">
-    <input id="learner-password" type="password" placeholder="Create password (at least 6 characters)" required minlength="6" style="width:100%;padding:12px;margin:6px 0;">
-    <button id="learner-signup-btn" style="padding:12px 20px;background:#0756a5;color:white;border:0;border-radius:6px;">Create Account</button>
+    <input id="learner-email" type="email" placeholder="Email address" autocomplete="email" required>
+    <input id="learner-password" type="password" placeholder="Create password (at least 6 characters)" autocomplete="new-password" required minlength="6">
+    <button id="learner-signup-btn" type="button">Create My Account ✨</button>
+   </div>
+   <div class="auth-divider"></div>
+   <div id="learner-login">
+    <h3>👋 Welcome back!</h3>
+    <p class="small">Sign in to continue your learning journey.</p>
+    <input id="login-email" type="email" placeholder="Email address" autocomplete="email" required>
+    <input id="login-password" type="password" placeholder="Password" autocomplete="current-password" required>
+    <button id="learner-login-btn" type="button">Log In to My Dashboard →</button>
+   </div>
+  </div>
+ </div>
+
+ <p id="learner-message" role="status" aria-live="polite"></p>
+
+ <div id="learner-dashboard" hidden>
+  <div class="dash-top">
+   <div class="dash-welcome"><div class="dash-avatar">🧑🏽‍🎓</div><div><p>MY LEARNING SPACE</p><h2 id="learner-title">Welcome back!</h2><p id="learner-welcome">Your next achievement starts today.</p></div></div>
+   <div class="dash-actions"><a href="#learning">📚 Explore Notes</a><a href="#quiz">🧠 Take a Quiz</a><button id="learner-logout-btn" type="button">Log Out</button></div>
   </div>
 
-  <hr style="margin:25px 0;">
-
-  <div id="learner-login">
-    <h3>Learner Login</h3>
-    <input id="login-email" type="email" placeholder="Email address" required style="width:100%;padding:12px;margin:6px 0;">
-    <input id="login-password" type="password" placeholder="Password" required style="width:100%;padding:12px;margin:6px 0;">
-    <button id="learner-login-btn" style="padding:12px 20px;background:#16833b;color:white;border:0;border-radius:6px;">Log In</button>
+  <div class="dash-stats">
+   <div class="dash-stat" style="--bg:#e8f7ff;--bd:#b9e5ff;--fg:#0877d8"><div class="ico">📚</div><strong id="stat-subjects">4</strong><small>Learning areas</small></div>
+   <div class="dash-stat" style="--bg:#eafaf2;--bd:#bcebd2;--fg:#07945d"><div class="ico">🧠</div><strong id="stat-attempts">0</strong><small>Quizzes completed</small></div>
+   <div class="dash-stat" style="--bg:#fff6df;--bd:#ffe2a0;--fg:#b77908"><div class="ico">⭐</div><strong id="stat-average">—</strong><small>Average quiz score</small></div>
+   <div class="dash-stat" style="--bg:#f2eaff;--bd:#d9c2ff;--fg:#7136c9"><div class="ico">🏆</div><strong id="stat-best">—</strong><small>Personal best</small></div>
   </div>
 
-  <p id="learner-message" role="status" aria-live="polite"></p>
-
-  <div id="learner-dashboard" hidden>
-    <h3>Welcome to Your Learning Dashboard!</h3>
-    <p id="learner-welcome"></p>
-    <p>Your learning resources and activities will appear here.</p>
-    <button id="learner-logout-btn" style="padding:12px 20px;background:#b42318;color:white;border:0;border-radius:6px;">Log Out</button>
+  <div class="dash-grid">
+   <div>
+    <div class="dash-panel">
+     <h3>🌈 Explore Your Learning Areas</h3>
+     <div class="dash-subjects">
+      <div class="dash-subject" style="--bg:#eaf5ff;--bd:#b9dcff;--fg:#0756a5"><div class="subject-icon">➗</div><h4>Mathematics</h4><p>Build confidence through practice.</p><a href="#quiz" onclick="document.getElementById('quizSubject').value='Mathematics';document.getElementById('quizGrade').value=window.currentLearnerGrade||'Grade 7';document.getElementById('quizGrade').dispatchEvent(new Event('change'));">Start practising →</a></div>
+      <div class="dash-subject" style="--bg:#e9fbf3;--bd:#b6ebd0;--fg:#078653"><div class="subject-icon">🔬</div><h4>Integrated Science</h4><p>Discover how the world works.</p><a href="#quiz" onclick="document.getElementById('quizSubject').value='Integrated Science';document.getElementById('quizGrade').value=window.currentLearnerGrade||'Grade 7';document.getElementById('quizGrade').dispatchEvent(new Event('change'));">Start practising →</a></div>
+      <div class="dash-subject" style="--bg:#f3edff;--bd:#d9c6ff;--fg:#673ab7"><div class="subject-icon">🛠️</div><h4>Pre-Technical Studies</h4><p>Design, create and solve problems.</p><a href="#quiz" onclick="document.getElementById('quizSubject').value='Pre-Technical Studies';document.getElementById('quizGrade').value=window.currentLearnerGrade||'Grade 7';document.getElementById('quizGrade').dispatchEvent(new Event('change'));">Start practising →</a></div>
+      <div class="dash-subject" style="--bg:#fff4e8;--bd:#ffd6aa;--fg:#c45a08"><div class="subject-icon">🌱</div><h4>Agriculture</h4><p>Learn about food and sustainability.</p><a href="#quiz" onclick="document.getElementById('quizSubject').value='Agriculture';document.getElementById('quizGrade').value=window.currentLearnerGrade||'Grade 7';document.getElementById('quizGrade').dispatchEvent(new Event('change'));">Start practising →</a></div>
+     </div>
+    </div>
+    <div class="dash-panel">
+     <h3>📈 Subject Performance</h3>
+     <div id="subject-performance"><div class="dash-empty">Complete a quiz to see your subject performance here.</div></div>
+    </div>
+   </div>
+   <div>
+    <div class="dash-panel">
+     <h3>⚡ Recent Quiz Activity</h3>
+     <div id="recent-quiz-activity"><div class="dash-empty">Your completed quizzes will appear here.</div></div>
+    </div>
+    <div class="dash-panel">
+     <h3>💡 Your Learning Motivation</h3>
+     <div class="dash-note">Small steps every day lead to big achievements. Review your quiz feedback, practise topics you find challenging and keep moving forward!</div>
+     <p style="margin-top:13px"><a class="btn" href="grade7-complete-detailed-learning-library.html">Open Complete Grade 7 Library →</a></p>
+    </div>
+   </div>
   </div>
+  <p class="dash-foot">Your quiz history is private to your signed-in account. Keep learning, keep growing! 🌟</p>
+ </div>
 </section>
 
 <script>
@@ -1335,29 +1513,110 @@ buildQuiz();
   const message = document.getElementById("learner-message");
   const signup = document.getElementById("learner-signup");
   const login = document.getElementById("learner-login");
+  const authShell = document.getElementById("learner-auth-shell");
   const dashboard = document.getElementById("learner-dashboard");
+  let activeUser = null;
+  let loadingHistory = false;
 
   function showMessage(text, error = false) {
     message.textContent = text;
     message.style.color = error ? "#b42318" : "#16833b";
   }
 
-  function showDashboard(user) {
-    if (!user) {
-      dashboard.hidden = true;
-      signup.hidden = false;
-      login.hidden = false;
+  function safeText(value) {
+    return String(value ?? "").replace(/[&<>"']/g, ch => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[ch]));
+  }
+
+  async function refreshLearnerStats() {
+    if (!activeUser || loadingHistory) return;
+    loadingHistory = true;
+    const activity = document.getElementById("recent-quiz-activity");
+    const performance = document.getElementById("subject-performance");
+    activity.innerHTML = '<div class="dash-empty">Loading your quiz history…</div>';
+    try {
+      const { data, error } = await supabaseClient
+        .from("learner_quiz_attempts")
+        .select("id,grade,subject,score,total,percentage,created_at")
+        .eq("user_id", activeUser.id)
+        .order("created_at", { ascending: false })
+        .limit(50);
+      if (error) throw error;
+      const attempts = data || [];
+      document.getElementById("stat-attempts").textContent = attempts.length;
+      if (attempts.length) {
+        const avg = Math.round(attempts.reduce((sum, item) => sum + Number(item.percentage || 0), 0) / attempts.length);
+        const best = Math.max(...attempts.map(item => Number(item.percentage || 0)));
+        document.getElementById("stat-average").textContent = avg + "%";
+        document.getElementById("stat-best").textContent = best + "%";
+        activity.innerHTML = attempts.slice(0, 8).map(item => `
+          <div class="dash-activity">
+            <div><strong>${safeText(item.subject)}</strong><br><span class="small">${safeText(item.grade)} · ${new Date(item.created_at).toLocaleString()}</span></div>
+            <div style="text-align:right"><strong>${Number(item.score)}/${Number(item.total)}</strong><br><span class="dash-badge">${Number(item.percentage)}%</span></div>
+          </div>`).join("");
+        const subjects = ["Mathematics","Integrated Science","Pre-Technical Studies","Agriculture"];
+        performance.innerHTML = subjects.map((subject, i) => {
+          const rows = attempts.filter(a => a.subject === subject);
+          const mean = rows.length ? Math.round(rows.reduce((s,a)=>s+Number(a.percentage||0),0)/rows.length) : 0;
+          const colors = ["#0877d8","#07945d","#7136c9","#e8790b"];
+          return `<div class="dash-progress-row"><span>${safeText(subject)}</span><div class="dash-bar"><span style="width:${mean}%;background:${colors[i]}"></span></div><strong>${rows.length ? mean+"%" : "—"}</strong></div>`;
+        }).join("");
+      } else {
+        document.getElementById("stat-average").textContent = "—";
+        document.getElementById("stat-best").textContent = "—";
+        activity.innerHTML = '<div class="dash-empty">🎯 No quizzes yet. Choose a subject and complete your first quiz to start building your progress record!</div>';
+        performance.innerHTML = '<div class="dash-empty">Your subject performance chart will grow as you complete quizzes.</div>';
+      }
+    } catch (error) {
+      activity.innerHTML = '<div class="dash-empty">Quiz history is not connected yet. Please ask the site administrator to complete the one-time database setup.</div>';
+      performance.innerHTML = '<div class="dash-empty">Your scores will appear here after database setup.</div>';
+      document.getElementById("stat-attempts").textContent = "—";
+      document.getElementById("stat-average").textContent = "—";
+      document.getElementById("stat-best").textContent = "—";
+      console.error("Could not load learner quiz history:", error.message);
+    } finally {
+      loadingHistory = false;
+    }
+  }
+
+  window.saveLearnerQuizAttempt = async function (attempt) {
+    if (!activeUser) {
+      showMessage("Quiz marked! Log in to your learner account to save this result to your personal dashboard.", true);
       return;
     }
+    const { error } = await supabaseClient.from("learner_quiz_attempts").insert({
+      user_id: activeUser.id,
+      grade: attempt.grade,
+      subject: attempt.subject,
+      score: attempt.score,
+      total: attempt.total,
+      percentage: attempt.percentage,
+      answered: attempt.answered,
+      answers: attempt.questions
+    });
+    if (error) {
+      showMessage("Your quiz was marked, but the result could not be saved. The administrator may need to finish the quiz-history database setup.", true);
+      console.error("Quiz result save failed:", error.message);
+      return;
+    }
+    showMessage("🎉 Quiz result saved to your learner dashboard!");
+    await refreshLearnerStats();
+  };
 
-    signup.hidden = true;
-    login.hidden = true;
+  function showDashboard(user) {
+    activeUser = user || null;
+    if (!user) {
+      dashboard.hidden = true;
+      authShell.hidden = false;
+      return;
+    }
+    authShell.hidden = true;
     dashboard.hidden = false;
-
-    const name = user.user_metadata?.full_name || user.email;
-    const grade = user.user_metadata?.grade || "Not specified";
-    document.getElementById("learner-welcome").textContent =
-      "Hello " + name + "! Your registered grade is " + grade + ".";
+    const name = user.user_metadata?.full_name || user.email || "Learner";
+    const grade = user.user_metadata?.grade || "Grade not specified";
+    window.currentLearnerGrade = grade;
+    document.getElementById("learner-title").textContent = "Welcome back, " + name + "! 👋";
+    document.getElementById("learner-welcome").textContent = grade + " · Your learning adventure continues here.";
+    refreshLearnerStats();
   }
 
   document.getElementById("learner-signup-btn").addEventListener("click", async function () {
@@ -1365,92 +1624,57 @@ buildQuiz();
     const grade = document.getElementById("learner-grade").value;
     const email = document.getElementById("learner-email").value.trim();
     const password = document.getElementById("learner-password").value;
-
     if (!name || !grade || !email || password.length < 6) {
       showMessage("Please complete all fields. Password must have at least 6 characters.", true);
       return;
     }
-
     this.disabled = true;
-    showMessage("Creating your account...");
-
+    showMessage("Creating your account…");
     try {
       const { data, error } = await supabaseClient.auth.signUp({
-        email,
-        password,
-        options: {
-          emailRedirectTo: window.location.origin,
-          data: { full_name: name, grade: grade }
-        }
+        email, password,
+        options: { emailRedirectTo: window.location.origin, data: { full_name: name, grade } }
       });
-
       if (error) throw error;
-
       if (data.session) {
         showDashboard(data.user);
-        showMessage("Your account has been created successfully.");
+        showMessage("Your account is ready. Welcome to the Learning Hub!");
       } else {
-        showMessage("Account created! Please check your email and confirm your account before logging in.");
+        showMessage("Account created! Please confirm your email before logging in.");
       }
     } catch (error) {
       showMessage(error.message, true);
-    } finally {
-      this.disabled = false;
-    }
+    } finally { this.disabled = false; }
   });
 
   document.getElementById("learner-login-btn").addEventListener("click", async function () {
     const email = document.getElementById("login-email").value.trim();
     const password = document.getElementById("login-password").value;
-
-    if (!email || !password) {
-      showMessage("Enter your email address and password.", true);
-      return;
-    }
-
+    if (!email || !password) { showMessage("Enter your email address and password.", true); return; }
     this.disabled = true;
-    showMessage("Logging in...");
-
+    showMessage("Logging in…");
     try {
-      const { data, error } = await supabaseClient.auth.signInWithPassword({
-        email,
-        password
-      });
-
+      const { data, error } = await supabaseClient.auth.signInWithPassword({ email, password });
       if (error) throw error;
-
       showDashboard(data.user);
-      showMessage("Login successful. Welcome!");
+      showMessage("Login successful. Welcome back!");
     } catch (error) {
       showMessage(error.message, true);
-    } finally {
-      this.disabled = false;
-    }
+    } finally { this.disabled = false; }
   });
 
   document.getElementById("learner-logout-btn").addEventListener("click", async function () {
     const { error } = await supabaseClient.auth.signOut();
-
-    if (error) {
-      showMessage(error.message, true);
-      return;
-    }
-
+    if (error) { showMessage(error.message, true); return; }
     showDashboard(null);
     showMessage("You have logged out successfully.");
   });
 
   supabaseClient.auth.getSession().then(({ data, error }) => {
-    if (error) {
-      showMessage(error.message, true);
-      return;
-    }
+    if (error) { showMessage(error.message, true); return; }
     showDashboard(data.session?.user || null);
   });
-
-  supabaseClient.auth.onAuthStateChange((_event, session) => {
-    showDashboard(session?.user || null);
-  });
+  supabaseClient.auth.onAuthStateChange((_event, session) => showDashboard(session?.user || null));
 })();
 </script>
 </body>
