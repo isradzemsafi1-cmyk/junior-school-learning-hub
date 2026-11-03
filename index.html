@@ -31,6 +31,26 @@ select,input,textarea{padding:11px;border:1px solid #cbd5e1;border-radius:7px;fo
 .paper-row{padding:15px 0;border-bottom:1px solid var(--line)}.locked{opacity:.95}.lock{font-size:22px}
 footer{background:var(--navy);color:#fff;padding:32px 7%;text-align:center}footer a{color:var(--gold)}
 form{max-width:620px;margin:auto;background:#fff;padding:22px;border-radius:12px}form input,form select,form textarea{width:100%;margin:7px 0 14px}
+
+/* Learner leaderboard */
+.dash-leaderboard{margin:18px 0;background:linear-gradient(135deg,#102b50,#174a78);border-radius:20px;padding:22px;color:#fff;box-shadow:0 12px 30px #102b5020}
+.dash-leaderboard-head{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:14px}
+.dash-leaderboard h3{margin:0;color:#fff;font-size:20px}
+.dash-leaderboard p{margin:5px 0 0;color:#d6e7f8;font-size:13px}
+.dash-leaderboard-list{display:grid;gap:8px}
+.dash-leader-row{display:grid;grid-template-columns:42px minmax(0,1fr) auto auto;align-items:center;gap:12px;padding:11px 13px;border:1px solid #ffffff24;border-radius:13px;background:#ffffff12}
+.dash-leader-rank{width:34px;height:34px;border-radius:50%;display:grid;place-items:center;background:#ffffff20;font-weight:800}
+.dash-leader-row:nth-child(1) .dash-leader-rank{background:#ffd66b;color:#533700}
+.dash-leader-row:nth-child(2) .dash-leader-rank{background:#dce7f2;color:#25364a}
+.dash-leader-row:nth-child(3) .dash-leader-rank{background:#e8b58c;color:#542d13}
+.dash-leader-name{font-weight:750;overflow-wrap:anywhere}
+.dash-leader-grade{font-size:11px;color:#d6e7f8;margin-top:2px}
+.dash-leader-score{text-align:right;font-weight:800;white-space:nowrap}
+.dash-leader-quizzes{font-size:11px;color:#d6e7f8;text-align:right;white-space:nowrap}
+.dash-leader-empty{padding:18px;text-align:center;border:1px dashed #ffffff55;border-radius:13px;color:#e4f0fb;font-size:13px}
+.dash-leader-you{outline:2px solid #ffd66b;background:#ffffff20}
+@media(max-width:600px){.dash-leaderboard{padding:16px}.dash-leader-row{grid-template-columns:36px minmax(0,1fr) auto;gap:8px;padding:9px}.dash-leader-quizzes{grid-column:2 / 4;text-align:left}.dash-leader-score{grid-column:3;grid-row:1}}
+
 @media(max-width:650px){header{justify-content:center}nav{justify-content:center}.hero{padding:48px 6%}section{padding:35px 5%}}
 
 /* JUNIOR SCHOOL LEARNING HUB — refreshed graphic dashboard theme */
@@ -1514,6 +1534,16 @@ buildQuiz();
    </div>
   </div>
 
+  <section class="dash-leaderboard" aria-labelledby="learner-leaderboard-title">
+   <div class="dash-leaderboard-head">
+    <div><h3 id="learner-leaderboard-title">🏆 Top 10 Learners</h3><p>Celebrate effort, practice and progress across the Learning Hub.</p></div>
+    <span aria-hidden="true" style="font-size:30px">🌟</span>
+   </div>
+   <div id="learner-leaderboard-list" aria-live="polite">
+    <div class="dash-leader-empty">Loading the leaderboard…</div>
+   </div>
+  </section>
+
   <div class="dash-grid">
    <div>
     <div class="dash-panel">
@@ -1563,6 +1593,40 @@ buildQuiz();
 
   function safeText(value) {
     return String(value ?? "").replace(/[&<>"']/g, ch => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[ch]));
+  }
+
+  async function refreshLearnerLeaderboard() {
+    const list = document.getElementById("learner-leaderboard-list");
+    if (!list) return;
+    list.innerHTML = '<div class="dash-leader-empty">Loading the leaderboard…</div>';
+    try {
+      const { data, error } = await supabaseClient.rpc("get_learner_leaderboard");
+      if (error) throw error;
+      const learners = data || [];
+      if (!learners.length) {
+        list.innerHTML = '<div class="dash-leader-empty">No quiz results yet. Be among the first learners to complete a quiz!</div>';
+        return;
+      }
+      list.innerHTML = '<div class="dash-leaderboard-list">' + learners.map((learner) => {
+        const isYou = activeUser && learner.learner_name &&
+          learner.learner_name.toLowerCase() ===
+          String(activeUser.user_metadata?.full_name || "").trim().split(/\\s+/)[0].toLowerCase() &&
+          learner.grade === (activeUser.user_metadata?.grade || "Grade not specified");
+        const medal = Number(learner.rank_no) === 1 ? "🥇" :
+          Number(learner.rank_no) === 2 ? "🥈" :
+          Number(learner.rank_no) === 3 ? "🥉" : safeText(learner.rank_no);
+        return `<div class="dash-leader-row">
+          <span class="dash-leader-rank">${medal}</span>
+          <div><div class="dash-leader-name">${safeText(learner.learner_name)}${isYou ? " · You" : ""}</div>
+          <div class="dash-leader-grade">${safeText(learner.grade)}</div></div>
+          <div class="dash-leader-score">${Number(learner.average_score)}% avg</div>
+          <div class="dash-leader-quizzes">${Number(learner.quizzes_completed)} quizzes</div>
+        </div>`;
+      }).join("") + '</div>';
+    } catch (error) {
+      list.innerHTML = '<div class="dash-leader-empty">The leaderboard could not load. Please check the Supabase function setup.</div>';
+      console.error("Could not load learner leaderboard:", error.message);
+    }
   }
 
   async function refreshLearnerStats() {
@@ -1684,6 +1748,7 @@ buildQuiz();
     document.getElementById("learner-title").textContent = "Welcome back, " + name + "! 👋";
     document.getElementById("learner-welcome").textContent = grade + " · Your learning adventure continues here.";
     refreshLearnerStats();
+    refreshLearnerLeaderboard();
   }
 
   document.getElementById("learner-signup-btn").addEventListener("click", async function () {
