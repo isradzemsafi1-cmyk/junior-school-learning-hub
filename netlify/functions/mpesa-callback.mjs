@@ -29,8 +29,17 @@ export default async (request) => {
   const catalog = {
     online_tuition: 100,
     premium_quizzes: 20,
-    grade8_notes: 30,
+    grade7_notes: 10,
+    grade8_notes: 10,
     grade9_notes: 30
+  };
+
+  const durations = {
+    grade7_notes: 12,
+    grade8_notes: 12,
+    grade9_notes: 24,
+    online_tuition: 24,
+    premium_quizzes: 24
   };
 
   const dbHeaders = {
@@ -69,7 +78,6 @@ export default async (request) => {
     const callback = body?.Body?.stkCallback;
 
     if (!callback?.CheckoutRequestID) {
-      console.error("Invalid M-Pesa callback received.");
       return respond(400, { success: false });
     }
 
@@ -93,28 +101,29 @@ export default async (request) => {
       console.error("No matching payment record:", checkoutId);
       return respond(200, { ResultCode: 0, ResultDesc: "Received" });
     }
-if (payment.status === "success") {
-  const entitlementCheck = await fetch(
-    `${supabaseUrl}/rest/v1/entitlements?user_id=eq.${payment.user_id}&product_id=eq.${payment.product_id}&select=id&limit=1`,
-    { headers: dbHeaders }
-  );
 
-  if (!entitlementCheck.ok) {
-    throw new Error("Could not check existing access.");
-  }
+    if (payment.status === "success") {
+      const entitlementCheck = await fetch(
+        `${supabaseUrl}/rest/v1/entitlements?user_id=eq.${payment.user_id}&product_id=eq.${payment.product_id}&payment_id=eq.${payment.id}&select=id&limit=1`,
+        { headers: dbHeaders }
+      );
 
-  const existingAccess = await entitlementCheck.json();
+      if (!entitlementCheck.ok) {
+        throw new Error("Could not check existing access.");
+      }
 
-  if (existingAccess.length > 0) {
-    return respond(200, {
-      ResultCode: 0,
-      ResultDesc: "Payment already processed."
-    });
-  }
-}
-    // Record unsuccessful transactions without granting access.
+      const existingAccess = await entitlementCheck.json();
+
+      if (existingAccess.length > 0) {
+        return respond(200, {
+          ResultCode: 0,
+          ResultDesc: "Payment already processed."
+        });
+      }
+    }
+
     if (callbackCode !== "0") {
-      await fetch(
+      const failedUpdate = await fetch(
         `${supabaseUrl}/rest/v1/payments?id=eq.${payment.id}`,
         {
           method: "PATCH",
@@ -127,10 +136,13 @@ if (payment.status === "success") {
         }
       );
 
+      if (!failedUpdate.ok) {
+        throw new Error("Could not record failed payment.");
+      }
+
       return respond(200, { ResultCode: 0, ResultDesc: "Received" });
     }
 
-    // Do not process an unexpected product or amount.
     if (
       !Object.prototype.hasOwnProperty.call(catalog, payment.product_id) ||
       Number(payment.amount) !== catalog[payment.product_id]
@@ -138,7 +150,6 @@ if (payment.status === "success") {
       throw new Error("Payment product or amount does not match.");
     }
 
-    // Extract details supplied in the successful STK callback.
     const metadata = callback.CallbackMetadata?.Item || [];
     const getMetadata = (name) =>
       metadata.find(item => item.Name === name)?.Value;
@@ -155,7 +166,6 @@ if (payment.status === "success") {
       throw new Error("Payment details could not be matched.");
     }
 
-    // Obtain a Safaricom access token.
     const credentials = Buffer.from(
       `${consumerKey}:${consumerSecret}`
     ).toString("base64");
@@ -173,9 +183,7 @@ if (payment.status === "success") {
       throw new Error("Could not authenticate with Safaricom.");
     }
 
-    // Independently query Safaricom for the transaction result.
     const timestamp = getTimestamp();
-
     const password = Buffer.from(
       shortcode + passkey + timestamp
     ).toString("base64");
@@ -204,11 +212,10 @@ if (payment.status === "success") {
       String(queryResult.ResultCode) !== "0" ||
       queryResult.CheckoutRequestID !== checkoutId
     ) {
-      console.error("Safaricom transaction verification is pending or unsuccessful.");
+      console.error("Safaricom verification is pending or unsuccessful.");
       return respond(200, { ResultCode: 0, ResultDesc: "Received" });
     }
 
-    // Save the verified payment.
     const paymentUpdate = await fetch(
       `${supabaseUrl}/rest/v1/payments?id=eq.${payment.id}`,
       {
@@ -228,8 +235,8 @@ if (payment.status === "success") {
       throw new Error("Could not update the verified payment.");
     }
 
-    // Grant or renew this product for exactly 24 hours.
-    const expiry = new Date(Date.now() + 24 * 60 * 60 * 1000);
+    const hours = durations[payment.product_id];
+    const expiry = new Date(Date.now() + hours * 60 * 60 * 1000);
 
     const entitlementResponse = await fetch(
       `${supabaseUrl}/rest/v1/entitlements?on_conflict=user_id,product_id`,
@@ -253,7 +260,12 @@ if (payment.status === "success") {
       throw new Error("Payment verified, but access activation needs attention.");
     }
 
-    console.log("Verified payment and activated product:", payment.product_id);
+    console.log(
+      "Verified payment and activated:",
+      payment.product_id,
+      hours,
+      "hours"
+    );
 
     return respond(200, {
       ResultCode: 0,
