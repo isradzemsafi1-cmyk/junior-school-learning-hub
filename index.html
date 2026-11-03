@@ -3,71 +3,449 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#102b50">
+<meta name="theme-color" content="#1730a8">
+<meta name="description" content="Junior School Learning Hub – CBC learning notes, automated quizzes, revision papers and learner dashboards for Grade 7, 8 and 9 learners in Kenya.">
 <title>Junior School Learning Hub | Premium Learning Centre</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
-:root{--navy:#102b50;--teal:#176b87;--gold:#ffbf36;--ink:#243247;--muted:#64748b;--paper:#f4f7fb;--line:#dce4ed}
-body{font-family:Arial,sans-serif;background:var(--paper);color:var(--ink);line-height:1.65}
-header{background:var(--navy);color:#fff;padding:16px 5%;display:flex;justify-content:space-between;align-items:center;gap:14px;flex-wrap:wrap;position:sticky;top:0;z-index:10}
-.logo{font-size:20px;font-weight:800}nav{display:flex;gap:15px;flex-wrap:wrap}nav a{color:#fff;text-decoration:none;font-size:14px}
-.hero{background:linear-gradient(120deg,#102b50,#176b87);color:#fff;padding:64px 7%;text-align:center}
-.hero h1{font-size:clamp(30px,5vw,44px);margin-bottom:12px}.hero p{max-width:760px;margin:0 auto 24px}
-.btn{display:inline-block;background:var(--gold);color:var(--navy);padding:11px 19px;border-radius:7px;text-decoration:none;font-weight:bold;border:0;cursor:pointer;margin:4px}
-.btn.blue{background:var(--teal);color:#fff}.btn.outline{background:#fff;border:1px solid var(--teal);color:var(--teal)}
-section{padding:45px 7%}.alt{background:#eaf1f7}.heading{text-align:center;margin:0 auto 26px;max-width:800px}.heading h2{color:var(--navy);font-size:28px}.heading p{color:var(--muted)}
-.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px}
-.card{background:#fff;padding:21px;border-radius:12px;box-shadow:0 3px 15px #102b5010;border:1px solid #edf1f5}
-.card h3{color:var(--teal);margin-bottom:8px}.card p{font-size:14px;color:#536174}.icon{font-size:30px;margin-bottom:8px}
-.subject{border-left:5px solid var(--gold)}.notice{background:#e5f3f8;padding:22px;border-radius:10px;text-align:center}
-.small{font-size:12px;color:var(--muted)}.pill{display:inline-block;border-radius:20px;padding:3px 10px;font-size:12px;font-weight:bold;background:#e7f4ed;color:#17633b}.premium{background:#fff3d3;color:#815400}
-.panel{background:#fff;border:1px solid var(--line);border-radius:13px;padding:22px;max-width:1000px;margin:18px auto;box-shadow:0 3px 15px #102b500b}
-.controls{display:flex;gap:12px;flex-wrap:wrap;margin:15px 0}.controls label{font-weight:bold;font-size:13px;display:block;margin-bottom:5px}
-select,input,textarea{padding:11px;border:1px solid #cbd5e1;border-radius:7px;font:inherit;max-width:100%}
-.controls select{min-width:170px}.lesson h3{color:var(--navy);margin:15px 0 5px}.lesson p,.lesson li{margin:6px 0}.lesson ul,.lesson ol{padding-left:23px}
-.example{background:#f0f7fb;border-left:4px solid var(--teal);padding:13px;margin:12px 0;border-radius:6px}
-.question{padding:15px 0;border-bottom:1px solid var(--line)}.question p{font-weight:bold;margin-bottom:8px}.option{display:block;font-weight:normal;margin:7px 0}
-.feedback{font-size:13px;margin-top:7px;color:var(--teal)}.score{font-size:20px;font-weight:bold;color:var(--navy);margin-top:15px}
-.paper-row{padding:15px 0;border-bottom:1px solid var(--line)}.locked{opacity:.95}.lock{font-size:22px}
-footer{background:var(--navy);color:#fff;padding:32px 7%;text-align:center}footer a{color:var(--gold)}
-form{max-width:620px;margin:auto;background:#fff;padding:22px;border-radius:12px}form input,form select,form textarea{width:100%;margin:7px 0 14px}
-@media(max-width:650px){header{justify-content:center}nav{justify-content:center}.hero{padding:48px 6%}section{padding:35px 5%}}
+:root{
+ --royal:#2347e0;--royal-d:#1730a8;--navy:#0c1a4b;--gold:#ffc23d;--gold-d:#e9a400;--purple:#7b3fe4;--turq:#13c2c2;--orange:#ff8a1f;--pink:#ff4f8b;
+ --ink:#1c2547;--muted:#5d6788;--paper:#f6f8ff;--line:#e2e7f6;--teal:var(--royal);
+ --r-lg:26px;--r-md:18px;--shadow:0 18px 40px -18px rgba(23,48,168,.35);--shadow-sm:0 8px 22px -12px rgba(23,48,168,.28);
+ --head:'Baloo 2','Nunito',system-ui,sans-serif;
+}
+html{scroll-behavior:smooth;scroll-padding-top:84px}
+body{font-family:'Nunito',system-ui,Arial,sans-serif;background:var(--paper);color:var(--ink);line-height:1.65;overflow-x:hidden}
+h1,h2,h3,h4{font-family:var(--head);line-height:1.15}
+img{max-width:100%;display:block}
+a{color:var(--royal)}
+:focus-visible{outline:3px solid var(--gold);outline-offset:3px;border-radius:6px}
+
+/* Header */
+header{background:rgba(12,26,75,.92);backdrop-filter:saturate(160%) blur(12px);-webkit-backdrop-filter:saturate(160%) blur(12px);color:#fff;padding:12px 4%;display:flex;justify-content:space-between;align-items:center;gap:14px;position:sticky;top:0;z-index:50;border-bottom:1px solid #ffffff1a}
+.logo{display:flex;align-items:center;gap:10px;font-family:var(--head);font-size:20px;font-weight:800;color:#fff;text-decoration:none;white-space:nowrap}
+.logo-mark{width:40px;height:40px;border-radius:13px;display:grid;place-items:center;font-size:21px;background:conic-gradient(from 200deg,var(--gold),var(--orange),var(--pink),var(--purple),var(--turq),var(--gold));box-shadow:0 6px 16px -6px #ffc23d99}
+.logo small{display:block;font-family:'Nunito';font-size:11px;font-weight:700;color:#ffd977;letter-spacing:.08em;text-transform:uppercase;line-height:1}
+nav{display:flex;gap:2px;flex-wrap:wrap;justify-content:flex-end}
+nav a{color:#e9eeff;text-decoration:none;font-size:13.5px;font-weight:700;padding:7px 8px;white-space:nowrap;border-radius:999px;transition:background .2s,color .2s}
+nav a:hover{background:#ffffff1c;color:#fff}
+nav a.nav-cta{background:linear-gradient(90deg,var(--gold),var(--orange));color:var(--navy)}
+.nav-toggle{display:none;background:#ffffff1a;border:1px solid #ffffff40;color:#fff;border-radius:12px;padding:8px 12px;font:800 15px 'Nunito';cursor:pointer}
+
+/* Buttons */
+.btn{display:inline-flex;align-items:center;gap:8px;background:linear-gradient(90deg,var(--gold),#ffae2b);color:var(--navy);padding:12px 22px;border-radius:999px;text-decoration:none;font-weight:800;font-family:'Nunito';font-size:15px;border:0;cursor:pointer;margin:4px;box-shadow:0 10px 20px -10px #e9a400;transition:transform .2s,box-shadow .2s,filter .2s}
+.btn:hover{transform:translateY(-2px);box-shadow:0 14px 24px -10px #e9a400;filter:brightness(1.04)}
+.btn:disabled{opacity:.6;cursor:not-allowed;transform:none}
+.btn.blue{background:linear-gradient(90deg,var(--royal),var(--purple));color:#fff;box-shadow:0 10px 20px -10px var(--royal)}
+.btn.outline{background:#fff;border:2px solid var(--royal);color:var(--royal);box-shadow:none}
+.btn.ghost{background:#ffffff14;border:2px solid #ffffff66;color:#fff;box-shadow:none}
+
+/* Sections */
+section{padding:72px 6%;position:relative}
+.alt{background:linear-gradient(180deg,#eef2ff,#f6f8ff)}
+.heading{text-align:center;margin:0 auto 34px;max-width:820px}
+.heading h2{color:var(--navy);font-size:clamp(28px,4vw,40px);margin-bottom:8px}
+.heading p{color:var(--muted);font-size:16.5px}
+.eyebrow{display:inline-block;font-weight:800;font-size:12.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--purple);background:#7b3fe416;padding:6px 14px;border-radius:999px;margin-bottom:12px}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:22px;max-width:1240px;margin:0 auto}
+.card{background:#fff;padding:24px;border-radius:var(--r-md);box-shadow:var(--shadow-sm);border:1px solid var(--line);transition:transform .3s,box-shadow .3s}
+.card:hover{transform:translateY(-5px);box-shadow:var(--shadow)}
+.card h3{color:var(--navy);margin-bottom:8px;font-size:21px}.card p{font-size:14.5px;color:var(--muted)}
+.icon{font-size:30px;margin-bottom:10px;width:58px;height:58px;border-radius:17px;display:grid;place-items:center;background:linear-gradient(135deg,#2347e01a,#7b3fe41f)}
+.notice{background:linear-gradient(120deg,#2347e0,#7b3fe4 60%,#13c2c2);color:#fff;padding:30px;border-radius:var(--r-lg);text-align:center;box-shadow:var(--shadow)}
+.notice h2,.notice h3,.notice strong{color:#fff}.notice p{color:#eef1ff;margin:8px auto 14px;max-width:720px}
+.small{font-size:12.5px;color:var(--muted)}
+.pill{display:inline-block;border-radius:999px;padding:4px 12px;font-size:11.5px;font-weight:800;letter-spacing:.04em;background:#dff8f3;color:#0b7a6b}.premium{background:#fff1cf;color:#8a5800}
+.panel{background:#fff;border:1px solid var(--line);border-radius:var(--r-lg);padding:28px;max-width:1040px;margin:18px auto;box-shadow:var(--shadow-sm)}
+.controls{display:flex;gap:14px;flex-wrap:wrap;margin:6px 0 20px;padding:16px;background:#f2f5ff;border-radius:var(--r-md)}
+.controls label{font-weight:800;font-size:13px;display:block;margin-bottom:5px;color:var(--navy)}
+select,input,textarea{padding:12px 14px;border:2px solid #dbe2f5;border-radius:12px;font:inherit;max-width:100%;background:#fff;transition:border-color .2s,box-shadow .2s}
+select:focus,input:focus,textarea:focus{outline:0;border-color:var(--royal);box-shadow:0 0 0 4px #2347e022}
+.controls select{min-width:190px}
+.lesson h2{color:var(--royal);margin:22px 0 8px;font-size:24px}
+.lesson h3{color:var(--navy);margin:16px 0 6px}.lesson p,.lesson li{margin:6px 0}.lesson ul,.lesson ol{padding-left:23px}
+.lesson:empty{display:none}
+.example{background:#f0f4ff;border-left:5px solid var(--turq);padding:14px 16px;margin:12px 0;border-radius:12px}
+.question{padding:18px;border:1px solid var(--line);border-radius:var(--r-md);margin:12px 0;background:#fbfcff}
+.question p{font-weight:800;margin-bottom:8px;color:var(--navy)}
+.option{display:flex;gap:10px;align-items:center;font-weight:600;margin:7px 0;padding:10px 14px;border-radius:12px;border:2px solid #e6ebf8;background:#fff;cursor:pointer;transition:border-color .2s,background .2s}
+.option:hover{border-color:#b8c6f5;background:#f5f7ff}
+.option:has(input:checked){border-color:var(--royal);background:#eef2ff}
+.option input{accent-color:var(--royal);width:18px;height:18px}
+.feedback{font-size:13.5px;margin-top:8px;color:var(--royal);font-weight:700}
+.score{font-family:var(--head);font-size:26px;font-weight:800;color:var(--royal);margin-top:16px}
+#quizResult:not(:empty){background:linear-gradient(120deg,#fff7dd,#eef2ff);border-radius:var(--r-md);padding:18px 22px;margin-top:16px;border:1px solid #ffe39a}
+.paper-row{padding:20px;border:1px solid var(--line);border-radius:var(--r-md);margin-bottom:14px;transition:transform .25s,box-shadow .25s}
+.paper-row:hover{transform:translateX(4px);box-shadow:var(--shadow-sm)}
+.paper-row h3{color:var(--navy);margin:8px 0 4px}
+.locked{opacity:1;border-left:5px solid var(--gold)}.lock{font-size:22px}
+footer{background:radial-gradient(circle at 15% 0,#2347e0 0,transparent 40%),radial-gradient(circle at 90% 100%,#7b3fe4 0,transparent 40%),var(--navy);color:#fff;padding:52px 7%;text-align:center}
+footer h2{font-size:30px;margin-bottom:6px}footer a{color:var(--gold);font-weight:800}
+form{max-width:640px;margin:auto;background:#fff;padding:30px;border-radius:var(--r-lg);box-shadow:var(--shadow-sm);border:1px solid var(--line)}
+form label{font-weight:800;font-size:14px;color:var(--navy)}
+form input,form select,form textarea{width:100%;margin:7px 0 16px}
+
+/* Payment cards */
+#payments .card{text-align:center;position:relative;overflow:hidden;border-top:6px solid var(--c,var(--royal))}
+#payments .card:nth-child(1){--c:var(--purple)}#payments .card:nth-child(2){--c:var(--turq)}#payments .card:nth-child(3){--c:var(--royal)}#payments .card:nth-child(4){--c:var(--orange)}
+#payments .card .icon{margin:0 auto 12px}
+#payments .card h3+p+h3{font-size:30px;color:var(--c);margin:10px 0}
+
+/* HERO */
+.hero{position:relative;overflow:hidden;color:#fff;padding:64px 6% 96px;background:
+ radial-gradient(circle at 8% 18%,#13c2c255 0,transparent 32%),
+ radial-gradient(circle at 92% 12%,#ff8a1f44 0,transparent 30%),
+ radial-gradient(circle at 70% 95%,#7b3fe488 0,transparent 42%),
+ linear-gradient(130deg,#0c1a4b 0%,#1730a8 45%,#2347e0 70%,#5a32d6 100%)}
+.hero:after{content:"";position:absolute;left:0;right:0;bottom:-1px;height:70px;background:var(--paper);clip-path:ellipse(75% 100% at 50% 100%)}
+.hero-grid{position:relative;z-index:2;display:grid;grid-template-columns:1.08fr .92fr;gap:48px;align-items:center;max-width:1240px;margin:0 auto}
+.hero-badge{display:inline-flex;align-items:center;gap:8px;background:#ffffff1a;border:1px solid #ffffff38;padding:7px 15px;border-radius:999px;font-size:13.5px;font-weight:800;color:#ffe08a}
+.hero h1{font-size:clamp(40px,6.2vw,72px);margin:18px 0 14px;letter-spacing:-.01em}
+.hero h1 .grad{background:linear-gradient(90deg,var(--gold),var(--orange) 45%,#ff6fa5 70%,var(--turq));-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero-lead{font-size:clamp(16px,1.6vw,19px);max-width:580px;color:#e3e9ff;margin-bottom:24px}
+.hero-ctas{display:flex;flex-wrap:wrap;gap:6px;margin-left:-4px}
+.grade-chips{display:flex;gap:10px;flex-wrap:wrap;margin-top:26px}
+.grade-chip{display:flex;align-items:center;gap:8px;text-decoration:none;color:#fff;font-weight:800;padding:9px 16px 9px 9px;border-radius:999px;background:#ffffff14;border:1px solid #ffffff30;transition:background .2s,transform .2s}
+.grade-chip:hover{background:#ffffff26;transform:translateY(-2px)}
+.grade-chip b{width:30px;height:30px;border-radius:50%;display:grid;place-items:center;font-size:14px;color:var(--navy)}
+.hero-visual{position:relative;min-height:560px}
+.portrait-card{position:absolute;right:0;top:0;width:78%;margin:0;border-radius:32px;padding:10px;background:linear-gradient(140deg,var(--gold),var(--orange),var(--pink),var(--purple),var(--turq));box-shadow:0 30px 60px -25px #000a;animation:float 7s ease-in-out infinite}
+.portrait-card img{width:100%;height:auto;aspect-ratio:1/1.1;object-fit:cover;object-position:50% 20%;border-radius:24px}
+.portrait-tag{position:absolute;right:-14px;bottom:-22px;z-index:4;background:#fff;color:var(--navy);border-radius:18px;padding:12px 16px;box-shadow:0 18px 30px -14px #0008;max-width:250px}
+.portrait-tag strong{font-family:var(--head);font-size:19px;display:block;line-height:1.1}
+.portrait-tag span{font-size:12.5px;font-weight:800;color:var(--purple)}
+.learners-card{position:absolute;left:0;bottom:10px;width:54%;z-index:3;border-radius:24px;background:#fff;padding:10px;box-shadow:0 24px 50px -20px #000b;animation:float 8s ease-in-out -3s infinite}
+.learners-card svg{width:100%;height:auto;display:block;border-radius:16px}
+.learners-card p{font-family:var(--head);font-weight:800;color:var(--navy);text-align:center;font-size:15px;padding:6px 0 2px}
+.floater{position:absolute;display:flex;align-items:center;gap:8px;background:#ffffffee;color:var(--navy);font-weight:800;font-size:13px;padding:8px 13px;border-radius:999px;box-shadow:0 12px 24px -12px #0009;z-index:3}
+.floater.f1{top:6%;left:4%;animation:float 6s ease-in-out -1s infinite}
+.floater.f2{top:46%;right:-8px;animation:float 6.5s ease-in-out -2s infinite}
+.sparkle{position:absolute;color:#ffd75e;font-size:22px;animation:twinkle 3s ease-in-out infinite;pointer-events:none}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
+@keyframes twinkle{0%,100%{opacity:.25;transform:scale(.8) rotate(0)}50%{opacity:1;transform:scale(1.15) rotate(20deg)}}
+
+/* Motivation ribbon */
+.ribbon{padding:0 6%;margin-top:-34px;position:relative;z-index:5}
+.ribbon-inner{max-width:1240px;margin:0 auto;display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.motto{display:flex;align-items:center;gap:14px;background:#fff;border-radius:var(--r-md);padding:18px 20px;box-shadow:var(--shadow);border:1px solid var(--line)}
+.motto i{font-style:normal;font-size:26px;width:52px;height:52px;flex:none;display:grid;place-items:center;border-radius:16px;background:var(--bg)}
+.motto strong{font-family:var(--head);font-size:18.5px;color:var(--navy);display:block;line-height:1.15}
+.motto span{font-size:13px;color:var(--muted)}
+
+/* Shortcuts */
+.shortcuts{display:grid;grid-template-columns:repeat(6,1fr);gap:16px;max-width:1240px;margin:0 auto}
+.shortcut{--a:var(--royal);--b:var(--purple);position:relative;overflow:hidden;display:flex;flex-direction:column;align-items:flex-start;gap:6px;padding:22px 18px 20px;min-height:200px;border-radius:var(--r-md);color:#fff;text-decoration:none;background:linear-gradient(150deg,var(--a),var(--b));box-shadow:0 16px 30px -18px var(--a);transition:transform .3s,box-shadow .3s}
+.shortcut:before{content:"";position:absolute;width:150px;height:150px;border-radius:50%;background:#ffffff1f;right:-50px;top:-50px;transition:transform .5s}
+.shortcut:hover{transform:translateY(-7px) rotate(-.5deg);box-shadow:0 24px 40px -18px var(--a)}
+.shortcut:hover:before{transform:scale(1.4)}
+.shortcut .s-ico{font-size:30px;width:58px;height:58px;border-radius:18px;display:grid;place-items:center;background:#ffffff2e;border:1px solid #ffffff55;margin-bottom:8px;transition:transform .35s}
+.shortcut:hover .s-ico{transform:scale(1.1) rotate(-8deg)}
+.shortcut strong{font-family:var(--head);font-size:19px;line-height:1.1}
+.shortcut span{font-size:13px;color:#ffffffdd;line-height:1.4}
+.shortcut em{margin-top:auto;font-style:normal;font-weight:800;font-size:13px;background:#ffffff26;padding:4px 11px;border-radius:999px}
+
+/* Grade library cards */
+.grade-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;max-width:1240px;margin:0 auto}
+.grade-card{--a:var(--royal);--b:var(--turq);position:relative;border-radius:var(--r-lg);background:#fff;border:1px solid var(--line);box-shadow:var(--shadow-sm);overflow:hidden;display:flex;flex-direction:column;transition:transform .3s,box-shadow .3s}
+.grade-card:hover{transform:translateY(-8px);box-shadow:var(--shadow)}
+.grade-top{position:relative;padding:26px 24px 30px;color:#fff;background:linear-gradient(135deg,var(--a),var(--b));overflow:hidden}
+.grade-top:after{content:attr(data-num);position:absolute;right:10px;bottom:-40px;font-family:var(--head);font-weight:800;font-size:150px;line-height:1;color:#ffffff22}
+.grade-top .g-ico{font-size:34px}
+.grade-top h3{color:#fff;font-size:30px;margin:6px 0 2px}
+.grade-top p{color:#ffffffe0;font-size:14px;font-weight:700}
+.grade-body{padding:22px 24px 24px;display:flex;flex-direction:column;gap:12px;flex:1}
+.grade-body>p{color:var(--muted);font-size:14.5px}
+.g-tags{display:flex;flex-wrap:wrap;gap:6px}
+.g-tags span{font-size:12px;font-weight:800;padding:4px 10px;border-radius:999px;background:#f0f3ff;color:var(--royal-d)}
+.grade-actions{margin-top:auto;display:flex;flex-wrap:wrap;gap:4px;margin-left:-4px}
+.grade-actions .btn{font-size:14px;padding:10px 16px}
+
+/* Founder */
+.founder{display:grid;grid-template-columns:.85fr 1.15fr;gap:48px;align-items:center;max-width:1140px;margin:0 auto}
+.founder-photo{position:relative}
+.founder-photo:before{content:"";position:absolute;inset:-14px 14px 14px -14px;border-radius:34px;background:linear-gradient(135deg,var(--turq),var(--royal),var(--purple))}
+.founder-photo img{position:relative;border-radius:30px;width:100%;height:auto;aspect-ratio:1/1.1;object-fit:cover;object-position:50% 20%;box-shadow:var(--shadow)}
+.founder-photo .seal{position:absolute;right:-14px;bottom:24px;background:linear-gradient(135deg,var(--gold),var(--orange));color:var(--navy);font-weight:800;font-family:var(--head);padding:12px 16px;border-radius:18px;box-shadow:var(--shadow-sm);font-size:15px;line-height:1.15;text-align:center}
+.founder h2{font-size:clamp(30px,4vw,44px);color:var(--navy)}
+.founder .role{font-weight:800;color:var(--purple);font-size:17px;margin:4px 0 16px}
+.founder blockquote{font-family:var(--head);font-size:21px;line-height:1.35;color:var(--royal-d);border-left:5px solid var(--gold);padding:6px 0 6px 18px;margin:18px 0}
+.founder-points{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:18px 0}
+.founder-points div{display:flex;gap:10px;align-items:center;background:#fff;border:1px solid var(--line);border-radius:14px;padding:11px 13px;font-weight:700;font-size:14px}
+
+/* Subject cards */
+.subject-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:22px;max-width:1240px;margin:0 auto}
+.subject-card{--c:var(--royal);--bg:#eaf0ff;background:#fff;border-radius:var(--r-lg);border:1px solid var(--line);overflow:hidden;box-shadow:var(--shadow-sm);transition:transform .3s,box-shadow .3s;display:flex;flex-direction:column}
+.subject-card:hover{transform:translateY(-6px);box-shadow:var(--shadow)}
+.subject-art{background:var(--bg);height:150px;display:grid;place-items:center;position:relative;overflow:hidden}
+.subject-art svg{width:72%;height:auto;max-height:130px;transition:transform .5s}
+.subject-card:hover .subject-art svg{transform:scale(1.07) rotate(-2deg)}
+.subject-body{padding:20px 22px 22px;display:flex;flex-direction:column;gap:8px;flex:1}
+.subject-body h3{color:var(--c);font-size:21px;display:flex;align-items:center;gap:8px}
+.subject-body p{color:var(--muted);font-size:14px}
+.subject-body .s-links{margin-top:auto;display:flex;gap:8px;flex-wrap:wrap;padding-top:6px}
+.subject-body .s-links a{font-size:13px;font-weight:800;text-decoration:none;padding:7px 12px;border-radius:999px;background:var(--bg);color:var(--c);transition:filter .2s}
+.subject-body .s-links a:hover{filter:brightness(.94)}
+
+/* Quote band */
+.quote-band{background:linear-gradient(100deg,var(--orange),var(--pink) 40%,var(--purple));color:#fff;text-align:center;padding:54px 6%;overflow:hidden}
+.quote-band h2{font-size:clamp(28px,4.4vw,48px);margin-bottom:8px}
+.quote-band p{max-width:700px;margin:0 auto;color:#fff1f7;font-size:17px}
+
+/* Scroll reveal */
+.js .reveal{opacity:0;transform:translateY(26px);transition:opacity .7s ease,transform .7s ease}
+.js .reveal.in{opacity:1;transform:none}
+
+@media(max-width:1100px){.shortcuts{grid-template-columns:repeat(3,1fr)}.subject-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:1300px){
+ .nav-toggle{display:block}
+ nav{display:none;position:absolute;left:0;right:0;top:100%;flex-direction:column;background:var(--navy);padding:12px 4% 18px;gap:2px;border-bottom:1px solid #ffffff22;max-height:calc(100vh - 70px);overflow:auto}
+ nav.open{display:flex}
+ nav a{padding:11px 14px;border-radius:12px;font-size:15px}
+}
+@media(max-width:980px){
+ .hero-grid{grid-template-columns:1fr;gap:36px}
+ .hero-visual{min-height:0;max-width:520px;margin:0 auto;width:100%;display:grid;grid-template-columns:1fr;gap:16px}
+ .portrait-card,.learners-card{position:relative;width:100%;left:auto;right:auto;top:auto;bottom:auto}
+ .portrait-tag{right:14px;bottom:14px}
+ .learners-card{margin:-70px auto 0 0}
+ .learners-card{width:88%;margin:-80px auto 0 0;z-index:2}
+ .floater.f2{top:auto;bottom:34%;right:6px}
+ .ribbon-inner,.grade-cards{grid-template-columns:1fr}
+ .founder{grid-template-columns:1fr;gap:36px}
+ .founder-photo{max-width:440px;margin:0 auto;width:100%}
+}
+@media(max-width:650px){
+ section{padding:54px 5%}.hero{padding:42px 5% 86px}
+ .shortcuts{grid-template-columns:repeat(2,1fr);gap:12px}.shortcut{min-height:180px;padding:18px 15px}
+ .subject-grid{grid-template-columns:1fr}
+ .founder-points{grid-template-columns:1fr}
+ .panel{padding:20px}form{padding:22px}
+ .logo{font-size:17px}.logo small{display:none}
+ .controls select{min-width:0;width:100%}.controls>div{flex:1 1 100%}
+}
+
+/* Promotional banner slot (assets/promo-banner.webp). Falls back to the illustration if the file is missing. */
+.learners-card .promo-banner{width:100%;height:auto;aspect-ratio:1200/630;object-fit:cover;border-radius:16px;display:block}
+.learners-card.has-banner svg{display:none}
+.founder-banner{max-width:1140px;margin:40px auto 0;border-radius:var(--r-lg);padding:8px;background:linear-gradient(120deg,var(--gold),var(--orange),var(--pink),var(--purple),var(--turq));box-shadow:var(--shadow)}
+.founder-banner img{width:100%;height:auto;border-radius:20px}
+
+/* Premium payment cards */
+.pay-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:18px;max-width:1240px;margin:0 auto}
+.pay-card{--a:var(--royal);--b:var(--turq);position:relative;overflow:hidden;background:#fff;border:1px solid var(--line);border-radius:var(--r-md);padding:22px 18px 18px;box-shadow:var(--shadow-sm);display:flex;flex-direction:column;gap:6px;transition:transform .3s,box-shadow .3s}
+.pay-card:before{content:"";position:absolute;inset:0 0 auto 0;height:6px;background:linear-gradient(90deg,var(--a),var(--b))}
+.pay-card:hover{transform:translateY(-5px);box-shadow:var(--shadow)}
+.pay-ico{width:52px;height:52px;border-radius:16px;display:grid;place-items:center;font-size:26px;background:linear-gradient(135deg,var(--a),var(--b));box-shadow:0 10px 18px -10px var(--a)}
+.pay-card h3{color:var(--navy);font-size:20px;margin-top:6px}
+.pay-card p{font-size:13.5px;color:var(--muted);flex:1}
+.pay-price{font-family:var(--head);font-weight:800;font-size:26px;color:var(--a)}
+.pay-price small{font-family:'Nunito';font-size:13px;color:var(--muted);font-weight:800}
+.pay-card .btn{justify-content:center;margin:6px 0 0}
+
+/* More engaging grade and subject cards */
+.grade-card:hover .grade-top .g-ico{transform:rotate(-8deg) scale(1.15)}
+.grade-top .g-ico{display:inline-grid;place-items:center;width:58px;height:58px;border-radius:18px;background:#ffffff2e;border:1px solid #ffffff55;transition:transform .35s}
+.grade-top:before{content:"";position:absolute;width:160px;height:160px;border-radius:50%;background:#ffffff1a;top:-60px;left:-50px}
+.g-tags span{background:color-mix(in srgb,var(--a) 12%,#fff);color:var(--a)}
+.subject-card{border-top:6px solid var(--c)}
+.subject-art:after{content:"";position:absolute;width:120px;height:120px;border-radius:50%;background:#ffffff80;right:-30px;bottom:-40px}
+
+@media(max-width:1100px){.pay-grid{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:980px){.grade-cards{max-width:560px}}
+@media(max-width:650px){
+ .hero h1{font-size:clamp(34px,10vw,46px)}
+ .hero-lead{font-size:16px}
+ .hero-ctas{display:grid;grid-template-columns:1fr;gap:6px}.hero-ctas .btn{justify-content:center;margin:0}
+ .grade-chips{display:grid;grid-template-columns:1fr;gap:8px}
+ .floater{display:none}
+ .hero-visual{max-width:420px}
+ .learners-card{width:92%;margin:-60px auto 0 4%}
+ .grade-top{padding:20px 20px 24px}.grade-top h3{font-size:26px}.grade-top:after{font-size:120px}
+ .grade-body{padding:18px 18px 20px}
+ .grade-actions{display:grid;grid-template-columns:1fr;margin-left:0}.grade-actions .btn{justify-content:center;margin:3px 0}
+ .subject-grid{grid-template-columns:repeat(2,1fr);gap:12px}
+ .subject-art{height:96px}.subject-art svg{max-height:84px}
+ .subject-body{padding:14px 14px 16px}.subject-body h3{font-size:17px}.subject-body p{font-size:12.5px}
+ .pay-grid{grid-template-columns:repeat(2,1fr);gap:12px}.pay-card{padding:18px 14px 14px}.pay-price{font-size:22px}
+ .founder-banner{margin-top:28px;padding:5px}
+ .dash-progress-row{grid-template-columns:1fr 40px}.dash-progress-row .dash-bar{grid-column:1 / 3;grid-row:2}
+ .dash-activity{flex-wrap:wrap}
+}
+@media(max-width:380px){.subject-grid,.pay-grid{grid-template-columns:1fr}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important;scroll-behavior:auto!important}.js .reveal{opacity:1;transform:none}}
 </style>
+<script>document.documentElement.classList.add('js')</script>
 </head>
 <body>
 <header>
- <div class="logo">🎓 Junior School Learning Hub</div>
- <nav>
+ <a class="logo" href="#home"><span class="logo-mark">🎓</span><span>Junior School Learning Hub<small>Grades 7 · 8 · 9 · CBC</small></span></a>
+ <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">☰ Menu</button>
+ <nav id="site-nav">
   <a href="#home">Home</a><a href="#grades">Grades</a><a href="#learning">Learning Notes</a>
-  <a href="#quiz">Automated Quiz</a><a href="#revision">Revision Papers</a><a href="#register">Register</a><a href="grade7-complete-detailed-learning-library.html">Grade 7 Full Library</a><a href="grade8-mathematics-term3-learning-library.html">Grade 8 Mathematics</a><a href="#learner-account">My Dashboard</a>
+  <a href="#quiz">Automated Quiz</a><a href="#revision">Revision Papers</a><a href="#register">Register</a><a href='/grade7-complete-detailed-learning-library.html'>Grade 7 Full Library</a><a href='/grade8-mathematics-term3-learning-library'>Grade 8 Mathematics</a><a href='/grade9-learning-library'>Grade 9 Library</a><a class="nav-cta" href="#learner-account">My Dashboard</a>
  </nav>
 </header>
 
 <div class="hero" id="home">
- <h1>Learn Today. Lead Tomorrow.</h1>
- <p>Quality CBC-aligned learning support for Grades 7–9. Explore detailed notes, practise with instant-feedback quizzes and prepare confidently for school-based assessments.</p>
- <a class="btn" href="#learning">Explore Learning Notes</a>
- <a class="btn blue" href="#quiz">Try an Automated Quiz</a>
+ <span class="sparkle" style="top:14%;left:46%">✦</span><span class="sparkle" style="top:70%;left:3%;animation-delay:-1s">✧</span><span class="sparkle" style="top:8%;right:4%;animation-delay:-2s">✦</span>
+ <div class="hero-grid">
+  <div class="hero-copy">
+   <span class="hero-badge">⭐ Kenya's CBC Junior School learning companion</span>
+   <h1>Learn Today.<br><span class="grad">Lead Tomorrow.</span></h1>
+   <p class="hero-lead">Quality CBC-aligned learning support for Grades 7–9. Explore detailed notes, practise with instant-feedback quizzes and prepare confidently for school-based assessments.</p>
+   <div class="hero-ctas">
+    <a class="btn" href="#learning">📚 Explore Learning Notes</a>
+    <a class="btn blue" href="#quiz">🧠 Try an Automated Quiz</a>
+    <a class="btn ghost" href="#learner-account">🚀 My Dashboard</a>
+   </div>
+   <div class="grade-chips" aria-label="Jump to a grade">
+    <a class='grade-chip' href='/grade7-complete-detailed-learning-library.html'><b style="background:var(--gold)">7</b>Grade 7 Library</a>
+    <a class='grade-chip' href='/grade8-mathematics-term3-learning-library'><b style="background:var(--turq)">8</b>Grade 8 Maths</a>
+    <a class="grade-chip" href="/grade9-learning-library"><b style="background:var(--orange)">9</b>Grade 9 Library</a>
+   </div>
+  </div>
+  <div class="hero-visual">
+   <div class="floater f1">🏆 Track your progress</div>
+   <figure class="portrait-card">
+    <img src="assets/founder-israel-bosire.webp" alt="Mr. Israel, Founder and Education Mentor of Junior School Learning Hub" width="1000" height="1232" fetchpriority="high">
+    <figcaption class="portrait-tag"><strong>Mr. Israel</strong><span>Founder &amp; Education Mentor</span></figcaption>
+   </figure>
+   <div class="floater f2">✨ Instant quiz feedback</div>
+   <div class="learners-card has-banner">
+    <img class="promo-banner" src="assets/promo-banner.webp" alt="Junior School Learning Hub colourful promotional banner" width="1200" height="630" onerror="this.parentNode.classList.remove('has-banner');this.remove()">
+    <svg viewBox="0 0 400 230" role="img" aria-label="Illustration of happy learners studying together">
+     <defs>
+      <linearGradient id="lsky" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#e3ecff"/><stop offset="1" stop-color="#f3e9ff"/></linearGradient>
+      <linearGradient id="ltable" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffb347"/><stop offset="1" stop-color="#ff8a1f"/></linearGradient>
+     </defs>
+     <rect width="400" height="230" fill="url(#lsky)"/>
+     <circle cx="345" cy="45" r="26" fill="#ffc23d" opacity=".9"/>
+     <g fill="#2347e0" opacity=".12"><circle cx="60" cy="50" r="34"/><circle cx="200" cy="30" r="22"/></g>
+     <text x="40" y="58" font-size="22" fill="#7b3fe4" font-weight="800" font-family="Baloo 2,sans-serif">A+</text>
+     <text x="290" y="100" font-size="18" fill="#13c2c2" font-weight="800" font-family="Baloo 2,sans-serif">π</text>
+     <text x="175" y="62" font-size="18" fill="#ff8a1f" font-weight="800" font-family="Baloo 2,sans-serif">✦</text>
+     <!-- learner 1 -->
+     <g><rect x="38" y="118" width="74" height="70" rx="26" fill="#7b3fe4"/><circle cx="75" cy="96" r="25" fill="#7a4a2c"/><path d="M50 92c2-20 48-24 50 0-8-8-38-10-50 0z" fill="#1d1d2b"/><circle cx="67" cy="98" r="2.6" fill="#1d1d2b"/><circle cx="83" cy="98" r="2.6" fill="#1d1d2b"/><path d="M67 107q8 7 16 0" stroke="#1d1d2b" stroke-width="2.6" fill="none" stroke-linecap="round"/><path d="M104 140 l38 22" stroke="#7a4a2c" stroke-width="11" stroke-linecap="round"/></g>
+     <!-- learner 2 (center, hand up) -->
+     <g><rect x="160" y="108" width="80" height="80" rx="28" fill="#13c2c2"/><circle cx="200" cy="84" r="27" fill="#5b3620"/><path d="M172 80c0-26 56-26 56 0 0 4-3 8-3 8-4-14-46-16-50 0 0 0-3-4-3-8z" fill="#1d1d2b"/><circle cx="191" cy="86" r="2.8" fill="#1d1d2b"/><circle cx="209" cy="86" r="2.8" fill="#1d1d2b"/><path d="M190 96q10 9 20 0" stroke="#1d1d2b" stroke-width="2.8" fill="none" stroke-linecap="round"/><path d="M236 124 l20 -46" stroke="#5b3620" stroke-width="12" stroke-linecap="round"/><circle cx="257" cy="74" r="8" fill="#5b3620"/></g>
+     <!-- learner 3 -->
+     <g><rect x="288" y="120" width="74" height="68" rx="26" fill="#2347e0"/><circle cx="325" cy="98" r="24" fill="#8a5a36"/><circle cx="305" cy="80" r="11" fill="#1d1d2b"/><circle cx="345" cy="80" r="11" fill="#1d1d2b"/><path d="M302 92c4-20 42-20 46 0-10-7-36-7-46 0z" fill="#1d1d2b"/><circle cx="317" cy="100" r="2.6" fill="#1d1d2b"/><circle cx="333" cy="100" r="2.6" fill="#1d1d2b"/><path d="M317 109q8 7 16 0" stroke="#1d1d2b" stroke-width="2.6" fill="none" stroke-linecap="round"/><path d="M296 142 l-38 20" stroke="#8a5a36" stroke-width="11" stroke-linecap="round"/></g>
+     <!-- table + books + laptop -->
+     <rect x="20" y="168" width="360" height="22" rx="8" fill="url(#ltable)"/>
+     <rect x="40" y="190" width="14" height="40" fill="#e87512"/><rect x="346" y="190" width="14" height="40" fill="#e87512"/>
+     <rect x="170" y="134" width="62" height="36" rx="5" fill="#0c1a4b"/><rect x="175" y="139" width="52" height="26" rx="3" fill="#7fe3e3"/><rect x="162" y="168" width="78" height="5" rx="2" fill="#0c1a4b"/>
+     <path d="M100 168 l26 -12 26 12z" fill="#fff"/><path d="M126 156 v12" stroke="#c8d3f5" stroke-width="2"/>
+     <rect x="262" y="156" width="40" height="7" rx="2" fill="#ff4f8b"/><rect x="266" y="149" width="34" height="7" rx="2" fill="#ffc23d"/><rect x="260" y="163" width="44" height="6" rx="2" fill="#7b3fe4"/>
+    </svg>
+    <p>Learning together, growing together 🌟</p>
+   </div>
+  </div>
+ </div>
 </div>
 
-<section id="grades">
- <div class="heading"><h2>Choose Your Grade</h2><p>Learning resources are organised by grade, subject and topic.</p></div>
- <div class="cards">
-  <div class="card"><div class="icon">📘</div><h3>Grade 7</h3><p>Build strong foundations in numeracy, scientific thinking, technology and practical life skills.</p><a class="btn" href="grade7-complete-detailed-learning-library.html">Open Complete Grade 7 Library</a></div>
-  <div class="card"><div class="icon">📗</div><h3>Grade 8</h3><p>Study Grade 8 Mathematics Term III with detailed notes, worked examples, practical activities and automated quizzes.</p><a class="btn" href="grade8-mathematics-term3-learning-library.html">Open Grade 8 Mathematics Library</a></div>
-  <div class="card"><div class="icon">📕</div><h3>Grade 9</h3><p>Consolidate junior school learning, practise assessment questions and prepare for transition to senior school.</p></div>
+<div class="ribbon">
+ <div class="ribbon-inner">
+  <div class="motto reveal" style="--bg:#fff3d1"><i>💡</i><div><strong>Believe in Your Potential</strong><span>Every great achiever started as a curious learner.</span></div></div>
+  <div class="motto reveal" style="--bg:#e3f9f8"><i>🎯</i><div><strong>Strive for Excellence Every Day</strong><span>Small steps of practice build big results.</span></div></div>
+  <div class="motto reveal" style="--bg:#efe7ff"><i>🚀</i><div><strong>Dream Big, Work Smart</strong><span>Your future is built one lesson at a time.</span></div></div>
  </div>
+</div>
+
+<section id="shortcuts">
+ <div class="heading reveal"><span class="eyebrow">Quick start</span><h2>Where would you like to go today?</h2><p>Jump straight into notes, quizzes, revision and your achievements.</p></div>
+ <div class="shortcuts">
+  <a class="shortcut reveal" href="#grades" style="--a:#2347e0;--b:#4d6bff"><span class="s-ico">📚</span><strong>Learning Library</strong><span>Grade 7, 8 &amp; 9 libraries</span><em>Open →</em></a>
+  <a class="shortcut reveal" href="#payments" style="--a:#7b3fe4;--b:#b05cff"><span class="s-ico">🎬</span><strong>Video Lessons</strong><span>Online tuition with a mentor</span><em>Join →</em></a>
+  <a class="shortcut reveal" href="#quiz" style="--a:#0aa5a5;--b:#22d3c5"><span class="s-ico">🧠</span><strong>Practice Quizzes</strong><span>Instant marking &amp; feedback</span><em>Start →</em></a>
+  <a class="shortcut reveal" href="#learning" style="--a:#ff8a1f;--b:#ffb23d"><span class="s-ico">📒</span><strong>Revision Kits</strong><span>Topic notes &amp; worked examples</span><em>Revise →</em></a>
+  <a class="shortcut reveal" href="#revision" style="--a:#e23d7a;--b:#ff6fa5"><span class="s-ico">📝</span><strong>Past Papers</strong><span>Assessment practice papers</span><em>Practise →</em></a>
+  <a class="shortcut reveal" href="#learner-account" style="--a:#d99500;--b:#ffc23d"><span class="s-ico">🏆</span><strong>Achievements</strong><span>Badges, goals &amp; progress</span><em>View →</em></a>
+ </div>
+</section>
+
+<section class="alt" id="grades">
+ <div class="heading reveal"><span class="eyebrow">Learning libraries</span><h2>Choose Your Grade</h2><p>Learning resources are organised by grade, subject and topic.</p></div>
+ <div class="grade-cards">
+  <article class="grade-card reveal" style="--a:#2347e0;--b:#13c2c2">
+   <div class="grade-top" data-num="7"><div class="g-ico">📘</div><h3>Grade 7</h3><p>Complete Learning Library</p></div>
+   <div class="grade-body">
+    <p>Build strong foundations in numeracy, scientific thinking, technology and practical life skills.</p>
+    <div class="g-tags"><span>Mathematics</span><span>Integrated Science</span><span>Terms 1, 2 &amp; 3</span><span>KSh 10 · 12 hours</span></div>
+    <div class="grade-actions"><a class='btn' href='/grade7-complete-detailed-learning-library.html'>Open Complete Grade 7 Library</a><a class="btn outline" href="#quiz" data-grade="Grade 7">Practise</a></div>
+   </div>
+  </article>
+  <article class="grade-card reveal" style="--a:#7b3fe4;--b:#ff4f8b">
+   <div class="grade-top" data-num="8"><div class="g-ico">📗</div><h3>Grade 8</h3><p>Mathematics · Terms 1, 2 &amp; 3</p></div>
+   <div class="grade-body">
+    <p>Study the full year of Grade 8 Mathematics — Term 1 (Numbers &amp; Algebra), Term 2 (Measurement &amp; Geometry) and Term 3 (Scale Drawing, Solids, Data &amp; Probability) — with notes, worked examples and automated quizzes.</p>
+    <div class="g-tags"><span>Term 1 · 7 topics</span><span>Term 2 · 5 topics</span><span>Term 3 · 29 lessons</span><span>Full-year revision paper</span></div>
+    <div class="grade-actions"><a class='btn' href='/grade8-mathematics-term3-learning-library'>Open Grade 8 Mathematics Library</a><a class="btn outline" href="#payments">Grade 8 Notes</a></div>
+   </div>
+  </article>
+  <article class="grade-card reveal" style="--a:#ff8a1f;--b:#ffc23d">
+   <div class="grade-top" data-num="9"><div class="g-ico">📕</div><h3>Grade 9</h3><p>Grade 9 Learning Library</p></div>
+   <div class="grade-body">
+    <p>Consolidate junior school learning, practise assessment questions and prepare for transition to senior school.</p>
+    <div class="g-tags"><span>Linear equations</span><span>Forces &amp; motion</span><span>Materials</span><span>Food security</span></div>
+    <div class="grade-actions"><a class="btn" href="/grade9-learning-library">Open Grade 9 Library</a><a class="btn outline" href="#learning" data-grade="Grade 9">Free sample notes</a></div>
+   </div>
+  </article>
+ </div>
+</section>
+
+<section id="founder">
+ <div class="founder">
+  <div class="founder-photo reveal">
+   <img src="assets/founder-israel-bosire.webp" alt="Portrait of Mr. Israel, Founder and Education Mentor" width="1000" height="1232" loading="lazy">
+   <div class="seal">🎓 Founder &amp;<br>Mentor</div>
+  </div>
+  <div class="reveal">
+   <span class="eyebrow">Meet your mentor</span>
+   <h2>Mr. Israel</h2>
+   <p class="role">Founder and Education Mentor · Junior School Learning Hub</p>
+   <p>Junior School Learning Hub was created to give every Grade 7, 8 and 9 learner clear notes, meaningful practice and the confidence to succeed in the Competency Based Curriculum — whether learning online or in person.</p>
+   <blockquote>“Believe in your potential. Strive for excellence every day — and never stop asking questions.”</blockquote>
+   <div class="founder-points">
+    <div>👨‍🏫 Online &amp; physical tuition</div><div>📊 Progress-focused support</div><div>🎯 Career guidance</div><div>💬 Parent-friendly updates</div>
+   </div>
+   <a class="btn blue" href="https://wa.me/254741274957?text=Hello%20Mr.%20Israel%2C%20I%20would%20like%20to%20know%20more%20about%20Junior%20School%20Learning%20Hub.">💬 Talk to Mr. Israel on WhatsApp</a>
+   <a class="btn outline" href="#register">Register a Learner</a>
+  </div>
+ </div>
+ <figure class="founder-banner reveal">
+  <img src="assets/promo-banner.webp" alt="Junior School Learning Hub promotional banner featuring Mr. Israel" width="1200" height="630" loading="lazy" onerror="this.parentNode.remove()">
+ </figure>
 </section>
 
 <section class="alt" id="subjects">
- <div class="heading"><h2>Learning Areas</h2><p>More subjects and topics can be added as the learning library grows.</p></div>
- <div class="cards">
-  <div class="card subject"><h3>➗ Mathematics</h3><p>Number, algebra, measurement, geometry, data handling, probability, financial literacy and problem-solving.</p></div>
-  <div class="card subject"><h3>🔬 Integrated Science</h3><p>Scientific investigation, living things, matter, energy, forces, health, environment and technology.</p></div>
-  <div class="card subject"><h3>⚙️ Pre-Technical Studies</h3><p>Design process, materials, tools, safety, drawing, production, entrepreneurship and digital technology.</p></div>
-  <div class="card subject"><h3>🌱 Agriculture</h3><p>Soil, crop production, livestock, farm tools, conservation, food security and agribusiness.</p></div>
+ <div class="heading reveal"><span class="eyebrow">Explore subjects</span><h2>Learning Areas</h2><p>More subjects and topics can be added as the learning library grows.</p></div>
+ <div class="subject-grid">
+  <article class="subject-card reveal" style="--c:#2347e0;--bg:#e8eeff">
+   <div class="subject-art"><svg viewBox="0 0 160 120" aria-hidden="true"><rect x="22" y="14" width="74" height="96" rx="12" fill="#2347e0"/><rect x="31" y="24" width="56" height="22" rx="5" fill="#bfe9ff"/><g fill="#fff"><rect x="31" y="54" width="14" height="12" rx="3"/><rect x="52" y="54" width="14" height="12" rx="3"/><rect x="73" y="54" width="14" height="12" rx="3" fill="#ffc23d"/><rect x="31" y="72" width="14" height="12" rx="3"/><rect x="52" y="72" width="14" height="12" rx="3"/><rect x="73" y="72" width="14" height="12" rx="3" fill="#ffc23d"/><rect x="31" y="90" width="35" height="12" rx="3"/><rect x="73" y="90" width="14" height="12" rx="3" fill="#ff8a1f"/></g><text x="74" y="41" font-size="13" font-weight="800" fill="#0c1a4b" font-family="sans-serif">3.14</text><path d="M108 30 l40 70 h-40z" fill="#7b3fe4" opacity=".85"/><text x="114" y="94" font-size="14" fill="#fff" font-weight="800" font-family="sans-serif">90°</text><text x="112" y="24" font-size="22" fill="#ff8a1f" font-weight="800" font-family="sans-serif">÷</text></svg></div>
+   <div class="subject-body"><h3>➗ Mathematics</h3><p>Number, algebra, measurement, geometry, data handling, probability, financial literacy and problem-solving.</p><div class="s-links"><a href="#learning" data-subject="Mathematics">Notes</a><a href="#quiz" data-subject="Mathematics">Quiz</a></div></div>
+  </article>
+  <article class="subject-card reveal" style="--c:#0a9a9a;--bg:#dff8f6">
+   <div class="subject-art"><svg viewBox="0 0 160 120" aria-hidden="true"><path d="M58 14h24v6h-4v26l26 44c5 9-1 18-11 18H47c-10 0-16-9-11-18l26-44V20h-4z" fill="#fff" stroke="#0a9a9a" stroke-width="4"/><path d="M44 80h52l9 14c3 6-1 11-7 11H42c-6 0-10-5-7-11z" fill="#13c2c2"/><circle cx="62" cy="90" r="5" fill="#fff"/><circle cx="78" cy="84" r="3.5" fill="#fff"/><circle cx="72" cy="66" r="3" fill="#13c2c2"/><circle cx="66" cy="56" r="2.2" fill="#13c2c2"/><g transform="translate(122 46)"><circle r="8" fill="#ff8a1f"/><ellipse rx="26" ry="9" fill="none" stroke="#7b3fe4" stroke-width="3"/><ellipse rx="26" ry="9" fill="none" stroke="#2347e0" stroke-width="3" transform="rotate(60)"/><ellipse rx="26" ry="9" fill="none" stroke="#ff4f8b" stroke-width="3" transform="rotate(-60)"/></g></svg></div>
+   <div class="subject-body"><h3>🔬 Integrated Science</h3><p>Scientific investigation, living things, matter, energy, forces, health, environment and technology.</p><div class="s-links"><a href="#learning" data-subject="Integrated Science">Notes</a><a href="#quiz" data-subject="Integrated Science">Quiz</a></div></div>
+  </article>
+  <article class="subject-card reveal" style="--c:#7b3fe4;--bg:#f0e8ff">
+   <div class="subject-art"><svg viewBox="0 0 160 120" aria-hidden="true"><g transform="translate(58 62)"><circle r="30" fill="#7b3fe4"/><g fill="#7b3fe4"><rect x="-7" y="-42" width="14" height="16" rx="3"/><rect x="-7" y="26" width="14" height="16" rx="3"/><rect x="-42" y="-7" width="16" height="14" rx="3"/><rect x="26" y="-7" width="16" height="14" rx="3"/><rect x="-7" y="-42" width="14" height="16" rx="3" transform="rotate(45)"/><rect x="-7" y="-42" width="14" height="16" rx="3" transform="rotate(-45)"/><rect x="-7" y="26" width="14" height="16" rx="3" transform="rotate(45)"/><rect x="-7" y="26" width="14" height="16" rx="3" transform="rotate(-45)"/></g><circle r="12" fill="#f0e8ff"/></g><path d="M100 98 l36 -60 8 5 -36 60 -12 6z" fill="#ffc23d"/><path d="M136 38 l8 5 4 -7 -8 -5z" fill="#ff4f8b"/><rect x="96" y="100" width="54" height="6" rx="3" fill="#2347e0"/><path d="M104 100v-8M114 100v-5M124 100v-8M134 100v-5M144 100v-8" stroke="#fff" stroke-width="2"/></svg></div>
+   <div class="subject-body"><h3>⚙️ Pre-Technical Studies</h3><p>Design process, materials, tools, safety, drawing, production, entrepreneurship and digital technology.</p><div class="s-links"><a href="#learning" data-subject="Pre-Technical Studies">Notes</a><a href="#quiz" data-subject="Pre-Technical Studies">Quiz</a></div></div>
+  </article>
+  <article class="subject-card reveal" style="--c:#e0720a;--bg:#fff0de">
+   <div class="subject-art"><svg viewBox="0 0 160 120" aria-hidden="true"><circle cx="124" cy="28" r="14" fill="#ffc23d"/><path d="M0 92 q40 -18 80 0 t80 0 v28 H0z" fill="#8a5a36"/><path d="M0 100 q40 -14 80 0 t80 0 v20 H0z" fill="#6b4226"/><path d="M80 92 V40" stroke="#1f9d55" stroke-width="5" stroke-linecap="round"/><path d="M80 66 C60 62 52 46 54 34 C70 36 80 48 80 66z" fill="#27c06a"/><path d="M80 56 C100 52 108 36 106 24 C90 26 80 38 80 56z" fill="#1f9d55"/><path d="M40 92 V70" stroke="#1f9d55" stroke-width="4"/><path d="M40 78 c-10 -2 -14 -10 -13 -16 c8 1 13 7 13 16z" fill="#27c06a"/><path d="M122 92 V72" stroke="#1f9d55" stroke-width="4"/><path d="M122 80 c10 -2 14 -10 13 -16 c-8 1 -13 7 -13 16z" fill="#27c06a"/></svg></div>
+   <div class="subject-body"><h3>🌱 Agriculture</h3><p>Soil, crop production, livestock, farm tools, conservation, food security and agribusiness.</p><div class="s-links"><a href="#learning" data-subject="Agriculture">Notes</a><a href="#quiz" data-subject="Agriculture">Quiz</a></div></div>
+  </article>
  </div>
 </section>
+
+<div class="quote-band">
+ <h2 class="reveal">Strive for Excellence Every Day ✨</h2>
+ <p class="reveal">Read a little, practise a little and celebrate every improvement. Your effort today becomes your success tomorrow.</p>
+</div>
 
 <section id="learning">
  <div class="heading"><h2>📚 Learning Notes Library</h2><p>Select a grade and subject to view a structured sample lesson. Premium topic packs can include expanded notes, diagrams, practical activities, additional worked examples and topic exercises.</p></div>
@@ -82,7 +460,7 @@ form{max-width:620px;margin:auto;background:#fff;padding:22px;border-radius:12px
 </section>
 
 <section class="alt" id="quiz">
- <div class="heading"><h2>🧠 Automated Quiz Centre</h2><p>Answer the questions and submit to receive an automatically calculated score, corrections and feedback. This is a demonstration quiz; additional grade- and topic-specific question banks can be added.</p></div>
+ <div class="heading"><h2>🧠 Automated Quiz Centre</h2><p>Answer the questions and submit to receive an automatically calculated score, corrections and feedback. Log in to your learner account and every marked quiz is saved to your personal dashboard.</p></div>
  <div class="panel">
   <div class="controls">
    <div><label for="quizGrade">Grade</label><select id="quizGrade"><option>Grade 7</option><option>Grade 8</option><option>Grade 9</option></select></div>
@@ -92,7 +470,7 @@ form{max-width:620px;margin:auto;background:#fff;padding:22px;border-radius:12px
   <button class="btn" id="markQuiz" type="button">Submit answers and mark quiz</button>
   <button class="btn outline" id="resetQuiz" type="button">Try again</button>
   <div id="quizResult" aria-live="polite"></div>
-  <p class="small">A full learner account system can later save quiz attempts, scores, topic mastery and progress reports. This browser-only demonstration does not save results to a server.</p>
+  <p class="small" id="quizSaveNote">💾 When you are logged in, your score, answers and progress are saved securely to your learner account and appear on <a href="#learner-account">My Dashboard</a>. Quizzes in the Grade 7, 8 and 9 libraries are saved too.</p>
  </div>
 </section>
 
@@ -109,41 +487,50 @@ form{max-width:620px;margin:auto;background:#fff;padding:22px;border-radius:12px
 </section>
 <section class="alt" id="payments">
   <div class="heading">
+    <span class="eyebrow">Premium access</span>
     <h2>💳 Premium Learning Access</h2>
-    <p>Choose a product and pay securely using M-Pesa.</p>
+    <p>Log in to your learner account, choose a product and pay securely using M-Pesa. Access activates automatically after Safaricom confirms your payment.</p>
   </div>
 
-  <div class="cards">
-    <div class="card">
-      <div class="icon">👩‍🏫</div>
-      <h3>Online Tuition</h3>
-      <p>Access online tuition support.</p>
-      <h3>KSh 100</h3>
-      <button class="btn" onclick="buyProduct('online_tuition')">Pay with M-Pesa</button>
+  <div class="pay-grid">
+    <div class="pay-card" style="--a:#2347e0;--b:#13c2c2">
+      <div class="pay-ico">📘</div>
+      <h3>Grade 7 Notes</h3>
+      <p>Complete Grade 7 Mathematics &amp; Integrated Science library.</p>
+      <div class="pay-price">KSh 10 <small>· 12 hours</small></div>
+      <button class="btn" onclick="buyProduct('grade7_notes')">Pay with M-Pesa</button>
     </div>
 
-    <div class="card">
-      <div class="icon">📝</div>
-      <h3>Premium Quizzes</h3>
-      <p>Access premium revision quizzes.</p>
-      <h3>KSh 20</h3>
-      <button class="btn" onclick="buyProduct('premium_quizzes')">Pay with M-Pesa</button>
-    </div>
-
-    <div class="card">
-      <div class="icon">📘</div>
+    <div class="pay-card" style="--a:#7b3fe4;--b:#ff4f8b">
+      <div class="pay-ico">📗</div>
       <h3>Grade 8 Notes</h3>
       <p>Access premium Grade 8 notes.</p>
-      <h3>KSh 30</h3>
+      <div class="pay-price">KSh 10 <small>· 12 hours</small></div>
       <button class="btn" onclick="buyProduct('grade8_notes')">Pay with M-Pesa</button>
     </div>
 
-    <div class="card">
-      <div class="icon">📙</div>
+    <div class="pay-card" style="--a:#ff8a1f;--b:#ffc23d">
+      <div class="pay-ico">📙</div>
       <h3>Grade 9 Notes</h3>
-      <p>Access premium Grade 9 notes.</p>
-      <h3>KSh 30</h3>
+      <p>Unlock the Grade 9 learning library.</p>
+      <div class="pay-price">KSh 30 <small>· 24 hours</small></div>
       <button class="btn" onclick="buyProduct('grade9_notes')">Pay with M-Pesa</button>
+    </div>
+
+    <div class="pay-card" style="--a:#0aa5a5;--b:#22d3c5">
+      <div class="pay-ico">📝</div>
+      <h3>Premium Quizzes</h3>
+      <p>Access premium revision quizzes.</p>
+      <div class="pay-price">KSh 20 <small>· 24 hours</small></div>
+      <button class="btn" onclick="buyProduct('premium_quizzes')">Pay with M-Pesa</button>
+    </div>
+
+    <div class="pay-card" style="--a:#e23d7a;--b:#ff6fa5">
+      <div class="pay-ico">👩‍🏫</div>
+      <h3>Online Tuition</h3>
+      <p>Access online tuition support.</p>
+      <div class="pay-price">KSh 100 <small>· 24 hours</small></div>
+      <button class="btn" onclick="buyProduct('online_tuition')">Pay with M-Pesa</button>
     </div>
   </div>
 
@@ -152,7 +539,7 @@ form{max-width:620px;margin:auto;background:#fff;padding:22px;border-radius:12px
     <label for="mpesaPhone">M-Pesa phone number</label>
     <input id="mpesaPhone" type="tel" placeholder="0712345678" style="width:100%;margin:10px 0;">
     <p id="paymentMessage" role="status" aria-live="polite"></p>
-    <p class="small">Each successful purchase provides 24-hour access. Sandbox testing only.</p>
+    <p class="small">Grade 7 and Grade 8 Notes give 12 hours of access. Grade 9 Notes, Premium Quizzes and Online Tuition give 24 hours of access. You must be logged in to pay. Sandbox testing only.</p>
   </div>
 </section>
 <section class="alt" id="services">
@@ -196,6 +583,7 @@ const supabaseClient = createClient(SUPABASE_URL, SUPABASE_PUBLISHABLE_KEY);
   const products = {
     online_tuition: "Online Tuition",
     premium_quizzes: "Premium Quizzes",
+    grade7_notes: "Grade 7 Notes",
     grade8_notes: "Grade 8 Notes",
     grade9_notes: "Grade 9 Notes"
   };
@@ -1283,6 +1671,15 @@ noteData["Integrated Science"]["Grade 7"] = `
 <p><b>Study advice:</b> Revise one topic at a time. Draw labelled diagrams of the skin, urinary system and simple electric circuits. Practise explaining concepts in your own words and discuss difficult questions with your teacher.</p>
 `;
 
+// Render the selected grade/subject notes into the Learning Notes panel.
+function showNotes(){
+ const g=document.getElementById('noteGrade'),sub=document.getElementById('noteSubject'),box=document.getElementById('notesContent');
+ if(!g||!sub||!box)return;
+ const html=(noteData[sub.value]||{})[g.value];
+ box.innerHTML=html||'<p>Notes for this grade and subject are coming soon.</p>';
+}
+document.getElementById('noteGrade').addEventListener('change',showNotes);
+document.getElementById('noteSubject').addEventListener('change',showNotes);
 // Refresh the displayed notes after replacing the Grade 7 sample.
 showNotes();
 
@@ -1406,10 +1803,37 @@ buildQuiz();
   </div>
 
   <div class="dash-stats">
-   <div class="dash-stat" style="--bg:#e8f7ff;--bd:#b9e5ff;--fg:#0877d8"><div class="ico">📚</div><strong id="stat-subjects">4</strong><small>Learning areas</small></div>
+   <div class="dash-stat" style="--bg:#e8f7ff;--bd:#b9e5ff;--fg:#0877d8"><div class="ico">📚</div><strong id="stat-subjects">0</strong><small>Subjects practised</small></div>
    <div class="dash-stat" style="--bg:#eafaf2;--bd:#bcebd2;--fg:#07945d"><div class="ico">🧠</div><strong id="stat-attempts">0</strong><small>Quizzes completed</small></div>
    <div class="dash-stat" style="--bg:#fff6df;--bd:#ffe2a0;--fg:#b77908"><div class="ico">⭐</div><strong id="stat-average">—</strong><small>Average quiz score</small></div>
    <div class="dash-stat" style="--bg:#f2eaff;--bd:#d9c2ff;--fg:#7136c9"><div class="ico">🏆</div><strong id="stat-best">—</strong><small>Personal best</small></div>
+  </div>
+
+  <div class="dash-journey">
+   <div class="journey-level"><div class="level-ring" id="dash-level-ring" style="--p:0"><span id="dash-level-num">1</span></div><div><small>LEARNER LEVEL</small><strong id="dash-level-name">Rising Star</strong><span id="dash-level-next">Complete quizzes to earn XP and level up.</span></div></div>
+   <div class="journey-xp"><div class="xp-label"><span>⚡ <b id="dash-xp">0</b> XP</span><span id="dash-xp-goal">Next level at 100 XP</span></div><div class="dash-bar xp"><span id="dash-xp-bar"></span></div><p class="journey-motto" id="dash-motto">🌟 Believe in Your Potential — every quiz brings you closer to mastery.</p></div>
+  </div>
+
+  <section class="dash-leaderboard" aria-labelledby="learner-leaderboard-title">
+   <div class="dash-leaderboard-head">
+    <div><h3 id="learner-leaderboard-title">🏆 Top 10 Learners</h3><p>Celebrate effort, practice and progress across the Learning Hub.</p></div>
+    <span aria-hidden="true" style="font-size:30px">🌟</span>
+   </div>
+   <div id="learner-leaderboard-list" aria-live="polite">
+    <div class="dash-leader-empty">Loading the leaderboard…</div>
+   </div>
+  </section>
+
+
+  <div class="dash-grid dash-grid-goals">
+   <div class="dash-panel">
+    <h3>🎯 My Study Goals</h3>
+    <div id="dash-goals"><div class="dash-empty">Your study goals will appear here.</div></div>
+   </div>
+   <div class="dash-panel">
+    <h3>🏅 Achievement Badges <span class="badge-count" id="dash-badge-count">0 / 8</span></h3>
+    <div class="badge-grid" id="dash-badges"></div>
+   </div>
   </div>
 
   <div class="dash-grid">
@@ -1435,8 +1859,8 @@ buildQuiz();
     </div>
     <div class="dash-panel">
      <h3>💡 Your Learning Motivation</h3>
-     <div class="dash-note">Small steps every day lead to big achievements. Review your quiz feedback, practise topics you find challenging and keep moving forward!</div>
-     <p style="margin-top:13px"><a class="btn" href="grade7-complete-detailed-learning-library.html">Open Complete Grade 7 Library →</a></p>
+     <div class="dash-note">💪 Believe in Your Potential and Strive for Excellence Every Day! Small steps every day lead to big achievements. Review your quiz feedback, practise topics you find challenging and keep moving forward!</div>
+     <p style="margin-top:13px"><a class='btn' href='/grade7-complete-detailed-learning-library.html'>Grade 7 Library →</a><a class='btn blue' href='/grade8-mathematics-term3-learning-library'>Grade 8 Maths →</a><a class='btn outline' href='/grade9-learning-library'>Grade 9 Library →</a></p>
     </div>
    </div>
   </div>
@@ -1463,6 +1887,41 @@ buildQuiz();
     return String(value ?? "").replace(/[&<>"']/g, ch => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[ch]));
   }
 
+  async function refreshLearnerLeaderboard() {
+    const list = document.getElementById("learner-leaderboard-list");
+    if (!list) return;
+    list.innerHTML = '<div class="dash-leader-empty">Loading the leaderboard…</div>';
+    try {
+      const { data, error } = await supabaseClient.rpc("get_learner_leaderboard");
+      if (error) throw error;
+      const learners = data || [];
+      if (!learners.length) {
+        list.innerHTML = '<div class="dash-leader-empty">No quiz results yet. Be among the first learners to complete a quiz!</div>';
+        return;
+      }
+      list.innerHTML = '<div class="dash-leaderboard-list">' + learners.map((learner) => {
+        const isYou = activeUser && learner.learner_name &&
+          learner.learner_name.toLowerCase() ===
+          String(activeUser.user_metadata?.full_name || "").trim().split(/\s+/)[0].toLowerCase() &&
+          learner.grade === (activeUser.user_metadata?.grade || "Grade not specified");
+        const medal = Number(learner.rank_no) === 1 ? "🥇" :
+          Number(learner.rank_no) === 2 ? "🥈" :
+          Number(learner.rank_no) === 3 ? "🥉" : safeText(learner.rank_no);
+        return `<div class="dash-leader-row">
+          <span class="dash-leader-rank">${medal}</span>
+          <div><div class="dash-leader-name">${safeText(learner.learner_name)}${isYou ? " · You" : ""}</div>
+          <div class="dash-leader-grade">${safeText(learner.grade)}</div></div>
+          <div class="dash-leader-score">${Number(learner.average_score)}% avg</div>
+          <div class="dash-leader-quizzes">${Number(learner.quizzes_completed)} quizzes</div>
+        </div>`;
+      }).join("") + '</div>';
+    } catch (error) {
+      list.innerHTML = '<div class="dash-leader-empty">The leaderboard could not load. Please check the Supabase function setup.</div>';
+      console.error("Could not load learner leaderboard:", error.message);
+    }
+  }
+
+
   async function refreshLearnerStats() {
     if (!activeUser || loadingHistory) return;
     loadingHistory = true;
@@ -1472,13 +1931,15 @@ buildQuiz();
     try {
       const { data, error } = await supabaseClient
         .from("learner_quiz_attempts")
-        .select("id,grade,subject,score,total,percentage,created_at")
+        .select("id,grade,subject,score,total,percentage,created_at,topic:answers->0->>topic")
         .eq("user_id", activeUser.id)
         .order("created_at", { ascending: false })
-        .limit(50);
+        .limit(1000);
       if (error) throw error;
       const attempts = data || [];
+      if (window.renderLearnerExtras) window.renderLearnerExtras(attempts);
       document.getElementById("stat-attempts").textContent = attempts.length;
+      document.getElementById("stat-subjects").textContent = new Set(attempts.map(a => a.subject)).size;
       if (attempts.length) {
         const avg = Math.round(attempts.reduce((sum, item) => sum + Number(item.percentage || 0), 0) / attempts.length);
         const best = Math.max(...attempts.map(item => Number(item.percentage || 0)));
@@ -1486,7 +1947,7 @@ buildQuiz();
         document.getElementById("stat-best").textContent = best + "%";
         activity.innerHTML = attempts.slice(0, 8).map(item => `
           <div class="dash-activity">
-            <div><strong>${safeText(item.subject)}</strong><br><span class="small">${safeText(item.grade)} · ${new Date(item.created_at).toLocaleString()}</span></div>
+            <div><strong>${safeText(item.subject)}</strong>${item.topic ? `<br><span class="small">📖 ${safeText(item.topic)}</span>` : ""}<br><span class="small">${safeText(item.grade)} · ${new Date(item.created_at).toLocaleString()}</span></div>
             <div style="text-align:right"><strong>${Number(item.score)}/${Number(item.total)}</strong><br><span class="dash-badge">${Number(item.percentage)}%</span></div>
           </div>`).join("");
         const subjects = ["Mathematics","Integrated Science","Pre-Technical Studies","Agriculture"];
@@ -1506,8 +1967,10 @@ buildQuiz();
       activity.innerHTML = '<div class="dash-empty">Quiz history is not connected yet. Please ask the site administrator to complete the one-time database setup.</div>';
       performance.innerHTML = '<div class="dash-empty">Your scores will appear here after database setup.</div>';
       document.getElementById("stat-attempts").textContent = "—";
+      document.getElementById("stat-subjects").textContent = "—";
       document.getElementById("stat-average").textContent = "—";
       document.getElementById("stat-best").textContent = "—";
+      if (window.renderLearnerExtras) window.renderLearnerExtras([]);
       console.error("Could not load learner quiz history:", error.message);
     } finally {
       loadingHistory = false;
@@ -1517,6 +1980,8 @@ buildQuiz();
   window.saveLearnerQuizAttempt = async function (attempt) {
     if (!activeUser) {
       showMessage("Quiz marked! Log in to your learner account to save this result to your personal dashboard.", true);
+      const note = document.getElementById("quizSaveNote");
+      if (note) note.innerHTML = '⚠️ This result was not saved because you are not logged in. <a href="#learner-account">Log in or create an account</a> to save your progress.';
       return;
     }
     const { error } = await supabaseClient.from("learner_quiz_attempts").insert({
@@ -1527,7 +1992,7 @@ buildQuiz();
       total: attempt.total,
       percentage: attempt.percentage,
       answered: attempt.answered,
-      answers: attempt.questions
+      answers: (attempt.questions || []).map(q => ({ ...q, topic: attempt.topic || null }))
     });
     if (error) {
       showMessage("Your quiz was marked, but the result could not be saved. The administrator may need to finish the quiz-history database setup.", true);
@@ -1535,7 +2000,10 @@ buildQuiz();
       return;
     }
     showMessage("🎉 Quiz result saved to your learner dashboard!");
+    const note = document.getElementById("quizSaveNote");
+    if (note) note.innerHTML = '✅ Saved! Your ' + safeText(attempt.subject) + ' result (' + Number(attempt.percentage) + '%) is now on <a href="#learner-account">My Dashboard</a>.';
     await refreshLearnerStats();
+    refreshLearnerLeaderboard();
   };
 
   function showDashboard(user) {
@@ -1553,6 +2021,7 @@ buildQuiz();
     document.getElementById("learner-title").textContent = "Welcome back, " + name + "! 👋";
     document.getElementById("learner-welcome").textContent = grade + " · Your learning adventure continues here.";
     refreshLearnerStats();
+    refreshLearnerLeaderboard();
   }
 
   document.getElementById("learner-signup-btn").addEventListener("click", async function () {
@@ -1611,6 +2080,166 @@ buildQuiz();
     showDashboard(data.session?.user || null);
   });
   supabaseClient.auth.onAuthStateChange((_event, session) => showDashboard(session?.user || null));
+})();
+</script>
+<style>
+/* Learner leaderboard */
+.dash-leaderboard{margin:18px 0;background:linear-gradient(135deg,#102b50,#174a78);border-radius:20px;padding:22px;color:#fff;box-shadow:0 12px 30px #102b5020}
+.dash-leaderboard-head{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:14px}
+.dash-leaderboard h3{margin:0;color:#fff;font-size:20px}
+.dash-leaderboard p{margin:5px 0 0;color:#d6e7f8;font-size:13px}
+.dash-leaderboard-list{display:grid;gap:8px}
+.dash-leader-row{display:grid;grid-template-columns:42px minmax(0,1fr) auto auto;align-items:center;gap:12px;padding:11px 13px;border:1px solid #ffffff24;border-radius:13px;background:#ffffff12}
+.dash-leader-rank{width:34px;height:34px;border-radius:50%;display:grid;place-items:center;background:#ffffff20;font-weight:800}
+.dash-leader-row:nth-child(1) .dash-leader-rank{background:#ffd66b;color:#533700}
+.dash-leader-row:nth-child(2) .dash-leader-rank{background:#dce7f2;color:#25364a}
+.dash-leader-row:nth-child(3) .dash-leader-rank{background:#e8b58c;color:#542d13}
+.dash-leader-name{font-weight:750;overflow-wrap:anywhere}
+.dash-leader-grade{font-size:11px;color:#d6e7f8;margin-top:2px}
+.dash-leader-score{text-align:right;font-weight:800;white-space:nowrap}
+.dash-leader-quizzes{font-size:11px;color:#d6e7f8;text-align:right;white-space:nowrap}
+.dash-leader-empty{padding:18px;text-align:center;border:1px dashed #ffffff55;border-radius:13px;color:#e4f0fb;font-size:13px}
+.dash-leader-you{outline:2px solid #ffd66b;background:#ffffff20}
+@media(max-width:600px){.dash-leaderboard{padding:16px}.dash-leader-row{grid-template-columns:36px minmax(0,1fr) auto;gap:8px;padding:9px}.dash-leader-quizzes{grid-column:2 / 4;text-align:left}.dash-leader-score{grid-column:3;grid-row:1}}
+  <section class="dash-leaderboard" aria-labelledby="learner-leaderboard-title">
+   <div class="dash-leaderboard-head">
+    <div class="dash-leader-empty">Loading the leaderboard…</div>
+    list.innerHTML = '<div class="dash-leader-empty">Loading the leaderboard…</div>';
+        list.innerHTML = '<div class="dash-leader-empty">No quiz results yet. Be among the first learners to complete a quiz!</div>';
+      list.innerHTML = '<div class="dash-leaderboard-list">' + learners.map((learner) => {
+        return `<div class="dash-leader-row">
+          <span class="dash-leader-rank">${medal}</span>
+          <div><div class="dash-leader-name">${safeText(learner.learner_name)}${isYou ? " · You" : ""}</div>
+          <div class="dash-leader-grade">${safeText(learner.grade)}</div></div>
+          <div class="dash-leader-score">${Number(learner.average_score)}% avg</div>
+          <div class="dash-leader-quizzes">${Number(learner.quizzes_completed)} quizzes</div>
+      list.innerHTML = '<div class="dash-leader-empty">The leaderboard could not load. Please check the Supabase function setup.</div>';
+/* Theme refresh for the learner account & dashboard */
+#learner-account .heading h2{color:var(--navy)}
+.auth-shell{border-radius:30px;border-color:var(--line);box-shadow:var(--shadow)}
+.auth-art{background:radial-gradient(circle at 85% 12%,#ffc23d66 0,transparent 28%),radial-gradient(circle at 10% 95%,#13c2c288 0,transparent 35%),linear-gradient(135deg,#0c1a4b,#2347e0 55%,#7b3fe4)}
+.auth-forms h3,.dash-panel h3{color:var(--navy);font-family:var(--head)}
+.auth-forms input,.auth-forms select{border:2px solid #dbe2f5;border-radius:12px}
+.auth-forms button,.dash-btn{border-radius:999px;background:linear-gradient(90deg,var(--royal),var(--purple));box-shadow:0 10px 20px -10px var(--royal);transition:transform .2s}
+.auth-forms button:hover{transform:translateY(-2px)}
+.dash-top{background:radial-gradient(circle at 90% 0,#ffc23d55 0,transparent 30%),linear-gradient(115deg,#0c1a4b,#2347e0 55%,#7b3fe4);border-radius:26px}
+.dash-avatar{border-radius:50%;background:linear-gradient(135deg,var(--gold),var(--orange));border:3px solid #fff}
+.dash-actions a,.dash-actions button{border-radius:999px;transition:background .2s}
+.dash-actions a:hover,.dash-actions button:hover{background:#ffffff33}
+.dash-stat{border-radius:20px;transition:transform .25s,box-shadow .25s}
+.dash-stat:hover{transform:translateY(-4px);box-shadow:var(--shadow-sm)}
+.dash-panel{border-radius:22px;border-color:var(--line);box-shadow:var(--shadow-sm)}
+.dash-subject{border-radius:18px;transition:transform .25s}.dash-subject:hover{transform:translateY(-3px)}
+.dash-bar{height:12px}
+.dash-bar span{transition:width 1.2s cubic-bezier(.2,.8,.2,1)}
+.dash-journey{display:grid;grid-template-columns:auto 1fr;gap:24px;align-items:center;background:#fff;border:1px solid var(--line);border-radius:22px;padding:20px 24px;margin:0 0 18px;box-shadow:var(--shadow-sm)}
+.journey-level{display:flex;align-items:center;gap:16px}
+.journey-level small{font-size:11px;font-weight:800;letter-spacing:.1em;color:var(--purple)}
+.journey-level strong{display:block;font-family:var(--head);font-size:22px;color:var(--navy);line-height:1.1}
+.journey-level span{font-size:13px;color:var(--muted)}
+.level-ring{--p:0;width:76px;height:76px;flex:none;border-radius:50%;display:grid;place-items:center;background:conic-gradient(var(--gold) calc(var(--p)*1%),#e8edf9 0);transition:background 1s}
+.level-ring span{width:58px;height:58px;border-radius:50%;background:linear-gradient(135deg,var(--royal),var(--purple));color:#fff;display:grid;place-items:center;font-family:var(--head);font-weight:800;font-size:26px}
+.xp-label{display:flex;justify-content:space-between;gap:10px;font-size:13px;font-weight:700;color:var(--muted);margin-bottom:6px}.xp-label b{color:var(--navy)}
+.dash-bar.xp{height:14px}.dash-bar.xp span{background:linear-gradient(90deg,var(--gold),var(--orange),var(--pink))}
+.journey-motto{margin-top:10px;font-weight:800;color:var(--royal-d);font-size:14.5px;transition:opacity .4s}
+.goal{margin:0 0 14px}.goal:last-child{margin:0}
+.goal-head{display:flex;justify-content:space-between;gap:10px;font-size:14px;font-weight:700;margin-bottom:6px}
+.goal-head b{color:var(--navy)}.goal-head span{color:var(--muted);white-space:nowrap}
+.goal.done .goal-head b:after{content:" ✅"}
+.badge-count{float:right;font-size:12px;font-family:'Nunito';font-weight:800;background:#fff3d1;color:#8a5800;padding:3px 10px;border-radius:999px}
+.badge-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+.ach{text-align:center;padding:12px 6px;border-radius:16px;border:1px dashed #cfd8ef;background:#f8faff;filter:grayscale(1);opacity:.6;transition:transform .25s}
+.ach i{font-style:normal;font-size:28px;display:block}
+.ach b{display:block;font-size:12px;color:var(--navy);line-height:1.2;margin-top:4px}
+.ach small{font-size:10.5px;color:var(--muted);line-height:1.2;display:block;margin-top:2px}
+.ach.on{filter:none;opacity:1;border:1px solid #ffe08a;background:linear-gradient(160deg,#fff8e1,#fff);box-shadow:0 8px 18px -12px #e9a400}
+.ach.on:hover{transform:translateY(-3px) rotate(-2deg)}
+.dash-note{background:linear-gradient(110deg,#fff3d1,#ffe9f2 60%,#efe7ff);border-color:#ffe08a;font-weight:700;border-radius:16px}
+@media(max-width:850px){.dash-journey{grid-template-columns:1fr}}
+@media(max-width:520px){.badge-grid{grid-template-columns:repeat(2,1fr)}}
+</style>
+<script>
+(function(){
+  // Mobile navigation toggle
+  const toggle=document.querySelector('.nav-toggle'), nav=document.getElementById('site-nav');
+  if(toggle&&nav){
+    toggle.addEventListener('click',()=>{const o=nav.classList.toggle('open');toggle.setAttribute('aria-expanded',o);toggle.textContent=o?'✕ Close':'☰ Menu';});
+    nav.addEventListener('click',e=>{if(e.target.closest('a')){nav.classList.remove('open');toggle.setAttribute('aria-expanded','false');toggle.textContent='☰ Menu';}});
+  }
+
+  // Scroll-reveal animations
+  const items=document.querySelectorAll('.reveal');
+  if('IntersectionObserver' in window){
+    const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}}),{threshold:.12,rootMargin:'0px 0px -40px 0px'});
+    items.forEach(el=>io.observe(el));
+  } else items.forEach(el=>el.classList.add('in'));
+
+  // Shortcut links that preselect a grade/subject in the notes and quiz tools
+  function setSelect(id,val){const s=document.getElementById(id);if(s&&val&&[...s.options].some(o=>o.value===val||o.text===val)){s.value=val;s.dispatchEvent(new Event('change'));}}
+  document.addEventListener('click',e=>{
+    const a=e.target.closest('a[data-grade],a[data-subject]');if(!a)return;
+    const target=a.getAttribute('href');const g=a.dataset.grade,s=a.dataset.subject;
+    if(target==='#quiz'){setSelect('quizGrade',g);setSelect('quizSubject',s);}
+    else{setSelect('noteGrade',g);setSelect('noteSubject',s);}
+  });
+
+  // Registration form: send details via WhatsApp (as labelled on the button)
+  const reg=document.getElementById('registrationForm');
+  if(reg){reg.addEventListener('submit',e=>{
+    e.preventDefault();
+    const v=id=>document.getElementById(id).value.trim();
+    const text='Hello Junior School Learning Hub. I would like to register a learner.\n\nName: '+v('name')+'\nParent/Guardian phone: '+v('phone')+'\nGrade: '+v('grade')+'\nProgramme: '+v('programme')+(v('message')?'\nAdditional information: '+v('message'):'');
+    window.open('https://wa.me/254741274957?text='+encodeURIComponent(text),'_blank','noopener');
+  });}
+
+  // Dashboard extras: level, XP, goals, badges and motivation (computed from saved quiz attempts)
+  const mottos=['🌟 Believe in Your Potential — every quiz brings you closer to mastery.','💪 Strive for Excellence Every Day.','🚀 Small steps every day lead to big achievements.','📚 Mistakes are proof that you are learning. Keep going!','🏆 Champions keep practising — even on hard days.','🎯 Focus on progress, not perfection.'];
+  let mi=0;const mEl=document.getElementById('dash-motto');
+  if(mEl){setInterval(()=>{if(document.getElementById('learner-dashboard').hidden)return;mi=(mi+1)%mottos.length;mEl.style.opacity=0;setTimeout(()=>{mEl.textContent=mottos[mi];mEl.style.opacity=1;},400);},7000);}
+
+  const levels=['Rising Star','Curious Explorer','Smart Achiever','Bright Scholar','Top Performer','Excellence Champion'];
+  function bar(pct){return '<div class="dash-bar"><span style="width:'+Math.max(0,Math.min(100,pct))+'%"></span></div>';}
+  window.renderLearnerExtras=function(attempts){
+    attempts=Array.isArray(attempts)?attempts:[];
+    const pcts=attempts.map(a=>Number(a.percentage||0));
+    const xp=attempts.reduce((s,a)=>s+10+Math.round(Number(a.percentage||0)/10),0);
+    const lvl=Math.floor(xp/100);const into=xp%100;
+    document.getElementById('dash-xp').textContent=xp;
+    document.getElementById('dash-level-num').textContent=lvl+1;
+    document.getElementById('dash-level-name').textContent=levels[Math.min(lvl,levels.length-1)];
+    document.getElementById('dash-xp-goal').textContent=(100-into)+' XP to level '+(lvl+2);
+    document.getElementById('dash-level-next').textContent=attempts.length?'Earn XP for every quiz — higher scores earn more!':'Complete quizzes to earn XP and level up.';
+    document.getElementById('dash-level-ring').style.setProperty('--p',into);
+    requestAnimationFrame(()=>{document.getElementById('dash-xp-bar').style.width=into+'%';});
+
+    const weekAgo=Date.now()-7*864e5;
+    const thisWeek=attempts.filter(a=>new Date(a.created_at).getTime()>=weekAgo).length;
+    const subjects=new Set(attempts.map(a=>a.subject));
+    const best=pcts.length?Math.max(...pcts):0;
+    const days=new Set(attempts.map(a=>new Date(a.created_at).toDateString())).size;
+    const goals=[
+      {t:'Complete 5 quizzes this week',v:thisWeek,m:5},
+      {t:'Practise all 4 learning areas',v:subjects.size,m:4},
+      {t:'Reach a score of 80% or more',v:best,m:80,u:'%'},
+      {t:'Study on 3 different days',v:days,m:3}
+    ];
+    document.getElementById('dash-goals').innerHTML=goals.map(g=>{const done=g.v>=g.m;return '<div class="goal'+(done?' done':'')+'"><div class="goal-head"><b>'+g.t+'</b><span>'+Math.min(g.v,g.m)+(g.u||'')+' / '+g.m+(g.u||'')+'</span></div>'+bar(g.v/g.m*100)+'</div>';}).join('');
+
+    const badges=[
+      ['🚀','First Step','Complete 1 quiz',attempts.length>=1],
+      ['🔥','On a Roll','Complete 5 quizzes',attempts.length>=5],
+      ['📚','Dedicated','Complete 10 quizzes',attempts.length>=10],
+      ['⭐','High Flyer','Score 80%+',best>=80],
+      ['💯','Perfect Score','Score 100%',best>=100],
+      ['🌈','All-Rounder','Try all 4 subjects',subjects.size>=4],
+      ['📅','Consistent','Study on 3 days',days>=3],
+      ['👑','Champion','Reach level 3',lvl>=2]
+    ];
+    const earned=badges.filter(b=>b[3]).length;
+    document.getElementById('dash-badge-count').textContent=earned+' / '+badges.length;
+    document.getElementById('dash-badges').innerHTML=badges.map(b=>'<div class="ach'+(b[3]?' on':'')+'" title="'+b[2]+'"><i>'+b[0]+'</i><b>'+b[1]+'</b><small>'+b[2]+'</small></div>').join('');
+  };
+  window.renderLearnerExtras([]);
 })();
 </script>
 </body>

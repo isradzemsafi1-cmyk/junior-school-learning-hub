@@ -107,7 +107,16 @@ document.getElementById('mark').addEventListener('click',()=>{
  else{f.textContent='Not answered. '+v[3];f.style.color='#a33';}});
  const pct=Math.round(score/q.length*100);
  document.getElementById('result').innerHTML=`<div class="score">Score: ${score}/${q.length} (${pct}%)</div><p>${answered} of ${q.length} questions answered.</p><p>${pct>=80?'Excellent achievement. Move to the next sub-strand.':pct>=50?'Good effort. Read the explanations and practise again.':'Revisit the notes and worked examples, then try again.'}</p>`;
+ saveGrade7Attempt({score,total:q.length,percentage:pct,answered,questions:q.map((v,i)=>({question:v[0],selected:document.querySelector(`input[name="q${i}"]:checked`)?.value??null,correct:v[2],topic:current.sub}))});
 });
+async function saveGrade7Attempt(attempt){
+ const box=document.getElementById('result');const note=document.createElement('p');note.className='meta';box.appendChild(note);
+ const {data:{session}}=await authClient.auth.getSession();
+ if(!session){note.textContent='Log in to save this result to your learner dashboard.';return;}
+ const {error}=await authClient.from('learner_quiz_attempts').insert({user_id:session.user.id,grade:'Grade 7',subject:current.subject,score:attempt.score,total:attempt.total,percentage:attempt.percentage,answered:attempt.answered,answers:attempt.questions});
+ note.textContent=error?'Your quiz was marked, but the result could not be saved. Please try again.':'✅ Result saved to your learner dashboard.';
+ if(error)console.error('Quiz result save failed:',error.message);
+}
 document.getElementById('retry').addEventListener('click',buildQuiz);
 subject.addEventListener('change',()=>{search.value='';refreshTopics();});
 term.addEventListener('change',()=>{search.value='';refreshTopics();});

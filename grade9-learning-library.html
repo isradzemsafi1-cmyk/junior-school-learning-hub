@@ -1,0 +1,224 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#0c1a4b"><title>Grade 9 Learning Library | Junior School Learning Hub</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--royal:#2347e0;--navy:#0c1a4b;--gold:#ffc23d;--orange:#ff8a1f;--pink:#ff4f8b;--purple:#7b3fe4;--turq:#13c2c2;--ink:#1c2547;--muted:#5d6788;--paper:#f6f8ff;--line:#e2e7f6;--shadow:0 12px 30px -16px rgba(23,48,168,.35)}
+*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.65 'Nunito',Arial,sans-serif}
+h1,h2,h3{font-family:'Baloo 2','Nunito',sans-serif;line-height:1.2;color:var(--navy)}
+header{background:var(--navy);color:#fff;padding:14px 5%;display:flex;gap:12px;justify-content:space-between;align-items:center;flex-wrap:wrap}
+header a{color:#e9eeff;text-decoration:none;margin-left:14px;font-weight:700;font-size:14px}.brand{font-weight:800;font-family:'Baloo 2',sans-serif;font-size:19px}
+.hero{background:linear-gradient(120deg,#ff8a1f,#ff4f8b 45%,#7b3fe4);color:#fff;padding:40px 5%;text-align:center}
+.hero h1{margin:0;color:#fff;font-size:clamp(28px,6vw,44px)}.hero p{margin:6px auto;max-width:720px;color:#fff3f8}
+main{max-width:1100px;margin:auto;padding:20px 15px 45px}
+.panel{background:#fff;border:1px solid var(--line);border-radius:22px;padding:22px;margin:16px 0;box-shadow:var(--shadow)}
+.filters{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px}
+label{font-size:13px;font-weight:800;display:block;margin-bottom:4px}
+input,select{width:100%;padding:12px;border:2px solid #dbe2f5;border-radius:12px;background:#fff;font:inherit}
+button{border:0;background:linear-gradient(90deg,var(--gold),#ffae2b);color:var(--navy);font-weight:800;border-radius:999px;padding:11px 18px;font:inherit;font-weight:800;cursor:pointer;margin:8px 6px 6px 0}
+button.secondary{background:#fff;color:var(--royal);border:2px solid var(--royal)}
+button:disabled{opacity:.6;cursor:wait}
+.meta{color:var(--muted);font-size:13.5px}
+#purchaseArea{margin-top:16px;padding-top:14px;border-top:1px solid var(--line)}
+.subject-tabs{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+.subject-tabs button{margin:0;border-radius:16px;padding:14px 10px;background:var(--bg);color:var(--c);border:2px solid transparent;text-align:center}
+.subject-tabs button.on{border-color:var(--c);box-shadow:0 8px 18px -12px var(--c)}
+.subject-tabs b{display:block;font-size:26px}
+#lesson h2{border-bottom:3px solid var(--gold);padding-bottom:6px}#lesson h3{color:var(--royal);margin:16px 0 4px}
+#lesson ul,#lesson ol{padding-left:22px}
+.example{background:#fff7df;border-left:5px solid var(--gold);padding:12px 14px;border-radius:10px;margin:12px 0}
+.question{padding:13px 0;border-bottom:1px solid var(--line)}.question p{font-weight:800;margin:0 0 7px}.option{display:block;margin:6px 0;font-weight:600}
+.feedback{font-size:14px;margin-top:6px}.score{font-size:22px;font-weight:800;color:var(--navy);margin-top:14px;font-family:'Baloo 2',sans-serif}
+.locked{padding:22px;border:2px dashed #ffd27a;border-radius:16px;background:#fffaf0;text-align:center;color:#7a5200;font-weight:700}
+footer{background:var(--navy);color:#fff;text-align:center;padding:22px}
+@media(max-width:700px){.subject-tabs{grid-template-columns:repeat(2,1fr)}header{justify-content:center;text-align:center}header a{margin:0 7px}.panel{padding:16px}}
+</style></head><body>
+<header><div class="brand">🎓 Junior School Learning Hub</div><nav><a href="/">Home</a><a href="#library">Library</a><a href="#assessment">Quiz</a><a href="/grade7-complete-detailed-learning-library.html">Grade 7</a><a href="/grade8-mathematics-term3-learning-library">Grade 8</a><a href="/#learner-account">My Dashboard</a></nav></header>
+<div class="hero"><h1>📕 Grade 9 Learning Library</h1><p>Mathematics · Integrated Science · Pre-Technical Studies · Agriculture</p><p>Topic notes, worked examples, practice questions and automated quizzes. More Grade 9 topics will be added as the library grows.</p></div>
+<main>
+<section class="panel" id="accessPanel">
+  <h2>Learner account and library access</h2>
+  <p id="accessMessage">Log in with your learner account to access the Grade 9 library.</p>
+  <div id="loginArea" class="filters">
+    <div><label for="email">Email address</label><input id="email" type="email" autocomplete="username" placeholder="Enter your registered email"></div>
+    <div><label for="password">Password</label><input id="password" type="password" autocomplete="current-password" placeholder="Enter your password"></div>
+  </div>
+  <button id="loginButton" type="button">Log in</button>
+  <button id="logoutButton" class="secondary" type="button" hidden>Log out</button>
+  <p class="meta">No account yet? <a href="/#learner-account">Create a free learner account</a> on the homepage.</p>
+  <div id="purchaseArea" hidden>
+    <p><b>Grade 9 library access: KSh 30 for 24 hours.</b></p>
+    <label for="phone">M-Pesa phone number</label>
+    <input id="phone" type="tel" placeholder="e.g. 07XXXXXXXX" autocomplete="tel">
+    <button id="buyButton" type="button">Buy Grade 9 access – KSh 30</button>
+    <button id="checkAccessButton" class="secondary" type="button">I've completed payment – check access</button>
+  </div>
+  <p class="meta" id="accessStatus" aria-live="polite"></p>
+</section>
+
+<section class="panel" id="library">
+  <h2>Choose a learning area</h2>
+  <div class="subject-tabs" id="subjectTabs"></div>
+  <div id="lesson" aria-live="polite" style="margin-top:18px"><div class="locked">🔒 Log in and activate Grade 9 access to open the lessons.</div></div>
+</section>
+
+<section class="panel" id="assessment">
+  <h2>Automated quiz</h2>
+  <p class="meta" id="quizDescription">The quiz will appear after library access is confirmed.</p>
+  <div id="quiz"></div>
+  <div id="quizButtons" hidden><button id="mark" type="button">Mark quiz</button><button class="secondary" id="retry" type="button">Try again</button></div>
+  <div id="result" aria-live="polite"></div>
+</section>
+</main>
+<footer>Junior School Learning Hub · Empowering learners to learn, grow and excel.</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script>
+const SUPABASE_URL = "https://hqbqhnhgrgfxpedjzmnm.supabase.co";
+const SUPABASE_PUBLISHABLE_KEY = "sb_publishable_uaOcRVaIwnvRl_wZhMhJ-Q_DhrqZyS_";
+const authClient = window.supabase.createClient(SUPABASE_URL, SUPABASE_PUBLISHABLE_KEY);
+const $ = id => document.getElementById(id);
+const STYLE = {
+  "Mathematics": {icon:"➗", c:"#2347e0", bg:"#e8eeff"},
+  "Integrated Science": {icon:"🔬", c:"#0a8a8a", bg:"#dff8f6"},
+  "Pre-Technical Studies": {icon:"⚙️", c:"#7b3fe4", bg:"#f0e8ff"},
+  "Agriculture": {icon:"🌱", c:"#d26400", bg:"#fff0de"}
+};
+let DATA = [];
+let current = null;
+
+function accessMessage(t){ $('accessMessage').textContent = t; }
+function accessStatus(t){ $('accessStatus').textContent = t; }
+function showPurchase(show){ $('purchaseArea').hidden = !show; }
+function showSignedIn(signedIn){
+  $('loginArea').hidden = signedIn; $('loginButton').hidden = signedIn; $('logoutButton').hidden = !signedIn;
+}
+function topicOf(entry){
+  const m = /<h2>\s*Topic:\s*([^<]+)<\/h2>/.exec(entry.notes || "");
+  return m ? m[1].trim() : entry.subject;
+}
+function lockLibrary(message){
+  DATA = []; current = null;
+  $('subjectTabs').innerHTML = '';
+  $('lesson').innerHTML = '';
+  const box = document.createElement('div'); box.className = 'locked'; box.textContent = '🔒 ' + message;
+  $('lesson').appendChild(box);
+  $('quiz').innerHTML = ''; $('result').innerHTML = ''; $('quizButtons').hidden = true;
+  $('quizDescription').textContent = 'The quiz will appear after library access is confirmed.';
+}
+function renderTabs(){
+  $('subjectTabs').innerHTML = DATA.map((d,i) => {
+    const s = STYLE[d.subject] || {icon:"📘", c:"#2347e0", bg:"#e8eeff"};
+    return `<button type="button" data-i="${i}" style="--c:${s.c};--bg:${s.bg}"><b>${s.icon}</b>${d.subject}</button>`;
+  }).join('');
+  $('subjectTabs').querySelectorAll('button').forEach(b => b.addEventListener('click', () => select(Number(b.dataset.i))));
+}
+function select(i){
+  current = DATA[i]; if(!current) return;
+  $('subjectTabs').querySelectorAll('button').forEach(b => b.classList.toggle('on', Number(b.dataset.i) === i));
+  // Notes are trusted HTML served by our own Function after the access check.
+  $('lesson').innerHTML = `<p class="meta">Grade 9 · ${current.subject}</p>` + current.notes;
+  buildQuiz();
+}
+function buildQuiz(){
+  const q = current.quiz || [];
+  $('result').innerHTML = '';
+  if(!q.length){
+    $('quiz').innerHTML = '';
+    $('quizButtons').hidden = true;
+    $('quizDescription').textContent = `An automated ${current.subject} quiz for Grade 9 is not available yet. Use the practice questions at the end of the notes.`;
+    return;
+  }
+  $('quizButtons').hidden = false;
+  $('quizDescription').textContent = `${current.subject} · ${topicOf(current)}: ${q.length} multiple-choice questions. Log in to save your score to your dashboard.`;
+  $('quiz').innerHTML = q.map((v,i) => `<div class="question"><p>${i+1}. ${v.q}</p>${v.o.map((o,j) => `<label class="option"><input type="radio" name="q${i}" value="${j}"> ${String.fromCharCode(65+j)}. ${o}</label>`).join('')}<div class="feedback" id="fb${i}"></div></div>`).join('');
+}
+async function markQuiz(){
+  if(!current || !(current.quiz || []).length) return;
+  const q = current.quiz; let score = 0, answered = 0;
+  q.forEach((v,i) => {
+    const c = document.querySelector(`input[name="q${i}"]:checked`), fb = $('fb'+i);
+    if(c){ answered++; if(Number(c.value) === v.a){ score++; fb.textContent = '✓ Correct. ' + v.e; fb.style.color = '#17633b'; } else { fb.textContent = '✗ Review: ' + v.e; fb.style.color = '#a33'; } }
+    else { fb.textContent = 'Not answered. ' + v.e; fb.style.color = '#a33'; }
+  });
+  const pct = Math.round(score / q.length * 100);
+  $('result').innerHTML = `<div class="score">Your score: ${score} / ${q.length} (${pct}%)</div><p>You answered ${answered} of ${q.length} questions.</p><p>${pct>=80?'Excellent work. Keep extending your understanding.':pct>=50?'Good effort. Review the feedback and practise the weaker areas.':'Keep practising. Read the notes again and retry the quiz.'}</p><p class="meta" id="saveNote">Saving your result…</p>`;
+  const topic = topicOf(current);
+  const { data: { session } } = await authClient.auth.getSession();
+  if(!session){ $('saveNote').textContent = 'Log in to save this result to your learner dashboard.'; return; }
+  const { error } = await authClient.from('learner_quiz_attempts').insert({
+    user_id: session.user.id, grade: 'Grade 9', subject: current.subject,
+    score, total: q.length, percentage: pct, answered,
+    answers: q.map((v,i) => ({ question: v.q, selected: document.querySelector(`input[name="q${i}"]:checked`)?.value ?? null, correct: v.a, topic }))
+  });
+  if(error){ console.error('Quiz result save failed:', error.message); $('saveNote').textContent = 'Your quiz was marked, but the result could not be saved. Please try again.'; return; }
+  $('saveNote').innerHTML = '✅ Result saved to <a href="/#learner-account">your learner dashboard</a>.';
+}
+
+async function loadGrade9Library(){
+  const { data: { session } } = await authClient.auth.getSession();
+  showSignedIn(!!session);
+  if(!session){
+    showPurchase(false);
+    lockLibrary('Please log in above to open the Grade 9 learning library.');
+    accessMessage('Log in with your learner account to access the Grade 9 library.');
+    return;
+  }
+  accessMessage('Checking your Grade 9 library access...'); accessStatus('');
+  const response = await fetch('/.netlify/functions/get-grade9-library', {
+    method: 'GET', headers: { Authorization: `Bearer ${session.access_token}` }, cache: 'no-store'
+  });
+  const result = await response.json().catch(() => ({}));
+  if(response.status === 401){
+    showPurchase(false); lockLibrary('Your login session has expired. Please log in again.');
+    accessMessage('Please log in again to continue.'); return;
+  }
+  if(response.status === 403){
+    showPurchase(true); lockLibrary('Grade 9 notes are locked. Purchase access to view the lessons and quizzes.');
+    accessMessage('Your account is signed in, but Grade 9 access is not active.'); return;
+  }
+  if(!response.ok || !Array.isArray(result.content)){
+    showPurchase(false); lockLibrary(result.message || 'The library could not be loaded. Please try again.');
+    accessMessage('We could not load the library.'); return;
+  }
+  DATA = result.content;
+  showPurchase(false);
+  const until = result.expires_at ? new Date(result.expires_at).toLocaleString() : '';
+  accessMessage('Grade 9 library access confirmed. Happy learning!' + (until ? ' Access is active until ' + until + '.' : ''));
+  renderTabs(); select(0);
+}
+
+$('loginButton').addEventListener('click', async () => {
+  const email = $('email').value.trim(), password = $('password').value;
+  if(!email || !password){ accessStatus('Enter your email address and password.'); return; }
+  $('loginButton').disabled = true; accessStatus('Signing in...');
+  const { error } = await authClient.auth.signInWithPassword({ email, password });
+  $('loginButton').disabled = false;
+  if(error){ accessStatus(error.message); return; }
+  accessStatus('');
+  await loadGrade9Library();
+});
+$('logoutButton').addEventListener('click', async () => { await authClient.auth.signOut(); await loadGrade9Library(); });
+$('buyButton').addEventListener('click', async () => {
+  const phone = $('phone').value.trim();
+  if(!phone){ accessStatus('Enter the M-Pesa phone number to receive the payment prompt.'); return; }
+  const { data: { session } } = await authClient.auth.getSession();
+  if(!session){ accessStatus('Please log in before purchasing access.'); return; }
+  $('buyButton').disabled = true; accessStatus('Sending your M-Pesa payment request...');
+  const response = await fetch('/.netlify/functions/mpesa-stk', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${session.access_token}` },
+    body: JSON.stringify({ product_id: 'grade9_notes', phone })
+  });
+  const result = await response.json().catch(() => ({}));
+  $('buyButton').disabled = false;
+  if(!response.ok){ accessStatus(result.message || 'Payment request failed. Please try again.'); return; }
+  accessStatus(result.message || 'Payment prompt sent. Complete it on your phone, then select “check access”.');
+});
+$('checkAccessButton').addEventListener('click', loadGrade9Library);
+$('mark').addEventListener('click', markQuiz);
+$('retry').addEventListener('click', buildQuiz);
+authClient.auth.onAuthStateChange((event) => { if(event === 'SIGNED_OUT') loadGrade9Library(); });
+loadGrade9Library().catch(error => { console.error(error); accessStatus('Unable to connect. Please refresh and try again.'); });
+</script></body></html>
