@@ -1,0 +1,5 @@
+
+User-agent: *
+Allow: /
+
+Sitemap: https://juniorschoollearninghub.co.ke/sitemap.xml
