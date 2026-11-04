@@ -34,14 +34,15 @@ for (const term of ['I', 'II', 'III']) {
     try {
       const response = await getGrade9Content(request(term, 'test-learner-token'));
       assert.equal(response.status, 200);
-      assert.deepEqual((await response.json()).content, payload);
+      const returnedBody = await response.json();
+      assert.deepEqual(returnedBody.content, payload);
       assert.match(calls[0].url, /\/auth\/v1\/user$/);
       assert.match(calls[1].url, /product_id=eq\.grade9_notes/);
       assert.match(calls[2].url, new RegExp(`grade9-mathematics-private/grade9/mathematics/term-${term.toLowerCase()}\\.json$`));
       assert.equal(calls[2].options.cache, 'no-store');
       assert.equal(calls[2].options.headers.Authorization, `Bearer ${env.SUPABASE_SERVICE_ROLE_KEY}`);
       assert.equal(response.headers.get('cache-control'), 'no-store, private');
-      assert.equal(JSON.stringify(await response.clone().json()).includes(env.SUPABASE_SERVICE_ROLE_KEY), false);
+      assert.equal(JSON.stringify(returnedBody).includes(env.SUPABASE_SERVICE_ROLE_KEY), false);
     } finally { restore(); }
   });
 }
