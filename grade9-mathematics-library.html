@@ -9,41 +9,178 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
   <style>
-    :root{--navy:#0c1a4b;--blue:#2347e0;--gold:#ffc23d;--ink:#1c2547;--muted:#5d6788;--paper:#f6f8ff;--line:#e2e7f6;--shadow:0 12px 30px rgba(12,26,75,.09}
+    :root{--navy:#0c1a4b;--blue:#2347e0;--gold:#ffc23d;--ink:#1c2547;--muted:#5d6788;--paper:#f6f8ff;--line:#e2e7f6;--shadow:0 12px 30px rgba(12,26,75,.09)}
     *{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.65 'Nunito',Arial,sans-serif}h1,h2,h3{font-family:'Baloo 2','Nunito',sans-serif;line-height:1.2;color:var(--navy)}
-    header{background:var(--navy);color:#fff;padding:14px 5%;display:flex;gap:12px;justify-content:space-between;align-items:center;flex-wrap:wrap}.brand{font-weight:800;font-family:'Baloo 2',sans-serif;font-size:19px}header a{color:#e9eeff;text-decoration:none;font-weight:800}
-    .hero{background:linear-gradient(120deg,#2347e0,#0c1a4b);color:white;padding:38px 5%;text-align:center}.hero h1{color:#fff;font-size:clamp(28px,6vw,44px);margin:0}.hero p{max-width:680px;margin:8px auto;color:#edf0ff}
-    main{max-width:1000px;margin:auto;padding:20px 15px 44px}.panel{background:#fff;border:1px solid var(--line);border-radius:22px;padding:22px;margin:16px 0;box-shadow:var(--shadow)}.terms{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}.term{background:#fff;border:2px solid var(--line);border-radius:16px;padding:16px;text-align:left;color:var(--navy);font:inherit;font-weight:800;cursor:pointer}.term:hover,.term[aria-pressed=true]{border-color:var(--gold);box-shadow:0 8px 18px -12px var(--navy)}.term span{display:block;color:var(--muted);font-size:13px;font-weight:700}.notice{border-left:5px solid var(--gold);background:#fff8e4;padding:15px 17px;border-radius:10px}.muted{color:var(--muted)}a{color:var(--blue)}footer{background:var(--navy);color:#fff;text-align:center;padding:22px}
-    @media(max-width:600px){header{justify-content:center;text-align:center}.panel{padding:16px}.terms{grid-template-columns:1fr}.term{padding:13px}}
+    header{background:var(--navy);color:#fff;padding:14px 5%;display:flex;gap:12px;justify-content:space-between;align-items:center;flex-wrap:wrap}.brand{font-weight:800;font-family:'Baloo 2',sans-serif;font-size:19px}header nav{display:flex;gap:14px;flex-wrap:wrap}header a{color:#e9eeff;text-decoration:none;font-weight:800}
+    .hero{background:linear-gradient(120deg,#2347e0,#0c1a4b);color:white;padding:38px 5%;text-align:center}.hero h1{color:#fff;font-size:clamp(28px,6vw,44px);margin:0}.hero p{max-width:740px;margin:8px auto;color:#edf0ff}
+    main{max-width:1120px;margin:auto;padding:20px 15px 44px}.panel{background:#fff;border:1px solid var(--line);border-radius:22px;padding:22px;margin:16px 0;box-shadow:var(--shadow)}.terms{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}.term{background:#fff;border:2px solid var(--line);border-radius:16px;padding:14px;text-align:left;color:var(--navy);font:inherit;font-weight:800;cursor:pointer}.term:hover,.term[aria-pressed=true]{border-color:var(--gold);box-shadow:0 8px 18px -12px var(--navy)}.term span{display:block;color:var(--muted);font-size:13px;font-weight:700}.layout{display:grid;grid-template-columns:minmax(210px,280px) minmax(0,1fr);gap:18px}.topic-list{display:grid;gap:8px;align-content:start;max-height:70vh;overflow:auto}.topic-button,.action{border:2px solid var(--line);border-radius:12px;background:white;color:var(--navy);padding:10px 12px;text-align:left;font:inherit;font-weight:800;cursor:pointer}.topic-button[aria-current=true],.topic-button:hover{border-color:var(--blue);background:#f2f5ff}.topic-button small{display:block;color:var(--muted);font-weight:700}.lesson{min-width:0}.lesson h2{border-bottom:3px solid var(--gold);padding-bottom:8px}.lesson h3{margin:18px 0 6px;color:var(--blue)}.lesson ul,.lesson ol{padding-left:22px}.block{padding:14px 16px;margin:12px 0;background:#f7f8ff;border-radius:12px;overflow-wrap:anywhere}.example{background:#fff8e4;border-left:5px solid var(--gold)}.exercise{background:#f1f8ff;border-left:5px solid var(--blue)}.notice{border-left:5px solid var(--gold);background:#fff8e4;padding:15px 17px;border-radius:10px}.muted{color:var(--muted)}.quiz-question{border-bottom:1px solid var(--line);padding:12px 0}.quiz-question p{font-weight:800;margin:0 0 7px}.quiz-option{display:block;padding:4px 0}.feedback{font-size:14px;font-weight:700}.action{background:linear-gradient(90deg,var(--gold),#ffae2b);border:0;text-align:center;margin:8px 5px 0 0}.secondary{background:white;color:var(--blue);border:2px solid var(--blue)}.score{font:800 22px 'Baloo 2',sans-serif;color:var(--navy)}[hidden]{display:none!important}.status{min-height:1.5em}.outcomes{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}.outcomes .block{margin:0}.topic-nav{display:flex;justify-content:space-between;gap:10px;margin-top:18px}a{color:var(--blue)}footer{background:var(--navy);color:#fff;text-align:center;padding:22px}
+    @media(max-width:720px){header{justify-content:center;text-align:center}.terms{grid-template-columns:1fr}.layout{grid-template-columns:1fr}.topic-list{grid-template-columns:repeat(2,minmax(0,1fr));max-height:35vh}.outcomes{grid-template-columns:1fr}.panel{padding:16px}}
+    @media(max-width:420px){.topic-list{grid-template-columns:1fr}.topic-nav{flex-direction:column}.topic-nav button{width:100%}}
   </style>
 </head>
 <body>
-  <header><div class="brand">🎓 Junior School Learning Hub</div><nav><a href="/">Home</a> · <a href="/grade9-learning-library.html">Grade 9 Library access</a></nav></header>
-  <section class="hero"><h1>📘 Grade 9 Mathematics</h1><p>A term-by-term learning library. Curriculum topics and notes will be added from the supplied schemes of work and notes PDF.</p></section>
+  <header><div class="brand">🎓 Junior School Learning Hub</div><nav><a href="/">Home</a><a href="/grade9-learning-library.html">Grade 9 access &amp; payment</a><a href="/#learner-account">Learner dashboard</a></nav></header>
+  <section class="hero"><h1>📘 Grade 9 Mathematics</h1><p>Explore the Mathematics programme term by term. Sign in with your learner account and active Grade 9 access to open source-based notes, examples, practice and quizzes.</p></section>
   <main>
     <section class="panel" aria-labelledby="terms-heading">
       <h2 id="terms-heading">Choose a term</h2>
       <div class="terms" role="group" aria-label="Grade 9 Mathematics terms">
-        <button class="term" type="button" aria-pressed="true" data-term="I">Term I<span>Curriculum source pending</span></button>
-        <button class="term" type="button" aria-pressed="false" data-term="II">Term II<span>Curriculum source pending</span></button>
-        <button class="term" type="button" aria-pressed="false" data-term="III">Term III<span>Curriculum source pending</span></button>
+        <button class="term" type="button" aria-pressed="true" data-term="I">Term I<span>Numbers and Algebra</span></button>
+        <button class="term" type="button" aria-pressed="false" data-term="II">Term II<span>Measurements, Geometry and Scale Drawing</span></button>
+        <button class="term" type="button" aria-pressed="false" data-term="III">Term III<span>Geometry, Trigonometry, Data and Probability</span></button>
       </div>
     </section>
-    <section class="panel" aria-live="polite" aria-labelledby="term-title">
-      <h2 id="term-title">Term I · Topic navigation</h2>
-      <div class="notice"><strong>Preparing this learning library</strong><p class="muted">The three term schemes and Mathematics notes PDF are not yet available in the repository. This page intentionally contains no invented topic sequence, worked examples, practice answers, or premium lesson text. Topic links and lessons will appear after the source documents are received and reviewed.</p></div>
-      <h3>Planned topic learning sections</h3>
-      <p class="muted">Each source-based topic will be organised with knowledge, skills and attitudes outcomes; learner-friendly notes, definitions, rules and formulas; worked examples; practical applications; practice exercises with explained answers; and an instant-feedback quiz.</p>
-      <p>For learner sign-in and existing Grade 9 access options, visit the <a href="/grade9-learning-library.html">Grade 9 Library</a>.</p>
+    <section class="panel" aria-live="polite">
+      <h2 id="term-heading">Term I · Topics</h2>
+      <p id="status" class="notice status">Checking learner access…</p>
+      <div id="access-cta" hidden><p>Sign in or activate Grade 9 access to open the protected lessons.</p><a class="action" href="/grade9-learning-library.html">Open Grade 9 learner access</a></div>
+      <div id="unavailable" class="notice" hidden><strong>Lessons are not available yet.</strong><p class="muted">The topic order comes from the supplied term schemes. Notes and quiz material are delivered only from private storage after entitlement verification. Contact the learning hub if access should be active but this notice remains.</p></div>
+      <div id="library" class="layout" hidden>
+        <nav id="topic-list" class="topic-list" aria-label="Topics in selected term"></nav>
+        <article id="lesson" class="lesson" aria-live="polite"><p class="muted">Choose a topic to begin.</p></article>
+      </div>
+    </section>
+    <section class="panel" id="assessment" aria-labelledby="quiz-heading" hidden>
+      <h2 id="quiz-heading">Topic quiz</h2><p id="quiz-description" class="muted">Choose a topic to see its quiz.</p>
+      <div id="quiz"></div><button id="mark-quiz" class="action" type="button" hidden>Mark quiz</button><button id="retry-quiz" class="action secondary" type="button" hidden>Try again</button>
+      <div id="quiz-result" aria-live="polite"></div>
     </section>
   </main>
   <footer>Junior School Learning Hub · Empowering learners to learn, grow and excel.</footer>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
   <script>
-    const title = document.getElementById('term-title');
-    document.querySelectorAll('[data-term]').forEach(button => button.addEventListener('click', () => {
-      document.querySelectorAll('[data-term]').forEach(item => item.setAttribute('aria-pressed', String(item === button)));
-      title.textContent = `Term ${button.dataset.term} · Topic navigation`;
-    }));
+    (() => {
+      const SUPABASE_URL = 'https://hqbqhnhgrgfxpedjzmnm.supabase.co';
+      const SUPABASE_PUBLISHABLE_KEY = 'sb_publishable_uaOcRVaIwnvRl_wZhMhJ-Q_DhrqZyS_';
+      const client = window.supabase.createClient(SUPABASE_URL, SUPABASE_PUBLISHABLE_KEY);
+      const $ = (id) => document.getElementById(id);
+      const state = { term: new URLSearchParams(location.search).get('term') || 'I', topics: [], current: -1, session: null, request: 0 };
+      const allowedTerms = ['I', 'II', 'III'];
+      if (!allowedTerms.includes(state.term)) state.term = 'I';
+
+      function node(tag, text, className) {
+        const el = document.createElement(tag);
+        if (text !== undefined && text !== null) el.textContent = String(text);
+        if (className) el.className = className;
+        return el;
+      }
+      function renderList(items, ordered = false) {
+        if (!Array.isArray(items) || !items.length) return null;
+        const list = node(ordered ? 'ol' : 'ul');
+        items.forEach(item => list.appendChild(node('li', typeof item === 'string' ? item : item?.text || '')));
+        return list;
+      }
+      function addSection(parent, heading, value, className = '') {
+        if (value === undefined || value === null || value === '' || (Array.isArray(value) && !value.length)) return;
+        const section = node('section', null, `block ${className}`.trim());
+        section.appendChild(node('h3', heading));
+        if (Array.isArray(value)) section.appendChild(renderList(value) || node('p', ''));
+        else if (typeof value === 'string') section.appendChild(node('p', value));
+        else if (typeof value === 'object') {
+          if (Array.isArray(value.steps)) section.appendChild(renderList(value.steps, true));
+          if (value.text) section.appendChild(node('p', value.text));
+          if (value.answer) section.appendChild(node('p', `Answer: ${value.answer}`));
+          if (value.explanation) section.appendChild(node('p', value.explanation));
+        }
+        parent.appendChild(section);
+      }
+      function renderTopic(topic, index) {
+        state.current = index;
+        const article = $('lesson'); article.replaceChildren();
+        article.appendChild(node('p', `Grade 9 Mathematics · Term ${state.term}`, 'muted'));
+        article.appendChild(node('h2', topic.title || `Topic ${index + 1}`));
+        if (topic.outcomes) {
+          const outcomes = node('section'); outcomes.appendChild(node('h3', 'Learning outcomes'));
+          const grid = node('div', null, 'outcomes');
+          [['Knowledge', topic.outcomes.knowledge], ['Skills', topic.outcomes.skills], ['Attitudes', topic.outcomes.attitudes]].forEach(([name, values]) => {
+            if (values?.length) { const box = node('div', null, 'block'); box.appendChild(node('strong', name)); box.appendChild(renderList(values)); grid.appendChild(box); }
+          });
+          if (grid.childElementCount) { outcomes.appendChild(grid); article.appendChild(outcomes); }
+        }
+        addSection(article, 'Notes', topic.notes);
+        addSection(article, 'Definitions', topic.definitions);
+        addSection(article, 'Rules and formulas', topic.rulesAndFormulas);
+        if (Array.isArray(topic.workedExamples)) topic.workedExamples.forEach((example, i) => {
+          const section = node('section', null, 'block example'); section.appendChild(node('h3', example.title || `Worked example ${i + 1}`));
+          if (example.question) section.appendChild(node('p', `Question: ${example.question}`));
+          section.appendChild(renderList(example.steps || [], true) || node('p', '')); if (example.answer) section.appendChild(node('p', `Answer: ${example.answer}`)); article.appendChild(section);
+        });
+        addSection(article, 'Practical applications', topic.applications);
+        addSection(article, 'Practice exercises', topic.exercises, 'exercise');
+        if (Array.isArray(topic.answersAndExplanations)) topic.answersAndExplanations.forEach((answer, i) => {
+          const text = typeof answer === 'string' ? answer : `${answer.question ? `${answer.question} ` : ''}${answer.answer || ''}${answer.explanation ? ` — ${answer.explanation}` : ''}`;
+          addSection(article, `Answer ${i + 1}`, text);
+        });
+        const nav = node('div', null, 'topic-nav');
+        const prev = node('button', '← Previous topic', 'action secondary'); prev.type = 'button'; prev.disabled = index <= 0; prev.addEventListener('click', () => selectTopic(index - 1));
+        const next = node('button', 'Next topic →', 'action'); next.type = 'button'; next.disabled = index >= state.topics.length - 1; next.addEventListener('click', () => selectTopic(index + 1));
+        nav.append(prev, next); article.appendChild(nav);
+        renderQuiz(topic);
+      }
+      function renderQuiz(topic) {
+        const questions = Array.isArray(topic.quiz) ? topic.quiz : [];
+        $('assessment').hidden = !questions.length;
+        $('quiz').replaceChildren(); $('quiz-result').replaceChildren();
+        $('quiz-description').textContent = questions.length ? `${topic.title}: ${questions.length} questions. Feedback appears when you mark your answers.` : 'A quiz for this topic is not available yet.';
+        $('mark-quiz').hidden = !questions.length; $('retry-quiz').hidden = !questions.length;
+        if (!questions.length) return;
+        questions.forEach((q, i) => {
+          const box = node('div', null, 'quiz-question'); box.appendChild(node('p', `${i + 1}. ${q.q || q.question || ''}`));
+          (q.o || q.options || []).forEach((option, j) => {
+            const label = node('label', null, 'quiz-option'); const input = document.createElement('input'); input.type = 'radio'; input.name = `quiz-${i}`; input.value = String(j); label.append(input, document.createTextNode(` ${option}`)); box.appendChild(label);
+          });
+          box.appendChild(node('p', '', 'feedback')); box.lastElementChild.id = `feedback-${i}`; $('quiz').appendChild(box);
+        });
+      }
+      async function markQuiz() {
+        const topic = state.topics[state.current]; if (!topic) return;
+        const questions = Array.isArray(topic.quiz) ? topic.quiz : []; let score = 0, answered = 0;
+        questions.forEach((q, i) => {
+          const chosen = document.querySelector(`input[name="quiz-${i}"]:checked`); const correct = Number(q.a ?? q.answerIndex); const feedback = $(`feedback-${i}`);
+          if (chosen) { answered++; if (Number(chosen.value) === correct) { score++; feedback.textContent = `✓ Correct. ${q.e || q.explanation || ''}`; feedback.style.color = '#17633b'; } else { feedback.textContent = `✗ Review: ${q.e || q.explanation || 'Check the notes and try again.'}`; feedback.style.color = '#a33'; } }
+          else { feedback.textContent = `Not answered. ${q.e || q.explanation || ''}`; feedback.style.color = '#a33'; }
+        });
+        const percentage = Math.round(score / questions.length * 100); const result = $('quiz-result'); result.replaceChildren();
+        result.appendChild(node('p', `Your score: ${score} / ${questions.length} (${percentage}%)`, 'score'));
+        result.appendChild(node('p', percentage >= 80 ? 'Excellent work. Keep practising!' : 'Review the explanations and try again.'));
+        const { data: { session } } = await client.auth.getSession();
+        if (!session) { result.appendChild(node('p', 'Log in through Grade 9 access to save this score to your learner dashboard.', 'muted')); return; }
+        const { error } = await client.from('learner_quiz_attempts').insert({
+          user_id: session.user.id, grade: 'Grade 9', subject: 'Mathematics', score, total: questions.length, percentage, answered,
+          answers: questions.map((q, i) => ({ question: q.q || q.question, selected: document.querySelector(`input[name="quiz-${i}"]:checked`)?.value ?? null, correct: Number(q.a ?? q.answerIndex), topic: topic.title, term: state.term }))
+        });
+        result.appendChild(node('p', error ? 'Quiz marked, but your result could not be saved. Please try again.' : '✅ Result saved to your learner dashboard.', 'muted'));
+      }
+      function selectTopic(index) {
+        if (index < 0 || index >= state.topics.length) return;
+        document.querySelectorAll('.topic-button').forEach((button, i) => button.setAttribute('aria-current', String(i === index)));
+        renderTopic(state.topics[index], index);
+        const url = new URL(location.href); url.searchParams.set('term', state.term); if (state.topics[index].id) url.searchParams.set('topic', state.topics[index].id); history.replaceState(null, '', url);
+      }
+      async function loadTerm(term) {
+        const requestId = ++state.request; state.term = term; state.current = -1; state.topics = [];
+        $('term-heading').textContent = `Term ${term} · Topics`; $('status').hidden = false; $('status').textContent = 'Checking learner access…'; $('access-cta').hidden = true; $('unavailable').hidden = true; $('library').hidden = true; $('assessment').hidden = true;
+        document.querySelectorAll('[data-term]').forEach(button => button.setAttribute('aria-pressed', String(button.dataset.term === term)));
+        const { data: { session } } = await client.auth.getSession(); state.session = session;
+        if (requestId !== state.request) return;
+        if (!session) { $('status').textContent = 'Sign in and activate Grade 9 access to open the Mathematics lessons.'; $('access-cta').hidden = false; return; }
+        try {
+          const response = await fetch(`/.netlify/functions/get-grade9-mathematics-content?term=${encodeURIComponent(term)}`, { headers: { Authorization: `Bearer ${session.access_token}` }, cache: 'no-store' });
+          const result = await response.json().catch(() => ({})); if (requestId !== state.request) return;
+          if (response.status === 401 || response.status === 403) { $('status').textContent = result.message || 'Grade 9 access is not active.'; $('access-cta').hidden = false; return; }
+          if (!response.ok || !Array.isArray(result.content?.topics)) { $('status').textContent = result.message || 'Could not load this term.'; $('unavailable').hidden = false; return; }
+          state.topics = result.content.topics; $('status').textContent = 'Access confirmed. Select a topic to start learning.'; $('status').className = 'status muted'; $('library').hidden = false;
+          const list = $('topic-list'); list.replaceChildren();
+          state.topics.forEach((topic, i) => { const button = node('button', null, 'topic-button'); button.type = 'button'; button.setAttribute('aria-current', 'false'); button.appendChild(node('span', topic.title || `Topic ${i + 1}`)); if (topic.week) button.appendChild(node('small', `Week ${topic.week}`)); button.addEventListener('click', () => selectTopic(i)); list.appendChild(button); });
+          const requestedId = new URLSearchParams(location.search).get('topic'); const start = Math.max(0, state.topics.findIndex(topic => topic.id === requestedId)); if (state.topics.length) selectTopic(start);
+        } catch (error) { if (requestId !== state.request) return; console.error('Grade 9 Mathematics library request failed:', error); $('status').textContent = 'Unable to connect. Please try again.'; $('unavailable').hidden = false; }
+      }
+      document.querySelectorAll('[data-term]').forEach(button => button.addEventListener('click', () => loadTerm(button.dataset.term)));
+      $('mark-quiz').addEventListener('click', markQuiz);
+      $('retry-quiz').addEventListener('click', () => { const topic = state.topics[state.current]; if (topic) renderQuiz(topic); });
+      client.auth.onAuthStateChange((event) => { if (event === 'SIGNED_IN' || event === 'SIGNED_OUT' || event === 'TOKEN_REFRESHED') loadTerm(state.term); });
+      loadTerm(state.term);
+    })();
   </script>
 </body>
 </html>
