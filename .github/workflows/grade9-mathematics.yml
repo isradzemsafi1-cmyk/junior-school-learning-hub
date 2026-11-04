@@ -1,0 +1,53 @@
+name: Grade 9 Mathematics verification
+
+on:
+  push:
+    branches:
+      - copilot/grade9-mathematics-library
+  pull_request:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  grade9-mathematics:
+    name: Grade 9 tests and Netlify build
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    steps:
+      - name: Check out working branch
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install dependencies
+        run: |
+          if [ -f package-lock.json ]; then
+            npm ci
+          elif [ -f package.json ]; then
+            npm install
+          else
+            echo "No package.json; skipping dependency installation."
+          fi
+
+      - name: Run Grade 9 Mathematics tests
+        run: node --test tests/grade9-mathematics.test.mjs
+
+      - name: Build using Netlify CLI without deploying
+        run: npx --yes netlify-cli@17 build --context production
+
+      - name: Verification summary
+        if: always()
+        run: |
+          {
+            echo "## Grade 9 Mathematics verification"
+            echo "Automated tests and local Netlify build were attempted."
+            echo "This workflow does not deploy to production."
+          } >> "$GITHUB_STEP_SUMMARY"
