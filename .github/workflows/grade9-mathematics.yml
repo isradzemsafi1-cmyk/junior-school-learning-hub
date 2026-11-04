@@ -40,8 +40,11 @@ jobs:
       - name: Run Grade 9 Mathematics tests
         run: node --test tests/grade9-mathematics.test.mjs
 
-      - name: Build using Netlify CLI without deploying
+            - name: Build using Netlify CLI without deploying
         run: npx --yes netlify-cli@17 build --context production
+        env:
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
 
       - name: Verification summary
         if: always()
