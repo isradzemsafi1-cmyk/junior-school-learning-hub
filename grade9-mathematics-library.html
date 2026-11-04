@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0c1a4b">
+  <title>Grade 9 Mathematics | Junior School Learning Hub</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root{--navy:#0c1a4b;--blue:#2347e0;--gold:#ffc23d;--ink:#1c2547;--muted:#5d6788;--paper:#f6f8ff;--line:#e2e7f6;--shadow:0 12px 30px rgba(12,26,75,.09}
+    *{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.65 'Nunito',Arial,sans-serif}h1,h2,h3{font-family:'Baloo 2','Nunito',sans-serif;line-height:1.2;color:var(--navy)}
+    header{background:var(--navy);color:#fff;padding:14px 5%;display:flex;gap:12px;justify-content:space-between;align-items:center;flex-wrap:wrap}.brand{font-weight:800;font-family:'Baloo 2',sans-serif;font-size:19px}header a{color:#e9eeff;text-decoration:none;font-weight:800}
+    .hero{background:linear-gradient(120deg,#2347e0,#0c1a4b);color:white;padding:38px 5%;text-align:center}.hero h1{color:#fff;font-size:clamp(28px,6vw,44px);margin:0}.hero p{max-width:680px;margin:8px auto;color:#edf0ff}
+    main{max-width:1000px;margin:auto;padding:20px 15px 44px}.panel{background:#fff;border:1px solid var(--line);border-radius:22px;padding:22px;margin:16px 0;box-shadow:var(--shadow)}.terms{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}.term{background:#fff;border:2px solid var(--line);border-radius:16px;padding:16px;text-align:left;color:var(--navy);font:inherit;font-weight:800;cursor:pointer}.term:hover,.term[aria-pressed=true]{border-color:var(--gold);box-shadow:0 8px 18px -12px var(--navy)}.term span{display:block;color:var(--muted);font-size:13px;font-weight:700}.notice{border-left:5px solid var(--gold);background:#fff8e4;padding:15px 17px;border-radius:10px}.muted{color:var(--muted)}a{color:var(--blue)}footer{background:var(--navy);color:#fff;text-align:center;padding:22px}
+    @media(max-width:600px){header{justify-content:center;text-align:center}.panel{padding:16px}.terms{grid-template-columns:1fr}.term{padding:13px}}
+  </style>
+</head>
+<body>
+  <header><div class="brand">🎓 Junior School Learning Hub</div><nav><a href="/">Home</a> · <a href="/grade9-learning-library.html">Grade 9 Library access</a></nav></header>
+  <section class="hero"><h1>📘 Grade 9 Mathematics</h1><p>A term-by-term learning library. Curriculum topics and notes will be added from the supplied schemes of work and notes PDF.</p></section>
+  <main>
+    <section class="panel" aria-labelledby="terms-heading">
+      <h2 id="terms-heading">Choose a term</h2>
+      <div class="terms" role="group" aria-label="Grade 9 Mathematics terms">
+        <button class="term" type="button" aria-pressed="true" data-term="I">Term I<span>Curriculum source pending</span></button>
+        <button class="term" type="button" aria-pressed="false" data-term="II">Term II<span>Curriculum source pending</span></button>
+        <button class="term" type="button" aria-pressed="false" data-term="III">Term III<span>Curriculum source pending</span></button>
+      </div>
+    </section>
+    <section class="panel" aria-live="polite" aria-labelledby="term-title">
+      <h2 id="term-title">Term I · Topic navigation</h2>
+      <div class="notice"><strong>Preparing this learning library</strong><p class="muted">The three term schemes and Mathematics notes PDF are not yet available in the repository. This page intentionally contains no invented topic sequence, worked examples, practice answers, or premium lesson text. Topic links and lessons will appear after the source documents are received and reviewed.</p></div>
+      <h3>Planned topic learning sections</h3>
+      <p class="muted">Each source-based topic will be organised with knowledge, skills and attitudes outcomes; learner-friendly notes, definitions, rules and formulas; worked examples; practical applications; practice exercises with explained answers; and an instant-feedback quiz.</p>
+      <p>For learner sign-in and existing Grade 9 access options, visit the <a href="/grade9-learning-library.html">Grade 9 Library</a>.</p>
+    </section>
+  </main>
+  <footer>Junior School Learning Hub · Empowering learners to learn, grow and excel.</footer>
+  <script>
+    const title = document.getElementById('term-title');
+    document.querySelectorAll('[data-term]').forEach(button => button.addEventListener('click', () => {
+      document.querySelectorAll('[data-term]').forEach(item => item.setAttribute('aria-pressed', String(item === button)));
+      title.textContent = `Term ${button.dataset.term} · Topic navigation`;
+    }));
+  </script>
+</body>
+</html>
