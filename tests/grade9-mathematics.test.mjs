@@ -24,7 +24,15 @@ function restore() {
 for (const term of ['I', 'II', 'III']) {
   test(`authenticates, checks entitlement, and fetches exact private path for term ${term}`, async () => {
     const calls = [];
-    const payload = { term, topics: [{ id: 'topic-1', title: 'Source topic', notes: ['Source-based notes'], quiz: [] }] };
+    const payload = {
+      term,
+      topics: [{
+        id: 'topic-1', title: 'Source topic', sequence: ['Subtopic one'],
+        notes: ['Source-based notes'],
+        sourceGaps: [{ item: 'Unmatched lesson', status: 'SOURCE_GAP', detail: 'No source explanation.' }],
+        quiz: [{ q: 'Check?', o: ['Yes', 'No'], a: 0, e: 'Source feedback.' }]
+      }]
+    };
     setup(async (url, options) => {
       calls.push({ url: String(url), options });
       if (calls.length === 1) return jsonResponse(200, { id: 'learner-test' });
@@ -35,7 +43,13 @@ for (const term of ['I', 'II', 'III']) {
       const response = await getGrade9Content(request(term, 'test-learner-token'));
       assert.equal(response.status, 200);
       const returnedBody = await response.json();
-      assert.deepEqual(returnedBody.content, payload);
+      assert.equal(returnedBody.term, term);
+      assert.equal(returnedBody.content.topics[0].title, 'Source topic');
+      assert.deepEqual(returnedBody.content.topics[0].notes, [
+        'Source-based notes',
+        'Scheme lesson sequence: Subtopic one',
+        'Source gap: Unmatched lesson — SOURCE_GAP — No source explanation.'
+      ]);
       assert.match(calls[0].url, /\/auth\/v1\/user$/);
       assert.match(calls[1].url, /product_id=eq\.grade9_notes/);
       assert.match(calls[2].url, new RegExp(`grade9-mathematics-private/grade9/mathematics/term-${term.toLowerCase()}\\.json$`));
@@ -87,13 +101,13 @@ test('rejects a learner without active entitlement before retrieving an object',
   } finally { restore(); }
 });
 
-test('does not deliver invalid stored term payload', async () => {
+test('rejects malformed stored topic and quiz schema', async () => {
   let calls = 0;
   setup(async () => {
     calls++;
     if (calls === 1) return jsonResponse(200, { id: 'learner-test' });
     if (calls === 2) return jsonResponse(200, [{ id: 'active-entitlement' }]);
-    return jsonResponse(200, { term: 'III', topics: [] });
+    return jsonResponse(200, { term: 'I', topics: [{ title: 'Topic', quiz: [{ q: 'Q', o: 'not options', a: 0 }] }] });
   });
   try {
     assert.equal((await getGrade9Content(request('I', 'valid-token'))).status, 500);

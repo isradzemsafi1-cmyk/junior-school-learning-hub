@@ -12,8 +12,51 @@ const respond = (status, data) =>
     }
   });
 
-// Serves source-derived Mathematics lessons from private Supabase Storage only
-// after verifying the learner session and active Grade 9 entitlement.
+function normalizeForLibrary(content, term) {
+  if (content?.term !== term || !Array.isArray(content?.topics)) {
+    throw new Error("Stored term lesson data is invalid.");
+  }
+
+  const topics = content.topics.map((topic) => {
+    if (!topic || typeof topic !== "object" || typeof topic.title !== "string" || !topic.title.trim()) {
+      throw new Error("Stored topic is missing its title.");
+    }
+    if (topic.quiz !== undefined && !Array.isArray(topic.quiz)) {
+      throw new Error(`Quiz data is invalid for topic ${topic.title}.`);
+    }
+    for (const question of topic.quiz || []) {
+      const options = question?.o || question?.options;
+      const answer = question?.a ?? question?.answerIndex;
+      if (typeof (question?.q || question?.question) !== "string" || !Array.isArray(options) || !Number.isInteger(Number(answer))) {
+        throw new Error(`Quiz question schema is invalid for topic ${topic.title}.`);
+      }
+    }
+
+    const notes = Array.isArray(topic.notes)
+      ? topic.notes.filter((item) => typeof item === "string")
+      : typeof topic.notes === "string" ? [topic.notes] : [];
+
+    // The current library UI renders notes as plain text/list items. Surface
+    // scheme subtopic headings and source gaps through that supported field,
+    // without replacing or adding any lesson content to the stored object.
+    if (Array.isArray(topic.sequence) && topic.sequence.length) {
+      notes.push(`Scheme lesson sequence: ${topic.sequence.filter((item) => typeof item === "string").join("; ")}`);
+    }
+    if (Array.isArray(topic.sourceGaps)) {
+      topic.sourceGaps.forEach((gap) => {
+        if (!gap || typeof gap !== "object") return;
+        const detail = [gap.status, gap.detail].filter(Boolean).join(" — ");
+        notes.push(`Source gap: ${gap.item || "Unmatched scheme content"}${detail ? ` — ${detail}` : ""}`);
+      });
+    }
+
+    return { ...topic, notes };
+  });
+  return { ...content, topics };
+}
+
+// Serves private Mathematics term data only after validating the learner session
+// and an active, unexpired Grade 9 entitlement.
 export default async (request) => {
   if (request.method !== "GET") {
     return respond(405, { message: "Method not allowed." });
@@ -77,10 +120,8 @@ export default async (request) => {
     }
     if (!objectResponse.ok) throw new Error("Private lesson retrieval failed.");
 
-    const content = await objectResponse.json();
-    if (content?.term !== term || !Array.isArray(content?.topics)) {
-      throw new Error("Stored term lesson data is invalid.");
-    }
+    const storedContent = await objectResponse.json();
+    const content = normalizeForLibrary(storedContent, term);
     return respond(200, { success: true, term, content });
   } catch (error) {
     console.error("Grade 9 Mathematics content error:", error.message);
