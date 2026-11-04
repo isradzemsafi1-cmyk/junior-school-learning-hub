@@ -101,10 +101,12 @@ test('quiz helper returns feedback and saves attempt with term and topic metadat
 test('frontend reads actual private topic field names, uses safe DOM and shows access states', async () => {
   const html = await readFile(new URL('../grade9-mathematics-library.html', import.meta.url), 'utf8');
   for (const term of ['I', 'II', 'III']) assert.match(html, new RegExp(`data-term="${term}"`));
-  for (const field of ['week', 'sequence', 'outcomes', 'notes', 'definitions', 'rulesAndFormulas', 'workedExamples', 'applications', 'exercises', 'answersAndExplanations', 'sourceGaps', 'quiz']) assert.ok(html.includes(`topic.${field}`), `expected topic.${field}`);
+  for (const field of ['week', 'sequence', 'outcomes', 'notes', 'definitions', 'rulesAndFormulas', 'workedExamples', 'applications', 'exercises', 'answersAndExplanations', 'sourceGaps', 'quiz']) {
+    assert.ok(html.includes(`topic.${field}`), `expected topic.${field}`);
+  }
   assert.match(html, /get-grade9-mathematics-content\?term=/);
   assert.match(html, /selectTopic\(index - 1\)/);
-  assert.match(html, /selectTopic\(index \\+ 1\)/);
+  assert.match(html, /selectTopic\(index \+ 1\)/);
   assert.match(html, /gradeQuiz\(questions, selected\)/);
   assert.match(html, /saveQuizAttempt\(/);
   assert.match(html, /\.textContent/);
