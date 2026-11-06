@@ -1,0 +1,578 @@
+[
+  {
+    "subject": "Mathematics",
+    "category": "CATs",
+    "label": "CAT 2",
+    "filename": "CAT 2 and Marking Scheme.pdf",
+    "path": "Mathematics/CATs/CAT 2 and Marking Scheme.pdf",
+    "bytes": 56731
+  },
+  {
+    "subject": "Christian Religious Education (CRE)",
+    "category": "CATs",
+    "label": "CAT 1",
+    "filename": "CAT 1 and Marking Scheme.pdf",
+    "path": "Christian Religious Education (CRE)/CATs/CAT 1 and Marking Scheme.pdf",
+    "bytes": 49078
+  },
+  {
+    "subject": "Pre-Technical Studies",
+    "category": "Examinations",
+    "label": "Term 1 Examination",
+    "filename": "End of Term 1 Examination and Marking Scheme.pdf",
+    "path": "Pre-Technical Studies/Examinations/End of Term 1 Examination and Marking Scheme.pdf",
+    "bytes": 55894
+  },
+  {
+    "subject": "Integrated Science",
+    "category": "Learner Notes",
+    "label": "Full-Year Learner Notes",
+    "filename": "Detailed Full Year Learner Notes.pdf",
+    "path": "Integrated Science/Learner Notes/Detailed Full Year Learner Notes.pdf",
+    "bytes": 132379
+  },
+  {
+    "subject": "Creative Arts and Sports",
+    "category": "Examinations",
+    "label": "Term 2 Examination",
+    "filename": "End of Term 2 Examination and Marking Scheme.pdf",
+    "path": "Creative Arts and Sports/Examinations/End of Term 2 Examination and Marking Scheme.pdf",
+    "bytes": 56622
+  },
+  {
+    "subject": "Christian Religious Education (CRE)",
+    "category": "Examinations",
+    "label": "Term 2 Examination",
+    "filename": "End of Term 2 Examination and Marking Scheme.pdf",
+    "path": "Christian Religious Education (CRE)/Examinations/End of Term 2 Examination and Marking Scheme.pdf",
+    "bytes": 55967
+  },
+  {
+    "subject": "Kiswahili",
+    "category": "CATs",
+    "label": "CAT 1",
+    "filename": "CAT 1 and Marking Scheme.pdf",
+    "path": "Kiswahili/CATs/CAT 1 and Marking Scheme.pdf",
+    "bytes": 43424
+  },
+  {
+    "subject": "Pre-Technical Studies",
+    "category": "Schemes of Work",
+    "label": "Full-Year Scheme of Work",
+    "filename": "Full Year Scheme of Work.pdf",
+    "path": "Pre-Technical Studies/Schemes of Work/Full Year Scheme of Work.pdf",
+    "bytes": 194932
+  },
+  {
+    "subject": "English",
+    "category": "CATs",
+    "label": "CAT 2",
+    "filename": "CAT 2 and Marking Scheme.pdf",
+    "path": "English/CATs/CAT 2 and Marking Scheme.pdf",
+    "bytes": 43867
+  },
+  {
+    "subject": "Mathematics",
+    "category": "Learner Notes",
+    "label": "Full-Year Learner Notes",
+    "filename": "Detailed Full Year Learner Notes.pdf",
+    "path": "Mathematics/Learner Notes/Detailed Full Year Learner Notes.pdf",
+    "bytes": 162926
+  },
+  {
+    "subject": "Mathematics",
+    "category": "Examinations",
+    "label": "Term 2 Examination",
+    "filename": "End of Term 2 Examination and Marking Scheme.pdf",
+    "path": "Mathematics/Examinations/End of Term 2 Examination and Marking Scheme.pdf",
+    "bytes": 59877
+  },
+  {
+    "subject": "Mathematics",
+    "category": "Examinations",
+    "label": "Term 1 Examination",
+    "filename": "End of Term 1 Examination and Marking Scheme.pdf",
+    "path": "Mathematics/Examinations/End of Term 1 Examination and Marking Scheme.pdf",
+    "bytes": 67481
+  },
+  {
+    "subject": "Social Studies",
+    "category": "Learner Notes",
+    "label": "Full-Year Learner Notes",
+    "filename": "Detailed Full Year Learner Notes.pdf",
+    "path": "Social Studies/Learner Notes/Detailed Full Year Learner Notes.pdf",
+    "bytes": 135707
+  },
+  {
+    "subject": "Integrated Science",
+    "category": "Examinations",
+    "label": "Term 3 Examination",
+    "filename": "End of Term 3 Examination and Marking Scheme.pdf",
+    "path": "Integrated Science/Examinations/End of Term 3 Examination and Marking Scheme.pdf",
+    "bytes": 57839
+  },
+  {
+    "subject": "Creative Arts and Sports",
+    "category": "CATs",
+    "label": "CAT 2",
+    "filename": "CAT 2 and Marking Scheme.pdf",
+    "path": "Creative Arts and Sports/CATs/CAT 2 and Marking Scheme.pdf",
+    "bytes": 54706
+  },
+  {
+    "subject": "Mathematics",
+    "category": "Schemes of Work",
+    "label": "Full-Year Scheme of Work",
+    "filename": "Full Year Scheme of Work.pdf",
+    "path": "Mathematics/Schemes of Work/Full Year Scheme of Work.pdf",
+    "bytes": 366948
+  },
+  {
+    "subject": "Agriculture",
+    "category": "Lesson Plans",
+    "label": "Full-Year Lesson Plans",
+    "filename": "Full Year Lesson Plans.pdf",
+    "path": "Agriculture/Lesson Plans/Full Year Lesson Plans.pdf",
+    "bytes": 567397
+  },
+  {
+    "subject": "Kiswahili",
+    "category": "Examinations",
+    "label": "Term 3 Examination",
+    "filename": "End of Term 3 Examination and Marking Scheme.pdf",
+    "path": "Kiswahili/Examinations/End of Term 3 Examination and Marking Scheme.pdf",
+    "bytes": 50997
+  },
+  {
+    "subject": "Social Studies",
+    "category": "Lesson Plans",
+    "label": "Full-Year Lesson Plans",
+    "filename": "Full Year Lesson Plans.pdf",
+    "path": "Social Studies/Lesson Plans/Full Year Lesson Plans.pdf",
+    "bytes": 590193
+  },
+  {
+    "subject": "Social Studies",
+    "category": "Examinations",
+    "label": "Term 1 Examination",
+    "filename": "End of Term 1 Examination and Marking Scheme.pdf",
+    "path": "Social Studies/Examinations/End of Term 1 Examination and Marking Scheme.pdf",
+    "bytes": 53561
+  },
+  {
+    "subject": "Pre-Technical Studies",
+    "category": "Examinations",
+    "label": "Term 3 Examination",
+    "filename": "End of Term 3 Examination and Marking Scheme.pdf",
+    "path": "Pre-Technical Studies/Examinations/End of Term 3 Examination and Marking Scheme.pdf",
+    "bytes": 57302
+  },
+  {
+    "subject": "Creative Arts and Sports",
+    "category": "CATs",
+    "label": "CAT 1",
+    "filename": "CAT 1 and Marking Scheme.pdf",
+    "path": "Creative Arts and Sports/CATs/CAT 1 and Marking Scheme.pdf",
+    "bytes": 49148
+  },
+  {
+    "subject": "Kiswahili",
+    "category": "CATs",
+    "label": "CAT 2",
+    "filename": "CAT 2 and Marking Scheme.pdf",
+    "path": "Kiswahili/CATs/CAT 2 and Marking Scheme.pdf",
+    "bytes": 42943
+  },
+  {
+    "subject": "Mathematics",
+    "category": "Examinations",
+    "label": "Term 3 Examination",
+    "filename": "End of Term 3 Examination and Marking Scheme.pdf",
+    "path": "Mathematics/Examinations/End of Term 3 Examination and Marking Scheme.pdf",
+    "bytes": 59389
+  },
+  {
+    "subject": "Integrated Science",
+    "category": "CATs",
+    "label": "CAT 2",
+    "filename": "CAT 2 and Marking Scheme.pdf",
+    "path": "Integrated Science/CATs/CAT 2 and Marking Scheme.pdf",
+    "bytes": 47826
+  },
+  {
+    "subject": "Social Studies",
+    "category": "Examinations",
+    "label": "Term 2 Examination",
+    "filename": "End of Term 2 Examination and Marking Scheme.pdf",
+    "path": "Social Studies/Examinations/End of Term 2 Examination and Marking Scheme.pdf",
+    "bytes": 56964
+  },
+  {
+    "subject": "Social Studies",
+    "category": "Schemes of Work",
+    "label": "Full-Year Scheme of Work",
+    "filename": "Full Year Scheme of Work.pdf",
+    "path": "Social Studies/Schemes of Work/Full Year Scheme of Work.pdf",
+    "bytes": 205782
+  },
+  {
+    "subject": "Integrated Science",
+    "category": "Examinations",
+    "label": "Term 2 Examination",
+    "filename": "End of Term 2 Examination and Marking Scheme.pdf",
+    "path": "Integrated Science/Examinations/End of Term 2 Examination and Marking Scheme.pdf",
+    "bytes": 57459
+  },
+  {
+    "subject": "Integrated Science",
+    "category": "Schemes of Work",
+    "label": "Full-Year Scheme of Work",
+    "filename": "Full Year Scheme of Work.pdf",
+    "path": "Integrated Science/Schemes of Work/Full Year Scheme of Work.pdf",
+    "bytes": 379641
+  },
+  {
+    "subject": "Integrated Science",
+    "category": "CATs",
+    "label": "CAT 1",
+    "filename": "CAT 1 and Marking Scheme.pdf",
+    "path": "Integrated Science/CATs/CAT 1 and Marking Scheme.pdf",
+    "bytes": 54746
+  },
+  {
+    "subject": "Pre-Technical Studies",
+    "category": "Examinations",
+    "label": "Term 2 Examination",
+    "filename": "End of Term 2 Examination and Marking Scheme.pdf",
+    "path": "Pre-Technical Studies/Examinations/End of Term 2 Examination and Marking Scheme.pdf",
+    "bytes": 57045
+  },
+  {
+    "subject": "Pre-Technical Studies",
+    "category": "Lesson Plans",
+    "label": "Full-Year Lesson Plans",
+    "filename": "Full Year Lesson Plans.pdf",
+    "path": "Pre-Technical Studies/Lesson Plans/Full Year Lesson Plans.pdf",
+    "bytes": 600453
+  },
+  {
+    "subject": "Pre-Technical Studies",
+    "category": "CATs",
+    "label": "CAT 1",
+    "filename": "CAT 1 and Marking Scheme.pdf",
+    "path": "Pre-Technical Studies/CATs/CAT 1 and Marking Scheme.pdf",
+    "bytes": 49025
+  },
+  {
+    "subject": "Creative Arts and Sports",
+    "category": "Schemes of Work",
+    "label": "Full-Year Scheme of Work",
+    "filename": "Full Year Scheme of Work.pdf",
+    "path": "Creative Arts and Sports/Schemes of Work/Full Year Scheme of Work.pdf",
+    "bytes": 220669
+  },
+  {
+    "subject": "Christian Religious Education (CRE)",
+    "category": "Examinations",
+    "label": "Term 1 Examination",
+    "filename": "End of Term 1 Examination and Marking Scheme.pdf",
+    "path": "Christian Religious Education (CRE)/Examinations/End of Term 1 Examination and Marking Scheme.pdf",
+    "bytes": 55095
+  },
+  {
+    "subject": "English",
+    "category": "Examinations",
+    "label": "Term 1 Examination",
+    "filename": "End of Term 1 Examination and Marking Scheme.pdf",
+    "path": "English/Examinations/End of Term 1 Examination and Marking Scheme.pdf",
+    "bytes": 51578
+  },
+  {
+    "subject": "Agriculture",
+    "category": "Schemes of Work",
+    "label": "Full-Year Scheme of Work",
+    "filename": "Full Year Scheme of Work.pdf",
+    "path": "Agriculture/Schemes of Work/Full Year Scheme of Work.pdf",
+    "bytes": 189045
+  },
+  {
+    "subject": "English",
+    "category": "Examinations",
+    "label": "Term 2 Examination",
+    "filename": "End of Term 2 Examination and Marking Scheme.pdf",
+    "path": "English/Examinations/End of Term 2 Examination and Marking Scheme.pdf",
+    "bytes": 52756
+  },
+  {
+    "subject": "Pre-Technical Studies",
+    "category": "CATs",
+    "label": "CAT 2",
+    "filename": "CAT 2 and Marking Scheme.pdf",
+    "path": "Pre-Technical Studies/CATs/CAT 2 and Marking Scheme.pdf",
+    "bytes": 49458
+  },
+  {
+    "subject": "English",
+    "category": "Learner Notes",
+    "label": "Full-Year Learner Notes",
+    "filename": "Detailed Full Year Learner Notes.pdf",
+    "path": "English/Learner Notes/Detailed Full Year Learner Notes.pdf",
+    "bytes": 103005
+  },
+  {
+    "subject": "Christian Religious Education (CRE)",
+    "category": "Schemes of Work",
+    "label": "Full-Year Scheme of Work",
+    "filename": "Full Year Scheme of Work.pdf",
+    "path": "Christian Religious Education (CRE)/Schemes of Work/Full Year Scheme of Work.pdf",
+    "bytes": 140683
+  },
+  {
+    "subject": "Creative Arts and Sports",
+    "category": "Examinations",
+    "label": "Term 3 Examination",
+    "filename": "End of Term 3 Examination and Marking Scheme.pdf",
+    "path": "Creative Arts and Sports/Examinations/End of Term 3 Examination and Marking Scheme.pdf",
+    "bytes": 57332
+  },
+  {
+    "subject": "Agriculture",
+    "category": "Examinations",
+    "label": "Term 1 Examination",
+    "filename": "End of Term 1 Examination and Marking Scheme.pdf",
+    "path": "Agriculture/Examinations/End of Term 1 Examination and Marking Scheme.pdf",
+    "bytes": 54818
+  },
+  {
+    "subject": "Agriculture",
+    "category": "Examinations",
+    "label": "Term 3 Examination",
+    "filename": "End of Term 3 Examination and Marking Scheme.pdf",
+    "path": "Agriculture/Examinations/End of Term 3 Examination and Marking Scheme.pdf",
+    "bytes": 55463
+  },
+  {
+    "subject": "Creative Arts and Sports",
+    "category": "Examinations",
+    "label": "Term 1 Examination",
+    "filename": "End of Term 1 Examination and Marking Scheme.pdf",
+    "path": "Creative Arts and Sports/Examinations/End of Term 1 Examination and Marking Scheme.pdf",
+    "bytes": 55239
+  },
+  {
+    "subject": "English",
+    "category": "Schemes of Work",
+    "label": "Full-Year Scheme of Work",
+    "filename": "Full Year Scheme of Work.pdf",
+    "path": "English/Schemes of Work/Full Year Scheme of Work.pdf",
+    "bytes": 214511
+  },
+  {
+    "subject": "English",
+    "category": "Lesson Plans",
+    "label": "Full-Year Lesson Plans",
+    "filename": "Full Year Lesson Plans.pdf",
+    "path": "English/Lesson Plans/Full Year Lesson Plans.pdf",
+    "bytes": 712405
+  },
+  {
+    "subject": "Agriculture",
+    "category": "Examinations",
+    "label": "Term 2 Examination",
+    "filename": "End of Term 2 Examination and Marking Scheme.pdf",
+    "path": "Agriculture/Examinations/End of Term 2 Examination and Marking Scheme.pdf",
+    "bytes": 55885
+  },
+  {
+    "subject": "Christian Religious Education (CRE)",
+    "category": "CATs",
+    "label": "CAT 2",
+    "filename": "CAT 2 and Marking Scheme.pdf",
+    "path": "Christian Religious Education (CRE)/CATs/CAT 2 and Marking Scheme.pdf",
+    "bytes": 53574
+  },
+  {
+    "subject": "Mathematics",
+    "category": "Lesson Plans",
+    "label": "Full-Year Lesson Plans",
+    "filename": "Full Year Lesson Plans.pdf",
+    "path": "Mathematics/Lesson Plans/Full Year Lesson Plans.pdf",
+    "bytes": 666109
+  },
+  {
+    "subject": "Christian Religious Education (CRE)",
+    "category": "Examinations",
+    "label": "Term 3 Examination",
+    "filename": "End of Term 3 Examination and Marking Scheme.pdf",
+    "path": "Christian Religious Education (CRE)/Examinations/End of Term 3 Examination and Marking Scheme.pdf",
+    "bytes": 55765
+  },
+  {
+    "subject": "Creative Arts and Sports",
+    "category": "Learner Notes",
+    "label": "Full-Year Learner Notes",
+    "filename": "Detailed Full Year Learner Notes.pdf",
+    "path": "Creative Arts and Sports/Learner Notes/Detailed Full Year Learner Notes.pdf",
+    "bytes": 92095
+  },
+  {
+    "subject": "Social Studies",
+    "category": "CATs",
+    "label": "CAT 2",
+    "filename": "CAT 2 and Marking Scheme.pdf",
+    "path": "Social Studies/CATs/CAT 2 and Marking Scheme.pdf",
+    "bytes": 48515
+  },
+  {
+    "subject": "Agriculture",
+    "category": "Learner Notes",
+    "label": "Full-Year Learner Notes",
+    "filename": "Detailed Full Year Learner Notes.pdf",
+    "path": "Agriculture/Learner Notes/Detailed Full Year Learner Notes.pdf",
+    "bytes": 118085
+  },
+  {
+    "subject": "Pre-Technical Studies",
+    "category": "Learner Notes",
+    "label": "Full-Year Learner Notes",
+    "filename": "Detailed Full Year Learner Notes.pdf",
+    "path": "Pre-Technical Studies/Learner Notes/Detailed Full Year Learner Notes.pdf",
+    "bytes": 119544
+  },
+  {
+    "subject": "Kiswahili",
+    "category": "Examinations",
+    "label": "Term 1 Examination",
+    "filename": "End of Term 1 Examination and Marking Scheme.pdf",
+    "path": "Kiswahili/Examinations/End of Term 1 Examination and Marking Scheme.pdf",
+    "bytes": 51254
+  },
+  {
+    "subject": "English",
+    "category": "Examinations",
+    "label": "Term 3 Examination",
+    "filename": "End of Term 3 Examination and Marking Scheme.pdf",
+    "path": "English/Examinations/End of Term 3 Examination and Marking Scheme.pdf",
+    "bytes": 53406
+  },
+  {
+    "subject": "English",
+    "category": "CATs",
+    "label": "CAT 1",
+    "filename": "CAT 1 and Marking Scheme.pdf",
+    "path": "English/CATs/CAT 1 and Marking Scheme.pdf",
+    "bytes": 43959
+  },
+  {
+    "subject": "Kiswahili",
+    "category": "Examinations",
+    "label": "Term 2 Examination",
+    "filename": "End of Term 2 Examination and Marking Scheme.pdf",
+    "path": "Kiswahili/Examinations/End of Term 2 Examination and Marking Scheme.pdf",
+    "bytes": 50159
+  },
+  {
+    "subject": "Agriculture",
+    "category": "CATs",
+    "label": "CAT 1",
+    "filename": "CAT 1 and Marking Scheme.pdf",
+    "path": "Agriculture/CATs/CAT 1 and Marking Scheme.pdf",
+    "bytes": 47553
+  },
+  {
+    "subject": "Christian Religious Education (CRE)",
+    "category": "Lesson Plans",
+    "label": "Full-Year Lesson Plans",
+    "filename": "Full Year Lesson Plans.pdf",
+    "path": "Christian Religious Education (CRE)/Lesson Plans/Full Year Lesson Plans.pdf",
+    "bytes": 565593
+  },
+  {
+    "subject": "Agriculture",
+    "category": "CATs",
+    "label": "CAT 2",
+    "filename": "CAT 2 and Marking Scheme.pdf",
+    "path": "Agriculture/CATs/CAT 2 and Marking Scheme.pdf",
+    "bytes": 49030
+  },
+  {
+    "subject": "Integrated Science",
+    "category": "Examinations",
+    "label": "Term 1 Examination",
+    "filename": "End of Term 1 Examination and Marking Scheme.pdf",
+    "path": "Integrated Science/Examinations/End of Term 1 Examination and Marking Scheme.pdf",
+    "bytes": 58519
+  },
+  {
+    "subject": "Social Studies",
+    "category": "CATs",
+    "label": "CAT 1",
+    "filename": "CAT 1 and Marking Scheme.pdf",
+    "path": "Social Studies/CATs/CAT 1 and Marking Scheme.pdf",
+    "bytes": 47662
+  },
+  {
+    "subject": "Kiswahili",
+    "category": "Schemes of Work",
+    "label": "Full-Year Scheme of Work",
+    "filename": "Full Year Scheme of Work.pdf",
+    "path": "Kiswahili/Schemes of Work/Full Year Scheme of Work.pdf",
+    "bytes": 118043
+  },
+  {
+    "subject": "Social Studies",
+    "category": "Examinations",
+    "label": "Term 3 Examination",
+    "filename": "End of Term 3 Examination and Marking Scheme.pdf",
+    "path": "Social Studies/Examinations/End of Term 3 Examination and Marking Scheme.pdf",
+    "bytes": 56586
+  },
+  {
+    "subject": "Kiswahili",
+    "category": "Lesson Plans",
+    "label": "Full-Year Lesson Plans",
+    "filename": "Full Year Lesson Plans.pdf",
+    "path": "Kiswahili/Lesson Plans/Full Year Lesson Plans.pdf",
+    "bytes": 488057
+  },
+  {
+    "subject": "Integrated Science",
+    "category": "Lesson Plans",
+    "label": "Full-Year Lesson Plans",
+    "filename": "Full Year Lesson Plans.pdf",
+    "path": "Integrated Science/Lesson Plans/Full Year Lesson Plans.pdf",
+    "bytes": 767139
+  },
+  {
+    "subject": "Kiswahili",
+    "category": "Learner Notes",
+    "label": "Full-Year Learner Notes",
+    "filename": "Detailed Full Year Learner Notes.pdf",
+    "path": "Kiswahili/Learner Notes/Detailed Full Year Learner Notes.pdf",
+    "bytes": 96614
+  },
+  {
+    "subject": "Creative Arts and Sports",
+    "category": "Lesson Plans",
+    "label": "Full-Year Lesson Plans",
+    "filename": "Full Year Lesson Plans.pdf",
+    "path": "Creative Arts and Sports/Lesson Plans/Full Year Lesson Plans.pdf",
+    "bytes": 705235
+  },
+  {
+    "subject": "Christian Religious Education (CRE)",
+    "category": "Learner Notes",
+    "label": "Full-Year Learner Notes",
+    "filename": "Detailed Full Year Learner Notes.pdf",
+    "path": "Christian Religious Education (CRE)/Learner Notes/Detailed Full Year Learner Notes.pdf",
+    "bytes": 86095
+  },
+  {
+    "subject": "Mathematics",
+    "category": "CATs",
+    "label": "CAT 1",
+    "filename": "CAT 1 and Marking Scheme.pdf",
+    "path": "Mathematics/CATs/CAT 1 and Marking Scheme.pdf",
+    "bytes": 55074
+  }
+]
