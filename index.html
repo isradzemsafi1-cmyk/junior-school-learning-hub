@@ -147,6 +147,19 @@ form input,form select,form textarea{width:100%;margin:7px 0 16px}
 .shortcut span{font-size:13px;color:#ffffffdd;line-height:1.4}
 .shortcut em{margin-top:auto;font-style:normal;font-weight:800;font-size:13px;background:#ffffff26;padding:4px 11px;border-radius:999px}
 
+/* Audience access centres */
+.access-centres-section{padding-top:48px}
+.access-centres{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px;max-width:1240px;margin:0 auto}
+.access-centre{display:flex;flex-direction:column;align-items:flex-start;gap:12px;padding:25px;background:#fff;border:1px solid var(--line);border-radius:var(--r-lg);box-shadow:var(--shadow-sm);scroll-margin-top:100px}
+.access-centre h3{font-size:24px;color:var(--navy)}
+.access-centre p{font-size:14.5px;color:var(--muted);flex:1}
+.access-centre-icon{width:60px;height:60px;display:grid;place-items:center;border-radius:18px;background:linear-gradient(135deg,#2347e01a,#7b3fe41f);font-size:32px}
+.access-actions{display:flex;flex-direction:column;align-items:stretch;width:100%;gap:7px;margin-top:5px}
+.access-actions .btn{justify-content:center;text-align:center;margin:0;font-size:13.5px;padding:11px 14px}
+.teacher-centre{border-top:5px solid var(--purple)}
+.parent-centre{border-top:5px solid var(--orange)}
+.learner-centre{border-top:5px solid var(--royal)}
+
 /* Grade library cards */
 .grade-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;max-width:1240px;margin:0 auto}
 .grade-card{--a:var(--royal);--b:var(--turq);position:relative;border-radius:var(--r-lg);background:#fff;border:1px solid var(--line);box-shadow:var(--shadow-sm);overflow:hidden;display:flex;flex-direction:column;transition:transform .3s,box-shadow .3s}
@@ -206,6 +219,7 @@ form input,form select,form textarea{width:100%;margin:7px 0 16px}
  nav a{padding:11px 14px;border-radius:12px;font-size:15px}
 }
 @media(max-width:980px){
+ .access-centres{grid-template-columns:1fr;max-width:620px}
  .hero-grid{grid-template-columns:1fr;gap:36px}
  .hero-visual{min-height:0;max-width:520px;margin:0 auto;width:100%;display:grid;grid-template-columns:1fr;gap:16px}
  .portrait-card,.learners-card{position:relative;width:100%;left:auto;right:auto;top:auto;bottom:auto}
@@ -276,6 +290,86 @@ form input,form select,form textarea{width:100%;margin:7px 0 16px}
 }
 @media(max-width:380px){.subject-grid,.pay-grid{grid-template-columns:1fr}}
 @media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important;scroll-behavior:auto!important}.js .reveal{opacity:1;transform:none}}
+
+/* 2026 usability refresh: compact navigation and simpler account access */
+html{scroll-padding-top:92px}
+section{padding-top:50px;padding-bottom:50px}
+.access-centres-section{padding-top:38px;padding-bottom:38px}
+.access-centres-section .heading{margin-bottom:20px}
+.quick-dock{position:fixed;right:18px;bottom:18px;z-index:60;display:flex;gap:7px;padding:8px;background:#0c1a4bef;border:1px solid #ffffff35;border-radius:999px;box-shadow:0 12px 34px #0c1a4b44;backdrop-filter:blur(12px)}
+.quick-dock a{display:inline-flex;align-items:center;justify-content:center;gap:6px;color:#fff;text-decoration:none;font-weight:800;font-size:12px;padding:10px 13px;border-radius:999px;white-space:nowrap}
+.quick-dock a:first-child{background:linear-gradient(90deg,var(--gold),var(--orange));color:var(--navy)}
+.quick-dock a:hover{background:#ffffff24}.quick-dock a:first-child:hover{background:linear-gradient(90deg,var(--gold),var(--orange))}
+.auth-tabs{display:grid;grid-template-columns:1fr 1fr;gap:8px;background:#eef2ff;padding:6px;border-radius:15px;margin-bottom:18px}
+.auth-tab{border:0;border-radius:11px;padding:12px 10px;background:transparent;color:var(--navy);font:800 14px 'Nunito';cursor:pointer}
+.auth-tab[aria-selected="true"]{background:linear-gradient(90deg,var(--royal),var(--purple));color:#fff;box-shadow:0 6px 16px #2347e033}
+.auth-pane[hidden]{display:none!important}
+.auth-forms{min-width:0}
+.auth-forms input,.auth-forms select{width:100%;margin:7px 0 12px;min-height:48px}
+.auth-forms h3{margin-bottom:5px}
+.auth-help{font-size:12px;color:var(--muted);margin:0 0 10px}
+.auth-password-wrap{position:relative}
+.auth-password-wrap input{padding-right:82px}
+.auth-password-wrap .password-toggle{position:absolute;right:8px;top:15px;width:auto;margin:0;border:0!important;background:#eef2ff!important;color:var(--royal)!important;box-shadow:none!important;padding:6px 10px!important;font-size:12px!important}
+.auth-forms button#learner-signup-btn,.auth-forms button#learner-login-btn{width:100%;min-height:48px;margin-top:4px}
+#learner-account{scroll-margin-top:90px}
+#learner-message{max-width:1040px;margin:12px auto;font-weight:800}
+@media(max-width:980px){.quick-dock{left:10px;right:10px;bottom:10px;justify-content:center}.quick-dock a{flex:1}}
+@media(max-width:520px){section{padding-top:36px;padding-bottom:36px}.quick-dock a{font-size:11px;padding:10px 7px}}
+
+
+/* Learning Notes Library: collapsed by default to reduce homepage length */
+.learning-library-accordion{max-width:1100px;margin:0 auto}
+.learning-library-accordion>summary{list-style:none;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:18px 22px;border:1px solid var(--line);border-radius:18px;background:linear-gradient(110deg,#eef3ff,#f5edff 58%,#fff5df);color:var(--navy);cursor:pointer;box-shadow:var(--shadow-sm);transition:transform .2s,box-shadow .2s}
+.learning-library-accordion>summary::-webkit-details-marker{display:none}
+.learning-library-accordion>summary:hover{transform:translateY(-2px);box-shadow:var(--shadow)}
+.learning-library-accordion>summary strong{display:block;font-family:var(--head);font-size:17px}
+.learning-library-accordion>summary small{display:block;color:var(--muted);font-size:12px;margin-top:3px}
+.library-toggle-icon{width:36px;height:36px;flex:none;display:grid;place-items:center;border-radius:50%;background:linear-gradient(135deg,var(--royal),var(--purple));color:#fff;font-size:23px;font-weight:700}
+.learning-library-accordion[open]>summary{border-radius:18px 18px 0 0}
+.learning-library-accordion[open] .library-toggle-icon{transform:rotate(45deg)}
+.learning-library-content{border:1px solid var(--line);border-top:0;border-radius:0 0 18px 18px;padding:clamp(16px,3vw,28px)}
+@media(max-width:520px){.learning-library-accordion>summary{padding:15px}.learning-library-accordion>summary strong{font-size:15px}}
+
+
+/* Automated Quiz Centre: collapsed by default, preserving quiz controls and logic */
+.quiz-centre-accordion{max-width:1100px;margin:0 auto}
+.quiz-centre-accordion>summary{list-style:none;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:18px 22px;border:1px solid var(--line);border-radius:18px;background:linear-gradient(110deg,#e7f8f7,#edf2ff 58%,#f3eaff);color:var(--navy);cursor:pointer;box-shadow:var(--shadow-sm);transition:transform .2s,box-shadow .2s}
+.quiz-centre-accordion>summary::-webkit-details-marker{display:none}
+.quiz-centre-accordion>summary:hover{transform:translateY(-2px);box-shadow:var(--shadow)}
+.quiz-centre-accordion>summary strong{display:block;font-family:var(--head);font-size:17px}
+.quiz-centre-accordion>summary small{display:block;color:var(--muted);font-size:12px;margin-top:3px}
+.quiz-toggle-icon{width:36px;height:36px;flex:none;display:grid;place-items:center;border-radius:50%;background:linear-gradient(135deg,var(--turq),var(--royal));color:#fff;font-size:23px;font-weight:700;transition:transform .2s}
+.quiz-centre-accordion[open]>summary{border-radius:18px 18px 0 0}
+.quiz-centre-accordion[open] .quiz-toggle-icon{transform:rotate(45deg)}
+.quiz-centre-content{border:1px solid var(--line);border-top:0;border-radius:0 0 18px 18px;padding:clamp(16px,3vw,28px)}
+@media(max-width:520px){.quiz-centre-accordion>summary{padding:15px}.quiz-centre-accordion>summary strong{font-size:15px}}
+
+
+/* School Centre preview: clearly labelled future tools, not active features */
+.access-centres{grid-template-columns:repeat(2,minmax(0,1fr))}
+.school-centre{border-top:5px solid var(--gold);background:linear-gradient(155deg,#fff 0%,#fffaf0 100%)}
+.school-centre .pill{background:#fff3d1;color:#765000}
+.school-tools-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;width:100%;margin:2px 0 8px}
+.school-tools-list span{padding:9px 10px;border-radius:10px;background:#fff3d1;color:#59451b;font-size:12px;font-weight:800}
+@media(max-width:980px){.access-centres{grid-template-columns:1fr;max-width:620px}}
+@media(max-width:520px){.school-tools-list{grid-template-columns:1fr}}
+
+
+/* Digital School Centre roadmap catalogue */
+.school-modules{width:100%;margin:4px 0 8px;border:1px solid #f0dca7;border-radius:13px;background:#fffdf7;overflow:hidden}
+.school-modules>summary{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:12px 14px;cursor:pointer;color:#624b16;font-weight:900;font-size:13px;list-style:none}
+.school-modules>summary::-webkit-details-marker{display:none}
+.school-modules>summary span{font-size:20px;color:#a87508}
+.school-modules[open]>summary span{transform:rotate(45deg)}
+.school-module-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;padding:0 14px 12px}
+.school-module-grid>div{padding:12px;border-radius:10px;background:#fff7e5}
+.school-module-grid strong{color:#493811;font-size:13px}
+.school-module-grid ul{padding-left:18px;margin:8px 0 0}
+.school-module-grid li{font-size:12px;line-height:1.5;color:#665a40;margin:4px 0}
+.school-modules-note{margin:0 14px 14px!important;padding:9px 11px;border-radius:9px;background:#fff0c9;color:#735719!important;font-size:11px!important}
+@media(max-width:720px){.school-module-grid{grid-template-columns:1fr}}
+
 </style>
 <script>document.documentElement.classList.add('js')</script>
 </head>
@@ -284,8 +378,9 @@ form input,form select,form textarea{width:100%;margin:7px 0 16px}
  <a class="logo" href="#home"><span class="logo-mark">🎓</span><span>Junior School Learning Hub<small>Grades 7 · 8 · 9 · CBC</small></span></a>
  <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">☰ Menu</button>
  <nav id="site-nav">
-  <a href="#home">Home</a><a href="#grades">Grades</a><a href="#learning">Learning Notes</a>
-  <a href="#quiz">Automated Quiz</a><a href="#revision">Revision Papers</a><a href="#register">Register</a><a href='/grade7-complete-detailed-learning-library.html'>Grade 7 Full Library</a><a href='/grade8-mathematics-term3-learning-library'>Grade 8 Mathematics</a><a href='/grade9-learning-library'>Grade 9 Library</a><a class="nav-cta" href="#learner-account">My Dashboard</a>
+  <a href="#home">Home</a><a href="#learner-centre">Learners</a><a href="#teacher-centre">Teachers</a>
+  <a href="#parent-centre">Parents</a><a href="#school-centre">Schools</a><a href="#kjsea-revision-centre">KJSEA Revision</a><a href="#quiz">Quizzes</a><a href="#revision">Revision</a>
+  <a href="#register">Register</a><a class="nav-cta" href="#learner-account">Sign In / Register</a>
  </nav>
 </header>
 
@@ -299,7 +394,7 @@ form input,form select,form textarea{width:100%;margin:7px 0 16px}
    <div class="hero-ctas">
     <a class="btn" href="#learning">📚 Explore Learning Notes</a>
     <a class="btn blue" href="#quiz">🧠 Try an Automated Quiz</a>
-    <a class="btn ghost" href="#learner-account">🚀 My Dashboard</a>
+    <a class="btn ghost" href="#learner-account">🔐 Sign In / Create Account</a>
    </div>
    <div class="grade-chips" aria-label="Jump to a grade">
     <a class='grade-chip' href='/grade7-complete-detailed-learning-library.html'><b style="background:var(--gold)">7</b>Grade 7 Library</a>
@@ -363,6 +458,87 @@ form input,form select,form textarea{width:100%;margin:7px 0 16px}
   <a class="shortcut reveal" href="#learning" style="--a:#ff8a1f;--b:#ffb23d"><span class="s-ico">📒</span><strong>Revision Kits</strong><span>Topic notes &amp; worked examples</span><em>Revise →</em></a>
   <a class="shortcut reveal" href="#revision" style="--a:#e23d7a;--b:#ff6fa5"><span class="s-ico">📝</span><strong>Past Papers</strong><span>Assessment practice papers</span><em>Practise →</em></a>
   <a class="shortcut reveal" href="#learner-account" style="--a:#d99500;--b:#ffc23d"><span class="s-ico">🏆</span><strong>Achievements</strong><span>Badges, goals &amp; progress</span><em>View →</em></a>
+ </div>
+</section>
+
+<!-- Audience access centres: navigation only; existing learning and account features remain unchanged. -->
+<section id="centres" class="access-centres-section">
+ <div class="heading reveal">
+  <span class="eyebrow">Choose your learning space</span>
+  <h2>Welcome to Your Learning Hub</h2>
+  <p>Choose the centre that matches what you need. Each link takes you to an existing service or a direct support route.</p>
+ </div>
+ <div class="access-centres">
+  <article class="access-centre learner-centre reveal" id="learner-centre">
+   <div class="access-centre-icon">🎓</div>
+   <span class="pill">FOR LEARNERS</span>
+   <h3>Learner Centre</h3>
+   <p>Choose your grade to access available learning libraries, notes, quizzes and revision activities.</p>
+   <div class="access-actions">
+    <a class="btn" href="#grades">Choose Grade 7, 8 or 9</a>
+    <a class="btn outline" href="#learner-account">Learner Login / Register</a>
+   </div>
+  </article>
+  <article class="access-centre teacher-centre reveal" id="teacher-centre">
+   <div class="access-centre-icon">👩🏽‍🏫</div>
+   <span class="pill">FOR TEACHERS</span>
+   <h3>Teacher Centre</h3>
+   <p>Find assessment practice and enquire about schemes of work, lesson plans, CATs, marking schemes and classroom resources.</p>
+   <div class="access-actions">
+    <a class="btn blue" href="#revision">Open Assessment Resources</a>
+    <a class="btn outline" href="https://wa.me/254741274957?text=Hello%20Junior%20School%20Learning%20Hub.%20I%20am%20a%20teacher%20and%20would%20like%20to%20enquire%20about%20teacher%20resources.">Enquire about Teacher Resources</a>
+   </div>
+  </article>
+  <article class="access-centre parent-centre reveal" id="parent-centre">
+   <div class="access-centre-icon">👨‍👩‍👧</div>
+   <span class="pill">FOR PARENTS &amp; GUARDIANS</span>
+   <h3>Parent Centre</h3>
+   <p>Register a learner, learn about available programmes and contact us for guidance on supporting learning at home.</p>
+   <div class="access-actions">
+    <a class="btn" href="#register">Register a Learner</a>
+    <a class="btn outline" href="https://wa.me/254741274957?text=Hello%20Junior%20School%20Learning%20Hub.%20I%20am%20a%20parent%20or%20guardian%20and%20would%20like%20learning%20support%20information.">Parent Support</a>
+   </div>
+  </article>
+  <article class="access-centre school-centre reveal" id="school-centre">
+   <div class="access-centre-icon">🏫</div>
+   <span class="pill">FOR SCHOOLS · COMING SOON</span>
+   <h3>School Centre</h3>
+   <p>A planned all-in-one digital school workspace to help school leaders and staff manage academic, administrative and communication activities from one secure place.</p>
+   <div class="school-tools-list">
+    <span>📅 Timetable and duty-roster generator</span>
+    <span>📄 Report cards and learner profiles</span>
+    <span>📊 Exam analysis and performance trends</span>
+    <span>🏆 Class, stream and grade ranking</span>
+   </div>
+   <details class="school-modules">
+    <summary>Explore planned school management modules <span aria-hidden="true">＋</span></summary>
+    <div class="school-module-grid">
+     <div><strong>Academic management</strong><ul>
+      <li>Class, grade, stream and subject setup</li><li>Admission, enrolment and learner records</li><li>Assessment, CAT and examination mark entry</li><li>Report cards, transcripts and progress reports</li><li>Results analysis, rankings and performance comparisons</li><li>Timetables, teacher allocation and workload</li><li>Attendance, punctuality and intervention tracking</li><li>Curriculum coverage and schemes of work tracking</li>
+     </ul></div>
+     <div><strong>School administration</strong><ul>
+      <li>Staff profiles, roles and responsibilities</li><li>School calendar, events and notices</li><li>Parent and guardian contacts and communication</li><li>Fee statements, balances, receipts and payment records</li><li>Inventory, textbooks, equipment and asset registers</li><li>Library lending and resource tracking</li><li>Transport routes and learner lists</li><li>Discipline, welfare and authorised support records</li>
+     </ul></div>
+     <div><strong>Leadership and insights</strong><ul>
+      <li>Headteacher and administrator dashboard</li><li>Class, subject, teacher and grade performance dashboards</li><li>Term-to-term and year-to-year comparisons</li><li>School-wide reports and exportable summaries</li><li>Action plans, targets and follow-up tracking</li><li>Role-based access, audit trails and data backups</li>
+     </ul></div>
+    </div>
+    <p class="school-modules-note">Planned modules will be developed and tested in phases. The list describes the intended roadmap; these tools are not active yet.</p>
+   </details>
+   <div class="access-actions">
+    <a class="btn blue" href="https://wa.me/254741274957?text=Hello%20Junior%20School%20Learning%20Hub.%20I%20am%20interested%20in%20the%20upcoming%20Digital%20School%20Centre.%20Please%20share%20information%20about%20the%20planned%20school%20management%20modules.">Register Interest</a>
+   </div>
+  </article>
+  <article class="access-centre reveal" id="kjsea-revision-centre" style="border-top:5px solid var(--purple);background:linear-gradient(155deg,#fff 0%,#f8f3ff 100%)">
+   <div class="access-centre-icon">📝</div>
+   <span class="pill">FOR KJSEA CANDIDATES</span>
+   <h3>KJSEA Revision Centre</h3>
+   <p>A dedicated space planned for KJSEA-focused revision, practice assessments, examination preparation and learner support for Grade 9 candidates.</p>
+   <div class="access-actions">
+    <a class="btn blue" href="#revision">Explore Available Revision Resources</a>
+    <a class="btn outline" href="https://wa.me/254741274957?text=Hello%20Junior%20School%20Learning%20Hub.%20Please%20share%20information%20about%20KJSEA%20revision%20resources.">Enquire about KJSEA Support</a>
+   </div>
+  </article>
  </div>
 </section>
 
@@ -449,7 +625,12 @@ form input,form select,form textarea{width:100%;margin:7px 0 16px}
 
 <section id="learning">
  <div class="heading"><h2>📚 Learning Notes Library</h2><p>Select a grade and subject to view a structured sample lesson. Premium topic packs can include expanded notes, diagrams, practical activities, additional worked examples and topic exercises.</p></div>
- <div class="panel">
+ <details class="learning-library-accordion">
+   <summary>
+    <span><strong>📖 Open Learning Notes Library</strong><small>Choose a grade and subject to view notes and examples</small></span>
+    <span class="library-toggle-icon" aria-hidden="true">＋</span>
+   </summary>
+   <div class="panel learning-library-content">
   <div class="controls">
    <div><label for="noteGrade">Select grade</label><select id="noteGrade"><option>Grade 7</option><option>Grade 8</option><option>Grade 9</option></select></div>
    <div><label for="noteSubject">Select subject</label><select id="noteSubject"><option>Mathematics</option><option>Integrated Science</option><option>Pre-Technical Studies</option><option>Agriculture</option></select></div>
@@ -457,11 +638,17 @@ form input,form select,form textarea{width:100%;margin:7px 0 16px}
   <div id="notesContent" class="lesson" aria-live="polite"></div>
   <div class="notice"><strong>Premium topic packs</strong><p>Expanded notes are planned to include key vocabulary, learning outcomes, step-by-step explanations, worked examples, real-life applications, learner activities, summary points and topic tests.</p><a class="btn" href="https://wa.me/254741274957?text=Hello%2C%20I%20would%20like%20information%20about%20premium%20learning%20notes.">Enquire about Premium Notes</a></div>
  </div>
-</section>
+  </details>
+ </section>
 
 <section class="alt" id="quiz">
  <div class="heading"><h2>🧠 Automated Quiz Centre</h2><p>Answer the questions and submit to receive an automatically calculated score, corrections and feedback. Log in to your learner account and every marked quiz is saved to your personal dashboard.</p></div>
- <div class="panel">
+ <details class="quiz-centre-accordion">
+  <summary>
+   <span><strong>🧠 Open Automated Quiz Centre</strong><small>Select a grade and subject, then practise and get instant feedback</small></span>
+   <span class="quiz-toggle-icon" aria-hidden="true">＋</span>
+  </summary>
+  <div class="panel quiz-centre-content">
   <div class="controls">
    <div><label for="quizGrade">Grade</label><select id="quizGrade"><option>Grade 7</option><option>Grade 8</option><option>Grade 9</option></select></div>
    <div><label for="quizSubject">Subject</label><select id="quizSubject"><option>Mathematics</option><option>Integrated Science</option><option>Pre-Technical Studies</option><option>Agriculture</option></select></div>
@@ -472,6 +659,7 @@ form input,form select,form textarea{width:100%;margin:7px 0 16px}
   <div id="quizResult" aria-live="polite"></div>
   <p class="small" id="quizSaveNote">💾 When you are logged in, your score, answers and progress are saved securely to your learner account and appear on <a href="#learner-account">My Dashboard</a>. Quizzes in the Grade 7, 8 and 9 libraries are saved too.</p>
  </div>
+ </details>
 </section>
 
 <section id="revision">
@@ -567,6 +755,13 @@ form input,form select,form textarea{width:100%;margin:7px 0 16px}
   <button class="btn" type="submit">Submit Registration via WhatsApp</button>
  </form>
 </section>
+
+<!-- Persistent quick access: core learner actions remain reachable without repeated scrolling. -->
+<nav class="quick-dock" aria-label="Quick access">
+ <a href="#learner-account">🔐 Sign In</a>
+ <a href="#grades">📚 Resources</a>
+ <a href="#quiz">🧠 Quizzes</a>
+</nav>
 
 <footer><h2>Junior School Learning Hub</h2><p>Empowering learners through knowledge, skills and innovation.</p><p>Contact: <a href="https://wa.me/254741274957">0741 274 957</a></p><p>Online and physical tuition available.</p><p class="small" style="color:#cbd5e1;margin-top:15px">© 2026 Junior School Learning Hub. All rights reserved.</p></footer>
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
@@ -1772,28 +1967,37 @@ buildQuiz();
    <div class="auth-points"><span>✨ Instant quiz feedback</span><span>🏆 Track your growth</span><span>📖 CBC learning</span></div>
   </div>
   <div class="auth-forms">
-   <div id="learner-signup">
+   <div class="auth-tabs" role="tablist" aria-label="Learner account options">
+    <button class="auth-tab" id="login-tab" type="button" role="tab" aria-controls="learner-login" aria-selected="true">Sign In</button>
+    <button class="auth-tab" id="signup-tab" type="button" role="tab" aria-controls="learner-signup" aria-selected="false">Create Account</button>
+   </div>
+   <div id="learner-login" class="auth-pane" role="tabpanel" aria-labelledby="login-tab">
+    <h3>👋 Welcome back!</h3>
+    <p class="auth-help">Sign in to continue where you left off.</p>
+    <input id="login-email" type="email" placeholder="Email address" autocomplete="username" aria-label="Email address" required>
+    <div class="auth-password-wrap">
+     <input id="login-password" type="password" placeholder="Password" autocomplete="current-password" aria-label="Password" required>
+     <button class="password-toggle" type="button" data-toggle-password="login-password">Show</button>
+    </div>
+    <button id="learner-login-btn" type="button">Sign In to My Dashboard →</button>
+    <p class="auth-help" style="margin-top:12px">New to the Hub? Select <strong>Create Account</strong> above.</p>
+   </div>
+   <div id="learner-signup" class="auth-pane" role="tabpanel" aria-labelledby="signup-tab" hidden>
     <h3>🚀 Create your learner account</h3>
-    <p class="small">Join the Learning Hub and start exploring.</p>
-    <input id="learner-name" type="text" placeholder="Full name" autocomplete="name" required>
-    <select id="learner-grade" required>
+    <p class="auth-help">Register once to save quiz scores and track your learning progress.</p>
+    <input id="learner-name" type="text" placeholder="Learner's full name" autocomplete="name" aria-label="Learner's full name" required>
+    <select id="learner-grade" required aria-label="Choose your grade">
      <option value="">Choose your grade</option><option>Grade 7</option><option>Grade 8</option><option>Grade 9</option>
     </select>
-    <input id="learner-email" type="email" placeholder="Email address" autocomplete="email" required>
-    <input id="learner-password" type="password" placeholder="Create password (at least 6 characters)" autocomplete="new-password" required minlength="6">
+    <input id="learner-email" type="email" placeholder="Email address" autocomplete="email" aria-label="Email address" required>
+    <div class="auth-password-wrap">
+     <input id="learner-password" type="password" placeholder="Create password (minimum 6 characters)" autocomplete="new-password" aria-label="Create password" required minlength="6">
+     <button class="password-toggle" type="button" data-toggle-password="learner-password">Show</button>
+    </div>
     <button id="learner-signup-btn" type="button">Create My Account ✨</button>
-   </div>
-   <div class="auth-divider"></div>
-   <div id="learner-login">
-    <h3>👋 Welcome back!</h3>
-    <p class="small">Sign in to continue your learning journey.</p>
-    <input id="login-email" type="email" placeholder="Email address" autocomplete="email" required>
-    <input id="login-password" type="password" placeholder="Password" autocomplete="current-password" required>
-    <button id="learner-login-btn" type="button">Log In to My Dashboard →</button>
+    <p class="auth-help" style="margin-top:12px">Already registered? Select <strong>Sign In</strong> above.</p>
    </div>
   </div>
- </div>
-
  <p id="learner-message" role="status" aria-live="polite"></p>
 
  <div id="learner-dashboard" hidden>
@@ -2160,6 +2364,34 @@ buildQuiz();
 </style>
 <script>
 (function(){
+  // Learner account tabs: returning learners see Sign In first.
+  const loginTab=document.getElementById('login-tab');
+  const signupTab=document.getElementById('signup-tab');
+  const loginPane=document.getElementById('learner-login');
+  const signupPane=document.getElementById('learner-signup');
+  function setAuthTab(which){
+    if(!loginTab||!signupTab||!loginPane||!signupPane)return;
+    const isLogin=which==='login';
+    loginPane.hidden=!isLogin; signupPane.hidden=isLogin;
+    loginTab.setAttribute('aria-selected',String(isLogin));
+    signupTab.setAttribute('aria-selected',String(!isLogin));
+  }
+  if(loginTab&&signupTab){
+    loginTab.addEventListener('click',()=>setAuthTab('login'));
+    signupTab.addEventListener('click',()=>setAuthTab('signup'));
+    setAuthTab('login');
+  }
+  document.querySelectorAll('[data-toggle-password]').forEach(btn=>{
+    btn.addEventListener('click',()=>{
+      const field=document.getElementById(btn.dataset.togglePassword);
+      if(!field)return;
+      const reveal=field.type==='password';
+      field.type=reveal?'text':'password';
+      btn.textContent=reveal?'Hide':'Show';
+      btn.setAttribute('aria-label',reveal?'Hide password':'Show password');
+    });
+  });
+
   // Mobile navigation toggle
   const toggle=document.querySelector('.nav-toggle'), nav=document.getElementById('site-nav');
   if(toggle&&nav){
