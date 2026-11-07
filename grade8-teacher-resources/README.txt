@@ -1,16 +1,16 @@
-GRADE 8 TEACHER CENTRE RESOURCES - 2027
+GRADE 8 TEACHER CENTRE PDF LIBRARY — 2027
 
-Welcome to the Junior School Learning Hub Grade 8 Teacher Centre.
+This folder is prepared as a separate Grade 8 resource directory.
+Keep index.html, resource_manifest.json, and all subject folders together
+so the relative PDF links in index.html continue to work.
 
-This folder contains PDF resources for nine learning areas:
-Agriculture, CRE, Creative Arts and Sports, English,
-Integrated Science, Kiswahili, Mathematics,
-Pre-Technical Studies and Social Studies.
+Subject folders contain:
+- Schemes of Work
+- Lesson Plans
+- Learner Notes (the Teaching Notes PDFs)
+- Records of Work
 
-Resources include:
-1. Schemes of Work
-2. Lesson Plans
-3. Teaching Notes
-4. Records of Work
-
-All resources are provided in PDF format.
+This package contains PDF resources only, plus the HTML index, JSON manifest,
+and this README. It does not change or replace the existing Grade 9 resources.
+Before publishing, review the resources against the current KICD curriculum
+designs and your school teaching sequence.
