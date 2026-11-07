@@ -1,0 +1,156 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Online Tuition Centre | Junior School Learning Hub</title>
+<style>
+:root{--blue:#2347e0;--purple:#7b3fe4;--ink:#172554;--muted:#64748b;--bg:#f4f7ff}
+*{box-sizing:border-box}
+body{margin:0;font-family:Arial,sans-serif;background:var(--bg);color:var(--ink);line-height:1.6}
+header{background:linear-gradient(120deg,#172b85,#7042d8);color:white;padding:35px 20px;text-align:center}
+header a{color:white;text-decoration:none;font-weight:bold}
+header h1{font-size:clamp(27px,5vw,42px);margin:15px 0 5px}
+header p{max-width:700px;margin:8px auto}
+.container{max-width:1100px;margin:25px auto;padding:0 16px}
+.panel{background:white;border-radius:16px;padding:22px;margin-bottom:22px;box-shadow:0 5px 22px #1e3a8a12}
+h2{margin-top:0;color:#1e328e}
+.grades{display:flex;gap:10px;flex-wrap:wrap;margin:15px 0}
+.grades button{border:1px solid #d6dcf5;background:#f5f6ff;color:#253b91;padding:12px 23px;border-radius:10px;font-weight:bold;cursor:pointer}
+.grades button.active{background:var(--blue);color:white;border-color:var(--blue)}
+.schedule-title{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap}
+.tag{background:#e9edff;color:#3049b5;padding:6px 12px;border-radius:30px;font-size:13px;font-weight:bold}
+table{width:100%;border-collapse:collapse;margin-top:15px}
+th,td{padding:13px 12px;border-bottom:1px solid #e8ecf5;text-align:left}
+th{background:#eef1ff;color:#263d9b}
+tr:last-child td{border-bottom:0}
+.break{color:#9a6500;background:#fff9e9}
+.period{font-weight:bold;color:#253b91}
+.day-heading{margin:25px 0 5px;color:#263d9b}
+.info-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:15px}
+.info{background:#f4f6ff;padding:17px;border-radius:12px}
+.info strong{display:block;color:#263d9b;margin-bottom:5px}
+.notice{background:#fff8e8;border-left:4px solid #e5a000;padding:14px 16px;border-radius:8px;color:#674b0b}
+footer{text-align:center;padding:25px;background:#172b85;color:white;margin-top:35px}
+footer a{color:white}
+@media(max-width:600px){.panel{padding:15px}th,td{padding:10px 7px;font-size:13px}.grades button{flex:1}}
+</style>
+</head>
+<body>
+<header>
+<a href="/">← Junior School Learning Hub</a>
+<h1>Online Tuition Centre</h1>
+<p>Learn, practise and grow with structured online lessons for Grades 7, 8 and 9.</p>
+<p>Live learning • Qualified teachers • Guided revision</p>
+</header>
+
+<main class="container">
+<section class="panel">
+<h2>Welcome to Online Tuition</h2>
+<p>Choose your grade to view its weekly learning timetable. Lessons are organised into three one-hour periods each day, with short breaks between periods.</p>
+<div class="grades">
+<button class="active" onclick="showGrade(7,this)">Grade 7</button>
+<button onclick="showGrade(8,this)">Grade 8</button>
+<button onclick="showGrade(9,this)">Grade 9</button>
+</div>
+<div class="schedule-title">
+<h2 id="gradeTitle">Grade 7 Timetable</h2>
+<span class="tag">Weekly programme</span>
+</div>
+<div id="timetable"></div>
+</section>
+
+<section class="panel">
+<h2>Daily Lesson Structure</h2>
+<div class="info-grid">
+<div class="info"><strong>Weekdays: Monday–Friday</strong>Period 1: 5:00–6:00 PM<br>Break: 6:00–6:10 PM<br>Period 2: 6:10–7:10 PM<br>Break: 7:10–7:20 PM<br>Period 3: 7:20–8:20 PM</div>
+<div class="info"><strong>Weekends: Saturday–Sunday</strong>Period 1: 9:00–10:00 AM<br>Break: 10:00–10:10 AM<br>Period 2: 10:10–11:10 AM<br>Break: 11:10–11:20 AM<br>Period 3: 11:20 AM–12:20 PM</div>
+</div>
+</section>
+
+<section class="panel">
+<h2>Learning Areas</h2>
+<div class="info-grid">
+<div class="info"><strong>Mathematics</strong>Concept development and problem solving.</div>
+<div class="info"><strong>English and Kiswahili</strong>Language skills, communication and comprehension.</div>
+<div class="info"><strong>Integrated Science</strong>Scientific concepts and practical applications.</div>
+<div class="info"><strong>Social Studies and CRE</strong>Knowledge, values and responsible citizenship.</div>
+<div class="info"><strong>Agriculture</strong>Practical agricultural knowledge and skills.</div>
+<div class="info"><strong>Pre-Technical Studies</strong>Technology, creativity and practical skills.</div>
+<div class="info"><strong>Creative Arts and Sports</strong>Creativity, performance and physical development.</div>
+<div class="info"><strong>Revision and Assessment</strong>Practice, CATs and learner support.</div>
+</div>
+</section>
+
+<section class="panel">
+<h2>Important Information</h2>
+<div class="notice">This is the proposed weekly timetable for the Tuition Centre. Confirmed teacher assignments, enrolment, class links and lesson joining instructions will be provided when the live learning programme is activated.</div>
+<p>Each grade will have its own timetable. Learners should enrol in the appropriate grade and follow the published lesson instructions.</p>
+</section>
+</main>
+
+<footer>
+<strong>Junior School Learning Hub</strong>
+<p>Supporting learning for Grades 7–9</p>
+<a href="/">Return to Home Page</a>
+</footer>
+
+<script>
+const schedules={
+7:[
+["Monday","Mathematics","English","Integrated Science"],
+["Tuesday","Kiswahili","Social Studies","Mathematics"],
+["Wednesday","English","Agriculture","Pre-Technical Studies"],
+["Thursday","Integrated Science","Kiswahili","CRE"],
+["Friday","Mathematics","English","Creative Arts and Sports"],
+["Saturday","Integrated Science","Social Studies","Projects and Practical"],
+["Sunday","Revision","CAT and Assessment","Career Guidance"]
+],
+8:[
+["Monday","Mathematics","English","Integrated Science"],
+["Tuesday","Kiswahili","Social Studies","Mathematics"],
+["Wednesday","English","Agriculture","Pre-Technical Studies"],
+["Thursday","Integrated Science","Kiswahili","CRE"],
+["Friday","Mathematics","English","Creative Arts and Sports"],
+["Saturday","Integrated Science","Social Studies","Projects and Practical"],
+["Sunday","Revision","CAT and Assessment","Career Guidance"]
+],
+9:[
+["Monday","Mathematics","English","Integrated Science"],
+["Tuesday","Kiswahili","Social Studies","Mathematics"],
+["Wednesday","English","Agriculture","Pre-Technical Studies"],
+["Thursday","Integrated Science","Kiswahili","CRE"],
+["Friday","Mathematics","English","Creative Arts and Sports"],
+["Saturday","Integrated Science","Social Studies","Projects and Practical"],
+["Sunday","Revision","CAT and Assessment","Career Guidance"]
+]
+};
+function showGrade(grade,button){
+document.querySelectorAll(".grades button").forEach(b=>b.classList.remove("active"));
+button.classList.add("active");
+document.getElementById("gradeTitle").textContent="Grade "+grade+" Timetable";
+const rows=schedules[grade];
+let html="";
+rows.forEach((day,index)=>{
+const weekend=index>=5;
+const times=weekend?
+["9:00–10:00 AM","10:10–11:10 AM","11:20 AM–12:20 PM"]:
+["5:00–6:00 PM","6:10–7:10 PM","7:20–8:20 PM"];
+html+=`<h3 class="day-heading">${day[0]}</h3>
+<table><thead><tr><th>Period</th><th>Time</th><th>Learning Area</th></tr></thead><tbody>`;
+for(let i=1;i<=3;i++){
+html+=`<tr><td class="period">Period ${i}</td><td>${times[i-1]}</td><td>${day[i]}</td></tr>`;
+if(i<3){
+const breakTime=weekend?(i===1?"10:00–10:10 AM":"11:10–11:20 AM"):(i===1?"6:00–6:10 PM":"7:10–7:20 PM");
+html+=`<tr class="break"><td colspan="3">Break: ${breakTime}</td></tr>`;
+}
+}
+html+="</tbody></table>";
+});
+document.getElementById("timetable").innerHTML=html;
+}
+showGrade(7,document.querySelector(".grades button"));
+</script>
+</body>
+</html>
