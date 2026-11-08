@@ -1,0 +1,22 @@
+const json = (status, data) => new Response(JSON.stringify(data), { status, headers: { "Content-Type": "application/json", "Cache-Control": "no-store" } });
+export default async (request) => {
+  if (request.method !== "GET") return json(405, { success: false });
+  const supabaseUrl = Netlify.env.get("SUPABASE_URL");
+  const serviceKey = Netlify.env.get("SUPABASE_SERVICE_ROLE_KEY");
+  const publishableKey = "sb_publishable_uaOcRVaIwnvRl_wZhMhJ-Q_DhrqZyS_";
+  const auth = request.headers.get("authorization") || "";
+  const token = auth.startsWith("Bearer ") ? auth.slice(7) : "";
+  if (!token) return json(401, { success: false, message: "Sign in first." });
+  const authRes = await fetch(`${supabaseUrl}/auth/v1/user`, { headers: { apikey: publishableKey, Authorization: `Bearer ${token}` } });
+  if (!authRes.ok) return json(401, { success: false, message: "Session expired." });
+  const user = await authRes.json();
+  const url = new URL(request.url);
+  const orderId = url.searchParams.get("order_id") || "";
+  if (!/^[0-9a-f-]{36}$/i.test(orderId)) return json(400, { success: false, message: "Invalid order." });
+  const headers = { apikey: serviceKey, Authorization: `Bearer ${serviceKey}` };
+  const res = await fetch(`${supabaseUrl}/rest/v1/teacher_download_orders?id=eq.${orderId}&user_id=eq.${user.id}&select=status,resource_id`, { headers });
+  if (!res.ok) return json(502, { success: false, message: "Could not check payment status." });
+  const row = (await res.json())[0];
+  if (!row) return json(404, { success: false, message: "Order not found." });
+  return json(200, { success: true, status: row.status, resource_id: row.resource_id });
+};
