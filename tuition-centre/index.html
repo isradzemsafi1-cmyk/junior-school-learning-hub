@@ -107,10 +107,10 @@ table{width:100%;border-collapse:collapse;font-size:11px}th{text-align:left;colo
   </section>
 
   <section class="page" id="assessments">
-   <div class="welcome"><div><div class="eyebrow">PRACTISE AND IMPROVE</div><h1>Practice Assessments</h1><p>Choose your learning area and attempt a quiz. Objective questions are marked instantly in this preview.</p></div><span class="pill">Instant feedback demo</span></div>
+   <div class="welcome"><div><div class="eyebrow">PRACTISE AND IMPROVE</div><h1>Practice Assessments</h1><p>Choose your grade and learning area to attempt assessments published by your teachers. Your submitted results are saved to your learner account.</p></div><span class="pill">Online assessments</span></div>
    <div class="panel"><div class="controls"><select id="aGrade"><option>Grade 7</option><option selected>Grade 8</option><option>Grade 9</option></select><select id="aSubject"><option>Mathematics</option><option>English</option><option>Kiswahili</option><option>Integrated Science</option><option>Social Studies</option><option>CRE</option><option>Agriculture</option><option>Pre-Technical Studies</option><option>Creative Arts and Sports</option></select><button class="btn" onclick="loadQuiz()">Load assessment</button></div>
-    <div class="notice">Question bank preview: sample questions demonstrate the assessment experience. The complete production bank must be mapped and quality-checked against each KICD grade curriculum design before launch.</div>
-    <div id="quizArea"><div class="empty">Select a learning area and choose “Load assessment” to begin. Sign in to save your assessment history.</div></div>
+    <div class="notice">Published assessments are loaded from the Tuition Centre database. Sign in to attempt assessments and save your results.</div>
+    <div id="quizArea"><div class="empty">Sign in, choose your grade and learning area, then select “Load assessment”.</div></div>
    </div>
   </section>
 
@@ -158,14 +158,22 @@ table{width:100%;border-collapse:collapse;font-size:11px}th{text-align:left;colo
   </section>
 
   <section class="page" id="teacher">
-   <div class="welcome"><div><div class="eyebrow">TEACHING WORKSPACE</div><h1>Teacher Portal</h1><p>Manage coursework, review learner submissions and return feedback.</p></div><span class="pill">Teacher preview</span></div>
-   <div class="grid stats"><div class="stat"><div class="topline">Assigned learners</div><strong>42</strong><small>Sample class records</small></div><div class="stat"><div class="topline">Pending marking</div><strong>12</strong><small style="color:var(--amber)">Requires attention</small></div><div class="stat"><div class="topline">Assignments issued</div><strong>8</strong><small>This term</small></div><div class="stat"><div class="topline">Assessments</div><strong>5</strong><small>Published</small></div></div>
-   <div class="panel"><div class="panelhead"><h3>Submissions awaiting marking</h3><span class="tag amber">12 pending</span></div><table><thead><tr><th>Learner</th><th>Grade</th><th>Assignment</th><th>Submitted file</th><th>Action</th></tr></thead><tbody><tr><td>Amina Mwangi</td><td>8</td><td>Algebraic expressions</td><td>amina_algebra.pdf</td><td><button class="btn small" onclick="openMark()">Mark work</button></td></tr><tr><td>Brian Otieno</td><td>7</td><td>Plant growth</td><td>plant_growth.docx</td><td><button class="btn small" onclick="openMark()">Mark work</button></td></tr><tr><td>Faith Wanjiku</td><td>9</td><td>Linear equations</td><td>scan_002.pdf</td><td><button class="btn small" onclick="openMark()">Mark work</button></td></tr></tbody></table>
-   </div>
-   <div class="panel"><div class="panelhead"><h3>Teacher actions</h3></div><div class="grid quick"><div class="tile" onclick="alert('In the live portal, teachers can create and schedule assignments.')"><div class="tileicon">➕</div><b>Create assignment</b><span>Set instructions and due date</span></div><div class="tile" onclick="alert('In the live portal, teachers can publish grade-specific quizzes.')"><div class="tileicon">🧠</div><b>Create assessment</b><span>Build an automated quiz</span></div><div class="tile" onclick="openMark()"><div class="tileicon">🖊️</div><b>Mark submissions</b><span>Enter scores and comments</span></div><div class="tile" onclick="alert('In the live portal, teachers can post notices to selected classes.')"><div class="tileicon">📣</div><b>Post class notice</b><span>Share important updates</span></div></div></div>
-  </section>
-
-  <section class="page" id="admin">
+<div class="welcome"><div><div class="eyebrow">TEACHING WORKSPACE</div><h1>Teacher Portal</h1><p>Create and publish assessments for your learners.</p></div><span class="pill">Authorised teacher</span></div>
+<div class="panel"><div class="panelhead"><h3>Create assessment</h3></div>
+<form id="teacherAssessmentForm">
+<div class="controls"><input id="taTitle" required maxlength="140" placeholder="Assessment title">
+<select id="taGrade"><option value="7">Grade 7</option><option value="8">Grade 8</option><option value="9">Grade 9</option></select>
+<select id="taSubject"><option>Mathematics</option><option>English</option><option>Kiswahili</option><option>Integrated Science</option><option>Social Studies</option><option>CRE</option><option>Agriculture</option><option>Pre-Technical Studies</option><option>Creative Arts and Sports</option></select>
+<input id="taDuration" type="number" min="5" max="180" value="30" aria-label="Duration in minutes"></div>
+<label>Instructions<textarea id="taInstructions" rows="2" placeholder="Instructions for learners"></textarea></label>
+<label>Questions (JSON format)<textarea id="taQuestions" rows="10" required placeholder='[{"question":"What is 2 + 3?","options":["4","5","6","7"],"answer":1,"explanation":"2 + 3 = 5."}]'></textarea></label>
+<label><input type="checkbox" id="taPublish"> Publish immediately</label>
+<button class="btn" type="submit">Save assessment</button><p id="taMessage" role="status"></p>
+</form></div>
+<div class="panel"><div class="panelhead"><h3>Your published assessments</h3></div><table><thead><tr><th>Title</th><th>Grade</th><th>Learning area</th><th>Questions</th><th>Status</th></tr></thead><tbody id="taRows"><tr><td colspan="5">Loading…</td></tr></tbody></table></div>
+<div class="panel"><div class="panelhead"><h3>Learner assessment results</h3></div><table><thead><tr><th>Learner</th><th>Assessment</th><th>Score</th><th>Submitted</th></tr></thead><tbody id="taResults"><tr><td colspan="4">Results appear here when learners submit assessments.</td></tr></tbody></table></div>
+</section>
+<section class="page" id="admin">
    <div class="welcome"><div><div class="eyebrow">PORTAL MANAGEMENT</div><h1>Administration</h1><p>Oversee registrations, learning groups, staff access and academic activity.</p></div><span class="pill">Administrator preview</span></div>
    <div class="grid stats"><div class="stat"><div class="topline">Registered learners</div><strong>326</strong><small>Sample total</small></div><div class="stat"><div class="topline">Grade 7</div><strong>108</strong><small>Sample learners</small></div><div class="stat"><div class="topline">Grade 8</div><strong>114</strong><small>Sample learners</small></div><div class="stat"><div class="topline">Grade 9</div><strong>104</strong><small>Sample learners</small></div></div>
    <div class="panel"><div class="panelhead"><h3>Recent registrations</h3><span class="muted">Contact details restricted to authorised staff</span></div><table><thead><tr><th>Learner</th><th>Grade</th><th>Email</th><th>Phone</th><th>Status</th></tr></thead><tbody><tr><td>Amina Mwangi</td><td>8</td><td>amina@example.com</td><td>07XX XXX XXX</td><td><span class="tag green">Active</span></td></tr><tr><td>Brian Otieno</td><td>7</td><td>brian@example.com</td><td>07XX XXX XXX</td><td><span class="tag green">Active</span></td></tr><tr><td>Faith Wanjiku</td><td>9</td><td>faith@example.com</td><td>07XX XXX XXX</td><td><span class="tag amber">Pending</span></td></tr></tbody></table></div>
@@ -581,6 +589,85 @@ function demoSubmit(){alert('Please sign in and select an assignment before subm
     say("You have signed out.");
   });
 
+
+  let activePublishedAssessment = null;
+  let activeAssessmentQuestions = [];
+  window.loadQuiz = async function() {
+    const area=$("quizArea");
+    if(!currentUser){ area.textContent="Please sign in to access published assessments."; showPage("enrolment"); setAuthTab("login"); return; }
+    const grade=Number(($("aGrade").value||"").replace(/\D/g,"")) || Number(currentProfile?.grade);
+    const subject=$("aSubject").value;
+    if(!grade){area.textContent="Your profile has no grade. Please update your learner profile.";return;}
+    area.textContent="Loading published assessments…";
+    const {data,error}=await client.from("tuition_assessments").select("id,title,grade,subject,instructions,duration_minutes,questions").eq("grade",grade).eq("subject",subject).eq("published",true).order("created_at",{ascending:false});
+    if(error){area.textContent="Could not load assessments: "+error.message+" Apply supabase/tuition-assessments.sql first.";return;}
+    if(!data?.length){area.textContent=`No published ${subject} assessments are available for Grade ${grade} yet.`;return;}
+    area.replaceChildren();
+    const title=document.createElement("h3");title.textContent=`Grade ${grade} · ${subject} assessments`;area.append(title);
+    data.forEach(a=>{
+      const row=document.createElement("div");row.className="panel";
+      const h=document.createElement("h4");h.textContent=a.title;
+      const p=document.createElement("p");p.textContent=`${(a.questions||[]).length} questions · ${a.duration_minutes} minutes`;
+      const b=document.createElement("button");b.className="btn";b.textContent="Start assessment";b.addEventListener("click",()=>renderPublishedAssessment(a));
+      row.append(h,p,b);area.append(row);
+    });
+  };
+  function renderPublishedAssessment(a){
+    activePublishedAssessment=a;activeAssessmentQuestions=Array.isArray(a.questions)?a.questions:[];
+    const area=$("quizArea");area.replaceChildren();
+    const h=document.createElement("h3");h.textContent=a.title;area.append(h);
+    const inst=document.createElement("p");inst.textContent=a.instructions||"Answer all questions and submit when ready.";area.append(inst);
+    activeAssessmentQuestions.forEach((q,i)=>{
+      const card=document.createElement("div");card.className="question";
+      const qh=document.createElement("h4");qh.textContent=`${i+1}. ${q.question}`;card.append(qh);
+      (q.options||[]).forEach((op,j)=>{
+        const label=document.createElement("label");label.className="option";
+        const input=document.createElement("input");input.type="radio";input.name=`published-q-${i}`;input.value=String(j);
+        const span=document.createElement("span");span.textContent=`${String.fromCharCode(65+j)}. ${op}`;
+        label.append(input,span);card.append(label);
+      });area.append(card);
+    });
+    const submit=document.createElement("button");submit.className="btn";submit.textContent="Submit assessment";submit.addEventListener("click",submitPublishedAssessment);area.append(submit);
+  }
+  async function submitPublishedAssessment(){
+    if(!currentUser||!activePublishedAssessment)return;
+    let score=0;const answers=[];
+    activeAssessmentQuestions.forEach((q,i)=>{
+      const selected=document.querySelector(`input[name="published-q-${i}"]:checked`);
+      const answer=selected?Number(selected.value):null;answers.push(answer);
+      if(answer===Number(q.answer))score++;
+    });
+    const total=activeAssessmentQuestions.length, percentage=total?Math.round(score/total*10000)/100:0;
+    const result=await client.from("tuition_assessment_attempts").insert({assessment_id:activePublishedAssessment.id,learner_id:currentUser.id,answers,score,total_questions:total,percentage});
+    if(result.error){alert("Your result could not be saved: "+result.error.message);return;}
+    const area=$("quizArea");area.replaceChildren();
+    const h=document.createElement("h3");h.textContent="Assessment submitted";area.append(h);
+    const p=document.createElement("p");p.textContent=`Your score: ${score}/${total} (${percentage}%). Your result has been saved.`;area.append(p);
+    activeAssessmentQuestions.forEach((q,i)=>{
+      const d=document.createElement("div");d.className="feedback "+(answers[i]===Number(q.answer)?"good":"bad");
+      d.textContent=`Question ${i+1}: ${answers[i]===Number(q.answer)?"Correct. ":"Incorrect. "}${q.explanation||""}`;area.append(d);
+    });
+  }
+  async function loadTeacherAssessments(){
+    if(!currentUser||!["teacher","admin"].includes(currentProfile?.role))return;
+    const rows=$("taRows"),results=$("taResults");
+    const a=await client.from("tuition_assessments").select("id,title,grade,subject,questions,published").order("created_at",{ascending:false});
+    rows.innerHTML=a.error?`<tr><td colspan="5">${escapeHtml(a.error.message)}</td></tr>`:(a.data||[]).map(x=>`<tr><td>${escapeHtml(x.title)}</td><td>${x.grade}</td><td>${escapeHtml(x.subject)}</td><td>${(x.questions||[]).length}</td><td>${x.published?"Published":"Draft"}</td></tr>`).join("")||'<tr><td colspan="5">No assessments created yet.</td></tr>';
+    const r=await client.from("tuition_assessment_attempts").select("score,total_questions,submitted_at,assessment_id,learner_id,tuition_assessments(title),tuition_profiles(full_name)").order("submitted_at",{ascending:false}).limit(100);
+    results.innerHTML=r.error?`<tr><td colspan="4">${escapeHtml(r.error.message)}</td></tr>`:(r.data||[]).map(x=>`<tr><td>${escapeHtml(x.tuition_profiles?.full_name||"Learner")}</td><td>${escapeHtml(x.tuition_assessments?.title||"Assessment")}</td><td>${x.score}/${x.total_questions}</td><td>${new Date(x.submitted_at).toLocaleString()}</td></tr>`).join("")||'<tr><td colspan="4">No learner results yet.</td></tr>';
+  }
+  $("teacherAssessmentForm")?.addEventListener("submit",async e=>{
+    e.preventDefault();
+    if(!currentUser||!["teacher","admin"].includes(currentProfile?.role)){alert("Teacher access required.");return;}
+    const msg=$("taMessage");let questions;
+    try{questions=JSON.parse($("taQuestions").value)}catch{msg.textContent="Questions JSON is invalid.";return;}
+    const valid=Array.isArray(questions)&&questions.length>0&&questions.every(q=>q&&typeof q.question==="string"&&Array.isArray(q.options)&&q.options.length===4&&Number.isInteger(q.answer)&&q.answer>=0&&q.answer<4);
+    if(!valid){msg.textContent="Each question needs a question, four options and an answer index from 0 to 3.";return;}
+    const payload={title:$("taTitle").value.trim(),grade:Number($("taGrade").value),subject:$("taSubject").value,instructions:$("taInstructions").value,duration_minutes:Number($("taDuration").value),questions,published:$("taPublish").checked,created_by:currentUser.id};
+    const {error}=await client.from("tuition_assessments").insert(payload);
+    if(error){msg.textContent="Save failed: "+error.message;return;}
+    msg.textContent="Assessment saved.";e.target.reset();await loadTeacherAssessments();
+  });
   async function handleSession(session) {
     currentUser = session?.user || null;
     if (!currentUser) {
@@ -618,7 +705,9 @@ function demoSubmit(){alert('Please sign in and select an assignment before subm
       alert("Administrator access is restricted.");
       id = currentUser ? "dashboard" : "enrolment";
     }
-    return originalShowPage(id);
+    const shown = originalShowPage(id);
+    if (id === "teacher") loadTeacherAssessments();
+    return shown;
   };
 })();
 </script>
