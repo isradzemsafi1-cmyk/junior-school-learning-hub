@@ -1,156 +1,626 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Online Tuition Centre | Junior School Learning Hub</title>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Junior School Learning Hub | Online Tuition Centre</title>
 <style>
-:root{--blue:#2347e0;--purple:#7b3fe4;--ink:#172554;--muted:#64748b;--bg:#f4f7ff}
-*{box-sizing:border-box}
-body{margin:0;font-family:Arial,sans-serif;background:var(--bg);color:var(--ink);line-height:1.6}
-header{background:linear-gradient(120deg,#172b85,#7042d8);color:white;padding:35px 20px;text-align:center}
-header a{color:white;text-decoration:none;font-weight:bold}
-header h1{font-size:clamp(27px,5vw,42px);margin:15px 0 5px}
-header p{max-width:700px;margin:8px auto}
-.container{max-width:1100px;margin:25px auto;padding:0 16px}
-.panel{background:white;border-radius:16px;padding:22px;margin-bottom:22px;box-shadow:0 5px 22px #1e3a8a12}
-h2{margin-top:0;color:#1e328e}
-.grades{display:flex;gap:10px;flex-wrap:wrap;margin:15px 0}
-.grades button{border:1px solid #d6dcf5;background:#f5f6ff;color:#253b91;padding:12px 23px;border-radius:10px;font-weight:bold;cursor:pointer}
-.grades button.active{background:var(--blue);color:white;border-color:var(--blue)}
-.schedule-title{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap}
-.tag{background:#e9edff;color:#3049b5;padding:6px 12px;border-radius:30px;font-size:13px;font-weight:bold}
-table{width:100%;border-collapse:collapse;margin-top:15px}
-th,td{padding:13px 12px;border-bottom:1px solid #e8ecf5;text-align:left}
-th{background:#eef1ff;color:#263d9b}
-tr:last-child td{border-bottom:0}
-.break{color:#9a6500;background:#fff9e9}
-.period{font-weight:bold;color:#253b91}
-.day-heading{margin:25px 0 5px;color:#263d9b}
-.info-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:15px}
-.info{background:#f4f6ff;padding:17px;border-radius:12px}
-.info strong{display:block;color:#263d9b;margin-bottom:5px}
-.notice{background:#fff8e8;border-left:4px solid #e5a000;padding:14px 16px;border-radius:8px;color:#674b0b}
-footer{text-align:center;padding:25px;background:#172b85;color:white;margin-top:35px}
-footer a{color:white}
-@media(max-width:600px){.panel{padding:15px}th,td{padding:10px 7px;font-size:13px}.grades button{flex:1}}
-</style>
-</head>
+:root{--navy:#102b55;--blue:#1769d2;--cyan:#1599b7;--ink:#1b2940;--muted:#718096;--line:#e5ebf3;--bg:#f4f7fb;--white:#fff;--green:#13865b;--amber:#b7791f;--red:#c24141;--shadow:0 10px 30px #18375b0d}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);font-family:Inter,Segoe UI,Arial,sans-serif;color:var(--ink)}button,input,select,textarea{font:inherit}button{cursor:pointer}
+.layout{min-height:100vh;display:grid;grid-template-columns:250px 1fr}
+.sidebar{background:linear-gradient(180deg,#102b55,#123e78);color:#fff;padding:22px 15px;display:flex;flex-direction:column;gap:22px}
+.brand{display:flex;gap:10px;align-items:center;padding:0 9px;font-weight:800;font-size:14px}.brandicon{width:39px;height:39px;border-radius:12px;background:#ffffff20;display:grid;place-items:center;font-size:21px}.brand small{display:block;font-weight:500;color:#c4d7f2;font-size:10px;margin-top:4px}
+.navlabel{font-size:9px;letter-spacing:1.5px;color:#9bb6d8;padding:0 12px;margin:5px 0}.nav{display:grid;gap:5px}.nav button{border:0;background:transparent;color:#dce8f8;text-align:left;padding:11px 12px;border-radius:9px;font-size:12px;display:flex;gap:11px;align-items:center}.nav button.active,.nav button:hover{background:#ffffff1c;color:#fff}.nav .sym{width:17px;text-align:center;font-size:15px}.sidebottom{margin-top:auto;border-top:1px solid #ffffff24;padding:15px 9px;color:#c6d7ed;font-size:10px;line-height:1.6}
+.main{min-width:0}.topbar{height:68px;background:#fff;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;padding:0 30px;position:sticky;top:0;z-index:5}.crumb{font-size:12px;color:var(--muted)}.crumb b{color:var(--ink)}.topright{display:flex;align-items:center;gap:15px}.role{border:1px solid var(--line);border-radius:8px;padding:8px 10px;color:#40516a;background:white;font-size:11px}.avatar{width:34px;height:34px;border-radius:50%;background:#e4efff;color:var(--blue);display:grid;place-items:center;font-weight:800;font-size:12px}
+.content{max-width:1450px;margin:auto;padding:27px 30px 50px}.page{display:none}.page.active{display:block}.welcome{display:flex;justify-content:space-between;align-items:flex-start;gap:18px;margin-bottom:21px}.eyebrow{font-size:10px;text-transform:uppercase;letter-spacing:1.5px;color:var(--blue);font-weight:800}.welcome h1{font-size:25px;margin:7px 0 6px;color:var(--navy)}.welcome p{margin:0;color:var(--muted);font-size:12px;line-height:1.5}.pill{display:inline-flex;align-items:center;gap:6px;border-radius:30px;padding:7px 11px;background:#e5f7ee;color:#08764c;font-weight:800;font-size:10px;white-space:nowrap}
+.grid{display:grid;gap:15px}.stats{grid-template-columns:repeat(4,minmax(0,1fr));margin-bottom:17px}.stat,.panel,.tile{background:#fff;border:1px solid var(--line);border-radius:13px;box-shadow:var(--shadow)}.stat{padding:16px}.stat .topline{display:flex;justify-content:space-between;color:var(--muted);font-size:10px}.stat strong{display:block;font-size:25px;color:var(--navy);margin:10px 0 4px}.stat small{font-size:10px;color:var(--green)}.stat .bubble{width:31px;height:31px;background:#edf4ff;border-radius:9px;display:grid;place-items:center;font-size:15px}
+.two{grid-template-columns:1.45fr 1fr}.panel{padding:18px;margin-bottom:15px}.panelhead{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:14px}.panelhead h3{margin:0;font-size:14px;color:var(--navy)}.panelhead a,.link{color:var(--blue);font-size:10px;text-decoration:none;cursor:pointer}.muted{color:var(--muted);font-size:11px}.lesson{display:flex;align-items:center;gap:12px;padding:12px 0;border-top:1px solid #eef2f7}.lesson:first-of-type{border-top:0}.time{background:#edf4ff;color:#175db2;padding:9px 10px;border-radius:8px;font-weight:800;font-size:10px;min-width:83px;text-align:center}.lesson b{display:block;font-size:12px}.lesson small{color:var(--muted);font-size:10px}.btn{border:0;background:var(--blue);color:#fff;padding:10px 14px;border-radius:8px;font-size:11px;font-weight:800}.btn.secondary{background:#edf4ff;color:#175db2}.btn.ghost{background:white;color:#40516a;border:1px solid var(--line)}.btn.green{background:var(--green)}.btn.small{padding:7px 10px;font-size:10px}
+.quick{grid-template-columns:repeat(4,1fr)}.tile{padding:15px;cursor:pointer;transition:.15s}.tile:hover{transform:translateY(-2px);border-color:#b7d1f5}.tile .tileicon{font-size:21px;margin-bottom:11px}.tile b{display:block;font-size:12px;margin-bottom:4px}.tile span{font-size:10px;color:var(--muted);line-height:1.4}
+.progressrow{display:flex;justify-content:space-between;font-size:10px;margin:12px 0 6px}.bar{height:7px;background:#edf1f6;border-radius:9px;overflow:hidden}.bar i{height:100%;display:block;background:linear-gradient(90deg,#1769d2,#19a7c7);border-radius:9px}
+table{width:100%;border-collapse:collapse;font-size:11px}th{text-align:left;color:#758399;font-size:9px;text-transform:uppercase;letter-spacing:.6px;background:#f7f9fc}th,td{padding:12px 10px;border-bottom:1px solid #edf1f6}td{color:#34445c}.tag{font-size:9px;padding:5px 8px;border-radius:20px;background:#edf4ff;color:#1a5eae;font-weight:800}.tag.green{background:#e6f7ee;color:#08764c}.tag.amber{background:#fff4df;color:#9a6410}.tag.gray{background:#eef1f5;color:#68778d}
+.controls{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:15px}.controls select,.controls input,.field input,.field select,.field textarea{border:1px solid #dce4ee;border-radius:8px;padding:10px;background:#fff;color:var(--ink);font-size:11px;min-width:150px}.field{display:grid;gap:6px;margin-bottom:12px}.field label{font-size:10px;font-weight:800;color:#4b5c73}.field input,.field select,.field textarea{width:100%}.field textarea{min-height:85px;resize:vertical}
+.question{padding:16px;border:1px solid var(--line);border-radius:11px;margin:12px 0;background:#fff}.question h4{font-size:12px;margin:0 0 12px;line-height:1.5}.option{display:flex;gap:9px;align-items:flex-start;padding:9px;border:1px solid #e7edf5;border-radius:8px;margin:7px 0;font-size:11px;cursor:pointer}.option:has(input:checked){background:#eef5ff;border-color:#8cb8ef}.option input{margin:1px 0}.feedback{display:none;padding:10px;border-radius:8px;font-size:11px;margin-top:10px}.feedback.good{display:block;background:#e7f8ef;color:#08764c}.feedback.bad{display:block;background:#fff0f0;color:#a83232}
+.empty{padding:25px;text-align:center;color:var(--muted);font-size:11px;border:1px dashed #ccd7e5;border-radius:10px}
+.modalback{display:none;position:fixed;inset:0;background:#10233f88;z-index:20;align-items:center;justify-content:center;padding:20px}.modalback.show{display:flex}.modal{background:#fff;border-radius:15px;padding:22px;max-width:500px;width:100%;max-height:90vh;overflow:auto}.modal h3{margin:0 0 7px;color:var(--navy)}.modal p{font-size:11px;color:var(--muted);line-height:1.5}.modalfoot{display:flex;justify-content:flex-end;gap:8px;margin-top:15px}
+.notice{background:#eff6ff;border:1px solid #dbeafe;border-radius:10px;padding:12px;font-size:10px;color:#52657f;line-height:1.5;margin-bottom:14px}
+.mobilebrand{display:none}
+@media(max-width:1000px){.layout{grid-template-columns:210px 1fr}.stats{grid-template-columns:repeat(2,1fr)}.quick{grid-template-columns:repeat(2,1fr)}.content{padding:22px 18px}}
+@media(max-width:720px){.layout{display:block}.sidebar{display:none}.topbar{padding:0 15px}.mobilebrand{display:block;font-weight:800;color:var(--navy);font-size:12px}.crumb{display:none}.content{padding:18px 13px}.two{grid-template-columns:1fr}.welcome{display:block}.welcome .pill{margin-top:12px}.stats{gap:9px}.stat{padding:12px}.stat strong{font-size:21px}.quick{gap:9px}.panel{padding:13px;overflow-x:auto}}
+
+.hero{min-height:235px;border-radius:18px;padding:30px 34px;position:relative;overflow:hidden;background:linear-gradient(112deg,#102b55 0%,#1558a4 62%,#159bb7 100%);color:white;display:flex;align-items:center;justify-content:space-between;box-shadow:0 14px 32px #153c6d22}
+.hero-copy{position:relative;z-index:1;max-width:570px}.hero h1{font-size:36px;line-height:1.1;margin:9px 0;color:#fff}.hero p{font-size:13px;line-height:1.6;color:#dceaff;margin:0 0 20px}.hero-btn{background:#fff;color:#1557a5;padding:11px 17px}.hero-art{width:220px;height:170px;position:relative;flex:none}.hero-orbit{position:absolute;right:32px;top:17px;width:130px;height:130px;border:1px solid #ffffff55;border-radius:50%;display:grid;place-items:center;font-size:68px;background:#ffffff12;box-shadow:0 0 0 17px #ffffff0a}.hero-book{position:absolute;right:150px;bottom:8px;font-size:35px;transform:rotate(-12deg)}.hero-spark{position:absolute;right:13px;top:0;color:#bfefff;font-size:30px}
+.viewbar{display:flex;align-items:center;justify-content:flex-end;gap:12px;margin:-5px 0 14px;color:var(--muted);font-size:10px}.viewtabs{display:flex;background:#e9eff7;border-radius:9px;padding:3px;gap:3px}.viewtab{border:0;background:transparent;padding:7px 10px;border-radius:7px;font-size:10px;color:#56667d}.viewtab.active{background:white;color:var(--blue);font-weight:800;box-shadow:0 1px 4px #18375b16}
+.grade-choices{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.grade-choice{border:1px solid var(--line);background:#fff;border-radius:11px;padding:13px;text-align:left;color:var(--ink)}.grade-choice.active,.grade-choice:hover{border-color:#77a9e8;background:#f2f7ff;box-shadow:0 0 0 2px #1769d20d}.grade-choice span{display:block;color:var(--blue);font-size:9px;font-weight:800;letter-spacing:1px}.grade-choice b{display:block;font-size:28px;color:var(--navy);margin:3px 0}.grade-choice small{font-size:10px;color:var(--muted)}.grade-description{font-size:11px;color:var(--muted);margin:13px 0}.toolrow{display:flex;align-items:center;gap:11px;padding:11px 0;border-top:1px solid #edf1f6;cursor:pointer}.toolrow:first-of-type{border-top:0}.toolrow:hover b{color:var(--blue)}.toolicon{width:35px;height:35px;border-radius:10px;background:#edf4ff;display:grid;place-items:center;font-size:18px;flex:none}.toolrow div:nth-child(2){flex:1}.toolrow b{display:block;font-size:11px;margin-bottom:4px}.toolrow small{display:block;color:var(--muted);font-size:9px;line-height:1.45}.toolrow>span{color:var(--blue)}.footnote{text-align:center;color:#8a97a9;font-size:10px;padding:9px}.check{display:flex;gap:8px;align-items:flex-start;font-size:10px;color:var(--muted);line-height:1.5;margin:12px 0}
+
+
+.auth-tabs{display:flex;gap:8px;background:#eef3fa;border-radius:10px;padding:4px;margin:18px 0}.auth-tab{flex:1;border:0;border-radius:8px;padding:11px;background:transparent;color:#53647c;font-weight:800;font-size:12px}.auth-tab.active{background:#fff;color:var(--blue);box-shadow:0 1px 5px #1b35551a}.privacy-note{font-size:10px;line-height:1.5;color:#8a97a9;margin-top:14px}.check{display:flex;gap:9px;align-items:flex-start;font-size:10px;color:var(--muted);line-height:1.5;margin:12px 0 17px}.check input{width:15px;height:15px;flex:none;margin:1px 0}.topright{display:flex;align-items:center;gap:10px}
+
+</style></head>
 <body>
-<header>
-<a href="/">← Junior School Learning Hub</a>
-<h1>Online Tuition Centre</h1>
-<p>Learn, practise and grow with structured online lessons for Grades 7, 8 and 9.</p>
-<p>Live learning • Qualified teachers • Guided revision</p>
-</header>
+<div class="layout">
+<aside class="sidebar">
+ <div class="brand"><div class="brandicon">🎓</div><div>Junior School<br>Learning Hub<small>ONLINE TUITION CENTRE</small></div></div>
+ <div><div class="navlabel">LEARNING SPACE</div><nav class="nav">
+  <button class="active" data-page="dashboard"><span class="sym">⌂</span> Dashboard</button>
+  <button data-page="timetable"><span class="sym">▦</span> Timetable</button>
+  <button data-page="classroom"><span class="sym">▣</span> Virtual classrooms</button>
+  <button data-page="resources"><span class="sym">▤</span> Learning areas</button>
+  <button data-page="assessments"><span class="sym">✎</span> Practice assessment</button>
+ </nav></div>
+ <div><div class="navlabel">COMMUNITY & SUPPORT</div><nav class="nav">
+  <button data-page="enrolment"><span class="sym">＋</span> Enrolment</button>
+  <button data-page="teacher"><span class="sym">♙</span> Teacher workspace</button>
+  <button data-page="support"><span class="sym">♡</span> Help & support</button>
+ </nav></div>
+ <div><div class="navlabel">MY ACADEMIC SPACE</div><nav class="nav">
+  <button data-page="assignments"><span class="sym">▧</span> Assignments</button>
+  <button data-page="results"><span class="sym">▥</span> Results & progress</button>
+  <button data-page="profile"><span class="sym">♙</span> My profile</button>
+ </nav></div>
+ <div class="sidebottom">CBC-aligned learning · Grades 7–9<br><b style="color:#fff">Learn today. Lead tomorrow.</b><br><br>Junior School Learning Hub · Preview</div>
+</aside>
+<main class="main">
+ <header class="topbar"><div class="mobilebrand">🎓 JSLH · TUITION PORTAL</div><div class="crumb">Portal / <b id="crumb">Dashboard</b></div><div class="topright"><span class="muted" id="portalUserLabel">Guest preview</span><span class="tag gray" id="portalRoleLabel">Not signed in</span><button class="btn secondary small" id="portalSignOut" type="button" hidden>Sign out</button><div class="avatar" id="portalAvatar">J</div></div></header>
+ <div class="content">
+  <section class="page active" id="dashboard">
+   <div class="hero">
+    <div class="hero-copy"><div class="eyebrow" style="color:#c7e4ff">WELCOME TO YOUR LEARNING SPACE</div>
+     <h1>Learn. Practise. Shine.</h1>
+     <p>Structured CBC tuition for Grades 7, 8 and 9 — wherever you are.</p>
+     <button class="btn hero-btn" onclick="showPage('classroom')">Explore classrooms <span>→</span></button>
+    </div><div class="hero-art"><div class="hero-orbit">🎓</div><div class="hero-book">📚</div><div class="hero-spark">✦</div></div>
+   </div>
+   <div class="welcome" style="margin-top:22px"><div><div class="eyebrow">LEARNING DASHBOARD</div><h1 style="font-size:21px">Your learning at a glance</h1><p>Choose your learning view and continue where you left off.</p></div>
+    <span class="pill">✓ Free learner registration</span></div>
+   <div class="viewbar"><span>View as</span><div class="viewtabs"><button class="viewtab active" data-view="learner">Learner view</button><button class="viewtab" data-view="teacher">Teacher view</button><button class="viewtab" data-view="parent">Parent view</button></div></div>
+   <div class="grid stats">
+    <div class="stat"><div class="topline">Junior school grades <span class="bubble">🎓</span></div><strong>3</strong><small>Grades 7, 8 and 9</small></div>
+    <div class="stat"><div class="topline">Weekly programme <span class="bubble">📅</span></div><strong>7 days</strong><small>Learning throughout the week</small></div>
+    <div class="stat"><div class="topline">Daily teaching periods <span class="bubble">🕒</span></div><strong>3</strong><small>One-hour learning sessions</small></div>
+    <div class="stat"><div class="topline">Core learning areas <span class="bubble">📘</span></div><strong>9</strong><small>CBC learning areas</small></div>
+   </div>
+   <div class="panel grade-panel"><div class="panelhead"><div><div class="eyebrow">CBC JUNIOR SCHOOL</div><h3 style="margin-top:5px">Choose your grade</h3></div><span class="muted">Select your learning level</span></div>
+    <div class="grade-choices"><button class="grade-choice active" data-grade="Grade 7"><span>GRADE</span><b>7</b><small>Build strong foundations</small></button><button class="grade-choice" data-grade="Grade 8"><span>GRADE</span><b>8</b><small>Develop your skills</small></button><button class="grade-choice" data-grade="Grade 9"><span>GRADE</span><b>9</b><small>Prepare for senior school</small></button></div>
+    <p class="grade-description" id="gradeDescription">Consolidate junior school learning and prepare confidently for senior school.</p>
+    <button class="btn secondary" onclick="showPage('timetable')">View weekly timetable →</button>
+   </div>
+   <div class="grid two">
+    <div class="panel"><div class="panelhead"><div><div class="eyebrow">PROGRAMME</div><h3 style="margin-top:5px">Today's learning</h3></div><a onclick="showPage('timetable')">Full timetable →</a></div>
+     <div class="lesson"><div class="time">5:00–6:00 PM</div><div style="flex:1"><b>Mathematics</b><small>Period 1 · Monday</small></div><span class="tag green">Today</span></div>
+     <div class="lesson"><div class="time">6:10–7:10 PM</div><div style="flex:1"><b>English</b><small>Period 2 · Monday</small></div><span class="tag">Next</span></div>
+     <div class="lesson"><div class="time">7:20–8:20 PM</div><div style="flex:1"><b>Integrated Science</b><small>Period 3 · Monday</small></div><span class="tag gray">Upcoming</span></div>
+    </div>
+    <div class="panel"><div class="panelhead"><div><div class="eyebrow">CONTINUE LEARNING</div><h3 style="margin-top:5px">Your learning tools</h3></div></div>
+     <div class="toolrow" onclick="showPage('classroom')"><div class="toolicon">🎥</div><div><b>Virtual classrooms</b><small>Join teacher-led lessons using approved meeting links or the integrated classroom option when configured.</small></div><span>→</span></div>
+     <div class="toolrow" onclick="showPage('assessments')"><div class="toolicon">📝</div><div><b>Practice assessment</b><small>Try a sample quiz and receive instant feedback.</small></div><span>→</span></div>
+     <div class="toolrow" onclick="showPage('teacher')"><div class="toolicon">👩‍🏫</div><div><b>Teacher workspace</b><small>Preview lesson planning and class management tools.</small></div><span>→</span></div>
+    </div>
+   </div>
+   <div class="footnote">© 2026 Junior School Learning Hub · Online Tuition Centre · Prototype for review</div>
+  </section>
 
-<main class="container">
-<section class="panel">
-<h2>Welcome to Online Tuition</h2>
-<p>Choose your grade to view its weekly learning timetable. Lessons are organised into three one-hour periods each day, with short breaks between periods.</p>
-<div class="grades">
-<button class="active" onclick="showGrade(7,this)">Grade 7</button>
-<button onclick="showGrade(8,this)">Grade 8</button>
-<button onclick="showGrade(9,this)">Grade 9</button>
-</div>
-<div class="schedule-title">
-<h2 id="gradeTitle">Grade 7 Timetable</h2>
-<span class="tag">Weekly programme</span>
-</div>
-<div id="timetable"></div>
-</section>
+  <section class="page" id="timetable">
+   <div class="welcome"><div><div class="eyebrow">WEEKLY PROGRAMME</div><h1>My Timetable</h1><p>Three daily learning periods, with Mathematics scheduled four times each week.</p></div><span class="pill">Grade 8 · Sample</span></div>
+   <div class="panel"><div class="controls"><select id="tGrade"><option>Grade 7</option><option selected>Grade 8</option><option>Grade 9</option></select><select id="tDay"><option value="all">All days</option><option>Monday</option><option>Tuesday</option><option>Wednesday</option><option>Thursday</option><option>Friday</option><option>Saturday</option><option>Sunday</option></select></div>
+    <table><thead><tr><th>Day</th><th>Period 1</th><th>Period 2</th><th>Period 3</th></tr></thead><tbody id="timetableBody"></tbody></table>
+    <p class="muted">Weekdays: 5:00–6:00 PM, 6:10–7:10 PM, 7:20–8:20 PM. Weekends: 9:00–10:00 AM, 10:10–11:10 AM, 11:20 AM–12:20 PM.</p>
+   </div>
+  </section>
 
-<section class="panel">
-<h2>Daily Lesson Structure</h2>
-<div class="info-grid">
-<div class="info"><strong>Weekdays: Monday–Friday</strong>Period 1: 5:00–6:00 PM<br>Break: 6:00–6:10 PM<br>Period 2: 6:10–7:10 PM<br>Break: 7:10–7:20 PM<br>Period 3: 7:20–8:20 PM</div>
-<div class="info"><strong>Weekends: Saturday–Sunday</strong>Period 1: 9:00–10:00 AM<br>Break: 10:00–10:10 AM<br>Period 2: 10:10–11:10 AM<br>Break: 11:10–11:20 AM<br>Period 3: 11:20 AM–12:20 PM</div>
-</div>
-</section>
+  <section class="page" id="assessments">
+   <div class="welcome"><div><div class="eyebrow">PRACTISE AND IMPROVE</div><h1>Practice Assessments</h1><p>Choose your learning area and attempt a quiz. Objective questions are marked instantly in this preview.</p></div><span class="pill">Instant feedback demo</span></div>
+   <div class="panel"><div class="controls"><select id="aGrade"><option>Grade 7</option><option selected>Grade 8</option><option>Grade 9</option></select><select id="aSubject"><option>Mathematics</option><option>English</option><option>Kiswahili</option><option>Integrated Science</option><option>Social Studies</option><option>CRE</option><option>Agriculture</option><option>Pre-Technical Studies</option><option>Creative Arts and Sports</option></select><button class="btn" onclick="loadQuiz()">Load assessment</button></div>
+    <div class="notice">Question bank preview: sample questions demonstrate the assessment experience. The complete production bank must be mapped and quality-checked against each KICD grade curriculum design before launch.</div>
+    <div id="quizArea"><div class="empty">Select a learning area and choose “Load assessment” to begin. Sign in to save your assessment history.</div></div>
+   </div>
+  </section>
 
-<section class="panel">
-<h2>Learning Areas</h2>
-<div class="info-grid">
-<div class="info"><strong>Mathematics</strong>Concept development and problem solving.</div>
-<div class="info"><strong>English and Kiswahili</strong>Language skills, communication and comprehension.</div>
-<div class="info"><strong>Integrated Science</strong>Scientific concepts and practical applications.</div>
-<div class="info"><strong>Social Studies and CRE</strong>Knowledge, values and responsible citizenship.</div>
-<div class="info"><strong>Agriculture</strong>Practical agricultural knowledge and skills.</div>
-<div class="info"><strong>Pre-Technical Studies</strong>Technology, creativity and practical skills.</div>
-<div class="info"><strong>Creative Arts and Sports</strong>Creativity, performance and physical development.</div>
-<div class="info"><strong>Revision and Assessment</strong>Practice, CATs and learner support.</div>
-</div>
-</section>
+  <section class="page" id="assignments">
+   <div class="welcome"><div><div class="eyebrow">COURSEWORK AND SUBMISSIONS</div><h1>Assignments</h1><p>Read teacher instructions, complete your work and submit a document or scanned pages.</p></div><span class="pill">Learner workspace</span></div>
+   <div class="panel"><div class="panelhead"><h3>My assignments</h3><span class="muted">Grade 8 · Sample list</span></div>
+    <table><thead><tr><th>Assignment</th><th>Learning area</th><th>Due date</th><th>Status</th><th>Action</th></tr></thead><tbody id="tuitionAssignmentRows"><tr><td colspan="5">Sign in to view assignments for your grade.</td></tr></tbody></table>
+   </div>
+   <div class="panel"><div class="panelhead"><h3>How to submit your work</h3></div><div class="grid quick">
+    <div class="tile"><div class="tileicon">📝</div><b>Type online</b><span>Write structured answers in the portal.</span></div><div class="tile"><div class="tileicon">📄</div><b>Word / PDF</b><span>Attach a DOC, DOCX or PDF document.</span></div><div class="tile"><div class="tileicon">📷</div><b>Scanned work</b><span>Upload clear photos or scans of handwritten pages.</span></div><div class="tile"><div class="tileicon">↩️</div><b>Returned marking</b><span>View the teacher's score, comments and corrected file.</span></div>
+   </div></div>
+  </section>
 
-<section class="panel">
-<h2>Important Information</h2>
-<div class="notice">This is the proposed weekly timetable for the Tuition Centre. Confirmed teacher assignments, enrolment, class links and lesson joining instructions will be provided when the live learning programme is activated.</div>
-<p>Each grade will have its own timetable. Learners should enrol in the appropriate grade and follow the published lesson instructions.</p>
-</section>
-</main>
+  <section class="page" id="classroom">
+   <div class="welcome"><div><div class="eyebrow">LIVE LEARNING</div><h1>Virtual Classroom</h1><p>Join a scheduled online lesson using a teacher-approved class link.</p></div><span class="pill">Live lesson access</span></div>
+   <div class="grid two"><div class="panel"><div class="panelhead"><h3>Upcoming live lessons</h3></div>
+    <div class="lesson"><div class="time">5:00 PM</div><div style="flex:1"><b>Mathematics · Algebra</b><small>Teacher: Mathematics Department</small></div><button class="btn small" onclick="alert('Demo only: a secure teacher-provided class link will appear here in the live system.')">Join class</button></div>
+    <div class="lesson"><div class="time">6:10 PM</div><div style="flex:1"><b>Integrated Science</b><small>Teacher: Science Department</small></div><button class="btn secondary small" onclick="alert('Class link will be provided by the teacher.')">Details</button></div>
+   </div><div class="panel"><div class="panelhead"><h3>Classroom guidelines</h3></div><p class="muted">Use your registered learner account. Join on time, keep your microphone muted unless invited, and follow your teacher's instructions. Meeting links should be private and shared only with registered learners.</p></div></div>
+  </section>
 
-<footer>
-<strong>Junior School Learning Hub</strong>
-<p>Supporting learning for Grades 7–9</p>
-<a href="/">Return to Home Page</a>
-</footer>
+  <section class="page" id="results">
+   <div class="welcome"><div><div class="eyebrow">ACADEMIC PERFORMANCE</div><h1>Results & Progress</h1><p>Review assessment performance and teacher-marked assignments.</p></div><span class="pill">Academic record</span></div>
+   <div class="grid stats"><div class="stat"><div class="topline">Average score</div><strong>78%</strong><small>Sample record</small></div><div class="stat"><div class="topline">Assessments</div><strong id="resultAttempts">6</strong><small>Completed</small></div><div class="stat"><div class="topline">Assignments marked</div><strong>4</strong><small>Teacher assessed</small></div><div class="stat"><div class="topline">Learning areas</div><strong>9</strong><small>Grade 8</small></div></div>
+   <div class="panel"><div class="panelhead"><h3>Recent results</h3></div><table><thead><tr><th>Assessment</th><th>Learning area</th><th>Score</th><th>Feedback</th></tr></thead><tbody><tr><td>Fractions and decimals</td><td>Mathematics</td><td>18/20</td><td><span class="tag green">Very good</span></td></tr><tr><td>Cells and organisation</td><td>Integrated Science</td><td>16/20</td><td><span class="tag green">Good</span></td></tr><tr><td>Comprehension</td><td>English</td><td>16/20</td><td><span class="tag amber">Keep practising</span></td></tr></tbody></table></div>
+  </section>
 
+  <section class="page" id="resources">
+   <div class="welcome"><div><div class="eyebrow">CBC LEARNING LIBRARY</div><h1>Learning Areas</h1><p>Explore learning materials and practice activities for your grade.</p></div></div>
+   <div class="grid quick" id="resourceTiles"></div>
+  </section>
+
+  <section class="page" id="profile">
+   <div class="welcome"><div><div class="eyebrow">ACCOUNT SETTINGS</div><h1>My Profile</h1><p>Your learner information and contact preferences.</p></div><span class="pill">Free registration</span></div>
+   <div class="panel" style="max-width:760px"><div class="notice">Your contact details are not shown in a public directory. They are available only to you and authorised tuition staff according to the portal's access rules.</div>
+    <div class="grid" style="grid-template-columns:1fr 1fr">
+     <div class="field"><label>Full name</label><input id="profileFullName" readonly placeholder="Sign in to view"></div>
+     <div class="field"><label>Grade</label><input id="profileGrade" readonly placeholder="—"></div>
+     <div class="field"><label>Email address</label><input id="profileEmail" readonly placeholder="—"></div>
+     <div class="field"><label>Phone number</label><input id="profilePhone" readonly placeholder="—"></div>
+     <div class="field"><label>Parent / guardian</label><input id="profileGuardianName" readonly placeholder="—"></div>
+     <div class="field"><label>Guardian contact</label><input id="profileGuardianPhone" readonly placeholder="—"></div>
+    </div>
+   </div>
+  </section>
+
+  <section class="page" id="teacher">
+   <div class="welcome"><div><div class="eyebrow">TEACHING WORKSPACE</div><h1>Teacher Portal</h1><p>Manage coursework, review learner submissions and return feedback.</p></div><span class="pill">Teacher preview</span></div>
+   <div class="grid stats"><div class="stat"><div class="topline">Assigned learners</div><strong>42</strong><small>Sample class records</small></div><div class="stat"><div class="topline">Pending marking</div><strong>12</strong><small style="color:var(--amber)">Requires attention</small></div><div class="stat"><div class="topline">Assignments issued</div><strong>8</strong><small>This term</small></div><div class="stat"><div class="topline">Assessments</div><strong>5</strong><small>Published</small></div></div>
+   <div class="panel"><div class="panelhead"><h3>Submissions awaiting marking</h3><span class="tag amber">12 pending</span></div><table><thead><tr><th>Learner</th><th>Grade</th><th>Assignment</th><th>Submitted file</th><th>Action</th></tr></thead><tbody><tr><td>Amina Mwangi</td><td>8</td><td>Algebraic expressions</td><td>amina_algebra.pdf</td><td><button class="btn small" onclick="openMark()">Mark work</button></td></tr><tr><td>Brian Otieno</td><td>7</td><td>Plant growth</td><td>plant_growth.docx</td><td><button class="btn small" onclick="openMark()">Mark work</button></td></tr><tr><td>Faith Wanjiku</td><td>9</td><td>Linear equations</td><td>scan_002.pdf</td><td><button class="btn small" onclick="openMark()">Mark work</button></td></tr></tbody></table>
+   </div>
+   <div class="panel"><div class="panelhead"><h3>Teacher actions</h3></div><div class="grid quick"><div class="tile" onclick="alert('In the live portal, teachers can create and schedule assignments.')"><div class="tileicon">➕</div><b>Create assignment</b><span>Set instructions and due date</span></div><div class="tile" onclick="alert('In the live portal, teachers can publish grade-specific quizzes.')"><div class="tileicon">🧠</div><b>Create assessment</b><span>Build an automated quiz</span></div><div class="tile" onclick="openMark()"><div class="tileicon">🖊️</div><b>Mark submissions</b><span>Enter scores and comments</span></div><div class="tile" onclick="alert('In the live portal, teachers can post notices to selected classes.')"><div class="tileicon">📣</div><b>Post class notice</b><span>Share important updates</span></div></div></div>
+  </section>
+
+  <section class="page" id="admin">
+   <div class="welcome"><div><div class="eyebrow">PORTAL MANAGEMENT</div><h1>Administration</h1><p>Oversee registrations, learning groups, staff access and academic activity.</p></div><span class="pill">Administrator preview</span></div>
+   <div class="grid stats"><div class="stat"><div class="topline">Registered learners</div><strong>326</strong><small>Sample total</small></div><div class="stat"><div class="topline">Grade 7</div><strong>108</strong><small>Sample learners</small></div><div class="stat"><div class="topline">Grade 8</div><strong>114</strong><small>Sample learners</small></div><div class="stat"><div class="topline">Grade 9</div><strong>104</strong><small>Sample learners</small></div></div>
+   <div class="panel"><div class="panelhead"><h3>Recent registrations</h3><span class="muted">Contact details restricted to authorised staff</span></div><table><thead><tr><th>Learner</th><th>Grade</th><th>Email</th><th>Phone</th><th>Status</th></tr></thead><tbody><tr><td>Amina Mwangi</td><td>8</td><td>amina@example.com</td><td>07XX XXX XXX</td><td><span class="tag green">Active</span></td></tr><tr><td>Brian Otieno</td><td>7</td><td>brian@example.com</td><td>07XX XXX XXX</td><td><span class="tag green">Active</span></td></tr><tr><td>Faith Wanjiku</td><td>9</td><td>faith@example.com</td><td>07XX XXX XXX</td><td><span class="tag amber">Pending</span></td></tr></tbody></table></div>
+   <div class="notice">The administrator view demonstrates the proposed learner directory. The production version will enforce role-based access, audit logs and privacy controls. These sample records are not real registrations.</div>
+  </section>
+
+  <section class="page" id="enrolment">
+   <div class="welcome"><div><div class="eyebrow">JOIN THE LEARNING COMMUNITY</div><h1>Free learner enrolment</h1><p>Create your learner account or sign in to continue learning.</p></div><span class="pill">Registration fee: KES 0</span></div>
+   <div class="panel" style="max-width:780px">
+    <div class="notice">Learner contact details are private. They are collected for learning-related communication and should only be accessed by authorised staff. Parent/guardian contact is recommended for learners under 18.</div>
+    <div class="auth-tabs"><button class="auth-tab active" id="tuitionLoginTab" type="button">Sign in</button><button class="auth-tab" id="tuitionSignupTab" type="button">Create free account</button></div>
+    <div id="tuitionLoginPane">
+     <h3>Welcome back</h3><p class="muted">Sign in using your existing Junior School Learning Hub learner account.</p>
+     <div class="field"><label>Email address</label><input id="tuitionLoginEmail" type="email" autocomplete="email" placeholder="Enter your registered email"></div>
+     <div class="field"><label>Password</label><input id="tuitionLoginPassword" type="password" autocomplete="current-password" placeholder="Enter your password"></div>
+     <button class="btn" id="tuitionLoginButton" type="button">Sign in to tuition portal</button>
+    </div>
+    <div id="tuitionSignupPane" hidden>
+     <h3>Create your learner account</h3><p class="muted">Registration is free. Use a valid email address that you can access.</p>
+     <div class="grid" style="grid-template-columns:1fr 1fr">
+      <div class="field"><label>Learner's full name *</label><input id="tuitionFullName" autocomplete="name" placeholder="Enter learner's full name" required></div>
+      <div class="field"><label>Grade *</label><select id="tuitionGrade" required><option value="">Select grade</option><option value="Grade 7">Grade 7</option><option value="Grade 8">Grade 8</option><option value="Grade 9">Grade 9</option></select></div>
+      <div class="field"><label>Email address *</label><input id="tuitionEmail" type="email" autocomplete="email" placeholder="name@example.com" required></div>
+      <div class="field"><label>Learner phone number *</label><input id="tuitionPhone" type="tel" autocomplete="tel" placeholder="07XX XXX XXX" required></div>
+      <div class="field"><label>Parent / guardian name</label><input id="tuitionGuardianName" placeholder="Parent or guardian full name"></div>
+      <div class="field"><label>Parent / guardian phone</label><input id="tuitionGuardianPhone" type="tel" placeholder="07XX XXX XXX"></div>
+      <div class="field"><label>Create password *</label><input id="tuitionPassword" type="password" autocomplete="new-password" minlength="8" placeholder="At least 8 characters"></div>
+      <div class="field"><label>Confirm password *</label><input id="tuitionPasswordConfirm" type="password" autocomplete="new-password" minlength="8" placeholder="Re-enter password"></div>
+     </div>
+     <label class="check"><input id="tuitionConsent" type="checkbox"><span>I confirm the information is correct. If the learner is under 18, a parent or guardian has been informed and agrees to registration and learning-related communication.</span></label>
+     <button class="btn" id="tuitionSignupButton" type="button">Create free learner account →</button>
+    </div>
+    <p id="tuitionAuthMessage" class="muted" role="status" aria-live="polite" style="margin-top:14px"></p>
+    <p class="privacy-note">Your password is handled by Supabase Authentication. The portal does not display learner contact details publicly. Existing main-site learner accounts can sign in here.</p>
+   </div>
+  </section>
+  <section class="page" id="support">
+   <div class="welcome"><div><div class="eyebrow">WE ARE HERE TO HELP</div><h1>Help & support</h1><p>Find guidance for using the tuition portal.</p></div></div>
+   <div class="grid two"><div class="panel"><h3>Frequently asked questions</h3><p><b>Is registration free?</b><br><span class="muted">Yes. Creating an online tuition learner account is free.</span></p><p><b>How do I submit assignments?</b><br><span class="muted">Open Assignments, choose the task and upload a Word file, PDF or clear scan.</span></p><p><b>Who can see my contact details?</b><br><span class="muted">Only authorised teachers and administrators who need them for learning support.</span></p></div>
+    <div class="panel"><h3>Contact support</h3><p class="muted">For help with registration, lessons, assignments or access, contact the Junior School Learning Hub support team.</p><div class="field"><label>Your name</label><input placeholder="Enter your name"></div><div class="field"><label>How can we help?</label><textarea placeholder="Describe the issue..."></textarea></div><button class="btn" onclick="alert('Support form preview only. It is not connected to a support inbox yet.')">Send support request</button></div></div>
+  </section>
+ </div>
+</main></div>
+
+<div class="modalback" id="submitModal"><div class="modal"><h3>Submit assignment</h3><p id="submitTitle">Assignment title</p><div class="field"><label>Write your answer (optional)</label><textarea id="submissionAnswer" placeholder="Type your structured answers here..."></textarea></div><div class="field"><label>Attach Word, PDF or scanned work</label><input id="submissionFile" type="file" accept=".doc,.docx,.pdf,.jpg,.jpeg,.png"></div><div class="notice">Files are uploaded to a private Supabase bucket after the database and storage setup has been applied. Word, PDF and scanned JPG/PNG files up to 15 MB are accepted.</div><div class="modalfoot"><button class="btn ghost" onclick="closeModal('submitModal')">Cancel</button><button class="btn" onclick="demoSubmit()">Submit assignment</button></div></div></div>
+<div class="modalback" id="markModal"><div class="modal"><h3>Mark learner submission</h3><p>Sample teacher marking panel.</p><div class="field"><label>Score (out of 20)</label><input type="number" min="0" max="20" placeholder="Enter mark"></div><div class="field"><label>Teacher feedback</label><textarea placeholder="Write feedback and improvement guidance..."></textarea></div><div class="field"><label>Return corrected file (optional)</label><input type="file" accept=".doc,.docx,.pdf,.jpg,.png"></div><div class="modalfoot"><button class="btn ghost" onclick="closeModal('markModal')">Cancel</button><button class="btn" onclick="alert('Demo only: marks and feedback are not saved.');closeModal('markModal')">Return marked work</button></div></div></div>
 <script>
-const schedules={
-7:[
-["Monday","Mathematics","English","Integrated Science"],
-["Tuesday","Kiswahili","Social Studies","Mathematics"],
-["Wednesday","English","Agriculture","Pre-Technical Studies"],
-["Thursday","Integrated Science","Kiswahili","CRE"],
-["Friday","Mathematics","English","Creative Arts and Sports"],
-["Saturday","Integrated Science","Social Studies","Projects and Practical"],
-["Sunday","Revision","CAT and Assessment","Career Guidance"]
-],
-8:[
-["Monday","Mathematics","English","Integrated Science"],
-["Tuesday","Kiswahili","Social Studies","Mathematics"],
-["Wednesday","English","Agriculture","Pre-Technical Studies"],
-["Thursday","Integrated Science","Kiswahili","CRE"],
-["Friday","Mathematics","English","Creative Arts and Sports"],
-["Saturday","Integrated Science","Social Studies","Projects and Practical"],
-["Sunday","Revision","CAT and Assessment","Career Guidance"]
-],
-9:[
-["Monday","Mathematics","English","Integrated Science"],
-["Tuesday","Kiswahili","Social Studies","Mathematics"],
-["Wednesday","English","Agriculture","Pre-Technical Studies"],
-["Thursday","Integrated Science","Kiswahili","CRE"],
-["Friday","Mathematics","English","Creative Arts and Sports"],
-["Saturday","Integrated Science","Social Studies","Projects and Practical"],
-["Sunday","Revision","CAT and Assessment","Career Guidance"]
-]
+const subjects=['Mathematics','English','Kiswahili','Integrated Science','Social Studies','CRE','Agriculture','Pre-Technical Studies','Creative Arts and Sports'];
+const days=['Monday','Tuesday','Wednesday','Thursday','Friday','Saturday','Sunday'];
+const timetable={
+'Monday':['Mathematics','Integrated Science','English'],
+'Tuesday':['Kiswahili','Mathematics','Social Studies'],
+'Wednesday':['English','Agriculture','Mathematics'],
+'Thursday':['Integrated Science','Pre-Technical Studies','CRE'],
+'Friday':['Mathematics','Creative Arts and Sports','Revision & Assessment'],
+'Saturday':['Social Studies','Integrated Science','Projects & Practicals'],
+'Sunday':['Kiswahili','English','Career Guidance']
 };
-function showGrade(grade,button){
-document.querySelectorAll(".grades button").forEach(b=>b.classList.remove("active"));
-button.classList.add("active");
-document.getElementById("gradeTitle").textContent="Grade "+grade+" Timetable";
-const rows=schedules[grade];
-let html="";
-rows.forEach((day,index)=>{
-const weekend=index>=5;
-const times=weekend?
-["9:00–10:00 AM","10:10–11:10 AM","11:20 AM–12:20 PM"]:
-["5:00–6:00 PM","6:10–7:10 PM","7:20–8:20 PM"];
-html+=`<h3 class="day-heading">${day[0]}</h3>
-<table><thead><tr><th>Period</th><th>Time</th><th>Learning Area</th></tr></thead><tbody>`;
-for(let i=1;i<=3;i++){
-html+=`<tr><td class="period">Period ${i}</td><td>${times[i-1]}</td><td>${day[i]}</td></tr>`;
-if(i<3){
-const breakTime=weekend?(i===1?"10:00–10:10 AM":"11:10–11:20 AM"):(i===1?"6:00–6:10 PM":"7:10–7:20 PM");
-html+=`<tr class="break"><td colspan="3">Break: ${breakTime}</td></tr>`;
+function showPage(id){document.querySelectorAll('.page').forEach(p=>p.classList.toggle('active',p.id===id));document.querySelectorAll('.nav button').forEach(b=>b.classList.toggle('active',b.dataset.page===id));let names={dashboard:'Dashboard',timetable:'Timetable',assessments:'Practice assessment',assignments:'Assignments',classroom:'Virtual classrooms',results:'Results & progress',resources:'Learning areas',profile:'My profile',teacher:'Teacher workspace',admin:'Administration',enrolment:'Enrolment',support:'Help & support'};document.getElementById('crumb').textContent=names[id]||id;window.scrollTo(0,0)}
+document.querySelectorAll('.nav button').forEach(b=>b.addEventListener('click',()=>showPage(b.dataset.page)));
+document.querySelectorAll('.grade-choice').forEach(b=>b.addEventListener('click',()=>{
+ document.querySelectorAll('.grade-choice').forEach(x=>x.classList.toggle('active',x===b));
+ const g=b.dataset.grade;
+ document.querySelector('.grade-panel .panelhead .muted').textContent=g+' selected';
+ document.getElementById('gradeDescription').textContent=g+' learning activities, weekly tuition timetable and practice assessments are ready to explore.';
+ document.getElementById('tGrade').value=g;
+}));
+document.querySelectorAll('.viewtab').forEach(b=>b.addEventListener('click',()=>{
+ document.querySelectorAll('.viewtab').forEach(x=>x.classList.toggle('active',x===b));
+ const v=b.dataset.view;
+ if(v==='teacher')showPage('teacher'); else if(v==='parent')showPage('results'); else showPage('dashboard');
+}));
+
+// Portal roles are loaded from the authenticated profile; learners cannot choose their own role.
+function drawTimetable(){let day=document.getElementById('tDay').value;let rows=days.filter(d=>day==='all'||d===day).map(d=>`<tr><td><b>${d}</b></td>${timetable[d].map((s,i)=>`<td>${s}<br><span class="muted">${d==='Saturday'||d==='Sunday'?['9:00–10:00','10:10–11:10','11:20–12:20'][i]:['5:00–6:00','6:10–7:10','7:20–8:20'][i]}</span></td>`).join('')}</tr>`).join('');document.getElementById('timetableBody').innerHTML=rows}
+document.getElementById('tDay').addEventListener('change',drawTimetable);drawTimetable();
+document.getElementById('resourceTiles').innerHTML=subjects.map((s,i)=>`<div class="tile" onclick="document.getElementById('aSubject').value='${s}';showPage('assessments');loadQuiz()"><div class="tileicon">${['➗','📖','🗣️','🔬','🌍','📘','🌱','🛠️','🎨'][i]}</div><b>${s}</b><span>Open learning and practice activities</span></div>`).join('');
+const bank={
+'Mathematics':[
+['Evaluate 3/4 + 1/8.',['5/8','7/8','1','4/12'],1,'Use a common denominator of 8: 6/8 + 1/8 = 7/8.'],
+['Solve: 4x = 28.',['6','7','8','9'],1,'Divide both sides by 4.'],
+['What is 15% of 200?',['15','20','30','45'],2,'0.15 × 200 = 30.'],
+['Find the perimeter of a rectangle of length 8 cm and width 3 cm.',['11 cm','22 cm','24 cm','48 cm'],1,'Perimeter = 2(length + width) = 22 cm.'],
+['Simplify 5a + 3a.',['8','8a','15a','2a'],1,'Add like terms: 5a + 3a = 8a.']],
+'English':[
+['Which word is a noun?',['Quickly','Beautiful','Teacher','Run'],2,'Teacher names a person and is a noun.'],
+['Choose the correct sentence.',['She go to school.','She goes to school.','She going school.','She gone school.'],1,'The singular subject “she” takes “goes” in the simple present.'],
+['A synonym for “enormous” is:',['Tiny','Huge','Weak','Brief'],1,'Enormous means very large or huge.']],
+'Kiswahili':[
+['Wingi wa neno “kitabu” ni upi?',['Vitabu','Makitabu','Kitabus','Vitabuzi'],0,'Wingi wa kitabu ni vitabu.'],
+['Kinyume cha “refu” ni:',['Kubwa','Fupi','Ndefu','Pana'],1,'Kinyume cha refu ni fupi.'],
+['Neno “anasoma” linaonyesha wakati gani?',['Uliopita','Uliopo','Ujao','Timilifu'],1,'Kiambishi -na- huonyesha wakati uliopo.']],
+'Integrated Science':[
+['Which part of a plant absorbs water from the soil?',['Leaf','Flower','Root','Fruit'],2,'Roots absorb water and mineral salts from the soil.'],
+['The basic unit of life is the:',['Tissue','Organ','Cell','System'],2,'The cell is the basic structural and functional unit of life.'],
+['Which state of matter has a fixed volume but no fixed shape?',['Solid','Liquid','Gas','Plasma'],1,'A liquid has a fixed volume but takes the shape of its container.']],
+'Social Studies':[
+['A map key is used to:',['Measure rainfall','Explain map symbols','Show time','Name countries only'],1,'A key explains symbols used on a map.'],
+['Which is an example of a natural resource?',['Plastic','Petroleum','Mobile phone','Concrete'],1,'Petroleum occurs naturally and is a natural resource.']],
+'CRE':[
+['Which book is part of the Bible?',['Quran','Genesis','Vedas','Torah only'],1,'Genesis is the first book of the Bible.'],
+['The Golden Rule teaches people to:',['Ignore others','Treat others as they wish to be treated','Compete always','Avoid helping'],1,'The Golden Rule encourages respect and care for others.']],
+'Agriculture':[
+['Which practice helps conserve soil on a slope?',['Burning','Terracing','Overgrazing','Deforestation'],1,'Terracing reduces surface runoff and soil erosion.'],
+['Compost manure is made mainly from:',['Plastic waste','Decomposed organic matter','Metal scraps','Glass'],1,'Compost is produced by decomposition of organic materials.']],
+'Pre-Technical Studies':[
+['Which tool is commonly used to measure length accurately?',['Screwdriver','Tape measure','Pliers','Hammer'],1,'A tape measure is used to measure length.'],
+['A design brief explains:',['The problem and design need','Only the final price','The colour of a tool','The maker’s age'],0,'A design brief outlines the problem, need and requirements.']],
+'Creative Arts and Sports':[
+['Which element of art refers to the lightness or darkness of a colour?',['Texture','Value','Shape','Space'],1,'Value describes how light or dark a colour is.'],
+['Warming up before exercise helps to:',['Increase injury risk','Prepare the body for activity','Stop breathing','Replace hydration'],1,'Warm-ups prepare muscles and the cardiovascular system for exercise.']]
+};
+let currentQuiz=[];
+function loadQuiz(){
+  const subject = document.getElementById('aSubject').value;
+  currentQuiz = bank[subject] || bank['Mathematics'];
+  const area = document.getElementById('quizArea');
+  area.replaceChildren();
+
+  const heading = document.createElement('div');
+  heading.className = 'panelhead';
+  const title = document.createElement('h3');
+  title.textContent = `${subject} · Sample practice quiz`;
+  const count = document.createElement('span');
+  count.className = 'tag';
+  count.textContent = `${currentQuiz.length} demo questions`;
+  heading.append(title, count);
+  area.appendChild(heading);
+
+  currentQuiz.forEach((question, index) => {
+    const card = document.createElement('div');
+    card.className = 'question';
+    card.id = `q${index}`;
+
+    const questionTitle = document.createElement('h4');
+    questionTitle.textContent = `${index + 1}. ${question[0]}`;
+    card.appendChild(questionTitle);
+
+    question[1].forEach((optionText, optionIndex) => {
+      const label = document.createElement('label');
+      label.className = 'option';
+      const radio = document.createElement('input');
+      radio.type = 'radio';
+      radio.name = `q${index}`;
+      radio.value = String(optionIndex);
+      const text = document.createElement('span');
+      text.textContent = `${String.fromCharCode(65 + optionIndex)}. ${optionText}`;
+      label.append(radio, text);
+      card.appendChild(label);
+    });
+
+    const feedback = document.createElement('div');
+    feedback.className = 'feedback';
+    feedback.id = `f${index}`;
+    card.appendChild(feedback);
+    area.appendChild(card);
+  });
+
+  const submitButton = document.createElement('button');
+  submitButton.className = 'btn';
+  submitButton.type = 'button';
+  submitButton.textContent = 'Submit answers';
+  submitButton.addEventListener('click', markQuiz);
+  area.appendChild(submitButton);
+
+  const scoreArea = document.createElement('div');
+  scoreArea.id = 'quizScore';
+  scoreArea.style.marginTop = '13px';
+  area.appendChild(scoreArea);
 }
+
+function markQuiz(){
+  let score = 0;
+  currentQuiz.forEach((question, index) => {
+    const selected = document.querySelector(`input[name="q${index}"]:checked`);
+    const feedback = document.getElementById(`f${index}`);
+    const correct = Boolean(selected && Number(selected.value) === question[2]);
+    if (correct) score += 1;
+    feedback.className = `feedback ${correct ? 'good' : 'bad'}`;
+    feedback.textContent = `${correct ? 'Correct. ' : 'Not quite. '}${question[3]}`;
+  });
+
+  const scoreArea = document.getElementById('quizScore');
+  const notice = document.createElement('div');
+  notice.className = 'notice';
+  const result = document.createElement('b');
+  const percentage = currentQuiz.length ? Math.round(score / currentQuiz.length * 100) : 0;
+  result.textContent = `Your score: ${score}/${currentQuiz.length} (${percentage}%)`;
+  notice.appendChild(result);
+  const explanation = document.createElement('p');
+  explanation.textContent = 'Instant feedback is shown below each question. Sample results are not saved in this preview.';
+  notice.appendChild(explanation);
+  scoreArea.replaceChildren(notice);
 }
-html+="</tbody></table>";
-});
-document.getElementById("timetable").innerHTML=html;
-}
-showGrade(7,document.querySelector(".grades button"));
+function openSubmit(title){document.getElementById('submitTitle').textContent=title;document.getElementById('submitModal').classList.add('show')}
+function openMark(){document.getElementById('markModal').classList.add('show')}
+function closeModal(id){document.getElementById(id).classList.remove('show')}
+function demoSubmit(){alert('Please sign in and select an assignment before submitting.');closeModal('submitModal')}
 </script>
-</body>
-</html>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script>
+(() => {
+  const SUPABASE_URL = "https://hqbqhnhgrgfxpedjzmnm.supabase.co";
+  const SUPABASE_PUBLISHABLE_KEY = "sb_publishable_uaOcRVaIwnvRl_wZhMhJ-Q_DhrqZyS_";
+  const client = window.supabase.createClient(SUPABASE_URL, SUPABASE_PUBLISHABLE_KEY);
+  window.tuitionSupabase = client;
+  let currentUser = null;
+  let currentProfile = null;
+
+  const $ = id => document.getElementById(id);
+  const say = (message, isError=false) => {
+    const el = $("tuitionAuthMessage");
+    if (el) { el.textContent = message; el.style.color = isError ? "#b42318" : "#13865b"; }
+  };
+  function setAuthTab(which) {
+    const login = which === "login";
+    $("tuitionLoginPane").hidden = !login;
+    $("tuitionSignupPane").hidden = login;
+    $("tuitionLoginTab").classList.toggle("active", login);
+    $("tuitionSignupTab").classList.toggle("active", !login);
+    say("");
+  }
+  $("tuitionLoginTab").addEventListener("click", () => setAuthTab("login"));
+  $("tuitionSignupTab").addEventListener("click", () => setAuthTab("signup"));
+
+  async function loadProfile(user) {
+    const meta = user.user_metadata || {};
+    let { data, error } = await client.from("tuition_profiles").select("*").eq("id", user.id).maybeSingle();
+    if (error && error.code !== "PGRST116") {
+      console.warn("Tuition profile lookup:", error.message);
+    }
+    if (!data) {
+      const profile = {
+        id: user.id,
+        full_name: meta.full_name || meta.name || user.email || "Learner",
+        grade: meta.grade || null,
+        phone: meta.phone || meta.phone_number || null,
+        guardian_name: meta.guardian_name || null,
+        guardian_phone: meta.guardian_phone || null
+      };
+      const inserted = await client.from("tuition_profiles").upsert(profile, { onConflict: "id" }).select("*").maybeSingle();
+      if (!inserted.error) data = inserted.data;
+      else console.warn("Tuition profile setup:", inserted.error.message);
+      if (!data) data = { ...profile, role: "learner" };
+    }
+    currentProfile = data;
+    return data;
+  }
+
+  function setRoleNavigation(role) {
+    const teacherButton = document.querySelector('[data-page="teacher"]');
+    const adminButton = document.querySelector('[data-page="admin"]');
+    if (teacherButton) teacherButton.hidden = !["teacher","admin"].includes(role);
+    if (adminButton) adminButton.hidden = role !== "admin";
+  }
+
+  function fillProfile(user, profile) {
+    const meta = user.user_metadata || {};
+    $("profileFullName").value = profile.full_name || meta.full_name || "";
+    $("profileGrade").value = profile.grade || meta.grade || "";
+    $("profileEmail").value = user.email || "";
+    $("profilePhone").value = profile.phone || meta.phone || "";
+    $("profileGuardianName").value = profile.guardian_name || meta.guardian_name || "";
+    $("profileGuardianPhone").value = profile.guardian_phone || meta.guardian_phone || "";
+    $("portalUserLabel").textContent = profile.full_name || user.email || "Learner";
+    $("portalRoleLabel").textContent = (profile.role || "learner").replace(/^./, c => c.toUpperCase());
+    $("portalAvatar").textContent = (profile.full_name || user.email || "L").trim().charAt(0).toUpperCase();
+    $("portalSignOut").hidden = false;
+    setRoleNavigation(profile.role || "learner");
+  }
+
+  async function loadAssignments() {
+    const body = $("tuitionAssignmentRows");
+    if (!body) return;
+    if (!currentUser || !currentProfile?.grade) {
+      body.innerHTML = '<tr><td colspan="5">Sign in with a learner account and select a grade during registration to see your assignments.</td></tr>';
+      return;
+    }
+    body.innerHTML = '<tr><td colspan="5">Loading your assignments…</td></tr>';
+    const { data, error } = await client.from("tuition_assignments")
+      .select("id,grade,subject,title,due_at,max_score")
+      .eq("grade", currentProfile.grade).eq("published", true)
+      .order("due_at", { ascending: true });
+    if (error) {
+      body.innerHTML = '<tr><td colspan="5">Assignments are not connected yet. The administrator must apply the tuition-centre database setup in Supabase.</td></tr>';
+      return;
+    }
+    if (!data?.length) {
+      body.innerHTML = '<tr><td colspan="5">No assignments have been published for your grade yet.</td></tr>';
+      return;
+    }
+    const submissions = await client.from("tuition_submissions")
+      .select("id,assignment_id,status,score,feedback,returned_file_path")
+      .eq("learner_id", currentUser.id);
+    const byAssignment = new Map((submissions.data || []).map(s => [s.assignment_id, s]));
+    body.innerHTML = data.map(a => {
+      const sub = byAssignment.get(a.id);
+      const status = sub?.status === "marked" ? `<span class="tag green">Marked · ${sub.score}/${a.max_score}</span>` :
+        sub ? '<span class="tag amber">Submitted</span>' : '<span class="tag amber">Pending</span>';
+      const action = sub?.status === "marked"
+        ? `<button class="btn secondary small" onclick="viewTuitionFeedback('${sub.id}')">View feedback</button>`
+        : sub
+          ? '<span class="tag amber">Submitted · awaiting marking</span>'
+          : `<button class="btn small" onclick="openTuitionSubmission('${a.id}','${escapeHtml(a.title)}')">Submit work</button>`;
+      return `<tr><td>${escapeHtml(a.title)}</td><td>${escapeHtml(a.subject)}</td><td>${a.due_at ? new Date(a.due_at).toLocaleDateString() : "—"}</td><td>${status}</td><td>${action}</td></tr>`;
+    }).join("");
+  }
+  function escapeHtml(value) {
+    return String(value ?? "").replace(/[&<>"']/g, c => ({ "&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;" }[c]));
+  }
+  window.openTuitionSubmission = (id, title) => {
+    $("submitTitle").textContent = title;
+    $("submitModal").dataset.assignmentId = id;
+    $("submitModal").classList.add("show");
+  };
+  window.viewTuitionFeedback = async id => {
+    const { data, error } = await client.from("tuition_submissions")
+      .select("score,max_score,feedback,returned_file_path")
+      .eq("id", id).single();
+    if (error || !data) { alert("Feedback could not be loaded."); return; }
+    let message = `Score: ${data.score}/${data.max_score}\n\nTeacher feedback:\n${data.feedback || "No written feedback."}`;
+    if (data.returned_file_path) {
+      const { data: file } = await client.storage.from("tuition-returned").createSignedUrl(data.returned_file_path, 300);
+      if (file?.signedUrl) message += "\n\nA returned marked document is available in the secure portal.";
+      if (file?.signedUrl) window.open(file.signedUrl, "_blank", "noopener");
+    }
+    alert(message);
+  };
+  window.demoSubmit = async () => {
+    if (!currentUser) { alert("Please sign in before submitting an assignment."); showPage("enrolment"); return; }
+    const assignmentId = $("submitModal").dataset.assignmentId;
+    const answer = $("submissionAnswer")?.value || "";
+    const file = $("submissionFile")?.files?.[0];
+    if (!assignmentId) { alert("Select an assignment first."); return; }
+    if (!answer.trim() && !file) { alert("Type an answer or attach a file before submitting."); return; }
+    let filePath = null;
+    if (file) {
+      const allowed = /\.(doc|docx|pdf|jpg|jpeg|png)$/i.test(file.name);
+      if (!allowed || file.size > 15 * 1024 * 1024) { alert("Use a Word, PDF, JPG or PNG file up to 15 MB."); return; }
+      const safeName = file.name.replace(/[^a-zA-Z0-9._-]/g, "_");
+      filePath = `${currentUser.id}/${assignmentId}/${Date.now()}-${safeName}`;
+      const uploaded = await client.storage.from("tuition-submissions").upload(filePath, file, { upsert: false });
+      if (uploaded.error) { alert("File upload failed. Apply the tuition storage setup in Supabase and try again."); return; }
+    }
+    const { error } = await client.from("tuition_submissions").insert({
+      assignment_id: assignmentId, learner_id: currentUser.id,
+      answer_text: answer, file_path: filePath, file_name: file?.name || null, status: "submitted"
+    });
+    if (error) { alert("Your file was uploaded but the submission record could not be saved: " + error.message); return; }
+    alert("Assignment submitted successfully.");
+    closeModal("submitModal");
+    if ($("submissionAnswer")) $("submissionAnswer").value = "";
+    if ($("submissionFile")) $("submissionFile").value = "";
+    await loadAssignments();
+  };
+
+  $("tuitionSignupButton").addEventListener("click", async function () {
+    const fullName = $("tuitionFullName").value.trim();
+    const grade = $("tuitionGrade").value;
+    const email = $("tuitionEmail").value.trim();
+    const phone = $("tuitionPhone").value.trim();
+    const guardianName = $("tuitionGuardianName").value.trim();
+    const guardianPhone = $("tuitionGuardianPhone").value.trim();
+    const password = $("tuitionPassword").value;
+    const confirm = $("tuitionPasswordConfirm").value;
+    if (!fullName || !grade || !email || !phone || !password) return say("Complete all required fields.", true);
+    if (password.length < 8) return say("Use a password with at least 8 characters.", true);
+    if (password !== confirm) return say("The passwords do not match.", true);
+    if (!$("tuitionConsent").checked) return say("Please confirm the parent/guardian consent statement.", true);
+    this.disabled = true; say("Creating your free learner account…");
+    const { data, error } = await client.auth.signUp({
+      email, password,
+      options: { emailRedirectTo: window.location.origin, data: {
+        full_name: fullName, grade, phone, guardian_name: guardianName, guardian_phone: guardianPhone,
+        registration_source: "online_tuition_centre"
+      }}
+    });
+    this.disabled = false;
+    if (error) return say(error.message, true);
+    if (data.session && data.user) {
+      await handleSession(data.session);
+      say("Your free learner account has been created. Welcome to the Tuition Centre!");
+      showPage("dashboard");
+    } else {
+      say("Registration received. Please check your email for the verification link, then return here to sign in.");
+      setAuthTab("login");
+    }
+  });
+
+  $("tuitionLoginButton").addEventListener("click", async function () {
+    const email = $("tuitionLoginEmail").value.trim();
+    const password = $("tuitionLoginPassword").value;
+    if (!email || !password) return say("Enter your email address and password.", true);
+    this.disabled = true; say("Signing in…");
+    const { data, error } = await client.auth.signInWithPassword({ email, password });
+    this.disabled = false;
+    if (error) return say(error.message, true);
+    await handleSession(data.session);
+    say("Welcome back. You are signed in.");
+    showPage("dashboard");
+  });
+
+  $("portalSignOut").addEventListener("click", async () => {
+    const { error } = await client.auth.signOut();
+    if (error) { say(error.message, true); return; }
+    currentUser = null; currentProfile = null;
+    $("portalUserLabel").textContent = "Guest preview";
+    $("portalRoleLabel").textContent = "Not signed in";
+    $("portalAvatar").textContent = "J";
+    $("portalSignOut").hidden = true;
+    setRoleNavigation("learner");
+    showPage("enrolment"); setAuthTab("login");
+    say("You have signed out.");
+  });
+
+  async function handleSession(session) {
+    currentUser = session?.user || null;
+    if (!currentUser) {
+      currentProfile = null;
+      $("portalUserLabel").textContent = "Guest preview";
+      $("portalRoleLabel").textContent = "Not signed in";
+      $("portalAvatar").textContent = "J";
+      $("portalSignOut").hidden = true;
+      setRoleNavigation("learner");
+      return;
+    }
+    const profile = await loadProfile(currentUser);
+    fillProfile(currentUser, profile);
+    await loadAssignments();
+    const role = profile.role || "learner";
+    if (role === "teacher" || role === "admin") {
+      // Teacher/admin workspaces are exposed only when the role is assigned in the database.
+      setRoleNavigation(role);
+    }
+  }
+  client.auth.onAuthStateChange((_event, session) => {
+    // Defer DB calls out of the auth callback to avoid locking the auth client.
+    setTimeout(() => handleSession(session), 0);
+  });
+  client.auth.getSession().then(({ data }) => handleSession(data.session));
+
+  // Role-based page guard: changing the URL or clicking a hidden menu does not grant access.
+  const originalShowPage = window.showPage;
+  window.showPage = function (id) {
+    if (id === "teacher" && !["teacher","admin"].includes(currentProfile?.role)) {
+      alert("Teacher workspace access is restricted to authorised teacher accounts.");
+      id = currentUser ? "dashboard" : "enrolment";
+    }
+    if (id === "admin" && currentProfile?.role !== "admin") {
+      alert("Administrator access is restricted.");
+      id = currentUser ? "dashboard" : "enrolment";
+    }
+    return originalShowPage(id);
+  };
+})();
+</script>
+
+</body></html>
