@@ -24,7 +24,7 @@ with check (exists(select 1 from public.tuition_profiles p where p.id=auth.uid()
 drop policy if exists "learners read published assessments for own grade" on public.tuition_assessments;
 create policy "learners read published assessments for own grade" on public.tuition_assessments
 for select to authenticated
-using (published=true and exists(select 1 from public.tuition_profiles p where p.id=auth.uid() and p.role='learner' and p.grade=tuition_assessments.grade));
+using (published=true and exists(select 1 from public.tuition_profiles p where p.id=auth.uid() and p.role='learner' and nullif(regexp_replace(p.grade::text, '[^0-9]', '', 'g'), '')::integer=tuition_assessments.grade));
 
 grant select,insert,update,delete on public.tuition_assessments to authenticated;
 
@@ -44,7 +44,7 @@ alter table public.tuition_assessment_attempts enable row level security;
 drop policy if exists "learners create own assessment attempts" on public.tuition_assessment_attempts;
 create policy "learners create own assessment attempts" on public.tuition_assessment_attempts
 for insert to authenticated with check (learner_id=auth.uid() and exists (
- select 1 from public.tuition_profiles p join public.tuition_assessments a on a.grade=p.grade
+ select 1 from public.tuition_profiles p join public.tuition_assessments a on a.grade=nullif(regexp_replace(p.grade::text, '[^0-9]', '', 'g'), '')::integer
  where p.id=auth.uid() and p.role='learner' and a.id=assessment_id and a.published=true
 ));
 drop policy if exists "learners read own assessment attempts" on public.tuition_assessment_attempts;
