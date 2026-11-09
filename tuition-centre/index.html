@@ -279,8 +279,87 @@ const bank={
 ['Warming up before exercise helps to:',['Increase injury risk','Prepare the body for activity','Stop breathing','Replace hydration'],1,'Warm-ups prepare muscles and the cardiovascular system for exercise.']]
 };
 let currentQuiz=[];
-function loadQuiz(){let s=document.getElementById('aSubject').value;currentQuiz=bank[s]||bank['Mathematics'];let area=document.getElementById('quizArea');area.innerHTML=`<div class="panelhead"><h3>${s} · Sample practice quiz</h3><span class="tag">${currentQuiz.length} demo questions</span></div>`+currentQuiz.map((q,i)=>`<div class="question" id="q${i}"><h4>${i+1}. ${q[0]}</h4>${q[1].map((o,j)=>`<label class="option"><input type="radio" name="q${i}" value="${j}"><span>${String.fromCharCode(65+j)}. ${o}</span></label>`).join('')}<div class="feedback" id="f${i}"></div></div>`).join('')+`<button class="btn" onclick="markQuiz()">Submit answers</button><div id="quizScore" style="margin-top:13px"></div>`}
-function markQuiz(){let score=0;currentQuiz.forEach((q,i)=>{let selected=document.querySelector(`input[name=q${i}]:checked`);let fb=document.getElementById('f'+i);let correct=selected&&Number(selected.value)===q[2];if(correct)score++;fb.className='feedback '+(correct?'good':'bad');fb.textContent=(correct?'Correct. ':'Not quite. ')+q[3]});document.getElementById('quizScore').innerHTML=`<div class="notice"><b>Your score: ${score}/${currentQuiz.length} (${Math.round(score/currentQuiz.length*100)}%)</b><br>Instant feedback is shown below each question. Sample results are not saved in this preview.</div>`}
+function loadQuiz(){
+  const subject = document.getElementById('aSubject').value;
+  currentQuiz = bank[subject] || bank['Mathematics'];
+  const area = document.getElementById('quizArea');
+  area.replaceChildren();
+
+  const heading = document.createElement('div');
+  heading.className = 'panelhead';
+  const title = document.createElement('h3');
+  title.textContent = `${subject} · Sample practice quiz`;
+  const count = document.createElement('span');
+  count.className = 'tag';
+  count.textContent = `${currentQuiz.length} demo questions`;
+  heading.append(title, count);
+  area.appendChild(heading);
+
+  currentQuiz.forEach((question, index) => {
+    const card = document.createElement('div');
+    card.className = 'question';
+    card.id = `q${index}`;
+
+    const questionTitle = document.createElement('h4');
+    questionTitle.textContent = `${index + 1}. ${question[0]}`;
+    card.appendChild(questionTitle);
+
+    question[1].forEach((optionText, optionIndex) => {
+      const label = document.createElement('label');
+      label.className = 'option';
+      const radio = document.createElement('input');
+      radio.type = 'radio';
+      radio.name = `q${index}`;
+      radio.value = String(optionIndex);
+      const text = document.createElement('span');
+      text.textContent = `${String.fromCharCode(65 + optionIndex)}. ${optionText}`;
+      label.append(radio, text);
+      card.appendChild(label);
+    });
+
+    const feedback = document.createElement('div');
+    feedback.className = 'feedback';
+    feedback.id = `f${index}`;
+    card.appendChild(feedback);
+    area.appendChild(card);
+  });
+
+  const submitButton = document.createElement('button');
+  submitButton.className = 'btn';
+  submitButton.type = 'button';
+  submitButton.textContent = 'Submit answers';
+  submitButton.addEventListener('click', markQuiz);
+  area.appendChild(submitButton);
+
+  const scoreArea = document.createElement('div');
+  scoreArea.id = 'quizScore';
+  scoreArea.style.marginTop = '13px';
+  area.appendChild(scoreArea);
+}
+
+function markQuiz(){
+  let score = 0;
+  currentQuiz.forEach((question, index) => {
+    const selected = document.querySelector(`input[name="q${index}"]:checked`);
+    const feedback = document.getElementById(`f${index}`);
+    const correct = Boolean(selected && Number(selected.value) === question[2]);
+    if (correct) score += 1;
+    feedback.className = `feedback ${correct ? 'good' : 'bad'}`;
+    feedback.textContent = `${correct ? 'Correct. ' : 'Not quite. '}${question[3]}`;
+  });
+
+  const scoreArea = document.getElementById('quizScore');
+  const notice = document.createElement('div');
+  notice.className = 'notice';
+  const result = document.createElement('b');
+  const percentage = currentQuiz.length ? Math.round(score / currentQuiz.length * 100) : 0;
+  result.textContent = `Your score: ${score}/${currentQuiz.length} (${percentage}%)`;
+  notice.appendChild(result);
+  const explanation = document.createElement('p');
+  explanation.textContent = 'Instant feedback is shown below each question. Sample results are not saved in this preview.';
+  notice.appendChild(explanation);
+  scoreArea.replaceChildren(notice);
+}
 function openSubmit(title){document.getElementById('submitTitle').textContent=title;document.getElementById('submitModal').classList.add('show')}
 function openMark(){document.getElementById('markModal').classList.add('show')}
 function closeModal(id){document.getElementById(id).classList.remove('show')}
