@@ -480,6 +480,48 @@ section{padding-top:50px;padding-bottom:50px}
  </div>
 </section>
 
+<section class="alt" id="quiz">
+ <div class="heading"><h2>🏆 Quiz League Arena</h2><p>Think Fast. Play Smart. Rise to the Top. Host live competitions, challenge classmates and climb the leaderboard.</p></div>
+ <div class="qla-shell">
+  <div class="qla-hero"><div><span class="qla-kicker">LIVE LEARNING COMPETITION</span><h3>🏆 QUIZ LEAGUE ARENA</h3><p>Grades 7–9 · All nine learning areas · Real-time multiplayer</p></div><div class="qla-hero-actions"><button class="qla-btn qla-btn-light" id="qla-open-host" hidden>🎤 Host a game</button><button class="qla-btn qla-btn-gold" id="qla-open-join">🎮 Join a game</button></div></div>
+  <div class="qla-grid">
+   <article class="qla-card" id="qla-host-panel" hidden><h3>🎤 Host a live game</h3><p>Create a competition from a published teacher quiz.</p>
+    <label for="qla-host-grade">Grade</label><select id="qla-host-grade"><option>Grade 7</option><option>Grade 8</option><option>Grade 9</option></select>
+    <label for="qla-host-subject">Learning area</label><select id="qla-host-subject"><option>Mathematics</option><option>English</option><option>Kiswahili</option><option>Integrated Science</option><option>Social Studies</option><option>CRE</option><option>Agriculture</option><option>Pre-Technical Studies</option><option>Creative Arts and Sports</option></select>
+    <label for="qla-host-quiz">Published quiz</label><select id="qla-host-quiz"><option value="">Select a quiz</option></select>
+    <label for="qla-host-timer">Seconds per question</label><select id="qla-host-timer"><option>10</option><option selected>20</option><option>30</option><option>60</option></select>
+    <button class="qla-btn qla-btn-blue" id="qla-create-game">Create game PIN</button><p class="qla-message" id="qla-host-message" aria-live="polite"></p>
+   </article>
+   <article class="qla-card"><h3>🎮 Join a game</h3><p>Enter the PIN shared by your teacher.</p>
+    <label for="qla-game-pin">Six-digit game PIN</label><input id="qla-game-pin" inputmode="numeric" maxlength="6" placeholder="e.g. 482193">
+    <label for="qla-nickname">Display name</label><input id="qla-nickname" maxlength="24" placeholder="Your game name">
+    <button class="qla-btn qla-btn-gold" id="qla-join-game">Join competition</button><p class="qla-message" id="qla-join-message" aria-live="polite"></p>
+   </article>
+  </div>
+  <article class="qla-card qla-studio" id="qla-teacher-studio" hidden><div class="qla-studio-head"><div><span class="qla-kicker">AUTHORISED TEACHERS</span><h3>📝 Teacher Quiz Studio</h3><p>Create, edit, organise and publish your own quizzes for live competitions.</p></div><span class="qla-lock">🔒 Teacher access</span></div>
+   <div class="qla-grid qla-grid-studio">
+    <div><label for="qla-editor-grade">Grade</label><select id="qla-editor-grade"><option>Grade 7</option><option>Grade 8</option><option>Grade 9</option></select></div>
+    <div><label for="qla-editor-subject">Learning area</label><select id="qla-editor-subject"><option>Mathematics</option><option>English</option><option>Kiswahili</option><option>Integrated Science</option><option>Social Studies</option><option>CRE</option><option>Agriculture</option><option>Pre-Technical Studies</option><option>Creative Arts and Sports</option></select></div>
+   </div>
+   <label for="qla-quiz-title">Quiz title</label><input id="qla-quiz-title" maxlength="100" placeholder="e.g. Algebra Challenge – Round 1">
+   <div class="qla-grid qla-grid-studio"><div><label for="qla-difficulty">Difficulty</label><select id="qla-difficulty"><option>Easy</option><option selected>Medium</option><option>Hard</option></select></div><div><label for="qla-default-time">Default time per question</label><select id="qla-default-time"><option>10</option><option selected>20</option><option>30</option><option>60</option></select></div></div>
+   <div class="qla-question-editor"><h4 id="qla-question-heading">Add question 1</h4><label for="qla-question-type">Question format</label><select id="qla-question-type"><option value="mcq">Four options (A–D)</option><option value="tf">True or False</option><option value="typed">Type answer</option></select>
+    <label for="qla-question-text">Question</label><textarea id="qla-question-text" rows="3" placeholder="Type your question"></textarea>
+    <div id="qla-options-wrap"><div class="qla-grid qla-grid-studio"><div><label>Option A<input id="qla-opt-a"></label></div><div><label>Option B<input id="qla-opt-b"></label></div><div><label>Option C<input id="qla-opt-c"></label></div><div><label>Option D<input id="qla-opt-d"></label></div></div><label for="qla-correct">Correct option</label><select id="qla-correct"><option value="0">A</option><option value="1">B</option><option value="2">C</option><option value="3">D</option></select></div>
+    <div id="qla-tf-wrap" hidden><label for="qla-tf-correct">Correct answer</label><select id="qla-tf-correct"><option value="true">True</option><option value="false">False</option></select></div>
+    <div id="qla-typed-wrap" hidden><label for="qla-accepted">Accepted answers (separate alternatives with | )</label><input id="qla-accepted" placeholder="e.g. photosynthesis | process of photosynthesis"></div>
+    <label for="qla-explanation">Explanation / feedback</label><textarea id="qla-explanation" rows="2" placeholder="Explain the correct answer"></textarea>
+    <div class="qla-editor-actions"><button type="button" class="qla-btn qla-btn-blue" id="qla-add-question">Add question to quiz</button><button type="button" class="qla-btn qla-btn-outline" id="qla-clear-question">Clear question</button></div>
+   </div>
+   <div id="qla-question-list" class="qla-question-list"><p>No questions added yet.</p></div>
+   <div class="qla-editor-actions"><button type="button" class="qla-btn qla-btn-blue" id="qla-save-draft">Save quiz draft</button><button type="button" class="qla-btn qla-btn-gold" id="qla-publish-quiz">Publish quiz</button></div>
+   <p id="qla-studio-message" class="qla-message" aria-live="polite">Sign in with an authorised teacher account to manage quizzes.</p>
+  </article>
+  <article class="qla-card" id="qla-live-panel" hidden><div class="qla-live-head"><div><span class="qla-kicker">LIVE GAME</span><h3 id="qla-live-title">Quiz League Arena</h3><p>Game PIN: <strong id="qla-live-pin"></strong></p></div><button class="qla-btn qla-btn-outline" id="qla-refresh-game">Refresh lobby</button></div><div id="qla-live-content"></div></article>
+  <details class="qla-practice"><summary>Open independent practice quizzes</summary><p>Use the existing self-paced quiz practice below. Scores continue to use the current learner dashboard saving mechanism.</p><div class="controls"><div><label for="quizGrade">Grade</label><select id="quizGrade"><option>Grade 7</option><option>Grade 8</option><option>Grade 9</option></select></div><div><label for="quizSubject">Learning area</label><select id="quizSubject"><option>Mathematics</option><option>English</option><option>Kiswahili</option><option>Integrated Science</option><option>Social Studies</option><option>CRE</option><option>Agriculture</option><option>Pre-Technical Studies</option><option>Creative Arts and Sports</option></select></div></div><div id="quizContent"></div><button class="btn" id="markQuiz" type="button">Submit answers and mark quiz</button><button class="btn outline" id="resetQuiz" type="button">Try again</button><div id="quizResult" aria-live="polite"></div><p class="small" id="quizSaveNote">Your practice scores can be saved to your learner dashboard when signed in.</p></details>
+ </div>
+</section>
+
 <!-- Audience access centres: navigation only; existing learning and account features remain unchanged. -->
 <section id="centres" class="access-centres-section">
  <div class="heading reveal">
@@ -662,47 +704,6 @@ section{padding-top:50px;padding-bottom:50px}
   </details>
  </section>
 
-<section class="alt" id="quiz">
- <div class="heading"><h2>🏆 Quiz League Arena</h2><p>Think Fast. Play Smart. Rise to the Top. Host live competitions, challenge classmates and climb the leaderboard.</p></div>
- <div class="qla-shell">
-  <div class="qla-hero"><div><span class="qla-kicker">LIVE LEARNING COMPETITION</span><h3>🏆 QUIZ LEAGUE ARENA</h3><p>Grades 7–9 · All nine learning areas · Real-time multiplayer</p></div><div class="qla-hero-actions"><button class="qla-btn qla-btn-light" id="qla-open-host">🎤 Host a game</button><button class="qla-btn qla-btn-gold" id="qla-open-join">🎮 Join a game</button></div></div>
-  <div class="qla-grid">
-   <article class="qla-card" id="qla-host-panel"><h3>🎤 Host a live game</h3><p>Create a competition from a published teacher quiz.</p>
-    <label for="qla-host-grade">Grade</label><select id="qla-host-grade"><option>Grade 7</option><option>Grade 8</option><option>Grade 9</option></select>
-    <label for="qla-host-subject">Learning area</label><select id="qla-host-subject"><option>Mathematics</option><option>English</option><option>Kiswahili</option><option>Integrated Science</option><option>Social Studies</option><option>CRE</option><option>Agriculture</option><option>Pre-Technical Studies</option><option>Creative Arts and Sports</option></select>
-    <label for="qla-host-quiz">Published quiz</label><select id="qla-host-quiz"><option value="">Select a quiz</option></select>
-    <label for="qla-host-timer">Seconds per question</label><select id="qla-host-timer"><option>10</option><option selected>20</option><option>30</option><option>60</option></select>
-    <button class="qla-btn qla-btn-blue" id="qla-create-game">Create game PIN</button><p class="qla-message" id="qla-host-message" aria-live="polite"></p>
-   </article>
-   <article class="qla-card"><h3>🎮 Join a game</h3><p>Enter the PIN shared by your teacher.</p>
-    <label for="qla-game-pin">Six-digit game PIN</label><input id="qla-game-pin" inputmode="numeric" maxlength="6" placeholder="e.g. 482193">
-    <label for="qla-nickname">Display name</label><input id="qla-nickname" maxlength="24" placeholder="Your game name">
-    <button class="qla-btn qla-btn-gold" id="qla-join-game">Join competition</button><p class="qla-message" id="qla-join-message" aria-live="polite"></p>
-   </article>
-  </div>
-  <article class="qla-card qla-studio"><div class="qla-studio-head"><div><span class="qla-kicker">AUTHORISED TEACHERS</span><h3>📝 Teacher Quiz Studio</h3><p>Create, edit, organise and publish your own quizzes for live competitions.</p></div><span class="qla-lock">🔒 Teacher access</span></div>
-   <div class="qla-grid qla-grid-studio">
-    <div><label for="qla-editor-grade">Grade</label><select id="qla-editor-grade"><option>Grade 7</option><option>Grade 8</option><option>Grade 9</option></select></div>
-    <div><label for="qla-editor-subject">Learning area</label><select id="qla-editor-subject"><option>Mathematics</option><option>English</option><option>Kiswahili</option><option>Integrated Science</option><option>Social Studies</option><option>CRE</option><option>Agriculture</option><option>Pre-Technical Studies</option><option>Creative Arts and Sports</option></select></div>
-   </div>
-   <label for="qla-quiz-title">Quiz title</label><input id="qla-quiz-title" maxlength="100" placeholder="e.g. Algebra Challenge – Round 1">
-   <div class="qla-grid qla-grid-studio"><div><label for="qla-difficulty">Difficulty</label><select id="qla-difficulty"><option>Easy</option><option selected>Medium</option><option>Hard</option></select></div><div><label for="qla-default-time">Default time per question</label><select id="qla-default-time"><option>10</option><option selected>20</option><option>30</option><option>60</option></select></div></div>
-   <div class="qla-question-editor"><h4 id="qla-question-heading">Add question 1</h4><label for="qla-question-type">Question format</label><select id="qla-question-type"><option value="mcq">Four options (A–D)</option><option value="tf">True or False</option><option value="typed">Type answer</option></select>
-    <label for="qla-question-text">Question</label><textarea id="qla-question-text" rows="3" placeholder="Type your question"></textarea>
-    <div id="qla-options-wrap"><div class="qla-grid qla-grid-studio"><div><label>Option A<input id="qla-opt-a"></label></div><div><label>Option B<input id="qla-opt-b"></label></div><div><label>Option C<input id="qla-opt-c"></label></div><div><label>Option D<input id="qla-opt-d"></label></div></div><label for="qla-correct">Correct option</label><select id="qla-correct"><option value="0">A</option><option value="1">B</option><option value="2">C</option><option value="3">D</option></select></div>
-    <div id="qla-tf-wrap" hidden><label for="qla-tf-correct">Correct answer</label><select id="qla-tf-correct"><option value="true">True</option><option value="false">False</option></select></div>
-    <div id="qla-typed-wrap" hidden><label for="qla-accepted">Accepted answers (separate alternatives with | )</label><input id="qla-accepted" placeholder="e.g. photosynthesis | process of photosynthesis"></div>
-    <label for="qla-explanation">Explanation / feedback</label><textarea id="qla-explanation" rows="2" placeholder="Explain the correct answer"></textarea>
-    <div class="qla-editor-actions"><button type="button" class="qla-btn qla-btn-blue" id="qla-add-question">Add question to quiz</button><button type="button" class="qla-btn qla-btn-outline" id="qla-clear-question">Clear question</button></div>
-   </div>
-   <div id="qla-question-list" class="qla-question-list"><p>No questions added yet.</p></div>
-   <div class="qla-editor-actions"><button type="button" class="qla-btn qla-btn-blue" id="qla-save-draft">Save quiz draft</button><button type="button" class="qla-btn qla-btn-gold" id="qla-publish-quiz">Publish quiz</button></div>
-   <p id="qla-studio-message" class="qla-message" aria-live="polite">Sign in with an authorised teacher account to manage quizzes.</p>
-  </article>
-  <article class="qla-card" id="qla-live-panel" hidden><div class="qla-live-head"><div><span class="qla-kicker">LIVE GAME</span><h3 id="qla-live-title">Quiz League Arena</h3><p>Game PIN: <strong id="qla-live-pin"></strong></p></div><button class="qla-btn qla-btn-outline" id="qla-refresh-game">Refresh lobby</button></div><div id="qla-live-content"></div></article>
-  <details class="qla-practice"><summary>Open independent practice quizzes</summary><p>Use the existing self-paced quiz practice below. Scores continue to use the current learner dashboard saving mechanism.</p><div class="controls"><div><label for="quizGrade">Grade</label><select id="quizGrade"><option>Grade 7</option><option>Grade 8</option><option>Grade 9</option></select></div><div><label for="quizSubject">Learning area</label><select id="quizSubject"><option>Mathematics</option><option>English</option><option>Kiswahili</option><option>Integrated Science</option><option>Social Studies</option><option>CRE</option><option>Agriculture</option><option>Pre-Technical Studies</option><option>Creative Arts and Sports</option></select></div></div><div id="quizContent"></div><button class="btn" id="markQuiz" type="button">Submit answers and mark quiz</button><button class="btn outline" id="resetQuiz" type="button">Try again</button><div id="quizResult" aria-live="polite"></div><p class="small" id="quizSaveNote">Your practice scores can be saved to your learner dashboard when signed in.</p></details>
- </div>
-</section>
 <section id="revision">
  <div class="heading"><h2>📝 Premium Revision Papers & Assessment Centre</h2><p>Structured practice for school-based assessments, end-of-topic revision and examination preparation.</p></div>
  <div class="panel">
@@ -1948,6 +1949,7 @@ buildQuiz();
  const say=(id,msg)=>{if($(id))$(id).textContent=msg;};
  const currentUser=async()=>{const {data,error}=await supabaseClient.auth.getUser();if(error)throw error;return data.user;};
  const isTeacher=async()=>{const u=await currentUser();if(!u)return false;const {data,error}=await supabaseClient.rpc('is_tuition_teacher');if(error)throw error;return data===true;};
+ async function refreshTeacherArenaAccess(){const host=$('qla-host-panel'),studio=$('qla-teacher-studio'),hostButton=$('qla-open-host');try{const allowed=await isTeacher();if(host)host.hidden=!allowed;if(studio)studio.hidden=!allowed;if(hostButton)hostButton.hidden=!allowed;if(allowed)await loadHostQuizzes();}catch(e){if(host)host.hidden=true;if(studio)studio.hidden=true;if(hostButton)hostButton.hidden=true;console.warn('Teacher Arena access check failed:',e.message);}}
  const safe=(s)=>String(s||'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
  function typeChanged(){const t=$('qla-question-type').value;$('qla-options-wrap').hidden=t!=='mcq';$('qla-tf-wrap').hidden=t!=='tf';$('qla-typed-wrap').hidden=t!=='typed';}
  function readQuestion(){const type=$('qla-question-type').value,q=$('qla-question-text').value.trim(),ex=$('qla-explanation').value.trim();if(!q)throw Error('Enter the question first.');if(type==='mcq'){const options=['a','b','c','d'].map(x=>$('qla-opt-'+x).value.trim());if(options.some(x=>!x))throw Error('Fill all four options.');return {type,question:q,options,correct_index:Number($('qla-correct').value),accepted_answers:[],explanation:ex};}if(type==='tf')return {type,question:q,options:['True','False'],correct_index:$('qla-tf-correct').value==='true'?0:1,accepted_answers:[],explanation:ex};const accepted=$('qla-accepted').value.split('|').map(x=>x.trim()).filter(Boolean);if(!accepted.length)throw Error('Enter at least one accepted answer.');return {type,question:q,options:[],correct_index:null,accepted_answers:accepted,explanation:ex};}
@@ -1998,7 +2000,7 @@ buildQuiz();
  $('qla-open-host').addEventListener('click',()=>$('qla-host-panel').scrollIntoView({behavior:'smooth'}));$('qla-open-join').addEventListener('click',()=>$('qla-game-pin').focus());$('qla-refresh-game').addEventListener('click',()=>refreshGame().catch(e=>say('qla-join-message',e.message)));
  const requestedPin=new URLSearchParams(location.search).get('qla');if(requestedPin&&/^\d{6}$/.test(requestedPin)){$('qla-game-pin').value=requestedPin;$('qla-game-pin').scrollIntoView({behavior:'smooth',block:'center'});}
  // Teacher authorization and all answer validation/scoring are enforced by database functions.
- loadHostQuizzes();typeChanged();renderDraft();
+ refreshTeacherArenaAccess();supabaseClient.auth.onAuthStateChange(()=>{setTimeout(refreshTeacherArenaAccess,0);});typeChanged();renderDraft();
 })();
 </script>
 
