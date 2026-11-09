@@ -170,14 +170,13 @@ table{width:100%;border-collapse:collapse;font-size:11px}th{text-align:left;colo
 <label><input type="checkbox" id="taPublish"> Publish immediately</label>
 <button class="btn" type="submit">Save assessment</button><p id="taMessage" role="status"></p>
 </form></div>
-<div class="panel"><div class="panelhead"><h3>Your published assessments</h3></div><table><thead><tr><th>Title</th><th>Grade</th><th>Learning area</th><th>Questions</th><th>Status</th></tr></thead><tbody id="taRows"><tr><td colspan="5">Loading…</td></tr></tbody></table></div>
+<div class="panel"><div class="panelhead"><h3>Question bank</h3></div><p>Import the prepared 540-question bank as unpublished drafts. Review each grade and learning area before publishing it to learners.</p><button class="btn secondary" type="button" id="importQuestionBankBtn">Import 27 grade/learning-area banks</button><p id="bankImportMessage" role="status"></p></div>
+<div class="panel"><div class="panelhead"><h3>Your assessments and drafts</h3></div><table><thead><tr><th>Title</th><th>Grade</th><th>Learning area</th><th>Questions</th><th>Status</th><th>Action</th></tr></thead><tbody id="taRows"><tr><td colspan="6">Loading…</td></tr></tbody></table></div>
 <div class="panel"><div class="panelhead"><h3>Learner assessment results</h3></div><table><thead><tr><th>Learner</th><th>Assessment</th><th>Score</th><th>Submitted</th></tr></thead><tbody id="taResults"><tr><td colspan="4">Results appear here when learners submit assessments.</td></tr></tbody></table></div>
 </section>
 <section class="page" id="admin">
-   <div class="welcome"><div><div class="eyebrow">PORTAL MANAGEMENT</div><h1>Administration</h1><p>Oversee registrations, learning groups, staff access and academic activity.</p></div><span class="pill">Administrator preview</span></div>
-   <div class="grid stats"><div class="stat"><div class="topline">Registered learners</div><strong>326</strong><small>Sample total</small></div><div class="stat"><div class="topline">Grade 7</div><strong>108</strong><small>Sample learners</small></div><div class="stat"><div class="topline">Grade 8</div><strong>114</strong><small>Sample learners</small></div><div class="stat"><div class="topline">Grade 9</div><strong>104</strong><small>Sample learners</small></div></div>
-   <div class="panel"><div class="panelhead"><h3>Recent registrations</h3><span class="muted">Contact details restricted to authorised staff</span></div><table><thead><tr><th>Learner</th><th>Grade</th><th>Email</th><th>Phone</th><th>Status</th></tr></thead><tbody><tr><td>Amina Mwangi</td><td>8</td><td>amina@example.com</td><td>07XX XXX XXX</td><td><span class="tag green">Active</span></td></tr><tr><td>Brian Otieno</td><td>7</td><td>brian@example.com</td><td>07XX XXX XXX</td><td><span class="tag green">Active</span></td></tr><tr><td>Faith Wanjiku</td><td>9</td><td>faith@example.com</td><td>07XX XXX XXX</td><td><span class="tag amber">Pending</span></td></tr></tbody></table></div>
-   <div class="notice">The administrator view demonstrates the proposed learner directory. The production version will enforce role-based access, audit logs and privacy controls. These sample records are not real registrations.</div>
+   <div class="welcome"><div><div class="eyebrow">PORTAL MANAGEMENT</div><h1>Administration</h1><p>Administrative tools will display verified records from the school database.</p></div><span class="pill">Administrator access</span></div>
+   <div class="panel"><h3>Live administration data</h3><p class="muted">No learner totals or registration records are displayed here until they are connected to verified database queries. This avoids showing invented sample figures.</p></div>
   </section>
 
   <section class="page" id="enrolment">
@@ -652,10 +651,41 @@ function demoSubmit(){alert('Please sign in and select an assignment before subm
     if(!currentUser||!["teacher","admin"].includes(currentProfile?.role))return;
     const rows=$("taRows"),results=$("taResults");
     const a=await client.from("tuition_assessments").select("id,title,grade,subject,questions,published").order("created_at",{ascending:false});
-    rows.innerHTML=a.error?`<tr><td colspan="5">${escapeHtml(a.error.message)}</td></tr>`:(a.data||[]).map(x=>`<tr><td>${escapeHtml(x.title)}</td><td>${x.grade}</td><td>${escapeHtml(x.subject)}</td><td>${(x.questions||[]).length}</td><td>${x.published?"Published":"Draft"}</td></tr>`).join("")||'<tr><td colspan="5">No assessments created yet.</td></tr>';
+    rows.innerHTML=a.error?`<tr><td colspan="6">${escapeHtml(a.error.message)}</td></tr>`:(a.data||[]).map(x=>`<tr><td>${escapeHtml(x.title)}</td><td>${x.grade}</td><td>${escapeHtml(x.subject)}</td><td>${(x.questions||[]).length}</td><td>${x.published?"Published":"Draft"}</td><td>${x.published?"—":`<button class="btn small" type="button" onclick="publishTuitionAssessment('${x.id}')">Publish</button>`}</td></tr>`).join("")||'<tr><td colspan="6">No assessments created yet.</td></tr>';
     const r=await client.from("tuition_assessment_attempts").select("score,total_questions,submitted_at,assessment_id,learner_id,tuition_assessments(title),tuition_profiles(full_name)").order("submitted_at",{ascending:false}).limit(100);
     results.innerHTML=r.error?`<tr><td colspan="4">${escapeHtml(r.error.message)}</td></tr>`:(r.data||[]).map(x=>`<tr><td>${escapeHtml(x.tuition_profiles?.full_name||"Learner")}</td><td>${escapeHtml(x.tuition_assessments?.title||"Assessment")}</td><td>${x.score}/${x.total_questions}</td><td>${new Date(x.submitted_at).toLocaleString()}</td></tr>`).join("")||'<tr><td colspan="4">No learner results yet.</td></tr>';
   }
+  window.publishTuitionAssessment=async function(id){
+    if(!currentUser||!["teacher","admin"].includes(currentProfile?.role)){alert("Teacher access required.");return;}
+    const {error}=await client.from("tuition_assessments").update({published:true}).eq("id",id);
+    if(error){alert("Could not publish assessment: "+error.message);return;}
+    await loadTeacherAssessments();
+  };
+  $("importQuestionBankBtn")?.addEventListener("click",async()=>{
+    const msg=$("bankImportMessage");
+    if(!currentUser||!["teacher","admin"].includes(currentProfile?.role)){msg.textContent="Authorised teacher access is required.";return;}
+    msg.textContent="Loading question bank…";
+    try{
+      const response=await fetch("./assessment-bank.json",{cache:"no-store"});
+      if(!response.ok)throw new Error("Question bank file could not be loaded.");
+      const bank=await response.json();let added=0,skipped=0;
+      for(const gradeLabel of ["Grade 7","Grade 8","Grade 9"]){
+        const grade=Number(gradeLabel.replace(/\D/g,""));
+        for(const subject of Object.keys(bank[gradeLabel]||{})){
+          const title=`${gradeLabel} ${subject} Question Bank`;
+          const existing=await client.from("tuition_assessments").select("id").eq("grade",grade).eq("subject",subject).eq("title",title).maybeSingle();
+          if(existing.error)throw existing.error;
+          if(existing.data){skipped++;continue;}
+          const questions=bank[gradeLabel][subject];
+          if(!Array.isArray(questions)||questions.length!==20||!questions.every(q=>q&&typeof q.question==="string"&&Array.isArray(q.options)&&q.options.length===4&&Number.isInteger(q.answer)&&q.answer>=0&&q.answer<4))throw new Error(`Invalid question bank: ${gradeLabel} ${subject}`);
+          const saved=await client.from("tuition_assessments").insert({title,grade,subject,instructions:"Answer all 20 questions. Review your feedback after submission.",duration_minutes:40,questions,published:false,created_by:currentUser.id});
+          if(saved.error)throw saved.error;added++;
+        }
+      }
+      msg.textContent=`Import complete: ${added} draft banks added; ${skipped} existing banks skipped. Review and publish each bank when ready.`;
+      await loadTeacherAssessments();
+    }catch(error){msg.textContent="Import stopped: "+(error.message||String(error));}
+  });
   $("teacherAssessmentForm")?.addEventListener("submit",async e=>{
     e.preventDefault();
     if(!currentUser||!["teacher","admin"].includes(currentProfile?.role)){alert("Teacher access required.");return;}
