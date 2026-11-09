@@ -126,9 +126,8 @@ table{width:100%;border-collapse:collapse;font-size:11px}th{text-align:left;colo
 
   <section class="page" id="classroom">
    <div class="welcome"><div><div class="eyebrow">LIVE LEARNING</div><h1>Virtual Classroom</h1><p>Join a scheduled online lesson using a teacher-approved class link.</p></div><span class="pill">Live lesson access</span></div>
-   <div class="grid two"><div class="panel"><div class="panelhead"><h3>Upcoming live lessons</h3></div>
-    <div class="lesson"><div class="time">5:00 PM</div><div style="flex:1"><b>Mathematics · Algebra</b><small>Teacher: Mathematics Department</small></div><button class="btn small" onclick="alert('Demo only: a secure teacher-provided class link will appear here in the live system.')">Join class</button></div>
-    <div class="lesson"><div class="time">6:10 PM</div><div style="flex:1"><b>Integrated Science</b><small>Teacher: Science Department</small></div><button class="btn secondary small" onclick="alert('Class link will be provided by the teacher.')">Details</button></div>
+   <div class="grid two"><div class="panel"><div class="panelhead"><h3>Upcoming live lessons</h3><button class="btn secondary small" type="button" onclick="loadClassSessions()">Refresh</button></div>
+    <div id="learnerClassSessions"><div class="empty">Sign in to view live lessons scheduled for your grade.</div></div>
    </div><div class="panel"><div class="panelhead"><h3>Classroom guidelines</h3></div><p class="muted">Use your registered learner account. Join on time, keep your microphone muted unless invited, and follow your teacher's instructions. Meeting links should be private and shared only with registered learners.</p></div></div>
   </section>
 
@@ -173,6 +172,26 @@ table{width:100%;border-collapse:collapse;font-size:11px}th{text-align:left;colo
 <div class="panel"><div class="panelhead"><h3>Question bank</h3></div><p>Import the prepared 540-question bank as unpublished drafts. Review each grade and learning area before publishing it to learners.</p><button class="btn secondary" type="button" id="importQuestionBankBtn">Import 27 grade/learning-area banks</button><p id="bankImportMessage" role="status"></p></div>
 <div class="panel"><div class="panelhead"><h3>Your assessments and drafts</h3></div><table><thead><tr><th>Title</th><th>Grade</th><th>Learning area</th><th>Questions</th><th>Status</th><th>Action</th></tr></thead><tbody id="taRows"><tr><td colspan="6">Loading…</td></tr></tbody></table></div>
 <div class="panel"><div class="panelhead"><h3>Learner assessment results</h3></div><table><thead><tr><th>Learner</th><th>Assessment</th><th>Score</th><th>Submitted</th></tr></thead><tbody id="taResults"><tr><td colspan="4">Results appear here when learners submit assessments.</td></tr></tbody></table></div>
+<div class="panel" id="teacherClassManager">
+ <div class="panelhead"><h3>Manage virtual classes</h3><span class="tag green">Google Meet / Zoom</span></div>
+ <p class="muted">Create a scheduled online lesson and share its meeting link only with learners in the selected grade.</p>
+ <form id="classSessionForm">
+  <div class="grid" style="grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:10px">
+   <div class="field"><label for="csTitle">Lesson title *</label><input id="csTitle" required maxlength="140" placeholder="e.g. Algebra: Linear equations"></div>
+   <div class="field"><label for="csGrade">Grade *</label><select id="csGrade"><option>Grade 7</option><option>Grade 8</option><option>Grade 9</option></select></div>
+   <div class="field"><label for="csSubject">Learning area *</label><select id="csSubject"><option>Mathematics</option><option>English</option><option>Kiswahili</option><option>Integrated Science</option><option>Social Studies</option><option>CRE</option><option>Agriculture</option><option>Pre-Technical Studies</option><option>Creative Arts and Sports</option></select></div>
+   <div class="field"><label for="csStartsAt">Start date and time *</label><input id="csStartsAt" type="datetime-local" required></div>
+   <div class="field"><label for="csEndsAt">End date and time</label><input id="csEndsAt" type="datetime-local"></div>
+  </div>
+  <div class="field"><label for="csMeetingUrl">Google Meet / Zoom link *</label><input id="csMeetingUrl" type="url" required placeholder="https://meet.google.com/..." autocomplete="url"></div>
+  <div class="field"><label for="csDescription">Lesson instructions (optional)</label><textarea id="csDescription" rows="2" maxlength="1000" placeholder="What learners should prepare before joining"></textarea></div>
+  <label class="check"><input id="csPublish" type="checkbox" checked><span>Publish this lesson for learners in the selected grade immediately</span></label>
+  <button class="btn" type="submit">Save class session</button><p id="csMessage" class="muted" role="status" aria-live="polite"></p>
+ </form>
+</div>
+<div class="panel"><div class="panelhead"><h3>Scheduled classes</h3><button class="btn secondary small" type="button" onclick="loadTeacherClassSessions()">Refresh</button></div>
+ <div style="overflow-x:auto"><table><thead><tr><th>Lesson</th><th>Grade</th><th>Learning area</th><th>Starts</th><th>Status</th><th>Action</th></tr></thead><tbody id="teacherClassRows"><tr><td colspan="6">Loading scheduled classes…</td></tr></tbody></table></div>
+</div>
 </section>
 <section class="page" id="admin">
    <div class="welcome"><div><div class="eyebrow">PORTAL MANAGEMENT</div><h1>Administration</h1><p>Administrative tools will display verified records from the school database.</p></div><span class="pill">Administrator access</span></div>
@@ -647,6 +666,61 @@ function demoSubmit(){alert('Please sign in and select an assignment before subm
       d.textContent=`Question ${i+1}: ${answers[i]===Number(q.answer)?"Correct. ":"Incorrect. "}${q.explanation||""}`;area.append(d);
     });
   }
+  function safeMeetingUrl(value){
+    try{const u=new URL(value);return ['https:','http:'].includes(u.protocol)?u.href:null;}catch{return null;}
+  }
+  function displaySessionTime(value){const d=new Date(value);return Number.isNaN(d.getTime())?'Time to be confirmed':d.toLocaleString([], {dateStyle:'medium',timeStyle:'short'});}
+  async function loadClassSessions(){
+    const box=$("learnerClassSessions");if(!box)return;
+    if(!currentUser){box.innerHTML='<div class="empty">Please sign in to view lessons for your grade.</div>';return;}
+    const grade=currentProfile?.grade;
+    if(!grade){box.innerHTML='<div class="empty">Your learner profile has no grade assigned. Contact the tuition administrator.</div>';return;}
+    box.innerHTML='<div class="empty">Loading scheduled lessons…</div>';
+    const {data,error}=await client.from('tuition_class_sessions').select('id,title,subject,grade,starts_at,ends_at,meeting_url,description').eq('grade',grade).eq('published',true).gte('starts_at',new Date(Date.now()-2*60*60*1000).toISOString()).order('starts_at',{ascending:true});
+    if(error){box.innerHTML=`<div class="empty">Could not load lessons: ${escapeHtml(error.message)}</div>`;return;}
+    if(!data?.length){box.innerHTML='<div class="empty">There are no published live lessons scheduled for your grade yet.</div>';return;}
+    box.replaceChildren();
+    data.forEach(item=>{
+      const row=document.createElement('div');row.className='lesson';
+      const time=document.createElement('div');time.className='time';time.textContent=displaySessionTime(item.starts_at);
+      const info=document.createElement('div');info.style.flex='1';
+      const title=document.createElement('b');title.textContent=item.title;
+      const meta=document.createElement('small');meta.textContent=`${item.subject} · ${item.grade}`;
+      info.append(title,meta);
+      const link=safeMeetingUrl(item.meeting_url);const btn=document.createElement('button');btn.className='btn small';btn.textContent='Join class';btn.disabled=!link;
+      if(link)btn.addEventListener('click',()=>window.open(link,'_blank','noopener,noreferrer'));
+      row.append(time,info,btn);box.append(row);
+      if(item.description){const note=document.createElement('p');note.className='muted';note.textContent=item.description;note.style.margin='0 0 10px 95px';box.append(note);}
+    });
+  }
+  async function loadTeacherClassSessions(){
+    const rows=$("teacherClassRows");if(!rows)return;
+    if(!currentUser||!['teacher','admin'].includes(currentProfile?.role)){rows.innerHTML='<tr><td colspan="6">Authorised teacher access is required.</td></tr>';return;}
+    rows.innerHTML='<tr><td colspan="6">Loading scheduled classes…</td></tr>';
+    const {data,error}=await client.from('tuition_class_sessions').select('id,title,grade,subject,starts_at,published').order('starts_at',{ascending:false}).limit(100);
+    if(error){rows.innerHTML=`<tr><td colspan="6">${escapeHtml(error.message)}</td></tr>`;return;}
+    rows.innerHTML=(data||[]).map(x=>`<tr><td>${escapeHtml(x.title)}</td><td>${escapeHtml(x.grade)}</td><td>${escapeHtml(x.subject)}</td><td>${escapeHtml(displaySessionTime(x.starts_at))}</td><td>${x.published?'Published':'Draft'}</td><td><button class="btn secondary small" type="button" onclick="toggleClassSession('${x.id}',${!x.published})">${x.published?'Unpublish':'Publish'}</button></td></tr>`).join('')||'<tr><td colspan="6">No class sessions created yet.</td></tr>';
+  }
+  window.toggleClassSession=async function(id,published){
+    if(!currentUser||!['teacher','admin'].includes(currentProfile?.role)){alert('Teacher access required.');return;}
+    const {error}=await client.from('tuition_class_sessions').update({published}).eq('id',id);
+    if(error){alert('Could not update class session: '+error.message);return;}
+    await loadTeacherClassSessions();await loadClassSessions();
+  };
+  $('classSessionForm')?.addEventListener('submit',async e=>{
+    e.preventDefault();const msg=$('csMessage');
+    if(!currentUser||!['teacher','admin'].includes(currentProfile?.role)){msg.textContent='Authorised teacher access is required.';return;}
+    const title=$('csTitle').value.trim(),grade=$('csGrade').value,subject=$('csSubject').value;
+    const startRaw=$('csStartsAt').value,endRaw=$('csEndsAt').value,meeting=safeMeetingUrl($('csMeetingUrl').value.trim());
+    if(!title||!startRaw||!meeting){msg.textContent='Enter a title, start time and valid http(s) meeting link.';return;}
+    const starts=new Date(startRaw),ends=endRaw?new Date(endRaw):null;
+    if(Number.isNaN(starts.getTime())||(ends&& (Number.isNaN(ends.getTime())||ends<=starts))){msg.textContent='Check the lesson date and time. The end must be after the start.';return;}
+    const payload={title,grade,subject,starts_at:starts.toISOString(),ends_at:ends?ends.toISOString():null,meeting_url:meeting,description:$('csDescription').value.trim(),published:$('csPublish').checked,created_by:currentUser.id};
+    msg.textContent='Saving class session…';
+    const {error}=await client.from('tuition_class_sessions').insert(payload);
+    if(error){msg.textContent='Could not save class session: '+error.message;return;}
+    msg.textContent='Class session saved successfully.';e.target.reset();$('csPublish').checked=true;await loadTeacherClassSessions();await loadClassSessions();
+  });
   async function loadTeacherAssessments(){
     if(!currentUser||!["teacher","admin"].includes(currentProfile?.role))return;
     const rows=$("taRows"),results=$("taResults");
@@ -712,6 +786,7 @@ function demoSubmit(){alert('Please sign in and select an assignment before subm
     const profile = await loadProfile(currentUser);
     fillProfile(currentUser, profile);
     await loadAssignments();
+    if (document.getElementById("classroom")?.classList.contains("active")) await loadClassSessions();
     const role = profile.role || "learner";
     if (role === "teacher" || role === "admin") {
       // Teacher/admin workspaces are exposed only when the role is assigned in the database.
@@ -736,7 +811,8 @@ function demoSubmit(){alert('Please sign in and select an assignment before subm
       id = currentUser ? "dashboard" : "enrolment";
     }
     const shown = originalShowPage(id);
-    if (id === "teacher") loadTeacherAssessments();
+    if (id === "teacher") { loadTeacherAssessments(); loadTeacherClassSessions(); }
+    if (id === "classroom") loadClassSessions();
     return shown;
   };
 })();
