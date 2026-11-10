@@ -15,6 +15,21 @@ export default async (request) => {
     });
   }
 
+  const supabaseUrl = Netlify.env.get("SUPABASE_URL");
+
+  const publishableKey =
+    "sb_publishable_uaOcRVaIwnvRl_wZhMhJ-Q_DhrqZyS_";
+
+  const serviceKey =
+    Netlify.env.get("SUPABASE_SERVICE_ROLE_KEY");
+
+  const consumerKey = Netlify.env.get("MPESA_CONSUMER_KEY");
+  const consumerSecret = Netlify.env.get("MPESA_CONSUMER_SECRET");
+  const shortcode = Netlify.env.get("MPESA_SHORTCODE");
+  const tillNumber = Netlify.env.get("MPESA_TILL_NUMBER");
+  const passkey = Netlify.env.get("MPESA_PASSKEY");
+  const callbackURL = Netlify.env.get("MPESA_CALLBACK_URL");
+
   const catalog = {
     online_tuition: 100,
     premium_quizzes: 20,
