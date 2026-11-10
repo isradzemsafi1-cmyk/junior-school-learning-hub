@@ -5,7 +5,10 @@
     "label": "CAT 2",
     "filename": "CAT 2 and Marking Scheme.pdf",
     "path": "Mathematics/CATs/CAT 2 and Marking Scheme.pdf",
-    "bytes": 56731
+    "bytes": 56731,
+    "product_id": "teacher_g9_001",
+    "price_kes": 20,
+    "storage_path": "grade9/Mathematics/CATs/CAT 2 and Marking Scheme.pdf"
   },
   {
     "subject": "Christian Religious Education (CRE)",
@@ -13,7 +16,10 @@
     "label": "CAT 1",
     "filename": "CAT 1 and Marking Scheme.pdf",
     "path": "Christian Religious Education (CRE)/CATs/CAT 1 and Marking Scheme.pdf",
-    "bytes": 49078
+    "bytes": 49078,
+    "product_id": "teacher_g9_002",
+    "price_kes": 20,
+    "storage_path": "grade9/Christian Religious Education (CRE)/CATs/CAT 1 and Marking Scheme.pdf"
   },
   {
     "subject": "Pre-Technical Studies",
@@ -21,7 +27,10 @@
     "label": "Term 1 Examination",
     "filename": "End of Term 1 Examination and Marking Scheme.pdf",
     "path": "Pre-Technical Studies/Examinations/End of Term 1 Examination and Marking Scheme.pdf",
-    "bytes": 55894
+    "bytes": 55894,
+    "product_id": "teacher_g9_003",
+    "price_kes": 30,
+    "storage_path": "grade9/Pre-Technical Studies/Examinations/End of Term 1 Examination and Marking Scheme.pdf"
   },
   {
     "subject": "Integrated Science",
@@ -29,7 +38,10 @@
     "label": "Full-Year Learner Notes",
     "filename": "Detailed Full Year Learner Notes.pdf",
     "path": "Integrated Science/Learner Notes/Detailed Full Year Learner Notes.pdf",
-    "bytes": 132379
+    "bytes": 132379,
+    "product_id": "teacher_g9_004",
+    "price_kes": 50,
+    "storage_path": "grade9/Integrated Science/Learner Notes/Detailed Full Year Learner Notes.pdf"
   },
   {
     "subject": "Creative Arts and Sports",
@@ -37,7 +49,10 @@
     "label": "Term 2 Examination",
     "filename": "End of Term 2 Examination and Marking Scheme.pdf",
     "path": "Creative Arts and Sports/Examinations/End of Term 2 Examination and Marking Scheme.pdf",
-    "bytes": 56622
+    "bytes": 56622,
+    "product_id": "teacher_g9_005",
+    "price_kes": 30,
+    "storage_path": "grade9/Creative Arts and Sports/Examinations/End of Term 2 Examination and Marking Scheme.pdf"
   },
   {
     "subject": "Christian Religious Education (CRE)",
@@ -45,7 +60,10 @@
     "label": "Term 2 Examination",
     "filename": "End of Term 2 Examination and Marking Scheme.pdf",
     "path": "Christian Religious Education (CRE)/Examinations/End of Term 2 Examination and Marking Scheme.pdf",
-    "bytes": 55967
+    "bytes": 55967,
+    "product_id": "teacher_g9_006",
+    "price_kes": 30,
+    "storage_path": "grade9/Christian Religious Education (CRE)/Examinations/End of Term 2 Examination and Marking Scheme.pdf"
   },
   {
     "subject": "Kiswahili",
@@ -53,7 +71,10 @@
     "label": "CAT 1",
     "filename": "CAT 1 and Marking Scheme.pdf",
     "path": "Kiswahili/CATs/CAT 1 and Marking Scheme.pdf",
-    "bytes": 43424
+    "bytes": 43424,
+    "product_id": "teacher_g9_007",
+    "price_kes": 20,
+    "storage_path": "grade9/Kiswahili/CATs/CAT 1 and Marking Scheme.pdf"
   },
   {
     "subject": "Pre-Technical Studies",
@@ -61,7 +82,10 @@
     "label": "Full-Year Scheme of Work",
     "filename": "Full Year Scheme of Work.pdf",
     "path": "Pre-Technical Studies/Schemes of Work/Full Year Scheme of Work.pdf",
-    "bytes": 194932
+    "bytes": 194932,
+    "product_id": "teacher_g9_008",
+    "price_kes": 70,
+    "storage_path": "grade9/Pre-Technical Studies/Schemes of Work/Full Year Scheme of Work.pdf"
   },
   {
     "subject": "English",
@@ -69,7 +93,10 @@
     "label": "CAT 2",
     "filename": "CAT 2 and Marking Scheme.pdf",
     "path": "English/CATs/CAT 2 and Marking Scheme.pdf",
-    "bytes": 43867
+    "bytes": 43867,
+    "product_id": "teacher_g9_009",
+    "price_kes": 20,
+    "storage_path": "grade9/English/CATs/CAT 2 and Marking Scheme.pdf"
   },
   {
     "subject": "Mathematics",
@@ -77,7 +104,10 @@
     "label": "Full-Year Learner Notes",
     "filename": "Detailed Full Year Learner Notes.pdf",
     "path": "Mathematics/Learner Notes/Detailed Full Year Learner Notes.pdf",
-    "bytes": 162926
+    "bytes": 162926,
+    "product_id": "teacher_g9_010",
+    "price_kes": 50,
+    "storage_path": "grade9/Mathematics/Learner Notes/Detailed Full Year Learner Notes.pdf"
   },
   {
     "subject": "Mathematics",
@@ -85,7 +115,10 @@
     "label": "Term 2 Examination",
     "filename": "End of Term 2 Examination and Marking Scheme.pdf",
     "path": "Mathematics/Examinations/End of Term 2 Examination and Marking Scheme.pdf",
-    "bytes": 59877
+    "bytes": 59877,
+    "product_id": "teacher_g9_011",
+    "price_kes": 30,
+    "storage_path": "grade9/Mathematics/Examinations/End of Term 2 Examination and Marking Scheme.pdf"
   },
   {
     "subject": "Mathematics",
@@ -93,7 +126,10 @@
     "label": "Term 1 Examination",
     "filename": "End of Term 1 Examination and Marking Scheme.pdf",
     "path": "Mathematics/Examinations/End of Term 1 Examination and Marking Scheme.pdf",
-    "bytes": 67481
+    "bytes": 67481,
+    "product_id": "teacher_g9_012",
+    "price_kes": 30,
+    "storage_path": "grade9/Mathematics/Examinations/End of Term 1 Examination and Marking Scheme.pdf"
   },
   {
     "subject": "Social Studies",
@@ -101,7 +137,10 @@
     "label": "Full-Year Learner Notes",
     "filename": "Detailed Full Year Learner Notes.pdf",
     "path": "Social Studies/Learner Notes/Detailed Full Year Learner Notes.pdf",
-    "bytes": 135707
+    "bytes": 135707,
+    "product_id": "teacher_g9_013",
+    "price_kes": 50,
+    "storage_path": "grade9/Social Studies/Learner Notes/Detailed Full Year Learner Notes.pdf"
   },
   {
     "subject": "Integrated Science",
@@ -109,7 +148,10 @@
     "label": "Term 3 Examination",
     "filename": "End of Term 3 Examination and Marking Scheme.pdf",
     "path": "Integrated Science/Examinations/End of Term 3 Examination and Marking Scheme.pdf",
-    "bytes": 57839
+    "bytes": 57839,
+    "product_id": "teacher_g9_014",
+    "price_kes": 30,
+    "storage_path": "grade9/Integrated Science/Examinations/End of Term 3 Examination and Marking Scheme.pdf"
   },
   {
     "subject": "Creative Arts and Sports",
@@ -117,7 +159,10 @@
     "label": "CAT 2",
     "filename": "CAT 2 and Marking Scheme.pdf",
     "path": "Creative Arts and Sports/CATs/CAT 2 and Marking Scheme.pdf",
-    "bytes": 54706
+    "bytes": 54706,
+    "product_id": "teacher_g9_015",
+    "price_kes": 20,
+    "storage_path": "grade9/Creative Arts and Sports/CATs/CAT 2 and Marking Scheme.pdf"
   },
   {
     "subject": "Mathematics",
@@ -125,7 +170,10 @@
     "label": "Full-Year Scheme of Work",
     "filename": "Full Year Scheme of Work.pdf",
     "path": "Mathematics/Schemes of Work/Full Year Scheme of Work.pdf",
-    "bytes": 366948
+    "bytes": 366948,
+    "product_id": "teacher_g9_016",
+    "price_kes": 70,
+    "storage_path": "grade9/Mathematics/Schemes of Work/Full Year Scheme of Work.pdf"
   },
   {
     "subject": "Agriculture",
@@ -133,7 +181,10 @@
     "label": "Full-Year Lesson Plans",
     "filename": "Full Year Lesson Plans.pdf",
     "path": "Agriculture/Lesson Plans/Full Year Lesson Plans.pdf",
-    "bytes": 567397
+    "bytes": 567397,
+    "product_id": "teacher_g9_017",
+    "price_kes": 200,
+    "storage_path": "grade9/Agriculture/Lesson Plans/Full Year Lesson Plans.pdf"
   },
   {
     "subject": "Kiswahili",
@@ -141,7 +192,10 @@
     "label": "Term 3 Examination",
     "filename": "End of Term 3 Examination and Marking Scheme.pdf",
     "path": "Kiswahili/Examinations/End of Term 3 Examination and Marking Scheme.pdf",
-    "bytes": 50997
+    "bytes": 50997,
+    "product_id": "teacher_g9_018",
+    "price_kes": 30,
+    "storage_path": "grade9/Kiswahili/Examinations/End of Term 3 Examination and Marking Scheme.pdf"
   },
   {
     "subject": "Social Studies",
@@ -149,7 +203,10 @@
     "label": "Full-Year Lesson Plans",
     "filename": "Full Year Lesson Plans.pdf",
     "path": "Social Studies/Lesson Plans/Full Year Lesson Plans.pdf",
-    "bytes": 590193
+    "bytes": 590193,
+    "product_id": "teacher_g9_019",
+    "price_kes": 200,
+    "storage_path": "grade9/Social Studies/Lesson Plans/Full Year Lesson Plans.pdf"
   },
   {
     "subject": "Social Studies",
@@ -157,7 +214,10 @@
     "label": "Term 1 Examination",
     "filename": "End of Term 1 Examination and Marking Scheme.pdf",
     "path": "Social Studies/Examinations/End of Term 1 Examination and Marking Scheme.pdf",
-    "bytes": 53561
+    "bytes": 53561,
+    "product_id": "teacher_g9_020",
+    "price_kes": 30,
+    "storage_path": "grade9/Social Studies/Examinations/End of Term 1 Examination and Marking Scheme.pdf"
   },
   {
     "subject": "Pre-Technical Studies",
@@ -165,7 +225,10 @@
     "label": "Term 3 Examination",
     "filename": "End of Term 3 Examination and Marking Scheme.pdf",
     "path": "Pre-Technical Studies/Examinations/End of Term 3 Examination and Marking Scheme.pdf",
-    "bytes": 57302
+    "bytes": 57302,
+    "product_id": "teacher_g9_021",
+    "price_kes": 30,
+    "storage_path": "grade9/Pre-Technical Studies/Examinations/End of Term 3 Examination and Marking Scheme.pdf"
   },
   {
     "subject": "Creative Arts and Sports",
@@ -173,7 +236,10 @@
     "label": "CAT 1",
     "filename": "CAT 1 and Marking Scheme.pdf",
     "path": "Creative Arts and Sports/CATs/CAT 1 and Marking Scheme.pdf",
-    "bytes": 49148
+    "bytes": 49148,
+    "product_id": "teacher_g9_022",
+    "price_kes": 20,
+    "storage_path": "grade9/Creative Arts and Sports/CATs/CAT 1 and Marking Scheme.pdf"
   },
   {
     "subject": "Kiswahili",
@@ -181,7 +247,10 @@
     "label": "CAT 2",
     "filename": "CAT 2 and Marking Scheme.pdf",
     "path": "Kiswahili/CATs/CAT 2 and Marking Scheme.pdf",
-    "bytes": 42943
+    "bytes": 42943,
+    "product_id": "teacher_g9_023",
+    "price_kes": 20,
+    "storage_path": "grade9/Kiswahili/CATs/CAT 2 and Marking Scheme.pdf"
   },
   {
     "subject": "Mathematics",
@@ -189,7 +258,10 @@
     "label": "Term 3 Examination",
     "filename": "End of Term 3 Examination and Marking Scheme.pdf",
     "path": "Mathematics/Examinations/End of Term 3 Examination and Marking Scheme.pdf",
-    "bytes": 59389
+    "bytes": 59389,
+    "product_id": "teacher_g9_024",
+    "price_kes": 30,
+    "storage_path": "grade9/Mathematics/Examinations/End of Term 3 Examination and Marking Scheme.pdf"
   },
   {
     "subject": "Integrated Science",
@@ -197,7 +269,10 @@
     "label": "CAT 2",
     "filename": "CAT 2 and Marking Scheme.pdf",
     "path": "Integrated Science/CATs/CAT 2 and Marking Scheme.pdf",
-    "bytes": 47826
+    "bytes": 47826,
+    "product_id": "teacher_g9_025",
+    "price_kes": 20,
+    "storage_path": "grade9/Integrated Science/CATs/CAT 2 and Marking Scheme.pdf"
   },
   {
     "subject": "Social Studies",
@@ -205,7 +280,10 @@
     "label": "Term 2 Examination",
     "filename": "End of Term 2 Examination and Marking Scheme.pdf",
     "path": "Social Studies/Examinations/End of Term 2 Examination and Marking Scheme.pdf",
-    "bytes": 56964
+    "bytes": 56964,
+    "product_id": "teacher_g9_026",
+    "price_kes": 30,
+    "storage_path": "grade9/Social Studies/Examinations/End of Term 2 Examination and Marking Scheme.pdf"
   },
   {
     "subject": "Social Studies",
@@ -213,7 +291,10 @@
     "label": "Full-Year Scheme of Work",
     "filename": "Full Year Scheme of Work.pdf",
     "path": "Social Studies/Schemes of Work/Full Year Scheme of Work.pdf",
-    "bytes": 205782
+    "bytes": 205782,
+    "product_id": "teacher_g9_027",
+    "price_kes": 70,
+    "storage_path": "grade9/Social Studies/Schemes of Work/Full Year Scheme of Work.pdf"
   },
   {
     "subject": "Integrated Science",
@@ -221,7 +302,10 @@
     "label": "Term 2 Examination",
     "filename": "End of Term 2 Examination and Marking Scheme.pdf",
     "path": "Integrated Science/Examinations/End of Term 2 Examination and Marking Scheme.pdf",
-    "bytes": 57459
+    "bytes": 57459,
+    "product_id": "teacher_g9_028",
+    "price_kes": 30,
+    "storage_path": "grade9/Integrated Science/Examinations/End of Term 2 Examination and Marking Scheme.pdf"
   },
   {
     "subject": "Integrated Science",
@@ -229,7 +313,10 @@
     "label": "Full-Year Scheme of Work",
     "filename": "Full Year Scheme of Work.pdf",
     "path": "Integrated Science/Schemes of Work/Full Year Scheme of Work.pdf",
-    "bytes": 379641
+    "bytes": 379641,
+    "product_id": "teacher_g9_029",
+    "price_kes": 70,
+    "storage_path": "grade9/Integrated Science/Schemes of Work/Full Year Scheme of Work.pdf"
   },
   {
     "subject": "Integrated Science",
@@ -237,7 +324,10 @@
     "label": "CAT 1",
     "filename": "CAT 1 and Marking Scheme.pdf",
     "path": "Integrated Science/CATs/CAT 1 and Marking Scheme.pdf",
-    "bytes": 54746
+    "bytes": 54746,
+    "product_id": "teacher_g9_030",
+    "price_kes": 20,
+    "storage_path": "grade9/Integrated Science/CATs/CAT 1 and Marking Scheme.pdf"
   },
   {
     "subject": "Pre-Technical Studies",
@@ -245,7 +335,10 @@
     "label": "Term 2 Examination",
     "filename": "End of Term 2 Examination and Marking Scheme.pdf",
     "path": "Pre-Technical Studies/Examinations/End of Term 2 Examination and Marking Scheme.pdf",
-    "bytes": 57045
+    "bytes": 57045,
+    "product_id": "teacher_g9_031",
+    "price_kes": 30,
+    "storage_path": "grade9/Pre-Technical Studies/Examinations/End of Term 2 Examination and Marking Scheme.pdf"
   },
   {
     "subject": "Pre-Technical Studies",
@@ -253,7 +346,10 @@
     "label": "Full-Year Lesson Plans",
     "filename": "Full Year Lesson Plans.pdf",
     "path": "Pre-Technical Studies/Lesson Plans/Full Year Lesson Plans.pdf",
-    "bytes": 600453
+    "bytes": 600453,
+    "product_id": "teacher_g9_032",
+    "price_kes": 200,
+    "storage_path": "grade9/Pre-Technical Studies/Lesson Plans/Full Year Lesson Plans.pdf"
   },
   {
     "subject": "Pre-Technical Studies",
@@ -261,7 +357,10 @@
     "label": "CAT 1",
     "filename": "CAT 1 and Marking Scheme.pdf",
     "path": "Pre-Technical Studies/CATs/CAT 1 and Marking Scheme.pdf",
-    "bytes": 49025
+    "bytes": 49025,
+    "product_id": "teacher_g9_033",
+    "price_kes": 20,
+    "storage_path": "grade9/Pre-Technical Studies/CATs/CAT 1 and Marking Scheme.pdf"
   },
   {
     "subject": "Creative Arts and Sports",
@@ -269,7 +368,10 @@
     "label": "Full-Year Scheme of Work",
     "filename": "Full Year Scheme of Work.pdf",
     "path": "Creative Arts and Sports/Schemes of Work/Full Year Scheme of Work.pdf",
-    "bytes": 220669
+    "bytes": 220669,
+    "product_id": "teacher_g9_034",
+    "price_kes": 70,
+    "storage_path": "grade9/Creative Arts and Sports/Schemes of Work/Full Year Scheme of Work.pdf"
   },
   {
     "subject": "Christian Religious Education (CRE)",
@@ -277,7 +379,10 @@
     "label": "Term 1 Examination",
     "filename": "End of Term 1 Examination and Marking Scheme.pdf",
     "path": "Christian Religious Education (CRE)/Examinations/End of Term 1 Examination and Marking Scheme.pdf",
-    "bytes": 55095
+    "bytes": 55095,
+    "product_id": "teacher_g9_035",
+    "price_kes": 30,
+    "storage_path": "grade9/Christian Religious Education (CRE)/Examinations/End of Term 1 Examination and Marking Scheme.pdf"
   },
   {
     "subject": "English",
@@ -285,7 +390,10 @@
     "label": "Term 1 Examination",
     "filename": "End of Term 1 Examination and Marking Scheme.pdf",
     "path": "English/Examinations/End of Term 1 Examination and Marking Scheme.pdf",
-    "bytes": 51578
+    "bytes": 51578,
+    "product_id": "teacher_g9_036",
+    "price_kes": 30,
+    "storage_path": "grade9/English/Examinations/End of Term 1 Examination and Marking Scheme.pdf"
   },
   {
     "subject": "Agriculture",
@@ -293,7 +401,10 @@
     "label": "Full-Year Scheme of Work",
     "filename": "Full Year Scheme of Work.pdf",
     "path": "Agriculture/Schemes of Work/Full Year Scheme of Work.pdf",
-    "bytes": 189045
+    "bytes": 189045,
+    "product_id": "teacher_g9_037",
+    "price_kes": 70,
+    "storage_path": "grade9/Agriculture/Schemes of Work/Full Year Scheme of Work.pdf"
   },
   {
     "subject": "English",
@@ -301,7 +412,10 @@
     "label": "Term 2 Examination",
     "filename": "End of Term 2 Examination and Marking Scheme.pdf",
     "path": "English/Examinations/End of Term 2 Examination and Marking Scheme.pdf",
-    "bytes": 52756
+    "bytes": 52756,
+    "product_id": "teacher_g9_038",
+    "price_kes": 30,
+    "storage_path": "grade9/English/Examinations/End of Term 2 Examination and Marking Scheme.pdf"
   },
   {
     "subject": "Pre-Technical Studies",
@@ -309,7 +423,10 @@
     "label": "CAT 2",
     "filename": "CAT 2 and Marking Scheme.pdf",
     "path": "Pre-Technical Studies/CATs/CAT 2 and Marking Scheme.pdf",
-    "bytes": 49458
+    "bytes": 49458,
+    "product_id": "teacher_g9_039",
+    "price_kes": 20,
+    "storage_path": "grade9/Pre-Technical Studies/CATs/CAT 2 and Marking Scheme.pdf"
   },
   {
     "subject": "English",
@@ -317,7 +434,10 @@
     "label": "Full-Year Learner Notes",
     "filename": "Detailed Full Year Learner Notes.pdf",
     "path": "English/Learner Notes/Detailed Full Year Learner Notes.pdf",
-    "bytes": 103005
+    "bytes": 103005,
+    "product_id": "teacher_g9_040",
+    "price_kes": 50,
+    "storage_path": "grade9/English/Learner Notes/Detailed Full Year Learner Notes.pdf"
   },
   {
     "subject": "Christian Religious Education (CRE)",
@@ -325,7 +445,10 @@
     "label": "Full-Year Scheme of Work",
     "filename": "Full Year Scheme of Work.pdf",
     "path": "Christian Religious Education (CRE)/Schemes of Work/Full Year Scheme of Work.pdf",
-    "bytes": 140683
+    "bytes": 140683,
+    "product_id": "teacher_g9_041",
+    "price_kes": 70,
+    "storage_path": "grade9/Christian Religious Education (CRE)/Schemes of Work/Full Year Scheme of Work.pdf"
   },
   {
     "subject": "Creative Arts and Sports",
@@ -333,7 +456,10 @@
     "label": "Term 3 Examination",
     "filename": "End of Term 3 Examination and Marking Scheme.pdf",
     "path": "Creative Arts and Sports/Examinations/End of Term 3 Examination and Marking Scheme.pdf",
-    "bytes": 57332
+    "bytes": 57332,
+    "product_id": "teacher_g9_042",
+    "price_kes": 30,
+    "storage_path": "grade9/Creative Arts and Sports/Examinations/End of Term 3 Examination and Marking Scheme.pdf"
   },
   {
     "subject": "Agriculture",
@@ -341,7 +467,10 @@
     "label": "Term 1 Examination",
     "filename": "End of Term 1 Examination and Marking Scheme.pdf",
     "path": "Agriculture/Examinations/End of Term 1 Examination and Marking Scheme.pdf",
-    "bytes": 54818
+    "bytes": 54818,
+    "product_id": "teacher_g9_043",
+    "price_kes": 30,
+    "storage_path": "grade9/Agriculture/Examinations/End of Term 1 Examination and Marking Scheme.pdf"
   },
   {
     "subject": "Agriculture",
@@ -349,7 +478,10 @@
     "label": "Term 3 Examination",
     "filename": "End of Term 3 Examination and Marking Scheme.pdf",
     "path": "Agriculture/Examinations/End of Term 3 Examination and Marking Scheme.pdf",
-    "bytes": 55463
+    "bytes": 55463,
+    "product_id": "teacher_g9_044",
+    "price_kes": 30,
+    "storage_path": "grade9/Agriculture/Examinations/End of Term 3 Examination and Marking Scheme.pdf"
   },
   {
     "subject": "Creative Arts and Sports",
@@ -357,7 +489,10 @@
     "label": "Term 1 Examination",
     "filename": "End of Term 1 Examination and Marking Scheme.pdf",
     "path": "Creative Arts and Sports/Examinations/End of Term 1 Examination and Marking Scheme.pdf",
-    "bytes": 55239
+    "bytes": 55239,
+    "product_id": "teacher_g9_045",
+    "price_kes": 30,
+    "storage_path": "grade9/Creative Arts and Sports/Examinations/End of Term 1 Examination and Marking Scheme.pdf"
   },
   {
     "subject": "English",
@@ -365,7 +500,10 @@
     "label": "Full-Year Scheme of Work",
     "filename": "Full Year Scheme of Work.pdf",
     "path": "English/Schemes of Work/Full Year Scheme of Work.pdf",
-    "bytes": 214511
+    "bytes": 214511,
+    "product_id": "teacher_g9_046",
+    "price_kes": 70,
+    "storage_path": "grade9/English/Schemes of Work/Full Year Scheme of Work.pdf"
   },
   {
     "subject": "English",
@@ -373,7 +511,10 @@
     "label": "Full-Year Lesson Plans",
     "filename": "Full Year Lesson Plans.pdf",
     "path": "English/Lesson Plans/Full Year Lesson Plans.pdf",
-    "bytes": 712405
+    "bytes": 712405,
+    "product_id": "teacher_g9_047",
+    "price_kes": 200,
+    "storage_path": "grade9/English/Lesson Plans/Full Year Lesson Plans.pdf"
   },
   {
     "subject": "Agriculture",
@@ -381,7 +522,10 @@
     "label": "Term 2 Examination",
     "filename": "End of Term 2 Examination and Marking Scheme.pdf",
     "path": "Agriculture/Examinations/End of Term 2 Examination and Marking Scheme.pdf",
-    "bytes": 55885
+    "bytes": 55885,
+    "product_id": "teacher_g9_048",
+    "price_kes": 30,
+    "storage_path": "grade9/Agriculture/Examinations/End of Term 2 Examination and Marking Scheme.pdf"
   },
   {
     "subject": "Christian Religious Education (CRE)",
@@ -389,7 +533,10 @@
     "label": "CAT 2",
     "filename": "CAT 2 and Marking Scheme.pdf",
     "path": "Christian Religious Education (CRE)/CATs/CAT 2 and Marking Scheme.pdf",
-    "bytes": 53574
+    "bytes": 53574,
+    "product_id": "teacher_g9_049",
+    "price_kes": 20,
+    "storage_path": "grade9/Christian Religious Education (CRE)/CATs/CAT 2 and Marking Scheme.pdf"
   },
   {
     "subject": "Mathematics",
@@ -397,7 +544,10 @@
     "label": "Full-Year Lesson Plans",
     "filename": "Full Year Lesson Plans.pdf",
     "path": "Mathematics/Lesson Plans/Full Year Lesson Plans.pdf",
-    "bytes": 666109
+    "bytes": 666109,
+    "product_id": "teacher_g9_050",
+    "price_kes": 200,
+    "storage_path": "grade9/Mathematics/Lesson Plans/Full Year Lesson Plans.pdf"
   },
   {
     "subject": "Christian Religious Education (CRE)",
@@ -405,7 +555,10 @@
     "label": "Term 3 Examination",
     "filename": "End of Term 3 Examination and Marking Scheme.pdf",
     "path": "Christian Religious Education (CRE)/Examinations/End of Term 3 Examination and Marking Scheme.pdf",
-    "bytes": 55765
+    "bytes": 55765,
+    "product_id": "teacher_g9_051",
+    "price_kes": 30,
+    "storage_path": "grade9/Christian Religious Education (CRE)/Examinations/End of Term 3 Examination and Marking Scheme.pdf"
   },
   {
     "subject": "Creative Arts and Sports",
@@ -413,7 +566,10 @@
     "label": "Full-Year Learner Notes",
     "filename": "Detailed Full Year Learner Notes.pdf",
     "path": "Creative Arts and Sports/Learner Notes/Detailed Full Year Learner Notes.pdf",
-    "bytes": 92095
+    "bytes": 92095,
+    "product_id": "teacher_g9_052",
+    "price_kes": 50,
+    "storage_path": "grade9/Creative Arts and Sports/Learner Notes/Detailed Full Year Learner Notes.pdf"
   },
   {
     "subject": "Social Studies",
@@ -421,7 +577,10 @@
     "label": "CAT 2",
     "filename": "CAT 2 and Marking Scheme.pdf",
     "path": "Social Studies/CATs/CAT 2 and Marking Scheme.pdf",
-    "bytes": 48515
+    "bytes": 48515,
+    "product_id": "teacher_g9_053",
+    "price_kes": 20,
+    "storage_path": "grade9/Social Studies/CATs/CAT 2 and Marking Scheme.pdf"
   },
   {
     "subject": "Agriculture",
@@ -429,7 +588,10 @@
     "label": "Full-Year Learner Notes",
     "filename": "Detailed Full Year Learner Notes.pdf",
     "path": "Agriculture/Learner Notes/Detailed Full Year Learner Notes.pdf",
-    "bytes": 118085
+    "bytes": 118085,
+    "product_id": "teacher_g9_054",
+    "price_kes": 50,
+    "storage_path": "grade9/Agriculture/Learner Notes/Detailed Full Year Learner Notes.pdf"
   },
   {
     "subject": "Pre-Technical Studies",
@@ -437,7 +599,10 @@
     "label": "Full-Year Learner Notes",
     "filename": "Detailed Full Year Learner Notes.pdf",
     "path": "Pre-Technical Studies/Learner Notes/Detailed Full Year Learner Notes.pdf",
-    "bytes": 119544
+    "bytes": 119544,
+    "product_id": "teacher_g9_055",
+    "price_kes": 50,
+    "storage_path": "grade9/Pre-Technical Studies/Learner Notes/Detailed Full Year Learner Notes.pdf"
   },
   {
     "subject": "Kiswahili",
@@ -445,7 +610,10 @@
     "label": "Term 1 Examination",
     "filename": "End of Term 1 Examination and Marking Scheme.pdf",
     "path": "Kiswahili/Examinations/End of Term 1 Examination and Marking Scheme.pdf",
-    "bytes": 51254
+    "bytes": 51254,
+    "product_id": "teacher_g9_056",
+    "price_kes": 30,
+    "storage_path": "grade9/Kiswahili/Examinations/End of Term 1 Examination and Marking Scheme.pdf"
   },
   {
     "subject": "English",
@@ -453,7 +621,10 @@
     "label": "Term 3 Examination",
     "filename": "End of Term 3 Examination and Marking Scheme.pdf",
     "path": "English/Examinations/End of Term 3 Examination and Marking Scheme.pdf",
-    "bytes": 53406
+    "bytes": 53406,
+    "product_id": "teacher_g9_057",
+    "price_kes": 30,
+    "storage_path": "grade9/English/Examinations/End of Term 3 Examination and Marking Scheme.pdf"
   },
   {
     "subject": "English",
@@ -461,7 +632,10 @@
     "label": "CAT 1",
     "filename": "CAT 1 and Marking Scheme.pdf",
     "path": "English/CATs/CAT 1 and Marking Scheme.pdf",
-    "bytes": 43959
+    "bytes": 43959,
+    "product_id": "teacher_g9_058",
+    "price_kes": 20,
+    "storage_path": "grade9/English/CATs/CAT 1 and Marking Scheme.pdf"
   },
   {
     "subject": "Kiswahili",
@@ -469,7 +643,10 @@
     "label": "Term 2 Examination",
     "filename": "End of Term 2 Examination and Marking Scheme.pdf",
     "path": "Kiswahili/Examinations/End of Term 2 Examination and Marking Scheme.pdf",
-    "bytes": 50159
+    "bytes": 50159,
+    "product_id": "teacher_g9_059",
+    "price_kes": 30,
+    "storage_path": "grade9/Kiswahili/Examinations/End of Term 2 Examination and Marking Scheme.pdf"
   },
   {
     "subject": "Agriculture",
@@ -477,7 +654,10 @@
     "label": "CAT 1",
     "filename": "CAT 1 and Marking Scheme.pdf",
     "path": "Agriculture/CATs/CAT 1 and Marking Scheme.pdf",
-    "bytes": 47553
+    "bytes": 47553,
+    "product_id": "teacher_g9_060",
+    "price_kes": 20,
+    "storage_path": "grade9/Agriculture/CATs/CAT 1 and Marking Scheme.pdf"
   },
   {
     "subject": "Christian Religious Education (CRE)",
@@ -485,7 +665,10 @@
     "label": "Full-Year Lesson Plans",
     "filename": "Full Year Lesson Plans.pdf",
     "path": "Christian Religious Education (CRE)/Lesson Plans/Full Year Lesson Plans.pdf",
-    "bytes": 565593
+    "bytes": 565593,
+    "product_id": "teacher_g9_061",
+    "price_kes": 200,
+    "storage_path": "grade9/Christian Religious Education (CRE)/Lesson Plans/Full Year Lesson Plans.pdf"
   },
   {
     "subject": "Agriculture",
@@ -493,7 +676,10 @@
     "label": "CAT 2",
     "filename": "CAT 2 and Marking Scheme.pdf",
     "path": "Agriculture/CATs/CAT 2 and Marking Scheme.pdf",
-    "bytes": 49030
+    "bytes": 49030,
+    "product_id": "teacher_g9_062",
+    "price_kes": 20,
+    "storage_path": "grade9/Agriculture/CATs/CAT 2 and Marking Scheme.pdf"
   },
   {
     "subject": "Integrated Science",
@@ -501,7 +687,10 @@
     "label": "Term 1 Examination",
     "filename": "End of Term 1 Examination and Marking Scheme.pdf",
     "path": "Integrated Science/Examinations/End of Term 1 Examination and Marking Scheme.pdf",
-    "bytes": 58519
+    "bytes": 58519,
+    "product_id": "teacher_g9_063",
+    "price_kes": 30,
+    "storage_path": "grade9/Integrated Science/Examinations/End of Term 1 Examination and Marking Scheme.pdf"
   },
   {
     "subject": "Social Studies",
@@ -509,7 +698,10 @@
     "label": "CAT 1",
     "filename": "CAT 1 and Marking Scheme.pdf",
     "path": "Social Studies/CATs/CAT 1 and Marking Scheme.pdf",
-    "bytes": 47662
+    "bytes": 47662,
+    "product_id": "teacher_g9_064",
+    "price_kes": 20,
+    "storage_path": "grade9/Social Studies/CATs/CAT 1 and Marking Scheme.pdf"
   },
   {
     "subject": "Kiswahili",
@@ -517,7 +709,10 @@
     "label": "Full-Year Scheme of Work",
     "filename": "Full Year Scheme of Work.pdf",
     "path": "Kiswahili/Schemes of Work/Full Year Scheme of Work.pdf",
-    "bytes": 118043
+    "bytes": 118043,
+    "product_id": "teacher_g9_065",
+    "price_kes": 70,
+    "storage_path": "grade9/Kiswahili/Schemes of Work/Full Year Scheme of Work.pdf"
   },
   {
     "subject": "Social Studies",
@@ -525,7 +720,10 @@
     "label": "Term 3 Examination",
     "filename": "End of Term 3 Examination and Marking Scheme.pdf",
     "path": "Social Studies/Examinations/End of Term 3 Examination and Marking Scheme.pdf",
-    "bytes": 56586
+    "bytes": 56586,
+    "product_id": "teacher_g9_066",
+    "price_kes": 30,
+    "storage_path": "grade9/Social Studies/Examinations/End of Term 3 Examination and Marking Scheme.pdf"
   },
   {
     "subject": "Kiswahili",
@@ -533,7 +731,10 @@
     "label": "Full-Year Lesson Plans",
     "filename": "Full Year Lesson Plans.pdf",
     "path": "Kiswahili/Lesson Plans/Full Year Lesson Plans.pdf",
-    "bytes": 488057
+    "bytes": 488057,
+    "product_id": "teacher_g9_067",
+    "price_kes": 200,
+    "storage_path": "grade9/Kiswahili/Lesson Plans/Full Year Lesson Plans.pdf"
   },
   {
     "subject": "Integrated Science",
@@ -541,7 +742,10 @@
     "label": "Full-Year Lesson Plans",
     "filename": "Full Year Lesson Plans.pdf",
     "path": "Integrated Science/Lesson Plans/Full Year Lesson Plans.pdf",
-    "bytes": 767139
+    "bytes": 767139,
+    "product_id": "teacher_g9_068",
+    "price_kes": 200,
+    "storage_path": "grade9/Integrated Science/Lesson Plans/Full Year Lesson Plans.pdf"
   },
   {
     "subject": "Kiswahili",
@@ -549,7 +753,10 @@
     "label": "Full-Year Learner Notes",
     "filename": "Detailed Full Year Learner Notes.pdf",
     "path": "Kiswahili/Learner Notes/Detailed Full Year Learner Notes.pdf",
-    "bytes": 96614
+    "bytes": 96614,
+    "product_id": "teacher_g9_069",
+    "price_kes": 50,
+    "storage_path": "grade9/Kiswahili/Learner Notes/Detailed Full Year Learner Notes.pdf"
   },
   {
     "subject": "Creative Arts and Sports",
@@ -557,7 +764,10 @@
     "label": "Full-Year Lesson Plans",
     "filename": "Full Year Lesson Plans.pdf",
     "path": "Creative Arts and Sports/Lesson Plans/Full Year Lesson Plans.pdf",
-    "bytes": 705235
+    "bytes": 705235,
+    "product_id": "teacher_g9_070",
+    "price_kes": 200,
+    "storage_path": "grade9/Creative Arts and Sports/Lesson Plans/Full Year Lesson Plans.pdf"
   },
   {
     "subject": "Christian Religious Education (CRE)",
@@ -565,7 +775,10 @@
     "label": "Full-Year Learner Notes",
     "filename": "Detailed Full Year Learner Notes.pdf",
     "path": "Christian Religious Education (CRE)/Learner Notes/Detailed Full Year Learner Notes.pdf",
-    "bytes": 86095
+    "bytes": 86095,
+    "product_id": "teacher_g9_071",
+    "price_kes": 50,
+    "storage_path": "grade9/Christian Religious Education (CRE)/Learner Notes/Detailed Full Year Learner Notes.pdf"
   },
   {
     "subject": "Mathematics",
@@ -573,6 +786,9 @@
     "label": "CAT 1",
     "filename": "CAT 1 and Marking Scheme.pdf",
     "path": "Mathematics/CATs/CAT 1 and Marking Scheme.pdf",
-    "bytes": 55074
+    "bytes": 55074,
+    "product_id": "teacher_g9_072",
+    "price_kes": 20,
+    "storage_path": "grade9/Mathematics/CATs/CAT 1 and Marking Scheme.pdf"
   }
 ]

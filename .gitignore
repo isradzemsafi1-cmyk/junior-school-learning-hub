@@ -1,0 +1,8 @@
+.env
+.env.*
+!.env.example
+node_modules/
+
+.env.local
+*.service-role-key
+*-premium-pdf-backup-*

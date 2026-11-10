@@ -2076,8 +2076,8 @@ buildQuiz();
    </div>
    <div id="learner-login" class="auth-pane" role="tabpanel" aria-labelledby="login-tab">
     <h3>👋 Welcome back!</h3>
-    <p class="auth-help">Sign in to continue where you left off.</p>
-    <input id="login-email" type="email" placeholder="Email address" autocomplete="username" aria-label="Email address" required>
+    <p class="auth-help">Sign in with your username and password to continue learning.</p>
+    <input id="login-email" type="text" placeholder="Username or email address" autocomplete="username" aria-label="Username or email address" required>
     <div class="auth-password-wrap">
      <input id="login-password" type="password" placeholder="Password" autocomplete="current-password" aria-label="Password" required>
      <button class="password-toggle" type="button" data-toggle-password="login-password">Show</button>
@@ -2087,14 +2087,14 @@ buildQuiz();
    </div>
    <div id="learner-signup" class="auth-pane" role="tabpanel" aria-labelledby="signup-tab" hidden>
     <h3>🚀 Create your learner account</h3>
-    <p class="auth-help">Register once to save quiz scores and track your learning progress.</p>
+    <p class="auth-help">Register with a username and password. No email address or email confirmation is needed.</p>
     <input id="learner-name" type="text" placeholder="Learner's full name" autocomplete="name" aria-label="Learner's full name" required>
     <select id="learner-grade" required aria-label="Choose your grade">
      <option value="">Choose your grade</option><option>Grade 7</option><option>Grade 8</option><option>Grade 9</option>
     </select>
-    <input id="learner-email" type="email" placeholder="Email address" autocomplete="email" aria-label="Email address" required>
+    <input id="learner-username" type="text" placeholder="Choose username (4–20 characters)" autocomplete="username" aria-label="Choose username" required minlength="4" maxlength="20">
     <div class="auth-password-wrap">
-     <input id="learner-password" type="password" placeholder="Create password (minimum 6 characters)" autocomplete="new-password" aria-label="Create password" required minlength="6">
+     <input id="learner-password" type="password" placeholder="Create password (minimum 8 characters)" autocomplete="new-password" aria-label="Create password" required minlength="8">
      <button class="password-toggle" type="button" data-toggle-password="learner-password">Show</button>
     </div>
     <button id="learner-signup-btn" type="button">Create My Account âœ¨</button>
@@ -2322,7 +2322,7 @@ buildQuiz();
     }
     authShell.hidden = true;
     dashboard.hidden = false;
-    const name = user.user_metadata?.full_name || user.email || "Learner";
+    const name = user.user_metadata?.full_name || user.user_metadata?.username || user.email || "Learner";
     const grade = user.user_metadata?.grade || "Grade not specified";
     window.currentLearnerGrade = grade;
     document.getElementById("learner-title").textContent = "Welcome back, " + name + "! 👋";
@@ -2334,35 +2334,33 @@ buildQuiz();
   document.getElementById("learner-signup-btn").addEventListener("click", async function () {
     const name = document.getElementById("learner-name").value.trim();
     const grade = document.getElementById("learner-grade").value;
-    const email = document.getElementById("learner-email").value.trim();
+    const username = document.getElementById("learner-username").value.trim().toLowerCase();
     const password = document.getElementById("learner-password").value;
-    if (!name || !grade || !email || password.length < 6) {
-      showMessage("Please complete all fields. Password must have at least 6 characters.", true);
+    const confirmPassword = document.getElementById("learner-password-confirm").value;
+    if (!name || !grade || !username || password.length < 8 || password !== confirmPassword) {
+      showMessage(password !== confirmPassword ? "The passwords do not match." : "Complete all fields. Use a password with at least 8 characters.", true);
       return;
     }
     this.disabled = true;
     showMessage("Creating your accountâ€¦");
     try {
-      const { data, error } = await supabaseClient.auth.signUp({
-        email, password,
-        options: { emailRedirectTo: window.location.origin, data: { full_name: name, grade } }
-      });
+      const response = await fetch("/.netlify/functions/learner-register", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ username, password, full_name: name, grade }) });
+      const result = await response.json();
+      if (!response.ok) throw new Error(result.error || "Account registration failed.");
+      const { data, error } = await supabaseClient.auth.signInWithPassword({ email: result.email, password });
       if (error) throw error;
-      if (data.session) {
-        showDashboard(data.user);
-        showMessage("Your account is ready. Welcome to the Learning Hub!");
-      } else {
-        showMessage("Account created! Please confirm your email before logging in.");
-      }
+      showDashboard(data.user);
+      showMessage("Account created successfully. Welcome to the Learning Hub!");
     } catch (error) {
       showMessage(error.message, true);
     } finally { this.disabled = false; }
   });
 
   document.getElementById("learner-login-btn").addEventListener("click", async function () {
-    const email = document.getElementById("login-email").value.trim();
+    const loginName = document.getElementById("login-email").value.trim().toLowerCase();
     const password = document.getElementById("login-password").value;
-    if (!email || !password) { showMessage("Enter your email address and password.", true); return; }
+    if (!loginName || !password) { showMessage("Enter your username and password.", true); return; }
+    const email = loginName.includes("@") ? loginName : `${loginName}@learners.juniorschoollearninghub.co.ke`;
     this.disabled = true;
     showMessage("Logging inâ€¦");
     try {

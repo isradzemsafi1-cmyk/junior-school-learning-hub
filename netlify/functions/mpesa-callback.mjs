@@ -1,3 +1,5 @@
+import { teacherCatalog } from "../lib/teacher-catalog.mjs";
+
 
 export default async (request) => {
   const respond = (status, data) =>
@@ -19,7 +21,11 @@ export default async (request) => {
   const consumerSecret = Netlify.env.get("MPESA_CONSUMER_SECRET");
   const shortcode = Netlify.env.get("MPESA_SHORTCODE");
   const passkey = Netlify.env.get("MPESA_PASSKEY");
+const isProduction = process.env.CONTEXT === "production";
 
+const mpesaBaseUrl = isProduction
+  ? "https://api.safaricom.co.ke"
+  : "https://sandbox.safaricom.co.ke";
   if (!supabaseUrl || !serviceKey || !consumerKey ||
       !consumerSecret || !shortcode || !passkey) {
     console.error("Callback configuration is incomplete.");
@@ -31,7 +37,12 @@ export default async (request) => {
     premium_quizzes: 20,
     grade7_notes: 10,
     grade8_notes: 10,
-    grade9_notes: 30
+    grade9_notes: 30,
+    career_guidance_full_package: 30,
+    grade10_selection_form: 30,
+    ...Object.fromEntries(
+      Object.values(teacherCatalog).flat().map(item => [item.product_id, item.price_kes])
+    )
   };
 
   const durations = {
@@ -39,7 +50,12 @@ export default async (request) => {
     grade8_notes: 12,
     grade9_notes: 24,
     online_tuition: 24,
-    premium_quizzes: 24
+    premium_quizzes: 24,
+    career_guidance_full_package: 720,
+    grade10_selection_form: 720,
+    ...Object.fromEntries(
+      Object.values(teacherCatalog).flat().map(item => [item.product_id, 720])
+    )
   };
 
   const dbHeaders = {
@@ -171,7 +187,7 @@ export default async (request) => {
     ).toString("base64");
 
     const tokenResponse = await fetch(
-      "https://api.safaricom.co.ke/oauth/v1/generate?grant_type=client_credentials",
+      `${mpesaBaseUrl}/oauth/v1/generate?grant_type=client_credentials`,
       {
         headers: { Authorization: `Basic ${credentials}` }
       }
@@ -189,7 +205,7 @@ export default async (request) => {
     ).toString("base64");
 
     const queryResponse = await fetch(
-      "https://api.safaricom.co.ke/mpesa/stkpushquery/v1/query",
+      `${mpesaBaseUrl}/mpesa/stkpushquery/v1/query`,
       {
         method: "POST",
         headers: {

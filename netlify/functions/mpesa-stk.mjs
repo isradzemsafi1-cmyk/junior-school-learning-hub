@@ -1,3 +1,5 @@
+import { teacherCatalog } from "../lib/teacher-catalog.mjs";
+
 
 export default async (request) => {
   const respond = (status, data) =>
@@ -13,17 +15,11 @@ export default async (request) => {
     });
   }
 
-  const catalog = {
-    online_tuition: 100,
-    premium_quizzes: 20,
-    grade7_notes: 10,
-    grade8_notes: 10,
-    grade9_notes: 30
-  };
-
   const supabaseUrl = Netlify.env.get("SUPABASE_URL");
+
   const publishableKey =
     "sb_publishable_uaOcRVaIwnvRl_wZhMhJ-Q_DhrqZyS_";
+
   const serviceKey =
     Netlify.env.get("SUPABASE_SERVICE_ROLE_KEY");
 
@@ -34,12 +30,37 @@ export default async (request) => {
   const passkey = Netlify.env.get("MPESA_PASSKEY");
   const callbackURL = Netlify.env.get("MPESA_CALLBACK_URL");
 
-  if (!supabaseUrl || !serviceKey || !consumerKey ||
-      !consumerSecret || !shortcode || !tillNumber ||
-      !passkey || !callbackURL) {
+  const catalog = {
+    online_tuition: 100,
+    premium_quizzes: 20,
+    grade7_notes: 10,
+    grade8_notes: 10,
+    grade9_notes: 30,
+    career_guidance_full_package: 30,
+    grade10_selection_form: 30,
+    ...Object.fromEntries(
+      Object.values(teacherCatalog).flat().map(item => [item.product_id, item.price_kes])
+    )
+  };
+
+
+  const missing = [
+    ["SUPABASE_URL", supabaseUrl],
+    ["SUPABASE_SERVICE_ROLE_KEY", serviceKey],
+    ["MPESA_CONSUMER_KEY", consumerKey],
+    ["MPESA_CONSUMER_SECRET", consumerSecret],
+    ["MPESA_SHORTCODE", shortcode],
+    ["MPESA_TILL_NUMBER", tillNumber],
+    ["MPESA_PASSKEY", passkey],
+    ["MPESA_CALLBACK_URL", callbackURL]
+  ].filter(([, value]) => !value).map(([name]) => name);
+
+  if (missing.length) {
+    console.error("Missing payment configuration:", missing);
     return respond(500, {
       success: false,
-      message: "Production payment configuration is incomplete."
+      message: "Payment configuration is incomplete.",
+      missing
     });
   }
 
@@ -50,14 +71,35 @@ export default async (request) => {
     });
   }
 
+
   const dbHeaders = {
     apikey: serviceKey,
     Authorization: `Bearer ${serviceKey}`,
     "Content-Type": "application/json"
   };
+const isProduction = process.env.CONTEXT === "production";
 
+const mpesaBaseUrl = isProduction
+  ? "https://api.safaricom.co.ke"
+  : "https://sandbox.safaricom.co.ke";
   let paymentId;
+const readJson = async (response, service) => {
+  const raw = await response.text();
 
+  if (!raw.trim()) {
+    throw new Error(
+      `${service} returned an empty response. HTTP ${response.status}`
+    );
+  }
+
+  try {
+    return JSON.parse(raw);
+  } catch {
+    throw new Error(
+      `${service} returned invalid JSON. HTTP ${response.status}`
+    );
+  }
+};
   try {
     const body = await request.json();
 
@@ -90,7 +132,7 @@ export default async (request) => {
       });
     }
 
-    const user = await authResponse.json();
+    const user = await readJson(authResponse, "Supabase authentication");
 
     if (!user.id) {
       return respond(401, {
@@ -141,7 +183,7 @@ export default async (request) => {
       }
     );
 
-    const paymentRows = await paymentResponse.json();
+    const paymentRows = await readJson(paymentResponse, "Supabase payment record");
 
     if (!paymentResponse.ok || !paymentRows[0]?.id) {
       return respond(500, {
@@ -157,7 +199,7 @@ export default async (request) => {
     ).toString("base64");
 
     const tokenResponse = await fetch(
-      "https://api.safaricom.co.ke/oauth/v1/generate?grant_type=client_credentials",
+      `${mpesaBaseUrl}/oauth/v1/generate?grant_type=client_credentials`,
       {
         headers: {
           Authorization: `Basic ${credentials}`
@@ -165,7 +207,7 @@ export default async (request) => {
       }
     );
 
-    const tokenData = await tokenResponse.json();
+    const tokenData = await readJson(tokenResponse, "Safaricom OAuth");
 
     if (!tokenResponse.ok || !tokenData.access_token) {
       throw new Error("Safaricom authentication failed.");
@@ -194,7 +236,7 @@ export default async (request) => {
     ).toString("base64");
 
     const stkResponse = await fetch(
-      "https://api.safaricom.co.ke/mpesa/stkpush/v1/processrequest",
+      `${mpesaBaseUrl}/mpesa/stkpush/v1/processrequest`,
       {
         method: "POST",
         headers: {
@@ -217,7 +259,7 @@ export default async (request) => {
       }
     );
 
-    const result = await stkResponse.json();
+    const result = await readJson(stkResponse, "Safaricom STK Push");
 
     if (!stkResponse.ok || result.ResponseCode !== "0") {
       await fetch(
