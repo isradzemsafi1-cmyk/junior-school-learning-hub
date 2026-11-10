@@ -13,15 +13,13 @@ export default async (request) => {
     });
   }
 
-  
-const catalog = {
-  online_tuition: 100,
-  premium_quizzes: 20,
-  grade7_notes: 10,
-  grade8_notes: 10,
-  grade9_notes: 30
-};
-
+  const catalog = {
+    online_tuition: 100,
+    premium_quizzes: 20,
+    grade7_notes: 10,
+    grade8_notes: 10,
+    grade9_notes: 30
+  };
 
   const supabaseUrl = Netlify.env.get("SUPABASE_URL");
   const publishableKey =
@@ -32,14 +30,16 @@ const catalog = {
   const consumerKey = Netlify.env.get("MPESA_CONSUMER_KEY");
   const consumerSecret = Netlify.env.get("MPESA_CONSUMER_SECRET");
   const shortcode = Netlify.env.get("MPESA_SHORTCODE");
+  const tillNumber = Netlify.env.get("MPESA_TILL_NUMBER");
   const passkey = Netlify.env.get("MPESA_PASSKEY");
   const callbackURL = Netlify.env.get("MPESA_CALLBACK_URL");
 
   if (!supabaseUrl || !serviceKey || !consumerKey ||
-      !consumerSecret || !shortcode || !passkey || !callbackURL) {
+      !consumerSecret || !shortcode || !tillNumber ||
+      !passkey || !callbackURL) {
     return respond(500, {
       success: false,
-      message: "Payment configuration is incomplete."
+      message: "Production payment configuration is incomplete."
     });
   }
 
@@ -69,7 +69,7 @@ const catalog = {
     if (!accessToken) {
       return respond(401, {
         success: false,
-        message: "Please log in to your learner account first."
+        message: "Please log in first."
       });
     }
 
@@ -86,7 +86,7 @@ const catalog = {
     if (!authResponse.ok) {
       return respond(401, {
         success: false,
-        message: "Your login session is invalid. Please log in again."
+        message: "Please log in again."
       });
     }
 
@@ -119,11 +119,10 @@ const catalog = {
     if (!/^254[17]\d{8}$/.test(phone)) {
       return respond(400, {
         success: false,
-        message: "Enter a valid Kenyan M-Pesa phone number."
+        message: "Enter a valid Kenyan M-Pesa number."
       });
     }
 
-    // Save a pending payment before requesting STK Push.
     const paymentResponse = await fetch(
       `${supabaseUrl}/rest/v1/payments`,
       {
@@ -147,7 +146,7 @@ const catalog = {
     if (!paymentResponse.ok || !paymentRows[0]?.id) {
       return respond(500, {
         success: false,
-        message: "Could not save the payment record. Please try again."
+        message: "Could not save payment record."
       });
     }
 
@@ -158,7 +157,7 @@ const catalog = {
     ).toString("base64");
 
     const tokenResponse = await fetch(
-      "https://sandbox.safaricom.co.ke/oauth/v1/generate?grant_type=client_credentials",
+      "https://api.safaricom.co.ke/oauth/v1/generate?grant_type=client_credentials",
       {
         headers: {
           Authorization: `Basic ${credentials}`
@@ -183,7 +182,7 @@ const catalog = {
       hourCycle: "h23"
     }).formatToParts(new Date());
 
-    const get = (type) =>
+    const get = type =>
       parts.find(part => part.type === type).value;
 
     const timestamp =
@@ -195,7 +194,7 @@ const catalog = {
     ).toString("base64");
 
     const stkResponse = await fetch(
-      "https://sandbox.safaricom.co.ke/mpesa/stkpush/v1/processrequest",
+      "https://api.safaricom.co.ke/mpesa/stkpush/v1/processrequest",
       {
         method: "POST",
         headers: {
@@ -206,10 +205,10 @@ const catalog = {
           BusinessShortCode: shortcode,
           Password: password,
           Timestamp: timestamp,
-          TransactionType: "CustomerPayBillOnline",
+          TransactionType: "CustomerBuyGoodsOnline",
           Amount: amount,
           PartyA: phone,
-          PartyB: shortcode,
+          PartyB: tillNumber,
           PhoneNumber: phone,
           CallBackURL: callbackURL,
           AccountReference: "JSLH",
@@ -258,7 +257,7 @@ const catalog = {
     if (!updateResponse.ok) {
       return respond(500, {
         success: false,
-        message: "Payment was initiated, but its record needs attention. Do not retry yet."
+        message: "Payment initiated. Record update needs attention."
       });
     }
 
@@ -270,6 +269,8 @@ const catalog = {
     });
 
   } catch (error) {
+    console.error("STK initiation error:", error.message);
+
     if (paymentId) {
       await fetch(
         `${supabaseUrl}/rest/v1/payments?id=eq.${paymentId}`,
