@@ -21,7 +21,11 @@ export default async (request) => {
   const consumerSecret = Netlify.env.get("MPESA_CONSUMER_SECRET");
   const shortcode = Netlify.env.get("MPESA_SHORTCODE");
   const passkey = Netlify.env.get("MPESA_PASSKEY");
+const isProduction = process.env.CONTEXT === "production";
 
+const mpesaBaseUrl = isProduction
+  ? "https://api.safaricom.co.ke"
+  : "https://sandbox.safaricom.co.ke";
   if (!supabaseUrl || !serviceKey || !consumerKey ||
       !consumerSecret || !shortcode || !passkey) {
     console.error("Callback configuration is incomplete.");
@@ -183,7 +187,7 @@ export default async (request) => {
     ).toString("base64");
 
     const tokenResponse = await fetch(
-      "https://api.safaricom.co.ke/oauth/v1/generate?grant_type=client_credentials",
+      `${mpesaBaseUrl}/oauth/v1/generate?grant_type=client_credentials`,
       {
         headers: { Authorization: `Basic ${credentials}` }
       }
@@ -201,7 +205,7 @@ export default async (request) => {
     ).toString("base64");
 
     const queryResponse = await fetch(
-      "https://api.safaricom.co.ke/mpesa/stkpushquery/v1/query",
+      `${mpesaBaseUrl}/mpesa/stkpushquery/v1/query`,
       {
         method: "POST",
         headers: {
