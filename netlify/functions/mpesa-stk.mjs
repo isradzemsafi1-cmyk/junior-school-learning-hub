@@ -79,7 +79,23 @@ export default async (request) => {
   };
 
   let paymentId;
+const readJson = async (response, service) => {
+  const raw = await response.text();
 
+  if (!raw.trim()) {
+    throw new Error(
+      `${service} returned an empty response. HTTP ${response.status}`
+    );
+  }
+
+  try {
+    return JSON.parse(raw);
+  } catch {
+    throw new Error(
+      `${service} returned invalid JSON. HTTP ${response.status}`
+    );
+  }
+};
   try {
     const body = await request.json();
 
@@ -112,7 +128,7 @@ export default async (request) => {
       });
     }
 
-    const user = await authResponse.json();
+    const user = await readJson(authResponse, "Supabase authentication");
 
     if (!user.id) {
       return respond(401, {
@@ -163,7 +179,7 @@ export default async (request) => {
       }
     );
 
-    const paymentRows = await paymentResponse.json();
+    const paymentRows = await readJson(paymentResponse, "Supabase payment record");
 
     if (!paymentResponse.ok || !paymentRows[0]?.id) {
       return respond(500, {
@@ -187,7 +203,7 @@ export default async (request) => {
       }
     );
 
-    const tokenData = await tokenResponse.json();
+    const tokenData = await readJson(tokenResponse, "Safaricom OAuth");
 
     if (!tokenResponse.ok || !tokenData.access_token) {
       throw new Error("Safaricom authentication failed.");
@@ -239,7 +255,7 @@ export default async (request) => {
       }
     );
 
-    const result = await stkResponse.json();
+    const result = await readJson(stkResponse, "Safaricom STK Push");
 
     if (!stkResponse.ok || result.ResponseCode !== "0") {
       await fetch(
