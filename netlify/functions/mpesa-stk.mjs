@@ -77,7 +77,11 @@ export default async (request) => {
     Authorization: `Bearer ${serviceKey}`,
     "Content-Type": "application/json"
   };
+const isProduction = process.env.CONTEXT === "production";
 
+const mpesaBaseUrl = isProduction
+  ? "https://api.safaricom.co.ke"
+  : "https://sandbox.safaricom.co.ke";
   let paymentId;
 const readJson = async (response, service) => {
   const raw = await response.text();
@@ -195,7 +199,7 @@ const readJson = async (response, service) => {
     ).toString("base64");
 
     const tokenResponse = await fetch(
-      "https://api.safaricom.co.ke/oauth/v1/generate?grant_type=client_credentials",
+      `${mpesaBaseUrl}/oauth/v1/generate?grant_type=client_credentials`,
       {
         headers: {
           Authorization: `Basic ${credentials}`
@@ -232,7 +236,7 @@ const readJson = async (response, service) => {
     ).toString("base64");
 
     const stkResponse = await fetch(
-      "https://api.safaricom.co.ke/mpesa/stkpush/v1/processrequest",
+      `${mpesaBaseUrl}/mpesa/stkpush/v1/processrequest`,
       {
         method: "POST",
         headers: {
