@@ -28,43 +28,24 @@ export default async (request) => {
     )
   };
 
-  const supabaseUrl = Netlify.env.get("SUPABASE_URL");
-  const publishableKey =
-    "sb_publishable_uaOcRVaIwnvRl_wZhMhJ-Q_DhrqZyS_";
-  const serviceKey =
-    Netlify.env.get("SUPABASE_SERVICE_ROLE_KEY");
 
-  const consumerKey = Netlify.env.get("MPESA_CONSUMER_KEY");
-  const consumerSecret = Netlify.env.get("MPESA_CONSUMER_SECRET");
-  const shortcode = Netlify.env.get("MPESA_SHORTCODE");
-  const tillNumber = Netlify.env.get("MPESA_TILL_NUMBER");
-  const passkey = Netlify.env.get("MPESA_PASSKEY");
-  const callbackURL = Netlify.env.get("MPESA_CALLBACK_URL");
+  const missing = [
+    ["SUPABASE_URL", supabaseUrl],
+    ["SUPABASE_SERVICE_ROLE_KEY", serviceKey],
+    ["MPESA_CONSUMER_KEY", consumerKey],
+    ["MPESA_CONSUMER_SECRET", consumerSecret],
+    ["MPESA_SHORTCODE", shortcode],
+    ["MPESA_TILL_NUMBER", tillNumber],
+    ["MPESA_PASSKEY", passkey],
+    ["MPESA_CALLBACK_URL", callbackURL]
+  ].filter(([, value]) => !value).map(([name]) => name);
 
-  if (!supabaseUrl || !serviceKey || !consumerKey ||
-      !consumerSecret || !shortcode || !tillNumber ||
-      !passkey || !callbackURL) {
+  if (missing.length) {
+    console.error("Missing payment configuration:", missing);
     return respond(500, {
       success: false,
-      message: "const missing = [
-  ["SUPABASE_URL", supabaseUrl],
-  ["SUPABASE_SERVICE_ROLE_KEY", serviceKey],
-  ["MPESA_CONSUMER_KEY", consumerKey],
-  ["MPESA_CONSUMER_SECRET", consumerSecret],
-  ["MPESA_SHORTCODE", shortcode],
-  ["MPESA_TILL_NUMBER", tillNumber],
-  ["MPESA_PASSKEY", passkey],
-  ["MPESA_CALLBACK_URL", callbackURL]
-].filter(([, value]) => !value).map(([name]) => name);
-
-if (missing.length) {
-  console.error("Missing payment configuration:", missing);
-  return respond(500, {
-    success: false,
-    message: "Payment configuration is incomplete.",
-    missing
-  });
-}"
+      message: "Payment configuration is incomplete.",
+      missing
     });
   }
 
@@ -74,6 +55,7 @@ if (missing.length) {
       message: "A secure HTTPS callback URL is required."
     });
   }
+
 
   const dbHeaders = {
     apikey: serviceKey,
