@@ -46,7 +46,25 @@ export default async (request) => {
       !passkey || !callbackURL) {
     return respond(500, {
       success: false,
-      message: "Production payment configuration is incomplete."
+      message: "const missing = [
+  ["SUPABASE_URL", supabaseUrl],
+  ["SUPABASE_SERVICE_ROLE_KEY", serviceKey],
+  ["MPESA_CONSUMER_KEY", consumerKey],
+  ["MPESA_CONSUMER_SECRET", consumerSecret],
+  ["MPESA_SHORTCODE", shortcode],
+  ["MPESA_TILL_NUMBER", tillNumber],
+  ["MPESA_PASSKEY", passkey],
+  ["MPESA_CALLBACK_URL", callbackURL]
+].filter(([, value]) => !value).map(([name]) => name);
+
+if (missing.length) {
+  console.error("Missing payment configuration:", missing);
+  return respond(500, {
+    success: false,
+    message: "Payment configuration is incomplete.",
+    missing
+  });
+}"
     });
   }
 
