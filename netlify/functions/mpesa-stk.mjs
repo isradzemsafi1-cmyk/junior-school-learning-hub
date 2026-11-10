@@ -247,10 +247,12 @@ const readJson = async (response, service) => {
           BusinessShortCode: shortcode,
           Password: password,
           Timestamp: timestamp,
-          TransactionType: "CustomerBuyGoodsOnline",
-          Amount: amount,
-          PartyA: phone,
-          PartyB: tillNumber,
+          TransactionType: isProduction
+  ? "CustomerBuyGoodsOnline"
+  : "CustomerPayBillOnline",
+Amount: amount,
+PartyA: phone,
+PartyB: isProduction ? tillNumber : shortcode,
           PhoneNumber: phone,
           CallBackURL: callbackURL,
           AccountReference: "JSLH",
