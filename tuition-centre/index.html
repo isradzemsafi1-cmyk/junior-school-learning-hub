@@ -204,17 +204,17 @@ table{width:100%;border-collapse:collapse;font-size:11px}th{text-align:left;colo
     <div class="notice">Learner contact details are private. They are collected for learning-related communication and should only be accessed by authorised staff. Parent/guardian contact is recommended for learners under 18.</div>
     <div class="auth-tabs"><button class="auth-tab active" id="tuitionLoginTab" type="button">Sign in</button><button class="auth-tab" id="tuitionSignupTab" type="button">Create free account</button></div>
     <div id="tuitionLoginPane">
-     <h3>Welcome back</h3><p class="muted">Sign in using your existing Junior School Learning Hub learner account.</p>
-     <div class="field"><label>Email address</label><input id="tuitionLoginEmail" type="email" autocomplete="email" placeholder="Enter your registered email"></div>
+     <h3>Welcome back</h3><p class="muted">Sign in with your learner username (or your existing email) and password.</p>
+     <div class="field"><label>Username or email address</label><input id="tuitionLoginEmail" type="text" autocomplete="username" placeholder="Enter your username"></div>
      <div class="field"><label>Password</label><input id="tuitionLoginPassword" type="password" autocomplete="current-password" placeholder="Enter your password"></div>
      <button class="btn" id="tuitionLoginButton" type="button">Sign in to tuition portal</button>
     </div>
     <div id="tuitionSignupPane" hidden>
-     <h3>Create your learner account</h3><p class="muted">Registration is free. Use a valid email address that you can access.</p>
+     <h3>Create your learner account</h3><p class="muted">Registration is free. Create a username and password. No email confirmation is required.</p>
      <div class="grid" style="grid-template-columns:1fr 1fr">
       <div class="field"><label>Learner's full name *</label><input id="tuitionFullName" autocomplete="name" placeholder="Enter learner's full name" required></div>
       <div class="field"><label>Grade *</label><select id="tuitionGrade" required><option value="">Select grade</option><option value="Grade 7">Grade 7</option><option value="Grade 8">Grade 8</option><option value="Grade 9">Grade 9</option></select></div>
-      <div class="field"><label>Email address *</label><input id="tuitionEmail" type="email" autocomplete="email" placeholder="name@example.com" required></div>
+      <div class="field"><label>Choose username *</label><input id="tuitionUsername" autocomplete="username" minlength="4" maxlength="20" placeholder="4–20 letters or numbers" required></div>
       <div class="field"><label>Learner phone number *</label><input id="tuitionPhone" type="tel" autocomplete="tel" placeholder="07XX XXX XXX" required></div>
       <div class="field"><label>Parent / guardian name</label><input id="tuitionGuardianName" placeholder="Parent or guardian full name"></div>
       <div class="field"><label>Parent / guardian phone</label><input id="tuitionGuardianPhone" type="tel" placeholder="07XX XXX XXX"></div>
@@ -426,7 +426,7 @@ function demoSubmit(){alert('Please sign in and select an assignment before subm
     if (!data) {
       const profile = {
         id: user.id,
-        full_name: meta.full_name || meta.name || user.email || "Learner",
+        full_name: meta.full_name || meta.name || meta.username || user.email || "Learner",
         grade: meta.grade || null,
         phone: meta.phone || meta.phone_number || null,
         guardian_name: meta.guardian_name || null,
@@ -551,40 +551,33 @@ function demoSubmit(){alert('Please sign in and select an assignment before subm
   $("tuitionSignupButton").addEventListener("click", async function () {
     const fullName = $("tuitionFullName").value.trim();
     const grade = $("tuitionGrade").value;
-    const email = $("tuitionEmail").value.trim();
+    const username = $("tuitionUsername").value.trim().toLowerCase();
     const phone = $("tuitionPhone").value.trim();
     const guardianName = $("tuitionGuardianName").value.trim();
     const guardianPhone = $("tuitionGuardianPhone").value.trim();
     const password = $("tuitionPassword").value;
     const confirm = $("tuitionPasswordConfirm").value;
-    if (!fullName || !grade || !email || !phone || !password) return say("Complete all required fields.", true);
+    if (!fullName || !grade || !username || !phone || !password) return say("Complete all required fields.", true);
     if (password.length < 8) return say("Use a password with at least 8 characters.", true);
     if (password !== confirm) return say("The passwords do not match.", true);
     if (!$("tuitionConsent").checked) return say("Please confirm the parent/guardian consent statement.", true);
     this.disabled = true; say("Creating your free learner account…");
-    const { data, error } = await client.auth.signUp({
-      email, password,
-      options: { emailRedirectTo: window.location.origin, data: {
-        full_name: fullName, grade, phone, guardian_name: guardianName, guardian_phone: guardianPhone,
-        registration_source: "online_tuition_centre"
-      }}
-    });
+    const response = await fetch("/.netlify/functions/learner-register", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ username, password, full_name: fullName, grade, phone, guardian_name: guardianName, guardian_phone: guardianPhone }) });
+    const result = await response.json().catch(() => ({}));
     this.disabled = false;
+    if (!response.ok) return say(result.error || "Account registration failed.", true);
+    const { data, error } = await client.auth.signInWithPassword({ email: result.email, password });
     if (error) return say(error.message, true);
-    if (data.session && data.user) {
-      await handleSession(data.session);
-      say("Your free learner account has been created. Welcome to the Tuition Centre!");
-      showPage("dashboard");
-    } else {
-      say("Registration received. Please check your email for the verification link, then return here to sign in.");
-      setAuthTab("login");
-    }
+    await handleSession(data.session);
+    say("Your learner account has been created. Welcome to the Tuition Centre!");
+    showPage("dashboard");
   });
 
   $("tuitionLoginButton").addEventListener("click", async function () {
-    const email = $("tuitionLoginEmail").value.trim();
+    const loginName = $("tuitionLoginEmail").value.trim().toLowerCase();
     const password = $("tuitionLoginPassword").value;
-    if (!email || !password) return say("Enter your email address and password.", true);
+    if (!loginName || !password) return say("Enter your username and password.", true);
+    const email = loginName.includes("@") ? loginName : `${loginName}@learners.juniorschoollearninghub.co.ke`;
     this.disabled = true; say("Signing in…");
     const { data, error } = await client.auth.signInWithPassword({ email, password });
     this.disabled = false;

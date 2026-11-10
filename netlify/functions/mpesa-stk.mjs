@@ -1,3 +1,5 @@
+import { teacherCatalog } from "../lib/teacher-catalog.mjs";
+
 
 export default async (request) => {
   const respond = (status, data) =>
@@ -18,7 +20,12 @@ export default async (request) => {
     premium_quizzes: 20,
     grade7_notes: 10,
     grade8_notes: 10,
-    grade9_notes: 30
+    grade9_notes: 30,
+    career_guidance_full_package: 30,
+    grade10_selection_form: 30,
+    ...Object.fromEntries(
+      Object.values(teacherCatalog).flat().map(item => [item.product_id, item.price_kes])
+    )
   };
 
   const supabaseUrl = Netlify.env.get("SUPABASE_URL");

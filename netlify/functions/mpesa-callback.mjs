@@ -1,3 +1,5 @@
+import { teacherCatalog } from "../lib/teacher-catalog.mjs";
+
 
 export default async (request) => {
   const respond = (status, data) =>
@@ -31,7 +33,12 @@ export default async (request) => {
     premium_quizzes: 20,
     grade7_notes: 10,
     grade8_notes: 10,
-    grade9_notes: 30
+    grade9_notes: 30,
+    career_guidance_full_package: 30,
+    grade10_selection_form: 30,
+    ...Object.fromEntries(
+      Object.values(teacherCatalog).flat().map(item => [item.product_id, item.price_kes])
+    )
   };
 
   const durations = {
@@ -39,7 +46,12 @@ export default async (request) => {
     grade8_notes: 12,
     grade9_notes: 24,
     online_tuition: 24,
-    premium_quizzes: 24
+    premium_quizzes: 24,
+    career_guidance_full_package: 720,
+    grade10_selection_form: 720,
+    ...Object.fromEntries(
+      Object.values(teacherCatalog).flat().map(item => [item.product_id, 720])
+    )
   };
 
   const dbHeaders = {

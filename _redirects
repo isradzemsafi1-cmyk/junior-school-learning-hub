@@ -1,0 +1,2 @@
+/grade8-teacher-resources/*.pdf  /.netlify/functions/teacher-resources?grade=8&path=:splat  200!
+/grade9-teacher-resources/*.pdf  /.netlify/functions/teacher-resources?grade=9&path=:splat  200!
