@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Digital School Centre V6 · Live Workspace</title>
+<style>
+:root{font-family:Inter,system-ui,Segoe UI,Arial,sans-serif;color:#172033;background:#f3f6fb}*{box-sizing:border-box}body{margin:0}header{background:#10213d;color:white;padding:16px 22px;display:flex;justify-content:space-between;align-items:center;gap:12px}h1{font-size:19px;margin:0}header small{color:#c9d8f2}.wrap{max-width:1150px;margin:26px auto;padding:0 16px}.panel{background:white;border:1px solid #dfe6f0;border-radius:14px;padding:20px;margin-bottom:16px;box-shadow:0 3px 12px #12274b08}.hidden{display:none!important}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:12px}.field{display:flex;flex-direction:column;gap:5px}.field label{font-size:12px;font-weight:700;color:#53627b}.field input,.field select{padding:11px;border:1px solid #ccd6e5;border-radius:8px;font:inherit;width:100%}.btn{border:0;border-radius:8px;background:#2457d6;color:white;padding:10px 15px;font-weight:700;cursor:pointer}.btn.alt{background:#eaf0fb;color:#24406d}.btn.danger{background:#9c3440}.actions{display:flex;gap:9px;flex-wrap:wrap;margin-top:14px}.notice{padding:12px;background:#fff5dc;border:1px solid #f1dba2;color:#72500b;border-radius:9px;margin:12px 0}.status{font-size:13px;color:#52617a;margin-top:10px;white-space:pre-wrap}.tabs{display:flex;gap:7px;flex-wrap:wrap;margin:12px 0}.tabs button{border:1px solid #d7e0ed;background:white;padding:9px 12px;border-radius:8px;cursor:pointer}.tabs button.active{background:#eaf0ff;border-color:#9cb6ee;color:#173d93}.tablewrap{overflow:auto;border:1px solid #e2e8f0;border-radius:9px;margin-top:14px}table{width:100%;border-collapse:collapse;font-size:13px}th,td{text-align:left;padding:10px;border-bottom:1px solid #e7edf5;white-space:nowrap}th{background:#f5f8fc;color:#53627b}.muted{color:#68758b;font-size:13px}h2{font-size:22px;margin:0 0 8px}h3{font-size:16px;margin:0 0 12px}.schoolhead{display:flex;justify-content:space-between;gap:10px;align-items:center;flex-wrap:wrap}@media(max-width:600px){header{padding:13px}.wrap{margin:15px auto}.panel{padding:14px}}
+</style>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="./supabase-config.js"></script>
+</head><body>
+<header><div><h1>Digital School Centre V6</h1><small>Secure school workspace · Pre-primary to Senior School</small></div><div id="headerUser" class="muted" style="color:#d5e2f8">Not signed in</div></header>
+<main class="wrap">
+<div class="notice"><b>Development environment:</b> Connect this app to a dedicated Supabase development project first. Use fictional test records only. Never put a service-role key in this file; only the project's public anon/publishable key belongs in browser configuration.</div>
+<section id="configError" class="panel hidden"><h2>Supabase setup required</h2><p>Open <code>supabase-config.js</code> and enter your Supabase project URL and public anon/publishable key. Do not enter a service-role key.</p><p id="configText" class="status"></p></section>
+<section id="authPanel" class="panel hidden">
+<h2>Sign in to your school workspace</h2><p class="muted">Create an account using your email, then verify it if email confirmation is enabled in Supabase.</p>
+<div class="grid"><div class="field"><label>Email</label><input id="email" type="email" autocomplete="email" required></div><div class="field"><label>Password</label><input id="password" type="password" autocomplete="current-password" required minlength="8"></div></div>
+<div class="actions"><button class="btn" onclick="signIn()">Sign in</button><button class="btn alt" onclick="signUp()">Create account</button><button class="btn alt" onclick="resetPassword()">Forgot password?</button></div><div id="authStatus" class="status"></div>
+</section>
+<section id="onboardPanel" class="panel hidden">
+<h2>Create your school workspace</h2><p class="muted">The secure database function creates the school and assigns the signed-in account as its first school owner. It does not allow the browser to assign roles to other users.</p>
+<div class="grid">
+<div class="field"><label>Registered / legal school name</label><input id="legalName" required></div>
+<div class="field"><label>Display name</label><input id="displayName" required></div>
+<div class="field"><label>Workspace URL slug (lowercase, unique)</label><input id="slug" placeholder="e.g. green-valley-school" pattern="[a-z0-9][a-z0-9-]{2,49}"></div>
+<div class="field"><label>School type</label><select id="schoolType"><option value="public">Public</option><option value="private">Private</option><option value="community">Community / APBET</option><option value="faith_based">Faith-based</option><option value="other">Other</option></select></div>
+<div class="field"><label>School model</label><select id="schoolModel"><option value="day">Day</option><option value="boarding">Boarding</option><option value="day_and_boarding">Day and boarding</option><option value="online_blended">Online / blended</option></select></div>
+<div class="field"><label>County</label><input id="county"></div><div class="field"><label>Sub-county</label><input id="subCounty"></div>
+</div><div class="actions"><button class="btn" onclick="createWorkspace()">Create school workspace</button><button class="btn alt" onclick="signOut()">Sign out</button></div><div id="onboardStatus" class="status"></div>
+</section>
+<section id="workspacePanel" class="panel hidden">
+<div class="schoolhead"><div><h2 id="schoolTitle">School workspace</h2><div class="muted" id="schoolMeta"></div></div><div class="actions"><button class="btn alt" onclick="refreshAll()">Refresh</button><button class="btn alt" onclick="signOut()">Sign out</button></div></div>
+<div class="tabs">
+<button class="active" data-tab="years" onclick="showTab('years')">Academic years</button><button data-tab="grades" onclick="showTab('grades')">Grades</button><button data-tab="streams" onclick="showTab('streams')">Streams</button><button data-tab="staff" onclick="showTab('staff')">Staff</button><button data-tab="learners" onclick="showTab('learners')">Learners</button><button data-tab="areas" onclick="showTab('areas')">Learning areas</button>
+</div><div id="tabContent"></div><div id="workspaceStatus" class="status"></div>
+</section>
+</main>
+<script>
+let sb=null,user=null,school=null,activeTab="years";
+const $=id=>document.getElementById(id);
+function show(id,on=true){$(id).classList.toggle("hidden",!on)}
+function msg(id,t){$(id).textContent=t}
+function esc(v){return String(v??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]))}
+function config(){const c=window.DSC_SUPABASE_CONFIG||{};return c.url&&c.anonKey&&!String(c.url).includes("YOUR_")&&!String(c.anonKey).includes("YOUR_")?c:null}
+async function boot(){
+ const c=config();if(!window.supabase||!c){show("configError");msg("configText",!window.supabase?"Could not load Supabase JavaScript SDK. Check internet access.":"Supabase URL or public key is missing in supabase-config.js.");return}
+ sb=window.supabase.createClient(c.url,c.anonKey,{auth:{persistSession:true,autoRefreshToken:true,detectSessionInUrl:true}});
+ const {data:{session}}=await sb.auth.getSession();await onSession(session);
+ sb.auth.onAuthStateChange((_event,session)=>{setTimeout(()=>onSession(session),0)});
+}
+async function onSession(session){
+ user=session?.user||null;$("headerUser").textContent=user?user.email:"Not signed in";
+ show("authPanel",!user);show("onboardPanel",false);show("workspacePanel",false);
+ if(!user)return;
+ const {data:members,error}=await sb.from("school_memberships").select("school_id,role,active").eq("user_id",user.id).eq("active",true);
+ if(error){show("onboardPanel");msg("onboardStatus","Could not load memberships: "+error.message);return}
+ if(!members?.length){show("onboardPanel");return}
+ if(members.length>1){show("onboardPanel");msg("onboardStatus","This first release supports one school workspace per account. Contact the platform administrator for additional school access.");return}
+ const {data:s,error:se}=await sb.from("schools").select("id,legal_name,display_name,county,sub_county,status").eq("id",members[0].school_id).single();
+ if(se){show("onboardPanel");msg("onboardStatus","Could not load school profile: "+se.message);return}
+ school=s;show("workspacePanel");$("schoolTitle").textContent=s.display_name;$("schoolMeta").textContent=[s.legal_name,s.county,s.sub_county,members[0].role].filter(Boolean).join(" · ");await refreshAll();
+}
+async function signIn(){const email=$("email").value.trim(),password=$("password").value;if(!email||!password){msg("authStatus","Enter your email and password.");return}msg("authStatus","Signing in…");const {error}=await sb.auth.signInWithPassword({email,password});msg("authStatus",error?error.message:"Signed in.");}
+async function signUp(){const email=$("email").value.trim(),password=$("password").value;if(!email||password.length<8){msg("authStatus","Enter an email and a password of at least 8 characters.");return}msg("authStatus","Creating account…");const {data,error}=await sb.auth.signUp({email,password});msg("authStatus",error?error.message:(data.session?"Account created and signed in.":"Account created. Check your email to verify the address, then sign in."));}
+async function resetPassword(){const email=$("email").value.trim();if(!email){msg("authStatus","Enter your email first.");return}const {error}=await sb.auth.resetPasswordForEmail(email,{redirectTo:location.origin+location.pathname});msg("authStatus",error?error.message:"Password reset email requested. Check your inbox.");}
+async function signOut(){await sb.auth.signOut();school=null;user=null;show("workspacePanel",false);show("onboardPanel",false);show("authPanel",true)}
+async function createWorkspace(){
+ const p={p_legal_name:$("legalName").value.trim(),p_display_name:$("displayName").value.trim(),p_slug:$("slug").value.trim(),p_school_type:$("schoolType").value,p_school_model:$("schoolModel").value,p_county:$("county").value.trim()||null,p_sub_county:$("subCounty").value.trim()||null};
+ if(!p.p_legal_name||!p.p_display_name||!p.p_slug){msg("onboardStatus","Complete the legal name, display name and unique URL slug.");return}
+ msg("onboardStatus","Creating secure school workspace…");
+ const {data,error}=await sb.rpc("create_school_workspace",p);
+ if(error){msg("onboardStatus",error.message);return}
+ msg("onboardStatus","Workspace created. Loading your school…");await onSession({user});
+}
+function showTab(tab){activeTab=tab;document.querySelectorAll("[data-tab]").forEach(b=>b.classList.toggle("active",b.dataset.tab===tab));renderTab()}
+async function refreshAll(){await renderTab();msg("workspaceStatus","Data refreshed from the connected Supabase project.")}
+async function renderTab(){
+ if(!school)return;const el=$("tabContent");el.innerHTML="<p class='muted'>Loading…</p>";
+ const config={
+ years:{table:"academic_years",select:"id,name,starts_on,ends_on,is_current",title:"Academic years",fields:[["name","Year name","text"],["starts_on","Start date","date"],["ends_on","End date","date"]]},
+ grades:{table:"school_grades",select:"id,name,sort_order,stage_id",title:"Grades / classes",fields:[["name","Grade name (e.g. PP1, Grade 7)","text"],["sort_order","Display order","number"]]},
+ streams:{table:"school_streams",select:"id,name,grade_id,capacity",title:"Streams",fields:[["name","Stream name","text"],["capacity","Capacity","number"]]},
+ staff:{table:"staff_profiles",select:"id,staff_number,full_name,job_title,email,active",title:"Staff register",fields:[["staff_number","Staff number","text"],["full_name","Full name","text"],["job_title","Job title","text"],["email","Email","email"]]},
+ learners:{table:"learners",select:"id,admission_number,full_name,grade_id,stream_id,enrolment_status",title:"Learner register",fields:[["admission_number","Admission number","text"],["full_name","Full name","text"]]},
+ areas:{table:"learning_areas",select:"id,code,name,active",title:"Learning areas",fields:[["code","Code","text"],["name","Learning area name","text"]]}
+ }[activeTab];
+ let query=sb.from(config.table).select(config.select).eq("school_id",school.id).order(config.table==="academic_years"?"starts_on":config.table==="school_grades"?"sort_order":config.table==="staff_profiles"?"full_name":config.table==="learners"?"admission_number":"name",{ascending:true});
+ const {data,error}=await query;
+ if(error){el.innerHTML=`<div class="notice">Could not load ${esc(config.title)}: ${esc(error.message)}</div>`;return}
+ const rows=data||[];
+ const extra=activeTab==="grades"?`<div class="field"><label>Education stage</label><select id="f_stage"><option value="PRE_PRIMARY">Pre-primary</option><option value="LOWER_PRIMARY">Lower Primary</option><option value="UPPER_PRIMARY">Upper Primary</option><option value="JUNIOR_SCHOOL">Junior School</option><option value="SENIOR_SCHOOL">Senior School</option><option value="STAGE_BASED">Stage-based / SNE</option><option value="ALTERNATIVE">Alternative curriculum</option></select></div>`:
+ activeTab==="streams"?`<div class="field"><label>Grade</label><select id="f_grade">${(await getRows("school_grades","id,name")).map(x=>`<option value="${x.id}">${esc(x.name)}</option>`).join("")}</select></div>`:
+ activeTab==="learners"?`<div class="field"><label>Grade</label><select id="f_grade">${(await getRows("school_grades","id,name")).map(x=>`<option value="${x.id}">${esc(x.name)}</option>`).join("")}</select></div><div class="field"><label>Stream (optional)</label><select id="f_stream"><option value="">Not assigned</option>${(await getRows("school_streams","id,name")).map(x=>`<option value="${x.id}">${esc(x.name)}</option>`).join("")}</select></div>`:
+ activeTab==="areas"?`<div class="field"><label>Stage</label><select id="f_stage"><option value="PRE_PRIMARY">Pre-primary</option><option value="LOWER_PRIMARY">Lower Primary</option><option value="UPPER_PRIMARY">Upper Primary</option><option value="JUNIOR_SCHOOL">Junior School</option><option value="SENIOR_SCHOOL">Senior School</option><option value="STAGE_BASED">Stage-based / SNE</option><option value="ALTERNATIVE">Alternative curriculum</option></select></div>`:"";
+ el.innerHTML=`<h3>${config.title}</h3><form id="recordForm" class="grid">${config.fields.map(f=>`<div class="field"><label>${f[1]}</label><input id="f_${f[0]}" type="${f[2]}" ${f[0]==="name"||f[0]==="full_name"||f[0]==="admission_number"?"required":""}></div>`).join("")}${extra}<div class="actions"><button class="btn" type="submit">Save record</button></div></form><div class="tablewrap"><table><thead><tr>${Object.keys(rows[0]||{}).filter(k=>k!=="id"&&k!=="school_id").map(k=>`<th>${esc(k.replaceAll("_"," "))}</th>`).join("")}<th>Action</th></tr></thead><tbody>${rows.map(row=>`<tr>${Object.keys(row).filter(k=>k!=="id"&&k!=="school_id").map(k=>`<td>${esc(row[k]??"—")}</td>`).join("")}<td><button class="btn danger" onclick="deleteRow('${config.table}','${row.id}')">Delete</button></td></tr>`).join("")||`<tr><td colspan="8" class="muted">No records found.</td></tr>`}</tbody></table></div>`;
+ $("recordForm").addEventListener("submit",e=>saveRecord(e,activeTab,config));
+}
+async function getRows(table,select){const {data,error}=await sb.from(table).select(select).eq("school_id",school.id).order("name");if(error){console.warn(error);return []}return data||[]}
+async function saveRecord(e,tab,cfg){
+ e.preventDefault();const row={school_id:school.id};
+ cfg.fields.forEach(f=>{const v=$("f_"+f[0]).value;row[f[0]]=f[2]==="number"?(v===""?null:Number(v)):(v||null)});
+ if(tab==="grades"){const {data,error}=await sb.from("education_stages").select("id").eq("code",$("f_stage").value).single();if(error){msg("workspaceStatus",error.message);return}row.stage_id=data.id}
+ if(tab==="streams"){row.grade_id=$("f_grade").value}
+ if(tab==="learners"){row.grade_id=$("f_grade").value;row.stream_id=$("f_stream").value||null}
+ if(tab==="areas"){const {data,error}=await sb.from("education_stages").select("id").eq("code",$("f_stage").value).single();if(error){msg("workspaceStatus",error.message);return}row.stage_id=data.id}
+ const {error}=await sb.from(cfg.table).insert(row);
+ if(error){msg("workspaceStatus","Save failed: "+error.message);return}
+ msg("workspaceStatus","Record saved.");await renderTab();
+}
+async function deleteRow(table,id){if(!confirm("Delete this record? Related records may prevent deletion."))return;const {error}=await sb.from(table).delete().eq("id",id).eq("school_id",school.id);msg("workspaceStatus",error?"Delete failed: "+error.message:"Record deleted.");await renderTab()}
+boot();
+</script></body></html>

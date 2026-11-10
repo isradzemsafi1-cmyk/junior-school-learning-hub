@@ -1,0 +1,420 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Digital School Centre | Academic Management</title>
+<style>
+:root{--navy:#12213b;--blue:#2457d6;--sky:#eaf1ff;--ink:#172033;--muted:#68758b;--line:#e5eaf2;--bg:#f5f7fb;--white:#fff;--green:#13865c;--amber:#a56608}
+*{box-sizing:border-box}body{margin:0;font:14px/1.5 Inter,Segoe UI,Arial,sans-serif;background:var(--bg);color:var(--ink)}
+header{background:linear-gradient(120deg,#12213b,#1e438b);color:white;padding:20px 26px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+.brand{display:flex;align-items:center;gap:12px}.logo{width:42px;height:42px;border-radius:13px;background:#fff;color:#2457d6;display:grid;place-items:center;font-size:22px;font-weight:800}.brand h1{font-size:18px;margin:0}.brand p{margin:2px 0 0;color:#d6e2ff;font-size:12px}
+.header-right{font-size:12px;color:#d6e2ff;text-align:right}
+.layout{display:grid;grid-template-columns:230px 1fr;min-height:calc(100vh - 82px)}
+aside{background:var(--navy);padding:18px 12px;color:#dce5f5}
+.school{padding:12px 12px 18px;border-bottom:1px solid #34445e;margin-bottom:12px}.school b{display:block;color:white}.school small{color:#aebbd0}
+.v6-nav-link{display:flex;align-items:center;width:100%;color:#fff;background:#2457d6;padding:11px 12px;margin:3px 0 10px;border-radius:9px;text-decoration:none;font-size:13px;font-weight:700;gap:10px}.v6-nav-link:hover{background:#356be8}
+nav button{display:flex;width:100%;border:0;background:transparent;color:#dce5f5;padding:11px 12px;margin:3px 0;border-radius:9px;text-align:left;cursor:pointer;font-size:13px;gap:10px}
+nav button.active,nav button:hover{background:#29477b;color:white}
+main{padding:25px;max-width:1500px;width:100%;margin:auto}
+.welcome{display:flex;justify-content:space-between;align-items:center;gap:20px;margin-bottom:22px}.welcome h2{margin:0;font-size:25px}.welcome p{margin:5px 0;color:var(--muted)}.pill{display:inline-block;padding:5px 10px;border-radius:30px;background:#e8f7ef;color:var(--green);font-size:11px;font-weight:700}
+.cards{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;margin-bottom:20px}.card,.panel{background:white;border:1px solid var(--line);border-radius:14px;padding:17px;box-shadow:0 3px 12px #182b4d08}
+.metric{font-size:26px;font-weight:800;margin:6px 0}.muted{color:var(--muted)}.label{font-size:12px;color:var(--muted)}
+.grid2{display:grid;grid-template-columns:1.2fr .8fr;gap:16px}.panel h3{margin:0 0 14px;font-size:16px}
+.actions{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0}.btn{border:0;border-radius:9px;padding:9px 13px;background:var(--blue);color:white;font-weight:650;cursor:pointer}.btn.secondary{background:#edf2fb;color:#233b67}.btn.outline{background:white;color:var(--blue);border:1px solid #cbd8f5}.btn:active{transform:translateY(1px)}
+.section{display:none}.section.active{display:block}
+.toolbar{display:flex;flex-wrap:wrap;gap:9px;align-items:center;margin:12px 0 16px}.toolbar input,.toolbar select,.field input,.field select,.field textarea{border:1px solid #d8e0ed;border-radius:8px;padding:9px 10px;background:white;color:var(--ink);min-width:130px}
+table{width:100%;border-collapse:collapse;font-size:12px}th,td{padding:10px 9px;border-bottom:1px solid var(--line);text-align:left;white-space:nowrap}th{background:#f6f8fc;color:#53627b;font-weight:700}tr:hover td{background:#fbfcff}
+.table-wrap{overflow:auto;border:1px solid var(--line);border-radius:10px}
+.formgrid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}.field{display:flex;flex-direction:column;gap:5px}.field label{font-size:12px;color:var(--muted);font-weight:650}.field input,.field select{width:100%}
+.report{background:white;border:1px solid #dce3ef;border-radius:12px;padding:24px;max-width:950px;margin:0 auto}.report-head{text-align:center;border-bottom:2px solid #243e70;padding-bottom:14px;margin-bottom:15px}.report-head h2{margin:0;color:#17366e}.report-head p{margin:4px;color:#64718a}.report-meta{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:14px 0}.meta{background:#f6f8fc;padding:9px;border-radius:7px}.meta small{display:block;color:var(--muted)}.result{font-weight:800}.remark{padding:10px;background:#f8faff;border-left:3px solid #2457d6;margin-top:10px}
+.chartbar{height:10px;background:#edf1f7;border-radius:20px;overflow:hidden}.chartbar span{display:block;height:100%;background:linear-gradient(90deg,#2457d6,#56a0f5)}.graph-list{display:grid;gap:10px;margin:10px 0 18px}.graph-row{display:grid;grid-template-columns:112px 1fr 44px;gap:8px;align-items:center;font-size:12px}.graph-track{height:13px;background:#edf1f7;border-radius:20px;overflow:hidden}.graph-fill{height:100%;background:linear-gradient(90deg,#2457d6,#56a0f5);border-radius:20px}.graph-value{text-align:right;font-weight:700;color:#24324a}
+footer{text-align:center;color:#7a879b;font-size:11px;padding:24px}
+@media(max-width:900px){.layout{grid-template-columns:1fr}aside{padding:8px}nav{display:flex;overflow:auto}nav button{min-width:max-content;width:auto}.school{display:none}.cards{grid-template-columns:repeat(2,1fr)}.grid2{grid-template-columns:1fr}}
+@media(max-width:560px){main{padding:14px}.cards{grid-template-columns:1fr 1fr}.formgrid{grid-template-columns:1fr}.welcome{align-items:flex-start;flex-direction:column}.report-meta{grid-template-columns:1fr 1fr}}
+@media print{header,aside,.welcome,.no-print,footer{display:none!important}.layout{display:block}main{padding:0}.section{display:none!important}#reports{display:block!important}.report{border:0;max-width:none}}
+
+.tt-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:14px}.subpanel{border:1px solid var(--line);box-shadow:none;padding:16px}.subpanel h3{margin-top:0}.tt-grid .formgrid{margin:12px 0}.tt-grid .table-wrap{margin-top:12px}.tt-grid table{font-size:12px}.tt-grid td,.tt-grid th{padding:8px}.tt-delete{border:0;background:#fff0f0;color:#a22;border-radius:7px;padding:4px 8px;cursor:pointer}.tt-break{background:#fff6df!important;color:#815300;font-weight:700;text-align:center}.tt-slot{min-width:110px}.tt-cell{min-width:125px}.tt-small{font-size:11px;color:var(--muted)}@media(max-width:900px){.tt-grid{grid-template-columns:1fr}}
+
+#occurrence textarea{width:100%;resize:vertical;border:1px solid var(--line);border-radius:8px;padding:10px;font:inherit;background:white;color:var(--ink)}
+#occurrence .formgrid{margin:12px 0}
+#occurrence .table-wrap{margin-top:12px}
+#occurrence td{vertical-align:top;min-width:110px}
+.occ-pill{display:inline-block;border-radius:20px;padding:3px 8px;font-size:11px;background:#eef2f8;color:#34445f;white-space:nowrap}
+.occ-pill.pending{background:#fff1d6;color:#825500}.occ-pill.completed{background:#e3f6ec;color:#176b43}.occ-pill.progress{background:#e8efff;color:#244d9a}
+</style></head>
+<body>
+<header><div class="brand"><div class="logo">DS</div><div><h1>Digital School Centre</h1><p>Academic Management System · Independent school workspace</p></div></div><div class="header-right">DEMONSTRATION MODE<br>Sample records · Not connected to a live school database</div></header>
+<div class="layout"><aside><div class="school"><b>Karunga Primary Junior School</b><small>Illustrative pilot workspace</small></div><nav id="nav">
+<a class="v6-nav-link" href="./v6/app/index.html">✦ Digital School Centre V6</a>
+<button class="active" data-target="dashboard">▦ Dashboard</button><button data-target="organisation">▤ School Organisation</button><button data-target="learners">♙ Learners</button><button data-target="staff">♧ Staff & Teachers</button><button data-target="occurrence">▣ Daily Occurrence</button><button data-target="marks">✎ Marks Entry</button><button data-target="analysis">▥ Analysis & Merit Lists</button><button data-target="reports">▤ Report Cards</button><button data-target="timetable">◷ Timetable</button><button data-target="finance">▤ Finance</button><button data-target="settings">⚙ School Settings</button>
+</nav></aside>
+<main>
+<div class="welcome"><div><h2 id="pageTitle">School overview</h2><p id="pageSub">A clear view of your school's academic operations.</p></div><span class="pill">● Demonstration workspace</span></div>
+<section id="dashboard" class="section active">
+<div class="cards">
+<div class="card"><div class="label">Enrolled learners</div><div class="metric">1,311</div><div class="muted">Across 12 active grades</div></div>
+<div class="card"><div class="label">Teaching staff</div><div class="metric">48</div><div class="muted">Illustrative staff register</div></div>
+<div class="card"><div class="label">Active classes / streams</div><div class="metric">32</div><div class="muted">Organised by grade and stream</div></div>
+<div class="card"><div class="label">Assessments this term</div><div class="metric">9</div><div class="muted">Across selected learning areas</div></div>
+</div>
+<div class="panel" style="margin-bottom:16px;border-color:#cbd8f5"><h3>Next-generation school management · V6</h3><p class="muted">Open the expanded workspace for all education stages, live academic setup, timetable operations and assessment workflows.</p><div class="actions"><a class="btn" href="./v6/app/index.html">Open Digital School Centre V6</a></div></div>
+<div class="grid2"><div class="panel"><h3>Academic workspace</h3><p class="muted">Manage the academic cycle from learner enrolment through assessment, analysis and reporting.</p><div class="actions"><button class="btn" onclick="show('analysis')">Create an examination</button><button class="btn secondary" onclick="show('learners')">Open learner register</button><button class="btn secondary" onclick="show('reports')">Generate report cards</button></div><h3 style="margin-top:22px">Assessment completion</h3><div class="label">Marks entered · Grade 7 demonstration</div><div class="chartbar"><span style="width:82%"></span></div><p class="muted">82% · Illustrative progress only</p></div>
+<div class="panel"><h3>Quick school structure</h3><table><tr><td>Pre-primary</td><td>PP1 · PP2</td></tr><tr><td>Lower Primary</td><td>Grades 1–3</td></tr><tr><td>Upper Primary</td><td>Grades 4–6</td></tr><tr><td>Junior School</td><td>Grades 7–9</td></tr><tr><td>Senior School</td><td>Grades 10–12</td></tr></table><p class="muted">Each school can configure the levels it offers.</p></div></div>
+</section>
+<section id="organisation" class="section"><div class="panel"><h3>School organisation</h3><p class="muted">Configure grade levels, streams and learning areas for this school.</p><div class="toolbar"><button class="btn" onclick="alert('Demo: Add grade/level form')">＋ Add grade / level</button><button class="btn secondary" onclick="alert('Demo: Add stream form')">＋ Add stream</button><button class="btn secondary" onclick="alert('Demo: Add learning area form')">＋ Add learning area</button></div><div class="table-wrap"><table><thead><tr><th>Level</th><th>Stage</th><th>Streams</th><th>Learners</th><th>Status</th></tr></thead><tbody><tr><td>Play Group</td><td>Pre-primary</td><td>—</td><td>0</td><td>Inactive</td></tr><tr><td>PP1 / PP2</td><td>Pre-primary</td><td>2</td><td>—</td><td>Active</td></tr><tr><td>Grades 1–3</td><td>Lower Primary</td><td>6</td><td>376</td><td>Active</td></tr><tr><td>Grades 4–6</td><td>Upper Primary</td><td>6</td><td>409</td><td>Active</td></tr><tr><td>Grades 7–9</td><td>Junior School</td><td>9</td><td>426</td><td>Active</td></tr><tr><td>Grades 10–12</td><td>Senior School</td><td>—</td><td>0</td><td>Available to configure</td></tr></tbody></table></div></div></section>
+<section id="learners" class="section"><div class="panel"><h3>Learner register</h3><div class="toolbar"><input id="learnerSearch" placeholder="Search learner name or admission no." oninput="filterRows('learnerTable',this.value)"><select><option>All grades</option><option>Grade 7</option><option>Grade 8</option><option>Grade 9</option></select><select><option>All streams</option><option>East</option><option>West</option><option>Central</option></select><button class="btn" onclick="alert('Demo: New learner form')">＋ Register learner</button><button class="btn secondary" onclick="alert('Demo: Import learners from CSV/Excel')">Import register</button></div><div class="table-wrap"><table id="learnerTable"><thead><tr><th>Adm. No.</th><th>Learner name</th><th>Grade</th><th>Stream</th><th>Gender</th><th>Status</th></tr></thead><tbody><tr><td>DSC001</td><td>Sample Learner One</td><td>Grade 7</td><td>East</td><td>—</td><td>Active</td></tr><tr><td>DSC002</td><td>Sample Learner Two</td><td>Grade 7</td><td>West</td><td>—</td><td>Active</td></tr><tr><td>DSC003</td><td>Sample Learner Three</td><td>Grade 8</td><td>Central</td><td>—</td><td>Active</td></tr></tbody></table></div></div></section>
+<section id="staff" class="section"><div class="panel"><h3>Staff and teacher management</h3><div class="actions"><button class="btn" onclick="alert('Demo: Add staff member')">＋ Add staff member</button><button class="btn secondary" onclick="alert('Demo: Assign learning areas and classes')">Assign classes & learning areas</button></div><div class="table-wrap"><table><tr><th>Staff ID</th><th>Name</th><th>Role</th><th>Assigned area</th><th>Classes</th></tr><tr><td>ST001</td><td>Sample Teacher A</td><td>Teacher</td><td>Mathematics</td><td>Grade 7 East</td></tr><tr><td>ST002</td><td>Sample Teacher B</td><td>Teacher</td><td>Integrated Science</td><td>Grade 7 West</td></tr><tr><td>ST003</td><td>Sample Administrator</td><td>School Admin</td><td>—</td><td>All</td></tr></table></div></div></section>
+<section id="exams" class="section"><div class="panel"><h3>Examination setup</h3><p class="muted">Examination creation is managed from Analysis & Merit Lists.</p><button class="btn" onclick="show('analysis')">Open Analysis & Merit Lists</button></div></section>
+<section id="occurrence" class="section">
+<div class="panel">
+ <div class="row" style="justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap">
+  <div><h3>Teacher Daily Occurrence Book</h3><p class="muted">Record the day's teaching activities, lesson coverage, attendance concerns, incidents and follow-up actions. Records are sample browser-session data in this prototype.</p></div>
+  <button class="btn secondary" onclick="occExportCSV()">Export records (CSV)</button>
+ </div>
+ <div class="cards">
+  <div class="card"><div class="label">Entries today</div><div class="metric" id="occTodayCount">0</div></div>
+  <div class="card"><div class="label">Teachers recorded</div><div class="metric" id="occTeacherCount">0</div></div>
+  <div class="card"><div class="label">Follow-ups pending</div><div class="metric" id="occPendingCount">0</div></div>
+  <div class="card"><div class="label">Incidents recorded</div><div class="metric" id="occIncidentCount">0</div></div>
+ </div>
+ <div class="panel" style="margin-top:16px;background:#fbfcff">
+  <h3>New daily occurrence entry</h3>
+  <div class="formgrid">
+   <div class="field"><label>Date</label><input id="occDate" type="date"></div>
+   <div class="field"><label>Teacher</label><input id="occTeacher" placeholder="Teacher's full name"></div>
+   <div class="field"><label>Grade / class</label><input id="occGrade" placeholder="e.g. Grade 8"></div>
+   <div class="field"><label>Stream</label><input id="occStream" placeholder="e.g. East"></div>
+   <div class="field"><label>Learning area</label><input id="occSubject" placeholder="e.g. Mathematics"></div>
+   <div class="field"><label>Lesson / period</label><input id="occLesson" placeholder="e.g. Period 2"></div>
+   <div class="field"><label>Learner attendance</label><select id="occAttendance"><option>Present</option><option>Absentees recorded</option><option>Class not held</option><option>Partial attendance</option></select></div>
+   <div class="field"><label>Occurrence category</label><select id="occCategory"><option>Normal lesson</option><option>Lesson not held</option><option>Late arrival</option><option>Discipline / behaviour</option><option>Health / safety</option><option>Learning support</option><option>Parent / guardian contact</option><option>Other</option></select></div>
+  </div>
+  <div class="field"><label>Work covered / teaching and learning activities</label><textarea id="occWork" rows="3" placeholder="Describe what was taught or completed. Use past tense and include the learning activity."></textarea></div>
+  <div class="formgrid">
+   <div class="field"><label>Occurrence / observation (if any)</label><textarea id="occIncident" rows="2" placeholder="Record factual observations. Do not include unnecessary sensitive details."></textarea></div>
+   <div class="field"><label>Action taken / follow-up required</label><textarea id="occAction" rows="2" placeholder="State action taken, person responsible and next step."></textarea></div>
+  </div>
+  <div class="formgrid">
+   <div class="field"><label>Follow-up status</label><select id="occStatus"><option>Not required</option><option>Pending</option><option>In progress</option><option>Completed</option></select></div>
+   <div class="field"><label>Headteacher / supervisor remarks</label><input id="occRemarks" placeholder="Optional review comments"></div>
+  </div>
+  <button class="btn" onclick="occAdd()">＋ Save daily occurrence</button>
+  <span class="muted" id="occStatusMessage"></span>
+ </div>
+ <div class="panel" style="margin-top:16px">
+  <div class="row" style="justify-content:space-between;align-items:center;flex-wrap:wrap">
+   <h3>Daily occurrence register</h3>
+   <div class="toolbar"><input id="occSearch" placeholder="Search teacher, class or subject" oninput="occRender()"><select id="occFilter" onchange="occRender()"><option value="all">All follow-up statuses</option><option>Pending</option><option>In progress</option><option>Completed</option><option>Not required</option></select></div>
+  </div>
+  <div class="table-wrap"><table><thead><tr><th>Date</th><th>Teacher / Class</th><th>Learning area / Lesson</th><th>Work covered</th><th>Occurrence / Action</th><th>Follow-up</th><th></th></tr></thead><tbody id="occRows"><tr><td colspan="7">No entries recorded yet.</td></tr></tbody></table></div>
+  <p class="muted">A production version should retain immutable audit history, restrict sensitive entries to authorised staff, support supervisor review and save records securely to the school's database.</p>
+ </div>
+</div>
+</section>
+<section id="marks" class="section"><div class="panel"><h3>Marks entry</h3><p class="muted">Select assessment, grade, stream and learning area. Bulk import and validation would be available in the production version.</p><div class="toolbar"><select><option>Term 3 Assessment</option></select><select><option>Grade 7</option></select><select><option>East</option><option>West</option><option>Central</option></select><select><option>Mathematics</option><option>English</option><option>Kiswahili</option></select></div><div class="table-wrap"><table><tr><th>Admission no.</th><th>Learner</th><th>Marks</th><th>Out of</th><th>Teacher</th><th>Validation</th></tr><tr><td>DSC001</td><td>Sample Learner One</td><td><input style="width:65px;padding:6px" type="number" value="78"></td><td>100</td><td>Assigned teacher</td><td><span class="pill">Valid</span></td></tr><tr><td>DSC002</td><td>Sample Learner Two</td><td><input style="width:65px;padding:6px" type="number" value="64"></td><td>100</td><td>Assigned teacher</td><td><span class="pill">Valid</span></td></tr></table></div><div class="actions"><button class="btn" onclick="alert('Demo only: marks are not saved.')">Save marks</button><button class="btn secondary" onclick="alert('Demo: upload marks template')">Import marks</button></div></div></section>
+<section id="analysis" class="section"><div class="panel">
+<h3>Analysis & Merit Lists</h3><p class="muted">Create examinations, analyse results and generate merit lists by grade, stream and learning area.</p>
+<div id="examSetup" style="background:#f7f9fd;border:1px solid #e3e9f3;padding:15px;border-radius:11px;margin:14px 0">
+<h3>Examination creation</h3><div class="formgrid">
+<div class="field"><label>Examination name</label><input id="examName" value="Term 3 Assessment"></div>
+<div class="field"><label>Academic year</label><select><option>2026</option><option>2027</option></select></div>
+<div class="field"><label>Term</label><select><option>Term 3</option><option>Term 2</option><option>Term 1</option></select></div>
+<div class="field"><label>Grade</label><select><option>Grade 7</option><option>Grade 8</option><option>Grade 9</option></select></div>
+<div class="field"><label>Assessment type</label><select><option>School-based assessment</option><option>End-term examination</option><option>Project / practical</option></select></div>
+<div class="field"><label>Maximum marks per learning area</label><input type="number" value="100"></div></div>
+<div class="actions"><button class="btn" onclick="createDemoExam()">Save examination setup</button><span id="examSetupMessage" class="muted"></span></div></div>
+<div class="toolbar"><select id="analysisGrade" onchange="renderMerit()"><option>Grade 7</option><option>Grade 8</option><option>Grade 9</option></select>
+<select id="analysisStream" onchange="renderMerit()"><option value="All">All streams</option><option>East</option><option>West</option><option>Central</option></select>
+<select id="analysisArea" onchange="renderMerit()"><option>All learning areas</option><option>English</option><option>Kiswahili</option><option>Mathematics</option><option>Integrated Science</option><option>Pre-Technical Studies</option><option>Social Studies</option><option>CRE</option><option>Agriculture</option><option>Creative Arts</option></select></div>
+<div class="cards"><div class="card"><div class="label">Class mean score</div><div class="metric" id="meanScore">68.4%</div></div><div class="card"><div class="label">Highest score</div><div class="metric" id="highScore">92%</div></div><div class="card"><div class="label">Learners assessed</div><div class="metric" id="assessedCount">128</div></div><div class="card"><div class="label">Learning areas</div><div class="metric">9</div></div></div>
+<div class="panel" style="margin:16px 0;background:#fbfcff">
+<h3>Performance graphs & school ranking</h3>
+<p class="muted">Visual comparisons for school, grade, stream and learning-area performance. All chart values below are illustrative demo data.</p>
+<div class="grid2">
+ <div><h4>School ranking comparison</h4><div id="schoolRankingGraph" class="graph-list"></div></div>
+ <div><h4>Grade performance comparison</h4><div id="gradeGraph" class="graph-list"></div></div>
+ <div><h4>Stream performance comparison</h4><div id="streamGraph" class="graph-list"></div></div>
+ <div><h4>Learning-area performance</h4><div id="areaGraph" class="graph-list"></div></div>
+</div>
+<div class="muted" style="font-size:12px;margin-top:8px">In the live system, graphs will be generated from saved examination marks and the selected academic year/term.</div>
+</div>
+<div class="actions">
+<button class="btn secondary" onclick="showMeritTab('grade')">Grade merit list</button>
+<button class="btn secondary" onclick="showMeritTab('stream')">Stream merit list</button>
+<button class="btn secondary" onclick="showMeritTab('subject')">Subject merit list</button>
+<button class="btn secondary" onclick="showMeritTab('subjectStream')">Learning area stream ranking</button>
+<button class="btn secondary" onclick="showMeritTab('subjectAnalysis')">Learning area analysis & ranking</button>
+<button class="btn secondary" onclick="showMeritTab('subjectMerit')">Learning area merit list</button></div>
+<div id="meritHeading"><h3>Grade merit list</h3></div><div class="table-wrap"><table id="meritTable"><thead></thead><tbody></tbody></table></div>
+<p class="muted">Demonstration records only. Live rankings must be calculated from saved marks and the school's approved grading rules.</p>
+</div></section>
+<section id="reports" class="section"><div class="panel no-print"><h3>Report card centre</h3><p class="muted">Generate an individual learner report or a batch for a selected stream.</p><div class="toolbar"><select id="reportTerm"><option>2026 · Term 3</option><option>2026 · Term 2</option><option>2026 · Term 1</option></select><select id="reportGrade"><option>Grade 7</option><option>Grade 8</option><option>Grade 9</option></select><select id="reportStream"><option>East</option><option>West</option><option>Central</option></select><select id="reportLearner"><option>Sample Learner One</option><option>Sample Learner Two</option><option>Sample Learner Three</option><option>Sample Learner Four</option><option>Sample Learner Five</option></select><button class="btn" onclick="window.print()">Print / Save PDF</button><button class="btn secondary" onclick="alert('Demo only: batch report cards would be generated for all learners in the selected grade and stream.')">Batch report cards</button></div><p class="muted">Report selection form: choose academic period, grade, stream and learner. The report preview below is a sample layout.</p></div>
+<div class="report"><div class="report-head"><h2>YOUR SCHOOL NAME</h2><p>LEARNER PROGRESS REPORT · 2026 · TERM 3</p><b>JUNIOR SCHOOL · GRADE 7 EAST</b></div><div class="report-meta"><div class="meta"><small>Learner</small><b id="reportName">Sample Learner One</b></div><div class="meta"><small>Admission number</small><b>DSC001</b></div><div class="meta"><small>Overall position</small><b>1</b></div><div class="meta"><small>Stream position</small><b>1</b></div><div class="meta"><small>Class teacher</small><b>Assigned teacher</b></div><div class="meta"><small>Attendance</small><b>94%</b></div></div><div class="table-wrap"><table><tr><th>Learning area</th><th>Marks</th><th>Points</th><th>Performance level</th><th>APL</th><th>Facilitator</th></tr><tr><td>English</td><td>86</td><td>7</td><td>Exceeding expectation</td><td>EE2</td><td>Teacher A</td></tr><tr><td>Kiswahili</td><td>74</td><td>6</td><td>Meeting expectation</td><td>ME1</td><td>Teacher B</td></tr><tr><td>Mathematics</td><td>91</td><td>8</td><td>Exceeding expectation</td><td>EE1</td><td>Teacher C</td></tr><tr><td>Integrated Science</td><td>82</td><td>7</td><td>Exceeding expectation</td><td>EE2</td><td>Teacher D</td></tr><tr><td>Pre-Technical Studies</td><td>78</td><td>6</td><td>Meeting expectation</td><td>ME1</td><td>Teacher E</td></tr><tr><td>Social Studies</td><td>80</td><td>7</td><td>Exceeding expectation</td><td>EE2</td><td>Teacher F</td></tr><tr><td>CRE</td><td>88</td><td>7</td><td>Exceeding expectation</td><td>EE2</td><td>Teacher G</td></tr><tr><td>Agriculture</td><td>84</td><td>7</td><td>Exceeding expectation</td><td>EE2</td><td>Teacher H</td></tr><tr><td>Creative Arts</td><td>85</td><td>7</td><td>Exceeding expectation</td><td>EE2</td><td>Teacher I</td></tr><tr><th>RESULTANTS</th><th>748 / 900</th><th>62 / 72</th><th colspan="2">Exceeding expectation</th><th></th></tr></table></div><div class="remark"><b>Class teacher remarks:</b> Demonstrates consistent effort and applies skills confidently. Keep progressing.</div><div class="remark"><b>Head teacher remarks:</b> Good progress across learning areas. Continue working towards excellence.</div><p style="display:flex;justify-content:space-between;margin-top:28px"><span>Class teacher: __________________</span><span>Head teacher: __________________</span></p><p class="muted" style="text-align:center;font-size:10px">Illustrative report card. Confirm grading bands, points and APL rules before live use.</p></div></section>
+<section id="timetable" class="section">
+<div class="panel">
+<h3>Whole-school timetable generator</h3>
+<p class="muted">Add teachers and their weekly lesson workload, create grades and streams, then assign learning areas and weekly lesson requirements. The generator builds a Monday–Friday timetable while checking teacher and stream clashes.</p>
+<div class="cards">
+ <div class="card"><div class="label">Teachers added</div><div class="metric" id="ttTeacherCount">0</div></div>
+ <div class="card"><div class="label">Grade streams</div><div class="metric" id="ttStreamCount">0</div></div>
+ <div class="card"><div class="label">Lessons to schedule</div><div class="metric" id="ttLessonCount">0</div></div>
+ <div class="card"><div class="label">Unassigned lessons</div><div class="metric" id="ttUnassigned">0</div></div>
+</div>
+<div class="tt-grid">
+ <div class="panel subpanel">
+  <h3>1. Add teachers & workload</h3>
+  <div class="formgrid">
+   <div class="field"><label>Teacher name</label><input id="ttTeacherName" placeholder="e.g. Jane Wanjiku"></div>
+   <div class="field"><label>Maximum lessons per week</label><input id="ttTeacherLoad" type="number" min="1" max="50" value="28"></div>
+   <div class="field"><label>Learning areas they teach</label><input id="ttTeacherSubjects" placeholder="Mathematics, Integrated Science"></div>
+  </div>
+  <button class="btn" onclick="ttAddTeacher()">＋ Add teacher</button>
+  <div class="table-wrap"><table><thead><tr><th>Teacher</th><th>Learning areas</th><th>Weekly load</th><th></th></tr></thead><tbody id="ttTeachers"></tbody></table></div>
+ </div>
+ <div class="panel subpanel">
+  <h3>2. Add grades & streams</h3>
+  <div class="formgrid">
+   <div class="field"><label>Grade / level</label><input id="ttGrade" placeholder="e.g. Grade 7"></div>
+   <div class="field"><label>Stream</label><input id="ttStream" placeholder="e.g. East"></div>
+  </div>
+  <button class="btn" onclick="ttAddStream()">＋ Add grade and stream</button>
+  <div class="table-wrap"><table><thead><tr><th>Grade</th><th>Stream</th><th></th></tr></thead><tbody id="ttStreams"></tbody></table></div>
+ </div>
+ <div class="panel subpanel">
+  <h3>3. Add lesson requirements</h3>
+  <p class="muted">Specify how many lessons each learning area needs per week for each stream, and select its teacher.</p>
+  <div class="formgrid">
+   <div class="field"><label>Grade & stream</label><select id="ttLessonStream"></select></div>
+   <div class="field"><label>Learning area</label><input id="ttSubject" placeholder="e.g. Mathematics"></div>
+   <div class="field"><label>Teacher</label><select id="ttLessonTeacher"></select></div>
+   <div class="field"><label>Lessons per week</label><input id="ttPeriods" type="number" min="1" max="15" value="5"></div>
+  </div>
+  <button class="btn" onclick="ttAddRequirement()">＋ Add lesson requirement</button>
+  <div class="table-wrap"><table><thead><tr><th>Grade / stream</th><th>Learning area</th><th>Teacher</th><th>Lessons/week</th><th></th></tr></thead><tbody id="ttRequirements"></tbody></table></div>
+ </div>
+ <div class="panel subpanel">
+  <h3>4. Set the school day</h3>
+  <div class="formgrid">
+   <div class="field"><label>School starts</label><input id="ttStart" type="time" value="08:00"></div>
+   <div class="field"><label>Lesson duration (minutes)</label><input id="ttDuration" type="number" min="20" max="120" value="40"></div>
+   <div class="field"><label>Lessons per day</label><input id="ttDaily" type="number" min="4" max="10" value="8"></div>
+   <div class="field"><label>First break after lesson</label><input id="ttBreak1After" type="number" min="1" max="10" value="2"></div>
+   <div class="field"><label>First break duration (minutes)</label><input id="ttBreak1" type="number" min="5" max="60" value="20"></div>
+   <div class="field"><label>Lunch after lesson</label><input id="ttLunchAfter" type="number" min="1" max="10" value="5"></div>
+   <div class="field"><label>Lunch duration (minutes)</label><input id="ttLunch" type="number" min="10" max="90" value="40"></div>
+  </div>
+  <button class="btn" onclick="ttGenerate()">⚡ Generate whole-school timetable</button>
+  <button class="btn secondary" onclick="ttPrint()">Print / Save timetable</button>
+  <p class="muted" id="ttStatus">Add teachers, streams and lesson requirements before generating.</p>
+ </div>
+</div>
+<div class="panel" style="margin-top:16px">
+ <h3>Generated timetable views</h3>
+ <div class="toolbar">
+  <select id="ttView" onchange="ttRenderSchedule()"><option value="stream">By grade & stream</option><option value="teacher">By teacher</option><option value="whole">Whole-school overview</option></select>
+  <select id="ttFilter" onchange="ttRenderSchedule()"></select>
+ </div>
+ <div id="ttSchedule" class="table-wrap"><p class="muted">Your generated timetable will appear here.</p></div>
+</div>
+</div>
+</section>
+<section id="finance" class="section"><div class="panel"><h3>School finance</h3><div class="cards"><div class="card"><div class="label">Fees billed</div><div class="metric">KES 2.4M</div></div><div class="card"><div class="label">Collected</div><div class="metric">KES 1.8M</div></div><div class="card"><div class="label">Outstanding</div><div class="metric">KES 600K</div></div><div class="card"><div class="label">Collection rate</div><div class="metric">75%</div></div></div><div class="actions"><button class="btn" onclick="alert('Demo: Record payment')">＋ Record payment</button><button class="btn secondary" onclick="alert('Demo: Fees structure setup')">Manage fee structure</button><button class="btn secondary" onclick="alert('Demo: Export finance report')">Export report</button></div><p class="muted">Illustrative figures. Payment processing and reconciliation are not connected.</p></div></section>
+<section id="settings" class="section"><div class="panel"><h3>School settings and permissions</h3><div class="formgrid"><div class="field"><label>School name</label><input value="Your School Name"></div><div class="field"><label>School level</label><select><option>Pre-primary to Senior School</option><option>Primary and Junior School</option><option>Junior School</option></select></div><div class="field"><label>Academic year</label><input value="2026"></div></div><h3 style="margin-top:20px">Role-based access</h3><div class="table-wrap"><table><tr><th>Role</th><th>Typical permissions</th></tr><tr><td>School administrator</td><td>School setup, users, academic records and reports</td></tr><tr><td>Head teacher</td><td>Approve results, view analysis and sign reports</td></tr><tr><td>Teacher</td><td>Assigned classes, marks entry and class reports</td></tr><tr><td>Finance officer</td><td>Fee structures, payments and finance reports</td></tr><tr><td>Parent / learner</td><td>View permitted progress and notices</td></tr></table></div></div></section>
+<footer>Digital School Centre · Standalone prototype · Sample data only · Not connected to a production database</footer>
+</main></div>
+<script>
+const titles={dashboard:['School overview','A clear view of your school’s academic operations.'],organisation:['School organisation','Configure levels, streams and learning areas.'],learners:['Learner management','Register, search and organise learner records.'],staff:['Staff and teachers','Manage staff profiles, roles and teaching assignments.'],occurrence:['Teacher Daily Occurrence','Record daily teaching activities, incidents and follow-up actions.'],exams:['Analysis & Merit Lists','Create examinations and review performance rankings.'],marks:['Marks entry','Capture and validate learner assessment results.'],analysis:['Analysis & Merit Lists','Create examinations, analyse results and generate merit lists.'],reports:['Report cards','Generate individual and batch learner progress reports.'],timetable:['Timetable management','Organise classes, teachers, rooms and lesson periods.'],finance:['Finance management','Track fees, payments and outstanding balances.'],settings:['School settings','Configure the school profile and user permissions.']};
+function show(id){document.querySelectorAll('.section').forEach(s=>s.classList.toggle('active',s.id===id));document.querySelectorAll('nav button').forEach(b=>b.classList.toggle('active',b.dataset.target===id));document.getElementById('pageTitle').textContent=titles[id][0];document.getElementById('pageSub').textContent=titles[id][1];window.scrollTo(0,0)}
+document.querySelectorAll('nav button').forEach(b=>b.addEventListener('click',()=>show(b.dataset.target)));
+
+const demoResults=[
+{name:'Sample Learner One',stream:'East',grade:'Grade 7',total:748,outof:900,English:86,Kiswahili:74,Mathematics:91,'Integrated Science':82,'Pre-Technical Studies':78,'Social Studies':80,CRE:88,Agriculture:84,'Creative Arts':85},
+{name:'Sample Learner Two',stream:'West',grade:'Grade 7',total:703,outof:900,English:79,Kiswahili:64,Mathematics:81,'Integrated Science':73,'Pre-Technical Studies':72,'Social Studies':77,CRE:88,Agriculture:85,'Creative Arts':74},
+{name:'Sample Learner Three',stream:'East',grade:'Grade 7',total:688,outof:900,English:92,Kiswahili:70,Mathematics:44,'Integrated Science':63,'Pre-Technical Studies':88,'Social Studies':84,CRE:86,Agriculture:90,'Creative Arts':71},
+{name:'Sample Learner Four',stream:'Central',grade:'Grade 7',total:634,outof:900,English:79,Kiswahili:58,Mathematics:58,'Integrated Science':57,'Pre-Technical Studies':78,'Social Studies':74,CRE:86,Agriculture:73,'Creative Arts':71},
+{name:'Sample Learner Five',stream:'West',grade:'Grade 7',total:626,outof:900,English:75,Kiswahili:59,Mathematics:72,'Integrated Science':60,'Pre-Technical Studies':74,'Social Studies':49,CRE:82,Agriculture:88,'Creative Arts':67}
+];
+let currentMeritMode='grade';
+function createDemoExam(){const n=document.getElementById('examName').value.trim();document.getElementById('examSetupMessage').textContent=n?'Demo setup prepared: '+n+'. Not saved to a live database.':'Enter an examination name first.';}
+function showMeritTab(mode){currentMeritMode=mode;renderMerit();}
+function renderMerit(){
+ const grade=document.getElementById('analysisGrade').value, stream=document.getElementById('analysisStream').value, area=document.getElementById('analysisArea').value;
+ let rows=demoResults.filter(x=>x.grade===grade&&(stream==='All'||x.stream===stream));
+ let heading='',headers='',body='';
+ if(currentMeritMode==='grade'||currentMeritMode==='stream'){
+  rows.sort((a,b)=>b.total-a.total);heading=currentMeritMode==='grade'?'Grade merit list':'Stream merit list';
+  headers='<th>Position</th><th>Learner</th><th>Stream</th><th>Total marks</th><th>Out of</th><th>Average</th><th>Performance</th>';
+  body=rows.map((x,i)=>`<tr><td>${i+1}</td><td>${x.name}</td><td>${x.stream}</td><td>${x.total}</td><td>${x.outof}</td><td>${(x.total/x.outof*100).toFixed(1)}%</td><td>${x.total/x.outof>=.7?'Exceeding expectation':'Meeting expectation'}</td></tr>`).join('');
+ }else if(currentMeritMode==='subject'||currentMeritMode==='subjectMerit'||currentMeritMode==='subjectStream'){
+  if(area==='All learning areas'){heading='Select a learning area to view its merit list';headers='<th>Learning area</th><th>Mean score</th><th>Highest score</th><th>Learners</th>';
+   body=['English','Kiswahili','Mathematics','Integrated Science','Pre-Technical Studies','Social Studies','CRE','Agriculture','Creative Arts'].map(a=>{let v=rows.map(x=>x[a]);return `<tr><td>${a}</td><td>${(v.reduce((s,n)=>s+n,0)/(v.length||1)).toFixed(1)}%</td><td>${Math.max(...v)}%</td><td>${v.length}</td></tr>`}).join('');
+  }else{rows.sort((a,b)=>b[area]-a[area]);heading=currentMeritMode==='subjectStream'?'Learning area stream ranking':currentMeritMode==='subjectMerit'?'Learning area merit list':'Subject merit list';headers='<th>Position</th><th>Learner</th><th>Stream</th><th>Learning area</th><th>Marks</th><th>Performance</th>';
+   body=rows.map((x,i)=>`<tr><td>${i+1}</td><td>${x.name}</td><td>${x.stream}</td><td>${area}</td><td>${x[area]}%</td><td>${x[area]>=70?'Exceeding expectation':x[area]>=50?'Meeting expectation':'Approaching expectation'}</td></tr>`).join('');
+  }
+ }else{
+  heading='Learning area analysis & ranking';headers='<th>Learning area</th><th>Mean score</th><th>Highest</th><th>Lowest</th><th>Rank</th>';
+  let areas=['English','Kiswahili','Mathematics','Integrated Science','Pre-Technical Studies','Social Studies','CRE','Agriculture','Creative Arts'].map(a=>({a,v:rows.map(x=>x[a])})).map(x=>({...x,mean:x.v.reduce((s,n)=>s+n,0)/(x.v.length||1)})).sort((a,b)=>b.mean-a.mean);
+  body=areas.map((x,i)=>`<tr><td>${x.a}</td><td>${x.mean.toFixed(1)}%</td><td>${Math.max(...x.v)}%</td><td>${Math.min(...x.v)}%</td><td>${i+1}</td></tr>`).join('');
+ }
+ document.getElementById('meritHeading').innerHTML='<h3>'+heading+'</h3>';
+ document.querySelector('#meritTable thead').innerHTML='<tr>'+headers+'</tr>';
+ document.querySelector('#meritTable tbody').innerHTML=body||'<tr><td colspan="7">No matching demonstration records.</td></tr>';
+ let scores=rows.map(x=>x.total/x.outof*100);
+ document.getElementById('meanScore').textContent=(scores.reduce((a,b)=>a+b,0)/(scores.length||1)).toFixed(1)+'%';
+ document.getElementById('highScore').textContent=Math.max(...scores,0).toFixed(1)+'%';
+ document.getElementById('assessedCount').textContent=rows.length;
+ renderGraphs();
+}
+
+function drawBars(id,items){
+ const el=document.getElementById(id); if(!el)return;
+ el.innerHTML=items.map(x=>`<div class="graph-row"><span title="${x.label}">${x.label}</span><div class="graph-track"><div class="graph-fill" style="width:${Math.max(0,Math.min(100,x.value))}%"></div></div><span class="graph-value">${x.value.toFixed(1)}%</span></div>`).join('');
+}
+function renderGraphs(){
+ const areas=['English','Kiswahili','Mathematics','Integrated Science','Pre-Technical Studies','Social Studies','CRE','Agriculture','Creative Arts'];
+ const gradeMeans=['Grade 7','Grade 8','Grade 9'].map((g,i)=>({label:g,value:[76.2,72.8,79.4][i]}));
+ const schoolDemo=[{label:'School A',value:82.4},{label:'School B',value:78.6},{label:'This school',value:76.2},{label:'School D',value:71.8}];
+ const streamMeans=['East','West','Central'].map(s=>{let r=demoResults.filter(x=>x.stream===s);return {label:s,value:r.reduce((t,x)=>t+x.total/x.outof*100,0)/(r.length||1)}});
+ const areaMeans=areas.map(a=>({label:a,value:demoResults.reduce((t,x)=>t+x[a],0)/(demoResults.length||1)})).sort((a,b)=>b.value-a.value);
+ drawBars('schoolRankingGraph',schoolDemo);drawBars('gradeGraph',gradeMeans);drawBars('streamGraph',streamMeans);drawBars('areaGraph',areaMeans);
+}
+renderMerit();renderGraphs();
+function filterRows(id,q){document.querySelectorAll('#'+id+' tbody tr').forEach(r=>r.style.display=r.innerText.toLowerCase().includes(q.toLowerCase())?'':'none')}
+document.getElementById('reportLearner').addEventListener('change',e=>document.getElementById('reportName').textContent=e.target.value);
+document.getElementById('reportGrade').addEventListener('change',e=>document.querySelector('.report-head b').textContent='JUNIOR SCHOOL · '+e.target.value.toUpperCase()+' '+document.getElementById('reportStream').value.toUpperCase());
+document.getElementById('reportStream').addEventListener('change',e=>document.querySelector('.report-head b').textContent='JUNIOR SCHOOL · '+document.getElementById('reportGrade').value.toUpperCase()+' '+e.target.value.toUpperCase());
+document.getElementById('reportTerm').addEventListener('change',e=>document.querySelector('.report-head p').textContent='LEARNER PROGRESS REPORT · '+e.target.value.toUpperCase());
+
+// Whole-school timetable builder (prototype data is held in this browser session).
+const tt={teachers:[],streams:[],requirements:[],schedule:[]};
+const ttDays=['Monday','Tuesday','Wednesday','Thursday','Friday'];
+function ttEsc(s){return String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));}
+function ttAddTeacher(){
+ const name=document.getElementById('ttTeacherName').value.trim(),load=Number(document.getElementById('ttTeacherLoad').value),subjects=document.getElementById('ttTeacherSubjects').value.trim();
+ if(!name||!load||load<1){alert('Enter the teacher name and a valid weekly workload.');return;}
+ tt.teachers.push({id:'t'+Date.now(),name,load,subjects});document.getElementById('ttTeacherName').value='';document.getElementById('ttTeacherSubjects').value='';ttRenderSetup();
+}
+function ttAddStream(){
+ const grade=document.getElementById('ttGrade').value.trim(),stream=document.getElementById('ttStream').value.trim();
+ if(!grade||!stream){alert('Enter both grade and stream.');return;}
+ if(tt.streams.some(x=>x.grade.toLowerCase()===grade.toLowerCase()&&x.stream.toLowerCase()===stream.toLowerCase())){alert('That grade and stream already exists.');return;}
+ tt.streams.push({id:'s'+Date.now(),grade,stream});document.getElementById('ttGrade').value='';document.getElementById('ttStream').value='';ttRenderSetup();
+}
+function ttAddRequirement(){
+ const streamId=document.getElementById('ttLessonStream').value,teacherId=document.getElementById('ttLessonTeacher').value,subject=document.getElementById('ttSubject').value.trim(),periods=Number(document.getElementById('ttPeriods').value);
+ if(!streamId||!teacherId||!subject||!periods||periods<1){alert('Select a stream and teacher, then enter the learning area and lessons per week.');return;}
+ const teacher=tt.teachers.find(x=>x.id===teacherId);
+ if(teacher.subjects&& !teacher.subjects.toLowerCase().split(',').map(x=>x.trim()).includes(subject.toLowerCase())){if(!confirm('This learning area is not listed in the teacher profile. Assign anyway?'))return;}
+ tt.requirements.push({id:'r'+Date.now(),streamId,teacherId,subject,periods});document.getElementById('ttSubject').value='';ttRenderSetup();
+}
+function ttRenderSetup(){
+ document.getElementById('ttTeachers').innerHTML=tt.teachers.map(t=>`<tr><td>${ttEsc(t.name)}</td><td>${ttEsc(t.subjects||'Not specified')}</td><td>${t.load}</td><td><button class="tt-delete" onclick="ttRemove('teachers','${t.id}')">Remove</button></td></tr>`).join('')||'<tr><td colspan="4">No teachers added.</td></tr>';
+ document.getElementById('ttStreams').innerHTML=tt.streams.map(s=>`<tr><td>${ttEsc(s.grade)}</td><td>${ttEsc(s.stream)}</td><td><button class="tt-delete" onclick="ttRemove('streams','${s.id}')">Remove</button></td></tr>`).join('')||'<tr><td colspan="3">No streams added.</td></tr>';
+ const streamOpts=tt.streams.map(s=>`<option value="${s.id}">${ttEsc(s.grade)} ${ttEsc(s.stream)}</option>`).join('');
+ const teacherOpts=tt.teachers.map(t=>`<option value="${t.id}">${ttEsc(t.name)}</option>`).join('');
+ document.getElementById('ttLessonStream').innerHTML=streamOpts;document.getElementById('ttLessonTeacher').innerHTML=teacherOpts;
+ document.getElementById('ttRequirements').innerHTML=tt.requirements.map(r=>{let s=tt.streams.find(x=>x.id===r.streamId),t=tt.teachers.find(x=>x.id===r.teacherId);return `<tr><td>${s?ttEsc(s.grade+' '+s.stream):'—'}</td><td>${ttEsc(r.subject)}</td><td>${t?ttEsc(t.name):'—'}</td><td>${r.periods}</td><td><button class="tt-delete" onclick="ttRemove('requirements','${r.id}')">Remove</button></td></tr>`}).join('')||'<tr><td colspan="5">No lesson requirements added.</td></tr>';
+ document.getElementById('ttTeacherCount').textContent=tt.teachers.length;document.getElementById('ttStreamCount').textContent=tt.streams.length;document.getElementById('ttLessonCount').textContent=tt.requirements.reduce((a,r)=>a+r.periods,0);
+ const f=document.getElementById('ttFilter'),v=document.getElementById('ttView').value,old=f.value;
+ f.innerHTML=(v==='teacher'?tt.teachers.map(t=>`<option value="${t.id}">${ttEsc(t.name)}</option>`):tt.streams.map(s=>`<option value="${s.id}">${ttEsc(s.grade+' '+s.stream)}</option>`)).join('');
+ if([...f.options].some(o=>o.value===old))f.value=old;
+}
+function ttRemove(kind,id){tt[kind]=tt[kind].filter(x=>x.id!==id);if(kind!=='requirements')tt.requirements=tt.requirements.filter(r=>kind==='teachers'?r.teacherId!==id:r.streamId!==id);tt.schedule=[];ttRenderSetup();document.getElementById('ttSchedule').innerHTML='<p class="muted">Setup changed. Generate the timetable again.</p>';}
+function ttClock(min){let h=Math.floor(min/60),m=min%60;return String(h).padStart(2,'0')+':'+String(m).padStart(2,'0');}
+function ttGenerate(){
+ if(!tt.teachers.length||!tt.streams.length||!tt.requirements.length){alert('Please add at least one teacher, one grade/stream and one lesson requirement.');return;}
+ const totalByTeacher={};tt.requirements.forEach(r=>totalByTeacher[r.teacherId]=(totalByTeacher[r.teacherId]||0)+r.periods);
+ const overload=tt.teachers.filter(t=>(totalByTeacher[t.id]||0)>t.load);
+ if(overload.length){alert('Workload exceeded for: '+overload.map(t=>t.name+' ('+totalByTeacher[t.id]+'/'+t.load+')').join(', ')+'. Adjust lesson requirements or teacher workloads.');return;}
+ const daily=Number(document.getElementById('ttDaily').value),duration=Number(document.getElementById('ttDuration').value),start=document.getElementById('ttStart').value;
+ const b1after=Number(document.getElementById('ttBreak1After').value),b1=Number(document.getElementById('ttBreak1').value),lafter=Number(document.getElementById('ttLunchAfter').value),lunch=Number(document.getElementById('ttLunch').value);
+ if(!daily||!duration||!start||b1after>=daily||lafter>=daily||b1after>=lafter){alert('Check school day settings. First break and lunch must occur after different lesson periods, before the final lesson.');return;}
+ const [sh,sm]=start.split(':').map(Number);let minute=sh*60+sm;const slots=[];
+ for(let n=1;n<=daily;n++){
+  if(n===b1after+1){slots.push({kind:'break',label:'MORNING BREAK',start:minute,end:minute+b1});minute+=b1;}
+  if(n===lafter+1){slots.push({kind:'break',label:'LUNCH BREAK',start:minute,end:minute+lunch});minute+=lunch;}
+  slots.push({kind:'lesson',lesson:n,label:'Lesson '+n,start:minute,end:minute+duration});minute+=duration;
+ }
+ const teacherBusy={},streamBusy={};tt.schedule=[];
+ const tasks=[];tt.requirements.forEach(r=>{for(let i=0;i<r.periods;i++)tasks.push({...r,taskNo:i+1});});
+ // Harder-to-place tasks first; rotate day/period preference to distribute subject repeats.
+ tasks.sort((a,b)=>b.periods-a.periods || a.subject.localeCompare(b.subject));
+ let failed=[];
+ for(const task of tasks){
+  let placed=false;
+  const candidates=[];
+  for(let d=0;d<5;d++)for(let si=0;si<slots.length;si++)if(slots[si].kind==='lesson')candidates.push({day:d,slot:si,lesson:slots[si].lesson});
+  candidates.sort((a,b)=>((a.lesson+task.taskNo+a.day)%daily)-((b.lesson+task.taskNo+b.day)%daily) || a.day-b.day);
+  for(const c of candidates){
+   const key=c.day+'-'+c.slot,tk=task.teacherId+'-'+key,sk=task.streamId+'-'+key;
+   if(teacherBusy[tk]||streamBusy[sk])continue;
+   // Avoid placing the same subject twice in one day for a stream where possible.
+   const duplicate=tt.schedule.some(x=>x.streamId===task.streamId&&x.day===c.day&&x.subject===task.subject);
+   if(duplicate)continue;
+   teacherBusy[tk]=true;streamBusy[sk]=true;tt.schedule.push({...task,day:c.day,slot:c.slot});placed=true;break;
+  }
+  if(!placed)failed.push(task);
+ }
+ document.getElementById('ttUnassigned').textContent=failed.length;
+ const note=failed.length?`Generated with ${failed.length} lesson(s) unassigned. Add more daily lesson periods, review teacher availability/workload or reduce weekly lesson requirements.`:'Timetable generated. No teacher or stream has been scheduled in two lessons at the same time.';
+ document.getElementById('ttStatus').textContent=note;
+ ttRenderSetup();ttRenderSchedule();
+}
+function ttRenderSchedule(){
+ const view=document.getElementById('ttView').value,f=document.getElementById('ttFilter');const old=f.value;
+ if(view==='whole'){f.innerHTML='<option value="all">All grades and streams</option>';f.value='all';}
+ else if(view==='teacher'){f.innerHTML=tt.teachers.map(t=>`<option value="${t.id}">${ttEsc(t.name)}</option>`).join('');if([...f.options].some(o=>o.value===old))f.value=old;}
+ else{f.innerHTML=tt.streams.map(s=>`<option value="${s.id}">${ttEsc(s.grade+' '+s.stream)}</option>`).join('');if([...f.options].some(o=>o.value===old))f.value=old;}
+ if(!tt.schedule.length){document.getElementById('ttSchedule').innerHTML='<p class="muted">No timetable generated yet.</p>';return;}
+ const slots=[];const daily=Number(document.getElementById('ttDaily').value),duration=Number(document.getElementById('ttDuration').value),start=document.getElementById('ttStart').value,[sh,sm]=start.split(':').map(Number);let minute=sh*60+sm;
+ const b1after=Number(document.getElementById('ttBreak1After').value),b1=Number(document.getElementById('ttBreak1').value),lafter=Number(document.getElementById('ttLunchAfter').value),lunch=Number(document.getElementById('ttLunch').value);
+ for(let n=1;n<=daily;n++){if(n===b1after+1){slots.push({kind:'break',label:'MORNING BREAK',start:minute,end:minute+b1});minute+=b1;}if(n===lafter+1){slots.push({kind:'break',label:'LUNCH BREAK',start:minute,end:minute+lunch});minute+=lunch;}slots.push({kind:'lesson',lesson:n,label:'Lesson '+n,start:minute,end:minute+duration});minute+=duration;}
+ const rows=slots.map((slot,si)=>{
+  const cells=ttDays.map((day,d)=>{
+   if(slot.kind==='break')return `<td class="tt-break" colspan="1">${slot.label}</td>`;
+   let items=tt.schedule.filter(x=>x.day===d&&x.slot===si);
+   if(view==='teacher')items=items.filter(x=>x.teacherId===f.value);
+   else if(view==='stream')items=items.filter(x=>x.streamId===f.value);
+   const shown=view==='whole'?items:items.slice(0,1);
+   return `<td class="tt-cell">${shown.map(x=>{const t=tt.teachers.find(z=>z.id===x.teacherId),s=tt.streams.find(z=>z.id===x.streamId);return `<b>${ttEsc(x.subject)}</b><div class="tt-small">${ttEsc(t?t.name:'')}</div><div class="tt-small">${ttEsc(s?s.grade+' '+s.stream:'')}</div>`}).join('')||'—'}${view==='whole'&&items.length>1?`<div class="tt-small">+${items.length-1} more</div>`:''}</td>`;
+  }).join('');
+  return `<tr><th class="tt-slot">${ttClock(slot.start)}–${ttClock(slot.end)}<div class="tt-small">${slot.label}</div></th>${rowsafe(cells)}</tr>`;
+ }).join('');
+ document.getElementById('ttSchedule').innerHTML=`<table><thead><tr><th>Time / period</th>${ttDays.map(d=>`<th>${d}</th>`).join('')}</tr></thead><tbody>${rows}</tbody></table>`;
+}
+function rowsafe(s){return s;}
+function ttPrint(){if(!tt.schedule.length){alert('Generate a timetable first.');return;}window.print();}
+document.getElementById('ttView').addEventListener('change',ttRenderSchedule);
+ttRenderSetup();
+
+// Teacher Daily Occurrence Book – demonstration records are in-memory only.
+const occRecords=[];
+const occToday=new Date().toISOString().slice(0,10);
+document.getElementById('occDate').value=occToday;
+function occVal(id){return document.getElementById(id).value.trim();}
+function occAdd(){
+ const required=['occDate','occTeacher','occGrade','occStream','occSubject','occWork'];
+ if(required.some(id=>!occVal(id))){alert('Please complete date, teacher, grade, stream, learning area and work covered.');return;}
+ const entry={id:'occ-'+Date.now(),date:occVal('occDate'),teacher:occVal('occTeacher'),grade:occVal('occGrade'),stream:occVal('occStream'),subject:occVal('occSubject'),lesson:occVal('occLesson'),attendance:occVal('occAttendance'),category:occVal('occCategory'),work:occVal('occWork'),incident:occVal('occIncident'),action:occVal('occAction'),status:occVal('occStatus'),remarks:occVal('occRemarks'),createdAt:new Date().toISOString()};
+ occRecords.unshift(entry);['occWork','occIncident','occAction','occRemarks'].forEach(id=>document.getElementById(id).value='');
+ document.getElementById('occStatusMessage').textContent='Entry added to this demonstration session.';occRender();
+}
+function occEsc(v){return String(v||'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));}
+function occRender(){
+ const q=(document.getElementById('occSearch').value||'').toLowerCase(),filter=document.getElementById('occFilter').value;
+ const records=occRecords.filter(r=>(filter==='all'||r.status===filter)&&[r.teacher,r.grade,r.stream,r.subject,r.work,r.incident].join(' ').toLowerCase().includes(q));
+ document.getElementById('occRows').innerHTML=records.map(r=>`<tr><td>${occEsc(r.date)}</td><td><b>${occEsc(r.teacher)}</b><div class="tt-small">${occEsc(r.grade)} ${occEsc(r.stream)}</div></td><td>${occEsc(r.subject)}<div class="tt-small">${occEsc(r.lesson)} · ${occEsc(r.attendance)}</div></td><td>${occEsc(r.work)}</td><td><b>${occEsc(r.category)}</b><div>${occEsc(r.incident)}</div><div class="tt-small">${occEsc(r.action)}</div></td><td><span class="occ-pill ${r.status==='Pending'?'pending':r.status==='Completed'?'completed':r.status==='In progress'?'progress':''}">${occEsc(r.status)}</span><div class="tt-small">${occEsc(r.remarks)}</div></td><td><button class="tt-delete" onclick="occDelete('${r.id}')">Delete</button></td></tr>`).join('')||'<tr><td colspan="7">No matching occurrence entries.</td></tr>';
+ document.getElementById('occTodayCount').textContent=occRecords.filter(r=>r.date===occToday).length;
+ document.getElementById('occTeacherCount').textContent=new Set(occRecords.filter(r=>r.date===occToday).map(r=>r.teacher)).size;
+ document.getElementById('occPendingCount').textContent=occRecords.filter(r=>['Pending','In progress'].includes(r.status)).length;
+ document.getElementById('occIncidentCount').textContent=occRecords.filter(r=>r.incident.trim()).length;
+}
+function occDelete(id){if(!confirm('Remove this demonstration entry?'))return;const i=occRecords.findIndex(r=>r.id===id);if(i>=0)occRecords.splice(i,1);occRender();}
+function occExportCSV(){
+ const cols=['date','teacher','grade','stream','subject','lesson','attendance','category','work','incident','action','status','remarks'];
+ const quote=v=>'"'+String(v||'').replace(/"/g,'""')+'"';
+ const csv=[cols.join(','),...occRecords.map(r=>cols.map(c=>quote(r[c])).join(','))].join('\n');
+ const blob=new Blob([csv],{type:'text/csv;charset=utf-8;'}),url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download='teacher-daily-occurrence.csv';a.click();URL.revokeObjectURL(url);
+}
+occRender();
+</script></body></html>
