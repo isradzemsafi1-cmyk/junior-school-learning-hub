@@ -59,6 +59,7 @@ create table if not exists public.timetable_requirements (
  fixed_period smallint,
  active boolean not null default true,
  created_at timestamptz not null default now(),
+  unique(id,school_id),
  foreign key(academic_year_id,school_id) references public.academic_years(id,school_id) on delete cascade,
  foreign key(term_id,school_id) references public.academic_terms(id,school_id) on delete set null (term_id),
  foreign key(grade_id,school_id) references public.school_grades(id,school_id) on delete cascade,
