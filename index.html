@@ -2078,11 +2078,19 @@ buildQuiz();
     <h3>👋 Welcome back!</h3>
     <p class="auth-help">Sign in with your username and password to continue learning.</p>
     <input id="login-email" type="text" placeholder="Username or email address" autocomplete="username" aria-label="Username or email address" required>
+    
     <div class="auth-password-wrap">
-     <input id="login-password" type="password" placeholder="Password" autocomplete="current-password" aria-label="Password" required>
-     <button class="password-toggle" type="button" data-toggle-password="login-password">Show</button>
+     <input id="learner-password" type="password" placeholder="Create password (minimum 8 characters)" autocomplete="new-password" aria-label="Create password" required minlength="8">
+     <button class="password-toggle" type="button" data-toggle-password="learner-password">Show</button>
     </div>
-    <button id="learner-login-btn" type="button">Sign In to My Dashboard â†’</button>
+
+    <div class="auth-password-wrap">
+     <input id="learner-password-confirm" type="password" placeholder="Confirm your password" autocomplete="new-password" aria-label="Confirm your password" required minlength="8">
+     <button class="password-toggle" type="button" data-toggle-password="learner-password-confirm">Show</button>
+    </div>
+
+    <button id="learner-signup-btn" type="button">Create My Account ✨</button>
+
     <p class="auth-help" style="margin-top:12px">New to the Hub? Select <strong>Create Account</strong> above.</p>
    </div>
    <div id="learner-signup" class="auth-pane" role="tabpanel" aria-labelledby="signup-tab" hidden>
