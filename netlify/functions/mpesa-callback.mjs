@@ -171,7 +171,7 @@ export default async (request) => {
     ).toString("base64");
 
     const tokenResponse = await fetch(
-      "https://sandbox.safaricom.co.ke/oauth/v1/generate?grant_type=client_credentials",
+      "https://api.safaricom.co.ke/oauth/v1/generate?grant_type=client_credentials",
       {
         headers: { Authorization: `Basic ${credentials}` }
       }
@@ -189,7 +189,7 @@ export default async (request) => {
     ).toString("base64");
 
     const queryResponse = await fetch(
-      "https://sandbox.safaricom.co.ke/mpesa/stkpushquery/v1/query",
+      "https://api.safaricom.co.ke/mpesa/stkpushquery/v1/query",
       {
         method: "POST",
         headers: {
