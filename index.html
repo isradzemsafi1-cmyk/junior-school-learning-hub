@@ -2076,8 +2076,8 @@ buildQuiz();
    </div>
    <div id="learner-login" class="auth-pane" role="tabpanel" aria-labelledby="login-tab">
     <h3>👋 Welcome back!</h3>
-    <p class="auth-help">Sign in to continue where you left off.</p>
-    <input id="login-email" type="email" placeholder="Email address" autocomplete="username" aria-label="Email address" required>
+    <p class="auth-help">Sign in using your full name and password to continue where you left off.</p>
+    <input id="login-email" type="text" placeholder="Full name (username)" autocomplete="username" aria-label="Full name username" required>
     <div class="auth-password-wrap">
      <input id="login-password" type="password" placeholder="Password" autocomplete="current-password" aria-label="Password" required>
      <button class="password-toggle" type="button" data-toggle-password="login-password">Show</button>
@@ -2092,10 +2092,14 @@ buildQuiz();
     <select id="learner-grade" required aria-label="Choose your grade">
      <option value="">Choose your grade</option><option>Grade 7</option><option>Grade 8</option><option>Grade 9</option>
     </select>
-    <input id="learner-email" type="email" placeholder="Email address" autocomplete="email" aria-label="Email address" required>
+    <p class="auth-help">Use your full name as your username. No email address is required.</p>
     <div class="auth-password-wrap">
-     <input id="learner-password" type="password" placeholder="Create password (minimum 6 characters)" autocomplete="new-password" aria-label="Create password" required minlength="6">
+     <input id="learner-password" type="password" placeholder="Create password (minimum 8 characters)" autocomplete="new-password" aria-label="Create password" required minlength="8">
      <button class="password-toggle" type="button" data-toggle-password="learner-password">Show</button>
+    </div>
+    <div class="auth-password-wrap">
+     <input id="learner-confirm-password" type="password" placeholder="Confirm password" autocomplete="new-password" aria-label="Confirm password" required minlength="8">
+     <button class="password-toggle" type="button" data-toggle-password="learner-confirm-password">Show</button>
     </div>
     <button id="learner-signup-btn" type="button">Create My Account âœ¨</button>
     <p class="auth-help" style="margin-top:12px">Already registered? Select <strong>Sign In</strong> above.</p>
@@ -2331,48 +2335,94 @@ buildQuiz();
     refreshLearnerLeaderboard();
   }
 
+  // Supabase Auth requires an email identifier. Learners use a stable,
+  // generated internal email based on their full-name username; no email is sent.
+  function learnerUsernameToAuthEmail(fullName) {
+    const username = String(fullName || "")
+      .normalize("NFKD")
+      .replace(/[\u0300-\u036f]/g, "")
+      .toLowerCase()
+      .trim()
+      .replace(/[^a-z0-9]+/g, ".")
+      .replace(/^\.+|\.+$/g, "");
+    if (!username) return "";
+    return username + "@learners.juniorschoollearninghub.co.ke";
+  }
+
   document.getElementById("learner-signup-btn").addEventListener("click", async function () {
-    const name = document.getElementById("learner-name").value.trim();
+    const name = document.getElementById("learner-name").value.trim().replace(/\s+/g, " ");
     const grade = document.getElementById("learner-grade").value;
-    const email = document.getElementById("learner-email").value.trim();
     const password = document.getElementById("learner-password").value;
-    if (!name || !grade || !email || password.length < 6) {
-      showMessage("Please complete all fields. Password must have at least 6 characters.", true);
+    const confirmPassword = document.getElementById("learner-confirm-password").value;
+    const authEmail = learnerUsernameToAuthEmail(name);
+
+    if (!name || !grade || !authEmail || password.length < 8 || !confirmPassword) {
+      showMessage("Enter your full name, choose your grade, and provide a password of at least 8 characters in both password fields.", true);
       return;
     }
+    if (password !== confirmPassword) {
+      showMessage("The passwords do not match. Please check and try again.", true);
+      return;
+    }
+
     this.disabled = true;
-    showMessage("Creating your accountâ€¦");
+    showMessage("Creating your learner account…");
     try {
       const { data, error } = await supabaseClient.auth.signUp({
-        email, password,
-        options: { emailRedirectTo: window.location.origin, data: { full_name: name, grade } }
+        email: authEmail,
+        password,
+        options: {
+          data: {
+            full_name: name,
+            grade,
+            username: name
+          }
+        }
       });
       if (error) throw error;
+
       if (data.session) {
         showDashboard(data.user);
         showMessage("Your account is ready. Welcome to the Learning Hub!");
       } else {
-        showMessage("Account created! Please confirm your email before logging in.");
+        showMessage("Account created. If you are asked to confirm an email, contact the site administrator because email confirmation should be switched off.");
       }
     } catch (error) {
-      showMessage(error.message, true);
-    } finally { this.disabled = false; }
+      const messageText = /already registered|already exists|unique/i.test(error.message || "")
+        ? "This full name is already registered as a username. If this is your account, sign in; otherwise use a distinguishable full name."
+        : (error.message || "We could not create your account. Please try again.");
+      showMessage(messageText, true);
+    } finally {
+      this.disabled = false;
+    }
   });
 
   document.getElementById("learner-login-btn").addEventListener("click", async function () {
-    const email = document.getElementById("login-email").value.trim();
+    const usernameOrEmail = document.getElementById("login-email").value.trim();
     const password = document.getElementById("login-password").value;
-    if (!email || !password) { showMessage("Enter your email address and password.", true); return; }
+    if (!usernameOrEmail || !password) {
+      showMessage("Enter your full name username and password.", true);
+      return;
+    }
+
+    // Existing learners can continue using their old email address.
+    // New learners sign in using the same full name entered at registration.
+    const email = usernameOrEmail.includes("@")
+      ? usernameOrEmail
+      : learnerUsernameToAuthEmail(usernameOrEmail);
+
     this.disabled = true;
-    showMessage("Logging inâ€¦");
+    showMessage("Logging in…");
     try {
       const { data, error } = await supabaseClient.auth.signInWithPassword({ email, password });
       if (error) throw error;
       showDashboard(data.user);
       showMessage("Login successful. Welcome back!");
     } catch (error) {
-      showMessage(error.message, true);
-    } finally { this.disabled = false; }
+      showMessage("Sign-in failed. Check your full name username and password. Existing learners may also use their registered email address.", true);
+    } finally {
+      this.disabled = false;
+    }
   });
 
   document.getElementById("learner-logout-btn").addEventListener("click", async function () {
