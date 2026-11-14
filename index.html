@@ -506,6 +506,22 @@ section{padding-top:50px;padding-bottom:50px}
    </div>
    <label for="qla-quiz-title">Quiz title</label><input id="qla-quiz-title" maxlength="100" placeholder="e.g. Algebra Challenge – Round 1">
    <div class="qla-grid qla-grid-studio"><div><label for="qla-difficulty">Difficulty</label><select id="qla-difficulty"><option>Easy</option><option selected>Medium</option><option>Hard</option></select></div><div><label for="qla-default-time">Default time per question</label><select id="qla-default-time"><option>10</option><option selected>20</option><option>30</option><option>60</option></select></div></div>
+   <div class="qla-question-editor" id="qla-auto-generator" style="border:2px solid #d8e7fb;background:#f7fbff;margin:16px 0;padding:16px;border-radius:16px">
+    <h4>⚡ Automatic CBC Quiz Generator</h4>
+    <p>Choose a grade, learning area, term, year, strand and sub-strand. The system prepares 30 curriculum-based questions and publishes the quiz for a live PIN game.</p>
+    <div class="qla-grid qla-grid-studio">
+     <div><label for="qla-gen-year">Curriculum / academic year</label><input id="qla-gen-year" type="number" min="2024" max="2035" value="2027"></div>
+     <div><label for="qla-gen-term">Term</label><select id="qla-gen-term"><option>Term 1</option><option>Term 2</option><option>Term 3</option><option>Full Year</option></select></div>
+     <div><label for="qla-gen-strand">Strand</label><select id="qla-gen-strand" disabled><option value="">Select grade and learning area first</option></select></div>
+     <div><label for="qla-gen-substrand">Sub-strand</label><select id="qla-gen-substrand" disabled><option value="">Select a strand first</option></select></div>
+    </div>
+    <p class="qla-message" id="qla-gen-topic-status" aria-live="polite">Curriculum topics will load after you select the grade, learning area and year.</p>
+    <div class="qla-editor-actions">
+     <button type="button" class="qla-btn qla-btn-blue" id="qla-generate-quiz">Generate 30 questions and publish quiz</button>
+    </div>
+    <p class="qla-message" id="qla-gen-message" aria-live="polite">Only curriculum topics with verified learning outcomes and curriculum notes can be used.</p>
+   </div>
+   
    <div class="qla-question-editor"><h4 id="qla-question-heading">Add question 1</h4><label for="qla-question-type">Question format</label><select id="qla-question-type"><option value="mcq">Four options (A–D)</option><option value="tf">True or False</option><option value="typed">Type answer</option></select>
     <label for="qla-question-text">Question</label><textarea id="qla-question-text" rows="3" placeholder="Type your question"></textarea>
     <div id="qla-options-wrap"><div class="qla-grid qla-grid-studio"><div><label>Option A<input id="qla-opt-a"></label></div><div><label>Option B<input id="qla-opt-b"></label></div><div><label>Option C<input id="qla-opt-c"></label></div><div><label>Option D<input id="qla-opt-d"></label></div></div><label for="qla-correct">Correct option</label><select id="qla-correct"><option value="0">A</option><option value="1">B</option><option value="2">C</option><option value="3">D</option></select></div>
@@ -1983,6 +1999,81 @@ buildQuiz();
  $('qla-question-list').addEventListener('click',e=>{const edit=e.target.closest('[data-edit]'),remove=e.target.closest('[data-remove]');if(remove){draftQuestions.splice(Number(remove.dataset.remove),1);renderDraft();return;}if(edit){const i=Number(edit.dataset.edit),q=draftQuestions[i];editingIndex=i;$('qla-question-heading').textContent='Edit question '+(i+1);$('qla-question-type').value=q.type;$('qla-question-text').value=q.question;$('qla-explanation').value=q.explanation||'';if(q.type==='mcq'){['a','b','c','d'].forEach((x,j)=>$('qla-opt-'+x).value=q.options[j]);$('qla-correct').value=q.correct_index;}else if(q.type==='tf')$('qla-tf-correct').value=q.correct_index===0?'true':'false';else $('qla-accepted').value=q.accepted_answers.join(' | ');$('qla-add-question').textContent='Save question changes';typeChanged();}});
  $('qla-editor-grade').addEventListener('change',()=>{draftQuestions=[];renderDraft();clearEditor();});
  $('qla-editor-subject').addEventListener('change',()=>{draftQuestions=[];renderDraft();clearEditor();});
+ const qlaGeneratorState={topics:[]};
+ const qlaGenSubjects=['Mathematics','English','Kiswahili','Integrated Science','Social Studies','CRE','Agriculture','Pre-Technical Studies','Creative Arts and Sports'];
+ function qlaGenSetOptions(id,items,placeholder){const el=$(id);el.innerHTML='<option value="">'+safe(placeholder)+'</option>'+items.map(x=>'<option value="'+safe(x.value)+'">'+safe(x.label)+'</option>').join('');}
+ async function qlaLoadGeneratorTopics(){
+  const grade=$('qla-editor-grade').value,area=$('qla-editor-subject').value,year=String($('qla-gen-year').value||'').trim(),term=$('qla-gen-term').value;
+  $('qla-gen-strand').disabled=true;$('qla-gen-substrand').disabled=true;
+  qlaGenSetOptions('qla-gen-strand',[],'Loading strands…');qlaGenSetOptions('qla-gen-substrand',[],'Select a strand first');
+  if(!/^(20[2-3][0-9])$/.test(year)){say('qla-gen-topic-status','Enter a valid year.');return;}
+  try{
+   let query=supabaseClient.from('qla_curriculum_topics').select('id,grade,learning_area,academic_year,term,strand,sub_strand,learning_outcomes,curriculum_notes,source_reference').eq('grade',grade).eq('learning_area',area).eq('academic_year',year).eq('is_active',true);
+   if(term!=='Full Year')query=query.eq('term',term);
+   const {data,error}=await query.order('strand').order('sub_strand');
+   if(error)throw error;
+   qlaGeneratorState.topics=data||[];
+   const strands=[...new Set(qlaGeneratorState.topics.map(x=>x.strand).filter(Boolean))];
+   qlaGenSetOptions('qla-gen-strand',strands.map(x=>({value:x,label:x})),'Select strand');
+   $('qla-gen-strand').disabled=!strands.length;
+   qlaGenSetOptions('qla-gen-substrand',[],'Select a strand first');
+   say('qla-gen-topic-status',strands.length?`${qlaGeneratorState.topics.length} curriculum sub-strand(s) available. Select a strand and sub-strand.`:'No curriculum topics have been loaded for this grade, learning area, year and term yet.');
+  }catch(e){say('qla-gen-topic-status','Could not load curriculum topics: '+e.message);}
+ }
+ function qlaLoadGeneratorSubstrands(){
+  const strand=$('qla-gen-strand').value;
+  const subs=[...new Set(qlaGeneratorState.topics.filter(x=>x.strand===strand).map(x=>x.sub_strand).filter(Boolean))];
+  qlaGenSetOptions('qla-gen-substrand',subs.map(x=>({value:x,label:x})),'Select sub-strand');
+  $('qla-gen-substrand').disabled=!subs.length;
+ }
+ ['qla-editor-grade','qla-editor-subject','qla-gen-year','qla-gen-term'].forEach(id=>$(id).addEventListener('change',qlaLoadGeneratorTopics));
+ $('qla-gen-strand').addEventListener('change',qlaLoadGeneratorSubstrands);
+ async function qlaGenerateAndPublish(){
+  const grade=$('qla-editor-grade').value,area=$('qla-editor-subject').value,year=String($('qla-gen-year').value||'').trim(),term=$('qla-gen-term').value;
+  const strand=$('qla-gen-strand').value,sub=$('qla-gen-substrand').value;
+  const matchingTopics=qlaGeneratorState.topics.filter(x=>x.strand===strand&&x.sub_strand===sub);
+  if(!matchingTopics.length)throw Error('Select a verified curriculum strand and sub-strand first.');
+  const topic={
+   ...matchingTopics[0],
+   learning_outcomes:matchingTopics.map(x=>x.learning_outcomes).filter(Boolean).join('\\n'),
+   curriculum_notes:matchingTopics.map(x=>x.curriculum_notes).filter(Boolean).join('\\n'),
+   source_reference:matchingTopics.map(x=>x.source_reference).filter(Boolean).join('; ')
+  };
+  if(!topic.learning_outcomes||!topic.curriculum_notes)throw Error('This sub-strand has no verified curriculum outcomes and content notes. Add these to the curriculum topic register first.');
+  if(!(await isTeacher()))throw Error('Only authorised teachers can generate quizzes.');
+  const user=await currentUser();
+  const title=`${grade} · ${area} · ${sub} · ${term} · ${year}`;
+  $('qla-generate-quiz').disabled=true;$('qla-generate-quiz').textContent='Generating 30 questions…';
+  say('qla-gen-message','Preparing questions from the selected curriculum outcomes. This may take a short while.');
+  try{
+   const session=await supabaseClient.auth.getSession();
+   const token=session?.data?.session?.access_token;
+   if(!token)throw Error('Please sign in again as an authorised teacher.');
+   const response=await fetch('/.netlify/functions/qla-generate-quiz',{
+    method:'POST',headers:{'Content-Type':'application/json','Authorization':'Bearer '+token},
+    body:JSON.stringify({grade,learningArea:area,academicYear:year,term,strand,subStrand:sub,learningOutcomes:topic.learning_outcomes,curriculumNotes:topic.curriculum_notes,sourceReference:topic.source_reference||''})
+   });
+   const result=await response.json();
+   if(!response.ok)throw Error(result.error||'Question generation failed.');
+   if(!Array.isArray(result.questions)||result.questions.length!==30)throw Error('The generator did not return exactly 30 validated questions.');
+   const payload={title,grade,learning_area:area,difficulty:'Medium',default_time_seconds:Number($('qla-default-time').value),status:'published',created_by:user.id,academic_year:year,term,strand,sub_strand:sub,generation_source:'ai_curriculum'};
+   const {data:quiz,error}=await supabaseClient.from('qla_quizzes').insert(payload).select().single();
+   if(error)throw error;
+   const rows=result.questions.map((q,i)=>({quiz_id:quiz.id,position:i+1,type:'mcq',question:q.question,options:q.options,correct_index:q.correct_index,accepted_answers:[],explanation:q.explanation,created_by:user.id}));
+   const {error:qe}=await supabaseClient.from('qla_questions').insert(rows);
+   if(qe){await supabaseClient.from('qla_quizzes').delete().eq('id',quiz.id);throw qe;}
+   await loadHostQuizzes();
+   $('qla-host-grade').value=grade;$('qla-host-subject').value=area;
+   const hostOption=$('qla-host-quiz').querySelector(`option[value="${quiz.id}"]`);
+   if(hostOption)$('qla-host-quiz').value=quiz.id;
+   say('qla-gen-message',`Published successfully: ${title}. 30 questions are ready. Select the quiz under Host a live game and create a PIN.`);
+   say('qla-studio-message','Automatic quiz published and ready to host.');
+  }catch(e){say('qla-gen-message',e.message||'Could not generate the quiz.');}
+  finally{$('qla-generate-quiz').disabled=false;$('qla-generate-quiz').textContent='Generate 30 questions and publish quiz';}
+ }
+ $('qla-generate-quiz').addEventListener('click',()=>qlaGenerateAndPublish().catch(e=>say('qla-gen-message',e.message)));
+
+ 
  async function saveQuiz(publish){try{if(!(await isTeacher()))throw Error('Only authorised teachers can create or publish quizzes.');const title=$('qla-quiz-title').value.trim();if(!title)throw Error('Enter a quiz title.');if(!draftQuestions.length)throw Error('Add at least one question.');const user=await currentUser();const payload={title,grade:$('qla-editor-grade').value,learning_area:$('qla-editor-subject').value,difficulty:$('qla-difficulty').value,default_time_seconds:Number($('qla-default-time').value),status:publish?'published':'draft',created_by:user.id};const {data:quiz,error}=await supabaseClient.from('qla_quizzes').insert(payload).select().single();if(error)throw error;const rows=draftQuestions.map((q,i)=>({...q,quiz_id:quiz.id,position:i+1,created_by:user.id}));const {error:qe}=await supabaseClient.from('qla_questions').insert(rows);if(qe){await supabaseClient.from('qla_quizzes').delete().eq('id',quiz.id);throw qe;}say('qla-studio-message',publish?'Quiz published and ready to host.':'Quiz saved as a draft.');await loadHostQuizzes();draftQuestions=[];renderDraft();$('qla-quiz-title').value='';clearEditor();}catch(e){say('qla-studio-message',e.message||'Could not save quiz.');}}
  $('qla-save-draft').addEventListener('click',()=>saveQuiz(false));$('qla-publish-quiz').addEventListener('click',()=>saveQuiz(true));
  async function loadHostQuizzes(){try{const {data,error}=await supabaseClient.from('qla_quizzes').select('id,title,grade,learning_area').eq('status','published').order('created_at',{ascending:false});if(error)throw error;$('qla-host-quiz').innerHTML='<option value="">Select a quiz</option>'+(data||[]).map(q=>`<option value="${q.id}">${safe(q.grade)} · ${safe(q.learning_area)} · ${safe(q.title)}</option>`).join('');}catch(e){say('qla-host-message','Quiz list unavailable: '+e.message);}}
