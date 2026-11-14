@@ -5,9 +5,13 @@ const json = (status, body) => new Response(JSON.stringify(body), {
 export default async (request) => {
   const url = Netlify.env.get("SUPABASE_URL");
   const serviceKey = Netlify.env.get("SUPABASE_SERVICE_ROLE_KEY");
-  const publishableKey = Netlify.env.get("SUPABASE_PUBLISHABLE_KEY") || "sb_publishable_uaOcRVaIwnvRl_wZhMhJ-Q_DhrqZyS_";
+  const publishableKey = Netlify.env.get("SUPABASE_PUBLISHABLE_KEY");
   const adminIds = (Netlify.env.get("JSLH_ADMIN_USER_IDS") || "").split(",").map(x => x.trim()).filter(Boolean);
-  if (!url || !serviceKey || !adminIds.length) return json(503,{error:"Administrator service is not configured. Set SUPABASE_URL, SUPABASE_SERVICE_ROLE_KEY and JSLH_ADMIN_USER_IDS."});
+  if (!url || !serviceKey || !publishableKey || !adminIds.length) {
+  return json(503, {
+    error: "Administrator service is not configured. Check the Supabase environment variables and administrator IDs."
+  });
+}
   if (!["GET","POST"].includes(request.method)) return json(405,{error:"Method not allowed."});
   const token=(request.headers.get("authorization")||"").replace(/^Bearer\s+/i,"");
   if (!token) return json(401,{error:"Please sign in."});
@@ -16,7 +20,11 @@ export default async (request) => {
   const actor=await auth.json();
   if (!adminIds.includes(actor.id)) return json(403,{error:"Administrator access denied."});
   
-const headers = { apikey: serviceKey, "Content-Type": "application/json" };
+const headers = {
+  apikey: serviceKey,
+  Authorization: `Bearer ${serviceKey}`,
+  "Content-Type": "application/json"
+};
 
   const rest=async(path,opts={})=>fetch(`${url}/rest/v1/${path}`,{...opts,headers:{...headers,...(opts.headers||{})}});
   const log=async(action,targetId=null,details={})=>{
