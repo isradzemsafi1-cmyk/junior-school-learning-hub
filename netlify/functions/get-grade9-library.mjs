@@ -19,12 +19,11 @@ export default async (request) => {
 
   const supabaseUrl = Netlify.env.get("SUPABASE_URL");
   const serviceKey = Netlify.env.get("SUPABASE_SERVICE_ROLE_KEY");
-  const publishableKey =
-    "sb_publishable_uaOcRVaIwnvRl_wZhMhJ-Q_DhrqZyS_";
+  const publishableKey = Netlify.env.get("SUPABASE_PUBLISHABLE_KEY");
 
-  if (!supabaseUrl || !serviceKey) {
-    return respond(500, { message: "Server configuration error." });
-  }
+  if (!supabaseUrl || !serviceKey || !publishableKey) {
+  return respond(500, { message: "Server configuration error." });
+}
 
   try {
     const authHeader = request.headers.get("authorization") || "";
