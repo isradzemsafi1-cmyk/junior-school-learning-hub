@@ -22,8 +22,7 @@ export default async (request) => {
   };
 
   const supabaseUrl = Netlify.env.get("SUPABASE_URL");
-  const publishableKey =
-    "sb_publishable_uaOcRVaIwnvRl_wZhMhJ-Q_DhrqZyS_";
+  const publishableKey = Netlify.env.get("SUPABASE_PUBLISHABLE_KEY");
   const serviceKey =
     Netlify.env.get("SUPABASE_SERVICE_ROLE_KEY");
 
@@ -34,9 +33,9 @@ export default async (request) => {
   const passkey = Netlify.env.get("MPESA_PASSKEY");
   const callbackURL = Netlify.env.get("MPESA_CALLBACK_URL");
 
-  if (!supabaseUrl || !serviceKey || !consumerKey ||
-      !consumerSecret || !shortcode || !tillNumber ||
-      !passkey || !callbackURL) {
+  if (!supabaseUrl || !publishableKey || !serviceKey || !consumerKey ||
+    !consumerSecret || !shortcode || !tillNumber ||
+    !passkey || !callbackURL) {
     return respond(500, {
       success: false,
       message: "Production payment configuration is incomplete."
