@@ -16,6 +16,7 @@ export default async (request) => {
   const catalog = {
     online_tuition: 100,
     premium_quizzes: 10,
+    learner_centre_access: 10,
     grade7_notes: 10,
     grade8_notes: 10,
     grade9_notes: 30
