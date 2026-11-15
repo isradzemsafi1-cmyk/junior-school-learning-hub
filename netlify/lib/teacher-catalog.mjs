@@ -305,7 +305,7 @@ export const teacherCatalog = {
       "path": "Creative Arts and Sports/Schemes of Work/Grade_8_2027_Creative_Arts_and_Sports_Scheme_of_Work_Term_1.pdf",
       "bytes": 53610,
       "product_id": "teacher_g8_028",
-      "price_kes": 70,
+      "price_kes": 20,
       "storage_path": "grade8/Creative Arts and Sports/Schemes of Work/Grade_8_2027_Creative_Arts_and_Sports_Scheme_of_Work_Term_1.pdf"
     },
     {
@@ -316,7 +316,7 @@ export const teacherCatalog = {
       "path": "Creative Arts and Sports/Schemes of Work/Grade_8_2027_Creative_Arts_and_Sports_Scheme_of_Work_Term_2.pdf",
       "bytes": 50817,
       "product_id": "teacher_g8_029",
-      "price_kes": 70,
+      "price_kes": 20,
       "storage_path": "grade8/Creative Arts and Sports/Schemes of Work/Grade_8_2027_Creative_Arts_and_Sports_Scheme_of_Work_Term_2.pdf"
     },
     {
@@ -327,7 +327,7 @@ export const teacherCatalog = {
       "path": "Creative Arts and Sports/Schemes of Work/Grade_8_2027_Creative_Arts_and_Sports_Scheme_of_Work_Term_3.pdf",
       "bytes": 53637,
       "product_id": "teacher_g8_030",
-      "price_kes": 70,
+      "price_kes": 20,
       "storage_path": "grade8/Creative Arts and Sports/Schemes of Work/Grade_8_2027_Creative_Arts_and_Sports_Scheme_of_Work_Term_3.pdf"
     },
     {
@@ -591,7 +591,7 @@ export const teacherCatalog = {
       "path": "Integrated Science/Schemes of Work/Grade_8_2027_Integrated_Science_Scheme_of_Work_Term_1.pdf",
       "bytes": 47948,
       "product_id": "teacher_g8_054",
-      "price_kes": 70,
+      "price_kes": 20,
       "storage_path": "grade8/Integrated Science/Schemes of Work/Grade_8_2027_Integrated_Science_Scheme_of_Work_Term_1.pdf"
     },
     {
@@ -602,7 +602,7 @@ export const teacherCatalog = {
       "path": "Integrated Science/Schemes of Work/Grade_8_2027_Integrated_Science_Scheme_of_Work_Term_2.pdf",
       "bytes": 47920,
       "product_id": "teacher_g8_055",
-      "price_kes": 70,
+      "price_kes": 20,
       "storage_path": "grade8/Integrated Science/Schemes of Work/Grade_8_2027_Integrated_Science_Scheme_of_Work_Term_2.pdf"
     },
     {
@@ -613,7 +613,7 @@ export const teacherCatalog = {
       "path": "Integrated Science/Schemes of Work/Grade_8_2027_Integrated_Science_Scheme_of_Work_Term_3.pdf",
       "bytes": 42464,
       "product_id": "teacher_g8_056",
-      "price_kes": 70,
+      "price_kes": 20,
       "storage_path": "grade8/Integrated Science/Schemes of Work/Grade_8_2027_Integrated_Science_Scheme_of_Work_Term_3.pdf"
     },
     {
@@ -1020,7 +1020,7 @@ export const teacherCatalog = {
       "path": "Pre-Technical Studies/Schemes of Work/Grade_8_2027_Pre_Technical_Studies_Scheme_of_Work_Term_1.pdf",
       "bytes": 49458,
       "product_id": "teacher_g8_093",
-      "price_kes": 70,
+      "price_kes": 20,
       "storage_path": "grade8/Pre-Technical Studies/Schemes of Work/Grade_8_2027_Pre_Technical_Studies_Scheme_of_Work_Term_1.pdf"
     },
     {
@@ -1031,7 +1031,7 @@ export const teacherCatalog = {
       "path": "Pre-Technical Studies/Schemes of Work/Grade_8_2027_Pre_Technical_Studies_Scheme_of_Work_Term_2.pdf",
       "bytes": 46595,
       "product_id": "teacher_g8_094",
-      "price_kes": 70,
+      "price_kes": 20,
       "storage_path": "grade8/Pre-Technical Studies/Schemes of Work/Grade_8_2027_Pre_Technical_Studies_Scheme_of_Work_Term_2.pdf"
     },
     {
@@ -1042,7 +1042,7 @@ export const teacherCatalog = {
       "path": "Pre-Technical Studies/Schemes of Work/Grade_8_2027_Pre_Technical_Studies_Scheme_of_Work_Term_3.pdf",
       "bytes": 39594,
       "product_id": "teacher_g8_095",
-      "price_kes": 70,
+      "price_kes": 20,
       "storage_path": "grade8/Pre-Technical Studies/Schemes of Work/Grade_8_2027_Pre_Technical_Studies_Scheme_of_Work_Term_3.pdf"
     },
     {
