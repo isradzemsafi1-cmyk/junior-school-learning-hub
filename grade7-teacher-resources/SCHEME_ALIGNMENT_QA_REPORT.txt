@@ -1,0 +1,18 @@
+GRADE 7 2027 — SCHEME ALIGNMENT QUALITY REVIEW
+
+MIDTERM BREAK CALENDAR CORRECTION COMPLETED
+Week 8 is designated MIDTERM BREAK in Term 1 and Term 2. A dedicated Week 8 MIDTERM BREAK page has been inserted into all nine learning-area lesson-plan PDFs and all nine records-of-work PDFs for both terms. No teaching lessons or invented curriculum content are assigned to Week 8. A separate term-calendar PDF is included in Schemes_of_Work. Term 3 has no Week 8 midterm break under the approved calendar.
+
+APPROVED CALENDAR
+• Term 1: 14 weeks; teaching Weeks 1–7 and 9–13; Week 8 MIDTERM BREAK; Week 14 end-term assessment/marking/feedback/closing.
+• Term 2: 13 weeks; teaching Weeks 1–7 and 9–12; Week 8 MIDTERM BREAK; Week 13 end-term assessment/marking/feedback/closing.
+• Term 3: 10 weeks; teaching Weeks 1–9; Week 10 end-term assessment/marking/feedback/closing.
+
+ASSESSMENTS
+Term 1, Term 2 and Term 3 question papers and scoring guides are present for all nine learning areas (54 assessment PDFs). Term 2 and Term 3 use 80 marks: 20 short-answer, 40 structured, 20 application/extended response. Teachers should check actual taught coverage before administration.
+
+REMAINING REVIEW NOTE
+Term 3 lesson plans and records were extracted from the exact Term 3 source-scheme sections, stopping before the FULL-YEAR marker. The supplied source schemes and assessment papers should still be reviewed by the responsible subject teachers for content accuracy and coverage before publication/administration.
+
+PUBLICATION STATUS
+Week 8 midterm break placement is now explicit. This package is an updated review build; it has not been uploaded to GitHub or deployed to Netlify.
