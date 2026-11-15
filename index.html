@@ -854,6 +854,7 @@ section{padding-top:50px;padding-bottom:50px}
 
 <footer><h2>Junior School Learning Hub</h2><p>Empowering learners through knowledge, skills and innovation.</p><p>Contact: <a href="https://wa.me/254741274957">0741 274 957</a></p><p>Online and physical tuition available.</p><p class="small" style="color:#cbd5e1;margin-top:15px">Â© 2026 Junior School Learning Hub. All rights reserved.</p></footer>
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="/learner-centre/quiz-bank/js/quiz-schema-adapter.js" defer></script>
 <script>
  const SUPABASE_URL = "https://hqbqhnhgrgfxpedjzmnm.supabase.co";
 const SUPABASE_PUBLISHABLE_KEY = "sb_publishable_uaOcRVaIwnvRl_wZhMhJ-Q_DhrqZyS_";
@@ -1427,7 +1428,17 @@ function getActiveQuizQuestions(){
  const grade=document.getElementById('quizGrade').value;
  const subject=document.getElementById('quizSubject').value;
  const bank=(gradeSpecificQuizBank[grade] && gradeSpecificQuizBank[grade][subject]) || [];
- return bank.map(item => ({q:item.question,o:item.options,a:Number(item.answer),e:item.explanation}));
+ if (!window.JSLHQuizAdapter) {
+  console.error('JSLH quiz adapter did not load; retaining the legacy quiz data.');
+  return bank.map(item => ({q:item.question || item.prompt || item.q,o:item.options,a:Number(item.answer ?? item.correct_index ?? item.correct_option),e:item.explanation || ''}));
+ }
+ try {
+  return window.JSLHQuizAdapter.normalizeMany(bank, Number(String(grade).replace(/\\D/g,'')))
+   .map(item => ({q:item.question,o:item.options,a:item.correct_index,e:item.explanation}));
+ } catch (error) {
+  console.error('Unable to load this quiz bank:', error);
+  return [];
+ }
 }
 function buildQuiz(){
  const qs=getActiveQuizQuestions();
