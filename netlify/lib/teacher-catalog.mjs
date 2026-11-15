@@ -2465,7 +2465,7 @@ export const teacherCatalog = {
       "path": "Agriculture/Lesson Plans/Full Year Lesson Plans.pdf",
       "bytes": 567397,
       "product_id": "teacher_g9_017",
-      "price_kes": 100,
+      "price_kes": 200,
       "storage_path": "grade9/Agriculture/Lesson Plans/Full Year Lesson Plans.pdf"
     },
     {
@@ -2487,7 +2487,7 @@ export const teacherCatalog = {
       "path": "Social Studies/Lesson Plans/Full Year Lesson Plans.pdf",
       "bytes": 590193,
       "product_id": "teacher_g9_019",
-      "price_kes": 100,
+      "price_kes": 200,
       "storage_path": "grade9/Social Studies/Lesson Plans/Full Year Lesson Plans.pdf"
     },
     {
@@ -2630,7 +2630,7 @@ export const teacherCatalog = {
       "path": "Pre-Technical Studies/Lesson Plans/Full Year Lesson Plans.pdf",
       "bytes": 600453,
       "product_id": "teacher_g9_032",
-      "price_kes": 100,
+      "price_kes": 200,
       "storage_path": "grade9/Pre-Technical Studies/Lesson Plans/Full Year Lesson Plans.pdf"
     },
     {
@@ -2795,7 +2795,7 @@ export const teacherCatalog = {
       "path": "English/Lesson Plans/Full Year Lesson Plans.pdf",
       "bytes": 712405,
       "product_id": "teacher_g9_047",
-      "price_kes": 100,
+      "price_kes": 200,
       "storage_path": "grade9/English/Lesson Plans/Full Year Lesson Plans.pdf"
     },
     {
@@ -2828,7 +2828,7 @@ export const teacherCatalog = {
       "path": "Mathematics/Lesson Plans/Full Year Lesson Plans.pdf",
       "bytes": 666109,
       "product_id": "teacher_g9_050",
-      "price_kes": 100,
+      "price_kes": 200,
       "storage_path": "grade9/Mathematics/Lesson Plans/Full Year Lesson Plans.pdf"
     },
     {
@@ -2949,7 +2949,7 @@ export const teacherCatalog = {
       "path": "Christian Religious Education (CRE)/Lesson Plans/Full Year Lesson Plans.pdf",
       "bytes": 565593,
       "product_id": "teacher_g9_061",
-      "price_kes": 100,
+      "price_kes": 200,
       "storage_path": "grade9/Christian Religious Education (CRE)/Lesson Plans/Full Year Lesson Plans.pdf"
     },
     {
@@ -3015,7 +3015,7 @@ export const teacherCatalog = {
       "path": "Kiswahili/Lesson Plans/Full Year Lesson Plans.pdf",
       "bytes": 488057,
       "product_id": "teacher_g9_067",
-      "price_kes": 100,
+      "price_kes": 200,
       "storage_path": "grade9/Kiswahili/Lesson Plans/Full Year Lesson Plans.pdf"
     },
     {
@@ -3026,7 +3026,7 @@ export const teacherCatalog = {
       "path": "Integrated Science/Lesson Plans/Full Year Lesson Plans.pdf",
       "bytes": 767139,
       "product_id": "teacher_g9_068",
-      "price_kes": 100,
+      "price_kes": 200,
       "storage_path": "grade9/Integrated Science/Lesson Plans/Full Year Lesson Plans.pdf"
     },
     {
@@ -3048,7 +3048,7 @@ export const teacherCatalog = {
       "path": "Creative Arts and Sports/Lesson Plans/Full Year Lesson Plans.pdf",
       "bytes": 705235,
       "product_id": "teacher_g9_070",
-      "price_kes": 100,
+      "price_kes": 200,
       "storage_path": "grade9/Creative Arts and Sports/Lesson Plans/Full Year Lesson Plans.pdf"
     },
     {
