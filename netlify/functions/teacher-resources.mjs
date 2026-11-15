@@ -12,7 +12,7 @@ const reply = (status, body, headers = {}) =>
   });
 
 async function getUser(request) {
-  const token = (request.headers.get("authorization") || "").replace(/^Bearer\s+/i, "");
+  const token = (request.headers.get("authorization") || "").replace(/^Bearer\\s+/i, "");
   if (!token) return null;
   const r = await fetch(`${SUPABASE_URL()}/auth/v1/user`, {
     headers: { apikey: PUBLISHABLE_KEY, Authorization: `Bearer ${token}` }
@@ -53,8 +53,14 @@ async function entitledProducts(userId, productIds) {
 
 function itemsForGrade(grade) {
   return (teacherCatalog[String(grade)] || []).map(item => ({
-    product_id: item.product_id, subject: item.subject, category: item.category,
-    label: item.label, price_kes: item.price_kes, path: item.path, storage_path: item.storage_path
+    product_id: item.product_id,
+    subject: item.subject,
+    category: item.category,
+    label: item.label,
+    filename: item.filename,
+    price_kes: item.price_kes,
+    path: item.path,
+    storage_path: item.storage_path
   }));
 }
 
@@ -80,9 +86,10 @@ export default async (request) => {
         headers: { apikey: SERVICE_KEY(), Authorization: `Bearer ${SERVICE_KEY()}` }
       });
       if (!file.ok) return reply(404, { success: false, message: "The protected PDF has not been uploaded yet." });
+      const safeFilename = String(item.filename || "teacher-resource.pdf").replace(/["\\\\\\/]/g, "");
       const headers = new Headers({
         "Content-Type": "application/pdf",
-        "Content-Disposition": `attachment; filename="${item.filename.replace(/["\\]/g, "")}"`,
+        "Content-Disposition": `attachment; filename="${safeFilename}"`,
         "Cache-Control": "private, no-store"
       });
       return new Response(file.body, { status: 200, headers });
