@@ -30,7 +30,7 @@ export default async (request) => {
     );
     if (!purchaseResponse.ok) throw new Error("Purchase lookup failed.");
     const purchases = await purchaseResponse.json();
-    if (!purchases.length) return json(403, { success: false, message: "Your 7-day access has expired. Purchase this resource again to reopen it." });
+    if (!purchases.length) return json(403, { success: false, message: "No active seven-day purchase was found for this resource. Complete payment or renew access to open it." });
 
     const catalogResponse = await fetch(
       `${supabaseUrl}/rest/v1/teacher_resource_catalog?id=eq.${encodeURIComponent(resource_id)}&active=eq.true&select=storage_path&limit=1`,
