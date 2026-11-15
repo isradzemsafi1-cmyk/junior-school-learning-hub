@@ -44,6 +44,15 @@ export default async (request) => {
     });
   }
 
+  // JSLH production Buy Goods identifiers: Store/Go-Live shortcode + customer-facing Till.
+  if (shortcode !== "1420268" || tillNumber !== "1887415") {
+    console.error("M-Pesa merchant identifiers do not match the confirmed JSLH Store and Till numbers.");
+    return respond(500, {
+      success: false,
+      message: "M-Pesa merchant configuration does not match the registered JSLH Buy Goods account."
+    });
+  }
+
   if (!callbackURL.startsWith("https://")) {
     return respond(500, {
       success: false,
