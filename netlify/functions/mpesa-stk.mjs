@@ -28,7 +28,9 @@ export default async (request) => {
   const shortcode = Netlify.env.get("MPESA_SHORTCODE");
   const tillNumber = Netlify.env.get("MPESA_TILL_NUMBER");
   const passkey = Netlify.env.get("MPESA_PASSKEY");
-  const callbackURL = Netlify.env.get("MPESA_CALLBACK_URL");
+  // Derive the callback from the exact public host receiving this checkout request.
+  // This works for both Netlify deploy previews (sandbox) and the production domain.
+  const callbackURL = new URL("/.netlify/functions/mpesa-callback", request.url).toString();
 
   const catalog = {
     online_tuition: 100,
@@ -51,8 +53,7 @@ export default async (request) => {
     ["MPESA_CONSUMER_SECRET", consumerSecret],
     ["MPESA_SHORTCODE", shortcode],
     ["MPESA_TILL_NUMBER", tillNumber],
-    ["MPESA_PASSKEY", passkey],
-    ["MPESA_CALLBACK_URL", callbackURL]
+    ["MPESA_PASSKEY", passkey]
   ].filter(([, value]) => !value).map(([name]) => name);
 
   if (missing.length) {
@@ -64,7 +65,7 @@ export default async (request) => {
     });
   }
 
-  if (!callbackURL.startsWith("https://")) {
+  if (new URL(callbackURL).protocol !== "https:") {
     return respond(500, {
       success: false,
       message: "A secure HTTPS callback URL is required."
