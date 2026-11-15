@@ -28,9 +28,17 @@ export default async (request) => {
   const shortcode = Netlify.env.get("MPESA_SHORTCODE");
   const tillNumber = Netlify.env.get("MPESA_TILL_NUMBER");
   const passkey = Netlify.env.get("MPESA_PASSKEY");
-  // Derive the callback from the exact public host receiving this checkout request.
-  // This works for both Netlify deploy previews (sandbox) and the production domain.
-  const callbackURL = new URL("/.netlify/functions/payment-callback", request.url).toString();
+  // Use Netlify's canonical public deployment URL. DEPLOY_PRIME_URL is the
+  // exact deploy-preview URL; URL is the configured production site URL.
+  // Fall back to the incoming request origin only for local/other contexts.
+  const publicSiteURL =
+    Netlify.env.get("DEPLOY_PRIME_URL") ||
+    Netlify.env.get("URL") ||
+    new URL(request.url).origin;
+  const callbackURL = new URL(
+    "/.netlify/functions/payment-callback/",
+    publicSiteURL.endsWith("/") ? publicSiteURL : `${publicSiteURL}/`
+  ).toString();
 
   const catalog = {
     online_tuition: 100,
