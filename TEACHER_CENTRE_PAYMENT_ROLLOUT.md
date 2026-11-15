@@ -10,7 +10,7 @@
 - End-Term Examination: 30
 
 ## Access model
-A teacher pays once per resource. A successful, verified M-Pesa payment grants permanent account-linked access. The secure download endpoint issues a five-minute signed URL only after checking the authenticated user's paid purchase.
+A teacher pays once per resource. A successful, verified M-Pesa payment grants seven-day account-linked access. The secure download endpoint issues a five-minute signed URL only after checking the authenticated user's paid purchase.
 
 ## Required deployment steps
 1. Apply `supabase/migrations/202611160001_teacher_resource_commerce.sql` in the correct Supabase project.
@@ -22,3 +22,9 @@ A teacher pays once per resource. A successful, verified M-Pesa payment grants p
 
 ## Important
 This PR establishes the private bucket, RLS-protected purchase records, and signed-download gate. It does not by itself migrate existing public PDFs or complete the M-Pesa teacher checkout UI/callback. Do not advertise paid protection or merge into production until steps 1–5 are completed and verified.
+
+## Seven-day access enforcement
+- On a verified successful M-Pesa callback, set `paid_at` to the confirmation time and `expires_at` to exactly seven days later.
+- The protected download endpoint must require `status=paid` and `expires_at` later than the current server time.
+- Re-purchasing after expiry refreshes the same teacher/resource purchase record with a new `paid_at`, `expires_at`, and payment reference; never extend access from an unverified callback.
+- Signed download URLs remain short-lived (five minutes); this is separate from the seven-day purchase entitlement.
