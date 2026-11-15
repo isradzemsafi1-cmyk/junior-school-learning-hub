@@ -1,3 +1,3 @@
-/grade8-teacher-resources/*.pdf  /.netlify/functions/teacher-resources?grade=8&path=:splat  200!
-/grade9-teacher-resources/*.pdf  /.netlify/functions/teacher-resources?grade=9&path=:splat  200!
-/grade7-teacher-resources/*.pdf  /.netlify/functions/teacher-resources?grade=7&path=:splat  200!
+/grade8-teacher-resources/*.pdf  /.netlify/functions/teacher-resources?grade=8&path=grade8/:splat  200!
+/grade9-teacher-resources/*.pdf  /.netlify/functions/teacher-resources?grade=9&path=grade9/:splat  200!
+/grade7-teacher-resources/*.pdf  /.netlify/functions/teacher-resources?grade=7&path=grade7/:splat  200!
