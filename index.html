@@ -1436,6 +1436,12 @@ function legacyPracticeQuestions(){
   ? window.JSLHQuizAdapter.normalizeMany(bank,Number(String(grade).replace(/\D/g,''))).map(item=>({q:item.question,o:item.options,a:item.correct_index,e:item.explanation||''}))
   : bank.map(item=>({q:item.question||item.prompt||item.q,o:item.options,a:Number(item.answer??item.correct_index??item.correct_option),e:item.explanation||''}));
 }
+function makeQuizMessage(message,className){
+ const p=document.createElement('p');
+ p.className=className||'small';
+ p.textContent=String(message);
+ return p;
+}
 async function buildQuiz(){
  const grade=document.getElementById('quizGrade').value;
  const subject=document.getElementById('quizSubject').value;
@@ -1443,10 +1449,11 @@ async function buildQuiz(){
  const content=document.getElementById('quizContent');
  const note=document.getElementById('quizSaveNote');
  const mark=document.getElementById('markQuiz');
+ const result=document.getElementById('quizResult');
  activePracticeQuestions=[];
  mark.disabled=true;
- document.getElementById('quizResult').innerHTML='';
- content.innerHTML='<p class="small">Loading '+grade+' '+subject+' Term '+term+' questions…</p>';
+ result.replaceChildren();
+ content.replaceChildren(makeQuizMessage('Loading '+grade+' '+subject+' Term '+term+' questions…'));
  try{
   if(window.JSLHQuizBank&&window.JSLHQuizBank.isEnabled()){
    const loaded=await window.JSLHQuizBank.load(grade,subject,term);
@@ -1461,26 +1468,39 @@ async function buildQuiz(){
   console.error('JSLH 2027 quiz bank could not load:',error);
   activePracticeQuestions=legacyPracticeQuestions();
   activePracticeSource='existing practice bank';
-  note.textContent='The new question bank could not be loaded for this selection. Existing practice questions are shown instead. '+error.message;
+  note.textContent='The new question bank could not be loaded for this selection. Existing practice questions are shown instead. '+String(error&&error.message||error);
  }
  const qs=activePracticeQuestions;
  if(!qs.length){
-  content.innerHTML='<p class="small">No questions are available for this selection yet.</p>';
+  content.replaceChildren(makeQuizMessage('No questions are available for this selection yet.'));
   mark.disabled=true;
   return;
  }
- content.innerHTML=qs.map((q,i)=>`
-  <div class="question" data-q="${i}">
-   <p>${i+1}. ${q.q}</p>
-   ${q.o.map((o,j)=>`
-    <label class="option">
-     <input type="radio" name="q${i}" value="${j}">
-     ${String.fromCharCode(65+j)}. ${o}
-    </label>
-   `).join('')}
-   <div class="feedback" id="fb${i}"></div>
-  </div>
- `).join('');
+ const fragment=document.createDocumentFragment();
+ qs.forEach((q,i)=>{
+  const section=document.createElement('div');
+  section.className='question';
+  section.dataset.q=String(i);
+  const prompt=document.createElement('p');
+  prompt.textContent=(i+1)+'. '+String(q.q);
+  section.appendChild(prompt);
+  q.o.forEach((option,j)=>{
+   const label=document.createElement('label');
+   label.className='option';
+   const input=document.createElement('input');
+   input.type='radio';
+   input.name='q'+i;
+   input.value=String(j);
+   label.append(input,document.createTextNode(' '+String.fromCharCode(65+j)+'. '+String(option)));
+   section.appendChild(label);
+  });
+  const feedback=document.createElement('div');
+  feedback.className='feedback';
+  feedback.id='fb'+i;
+  section.appendChild(feedback);
+  fragment.appendChild(section);
+ });
+ content.replaceChildren(fragment);
  mark.disabled=false;
 }
 document.getElementById('quizGrade').addEventListener('change',buildQuiz);
@@ -1494,27 +1514,29 @@ document.getElementById('markQuiz').addEventListener('click',()=>{
  let score=0;
  let answered=0;
  qs.forEach((q,i)=>{
-  const chosen=document.querySelector(`input[name="q${i}"]:checked`);
+  const chosen=document.querySelector('input[name="q'+i+'"]:checked');
   const fb=document.getElementById('fb'+i);
   if(chosen){
    answered++;
-   if(Number(chosen.value)===q.a){score++;fb.textContent='✓ Correct. '+q.e;fb.style.color='#17633b';}
-   else{fb.textContent='✗ Review: '+q.e;fb.style.color='#a33';}
-  }else{fb.textContent='Not answered. '+q.e;fb.style.color='#a33';}
+   if(Number(chosen.value)===q.a){score++;fb.textContent='✓ Correct. '+String(q.e);fb.style.color='#17633b';}
+   else{fb.textContent='✗ Review: '+String(q.e);fb.style.color='#a33';}
+  }else{fb.textContent='Not answered. '+String(q.e);fb.style.color='#a33';}
  });
  const pct=qs.length?Math.round(score/qs.length*100):0;
- document.getElementById('quizResult').innerHTML=`
-  <div class="score">Your score: ${score} / ${qs.length} (${pct}%)</div>
-  <p>You answered ${answered} of ${qs.length} questions.</p>
-  <p>${pct>=80?'Excellent work. Keep extending your understanding.':pct>=50?'Good effort. Review the feedback and practise the weaker areas.':'Keep practising. Read the notes again and retry the quiz.'}</p>
- `;
- document.getElementById('quizResult').scrollIntoView({behavior:'smooth',block:'nearest'});
+ const result=document.getElementById('quizResult');
+ const scoreLine=document.createElement('div');
+ scoreLine.className='score';
+ scoreLine.textContent='Your score: '+score+' / '+qs.length+' ('+pct+'%)';
+ const answeredLine=makeQuizMessage('You answered '+answered+' of '+qs.length+' questions.');
+ const adviceLine=makeQuizMessage(pct>=80?'Excellent work. Keep extending your understanding.':pct>=50?'Good effort. Review the feedback and practise the weaker areas.':'Keep practising. Read the notes again and retry the quiz.');
+ result.replaceChildren(scoreLine,answeredLine,adviceLine);
+ result.scrollIntoView({behavior:'smooth',block:'nearest'});
  if(window.saveLearnerQuizAttempt){
   window.saveLearnerQuizAttempt({
    grade:document.getElementById('quizGrade').value,
    subject:document.getElementById('quizSubject').value,
    score,total:qs.length,percentage:pct,answered,
-   questions:qs.map((q,i)=>({question:q.q,selected:document.querySelector(`input[name="q${i}"]:checked`)?.value??null,correct:q.a}))
+   questions:qs.map((q,i)=>({question:q.q,selected:document.querySelector('input[name="q'+i+'"]:checked')?.value??null,correct:q.a}))
   });
  }
 });
