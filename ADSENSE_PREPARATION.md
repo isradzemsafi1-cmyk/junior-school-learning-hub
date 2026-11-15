@@ -37,9 +37,9 @@ The owner does not yet have an AdSense account or publisher ID. Do not add a gue
 ## Activation details to collect from the owner
 
 - AdSense account created and site added: pending
-- Publisher ID (`pub-...`): pending
-- Exact AdSense site verification code: pending
-- Exact `ads.txt` seller line: pending
+- Publisher ID (`pub-...`): ca-pub-5841049170599164 (owner supplied)
+- AdSense loader/site verification script: added to homepage head on preparation branch
+- `ads.txt` seller record: added on preparation branch using the supplied publisher ID
 - Google review and approval: pending
 
-**Do not merge this preparation branch to production as an advertising activation.** This document is a checklist only; it does not load ads or change the live website.
+**Do not merge this preparation branch to production until the preview is verified and the owner approves deployment.** This document is a checklist only; it does not load ads or change the live website.
