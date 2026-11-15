@@ -1433,7 +1433,7 @@ function legacyPracticeQuestions(){
  const subject=document.getElementById('quizSubject').value;
  const bank=(gradeSpecificQuizBank[grade]&&gradeSpecificQuizBank[grade][subject])||[];
  return window.JSLHQuizAdapter
-  ? window.JSLHQuizAdapter.normalizeMany(bank,Number(String(grade).replace(/\\D/g,''))).map(item=>({q:item.question,o:item.options,a:item.correct_index,e:item.explanation||''}))
+  ? window.JSLHQuizAdapter.normalizeMany(bank,Number(String(grade).replace(/\D/g,''))).map(item=>({q:item.question,o:item.options,a:item.correct_index,e:item.explanation||''}))
   : bank.map(item=>({q:item.question||item.prompt||item.q,o:item.options,a:Number(item.answer??item.correct_index??item.correct_option),e:item.explanation||''}));
 }
 async function buildQuiz(){
