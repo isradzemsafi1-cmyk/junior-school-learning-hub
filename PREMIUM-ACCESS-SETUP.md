@@ -5,17 +5,20 @@
 - Per-resource M-Pesa product IDs and prices.
 - Protected download function backed by the private Supabase Storage bucket `teacher-premium`.
 - Career Guidance product `career_guidance_full_package` at KES 30.
-- 30-day access for new Teacher Centre and Career Guidance purchases.
+- Seven-day access for Teacher Centre resources; Career Guidance remains on its separate 30-day entitlement.
 - Existing learner product prices and the production Buy Goods STK settings are retained.
 
 ## Resource prices
-- Schemes of Work: KES 70 each.
+- Schemes of Work: KES 20 per term. Full-year scheme entries remain KES 70 in the current catalogue pending confirmation.
 - Term Lesson Plans: KES 100 each.
 - Full-Year Lesson Plans: KES 200 each.
 - Learner/Teaching Notes: KES 50 each.
 - CATs: KES 20 each.
 - End-Term Examinations: KES 30 each.
 - Records of Work are temporarily set to KES 50 pending the owner's confirmation.
+
+## Access duration
+Teacher resource access begins only after verified M-Pesa confirmation and lasts seven days (168 hours). Repeat downloads are permitted during that window. The signed download URL itself expires after five minutes. Career Guidance remains a separate 30-day product and is not changed by the Teacher Centre duration setting.
 
 ## One-time private resource migration
 Before deploying, extract this ZIP and double-click `START-PREMIUM-PDF-UPLOAD.bat` on a trusted Windows computer. The helper checks for Node.js, asks for the Supabase Project URL, and securely prompts for the service_role key with hidden input. The key is used only in that local process and is not written to a project file. Never commit either secret or send it in chat.
