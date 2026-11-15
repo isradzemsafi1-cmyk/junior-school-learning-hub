@@ -35,7 +35,7 @@ export default async (request) => {
     premium_quizzes: 20,
     grade7_notes: 10,
     grade8_notes: 10,
-    grade9_notes: 30,
+    grade9_notes: 10,
     career_guidance_full_package: 30,
     grade10_selection_form: 30,
     ...Object.fromEntries(
