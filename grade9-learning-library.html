@@ -48,10 +48,10 @@ footer{background:var(--navy);color:#fff;text-align:center;padding:22px}
   <button id="logoutButton" class="secondary" type="button" hidden>Log out</button>
   <p class="meta">No account yet? <a href="/#learner-account">Create a free learner account</a> on the homepage.</p>
   <div id="purchaseArea" hidden>
-    <p><b>Grade 9 library access: KSh 30 for 24 hours.</b></p>
+    <p><b>All Learner Centre resources: KSh 10 for 24 hours.</b></p>
     <label for="phone">M-Pesa phone number</label>
     <input id="phone" type="tel" placeholder="e.g. 07XXXXXXXX" autocomplete="tel">
-    <button id="buyButton" type="button">Buy Grade 9 access – KSh 30</button>
+    <button id="buyButton" type="button">Buy Learner Centre access – KSh 10</button>
     <button id="checkAccessButton" class="secondary" type="button">I've completed payment – check access</button>
   </div>
   <p class="meta" id="accessStatus" aria-live="polite"></p>
@@ -175,7 +175,7 @@ async function loadGrade9Library(){
     accessMessage('Please log in again to continue.'); return;
   }
   if(response.status === 403){
-    showPurchase(true); lockLibrary('Grade 9 notes are locked. Purchase access to view the lessons and quizzes.');
+    showPurchase(true); lockLibrary('Learner Centre resources are locked. Pay KES 10 to access all resources for 24 hours.');
     accessMessage('Your account is signed in, but Grade 9 access is not active.'); return;
   }
   if(!response.ok || !Array.isArray(result.content)){
@@ -209,7 +209,7 @@ $('buyButton').addEventListener('click', async () => {
   const response = await fetch('/.netlify/functions/mpesa-stk', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${session.access_token}` },
-    body: JSON.stringify({ product_id: 'grade9_notes', phone })
+    body: JSON.stringify({ product_id: 'learner_centre_access', phone })
   });
   const result = await response.json().catch(() => ({}));
   $('buyButton').disabled = false;

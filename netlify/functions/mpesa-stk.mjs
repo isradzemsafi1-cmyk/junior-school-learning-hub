@@ -15,7 +15,8 @@ export default async (request) => {
 
   const catalog = {
     online_tuition: 100,
-    premium_quizzes: 20,
+    premium_quizzes: 10,
+    learner_centre_access: 10,
     grade7_notes: 10,
     grade8_notes: 10,
     grade9_notes: 30
@@ -40,6 +41,15 @@ export default async (request) => {
     return respond(500, {
       success: false,
       message: "Production payment configuration is incomplete."
+    });
+  }
+
+  // JSLH production Buy Goods identifiers: Store/Go-Live shortcode + customer-facing Till.
+  if (shortcode !== "1420268" || tillNumber !== "1887415") {
+    console.error("M-Pesa merchant identifiers do not match the confirmed JSLH Store and Till numbers.");
+    return respond(500, {
+      success: false,
+      message: "M-Pesa merchant configuration does not match the registered JSLH Buy Goods account."
     });
   }
 

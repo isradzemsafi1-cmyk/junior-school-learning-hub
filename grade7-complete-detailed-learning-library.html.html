@@ -37,10 +37,10 @@ footer{background:var(--navy);color:white;text-align:center;padding:22px}
   </div>
   <button id="loginButton" type="button">Log in</button>
   <div id="purchaseArea" hidden>
-    <p><b>Grade 7 library access: KSh 10 for 12 hours.</b></p>
+    <p><b>All Learner Centre resources: KSh 10 for 24 hours.</b></p>
     <label for="phone">M-Pesa phone number</label>
     <input id="phone" type="tel" placeholder="e.g. 07XXXXXXXX" autocomplete="tel">
-    <button id="buyButton" type="button">Buy Grade 7 access – KSh 10</button>
+    <button id="buyButton" type="button">Buy Learner Centre access – KSh 10</button>
     <button id="checkAccessButton" class="secondary" type="button">I've completed payment – check access</button>
   </div>
   <p class="meta" id="accessStatus" aria-live="polite"></p>
@@ -168,7 +168,7 @@ async function loadGrade7Library() {
   }
   if (response.status === 403) {
     showPurchase(true);
-    showLibraryUnavailable('Grade 7 notes are locked. Purchase access to view the lessons and assessments.');
+    showLibraryUnavailable('Learner Centre resources are locked. Pay KES 10 to access all resources for 24 hours.');
     accessMessage('Your account is signed in, but Grade 7 access is not active.');
     return;
   }
@@ -217,7 +217,7 @@ document.getElementById('buyButton').addEventListener('click', async () => {
       'Content-Type': 'application/json',
       Authorization: `Bearer ${session.access_token}`
     },
-    body: JSON.stringify({ product_id: 'grade7_notes', phone })
+    body: JSON.stringify({ product_id: 'learner_centre_access', phone })
   });
   const result = await response.json().catch(() => ({}));
   if (!response.ok) {

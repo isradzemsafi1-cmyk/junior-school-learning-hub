@@ -24,14 +24,14 @@ footer{background:var(--navy);color:white;text-align:center;padding:22px}
 </style></head><body>
 <header><div class="brand">🎓 Junior School Learning Hub</div><nav><a href="https://juniorschoollearninghub.co.ke">Home</a><a href="#library">Library</a><a href="#assessment">Assessments</a><a href="/grade7-complete-detailed-learning-library.html">Grade 7 Library</a><a href="/grade9-learning-library">Grade 9 Library</a><a href="/#learner-account">My Dashboard</a></nav></header>
 <div class="hero"><h1>Grade 8 Mathematics – Complete Learning Library</h1><p>Term 1 · Term 2 · Term 3 | Numbers · Algebra · Measurement · Geometry · Data Handling · Probability</p><p>Complete topic notes, worked examples, guided activities, revision questions and automated assessments.</p></div>
-<main>
+<main><section class="panel" id="learnerAccessGate"><h2>🔒 Learner Centre access</h2><p id="learnerAccessMessage">Checking your 24-hour Learner Centre access…</p><p>One KES 10 payment unlocks Grade 7–9 resources for 24 hours.</p><a class="btn" href="/#payments">Pay KES 10 and unlock all resources</a><p><a href="/#learner-account">Sign in to your learner account</a></p></section>
 <section class="panel"><p class="meta" id="saveStatus" aria-live="polite">Checking your learner account…</p><div class="term-tabs" role="group" aria-label="Choose a term"><button type="button" data-term="1">📗 Term 1 · Numbers &amp; Algebra</button><button type="button" data-term="2">📐 Term 2 · Measurement &amp; Geometry</button><button type="button" data-term="3">📊 Term 3 · Scale, Solids, Data &amp; Probability</button></div><h2>Learning library</h2><div class="filters">
 <div><label for="term">Select term</label><select id="term"><option value="1">Term 1</option><option value="2">Term 2</option><option value="3">Term 3</option></select></div><div><label for="topic">Topic / sub-strand</label><select id="topic"></select></div>
 <div><label for="search">Search topic</label><input id="search" placeholder="e.g. scale, cylinder, probability"></div>
 </div><p class="meta" id="count"></p></section>
-<section class="panel" id="library"><div id="lesson" aria-live="polite"></div></section>
-<section class="panel" id="assessment"><h2>Automated assessment for this topic</h2><p>Answer all five questions and select Mark quiz for instant feedback, explanations and your score.</p><div id="quiz"></div><button id="mark">Mark quiz</button><button class="secondary" id="retry">Try again</button><div id="result" aria-live="polite"></div></section>
-<section class="panel" id="revision"><h2>Full-year Comprehensive Revision Paper</h2><p>This practice paper samples content from Terms 1, 2 and 3. Use the term selector above for topic-by-topic revision.</p><p><b>Grade 8 Mathematics · 100 marks · Suggested time: 2 hours 30 minutes.</b></p><p>Answer all questions, show your working and use appropriate units. The revision paper and marking guide are provided below.</p><div id="paper"></div><button class="secondary" id="toggleAnswers">Show / hide marking guide</button><div id="answers" hidden></div></section>
+<section class="panel" id="library" hidden><div id="lesson" aria-live="polite"></div></section>
+<section class="panel" id="assessment" hidden><h2>Automated assessment for this topic</h2><p>Answer all five questions and select Mark quiz for instant feedback, explanations and your score.</p><div id="quiz"></div><button id="mark">Mark quiz</button><button class="secondary" id="retry">Try again</button><div id="result" aria-live="polite"></div></section>
+<section class="panel" id="revision" hidden><h2>Full-year Comprehensive Revision Paper</h2><p>This practice paper samples content from Terms 1, 2 and 3. Use the term selector above for topic-by-topic revision.</p><p><b>Grade 8 Mathematics · 100 marks · Suggested time: 2 hours 30 minutes.</b></p><p>Answer all questions, show your working and use appropriate units. The revision paper and marking guide are provided below.</p><div id="paper"></div><button class="secondary" id="toggleAnswers">Show / hide marking guide</button><div id="answers" hidden></div></section>
 <section class="panel"><h2>CBC learning approach</h2><p>Each topic includes knowledge, skills and attitude outcomes, a key inquiry question, learner notes, worked examples, a practical activity and assessment. Core competencies include critical thinking and problem solving, communication and collaboration, learning to learn and digital literacy where relevant. Values include responsibility, honesty, respect and cooperation.</p><p><b>Curriculum alignment:</b> The topic sequence follows the supplied Karunga Grade 8 Mathematics Karunga Comprehensive School Grade 8 Mathematics schemes of work for Terms I, II and III. Assessment questions are practice questions prepared for this learning resource; they are not official KNEC examination questions.</p></section>
 </main><footer>Junior School Learning Hub · Empowering learners to learn, grow and excel.</footer>
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
@@ -43,6 +43,24 @@ footer{background:var(--navy);color:white;text-align:center;padding:22px}
   const status = () => document.getElementById('saveStatus');
   if (!window.supabase) { if (status()) status().textContent = 'Quiz saving is unavailable right now. Your quizzes will still be marked.'; return; }
   const client = window.supabase.createClient(SUPABASE_URL, SUPABASE_PUBLISHABLE_KEY);
+  async function checkLearnerAccess(){
+    const message=document.getElementById('learnerAccessMessage');
+    const gate=document.getElementById('learnerAccessGate');
+    const ids=['library','assessment','revision'];
+    ids.forEach(id=>{const el=document.getElementById(id);if(el)el.hidden=true;});
+    const {data:{session}}=await client.auth.getSession();
+    if(!session){if(message)message.textContent='Sign in, then pay KES 10 to unlock all Learner Centre resources for 24 hours.';return;}
+    try{
+      const response=await fetch('/.netlify/functions/check-learner-centre-access',{headers:{Authorization:'Bearer '+session.access_token},cache:'no-store'});
+      const data=await response.json().catch(()=>({}));
+      if(!response.ok||!data.success){if(message)message.textContent=data.message||'Pay KES 10 for 24-hour Learner Centre access.';return;}
+      ids.forEach(id=>{const el=document.getElementById(id);if(el)el.hidden=false;});
+      if(gate)gate.hidden=true;
+      if(message)message.textContent='Access active until '+new Date(data.expires_at).toLocaleString();
+    }catch(error){if(message)message.textContent='Unable to verify access. Refresh and try again.';}
+  }
+  client.auth.onAuthStateChange(()=>{setTimeout(checkLearnerAccess,0);});
+  checkLearnerAccess();
   function showStatus(session){
     const el = status(); if (!el) return;
     if (session) {

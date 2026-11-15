@@ -26,9 +26,16 @@ export default async (request) => {
     return respond(500, { success: false });
   }
 
+  // The callback query must authenticate with the same JSLH Store/Go-Live shortcode.
+  if (shortcode !== "1420268") {
+    console.error("M-Pesa callback shortcode does not match the confirmed JSLH Store number.");
+    return respond(500, { success: false });
+  }
+
   const catalog = {
     online_tuition: 100,
-    premium_quizzes: 20,
+    premium_quizzes: 10,
+    learner_centre_access: 10,
     grade7_notes: 10,
     grade8_notes: 10,
     grade9_notes: 30
@@ -39,7 +46,8 @@ export default async (request) => {
     grade8_notes: 12,
     grade9_notes: 24,
     online_tuition: 24,
-    premium_quizzes: 24
+    premium_quizzes: 24,
+    learner_centre_access: 24
   };
 
   const dbHeaders = {
