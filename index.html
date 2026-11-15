@@ -649,35 +649,11 @@ section{padding-top:50px;padding-bottom:50px}
 
   <div class="pay-grid">
     <div class="pay-card" style="--a:#2347e0;--b:#13c2c2">
-      <div class="pay-ico">📘</div>
-      <h3>Grade 7 Notes</h3>
-      <p>Complete Grade 7 Mathematics &amp; Integrated Science library.</p>
-      <div class="pay-price">KSh 10 <small>Â· 12 hours</small></div>
-      <button class="btn" onclick="buyProduct('grade7_notes')">Pay with M-Pesa</button>
-    </div>
-
-    <div class="pay-card" style="--a:#7b3fe4;--b:#ff4f8b">
-      <div class="pay-ico">📗</div>
-      <h3>Grade 8 Notes</h3>
-      <p>Access premium Grade 8 notes.</p>
-      <div class="pay-price">KSh 10 <small>Â· 12 hours</small></div>
-      <button class="btn" onclick="buyProduct('grade8_notes')">Pay with M-Pesa</button>
-    </div>
-
-    <div class="pay-card" style="--a:#ff8a1f;--b:#ffc23d">
-      <div class="pay-ico">📙</div>
-      <h3>Grade 9 Notes</h3>
-      <p>Unlock the Grade 9 learning library.</p>
-      <div class="pay-price">KSh 30 <small>Â· 24 hours</small></div>
-      <button class="btn" onclick="buyProduct('grade9_notes')">Pay with M-Pesa</button>
-    </div>
-
-    <div class="pay-card" style="--a:#0aa5a5;--b:#22d3c5">
-      <div class="pay-ico">📝</div>
-      <h3>Premium Quizzes</h3>
-      <p>Access premium revision quizzes.</p>
-      <div class="pay-price">KSh 20 <small>Â· 24 hours</small></div>
-      <button class="btn" onclick="buyProduct('premium_quizzes')">Pay with M-Pesa</button>
+      <div class="pay-ico">📚</div>
+      <h3>All Learner Centre Resources</h3>
+      <p>One payment unlocks Grade 7, Grade 8 and Grade 9 notes, learning materials, revision resources and practice quizzes.</p>
+      <div class="pay-price">KSh 10 <small>· 24 hours</small></div>
+      <button class="btn" onclick="buyProduct('learner_centre_access')">Unlock all resources with M-Pesa</button>
     </div>
 
     <div class="pay-card" style="--a:#e23d7a;--b:#ff6fa5">
@@ -694,7 +670,7 @@ section{padding-top:50px;padding-bottom:50px}
     <label for="mpesaPhone">M-Pesa phone number</label>
     <input id="mpesaPhone" type="tel" placeholder="0712345678" style="width:100%;margin:10px 0;">
     <p id="paymentMessage" role="status" aria-live="polite"></p>
-    <p class="small">Grade 7 and Grade 8 Notes give 12 hours of access. Grade 9 Notes, Premium Quizzes and Online Tuition give 24 hours of access. You must be logged in to pay. .</p>
+    <p class="small">One KES 10 payment unlocks all Learner Centre learning resources for 24 hours. Online Tuition is a separate service. You must be logged in to pay.</p>
   </div>
 </section>
   </details>
@@ -861,13 +837,22 @@ section{padding-top:50px;padding-bottom:50px}
 const SUPABASE_PUBLISHABLE_KEY = "sb_publishable_uaOcRVaIwnvRl_wZhMhJ-Q_DhrqZyS_";
 
 const { createClient } = window.supabase;
-const supabaseClient = createClient(SUPABASE_URL, SUPABASE_PUBLISHABLE_KEY);
+const supabaseClient = createClient(SUPABASE_URL, SUPABASE_PUBLISHABLE_KEY);\nasync function hasLearnerCentreAccess(){
+ const {data:{session}}=await supabaseClient.auth.getSession();
+ if(!session)return {ok:false,message:"Please sign in, then pay KES 10 to access all Learner Centre resources for 24 hours."};
+ const response=await fetch("/.netlify/functions/check-learner-centre-access",{headers:{Authorization:"Bearer "+session.access_token},cache:"no-store"});
+ const result=await response.json().catch(()=>({}));
+ if(response.status===403)return {ok:false,message:result.message||"Pay KES 10 to unlock all Learner Centre resources for 24 hours."};
+ if(!response.ok||!result.success)return {ok:false,message:result.message||"Unable to verify your Learner Centre access."};
+ return {ok:true,expiresAt:result.expires_at};
+}
+
  window.buyProduct = async function(productId) {
   const message = document.getElementById("paymentMessage");
   const phone = document.getElementById("mpesaPhone").value.trim();
 
   const products = {
-    online_tuition: "Online Tuition",
+    learner_centre_access: "All Learner Centre Resources",\n    online_tuition: "Online Tuition",
     premium_quizzes: "Premium Quizzes",
     grade7_notes: "Grade 7 Notes",
     grade8_notes: "Grade 8 Notes",
@@ -1453,6 +1438,13 @@ async function buildQuiz(){
  activePracticeQuestions=[];
  mark.disabled=true;
  result.replaceChildren();
+ content.replaceChildren(makeQuizMessage('Checking Learner Centre access…'));
+ const access=await hasLearnerCentreAccess();
+ if(!access.ok){
+  content.replaceChildren(makeQuizMessage('🔒 '+access.message+' Use the M-Pesa payment section to unlock all Learner Centre resources.'));
+  note.textContent='All learner notes, revision resources and quizzes require the same KES 10 / 24-hour access pass.';
+  return;
+ }
  content.replaceChildren(makeQuizMessage('Loading '+grade+' '+subject+' Term '+term+' questions…'));
  try{
   if(window.JSLHQuizBank&&window.JSLHQuizBank.isEnabled()){
@@ -1985,9 +1977,16 @@ noteData["Integrated Science"]["Grade 7"] = `
 `;
 
 // Render the selected grade/subject notes into the Learning Notes panel.
-function showNotes(){
+async function showNotes(){
  const g=document.getElementById('noteGrade'),sub=document.getElementById('noteSubject'),box=document.getElementById('notesContent');
  if(!g||!sub||!box)return;
+ box.textContent='Checking Learner Centre access…';
+ const access=await hasLearnerCentreAccess();
+ if(!access.ok){
+  box.replaceChildren();
+  const p=document.createElement('p');p.textContent='🔒 '+access.message+' Use the M-Pesa payment section to unlock all learner resources.';box.appendChild(p);
+  return;
+ }
  const html=(noteData[sub.value]||{})[g.value];
  box.innerHTML=html||'<p>Notes for this grade and subject are coming soon.</p>';
 }
