@@ -25,20 +25,37 @@ export default async (request) => {
 
   const consumerKey = Netlify.env.get("MPESA_CONSUMER_KEY");
   const consumerSecret = Netlify.env.get("MPESA_CONSUMER_SECRET");
-  const shortcode = Netlify.env.get("MPESA_SHORTCODE");
-  const tillNumber = Netlify.env.get("MPESA_TILL_NUMBER");
+  // Safaricom confirmed these production Buy Goods identifiers for JSLH.
+  // Environment values may override them for an explicitly configured test account.
+  const shortcode = Netlify.env.get("MPESA_SHORTCODE") || "1420268";
+  const tillNumber = Netlify.env.get("MPESA_TILL_NUMBER") || "1887415";
   const passkey = Netlify.env.get("MPESA_PASSKEY");
   // Use Netlify's canonical public deployment URL. DEPLOY_PRIME_URL is the
   // exact deploy-preview URL; URL is the configured production site URL.
   // Fall back to the incoming request origin only for local/other contexts.
+  const configuredCallbackURL = Netlify.env.get("MPESA_CALLBACK_URL");
   const publicSiteURL =
     Netlify.env.get("DEPLOY_PRIME_URL") ||
     Netlify.env.get("URL") ||
     new URL(request.url).origin;
-  const callbackURL = new URL(
-    "/.netlify/functions/payment-callback/",
+  const callbackURL = configuredCallbackURL || new URL(
+    "/.netlify/functions/payment-callback",
     publicSiteURL.endsWith("/") ? publicSiteURL : `${publicSiteURL}/`
   ).toString();
+  let callbackHost = "invalid";
+  try {
+    const parsedCallback = new URL(callbackURL);
+    callbackHost = parsedCallback.host;
+    if (parsedCallback.protocol !== "https:" ||
+        /localhost|127\\.0\\.0\\.1/i.test(parsedCallback.hostname)) {
+      throw new Error("Callback URL must be a public HTTPS address.");
+    }
+  } catch {
+    return respond(500, {
+      success: false,
+      message: "The M-PESA callback URL is invalid. Configure MPESA_CALLBACK_URL as a public HTTPS endpoint or verify the Netlify site URL."
+    });
+  }
 
   const catalog = {
     online_tuition: 100,
@@ -73,12 +90,6 @@ export default async (request) => {
     });
   }
 
-  if (new URL(callbackURL).protocol !== "https:") {
-    return respond(500, {
-      success: false,
-      message: "A secure HTTPS callback URL is required."
-    });
-  }
 
 
   const dbHeaders = {
@@ -244,6 +255,19 @@ const readJson = async (response, service) => {
       shortcode + passkey + timestamp
     ).toString("base64");
 
+    const transactionType = isProduction
+      ? "CustomerBuyGoodsOnline"
+      : "CustomerPayBillOnline";
+    const partyB = isProduction ? tillNumber : shortcode;
+
+    console.log("Starting M-PESA STK request", {
+      environment: isProduction ? "production" : "sandbox",
+      businessShortCode: shortcode,
+      partyB,
+      transactionType,
+      callbackHost
+    });
+
     const stkResponse = await fetch(
       `${mpesaBaseUrl}/mpesa/stkpush/v1/processrequest`,
       {
@@ -256,12 +280,10 @@ const readJson = async (response, service) => {
           BusinessShortCode: shortcode,
           Password: password,
           Timestamp: timestamp,
-          TransactionType: isProduction
-  ? "CustomerBuyGoodsOnline"
-  : "CustomerPayBillOnline",
-Amount: amount,
-PartyA: phone,
-PartyB: isProduction ? tillNumber : shortcode,
+          TransactionType: transactionType,
+          Amount: amount,
+          PartyA: phone,
+          PartyB: partyB,
           PhoneNumber: phone,
           CallBackURL: callbackURL,
           AccountReference: "JSLH",
@@ -287,11 +309,25 @@ PartyB: isProduction ? tillNumber : shortcode,
         }
       );
 
+      // Keep the provider diagnostics useful without exposing credentials,
+      // payer phone numbers, payment IDs, or the complete callback URL.
+      console.error("Safaricom rejected STK initiation", {
+        httpStatus: stkResponse.status,
+        providerErrorCode: result.errorCode || result.ResponseCode || null,
+        providerRequestId: result.requestId || result.RequestId || null,
+        callbackHost,
+        environment: isProduction ? "production" : "sandbox",
+        message: result.errorMessage || result.ResponseDescription || null
+      });
       return respond(502, {
         success: false,
         message: result.errorMessage ||
           result.ResponseDescription ||
-          "Safaricom could not initiate payment."
+          "Safaricom could not initiate payment.",
+        providerErrorCode: result.errorCode || result.ResponseCode || null,
+        providerRequestId: result.requestId || result.RequestId || null,
+        callbackHost,
+        environment: isProduction ? "production" : "sandbox"
       });
     }
 
