@@ -23,7 +23,7 @@
   const g=gradeNumber(grade), folder=subjects[subject], t=Number(term);
   if(!folder || ![1,2,3].includes(t)) throw new Error("Invalid subject or term");
   if(g===7) return [base+"/grade7/catalog.json"];
-  if(g===8) return [base+"/grade8/"+folder+"/term_"+t+".json"];
+  if(g===8) return [base+"/grade8/JSLH_Grade8_2027_Quiz_Bank_EXPANDED/"+folder+"/term_"+t+".json"];
   return [base+"/grade9/"+folder+"/term_"+t+".json"];
  }
  async function fetchJson(url){
@@ -41,8 +41,8 @@
    let records=[];
    if(gradeNumber(grade)===7){
     const catalog=await fetchJson(paths[0]);
-    const slug=subject.toLowerCase().replace(/[^a-z0-9]+/g,"-").replace(/^-|-$/g,"");
-    const items=(catalog.files||[]).filter(x=>x.subject===slug && Number(x.term)===Number(term));
+    const slugMap={"Mathematics":"mathematics","Integrated Science":"integrated-science","English":"english","Kiswahili":"kiswahili","Social Studies":"social-studies","Agriculture":"agriculture-nutrition","Agriculture & Nutrition":"agriculture-nutrition","Pre-Technical Studies":"pre-technical-studies","CRE":"cre","Creative Arts and Sports":"creative-arts-sports"};\n    const slug=slugMap[subject] || subject.toLowerCase().replace(/[^a-z0-9]+/g,"-").replace(/^-|-$/g,"");
+    const items=(catalog.files||[]).filter(x=>(x.subject===slug || x.learning_area===subject || x.learning_area===slug) && Number(x.term)===Number(term));
     for(const item of items){
      if(typeof item.path!=="string" || !/^grade7\\/question-banks\\/grade7\\/[a-z0-9-]+\\/term[123]\\/[a-z0-9-]+\\/questions\\.json$/.test(item.path)){
       throw new Error("Invalid grade 7 catalog path");
