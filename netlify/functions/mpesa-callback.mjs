@@ -37,7 +37,7 @@ const mpesaBaseUrl = isProduction
     premium_quizzes: 20,
     grade7_notes: 10,
     grade8_notes: 10,
-    grade9_notes: 30,
+    grade9_notes: 10,
     career_guidance_full_package: 30,
     grade10_selection_form: 30,
     ...Object.fromEntries(
@@ -46,8 +46,8 @@ const mpesaBaseUrl = isProduction
   };
 
   const durations = {
-    grade7_notes: 12,
-    grade8_notes: 12,
+    grade7_notes: 24,
+    grade8_notes: 24,
     grade9_notes: 24,
     online_tuition: 24,
     premium_quizzes: 24,
