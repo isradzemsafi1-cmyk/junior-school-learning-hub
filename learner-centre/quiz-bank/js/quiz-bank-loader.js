@@ -17,7 +17,7 @@
  const cache=new Map();
  const enabled=true;
  function gradeNumber(grade){
-  const match=String(grade).match(/(?:^|\\D)([789])(?:\\D|$)/);
+  const match=String(grade).match(/(?:^|\D)([789])(?:\D|$)/);
   if(!match) throw new Error("Unsupported grade");
   return Number(match[1]);
  }
