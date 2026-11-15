@@ -25,12 +25,12 @@ export default async (request) => {
 
     const headers = { apikey: serviceKey, Authorization: `Bearer ${serviceKey}` };
     const purchaseResponse = await fetch(
-      `${supabaseUrl}/rest/v1/teacher_resource_purchases?user_id=eq.${encodeURIComponent(user.id)}&resource_id=eq.${encodeURIComponent(resource_id)}&status=eq.paid&select=id&limit=1`,
+      `${supabaseUrl}/rest/v1/teacher_resource_purchases?user_id=eq.${encodeURIComponent(user.id)}&resource_id=eq.${encodeURIComponent(resource_id)}&status=eq.paid&expires_at=gt.${encodeURIComponent(new Date().toISOString())}&select=id,expires_at&limit=1`,
       { headers }
     );
     if (!purchaseResponse.ok) throw new Error("Purchase lookup failed.");
     const purchases = await purchaseResponse.json();
-    if (!purchases.length) return json(403, { success: false, message: "Purchase this resource to unlock permanent access." });
+    if (!purchases.length) return json(403, { success: false, message: "Your 7-day access has expired. Purchase this resource again to reopen it." });
 
     const catalogResponse = await fetch(
       `${supabaseUrl}/rest/v1/teacher_resource_catalog?id=eq.${encodeURIComponent(resource_id)}&active=eq.true&select=storage_path&limit=1`,
@@ -47,7 +47,7 @@ export default async (request) => {
     const signed = await signedResponse.json();
     if (!signedResponse.ok || !signed.signedURL) throw new Error("Could not create secure download link.");
     const url = signed.signedURL.startsWith("http") ? signed.signedURL : `${supabaseUrl}/storage/v1${signed.signedURL}`;
-    return json(200, { success: true, url, expires_in_seconds: 300 });
+    return json(200, { success: true, url, expires_in_seconds: 300, access_expires_at: purchases[0].expires_at });
   } catch (error) {
     console.error("Teacher resource access error:", error.message);
     return json(500, { success: false, message: "Could not open the purchased resource. Please try again." });
