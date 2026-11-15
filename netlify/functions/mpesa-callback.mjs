@@ -54,7 +54,7 @@ const mpesaBaseUrl = isProduction
     career_guidance_full_package: 720,
     grade10_selection_form: 720,
     ...Object.fromEntries(
-      Object.values(teacherCatalog).flat().map(item => [item.product_id, 720])
+      Object.values(teacherCatalog).flat().map(item => [item.product_id, 168])
     )
   };
 
