@@ -69,7 +69,6 @@ export default async (request) => {
   if (!SUPABASE_URL() || !SERVICE_KEY()) return reply(500, { success: false, message: "Resource service is not configured." });
 
   const user = await getUser(request);
-  if (!user) return reply(401, { success: false, message: "Please sign in to your Teacher Centre account first." });
 
   const url = new URL(request.url);
   const grade = url.searchParams.get("grade");
@@ -79,6 +78,7 @@ export default async (request) => {
     const all = itemsForGrade(grade);
     const path = url.searchParams.get("path");
     if (path) {
+      if (!user) return reply(401, { success: false, message: "Sign in is required when opening a purchased PDF." });
       const item = (teacherCatalog[grade] || []).find(x => x.storage_path === path);
       if (!item) return reply(404, { success: false, message: "Resource not found." });
       if (!(await hasAccess(user.id, item.product_id))) return reply(403, { success: false, message: "This resource is locked. Purchase it to unlock access." });
@@ -95,7 +95,7 @@ export default async (request) => {
       return new Response(file.body, { status: 200, headers });
     }
 
-    const activeProducts = await entitledProducts(user.id, all.map(item => item.product_id));
+    const activeProducts = user ? await entitledProducts(user.id, all.map(item => item.product_id)) : new Set();
     const withAccess = all.map(item => ({
       ...item, unlocked: activeProducts.has(item.product_id)
     }));
