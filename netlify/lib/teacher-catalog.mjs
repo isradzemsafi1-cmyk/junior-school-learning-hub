@@ -19,7 +19,7 @@ export const teacherCatalog = {
       "path": "Agriculture/Schemes of Work/Grade_8_2027_Agriculture_Scheme_of_Work_Term_1.pdf",
       "bytes": 44346,
       "product_id": "teacher_g8_002",
-      "price_kes": 70,
+      "price_kes": 20,
       "storage_path": "grade8/Agriculture/Schemes of Work/Grade_8_2027_Agriculture_Scheme_of_Work_Term_1.pdf"
     },
     {
@@ -30,7 +30,7 @@ export const teacherCatalog = {
       "path": "Agriculture/Schemes of Work/Grade_8_2027_Agriculture_Scheme_of_Work_Term_2.pdf",
       "bytes": 44427,
       "product_id": "teacher_g8_003",
-      "price_kes": 70,
+      "price_kes": 20,
       "storage_path": "grade8/Agriculture/Schemes of Work/Grade_8_2027_Agriculture_Scheme_of_Work_Term_2.pdf"
     },
     {
@@ -41,7 +41,7 @@ export const teacherCatalog = {
       "path": "Agriculture/Schemes of Work/Grade_8_2027_Agriculture_Scheme_of_Work_Term_3.pdf",
       "bytes": 43809,
       "product_id": "teacher_g8_004",
-      "price_kes": 70,
+      "price_kes": 20,
       "storage_path": "grade8/Agriculture/Schemes of Work/Grade_8_2027_Agriculture_Scheme_of_Work_Term_3.pdf"
     },
     {
@@ -162,7 +162,7 @@ export const teacherCatalog = {
       "path": "CRE/Schemes of Work/Grade_8_2027_CRE_Scheme_of_Work_Term_1.pdf",
       "bytes": 47302,
       "product_id": "teacher_g8_015",
-      "price_kes": 70,
+      "price_kes": 20,
       "storage_path": "grade8/CRE/Schemes of Work/Grade_8_2027_CRE_Scheme_of_Work_Term_1.pdf"
     },
     {
@@ -173,7 +173,7 @@ export const teacherCatalog = {
       "path": "CRE/Schemes of Work/Grade_8_2027_CRE_Scheme_of_Work_Term_2.pdf",
       "bytes": 47377,
       "product_id": "teacher_g8_016",
-      "price_kes": 70,
+      "price_kes": 20,
       "storage_path": "grade8/CRE/Schemes of Work/Grade_8_2027_CRE_Scheme_of_Work_Term_2.pdf"
     },
     {
@@ -184,7 +184,7 @@ export const teacherCatalog = {
       "path": "CRE/Schemes of Work/Grade_8_2027_CRE_Scheme_of_Work_Term_3.pdf",
       "bytes": 49823,
       "product_id": "teacher_g8_017",
-      "price_kes": 70,
+      "price_kes": 20,
       "storage_path": "grade8/CRE/Schemes of Work/Grade_8_2027_CRE_Scheme_of_Work_Term_3.pdf"
     },
     {
@@ -448,7 +448,7 @@ export const teacherCatalog = {
       "path": "English/Schemes of Work/Grade_8_2027_English_Scheme_of_Work_Term_1.pdf",
       "bytes": 552975,
       "product_id": "teacher_g8_041",
-      "price_kes": 70,
+      "price_kes": 20,
       "storage_path": "grade8/English/Schemes of Work/Grade_8_2027_English_Scheme_of_Work_Term_1.pdf"
     },
     {
@@ -459,7 +459,7 @@ export const teacherCatalog = {
       "path": "English/Schemes of Work/Grade_8_2027_English_Scheme_of_Work_Term_2.pdf",
       "bytes": 513385,
       "product_id": "teacher_g8_042",
-      "price_kes": 70,
+      "price_kes": 20,
       "storage_path": "grade8/English/Schemes of Work/Grade_8_2027_English_Scheme_of_Work_Term_2.pdf"
     },
     {
@@ -470,7 +470,7 @@ export const teacherCatalog = {
       "path": "English/Schemes of Work/Grade_8_2027_English_Scheme_of_Work_Term_3.pdf",
       "bytes": 141265,
       "product_id": "teacher_g8_043",
-      "price_kes": 70,
+      "price_kes": 20,
       "storage_path": "grade8/English/Schemes of Work/Grade_8_2027_English_Scheme_of_Work_Term_3.pdf"
     },
     {
@@ -734,7 +734,7 @@ export const teacherCatalog = {
       "path": "Kiswahili/Schemes of Work/Grade_8_2027_Kiswahili_Scheme_of_Work_Term_1.pdf",
       "bytes": 52336,
       "product_id": "teacher_g8_067",
-      "price_kes": 70,
+      "price_kes": 20,
       "storage_path": "grade8/Kiswahili/Schemes of Work/Grade_8_2027_Kiswahili_Scheme_of_Work_Term_1.pdf"
     },
     {
@@ -745,7 +745,7 @@ export const teacherCatalog = {
       "path": "Kiswahili/Schemes of Work/Grade_8_2027_Kiswahili_Scheme_of_Work_Term_2.pdf",
       "bytes": 49783,
       "product_id": "teacher_g8_068",
-      "price_kes": 70,
+      "price_kes": 20,
       "storage_path": "grade8/Kiswahili/Schemes of Work/Grade_8_2027_Kiswahili_Scheme_of_Work_Term_2.pdf"
     },
     {
@@ -756,7 +756,7 @@ export const teacherCatalog = {
       "path": "Kiswahili/Schemes of Work/Grade_8_2027_Kiswahili_Scheme_of_Work_Term_3.pdf",
       "bytes": 42416,
       "product_id": "teacher_g8_069",
-      "price_kes": 70,
+      "price_kes": 20,
       "storage_path": "grade8/Kiswahili/Schemes of Work/Grade_8_2027_Kiswahili_Scheme_of_Work_Term_3.pdf"
     },
     {
@@ -877,7 +877,7 @@ export const teacherCatalog = {
       "path": "Mathematics/Schemes of Work/Grade_8_2027_Mathematics_Scheme_of_Work_Term_1.pdf",
       "bytes": 52360,
       "product_id": "teacher_g8_080",
-      "price_kes": 70,
+      "price_kes": 20,
       "storage_path": "grade8/Mathematics/Schemes of Work/Grade_8_2027_Mathematics_Scheme_of_Work_Term_1.pdf"
     },
     {
@@ -888,7 +888,7 @@ export const teacherCatalog = {
       "path": "Mathematics/Schemes of Work/Grade_8_2027_Mathematics_Scheme_of_Work_Term_2.pdf",
       "bytes": 53186,
       "product_id": "teacher_g8_081",
-      "price_kes": 70,
+      "price_kes": 20,
       "storage_path": "grade8/Mathematics/Schemes of Work/Grade_8_2027_Mathematics_Scheme_of_Work_Term_2.pdf"
     },
     {
@@ -899,7 +899,7 @@ export const teacherCatalog = {
       "path": "Mathematics/Schemes of Work/Grade_8_2027_Mathematics_Scheme_of_Work_Term_3.pdf",
       "bytes": 54936,
       "product_id": "teacher_g8_082",
-      "price_kes": 70,
+      "price_kes": 20,
       "storage_path": "grade8/Mathematics/Schemes of Work/Grade_8_2027_Mathematics_Scheme_of_Work_Term_3.pdf"
     },
     {
@@ -1163,7 +1163,7 @@ export const teacherCatalog = {
       "path": "Social Studies/Schemes of Work/Grade_8_2027_Social_Studies_Scheme_of_Work_Term_1.pdf",
       "bytes": 48660,
       "product_id": "teacher_g8_106",
-      "price_kes": 70,
+      "price_kes": 20,
       "storage_path": "grade8/Social Studies/Schemes of Work/Grade_8_2027_Social_Studies_Scheme_of_Work_Term_1.pdf"
     },
     {
@@ -1174,7 +1174,7 @@ export const teacherCatalog = {
       "path": "Social Studies/Schemes of Work/Grade_8_2027_Social_Studies_Scheme_of_Work_Term_2.pdf",
       "bytes": 45500,
       "product_id": "teacher_g8_107",
-      "price_kes": 70,
+      "price_kes": 20,
       "storage_path": "grade8/Social Studies/Schemes of Work/Grade_8_2027_Social_Studies_Scheme_of_Work_Term_2.pdf"
     },
     {
@@ -1185,7 +1185,7 @@ export const teacherCatalog = {
       "path": "Social Studies/Schemes of Work/Grade_8_2027_Social_Studies_Scheme_of_Work_Term_3.pdf",
       "bytes": 38479,
       "product_id": "teacher_g8_108",
-      "price_kes": 70,
+      "price_kes": 20,
       "storage_path": "grade8/Social Studies/Schemes of Work/Grade_8_2027_Social_Studies_Scheme_of_Work_Term_3.pdf"
     },
     {
