@@ -1,0 +1,76 @@
+name: Extract JSLH Grade 7-9 Quiz Bank
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  extract-quiz-bank:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out development branch
+        uses: actions/checkout@v4
+        with:
+          ref: feature/combined-grade7-9-quiz-bank
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Extract deployment archive
+        shell: bash
+        run: |
+          set -euo pipefail
+          archive="JSLH_Quiz_Bank_Extracted_Deployment.zip"
+          test -f "$archive"
+          python - <<'PY'
+          import zipfile
+          from pathlib import PurePosixPath
+          archive = "JSLH_Quiz_Bank_Extracted_Deployment.zip"
+          with zipfile.ZipFile(archive) as z:
+              bad = z.testzip()
+              if bad:
+                  raise SystemExit(f"Corrupt ZIP entry: {bad}")
+              for item in z.infolist():
+                  path = PurePosixPath(item.filename)
+                  if path.is_absolute() or ".." in path.parts:
+                      raise SystemExit(f"Unsafe archive path: {item.filename}")
+              z.extractall(".")
+          PY
+
+      - name: Verify extracted data
+        shell: bash
+        run: |
+          set -euo pipefail
+          test -f learner-centre/quiz-bank/data/grade7/catalog.json
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          root = Path("learner-centre/quiz-bank/data")
+          counts = {}
+          for grade in ("grade7", "grade8", "grade9"):
+              paths = list((root / grade).rglob("*.json"))
+              assert paths, f"No JSON files found for {grade}"
+              total = 0
+              for path in paths:
+                  data = json.loads(path.read_text(encoding="utf-8"))
+                  if isinstance(data, list):
+                      total += len(data)
+                  elif isinstance(data, dict):
+                      questions = data.get("questions")
+                      if isinstance(questions, list):
+                          total += len(questions)
+              counts[grade] = {"json_files": len(paths), "question_records": total}
+          print(json.dumps(counts, indent=2))
+          PY
+
+      - name: Commit extracted question data
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add learner-centre/quiz-bank/data
+          if git diff --cached --quiet; then
+            echo "No extracted data changes to commit."
+          else
+            git commit -m "Extract Grade 7-9 2027 quiz bank data"
+            git push origin HEAD:feature/combined-grade7-9-quiz-bank
+          fi
