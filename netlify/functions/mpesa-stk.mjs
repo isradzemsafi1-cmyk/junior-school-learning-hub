@@ -30,7 +30,7 @@ export default async (request) => {
   const passkey = Netlify.env.get("MPESA_PASSKEY");
   // Derive the callback from the exact public host receiving this checkout request.
   // This works for both Netlify deploy previews (sandbox) and the production domain.
-  const callbackURL = new URL("/.netlify/functions/mpesa-callback", request.url).toString();
+  const callbackURL = new URL("/.netlify/functions/payment-callback", request.url).toString();
 
   const catalog = {
     online_tuition: 100,
