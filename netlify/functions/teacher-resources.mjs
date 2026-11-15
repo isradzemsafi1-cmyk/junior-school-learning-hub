@@ -35,6 +35,22 @@ async function hasAccess(userId, productId) {
   return (await r.json()).length > 0;
 }
 
+async function entitledProducts(userId, productIds) {
+  if (!productIds.length) return new Set();
+  const q = new URLSearchParams({
+    user_id: `eq.${userId}`,
+    product_id: `in.(${productIds.join(",")})`,
+    active: "eq.true",
+    expires_at: `gt.${new Date().toISOString()}`,
+    select: "product_id"
+  });
+  const r = await fetch(`${SUPABASE_URL()}/rest/v1/entitlements?${q}`, {
+    headers: { apikey: SERVICE_KEY(), Authorization: `Bearer ${SERVICE_KEY()}` }
+  });
+  if (!r.ok) throw new Error("Could not load teacher resource entitlements.");
+  return new Set((await r.json()).map(row => row.product_id));
+}
+
 function itemsForGrade(grade) {
   return (teacherCatalog[String(grade)] || []).map(item => ({
     product_id: item.product_id, subject: item.subject, category: item.category,
@@ -72,9 +88,10 @@ export default async (request) => {
       return new Response(file.body, { status: 200, headers });
     }
 
-    const withAccess = await Promise.all(all.map(async item => ({
-      ...item, unlocked: await hasAccess(user.id, item.product_id)
-    })));
+    const activeProducts = await entitledProducts(user.id, all.map(item => item.product_id));
+    const withAccess = all.map(item => ({
+      ...item, unlocked: activeProducts.has(item.product_id)
+    }));
     return reply(200, { success: true, grade, resources: withAccess });
   } catch (e) {
     console.error("Teacher resource error:", e.message);
