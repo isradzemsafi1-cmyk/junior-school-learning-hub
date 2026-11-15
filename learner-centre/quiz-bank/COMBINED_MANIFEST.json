@@ -1,0 +1,19 @@
+{
+  "title": "Junior School Learning Hub — Combined Grades 7, 8 and 9 Automated Quiz Banks",
+  "academic_year": 2027,
+  "grades": [7, 8, 9],
+  "learning_areas_per_grade": 9,
+  "question_record_counts": {
+    "7": {"question_records": 4050, "json_files": 136},
+    "8": {"question_records": 2640, "json_files": 37},
+    "9": {"question_records": 3600, "json_files": 37}
+  },
+  "total_question_records_across_grade_banks": 10290,
+  "schema_note": "Grade 7 uses prompt/correct_option; Grades 8 and 9 use question/correct_index. A grade-aware adapter is required.",
+  "release_status": "working draft — teacher quality assurance required",
+  "source_packages": {
+    "7": "JSLH_Grade7_2027_Annual_Quiz_Bank.zip",
+    "8": "JSLH_Grade8_2027_Expanded_Full_Quiz_Bank.zip",
+    "9": "JSLH_Grade9_2027_Big_Quiz_Bank.zip"
+  }
+}

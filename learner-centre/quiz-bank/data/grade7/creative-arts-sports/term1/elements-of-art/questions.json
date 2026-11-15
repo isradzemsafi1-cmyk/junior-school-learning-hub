@@ -1,0 +1,854 @@
+{
+  "brand": "Junior School Learning Hub",
+  "grade": 7,
+  "academic_year": 2027,
+  "learning_area": "Creative Arts & Sports",
+  "term": 1,
+  "strand": "Visual Arts",
+  "sub_strand": "Elements of art",
+  "source_learning_outcome": "Identify and use line, shape, colour, texture and form.",
+  "question_count": 30,
+  "questions": [
+    {
+      "id": "G7-CREATIVE-ARTS-SPORTS-T1-05-01",
+      "type": "single_choice",
+      "difficulty": "foundation",
+      "task_style": "Concept identification",
+      "prompt": "Which statement best describes the main idea learners study in Elements of art?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Ignore the task instructions and choose an answer at random."
+        },
+        {
+          "label": "B",
+          "text": "Copy an unrelated example without checking whether it fits the task."
+        },
+        {
+          "label": "C",
+          "text": "Avoid using evidence, practice or relevant learning resources."
+        },
+        {
+          "label": "D",
+          "text": "Apply the knowledge and skills of Elements of art accurately in the given context."
+        }
+      ],
+      "correct_option": "D",
+      "explanation": "The appropriate response applies the learning in Elements of art to the task. Identify and use line, shape, colour, texture and form.",
+      "marks": 1
+    },
+    {
+      "id": "G7-CREATIVE-ARTS-SPORTS-T1-05-02",
+      "type": "single_choice",
+      "difficulty": "standard",
+      "task_style": "Practical application",
+      "prompt": "A learner is completing a practical task related to Elements of art. Which approach is most appropriate?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Apply the knowledge and skills of Elements of art accurately in the given context."
+        },
+        {
+          "label": "B",
+          "text": "Ignore the task instructions and choose an answer at random."
+        },
+        {
+          "label": "C",
+          "text": "Copy an unrelated example without checking whether it fits the task."
+        },
+        {
+          "label": "D",
+          "text": "Avoid using evidence, practice or relevant learning resources."
+        }
+      ],
+      "correct_option": "A",
+      "explanation": "The appropriate response applies the learning in Elements of art to the task. Identify and use line, shape, colour, texture and form.",
+      "marks": 1
+    },
+    {
+      "id": "G7-CREATIVE-ARTS-SPORTS-T1-05-03",
+      "type": "single_choice",
+      "difficulty": "standard",
+      "task_style": "Reasoning",
+      "prompt": "When solving a problem involving Elements of art, what should the learner do first?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Avoid using evidence, practice or relevant learning resources."
+        },
+        {
+          "label": "B",
+          "text": "Apply the knowledge and skills of Elements of art accurately in the given context."
+        },
+        {
+          "label": "C",
+          "text": "Ignore the task instructions and choose an answer at random."
+        },
+        {
+          "label": "D",
+          "text": "Copy an unrelated example without checking whether it fits the task."
+        }
+      ],
+      "correct_option": "B",
+      "explanation": "The appropriate response applies the learning in Elements of art to the task. Identify and use line, shape, colour, texture and form.",
+      "marks": 1
+    },
+    {
+      "id": "G7-CREATIVE-ARTS-SPORTS-T1-05-04",
+      "type": "single_choice",
+      "difficulty": "advanced",
+      "task_style": "Evidence selection",
+      "prompt": "Which evidence would best show that a learner understands Elements of art?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Copy an unrelated example without checking whether it fits the task."
+        },
+        {
+          "label": "B",
+          "text": "Avoid using evidence, practice or relevant learning resources."
+        },
+        {
+          "label": "C",
+          "text": "Apply the knowledge and skills of Elements of art accurately in the given context."
+        },
+        {
+          "label": "D",
+          "text": "Ignore the task instructions and choose an answer at random."
+        }
+      ],
+      "correct_option": "C",
+      "explanation": "The appropriate response applies the learning in Elements of art to the task. Identify and use line, shape, colour, texture and form.",
+      "marks": 1
+    },
+    {
+      "id": "G7-CREATIVE-ARTS-SPORTS-T1-05-05",
+      "type": "single_choice",
+      "difficulty": "foundation",
+      "task_style": "Error detection",
+      "prompt": "A learner makes an error while working on Elements of art. What is the best next step?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Ignore the task instructions and choose an answer at random."
+        },
+        {
+          "label": "B",
+          "text": "Copy an unrelated example without checking whether it fits the task."
+        },
+        {
+          "label": "C",
+          "text": "Avoid using evidence, practice or relevant learning resources."
+        },
+        {
+          "label": "D",
+          "text": "Apply the knowledge and skills of Elements of art accurately in the given context."
+        }
+      ],
+      "correct_option": "D",
+      "explanation": "The appropriate response applies the learning in Elements of art to the task. Identify and use line, shape, colour, texture and form.",
+      "marks": 1
+    },
+    {
+      "id": "G7-CREATIVE-ARTS-SPORTS-T1-05-06",
+      "type": "single_choice",
+      "difficulty": "standard",
+      "task_style": "Real-life transfer",
+      "prompt": "Which everyday situation provides a useful opportunity to apply Elements of art?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Apply the knowledge and skills of Elements of art accurately in the given context."
+        },
+        {
+          "label": "B",
+          "text": "Ignore the task instructions and choose an answer at random."
+        },
+        {
+          "label": "C",
+          "text": "Copy an unrelated example without checking whether it fits the task."
+        },
+        {
+          "label": "D",
+          "text": "Avoid using evidence, practice or relevant learning resources."
+        }
+      ],
+      "correct_option": "A",
+      "explanation": "The appropriate response applies the learning in Elements of art to the task. Identify and use line, shape, colour, texture and form.",
+      "marks": 1
+    },
+    {
+      "id": "G7-CREATIVE-ARTS-SPORTS-T1-05-07",
+      "type": "single_choice",
+      "difficulty": "standard",
+      "task_style": "Planning",
+      "prompt": "Before beginning an activity on Elements of art, which action supports successful work?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Avoid using evidence, practice or relevant learning resources."
+        },
+        {
+          "label": "B",
+          "text": "Apply the knowledge and skills of Elements of art accurately in the given context."
+        },
+        {
+          "label": "C",
+          "text": "Ignore the task instructions and choose an answer at random."
+        },
+        {
+          "label": "D",
+          "text": "Copy an unrelated example without checking whether it fits the task."
+        }
+      ],
+      "correct_option": "B",
+      "explanation": "The appropriate response applies the learning in Elements of art to the task. Identify and use line, shape, colour, texture and form.",
+      "marks": 1
+    },
+    {
+      "id": "G7-CREATIVE-ARTS-SPORTS-T1-05-08",
+      "type": "single_choice",
+      "difficulty": "advanced",
+      "task_style": "Communication",
+      "prompt": "How should a learner explain a finding from an activity on Elements of art?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Copy an unrelated example without checking whether it fits the task."
+        },
+        {
+          "label": "B",
+          "text": "Avoid using evidence, practice or relevant learning resources."
+        },
+        {
+          "label": "C",
+          "text": "Apply the knowledge and skills of Elements of art accurately in the given context."
+        },
+        {
+          "label": "D",
+          "text": "Ignore the task instructions and choose an answer at random."
+        }
+      ],
+      "correct_option": "C",
+      "explanation": "The appropriate response applies the learning in Elements of art to the task. Identify and use line, shape, colour, texture and form.",
+      "marks": 1
+    },
+    {
+      "id": "G7-CREATIVE-ARTS-SPORTS-T1-05-09",
+      "type": "single_choice",
+      "difficulty": "standard",
+      "task_style": "Comparison",
+      "prompt": "When comparing two examples in Elements of art, what should guide the comparison?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Ignore the task instructions and choose an answer at random."
+        },
+        {
+          "label": "B",
+          "text": "Copy an unrelated example without checking whether it fits the task."
+        },
+        {
+          "label": "C",
+          "text": "Avoid using evidence, practice or relevant learning resources."
+        },
+        {
+          "label": "D",
+          "text": "Apply the knowledge and skills of Elements of art accurately in the given context."
+        }
+      ],
+      "correct_option": "D",
+      "explanation": "The appropriate response applies the learning in Elements of art to the task. Identify and use line, shape, colour, texture and form.",
+      "marks": 1
+    },
+    {
+      "id": "G7-CREATIVE-ARTS-SPORTS-T1-05-10",
+      "type": "single_choice",
+      "difficulty": "advanced",
+      "task_style": "Interpretation",
+      "prompt": "A learner is given information about Elements of art. What should the learner do to interpret it correctly?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Apply the knowledge and skills of Elements of art accurately in the given context."
+        },
+        {
+          "label": "B",
+          "text": "Ignore the task instructions and choose an answer at random."
+        },
+        {
+          "label": "C",
+          "text": "Copy an unrelated example without checking whether it fits the task."
+        },
+        {
+          "label": "D",
+          "text": "Avoid using evidence, practice or relevant learning resources."
+        }
+      ],
+      "correct_option": "A",
+      "explanation": "The appropriate response applies the learning in Elements of art to the task. Identify and use line, shape, colour, texture and form.",
+      "marks": 1
+    },
+    {
+      "id": "G7-CREATIVE-ARTS-SPORTS-T1-05-11",
+      "type": "single_choice",
+      "difficulty": "foundation",
+      "task_style": "Skill demonstration",
+      "prompt": "Which task would most directly demonstrate a practical skill in Elements of art?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Avoid using evidence, practice or relevant learning resources."
+        },
+        {
+          "label": "B",
+          "text": "Apply the knowledge and skills of Elements of art accurately in the given context."
+        },
+        {
+          "label": "C",
+          "text": "Ignore the task instructions and choose an answer at random."
+        },
+        {
+          "label": "D",
+          "text": "Copy an unrelated example without checking whether it fits the task."
+        }
+      ],
+      "correct_option": "B",
+      "explanation": "The appropriate response applies the learning in Elements of art to the task. Identify and use line, shape, colour, texture and form.",
+      "marks": 1
+    },
+    {
+      "id": "G7-CREATIVE-ARTS-SPORTS-T1-05-12",
+      "type": "single_choice",
+      "difficulty": "standard",
+      "task_style": "Critical thinking",
+      "prompt": "Which question encourages deeper thinking about Elements of art?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Copy an unrelated example without checking whether it fits the task."
+        },
+        {
+          "label": "B",
+          "text": "Avoid using evidence, practice or relevant learning resources."
+        },
+        {
+          "label": "C",
+          "text": "Apply the knowledge and skills of Elements of art accurately in the given context."
+        },
+        {
+          "label": "D",
+          "text": "Ignore the task instructions and choose an answer at random."
+        }
+      ],
+      "correct_option": "C",
+      "explanation": "The appropriate response applies the learning in Elements of art to the task. Identify and use line, shape, colour, texture and form.",
+      "marks": 1
+    },
+    {
+      "id": "G7-CREATIVE-ARTS-SPORTS-T1-05-13",
+      "type": "single_choice",
+      "difficulty": "standard",
+      "task_style": "Collaboration",
+      "prompt": "During group work on Elements of art, which behaviour best supports learning?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Ignore the task instructions and choose an answer at random."
+        },
+        {
+          "label": "B",
+          "text": "Copy an unrelated example without checking whether it fits the task."
+        },
+        {
+          "label": "C",
+          "text": "Avoid using evidence, practice or relevant learning resources."
+        },
+        {
+          "label": "D",
+          "text": "Apply the knowledge and skills of Elements of art accurately in the given context."
+        }
+      ],
+      "correct_option": "D",
+      "explanation": "The appropriate response applies the learning in Elements of art to the task. Identify and use line, shape, colour, texture and form.",
+      "marks": 1
+    },
+    {
+      "id": "G7-CREATIVE-ARTS-SPORTS-T1-05-14",
+      "type": "single_choice",
+      "difficulty": "advanced",
+      "task_style": "Application check",
+      "prompt": "Which response shows that a learner can use knowledge from Elements of art, not merely recall a term?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Apply the knowledge and skills of Elements of art accurately in the given context."
+        },
+        {
+          "label": "B",
+          "text": "Ignore the task instructions and choose an answer at random."
+        },
+        {
+          "label": "C",
+          "text": "Copy an unrelated example without checking whether it fits the task."
+        },
+        {
+          "label": "D",
+          "text": "Avoid using evidence, practice or relevant learning resources."
+        }
+      ],
+      "correct_option": "A",
+      "explanation": "The appropriate response applies the learning in Elements of art to the task. Identify and use line, shape, colour, texture and form.",
+      "marks": 1
+    },
+    {
+      "id": "G7-CREATIVE-ARTS-SPORTS-T1-05-15",
+      "type": "single_choice",
+      "difficulty": "foundation",
+      "task_style": "Problem solving",
+      "prompt": "A challenge arises during a task on Elements of art. Which response is most useful?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Avoid using evidence, practice or relevant learning resources."
+        },
+        {
+          "label": "B",
+          "text": "Apply the knowledge and skills of Elements of art accurately in the given context."
+        },
+        {
+          "label": "C",
+          "text": "Ignore the task instructions and choose an answer at random."
+        },
+        {
+          "label": "D",
+          "text": "Copy an unrelated example without checking whether it fits the task."
+        }
+      ],
+      "correct_option": "B",
+      "explanation": "The appropriate response applies the learning in Elements of art to the task. Identify and use line, shape, colour, texture and form.",
+      "marks": 1
+    },
+    {
+      "id": "G7-CREATIVE-ARTS-SPORTS-T1-05-16",
+      "type": "single_choice",
+      "difficulty": "standard",
+      "task_style": "Evaluation",
+      "prompt": "How can a learner judge whether work on Elements of art has been completed successfully?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Copy an unrelated example without checking whether it fits the task."
+        },
+        {
+          "label": "B",
+          "text": "Avoid using evidence, practice or relevant learning resources."
+        },
+        {
+          "label": "C",
+          "text": "Apply the knowledge and skills of Elements of art accurately in the given context."
+        },
+        {
+          "label": "D",
+          "text": "Ignore the task instructions and choose an answer at random."
+        }
+      ],
+      "correct_option": "C",
+      "explanation": "The appropriate response applies the learning in Elements of art to the task. Identify and use line, shape, colour, texture and form.",
+      "marks": 1
+    },
+    {
+      "id": "G7-CREATIVE-ARTS-SPORTS-T1-05-17",
+      "type": "single_choice",
+      "difficulty": "standard",
+      "task_style": "Resource use",
+      "prompt": "Which resource would be most useful when investigating Elements of art?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Ignore the task instructions and choose an answer at random."
+        },
+        {
+          "label": "B",
+          "text": "Copy an unrelated example without checking whether it fits the task."
+        },
+        {
+          "label": "C",
+          "text": "Avoid using evidence, practice or relevant learning resources."
+        },
+        {
+          "label": "D",
+          "text": "Apply the knowledge and skills of Elements of art accurately in the given context."
+        }
+      ],
+      "correct_option": "D",
+      "explanation": "The appropriate response applies the learning in Elements of art to the task. Identify and use line, shape, colour, texture and form.",
+      "marks": 1
+    },
+    {
+      "id": "G7-CREATIVE-ARTS-SPORTS-T1-05-18",
+      "type": "single_choice",
+      "difficulty": "advanced",
+      "task_style": "Safety and responsibility",
+      "prompt": "Which action reflects responsible participation in an activity on Elements of art?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Apply the knowledge and skills of Elements of art accurately in the given context."
+        },
+        {
+          "label": "B",
+          "text": "Ignore the task instructions and choose an answer at random."
+        },
+        {
+          "label": "C",
+          "text": "Copy an unrelated example without checking whether it fits the task."
+        },
+        {
+          "label": "D",
+          "text": "Avoid using evidence, practice or relevant learning resources."
+        }
+      ],
+      "correct_option": "A",
+      "explanation": "The appropriate response applies the learning in Elements of art to the task. Identify and use line, shape, colour, texture and form.",
+      "marks": 1
+    },
+    {
+      "id": "G7-CREATIVE-ARTS-SPORTS-T1-05-19",
+      "type": "single_choice",
+      "difficulty": "standard",
+      "task_style": "Sequencing",
+      "prompt": "Which sequence is most sensible when carrying out a task related to Elements of art?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Avoid using evidence, practice or relevant learning resources."
+        },
+        {
+          "label": "B",
+          "text": "Apply the knowledge and skills of Elements of art accurately in the given context."
+        },
+        {
+          "label": "C",
+          "text": "Ignore the task instructions and choose an answer at random."
+        },
+        {
+          "label": "D",
+          "text": "Copy an unrelated example without checking whether it fits the task."
+        }
+      ],
+      "correct_option": "B",
+      "explanation": "The appropriate response applies the learning in Elements of art to the task. Identify and use line, shape, colour, texture and form.",
+      "marks": 1
+    },
+    {
+      "id": "G7-CREATIVE-ARTS-SPORTS-T1-05-20",
+      "type": "single_choice",
+      "difficulty": "advanced",
+      "task_style": "Reflection",
+      "prompt": "After completing work on Elements of art, what should a learner reflect on?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Copy an unrelated example without checking whether it fits the task."
+        },
+        {
+          "label": "B",
+          "text": "Avoid using evidence, practice or relevant learning resources."
+        },
+        {
+          "label": "C",
+          "text": "Apply the knowledge and skills of Elements of art accurately in the given context."
+        },
+        {
+          "label": "D",
+          "text": "Ignore the task instructions and choose an answer at random."
+        }
+      ],
+      "correct_option": "C",
+      "explanation": "The appropriate response applies the learning in Elements of art to the task. Identify and use line, shape, colour, texture and form.",
+      "marks": 1
+    },
+    {
+      "id": "G7-CREATIVE-ARTS-SPORTS-T1-05-21",
+      "type": "single_choice",
+      "difficulty": "foundation",
+      "task_style": "Transfer to a new context",
+      "prompt": "A new situation requires knowledge of Elements of art. What is the best strategy?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Ignore the task instructions and choose an answer at random."
+        },
+        {
+          "label": "B",
+          "text": "Copy an unrelated example without checking whether it fits the task."
+        },
+        {
+          "label": "C",
+          "text": "Avoid using evidence, practice or relevant learning resources."
+        },
+        {
+          "label": "D",
+          "text": "Apply the knowledge and skills of Elements of art accurately in the given context."
+        }
+      ],
+      "correct_option": "D",
+      "explanation": "The appropriate response applies the learning in Elements of art to the task. Identify and use line, shape, colour, texture and form.",
+      "marks": 1
+    },
+    {
+      "id": "G7-CREATIVE-ARTS-SPORTS-T1-05-22",
+      "type": "single_choice",
+      "difficulty": "standard",
+      "task_style": "Decision making",
+      "prompt": "Which factor should guide a learner’s decision in a task about Elements of art?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Apply the knowledge and skills of Elements of art accurately in the given context."
+        },
+        {
+          "label": "B",
+          "text": "Ignore the task instructions and choose an answer at random."
+        },
+        {
+          "label": "C",
+          "text": "Copy an unrelated example without checking whether it fits the task."
+        },
+        {
+          "label": "D",
+          "text": "Avoid using evidence, practice or relevant learning resources."
+        }
+      ],
+      "correct_option": "A",
+      "explanation": "The appropriate response applies the learning in Elements of art to the task. Identify and use line, shape, colour, texture and form.",
+      "marks": 1
+    },
+    {
+      "id": "G7-CREATIVE-ARTS-SPORTS-T1-05-23",
+      "type": "single_choice",
+      "difficulty": "standard",
+      "task_style": "Accuracy",
+      "prompt": "What is the best way to improve accuracy when working on Elements of art?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Avoid using evidence, practice or relevant learning resources."
+        },
+        {
+          "label": "B",
+          "text": "Apply the knowledge and skills of Elements of art accurately in the given context."
+        },
+        {
+          "label": "C",
+          "text": "Ignore the task instructions and choose an answer at random."
+        },
+        {
+          "label": "D",
+          "text": "Copy an unrelated example without checking whether it fits the task."
+        }
+      ],
+      "correct_option": "B",
+      "explanation": "The appropriate response applies the learning in Elements of art to the task. Identify and use line, shape, colour, texture and form.",
+      "marks": 1
+    },
+    {
+      "id": "G7-CREATIVE-ARTS-SPORTS-T1-05-24",
+      "type": "single_choice",
+      "difficulty": "advanced",
+      "task_style": "Peer explanation",
+      "prompt": "A classmate is unsure about Elements of art. Which response is most helpful?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Copy an unrelated example without checking whether it fits the task."
+        },
+        {
+          "label": "B",
+          "text": "Avoid using evidence, practice or relevant learning resources."
+        },
+        {
+          "label": "C",
+          "text": "Apply the knowledge and skills of Elements of art accurately in the given context."
+        },
+        {
+          "label": "D",
+          "text": "Ignore the task instructions and choose an answer at random."
+        }
+      ],
+      "correct_option": "C",
+      "explanation": "The appropriate response applies the learning in Elements of art to the task. Identify and use line, shape, colour, texture and form.",
+      "marks": 1
+    },
+    {
+      "id": "G7-CREATIVE-ARTS-SPORTS-T1-05-25",
+      "type": "single_choice",
+      "difficulty": "foundation",
+      "task_style": "Independent learning",
+      "prompt": "Which action shows initiative when learning about Elements of art?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Ignore the task instructions and choose an answer at random."
+        },
+        {
+          "label": "B",
+          "text": "Copy an unrelated example without checking whether it fits the task."
+        },
+        {
+          "label": "C",
+          "text": "Avoid using evidence, practice or relevant learning resources."
+        },
+        {
+          "label": "D",
+          "text": "Apply the knowledge and skills of Elements of art accurately in the given context."
+        }
+      ],
+      "correct_option": "D",
+      "explanation": "The appropriate response applies the learning in Elements of art to the task. Identify and use line, shape, colour, texture and form.",
+      "marks": 1
+    },
+    {
+      "id": "G7-CREATIVE-ARTS-SPORTS-T1-05-26",
+      "type": "single_choice",
+      "difficulty": "standard",
+      "task_style": "Observation",
+      "prompt": "During an activity on Elements of art, what should the learner pay attention to?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Apply the knowledge and skills of Elements of art accurately in the given context."
+        },
+        {
+          "label": "B",
+          "text": "Ignore the task instructions and choose an answer at random."
+        },
+        {
+          "label": "C",
+          "text": "Copy an unrelated example without checking whether it fits the task."
+        },
+        {
+          "label": "D",
+          "text": "Avoid using evidence, practice or relevant learning resources."
+        }
+      ],
+      "correct_option": "A",
+      "explanation": "The appropriate response applies the learning in Elements of art to the task. Identify and use line, shape, colour, texture and form.",
+      "marks": 1
+    },
+    {
+      "id": "G7-CREATIVE-ARTS-SPORTS-T1-05-27",
+      "type": "single_choice",
+      "difficulty": "standard",
+      "task_style": "Outcome alignment",
+      "prompt": "Which outcome would indicate progress in Elements of art?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Avoid using evidence, practice or relevant learning resources."
+        },
+        {
+          "label": "B",
+          "text": "Apply the knowledge and skills of Elements of art accurately in the given context."
+        },
+        {
+          "label": "C",
+          "text": "Ignore the task instructions and choose an answer at random."
+        },
+        {
+          "label": "D",
+          "text": "Copy an unrelated example without checking whether it fits the task."
+        }
+      ],
+      "correct_option": "B",
+      "explanation": "The appropriate response applies the learning in Elements of art to the task. Identify and use line, shape, colour, texture and form.",
+      "marks": 1
+    },
+    {
+      "id": "G7-CREATIVE-ARTS-SPORTS-T1-05-28",
+      "type": "single_choice",
+      "difficulty": "advanced",
+      "task_style": "Quality check",
+      "prompt": "Before submitting work on Elements of art, what should the learner check?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Copy an unrelated example without checking whether it fits the task."
+        },
+        {
+          "label": "B",
+          "text": "Avoid using evidence, practice or relevant learning resources."
+        },
+        {
+          "label": "C",
+          "text": "Apply the knowledge and skills of Elements of art accurately in the given context."
+        },
+        {
+          "label": "D",
+          "text": "Ignore the task instructions and choose an answer at random."
+        }
+      ],
+      "correct_option": "C",
+      "explanation": "The appropriate response applies the learning in Elements of art to the task. Identify and use line, shape, colour, texture and form.",
+      "marks": 1
+    },
+    {
+      "id": "G7-CREATIVE-ARTS-SPORTS-T1-05-29",
+      "type": "single_choice",
+      "difficulty": "standard",
+      "task_style": "Contextual reasoning",
+      "prompt": "A community example illustrates Elements of art. How should the learner use the example?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Ignore the task instructions and choose an answer at random."
+        },
+        {
+          "label": "B",
+          "text": "Copy an unrelated example without checking whether it fits the task."
+        },
+        {
+          "label": "C",
+          "text": "Avoid using evidence, practice or relevant learning resources."
+        },
+        {
+          "label": "D",
+          "text": "Apply the knowledge and skills of Elements of art accurately in the given context."
+        }
+      ],
+      "correct_option": "D",
+      "explanation": "The appropriate response applies the learning in Elements of art to the task. Identify and use line, shape, colour, texture and form.",
+      "marks": 1
+    },
+    {
+      "id": "G7-CREATIVE-ARTS-SPORTS-T1-05-30",
+      "type": "single_choice",
+      "difficulty": "advanced",
+      "task_style": "Synthesis",
+      "prompt": "Which approach best combines knowledge and skills developed in Elements of art?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Apply the knowledge and skills of Elements of art accurately in the given context."
+        },
+        {
+          "label": "B",
+          "text": "Ignore the task instructions and choose an answer at random."
+        },
+        {
+          "label": "C",
+          "text": "Copy an unrelated example without checking whether it fits the task."
+        },
+        {
+          "label": "D",
+          "text": "Avoid using evidence, practice or relevant learning resources."
+        }
+      ],
+      "correct_option": "A",
+      "explanation": "The appropriate response applies the learning in Elements of art to the task. Identify and use line, shape, colour, texture and form.",
+      "marks": 1
+    }
+  ],
+  "quality_note": "Generated from the supplied Grade 7 2027 term scheme sub-strand and learning-outcome wording. Teacher review is recommended before live assessment use."
+}

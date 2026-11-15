@@ -1,0 +1,854 @@
+{
+  "brand": "Junior School Learning Hub",
+  "grade": 7,
+  "academic_year": 2027,
+  "learning_area": "Creative Arts & Sports",
+  "term": 1,
+  "strand": "Visual Arts",
+  "sub_strand": "Drawing and composition",
+  "source_learning_outcome": "Create drawings using observation, proportion and",
+  "question_count": 30,
+  "questions": [
+    {
+      "id": "G7-CREATIVE-ARTS-SPORTS-T1-04-01",
+      "type": "single_choice",
+      "difficulty": "foundation",
+      "task_style": "Concept identification",
+      "prompt": "Which statement best describes the main idea learners study in Drawing and composition?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Apply the knowledge and skills of Drawing and composition accurately in the given context."
+        },
+        {
+          "label": "B",
+          "text": "Ignore the task instructions and choose an answer at random."
+        },
+        {
+          "label": "C",
+          "text": "Copy an unrelated example without checking whether it fits the task."
+        },
+        {
+          "label": "D",
+          "text": "Avoid using evidence, practice or relevant learning resources."
+        }
+      ],
+      "correct_option": "A",
+      "explanation": "The appropriate response applies the learning in Drawing and composition to the task. Create drawings using observation, proportion and",
+      "marks": 1
+    },
+    {
+      "id": "G7-CREATIVE-ARTS-SPORTS-T1-04-02",
+      "type": "single_choice",
+      "difficulty": "standard",
+      "task_style": "Practical application",
+      "prompt": "A learner is completing a practical task related to Drawing and composition. Which approach is most appropriate?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Avoid using evidence, practice or relevant learning resources."
+        },
+        {
+          "label": "B",
+          "text": "Apply the knowledge and skills of Drawing and composition accurately in the given context."
+        },
+        {
+          "label": "C",
+          "text": "Ignore the task instructions and choose an answer at random."
+        },
+        {
+          "label": "D",
+          "text": "Copy an unrelated example without checking whether it fits the task."
+        }
+      ],
+      "correct_option": "B",
+      "explanation": "The appropriate response applies the learning in Drawing and composition to the task. Create drawings using observation, proportion and",
+      "marks": 1
+    },
+    {
+      "id": "G7-CREATIVE-ARTS-SPORTS-T1-04-03",
+      "type": "single_choice",
+      "difficulty": "standard",
+      "task_style": "Reasoning",
+      "prompt": "When solving a problem involving Drawing and composition, what should the learner do first?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Copy an unrelated example without checking whether it fits the task."
+        },
+        {
+          "label": "B",
+          "text": "Avoid using evidence, practice or relevant learning resources."
+        },
+        {
+          "label": "C",
+          "text": "Apply the knowledge and skills of Drawing and composition accurately in the given context."
+        },
+        {
+          "label": "D",
+          "text": "Ignore the task instructions and choose an answer at random."
+        }
+      ],
+      "correct_option": "C",
+      "explanation": "The appropriate response applies the learning in Drawing and composition to the task. Create drawings using observation, proportion and",
+      "marks": 1
+    },
+    {
+      "id": "G7-CREATIVE-ARTS-SPORTS-T1-04-04",
+      "type": "single_choice",
+      "difficulty": "advanced",
+      "task_style": "Evidence selection",
+      "prompt": "Which evidence would best show that a learner understands Drawing and composition?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Ignore the task instructions and choose an answer at random."
+        },
+        {
+          "label": "B",
+          "text": "Copy an unrelated example without checking whether it fits the task."
+        },
+        {
+          "label": "C",
+          "text": "Avoid using evidence, practice or relevant learning resources."
+        },
+        {
+          "label": "D",
+          "text": "Apply the knowledge and skills of Drawing and composition accurately in the given context."
+        }
+      ],
+      "correct_option": "D",
+      "explanation": "The appropriate response applies the learning in Drawing and composition to the task. Create drawings using observation, proportion and",
+      "marks": 1
+    },
+    {
+      "id": "G7-CREATIVE-ARTS-SPORTS-T1-04-05",
+      "type": "single_choice",
+      "difficulty": "foundation",
+      "task_style": "Error detection",
+      "prompt": "A learner makes an error while working on Drawing and composition. What is the best next step?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Apply the knowledge and skills of Drawing and composition accurately in the given context."
+        },
+        {
+          "label": "B",
+          "text": "Ignore the task instructions and choose an answer at random."
+        },
+        {
+          "label": "C",
+          "text": "Copy an unrelated example without checking whether it fits the task."
+        },
+        {
+          "label": "D",
+          "text": "Avoid using evidence, practice or relevant learning resources."
+        }
+      ],
+      "correct_option": "A",
+      "explanation": "The appropriate response applies the learning in Drawing and composition to the task. Create drawings using observation, proportion and",
+      "marks": 1
+    },
+    {
+      "id": "G7-CREATIVE-ARTS-SPORTS-T1-04-06",
+      "type": "single_choice",
+      "difficulty": "standard",
+      "task_style": "Real-life transfer",
+      "prompt": "Which everyday situation provides a useful opportunity to apply Drawing and composition?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Avoid using evidence, practice or relevant learning resources."
+        },
+        {
+          "label": "B",
+          "text": "Apply the knowledge and skills of Drawing and composition accurately in the given context."
+        },
+        {
+          "label": "C",
+          "text": "Ignore the task instructions and choose an answer at random."
+        },
+        {
+          "label": "D",
+          "text": "Copy an unrelated example without checking whether it fits the task."
+        }
+      ],
+      "correct_option": "B",
+      "explanation": "The appropriate response applies the learning in Drawing and composition to the task. Create drawings using observation, proportion and",
+      "marks": 1
+    },
+    {
+      "id": "G7-CREATIVE-ARTS-SPORTS-T1-04-07",
+      "type": "single_choice",
+      "difficulty": "standard",
+      "task_style": "Planning",
+      "prompt": "Before beginning an activity on Drawing and composition, which action supports successful work?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Copy an unrelated example without checking whether it fits the task."
+        },
+        {
+          "label": "B",
+          "text": "Avoid using evidence, practice or relevant learning resources."
+        },
+        {
+          "label": "C",
+          "text": "Apply the knowledge and skills of Drawing and composition accurately in the given context."
+        },
+        {
+          "label": "D",
+          "text": "Ignore the task instructions and choose an answer at random."
+        }
+      ],
+      "correct_option": "C",
+      "explanation": "The appropriate response applies the learning in Drawing and composition to the task. Create drawings using observation, proportion and",
+      "marks": 1
+    },
+    {
+      "id": "G7-CREATIVE-ARTS-SPORTS-T1-04-08",
+      "type": "single_choice",
+      "difficulty": "advanced",
+      "task_style": "Communication",
+      "prompt": "How should a learner explain a finding from an activity on Drawing and composition?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Ignore the task instructions and choose an answer at random."
+        },
+        {
+          "label": "B",
+          "text": "Copy an unrelated example without checking whether it fits the task."
+        },
+        {
+          "label": "C",
+          "text": "Avoid using evidence, practice or relevant learning resources."
+        },
+        {
+          "label": "D",
+          "text": "Apply the knowledge and skills of Drawing and composition accurately in the given context."
+        }
+      ],
+      "correct_option": "D",
+      "explanation": "The appropriate response applies the learning in Drawing and composition to the task. Create drawings using observation, proportion and",
+      "marks": 1
+    },
+    {
+      "id": "G7-CREATIVE-ARTS-SPORTS-T1-04-09",
+      "type": "single_choice",
+      "difficulty": "standard",
+      "task_style": "Comparison",
+      "prompt": "When comparing two examples in Drawing and composition, what should guide the comparison?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Apply the knowledge and skills of Drawing and composition accurately in the given context."
+        },
+        {
+          "label": "B",
+          "text": "Ignore the task instructions and choose an answer at random."
+        },
+        {
+          "label": "C",
+          "text": "Copy an unrelated example without checking whether it fits the task."
+        },
+        {
+          "label": "D",
+          "text": "Avoid using evidence, practice or relevant learning resources."
+        }
+      ],
+      "correct_option": "A",
+      "explanation": "The appropriate response applies the learning in Drawing and composition to the task. Create drawings using observation, proportion and",
+      "marks": 1
+    },
+    {
+      "id": "G7-CREATIVE-ARTS-SPORTS-T1-04-10",
+      "type": "single_choice",
+      "difficulty": "advanced",
+      "task_style": "Interpretation",
+      "prompt": "A learner is given information about Drawing and composition. What should the learner do to interpret it correctly?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Avoid using evidence, practice or relevant learning resources."
+        },
+        {
+          "label": "B",
+          "text": "Apply the knowledge and skills of Drawing and composition accurately in the given context."
+        },
+        {
+          "label": "C",
+          "text": "Ignore the task instructions and choose an answer at random."
+        },
+        {
+          "label": "D",
+          "text": "Copy an unrelated example without checking whether it fits the task."
+        }
+      ],
+      "correct_option": "B",
+      "explanation": "The appropriate response applies the learning in Drawing and composition to the task. Create drawings using observation, proportion and",
+      "marks": 1
+    },
+    {
+      "id": "G7-CREATIVE-ARTS-SPORTS-T1-04-11",
+      "type": "single_choice",
+      "difficulty": "foundation",
+      "task_style": "Skill demonstration",
+      "prompt": "Which task would most directly demonstrate a practical skill in Drawing and composition?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Copy an unrelated example without checking whether it fits the task."
+        },
+        {
+          "label": "B",
+          "text": "Avoid using evidence, practice or relevant learning resources."
+        },
+        {
+          "label": "C",
+          "text": "Apply the knowledge and skills of Drawing and composition accurately in the given context."
+        },
+        {
+          "label": "D",
+          "text": "Ignore the task instructions and choose an answer at random."
+        }
+      ],
+      "correct_option": "C",
+      "explanation": "The appropriate response applies the learning in Drawing and composition to the task. Create drawings using observation, proportion and",
+      "marks": 1
+    },
+    {
+      "id": "G7-CREATIVE-ARTS-SPORTS-T1-04-12",
+      "type": "single_choice",
+      "difficulty": "standard",
+      "task_style": "Critical thinking",
+      "prompt": "Which question encourages deeper thinking about Drawing and composition?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Ignore the task instructions and choose an answer at random."
+        },
+        {
+          "label": "B",
+          "text": "Copy an unrelated example without checking whether it fits the task."
+        },
+        {
+          "label": "C",
+          "text": "Avoid using evidence, practice or relevant learning resources."
+        },
+        {
+          "label": "D",
+          "text": "Apply the knowledge and skills of Drawing and composition accurately in the given context."
+        }
+      ],
+      "correct_option": "D",
+      "explanation": "The appropriate response applies the learning in Drawing and composition to the task. Create drawings using observation, proportion and",
+      "marks": 1
+    },
+    {
+      "id": "G7-CREATIVE-ARTS-SPORTS-T1-04-13",
+      "type": "single_choice",
+      "difficulty": "standard",
+      "task_style": "Collaboration",
+      "prompt": "During group work on Drawing and composition, which behaviour best supports learning?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Apply the knowledge and skills of Drawing and composition accurately in the given context."
+        },
+        {
+          "label": "B",
+          "text": "Ignore the task instructions and choose an answer at random."
+        },
+        {
+          "label": "C",
+          "text": "Copy an unrelated example without checking whether it fits the task."
+        },
+        {
+          "label": "D",
+          "text": "Avoid using evidence, practice or relevant learning resources."
+        }
+      ],
+      "correct_option": "A",
+      "explanation": "The appropriate response applies the learning in Drawing and composition to the task. Create drawings using observation, proportion and",
+      "marks": 1
+    },
+    {
+      "id": "G7-CREATIVE-ARTS-SPORTS-T1-04-14",
+      "type": "single_choice",
+      "difficulty": "advanced",
+      "task_style": "Application check",
+      "prompt": "Which response shows that a learner can use knowledge from Drawing and composition, not merely recall a term?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Avoid using evidence, practice or relevant learning resources."
+        },
+        {
+          "label": "B",
+          "text": "Apply the knowledge and skills of Drawing and composition accurately in the given context."
+        },
+        {
+          "label": "C",
+          "text": "Ignore the task instructions and choose an answer at random."
+        },
+        {
+          "label": "D",
+          "text": "Copy an unrelated example without checking whether it fits the task."
+        }
+      ],
+      "correct_option": "B",
+      "explanation": "The appropriate response applies the learning in Drawing and composition to the task. Create drawings using observation, proportion and",
+      "marks": 1
+    },
+    {
+      "id": "G7-CREATIVE-ARTS-SPORTS-T1-04-15",
+      "type": "single_choice",
+      "difficulty": "foundation",
+      "task_style": "Problem solving",
+      "prompt": "A challenge arises during a task on Drawing and composition. Which response is most useful?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Copy an unrelated example without checking whether it fits the task."
+        },
+        {
+          "label": "B",
+          "text": "Avoid using evidence, practice or relevant learning resources."
+        },
+        {
+          "label": "C",
+          "text": "Apply the knowledge and skills of Drawing and composition accurately in the given context."
+        },
+        {
+          "label": "D",
+          "text": "Ignore the task instructions and choose an answer at random."
+        }
+      ],
+      "correct_option": "C",
+      "explanation": "The appropriate response applies the learning in Drawing and composition to the task. Create drawings using observation, proportion and",
+      "marks": 1
+    },
+    {
+      "id": "G7-CREATIVE-ARTS-SPORTS-T1-04-16",
+      "type": "single_choice",
+      "difficulty": "standard",
+      "task_style": "Evaluation",
+      "prompt": "How can a learner judge whether work on Drawing and composition has been completed successfully?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Ignore the task instructions and choose an answer at random."
+        },
+        {
+          "label": "B",
+          "text": "Copy an unrelated example without checking whether it fits the task."
+        },
+        {
+          "label": "C",
+          "text": "Avoid using evidence, practice or relevant learning resources."
+        },
+        {
+          "label": "D",
+          "text": "Apply the knowledge and skills of Drawing and composition accurately in the given context."
+        }
+      ],
+      "correct_option": "D",
+      "explanation": "The appropriate response applies the learning in Drawing and composition to the task. Create drawings using observation, proportion and",
+      "marks": 1
+    },
+    {
+      "id": "G7-CREATIVE-ARTS-SPORTS-T1-04-17",
+      "type": "single_choice",
+      "difficulty": "standard",
+      "task_style": "Resource use",
+      "prompt": "Which resource would be most useful when investigating Drawing and composition?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Apply the knowledge and skills of Drawing and composition accurately in the given context."
+        },
+        {
+          "label": "B",
+          "text": "Ignore the task instructions and choose an answer at random."
+        },
+        {
+          "label": "C",
+          "text": "Copy an unrelated example without checking whether it fits the task."
+        },
+        {
+          "label": "D",
+          "text": "Avoid using evidence, practice or relevant learning resources."
+        }
+      ],
+      "correct_option": "A",
+      "explanation": "The appropriate response applies the learning in Drawing and composition to the task. Create drawings using observation, proportion and",
+      "marks": 1
+    },
+    {
+      "id": "G7-CREATIVE-ARTS-SPORTS-T1-04-18",
+      "type": "single_choice",
+      "difficulty": "advanced",
+      "task_style": "Safety and responsibility",
+      "prompt": "Which action reflects responsible participation in an activity on Drawing and composition?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Avoid using evidence, practice or relevant learning resources."
+        },
+        {
+          "label": "B",
+          "text": "Apply the knowledge and skills of Drawing and composition accurately in the given context."
+        },
+        {
+          "label": "C",
+          "text": "Ignore the task instructions and choose an answer at random."
+        },
+        {
+          "label": "D",
+          "text": "Copy an unrelated example without checking whether it fits the task."
+        }
+      ],
+      "correct_option": "B",
+      "explanation": "The appropriate response applies the learning in Drawing and composition to the task. Create drawings using observation, proportion and",
+      "marks": 1
+    },
+    {
+      "id": "G7-CREATIVE-ARTS-SPORTS-T1-04-19",
+      "type": "single_choice",
+      "difficulty": "standard",
+      "task_style": "Sequencing",
+      "prompt": "Which sequence is most sensible when carrying out a task related to Drawing and composition?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Copy an unrelated example without checking whether it fits the task."
+        },
+        {
+          "label": "B",
+          "text": "Avoid using evidence, practice or relevant learning resources."
+        },
+        {
+          "label": "C",
+          "text": "Apply the knowledge and skills of Drawing and composition accurately in the given context."
+        },
+        {
+          "label": "D",
+          "text": "Ignore the task instructions and choose an answer at random."
+        }
+      ],
+      "correct_option": "C",
+      "explanation": "The appropriate response applies the learning in Drawing and composition to the task. Create drawings using observation, proportion and",
+      "marks": 1
+    },
+    {
+      "id": "G7-CREATIVE-ARTS-SPORTS-T1-04-20",
+      "type": "single_choice",
+      "difficulty": "advanced",
+      "task_style": "Reflection",
+      "prompt": "After completing work on Drawing and composition, what should a learner reflect on?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Ignore the task instructions and choose an answer at random."
+        },
+        {
+          "label": "B",
+          "text": "Copy an unrelated example without checking whether it fits the task."
+        },
+        {
+          "label": "C",
+          "text": "Avoid using evidence, practice or relevant learning resources."
+        },
+        {
+          "label": "D",
+          "text": "Apply the knowledge and skills of Drawing and composition accurately in the given context."
+        }
+      ],
+      "correct_option": "D",
+      "explanation": "The appropriate response applies the learning in Drawing and composition to the task. Create drawings using observation, proportion and",
+      "marks": 1
+    },
+    {
+      "id": "G7-CREATIVE-ARTS-SPORTS-T1-04-21",
+      "type": "single_choice",
+      "difficulty": "foundation",
+      "task_style": "Transfer to a new context",
+      "prompt": "A new situation requires knowledge of Drawing and composition. What is the best strategy?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Apply the knowledge and skills of Drawing and composition accurately in the given context."
+        },
+        {
+          "label": "B",
+          "text": "Ignore the task instructions and choose an answer at random."
+        },
+        {
+          "label": "C",
+          "text": "Copy an unrelated example without checking whether it fits the task."
+        },
+        {
+          "label": "D",
+          "text": "Avoid using evidence, practice or relevant learning resources."
+        }
+      ],
+      "correct_option": "A",
+      "explanation": "The appropriate response applies the learning in Drawing and composition to the task. Create drawings using observation, proportion and",
+      "marks": 1
+    },
+    {
+      "id": "G7-CREATIVE-ARTS-SPORTS-T1-04-22",
+      "type": "single_choice",
+      "difficulty": "standard",
+      "task_style": "Decision making",
+      "prompt": "Which factor should guide a learner’s decision in a task about Drawing and composition?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Avoid using evidence, practice or relevant learning resources."
+        },
+        {
+          "label": "B",
+          "text": "Apply the knowledge and skills of Drawing and composition accurately in the given context."
+        },
+        {
+          "label": "C",
+          "text": "Ignore the task instructions and choose an answer at random."
+        },
+        {
+          "label": "D",
+          "text": "Copy an unrelated example without checking whether it fits the task."
+        }
+      ],
+      "correct_option": "B",
+      "explanation": "The appropriate response applies the learning in Drawing and composition to the task. Create drawings using observation, proportion and",
+      "marks": 1
+    },
+    {
+      "id": "G7-CREATIVE-ARTS-SPORTS-T1-04-23",
+      "type": "single_choice",
+      "difficulty": "standard",
+      "task_style": "Accuracy",
+      "prompt": "What is the best way to improve accuracy when working on Drawing and composition?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Copy an unrelated example without checking whether it fits the task."
+        },
+        {
+          "label": "B",
+          "text": "Avoid using evidence, practice or relevant learning resources."
+        },
+        {
+          "label": "C",
+          "text": "Apply the knowledge and skills of Drawing and composition accurately in the given context."
+        },
+        {
+          "label": "D",
+          "text": "Ignore the task instructions and choose an answer at random."
+        }
+      ],
+      "correct_option": "C",
+      "explanation": "The appropriate response applies the learning in Drawing and composition to the task. Create drawings using observation, proportion and",
+      "marks": 1
+    },
+    {
+      "id": "G7-CREATIVE-ARTS-SPORTS-T1-04-24",
+      "type": "single_choice",
+      "difficulty": "advanced",
+      "task_style": "Peer explanation",
+      "prompt": "A classmate is unsure about Drawing and composition. Which response is most helpful?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Ignore the task instructions and choose an answer at random."
+        },
+        {
+          "label": "B",
+          "text": "Copy an unrelated example without checking whether it fits the task."
+        },
+        {
+          "label": "C",
+          "text": "Avoid using evidence, practice or relevant learning resources."
+        },
+        {
+          "label": "D",
+          "text": "Apply the knowledge and skills of Drawing and composition accurately in the given context."
+        }
+      ],
+      "correct_option": "D",
+      "explanation": "The appropriate response applies the learning in Drawing and composition to the task. Create drawings using observation, proportion and",
+      "marks": 1
+    },
+    {
+      "id": "G7-CREATIVE-ARTS-SPORTS-T1-04-25",
+      "type": "single_choice",
+      "difficulty": "foundation",
+      "task_style": "Independent learning",
+      "prompt": "Which action shows initiative when learning about Drawing and composition?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Apply the knowledge and skills of Drawing and composition accurately in the given context."
+        },
+        {
+          "label": "B",
+          "text": "Ignore the task instructions and choose an answer at random."
+        },
+        {
+          "label": "C",
+          "text": "Copy an unrelated example without checking whether it fits the task."
+        },
+        {
+          "label": "D",
+          "text": "Avoid using evidence, practice or relevant learning resources."
+        }
+      ],
+      "correct_option": "A",
+      "explanation": "The appropriate response applies the learning in Drawing and composition to the task. Create drawings using observation, proportion and",
+      "marks": 1
+    },
+    {
+      "id": "G7-CREATIVE-ARTS-SPORTS-T1-04-26",
+      "type": "single_choice",
+      "difficulty": "standard",
+      "task_style": "Observation",
+      "prompt": "During an activity on Drawing and composition, what should the learner pay attention to?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Avoid using evidence, practice or relevant learning resources."
+        },
+        {
+          "label": "B",
+          "text": "Apply the knowledge and skills of Drawing and composition accurately in the given context."
+        },
+        {
+          "label": "C",
+          "text": "Ignore the task instructions and choose an answer at random."
+        },
+        {
+          "label": "D",
+          "text": "Copy an unrelated example without checking whether it fits the task."
+        }
+      ],
+      "correct_option": "B",
+      "explanation": "The appropriate response applies the learning in Drawing and composition to the task. Create drawings using observation, proportion and",
+      "marks": 1
+    },
+    {
+      "id": "G7-CREATIVE-ARTS-SPORTS-T1-04-27",
+      "type": "single_choice",
+      "difficulty": "standard",
+      "task_style": "Outcome alignment",
+      "prompt": "Which outcome would indicate progress in Drawing and composition?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Copy an unrelated example without checking whether it fits the task."
+        },
+        {
+          "label": "B",
+          "text": "Avoid using evidence, practice or relevant learning resources."
+        },
+        {
+          "label": "C",
+          "text": "Apply the knowledge and skills of Drawing and composition accurately in the given context."
+        },
+        {
+          "label": "D",
+          "text": "Ignore the task instructions and choose an answer at random."
+        }
+      ],
+      "correct_option": "C",
+      "explanation": "The appropriate response applies the learning in Drawing and composition to the task. Create drawings using observation, proportion and",
+      "marks": 1
+    },
+    {
+      "id": "G7-CREATIVE-ARTS-SPORTS-T1-04-28",
+      "type": "single_choice",
+      "difficulty": "advanced",
+      "task_style": "Quality check",
+      "prompt": "Before submitting work on Drawing and composition, what should the learner check?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Ignore the task instructions and choose an answer at random."
+        },
+        {
+          "label": "B",
+          "text": "Copy an unrelated example without checking whether it fits the task."
+        },
+        {
+          "label": "C",
+          "text": "Avoid using evidence, practice or relevant learning resources."
+        },
+        {
+          "label": "D",
+          "text": "Apply the knowledge and skills of Drawing and composition accurately in the given context."
+        }
+      ],
+      "correct_option": "D",
+      "explanation": "The appropriate response applies the learning in Drawing and composition to the task. Create drawings using observation, proportion and",
+      "marks": 1
+    },
+    {
+      "id": "G7-CREATIVE-ARTS-SPORTS-T1-04-29",
+      "type": "single_choice",
+      "difficulty": "standard",
+      "task_style": "Contextual reasoning",
+      "prompt": "A community example illustrates Drawing and composition. How should the learner use the example?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Apply the knowledge and skills of Drawing and composition accurately in the given context."
+        },
+        {
+          "label": "B",
+          "text": "Ignore the task instructions and choose an answer at random."
+        },
+        {
+          "label": "C",
+          "text": "Copy an unrelated example without checking whether it fits the task."
+        },
+        {
+          "label": "D",
+          "text": "Avoid using evidence, practice or relevant learning resources."
+        }
+      ],
+      "correct_option": "A",
+      "explanation": "The appropriate response applies the learning in Drawing and composition to the task. Create drawings using observation, proportion and",
+      "marks": 1
+    },
+    {
+      "id": "G7-CREATIVE-ARTS-SPORTS-T1-04-30",
+      "type": "single_choice",
+      "difficulty": "advanced",
+      "task_style": "Synthesis",
+      "prompt": "Which approach best combines knowledge and skills developed in Drawing and composition?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Avoid using evidence, practice or relevant learning resources."
+        },
+        {
+          "label": "B",
+          "text": "Apply the knowledge and skills of Drawing and composition accurately in the given context."
+        },
+        {
+          "label": "C",
+          "text": "Ignore the task instructions and choose an answer at random."
+        },
+        {
+          "label": "D",
+          "text": "Copy an unrelated example without checking whether it fits the task."
+        }
+      ],
+      "correct_option": "B",
+      "explanation": "The appropriate response applies the learning in Drawing and composition to the task. Create drawings using observation, proportion and",
+      "marks": 1
+    }
+  ],
+  "quality_note": "Generated from the supplied Grade 7 2027 term scheme sub-strand and learning-outcome wording. Teacher review is recommended before live assessment use."
+}
