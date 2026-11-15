@@ -560,7 +560,7 @@ section{padding-top:50px;padding-bottom:50px}
    <div class="grade-top" data-num="7"><div class="g-ico">📘</div><h3>Grade 7</h3><p>Complete Learning Library</p></div>
    <div class="grade-body">
     <p>Build strong foundations in numeracy, scientific thinking, technology and practical life skills.</p>
-    <div class="g-tags"><span>Mathematics</span><span>Integrated Science</span><span>Terms 1, 2 &amp; 3</span><span>KSh 10 Â· 12 hours</span></div>
+    <div class="g-tags"><span>Mathematics</span><span>Integrated Science</span><span>Terms 1, 2 &amp; 3</span><span>KSh 10 Â· 24 hours</span></div>
     <div class="grade-actions"><a class='btn' href='/grade7-complete-detailed-learning-library.html'>Open Complete Grade 7 Library</a><a class="btn outline" href="#quiz" data-grade="Grade 7">Practise</a></div>
    </div>
   </article>
@@ -837,7 +837,8 @@ section{padding-top:50px;padding-bottom:50px}
 const SUPABASE_PUBLISHABLE_KEY = "sb_publishable_uaOcRVaIwnvRl_wZhMhJ-Q_DhrqZyS_";
 
 const { createClient } = window.supabase;
-const supabaseClient = createClient(SUPABASE_URL, SUPABASE_PUBLISHABLE_KEY);\nasync function hasLearnerCentreAccess(){
+const supabaseClient = createClient(SUPABASE_URL, SUPABASE_PUBLISHABLE_KEY);
+async function hasLearnerCentreAccess(){
  const {data:{session}}=await supabaseClient.auth.getSession();
  if(!session)return {ok:false,message:"Please sign in, then pay KES 10 to access all Learner Centre resources for 24 hours."};
  const response=await fetch("/.netlify/functions/check-learner-centre-access",{headers:{Authorization:"Bearer "+session.access_token},cache:"no-store"});
@@ -852,11 +853,8 @@ const supabaseClient = createClient(SUPABASE_URL, SUPABASE_PUBLISHABLE_KEY);\nas
   const phone = document.getElementById("mpesaPhone").value.trim();
 
   const products = {
-    learner_centre_access: "All Learner Centre Resources",\n    online_tuition: "Online Tuition",
-    premium_quizzes: "Premium Quizzes",
-    grade7_notes: "Grade 7 Notes",
-    grade8_notes: "Grade 8 Notes",
-    grade9_notes: "Grade 9 Notes"
+    learner_centre_access: "All Learner Centre Resources",
+    online_tuition: "Online Tuition"
   };
 
   if (!products[productId]) {
