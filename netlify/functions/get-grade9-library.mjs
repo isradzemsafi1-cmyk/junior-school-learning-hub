@@ -1,7 +1,7 @@
 import grade9Content from "../content/grade9-library-content.mjs";
 
 // Returns the Grade 9 library content only to a signed-in learner whose
-// grade9_notes entitlement is active and has not expired.
+// learner_centre_access entitlement is active and has not expired.
 // Follows the same verification steps as get-grade7-library.
 export default async (request) => {
   const respond = (status, data) =>
@@ -55,7 +55,7 @@ export default async (request) => {
     const entitlementUrl =
       `${supabaseUrl}/rest/v1/entitlements` +
       `?user_id=eq.${encodeURIComponent(user.id)}` +
-      `&product_id=eq.grade9_notes` +
+      `&product_id=eq.learner_centre_access` +
       `&active=eq.true` +
       `&expires_at=gt.${encodeURIComponent(new Date().toISOString())}` +
       `&select=id,expires_at&limit=1`;
@@ -75,7 +75,7 @@ export default async (request) => {
 
     if (!access.length) {
       return respond(403, {
-        message: "Grade 9 library access is not active. Please purchase access."
+        message: "Learner Centre access is not active. Please purchase 24-hour access."
       });
     }
 
