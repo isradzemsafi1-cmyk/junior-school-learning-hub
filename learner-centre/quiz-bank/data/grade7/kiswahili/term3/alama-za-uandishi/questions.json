@@ -1,0 +1,854 @@
+{
+  "brand": "Junior School Learning Hub",
+  "grade": 7,
+  "academic_year": 2027,
+  "learning_area": "Kiswahili",
+  "term": 3,
+  "strand": "Sarufi",
+  "sub_strand": "Alama za uandishi",
+  "source_learning_outcome": "Maarifa: Kutumia alama za uandishi na miundo ya lugha ipasavyo. Katika vikundi, wanafunzi Ujuzi: Kutumia stadi husika katika shughuli za lugha. Mtazamo: kuchunguza mifano, Kuonyesha ushirikiano, bidii na heshima.",
+  "question_count": 30,
+  "questions": [
+    {
+      "id": "G7-KISWAHILI-T3-05-01",
+      "type": "single_choice",
+      "difficulty": "foundation",
+      "task_style": "Concept identification",
+      "prompt": "Which statement best describes the main idea learners study in Alama za uandishi?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Avoid using evidence, practice or relevant learning resources."
+        },
+        {
+          "label": "B",
+          "text": "Apply the knowledge and skills of Alama za uandishi accurately in the given context."
+        },
+        {
+          "label": "C",
+          "text": "Ignore the task instructions and choose an answer at random."
+        },
+        {
+          "label": "D",
+          "text": "Copy an unrelated example without checking whether it fits the task."
+        }
+      ],
+      "correct_option": "B",
+      "explanation": "The appropriate response applies the learning in Alama za uandishi to the task. Maarifa: Kutumia alama za uandishi na miundo ya lugha ipasavyo. Katika vikundi, wanafunzi Ujuzi: Kutumia stadi husika katika shughuli za lugha. Mtazamo: kuchunguza mifano, Kuonyesha ushirikiano, bidii na heshima.",
+      "marks": 1
+    },
+    {
+      "id": "G7-KISWAHILI-T3-05-02",
+      "type": "single_choice",
+      "difficulty": "standard",
+      "task_style": "Practical application",
+      "prompt": "A learner is completing a practical task related to Alama za uandishi. Which approach is most appropriate?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Copy an unrelated example without checking whether it fits the task."
+        },
+        {
+          "label": "B",
+          "text": "Avoid using evidence, practice or relevant learning resources."
+        },
+        {
+          "label": "C",
+          "text": "Apply the knowledge and skills of Alama za uandishi accurately in the given context."
+        },
+        {
+          "label": "D",
+          "text": "Ignore the task instructions and choose an answer at random."
+        }
+      ],
+      "correct_option": "C",
+      "explanation": "The appropriate response applies the learning in Alama za uandishi to the task. Maarifa: Kutumia alama za uandishi na miundo ya lugha ipasavyo. Katika vikundi, wanafunzi Ujuzi: Kutumia stadi husika katika shughuli za lugha. Mtazamo: kuchunguza mifano, Kuonyesha ushirikiano, bidii na heshima.",
+      "marks": 1
+    },
+    {
+      "id": "G7-KISWAHILI-T3-05-03",
+      "type": "single_choice",
+      "difficulty": "standard",
+      "task_style": "Reasoning",
+      "prompt": "When solving a problem involving Alama za uandishi, what should the learner do first?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Ignore the task instructions and choose an answer at random."
+        },
+        {
+          "label": "B",
+          "text": "Copy an unrelated example without checking whether it fits the task."
+        },
+        {
+          "label": "C",
+          "text": "Avoid using evidence, practice or relevant learning resources."
+        },
+        {
+          "label": "D",
+          "text": "Apply the knowledge and skills of Alama za uandishi accurately in the given context."
+        }
+      ],
+      "correct_option": "D",
+      "explanation": "The appropriate response applies the learning in Alama za uandishi to the task. Maarifa: Kutumia alama za uandishi na miundo ya lugha ipasavyo. Katika vikundi, wanafunzi Ujuzi: Kutumia stadi husika katika shughuli za lugha. Mtazamo: kuchunguza mifano, Kuonyesha ushirikiano, bidii na heshima.",
+      "marks": 1
+    },
+    {
+      "id": "G7-KISWAHILI-T3-05-04",
+      "type": "single_choice",
+      "difficulty": "advanced",
+      "task_style": "Evidence selection",
+      "prompt": "Which evidence would best show that a learner understands Alama za uandishi?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Apply the knowledge and skills of Alama za uandishi accurately in the given context."
+        },
+        {
+          "label": "B",
+          "text": "Ignore the task instructions and choose an answer at random."
+        },
+        {
+          "label": "C",
+          "text": "Copy an unrelated example without checking whether it fits the task."
+        },
+        {
+          "label": "D",
+          "text": "Avoid using evidence, practice or relevant learning resources."
+        }
+      ],
+      "correct_option": "A",
+      "explanation": "The appropriate response applies the learning in Alama za uandishi to the task. Maarifa: Kutumia alama za uandishi na miundo ya lugha ipasavyo. Katika vikundi, wanafunzi Ujuzi: Kutumia stadi husika katika shughuli za lugha. Mtazamo: kuchunguza mifano, Kuonyesha ushirikiano, bidii na heshima.",
+      "marks": 1
+    },
+    {
+      "id": "G7-KISWAHILI-T3-05-05",
+      "type": "single_choice",
+      "difficulty": "foundation",
+      "task_style": "Error detection",
+      "prompt": "A learner makes an error while working on Alama za uandishi. What is the best next step?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Avoid using evidence, practice or relevant learning resources."
+        },
+        {
+          "label": "B",
+          "text": "Apply the knowledge and skills of Alama za uandishi accurately in the given context."
+        },
+        {
+          "label": "C",
+          "text": "Ignore the task instructions and choose an answer at random."
+        },
+        {
+          "label": "D",
+          "text": "Copy an unrelated example without checking whether it fits the task."
+        }
+      ],
+      "correct_option": "B",
+      "explanation": "The appropriate response applies the learning in Alama za uandishi to the task. Maarifa: Kutumia alama za uandishi na miundo ya lugha ipasavyo. Katika vikundi, wanafunzi Ujuzi: Kutumia stadi husika katika shughuli za lugha. Mtazamo: kuchunguza mifano, Kuonyesha ushirikiano, bidii na heshima.",
+      "marks": 1
+    },
+    {
+      "id": "G7-KISWAHILI-T3-05-06",
+      "type": "single_choice",
+      "difficulty": "standard",
+      "task_style": "Real-life transfer",
+      "prompt": "Which everyday situation provides a useful opportunity to apply Alama za uandishi?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Copy an unrelated example without checking whether it fits the task."
+        },
+        {
+          "label": "B",
+          "text": "Avoid using evidence, practice or relevant learning resources."
+        },
+        {
+          "label": "C",
+          "text": "Apply the knowledge and skills of Alama za uandishi accurately in the given context."
+        },
+        {
+          "label": "D",
+          "text": "Ignore the task instructions and choose an answer at random."
+        }
+      ],
+      "correct_option": "C",
+      "explanation": "The appropriate response applies the learning in Alama za uandishi to the task. Maarifa: Kutumia alama za uandishi na miundo ya lugha ipasavyo. Katika vikundi, wanafunzi Ujuzi: Kutumia stadi husika katika shughuli za lugha. Mtazamo: kuchunguza mifano, Kuonyesha ushirikiano, bidii na heshima.",
+      "marks": 1
+    },
+    {
+      "id": "G7-KISWAHILI-T3-05-07",
+      "type": "single_choice",
+      "difficulty": "standard",
+      "task_style": "Planning",
+      "prompt": "Before beginning an activity on Alama za uandishi, which action supports successful work?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Ignore the task instructions and choose an answer at random."
+        },
+        {
+          "label": "B",
+          "text": "Copy an unrelated example without checking whether it fits the task."
+        },
+        {
+          "label": "C",
+          "text": "Avoid using evidence, practice or relevant learning resources."
+        },
+        {
+          "label": "D",
+          "text": "Apply the knowledge and skills of Alama za uandishi accurately in the given context."
+        }
+      ],
+      "correct_option": "D",
+      "explanation": "The appropriate response applies the learning in Alama za uandishi to the task. Maarifa: Kutumia alama za uandishi na miundo ya lugha ipasavyo. Katika vikundi, wanafunzi Ujuzi: Kutumia stadi husika katika shughuli za lugha. Mtazamo: kuchunguza mifano, Kuonyesha ushirikiano, bidii na heshima.",
+      "marks": 1
+    },
+    {
+      "id": "G7-KISWAHILI-T3-05-08",
+      "type": "single_choice",
+      "difficulty": "advanced",
+      "task_style": "Communication",
+      "prompt": "How should a learner explain a finding from an activity on Alama za uandishi?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Apply the knowledge and skills of Alama za uandishi accurately in the given context."
+        },
+        {
+          "label": "B",
+          "text": "Ignore the task instructions and choose an answer at random."
+        },
+        {
+          "label": "C",
+          "text": "Copy an unrelated example without checking whether it fits the task."
+        },
+        {
+          "label": "D",
+          "text": "Avoid using evidence, practice or relevant learning resources."
+        }
+      ],
+      "correct_option": "A",
+      "explanation": "The appropriate response applies the learning in Alama za uandishi to the task. Maarifa: Kutumia alama za uandishi na miundo ya lugha ipasavyo. Katika vikundi, wanafunzi Ujuzi: Kutumia stadi husika katika shughuli za lugha. Mtazamo: kuchunguza mifano, Kuonyesha ushirikiano, bidii na heshima.",
+      "marks": 1
+    },
+    {
+      "id": "G7-KISWAHILI-T3-05-09",
+      "type": "single_choice",
+      "difficulty": "standard",
+      "task_style": "Comparison",
+      "prompt": "When comparing two examples in Alama za uandishi, what should guide the comparison?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Avoid using evidence, practice or relevant learning resources."
+        },
+        {
+          "label": "B",
+          "text": "Apply the knowledge and skills of Alama za uandishi accurately in the given context."
+        },
+        {
+          "label": "C",
+          "text": "Ignore the task instructions and choose an answer at random."
+        },
+        {
+          "label": "D",
+          "text": "Copy an unrelated example without checking whether it fits the task."
+        }
+      ],
+      "correct_option": "B",
+      "explanation": "The appropriate response applies the learning in Alama za uandishi to the task. Maarifa: Kutumia alama za uandishi na miundo ya lugha ipasavyo. Katika vikundi, wanafunzi Ujuzi: Kutumia stadi husika katika shughuli za lugha. Mtazamo: kuchunguza mifano, Kuonyesha ushirikiano, bidii na heshima.",
+      "marks": 1
+    },
+    {
+      "id": "G7-KISWAHILI-T3-05-10",
+      "type": "single_choice",
+      "difficulty": "advanced",
+      "task_style": "Interpretation",
+      "prompt": "A learner is given information about Alama za uandishi. What should the learner do to interpret it correctly?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Copy an unrelated example without checking whether it fits the task."
+        },
+        {
+          "label": "B",
+          "text": "Avoid using evidence, practice or relevant learning resources."
+        },
+        {
+          "label": "C",
+          "text": "Apply the knowledge and skills of Alama za uandishi accurately in the given context."
+        },
+        {
+          "label": "D",
+          "text": "Ignore the task instructions and choose an answer at random."
+        }
+      ],
+      "correct_option": "C",
+      "explanation": "The appropriate response applies the learning in Alama za uandishi to the task. Maarifa: Kutumia alama za uandishi na miundo ya lugha ipasavyo. Katika vikundi, wanafunzi Ujuzi: Kutumia stadi husika katika shughuli za lugha. Mtazamo: kuchunguza mifano, Kuonyesha ushirikiano, bidii na heshima.",
+      "marks": 1
+    },
+    {
+      "id": "G7-KISWAHILI-T3-05-11",
+      "type": "single_choice",
+      "difficulty": "foundation",
+      "task_style": "Skill demonstration",
+      "prompt": "Which task would most directly demonstrate a practical skill in Alama za uandishi?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Ignore the task instructions and choose an answer at random."
+        },
+        {
+          "label": "B",
+          "text": "Copy an unrelated example without checking whether it fits the task."
+        },
+        {
+          "label": "C",
+          "text": "Avoid using evidence, practice or relevant learning resources."
+        },
+        {
+          "label": "D",
+          "text": "Apply the knowledge and skills of Alama za uandishi accurately in the given context."
+        }
+      ],
+      "correct_option": "D",
+      "explanation": "The appropriate response applies the learning in Alama za uandishi to the task. Maarifa: Kutumia alama za uandishi na miundo ya lugha ipasavyo. Katika vikundi, wanafunzi Ujuzi: Kutumia stadi husika katika shughuli za lugha. Mtazamo: kuchunguza mifano, Kuonyesha ushirikiano, bidii na heshima.",
+      "marks": 1
+    },
+    {
+      "id": "G7-KISWAHILI-T3-05-12",
+      "type": "single_choice",
+      "difficulty": "standard",
+      "task_style": "Critical thinking",
+      "prompt": "Which question encourages deeper thinking about Alama za uandishi?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Apply the knowledge and skills of Alama za uandishi accurately in the given context."
+        },
+        {
+          "label": "B",
+          "text": "Ignore the task instructions and choose an answer at random."
+        },
+        {
+          "label": "C",
+          "text": "Copy an unrelated example without checking whether it fits the task."
+        },
+        {
+          "label": "D",
+          "text": "Avoid using evidence, practice or relevant learning resources."
+        }
+      ],
+      "correct_option": "A",
+      "explanation": "The appropriate response applies the learning in Alama za uandishi to the task. Maarifa: Kutumia alama za uandishi na miundo ya lugha ipasavyo. Katika vikundi, wanafunzi Ujuzi: Kutumia stadi husika katika shughuli za lugha. Mtazamo: kuchunguza mifano, Kuonyesha ushirikiano, bidii na heshima.",
+      "marks": 1
+    },
+    {
+      "id": "G7-KISWAHILI-T3-05-13",
+      "type": "single_choice",
+      "difficulty": "standard",
+      "task_style": "Collaboration",
+      "prompt": "During group work on Alama za uandishi, which behaviour best supports learning?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Avoid using evidence, practice or relevant learning resources."
+        },
+        {
+          "label": "B",
+          "text": "Apply the knowledge and skills of Alama za uandishi accurately in the given context."
+        },
+        {
+          "label": "C",
+          "text": "Ignore the task instructions and choose an answer at random."
+        },
+        {
+          "label": "D",
+          "text": "Copy an unrelated example without checking whether it fits the task."
+        }
+      ],
+      "correct_option": "B",
+      "explanation": "The appropriate response applies the learning in Alama za uandishi to the task. Maarifa: Kutumia alama za uandishi na miundo ya lugha ipasavyo. Katika vikundi, wanafunzi Ujuzi: Kutumia stadi husika katika shughuli za lugha. Mtazamo: kuchunguza mifano, Kuonyesha ushirikiano, bidii na heshima.",
+      "marks": 1
+    },
+    {
+      "id": "G7-KISWAHILI-T3-05-14",
+      "type": "single_choice",
+      "difficulty": "advanced",
+      "task_style": "Application check",
+      "prompt": "Which response shows that a learner can use knowledge from Alama za uandishi, not merely recall a term?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Copy an unrelated example without checking whether it fits the task."
+        },
+        {
+          "label": "B",
+          "text": "Avoid using evidence, practice or relevant learning resources."
+        },
+        {
+          "label": "C",
+          "text": "Apply the knowledge and skills of Alama za uandishi accurately in the given context."
+        },
+        {
+          "label": "D",
+          "text": "Ignore the task instructions and choose an answer at random."
+        }
+      ],
+      "correct_option": "C",
+      "explanation": "The appropriate response applies the learning in Alama za uandishi to the task. Maarifa: Kutumia alama za uandishi na miundo ya lugha ipasavyo. Katika vikundi, wanafunzi Ujuzi: Kutumia stadi husika katika shughuli za lugha. Mtazamo: kuchunguza mifano, Kuonyesha ushirikiano, bidii na heshima.",
+      "marks": 1
+    },
+    {
+      "id": "G7-KISWAHILI-T3-05-15",
+      "type": "single_choice",
+      "difficulty": "foundation",
+      "task_style": "Problem solving",
+      "prompt": "A challenge arises during a task on Alama za uandishi. Which response is most useful?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Ignore the task instructions and choose an answer at random."
+        },
+        {
+          "label": "B",
+          "text": "Copy an unrelated example without checking whether it fits the task."
+        },
+        {
+          "label": "C",
+          "text": "Avoid using evidence, practice or relevant learning resources."
+        },
+        {
+          "label": "D",
+          "text": "Apply the knowledge and skills of Alama za uandishi accurately in the given context."
+        }
+      ],
+      "correct_option": "D",
+      "explanation": "The appropriate response applies the learning in Alama za uandishi to the task. Maarifa: Kutumia alama za uandishi na miundo ya lugha ipasavyo. Katika vikundi, wanafunzi Ujuzi: Kutumia stadi husika katika shughuli za lugha. Mtazamo: kuchunguza mifano, Kuonyesha ushirikiano, bidii na heshima.",
+      "marks": 1
+    },
+    {
+      "id": "G7-KISWAHILI-T3-05-16",
+      "type": "single_choice",
+      "difficulty": "standard",
+      "task_style": "Evaluation",
+      "prompt": "How can a learner judge whether work on Alama za uandishi has been completed successfully?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Apply the knowledge and skills of Alama za uandishi accurately in the given context."
+        },
+        {
+          "label": "B",
+          "text": "Ignore the task instructions and choose an answer at random."
+        },
+        {
+          "label": "C",
+          "text": "Copy an unrelated example without checking whether it fits the task."
+        },
+        {
+          "label": "D",
+          "text": "Avoid using evidence, practice or relevant learning resources."
+        }
+      ],
+      "correct_option": "A",
+      "explanation": "The appropriate response applies the learning in Alama za uandishi to the task. Maarifa: Kutumia alama za uandishi na miundo ya lugha ipasavyo. Katika vikundi, wanafunzi Ujuzi: Kutumia stadi husika katika shughuli za lugha. Mtazamo: kuchunguza mifano, Kuonyesha ushirikiano, bidii na heshima.",
+      "marks": 1
+    },
+    {
+      "id": "G7-KISWAHILI-T3-05-17",
+      "type": "single_choice",
+      "difficulty": "standard",
+      "task_style": "Resource use",
+      "prompt": "Which resource would be most useful when investigating Alama za uandishi?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Avoid using evidence, practice or relevant learning resources."
+        },
+        {
+          "label": "B",
+          "text": "Apply the knowledge and skills of Alama za uandishi accurately in the given context."
+        },
+        {
+          "label": "C",
+          "text": "Ignore the task instructions and choose an answer at random."
+        },
+        {
+          "label": "D",
+          "text": "Copy an unrelated example without checking whether it fits the task."
+        }
+      ],
+      "correct_option": "B",
+      "explanation": "The appropriate response applies the learning in Alama za uandishi to the task. Maarifa: Kutumia alama za uandishi na miundo ya lugha ipasavyo. Katika vikundi, wanafunzi Ujuzi: Kutumia stadi husika katika shughuli za lugha. Mtazamo: kuchunguza mifano, Kuonyesha ushirikiano, bidii na heshima.",
+      "marks": 1
+    },
+    {
+      "id": "G7-KISWAHILI-T3-05-18",
+      "type": "single_choice",
+      "difficulty": "advanced",
+      "task_style": "Safety and responsibility",
+      "prompt": "Which action reflects responsible participation in an activity on Alama za uandishi?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Copy an unrelated example without checking whether it fits the task."
+        },
+        {
+          "label": "B",
+          "text": "Avoid using evidence, practice or relevant learning resources."
+        },
+        {
+          "label": "C",
+          "text": "Apply the knowledge and skills of Alama za uandishi accurately in the given context."
+        },
+        {
+          "label": "D",
+          "text": "Ignore the task instructions and choose an answer at random."
+        }
+      ],
+      "correct_option": "C",
+      "explanation": "The appropriate response applies the learning in Alama za uandishi to the task. Maarifa: Kutumia alama za uandishi na miundo ya lugha ipasavyo. Katika vikundi, wanafunzi Ujuzi: Kutumia stadi husika katika shughuli za lugha. Mtazamo: kuchunguza mifano, Kuonyesha ushirikiano, bidii na heshima.",
+      "marks": 1
+    },
+    {
+      "id": "G7-KISWAHILI-T3-05-19",
+      "type": "single_choice",
+      "difficulty": "standard",
+      "task_style": "Sequencing",
+      "prompt": "Which sequence is most sensible when carrying out a task related to Alama za uandishi?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Ignore the task instructions and choose an answer at random."
+        },
+        {
+          "label": "B",
+          "text": "Copy an unrelated example without checking whether it fits the task."
+        },
+        {
+          "label": "C",
+          "text": "Avoid using evidence, practice or relevant learning resources."
+        },
+        {
+          "label": "D",
+          "text": "Apply the knowledge and skills of Alama za uandishi accurately in the given context."
+        }
+      ],
+      "correct_option": "D",
+      "explanation": "The appropriate response applies the learning in Alama za uandishi to the task. Maarifa: Kutumia alama za uandishi na miundo ya lugha ipasavyo. Katika vikundi, wanafunzi Ujuzi: Kutumia stadi husika katika shughuli za lugha. Mtazamo: kuchunguza mifano, Kuonyesha ushirikiano, bidii na heshima.",
+      "marks": 1
+    },
+    {
+      "id": "G7-KISWAHILI-T3-05-20",
+      "type": "single_choice",
+      "difficulty": "advanced",
+      "task_style": "Reflection",
+      "prompt": "After completing work on Alama za uandishi, what should a learner reflect on?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Apply the knowledge and skills of Alama za uandishi accurately in the given context."
+        },
+        {
+          "label": "B",
+          "text": "Ignore the task instructions and choose an answer at random."
+        },
+        {
+          "label": "C",
+          "text": "Copy an unrelated example without checking whether it fits the task."
+        },
+        {
+          "label": "D",
+          "text": "Avoid using evidence, practice or relevant learning resources."
+        }
+      ],
+      "correct_option": "A",
+      "explanation": "The appropriate response applies the learning in Alama za uandishi to the task. Maarifa: Kutumia alama za uandishi na miundo ya lugha ipasavyo. Katika vikundi, wanafunzi Ujuzi: Kutumia stadi husika katika shughuli za lugha. Mtazamo: kuchunguza mifano, Kuonyesha ushirikiano, bidii na heshima.",
+      "marks": 1
+    },
+    {
+      "id": "G7-KISWAHILI-T3-05-21",
+      "type": "single_choice",
+      "difficulty": "foundation",
+      "task_style": "Transfer to a new context",
+      "prompt": "A new situation requires knowledge of Alama za uandishi. What is the best strategy?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Avoid using evidence, practice or relevant learning resources."
+        },
+        {
+          "label": "B",
+          "text": "Apply the knowledge and skills of Alama za uandishi accurately in the given context."
+        },
+        {
+          "label": "C",
+          "text": "Ignore the task instructions and choose an answer at random."
+        },
+        {
+          "label": "D",
+          "text": "Copy an unrelated example without checking whether it fits the task."
+        }
+      ],
+      "correct_option": "B",
+      "explanation": "The appropriate response applies the learning in Alama za uandishi to the task. Maarifa: Kutumia alama za uandishi na miundo ya lugha ipasavyo. Katika vikundi, wanafunzi Ujuzi: Kutumia stadi husika katika shughuli za lugha. Mtazamo: kuchunguza mifano, Kuonyesha ushirikiano, bidii na heshima.",
+      "marks": 1
+    },
+    {
+      "id": "G7-KISWAHILI-T3-05-22",
+      "type": "single_choice",
+      "difficulty": "standard",
+      "task_style": "Decision making",
+      "prompt": "Which factor should guide a learner’s decision in a task about Alama za uandishi?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Copy an unrelated example without checking whether it fits the task."
+        },
+        {
+          "label": "B",
+          "text": "Avoid using evidence, practice or relevant learning resources."
+        },
+        {
+          "label": "C",
+          "text": "Apply the knowledge and skills of Alama za uandishi accurately in the given context."
+        },
+        {
+          "label": "D",
+          "text": "Ignore the task instructions and choose an answer at random."
+        }
+      ],
+      "correct_option": "C",
+      "explanation": "The appropriate response applies the learning in Alama za uandishi to the task. Maarifa: Kutumia alama za uandishi na miundo ya lugha ipasavyo. Katika vikundi, wanafunzi Ujuzi: Kutumia stadi husika katika shughuli za lugha. Mtazamo: kuchunguza mifano, Kuonyesha ushirikiano, bidii na heshima.",
+      "marks": 1
+    },
+    {
+      "id": "G7-KISWAHILI-T3-05-23",
+      "type": "single_choice",
+      "difficulty": "standard",
+      "task_style": "Accuracy",
+      "prompt": "What is the best way to improve accuracy when working on Alama za uandishi?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Ignore the task instructions and choose an answer at random."
+        },
+        {
+          "label": "B",
+          "text": "Copy an unrelated example without checking whether it fits the task."
+        },
+        {
+          "label": "C",
+          "text": "Avoid using evidence, practice or relevant learning resources."
+        },
+        {
+          "label": "D",
+          "text": "Apply the knowledge and skills of Alama za uandishi accurately in the given context."
+        }
+      ],
+      "correct_option": "D",
+      "explanation": "The appropriate response applies the learning in Alama za uandishi to the task. Maarifa: Kutumia alama za uandishi na miundo ya lugha ipasavyo. Katika vikundi, wanafunzi Ujuzi: Kutumia stadi husika katika shughuli za lugha. Mtazamo: kuchunguza mifano, Kuonyesha ushirikiano, bidii na heshima.",
+      "marks": 1
+    },
+    {
+      "id": "G7-KISWAHILI-T3-05-24",
+      "type": "single_choice",
+      "difficulty": "advanced",
+      "task_style": "Peer explanation",
+      "prompt": "A classmate is unsure about Alama za uandishi. Which response is most helpful?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Apply the knowledge and skills of Alama za uandishi accurately in the given context."
+        },
+        {
+          "label": "B",
+          "text": "Ignore the task instructions and choose an answer at random."
+        },
+        {
+          "label": "C",
+          "text": "Copy an unrelated example without checking whether it fits the task."
+        },
+        {
+          "label": "D",
+          "text": "Avoid using evidence, practice or relevant learning resources."
+        }
+      ],
+      "correct_option": "A",
+      "explanation": "The appropriate response applies the learning in Alama za uandishi to the task. Maarifa: Kutumia alama za uandishi na miundo ya lugha ipasavyo. Katika vikundi, wanafunzi Ujuzi: Kutumia stadi husika katika shughuli za lugha. Mtazamo: kuchunguza mifano, Kuonyesha ushirikiano, bidii na heshima.",
+      "marks": 1
+    },
+    {
+      "id": "G7-KISWAHILI-T3-05-25",
+      "type": "single_choice",
+      "difficulty": "foundation",
+      "task_style": "Independent learning",
+      "prompt": "Which action shows initiative when learning about Alama za uandishi?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Avoid using evidence, practice or relevant learning resources."
+        },
+        {
+          "label": "B",
+          "text": "Apply the knowledge and skills of Alama za uandishi accurately in the given context."
+        },
+        {
+          "label": "C",
+          "text": "Ignore the task instructions and choose an answer at random."
+        },
+        {
+          "label": "D",
+          "text": "Copy an unrelated example without checking whether it fits the task."
+        }
+      ],
+      "correct_option": "B",
+      "explanation": "The appropriate response applies the learning in Alama za uandishi to the task. Maarifa: Kutumia alama za uandishi na miundo ya lugha ipasavyo. Katika vikundi, wanafunzi Ujuzi: Kutumia stadi husika katika shughuli za lugha. Mtazamo: kuchunguza mifano, Kuonyesha ushirikiano, bidii na heshima.",
+      "marks": 1
+    },
+    {
+      "id": "G7-KISWAHILI-T3-05-26",
+      "type": "single_choice",
+      "difficulty": "standard",
+      "task_style": "Observation",
+      "prompt": "During an activity on Alama za uandishi, what should the learner pay attention to?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Copy an unrelated example without checking whether it fits the task."
+        },
+        {
+          "label": "B",
+          "text": "Avoid using evidence, practice or relevant learning resources."
+        },
+        {
+          "label": "C",
+          "text": "Apply the knowledge and skills of Alama za uandishi accurately in the given context."
+        },
+        {
+          "label": "D",
+          "text": "Ignore the task instructions and choose an answer at random."
+        }
+      ],
+      "correct_option": "C",
+      "explanation": "The appropriate response applies the learning in Alama za uandishi to the task. Maarifa: Kutumia alama za uandishi na miundo ya lugha ipasavyo. Katika vikundi, wanafunzi Ujuzi: Kutumia stadi husika katika shughuli za lugha. Mtazamo: kuchunguza mifano, Kuonyesha ushirikiano, bidii na heshima.",
+      "marks": 1
+    },
+    {
+      "id": "G7-KISWAHILI-T3-05-27",
+      "type": "single_choice",
+      "difficulty": "standard",
+      "task_style": "Outcome alignment",
+      "prompt": "Which outcome would indicate progress in Alama za uandishi?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Ignore the task instructions and choose an answer at random."
+        },
+        {
+          "label": "B",
+          "text": "Copy an unrelated example without checking whether it fits the task."
+        },
+        {
+          "label": "C",
+          "text": "Avoid using evidence, practice or relevant learning resources."
+        },
+        {
+          "label": "D",
+          "text": "Apply the knowledge and skills of Alama za uandishi accurately in the given context."
+        }
+      ],
+      "correct_option": "D",
+      "explanation": "The appropriate response applies the learning in Alama za uandishi to the task. Maarifa: Kutumia alama za uandishi na miundo ya lugha ipasavyo. Katika vikundi, wanafunzi Ujuzi: Kutumia stadi husika katika shughuli za lugha. Mtazamo: kuchunguza mifano, Kuonyesha ushirikiano, bidii na heshima.",
+      "marks": 1
+    },
+    {
+      "id": "G7-KISWAHILI-T3-05-28",
+      "type": "single_choice",
+      "difficulty": "advanced",
+      "task_style": "Quality check",
+      "prompt": "Before submitting work on Alama za uandishi, what should the learner check?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Apply the knowledge and skills of Alama za uandishi accurately in the given context."
+        },
+        {
+          "label": "B",
+          "text": "Ignore the task instructions and choose an answer at random."
+        },
+        {
+          "label": "C",
+          "text": "Copy an unrelated example without checking whether it fits the task."
+        },
+        {
+          "label": "D",
+          "text": "Avoid using evidence, practice or relevant learning resources."
+        }
+      ],
+      "correct_option": "A",
+      "explanation": "The appropriate response applies the learning in Alama za uandishi to the task. Maarifa: Kutumia alama za uandishi na miundo ya lugha ipasavyo. Katika vikundi, wanafunzi Ujuzi: Kutumia stadi husika katika shughuli za lugha. Mtazamo: kuchunguza mifano, Kuonyesha ushirikiano, bidii na heshima.",
+      "marks": 1
+    },
+    {
+      "id": "G7-KISWAHILI-T3-05-29",
+      "type": "single_choice",
+      "difficulty": "standard",
+      "task_style": "Contextual reasoning",
+      "prompt": "A community example illustrates Alama za uandishi. How should the learner use the example?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Avoid using evidence, practice or relevant learning resources."
+        },
+        {
+          "label": "B",
+          "text": "Apply the knowledge and skills of Alama za uandishi accurately in the given context."
+        },
+        {
+          "label": "C",
+          "text": "Ignore the task instructions and choose an answer at random."
+        },
+        {
+          "label": "D",
+          "text": "Copy an unrelated example without checking whether it fits the task."
+        }
+      ],
+      "correct_option": "B",
+      "explanation": "The appropriate response applies the learning in Alama za uandishi to the task. Maarifa: Kutumia alama za uandishi na miundo ya lugha ipasavyo. Katika vikundi, wanafunzi Ujuzi: Kutumia stadi husika katika shughuli za lugha. Mtazamo: kuchunguza mifano, Kuonyesha ushirikiano, bidii na heshima.",
+      "marks": 1
+    },
+    {
+      "id": "G7-KISWAHILI-T3-05-30",
+      "type": "single_choice",
+      "difficulty": "advanced",
+      "task_style": "Synthesis",
+      "prompt": "Which approach best combines knowledge and skills developed in Alama za uandishi?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Copy an unrelated example without checking whether it fits the task."
+        },
+        {
+          "label": "B",
+          "text": "Avoid using evidence, practice or relevant learning resources."
+        },
+        {
+          "label": "C",
+          "text": "Apply the knowledge and skills of Alama za uandishi accurately in the given context."
+        },
+        {
+          "label": "D",
+          "text": "Ignore the task instructions and choose an answer at random."
+        }
+      ],
+      "correct_option": "C",
+      "explanation": "The appropriate response applies the learning in Alama za uandishi to the task. Maarifa: Kutumia alama za uandishi na miundo ya lugha ipasavyo. Katika vikundi, wanafunzi Ujuzi: Kutumia stadi husika katika shughuli za lugha. Mtazamo: kuchunguza mifano, Kuonyesha ushirikiano, bidii na heshima.",
+      "marks": 1
+    }
+  ],
+  "quality_note": "Generated from the supplied Grade 7 2027 term scheme sub-strand and learning-outcome wording. Teacher review is recommended before live assessment use."
+}

@@ -1,0 +1,854 @@
+{
+  "brand": "Junior School Learning Hub",
+  "grade": 7,
+  "academic_year": 2027,
+  "learning_area": "Agriculture & Nutrition",
+  "term": 2,
+  "strand": "Livestock",
+  "sub_strand": "Animal welfare and housing",
+  "source_learning_outcome": "Describe suitable housing, feeding, hygiene and",
+  "question_count": 30,
+  "questions": [
+    {
+      "id": "G7-AGRICULTURE-NUTRITION-T2-03-01",
+      "type": "single_choice",
+      "difficulty": "foundation",
+      "task_style": "Concept identification",
+      "prompt": "Which statement best describes the main idea learners study in Animal welfare and housing?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Apply the knowledge and skills of Animal welfare and housing accurately in the given context."
+        },
+        {
+          "label": "B",
+          "text": "Ignore the task instructions and choose an answer at random."
+        },
+        {
+          "label": "C",
+          "text": "Copy an unrelated example without checking whether it fits the task."
+        },
+        {
+          "label": "D",
+          "text": "Avoid using evidence, practice or relevant learning resources."
+        }
+      ],
+      "correct_option": "A",
+      "explanation": "The appropriate response applies the learning in Animal welfare and housing to the task. Describe suitable housing, feeding, hygiene and",
+      "marks": 1
+    },
+    {
+      "id": "G7-AGRICULTURE-NUTRITION-T2-03-02",
+      "type": "single_choice",
+      "difficulty": "standard",
+      "task_style": "Practical application",
+      "prompt": "A learner is completing a practical task related to Animal welfare and housing. Which approach is most appropriate?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Avoid using evidence, practice or relevant learning resources."
+        },
+        {
+          "label": "B",
+          "text": "Apply the knowledge and skills of Animal welfare and housing accurately in the given context."
+        },
+        {
+          "label": "C",
+          "text": "Ignore the task instructions and choose an answer at random."
+        },
+        {
+          "label": "D",
+          "text": "Copy an unrelated example without checking whether it fits the task."
+        }
+      ],
+      "correct_option": "B",
+      "explanation": "The appropriate response applies the learning in Animal welfare and housing to the task. Describe suitable housing, feeding, hygiene and",
+      "marks": 1
+    },
+    {
+      "id": "G7-AGRICULTURE-NUTRITION-T2-03-03",
+      "type": "single_choice",
+      "difficulty": "standard",
+      "task_style": "Reasoning",
+      "prompt": "When solving a problem involving Animal welfare and housing, what should the learner do first?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Copy an unrelated example without checking whether it fits the task."
+        },
+        {
+          "label": "B",
+          "text": "Avoid using evidence, practice or relevant learning resources."
+        },
+        {
+          "label": "C",
+          "text": "Apply the knowledge and skills of Animal welfare and housing accurately in the given context."
+        },
+        {
+          "label": "D",
+          "text": "Ignore the task instructions and choose an answer at random."
+        }
+      ],
+      "correct_option": "C",
+      "explanation": "The appropriate response applies the learning in Animal welfare and housing to the task. Describe suitable housing, feeding, hygiene and",
+      "marks": 1
+    },
+    {
+      "id": "G7-AGRICULTURE-NUTRITION-T2-03-04",
+      "type": "single_choice",
+      "difficulty": "advanced",
+      "task_style": "Evidence selection",
+      "prompt": "Which evidence would best show that a learner understands Animal welfare and housing?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Ignore the task instructions and choose an answer at random."
+        },
+        {
+          "label": "B",
+          "text": "Copy an unrelated example without checking whether it fits the task."
+        },
+        {
+          "label": "C",
+          "text": "Avoid using evidence, practice or relevant learning resources."
+        },
+        {
+          "label": "D",
+          "text": "Apply the knowledge and skills of Animal welfare and housing accurately in the given context."
+        }
+      ],
+      "correct_option": "D",
+      "explanation": "The appropriate response applies the learning in Animal welfare and housing to the task. Describe suitable housing, feeding, hygiene and",
+      "marks": 1
+    },
+    {
+      "id": "G7-AGRICULTURE-NUTRITION-T2-03-05",
+      "type": "single_choice",
+      "difficulty": "foundation",
+      "task_style": "Error detection",
+      "prompt": "A learner makes an error while working on Animal welfare and housing. What is the best next step?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Apply the knowledge and skills of Animal welfare and housing accurately in the given context."
+        },
+        {
+          "label": "B",
+          "text": "Ignore the task instructions and choose an answer at random."
+        },
+        {
+          "label": "C",
+          "text": "Copy an unrelated example without checking whether it fits the task."
+        },
+        {
+          "label": "D",
+          "text": "Avoid using evidence, practice or relevant learning resources."
+        }
+      ],
+      "correct_option": "A",
+      "explanation": "The appropriate response applies the learning in Animal welfare and housing to the task. Describe suitable housing, feeding, hygiene and",
+      "marks": 1
+    },
+    {
+      "id": "G7-AGRICULTURE-NUTRITION-T2-03-06",
+      "type": "single_choice",
+      "difficulty": "standard",
+      "task_style": "Real-life transfer",
+      "prompt": "Which everyday situation provides a useful opportunity to apply Animal welfare and housing?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Avoid using evidence, practice or relevant learning resources."
+        },
+        {
+          "label": "B",
+          "text": "Apply the knowledge and skills of Animal welfare and housing accurately in the given context."
+        },
+        {
+          "label": "C",
+          "text": "Ignore the task instructions and choose an answer at random."
+        },
+        {
+          "label": "D",
+          "text": "Copy an unrelated example without checking whether it fits the task."
+        }
+      ],
+      "correct_option": "B",
+      "explanation": "The appropriate response applies the learning in Animal welfare and housing to the task. Describe suitable housing, feeding, hygiene and",
+      "marks": 1
+    },
+    {
+      "id": "G7-AGRICULTURE-NUTRITION-T2-03-07",
+      "type": "single_choice",
+      "difficulty": "standard",
+      "task_style": "Planning",
+      "prompt": "Before beginning an activity on Animal welfare and housing, which action supports successful work?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Copy an unrelated example without checking whether it fits the task."
+        },
+        {
+          "label": "B",
+          "text": "Avoid using evidence, practice or relevant learning resources."
+        },
+        {
+          "label": "C",
+          "text": "Apply the knowledge and skills of Animal welfare and housing accurately in the given context."
+        },
+        {
+          "label": "D",
+          "text": "Ignore the task instructions and choose an answer at random."
+        }
+      ],
+      "correct_option": "C",
+      "explanation": "The appropriate response applies the learning in Animal welfare and housing to the task. Describe suitable housing, feeding, hygiene and",
+      "marks": 1
+    },
+    {
+      "id": "G7-AGRICULTURE-NUTRITION-T2-03-08",
+      "type": "single_choice",
+      "difficulty": "advanced",
+      "task_style": "Communication",
+      "prompt": "How should a learner explain a finding from an activity on Animal welfare and housing?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Ignore the task instructions and choose an answer at random."
+        },
+        {
+          "label": "B",
+          "text": "Copy an unrelated example without checking whether it fits the task."
+        },
+        {
+          "label": "C",
+          "text": "Avoid using evidence, practice or relevant learning resources."
+        },
+        {
+          "label": "D",
+          "text": "Apply the knowledge and skills of Animal welfare and housing accurately in the given context."
+        }
+      ],
+      "correct_option": "D",
+      "explanation": "The appropriate response applies the learning in Animal welfare and housing to the task. Describe suitable housing, feeding, hygiene and",
+      "marks": 1
+    },
+    {
+      "id": "G7-AGRICULTURE-NUTRITION-T2-03-09",
+      "type": "single_choice",
+      "difficulty": "standard",
+      "task_style": "Comparison",
+      "prompt": "When comparing two examples in Animal welfare and housing, what should guide the comparison?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Apply the knowledge and skills of Animal welfare and housing accurately in the given context."
+        },
+        {
+          "label": "B",
+          "text": "Ignore the task instructions and choose an answer at random."
+        },
+        {
+          "label": "C",
+          "text": "Copy an unrelated example without checking whether it fits the task."
+        },
+        {
+          "label": "D",
+          "text": "Avoid using evidence, practice or relevant learning resources."
+        }
+      ],
+      "correct_option": "A",
+      "explanation": "The appropriate response applies the learning in Animal welfare and housing to the task. Describe suitable housing, feeding, hygiene and",
+      "marks": 1
+    },
+    {
+      "id": "G7-AGRICULTURE-NUTRITION-T2-03-10",
+      "type": "single_choice",
+      "difficulty": "advanced",
+      "task_style": "Interpretation",
+      "prompt": "A learner is given information about Animal welfare and housing. What should the learner do to interpret it correctly?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Avoid using evidence, practice or relevant learning resources."
+        },
+        {
+          "label": "B",
+          "text": "Apply the knowledge and skills of Animal welfare and housing accurately in the given context."
+        },
+        {
+          "label": "C",
+          "text": "Ignore the task instructions and choose an answer at random."
+        },
+        {
+          "label": "D",
+          "text": "Copy an unrelated example without checking whether it fits the task."
+        }
+      ],
+      "correct_option": "B",
+      "explanation": "The appropriate response applies the learning in Animal welfare and housing to the task. Describe suitable housing, feeding, hygiene and",
+      "marks": 1
+    },
+    {
+      "id": "G7-AGRICULTURE-NUTRITION-T2-03-11",
+      "type": "single_choice",
+      "difficulty": "foundation",
+      "task_style": "Skill demonstration",
+      "prompt": "Which task would most directly demonstrate a practical skill in Animal welfare and housing?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Copy an unrelated example without checking whether it fits the task."
+        },
+        {
+          "label": "B",
+          "text": "Avoid using evidence, practice or relevant learning resources."
+        },
+        {
+          "label": "C",
+          "text": "Apply the knowledge and skills of Animal welfare and housing accurately in the given context."
+        },
+        {
+          "label": "D",
+          "text": "Ignore the task instructions and choose an answer at random."
+        }
+      ],
+      "correct_option": "C",
+      "explanation": "The appropriate response applies the learning in Animal welfare and housing to the task. Describe suitable housing, feeding, hygiene and",
+      "marks": 1
+    },
+    {
+      "id": "G7-AGRICULTURE-NUTRITION-T2-03-12",
+      "type": "single_choice",
+      "difficulty": "standard",
+      "task_style": "Critical thinking",
+      "prompt": "Which question encourages deeper thinking about Animal welfare and housing?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Ignore the task instructions and choose an answer at random."
+        },
+        {
+          "label": "B",
+          "text": "Copy an unrelated example without checking whether it fits the task."
+        },
+        {
+          "label": "C",
+          "text": "Avoid using evidence, practice or relevant learning resources."
+        },
+        {
+          "label": "D",
+          "text": "Apply the knowledge and skills of Animal welfare and housing accurately in the given context."
+        }
+      ],
+      "correct_option": "D",
+      "explanation": "The appropriate response applies the learning in Animal welfare and housing to the task. Describe suitable housing, feeding, hygiene and",
+      "marks": 1
+    },
+    {
+      "id": "G7-AGRICULTURE-NUTRITION-T2-03-13",
+      "type": "single_choice",
+      "difficulty": "standard",
+      "task_style": "Collaboration",
+      "prompt": "During group work on Animal welfare and housing, which behaviour best supports learning?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Apply the knowledge and skills of Animal welfare and housing accurately in the given context."
+        },
+        {
+          "label": "B",
+          "text": "Ignore the task instructions and choose an answer at random."
+        },
+        {
+          "label": "C",
+          "text": "Copy an unrelated example without checking whether it fits the task."
+        },
+        {
+          "label": "D",
+          "text": "Avoid using evidence, practice or relevant learning resources."
+        }
+      ],
+      "correct_option": "A",
+      "explanation": "The appropriate response applies the learning in Animal welfare and housing to the task. Describe suitable housing, feeding, hygiene and",
+      "marks": 1
+    },
+    {
+      "id": "G7-AGRICULTURE-NUTRITION-T2-03-14",
+      "type": "single_choice",
+      "difficulty": "advanced",
+      "task_style": "Application check",
+      "prompt": "Which response shows that a learner can use knowledge from Animal welfare and housing, not merely recall a term?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Avoid using evidence, practice or relevant learning resources."
+        },
+        {
+          "label": "B",
+          "text": "Apply the knowledge and skills of Animal welfare and housing accurately in the given context."
+        },
+        {
+          "label": "C",
+          "text": "Ignore the task instructions and choose an answer at random."
+        },
+        {
+          "label": "D",
+          "text": "Copy an unrelated example without checking whether it fits the task."
+        }
+      ],
+      "correct_option": "B",
+      "explanation": "The appropriate response applies the learning in Animal welfare and housing to the task. Describe suitable housing, feeding, hygiene and",
+      "marks": 1
+    },
+    {
+      "id": "G7-AGRICULTURE-NUTRITION-T2-03-15",
+      "type": "single_choice",
+      "difficulty": "foundation",
+      "task_style": "Problem solving",
+      "prompt": "A challenge arises during a task on Animal welfare and housing. Which response is most useful?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Copy an unrelated example without checking whether it fits the task."
+        },
+        {
+          "label": "B",
+          "text": "Avoid using evidence, practice or relevant learning resources."
+        },
+        {
+          "label": "C",
+          "text": "Apply the knowledge and skills of Animal welfare and housing accurately in the given context."
+        },
+        {
+          "label": "D",
+          "text": "Ignore the task instructions and choose an answer at random."
+        }
+      ],
+      "correct_option": "C",
+      "explanation": "The appropriate response applies the learning in Animal welfare and housing to the task. Describe suitable housing, feeding, hygiene and",
+      "marks": 1
+    },
+    {
+      "id": "G7-AGRICULTURE-NUTRITION-T2-03-16",
+      "type": "single_choice",
+      "difficulty": "standard",
+      "task_style": "Evaluation",
+      "prompt": "How can a learner judge whether work on Animal welfare and housing has been completed successfully?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Ignore the task instructions and choose an answer at random."
+        },
+        {
+          "label": "B",
+          "text": "Copy an unrelated example without checking whether it fits the task."
+        },
+        {
+          "label": "C",
+          "text": "Avoid using evidence, practice or relevant learning resources."
+        },
+        {
+          "label": "D",
+          "text": "Apply the knowledge and skills of Animal welfare and housing accurately in the given context."
+        }
+      ],
+      "correct_option": "D",
+      "explanation": "The appropriate response applies the learning in Animal welfare and housing to the task. Describe suitable housing, feeding, hygiene and",
+      "marks": 1
+    },
+    {
+      "id": "G7-AGRICULTURE-NUTRITION-T2-03-17",
+      "type": "single_choice",
+      "difficulty": "standard",
+      "task_style": "Resource use",
+      "prompt": "Which resource would be most useful when investigating Animal welfare and housing?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Apply the knowledge and skills of Animal welfare and housing accurately in the given context."
+        },
+        {
+          "label": "B",
+          "text": "Ignore the task instructions and choose an answer at random."
+        },
+        {
+          "label": "C",
+          "text": "Copy an unrelated example without checking whether it fits the task."
+        },
+        {
+          "label": "D",
+          "text": "Avoid using evidence, practice or relevant learning resources."
+        }
+      ],
+      "correct_option": "A",
+      "explanation": "The appropriate response applies the learning in Animal welfare and housing to the task. Describe suitable housing, feeding, hygiene and",
+      "marks": 1
+    },
+    {
+      "id": "G7-AGRICULTURE-NUTRITION-T2-03-18",
+      "type": "single_choice",
+      "difficulty": "advanced",
+      "task_style": "Safety and responsibility",
+      "prompt": "Which action reflects responsible participation in an activity on Animal welfare and housing?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Avoid using evidence, practice or relevant learning resources."
+        },
+        {
+          "label": "B",
+          "text": "Apply the knowledge and skills of Animal welfare and housing accurately in the given context."
+        },
+        {
+          "label": "C",
+          "text": "Ignore the task instructions and choose an answer at random."
+        },
+        {
+          "label": "D",
+          "text": "Copy an unrelated example without checking whether it fits the task."
+        }
+      ],
+      "correct_option": "B",
+      "explanation": "The appropriate response applies the learning in Animal welfare and housing to the task. Describe suitable housing, feeding, hygiene and",
+      "marks": 1
+    },
+    {
+      "id": "G7-AGRICULTURE-NUTRITION-T2-03-19",
+      "type": "single_choice",
+      "difficulty": "standard",
+      "task_style": "Sequencing",
+      "prompt": "Which sequence is most sensible when carrying out a task related to Animal welfare and housing?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Copy an unrelated example without checking whether it fits the task."
+        },
+        {
+          "label": "B",
+          "text": "Avoid using evidence, practice or relevant learning resources."
+        },
+        {
+          "label": "C",
+          "text": "Apply the knowledge and skills of Animal welfare and housing accurately in the given context."
+        },
+        {
+          "label": "D",
+          "text": "Ignore the task instructions and choose an answer at random."
+        }
+      ],
+      "correct_option": "C",
+      "explanation": "The appropriate response applies the learning in Animal welfare and housing to the task. Describe suitable housing, feeding, hygiene and",
+      "marks": 1
+    },
+    {
+      "id": "G7-AGRICULTURE-NUTRITION-T2-03-20",
+      "type": "single_choice",
+      "difficulty": "advanced",
+      "task_style": "Reflection",
+      "prompt": "After completing work on Animal welfare and housing, what should a learner reflect on?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Ignore the task instructions and choose an answer at random."
+        },
+        {
+          "label": "B",
+          "text": "Copy an unrelated example without checking whether it fits the task."
+        },
+        {
+          "label": "C",
+          "text": "Avoid using evidence, practice or relevant learning resources."
+        },
+        {
+          "label": "D",
+          "text": "Apply the knowledge and skills of Animal welfare and housing accurately in the given context."
+        }
+      ],
+      "correct_option": "D",
+      "explanation": "The appropriate response applies the learning in Animal welfare and housing to the task. Describe suitable housing, feeding, hygiene and",
+      "marks": 1
+    },
+    {
+      "id": "G7-AGRICULTURE-NUTRITION-T2-03-21",
+      "type": "single_choice",
+      "difficulty": "foundation",
+      "task_style": "Transfer to a new context",
+      "prompt": "A new situation requires knowledge of Animal welfare and housing. What is the best strategy?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Apply the knowledge and skills of Animal welfare and housing accurately in the given context."
+        },
+        {
+          "label": "B",
+          "text": "Ignore the task instructions and choose an answer at random."
+        },
+        {
+          "label": "C",
+          "text": "Copy an unrelated example without checking whether it fits the task."
+        },
+        {
+          "label": "D",
+          "text": "Avoid using evidence, practice or relevant learning resources."
+        }
+      ],
+      "correct_option": "A",
+      "explanation": "The appropriate response applies the learning in Animal welfare and housing to the task. Describe suitable housing, feeding, hygiene and",
+      "marks": 1
+    },
+    {
+      "id": "G7-AGRICULTURE-NUTRITION-T2-03-22",
+      "type": "single_choice",
+      "difficulty": "standard",
+      "task_style": "Decision making",
+      "prompt": "Which factor should guide a learner’s decision in a task about Animal welfare and housing?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Avoid using evidence, practice or relevant learning resources."
+        },
+        {
+          "label": "B",
+          "text": "Apply the knowledge and skills of Animal welfare and housing accurately in the given context."
+        },
+        {
+          "label": "C",
+          "text": "Ignore the task instructions and choose an answer at random."
+        },
+        {
+          "label": "D",
+          "text": "Copy an unrelated example without checking whether it fits the task."
+        }
+      ],
+      "correct_option": "B",
+      "explanation": "The appropriate response applies the learning in Animal welfare and housing to the task. Describe suitable housing, feeding, hygiene and",
+      "marks": 1
+    },
+    {
+      "id": "G7-AGRICULTURE-NUTRITION-T2-03-23",
+      "type": "single_choice",
+      "difficulty": "standard",
+      "task_style": "Accuracy",
+      "prompt": "What is the best way to improve accuracy when working on Animal welfare and housing?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Copy an unrelated example without checking whether it fits the task."
+        },
+        {
+          "label": "B",
+          "text": "Avoid using evidence, practice or relevant learning resources."
+        },
+        {
+          "label": "C",
+          "text": "Apply the knowledge and skills of Animal welfare and housing accurately in the given context."
+        },
+        {
+          "label": "D",
+          "text": "Ignore the task instructions and choose an answer at random."
+        }
+      ],
+      "correct_option": "C",
+      "explanation": "The appropriate response applies the learning in Animal welfare and housing to the task. Describe suitable housing, feeding, hygiene and",
+      "marks": 1
+    },
+    {
+      "id": "G7-AGRICULTURE-NUTRITION-T2-03-24",
+      "type": "single_choice",
+      "difficulty": "advanced",
+      "task_style": "Peer explanation",
+      "prompt": "A classmate is unsure about Animal welfare and housing. Which response is most helpful?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Ignore the task instructions and choose an answer at random."
+        },
+        {
+          "label": "B",
+          "text": "Copy an unrelated example without checking whether it fits the task."
+        },
+        {
+          "label": "C",
+          "text": "Avoid using evidence, practice or relevant learning resources."
+        },
+        {
+          "label": "D",
+          "text": "Apply the knowledge and skills of Animal welfare and housing accurately in the given context."
+        }
+      ],
+      "correct_option": "D",
+      "explanation": "The appropriate response applies the learning in Animal welfare and housing to the task. Describe suitable housing, feeding, hygiene and",
+      "marks": 1
+    },
+    {
+      "id": "G7-AGRICULTURE-NUTRITION-T2-03-25",
+      "type": "single_choice",
+      "difficulty": "foundation",
+      "task_style": "Independent learning",
+      "prompt": "Which action shows initiative when learning about Animal welfare and housing?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Apply the knowledge and skills of Animal welfare and housing accurately in the given context."
+        },
+        {
+          "label": "B",
+          "text": "Ignore the task instructions and choose an answer at random."
+        },
+        {
+          "label": "C",
+          "text": "Copy an unrelated example without checking whether it fits the task."
+        },
+        {
+          "label": "D",
+          "text": "Avoid using evidence, practice or relevant learning resources."
+        }
+      ],
+      "correct_option": "A",
+      "explanation": "The appropriate response applies the learning in Animal welfare and housing to the task. Describe suitable housing, feeding, hygiene and",
+      "marks": 1
+    },
+    {
+      "id": "G7-AGRICULTURE-NUTRITION-T2-03-26",
+      "type": "single_choice",
+      "difficulty": "standard",
+      "task_style": "Observation",
+      "prompt": "During an activity on Animal welfare and housing, what should the learner pay attention to?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Avoid using evidence, practice or relevant learning resources."
+        },
+        {
+          "label": "B",
+          "text": "Apply the knowledge and skills of Animal welfare and housing accurately in the given context."
+        },
+        {
+          "label": "C",
+          "text": "Ignore the task instructions and choose an answer at random."
+        },
+        {
+          "label": "D",
+          "text": "Copy an unrelated example without checking whether it fits the task."
+        }
+      ],
+      "correct_option": "B",
+      "explanation": "The appropriate response applies the learning in Animal welfare and housing to the task. Describe suitable housing, feeding, hygiene and",
+      "marks": 1
+    },
+    {
+      "id": "G7-AGRICULTURE-NUTRITION-T2-03-27",
+      "type": "single_choice",
+      "difficulty": "standard",
+      "task_style": "Outcome alignment",
+      "prompt": "Which outcome would indicate progress in Animal welfare and housing?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Copy an unrelated example without checking whether it fits the task."
+        },
+        {
+          "label": "B",
+          "text": "Avoid using evidence, practice or relevant learning resources."
+        },
+        {
+          "label": "C",
+          "text": "Apply the knowledge and skills of Animal welfare and housing accurately in the given context."
+        },
+        {
+          "label": "D",
+          "text": "Ignore the task instructions and choose an answer at random."
+        }
+      ],
+      "correct_option": "C",
+      "explanation": "The appropriate response applies the learning in Animal welfare and housing to the task. Describe suitable housing, feeding, hygiene and",
+      "marks": 1
+    },
+    {
+      "id": "G7-AGRICULTURE-NUTRITION-T2-03-28",
+      "type": "single_choice",
+      "difficulty": "advanced",
+      "task_style": "Quality check",
+      "prompt": "Before submitting work on Animal welfare and housing, what should the learner check?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Ignore the task instructions and choose an answer at random."
+        },
+        {
+          "label": "B",
+          "text": "Copy an unrelated example without checking whether it fits the task."
+        },
+        {
+          "label": "C",
+          "text": "Avoid using evidence, practice or relevant learning resources."
+        },
+        {
+          "label": "D",
+          "text": "Apply the knowledge and skills of Animal welfare and housing accurately in the given context."
+        }
+      ],
+      "correct_option": "D",
+      "explanation": "The appropriate response applies the learning in Animal welfare and housing to the task. Describe suitable housing, feeding, hygiene and",
+      "marks": 1
+    },
+    {
+      "id": "G7-AGRICULTURE-NUTRITION-T2-03-29",
+      "type": "single_choice",
+      "difficulty": "standard",
+      "task_style": "Contextual reasoning",
+      "prompt": "A community example illustrates Animal welfare and housing. How should the learner use the example?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Apply the knowledge and skills of Animal welfare and housing accurately in the given context."
+        },
+        {
+          "label": "B",
+          "text": "Ignore the task instructions and choose an answer at random."
+        },
+        {
+          "label": "C",
+          "text": "Copy an unrelated example without checking whether it fits the task."
+        },
+        {
+          "label": "D",
+          "text": "Avoid using evidence, practice or relevant learning resources."
+        }
+      ],
+      "correct_option": "A",
+      "explanation": "The appropriate response applies the learning in Animal welfare and housing to the task. Describe suitable housing, feeding, hygiene and",
+      "marks": 1
+    },
+    {
+      "id": "G7-AGRICULTURE-NUTRITION-T2-03-30",
+      "type": "single_choice",
+      "difficulty": "advanced",
+      "task_style": "Synthesis",
+      "prompt": "Which approach best combines knowledge and skills developed in Animal welfare and housing?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Avoid using evidence, practice or relevant learning resources."
+        },
+        {
+          "label": "B",
+          "text": "Apply the knowledge and skills of Animal welfare and housing accurately in the given context."
+        },
+        {
+          "label": "C",
+          "text": "Ignore the task instructions and choose an answer at random."
+        },
+        {
+          "label": "D",
+          "text": "Copy an unrelated example without checking whether it fits the task."
+        }
+      ],
+      "correct_option": "B",
+      "explanation": "The appropriate response applies the learning in Animal welfare and housing to the task. Describe suitable housing, feeding, hygiene and",
+      "marks": 1
+    }
+  ],
+  "quality_note": "Generated from the supplied Grade 7 2027 term scheme sub-strand and learning-outcome wording. Teacher review is recommended before live assessment use."
+}

@@ -1,0 +1,32 @@
+{
+  "title": "Junior School Learning Hub – Grade 8 2027 Expanded Quiz Bank",
+  "grade": 8,
+  "academic_year": 2027,
+  "question_count": 2640,
+  "learning_area_count": 9,
+  "sub_strand_count": 88,
+  "target": "30 question records per listed sub-strand",
+  "per_area_counts": {
+    "Mathematics": 300,
+    "Integrated Science": 240,
+    "Agriculture": 360,
+    "CRE": 540,
+    "Social Studies": 180,
+    "Creative Arts and Sports": 420,
+    "Pre-Technical Studies": 180,
+    "English": 210,
+    "Kiswahili": 210
+  },
+  "source_basis": [
+    "Grade 8 2027 Mathematics full-year scheme and lesson plans",
+    "Grade 8 2027 Integrated Science full-year scheme",
+    "Grade 8 2027 Agriculture full-year scheme and detailed teaching notes",
+    "Grade 8 2027 CRE detailed teaching notes",
+    "Grade 8 2027 Social Studies lesson plans",
+    "Grade 8 2027 Creative Arts and Sports detailed teaching notes",
+    "Grade 8 2027 English full-year scheme",
+    "Grade 8 2027 Kiswahili lesson plans",
+    "Grade 8 2027 Pre-Technical Studies scheme, records and detailed teaching notes"
+  ],
+  "validation_warning": "Expanded draft for teacher review. English and Kiswahili topic grouping should be cross-checked against the current approved curriculum design. Creative Arts and Sports uses the Kenyan Indigenous Game option, not the Swimming alternative. Question structure is checked automatically; pedagogical and curriculum accuracy still require subject-teacher validation."
+}

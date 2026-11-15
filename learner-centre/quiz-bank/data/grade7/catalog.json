@@ -1,0 +1,1222 @@
+{
+  "grade": 7,
+  "total_files": 135,
+  "total_questions": 4050,
+  "files": [
+    {
+      "subject": "agriculture-nutrition",
+      "learning_area": "AGRICULTURE & NUTRITION",
+      "term": 1,
+      "strand": "Agricultural foundations",
+      "sub_strand": "Importance of agriculture",
+      "question_count": 30,
+      "path": "grade7/question-banks/grade7/agriculture-nutrition/term1/importance-of-agriculture/questions.json"
+    },
+    {
+      "subject": "agriculture-nutrition",
+      "learning_area": "AGRICULTURE & NUTRITION",
+      "term": 1,
+      "strand": "Crop production",
+      "sub_strand": "Crop care",
+      "question_count": 30,
+      "path": "grade7/question-banks/grade7/agriculture-nutrition/term1/crop-care/questions.json"
+    },
+    {
+      "subject": "agriculture-nutrition",
+      "learning_area": "AGRICULTURE & NUTRITION",
+      "term": 1,
+      "strand": "Crop production",
+      "sub_strand": "Land preparation and planting",
+      "question_count": 30,
+      "path": "grade7/question-banks/grade7/agriculture-nutrition/term1/land-preparation-and-planting/questions.json"
+    },
+    {
+      "subject": "agriculture-nutrition",
+      "learning_area": "AGRICULTURE & NUTRITION",
+      "term": 1,
+      "strand": "Crop production",
+      "sub_strand": "Tools and safety",
+      "question_count": 30,
+      "path": "grade7/question-banks/grade7/agriculture-nutrition/term1/tools-and-safety/questions.json"
+    },
+    {
+      "subject": "agriculture-nutrition",
+      "learning_area": "AGRICULTURE & NUTRITION",
+      "term": 1,
+      "strand": "Soil",
+      "sub_strand": "Soil properties and care",
+      "question_count": 30,
+      "path": "grade7/question-banks/grade7/agriculture-nutrition/term1/soil-properties-and-care/questions.json"
+    },
+    {
+      "subject": "agriculture-nutrition",
+      "learning_area": "AGRICULTURE & NUTRITION",
+      "term": 2,
+      "strand": "Agribusiness",
+      "sub_strand": "Farm records and resources",
+      "question_count": 30,
+      "path": "grade7/question-banks/grade7/agriculture-nutrition/term2/farm-records-and-resources/questions.json"
+    },
+    {
+      "subject": "agriculture-nutrition",
+      "learning_area": "AGRICULTURE & NUTRITION",
+      "term": 2,
+      "strand": "Crop production",
+      "sub_strand": "Crop growth and maintenance",
+      "question_count": 30,
+      "path": "grade7/question-banks/grade7/agriculture-nutrition/term2/crop-growth-and-maintenance/questions.json"
+    },
+    {
+      "subject": "agriculture-nutrition",
+      "learning_area": "AGRICULTURE & NUTRITION",
+      "term": 2,
+      "strand": "Livestock",
+      "sub_strand": "Animal welfare and housing",
+      "question_count": 30,
+      "path": "grade7/question-banks/grade7/agriculture-nutrition/term2/animal-welfare-and-housing/questions.json"
+    },
+    {
+      "subject": "agriculture-nutrition",
+      "learning_area": "AGRICULTURE & NUTRITION",
+      "term": 2,
+      "strand": "Livestock",
+      "sub_strand": "Introduction to livestock",
+      "question_count": 30,
+      "path": "grade7/question-banks/grade7/agriculture-nutrition/term2/introduction-to-livestock/questions.json"
+    },
+    {
+      "subject": "agriculture-nutrition",
+      "learning_area": "AGRICULTURE & NUTRITION",
+      "term": 2,
+      "strand": "Water",
+      "sub_strand": "Water conservation and irrigation",
+      "question_count": 30,
+      "path": "grade7/question-banks/grade7/agriculture-nutrition/term2/water-conservation-and-irrigation/questions.json"
+    },
+    {
+      "subject": "agriculture-nutrition",
+      "learning_area": "AGRICULTURE & NUTRITION",
+      "term": 3,
+      "strand": "Enterprise",
+      "sub_strand": "Simple farm enterprise",
+      "question_count": 30,
+      "path": "grade7/question-banks/grade7/agriculture-nutrition/term3/simple-farm-enterprise/questions.json"
+    },
+    {
+      "subject": "agriculture-nutrition",
+      "learning_area": "AGRICULTURE & NUTRITION",
+      "term": 3,
+      "strand": "Environment",
+      "sub_strand": "Agroforestry and conservation",
+      "question_count": 30,
+      "path": "grade7/question-banks/grade7/agriculture-nutrition/term3/agroforestry-and-conservation/questions.json"
+    },
+    {
+      "subject": "agriculture-nutrition",
+      "learning_area": "AGRICULTURE & NUTRITION",
+      "term": 3,
+      "strand": "Food",
+      "sub_strand": "Harvesting and storage",
+      "question_count": 30,
+      "path": "grade7/question-banks/grade7/agriculture-nutrition/term3/harvesting-and-storage/questions.json"
+    },
+    {
+      "subject": "agriculture-nutrition",
+      "learning_area": "AGRICULTURE & NUTRITION",
+      "term": 3,
+      "strand": "Nutrition",
+      "sub_strand": "Food and nutrition",
+      "question_count": 30,
+      "path": "grade7/question-banks/grade7/agriculture-nutrition/term3/food-and-nutrition/questions.json"
+    },
+    {
+      "subject": "agriculture-nutrition",
+      "learning_area": "AGRICULTURE & NUTRITION",
+      "term": 3,
+      "strand": "Practical project",
+      "sub_strand": "School or home production project",
+      "question_count": 30,
+      "path": "grade7/question-banks/grade7/agriculture-nutrition/term3/school-or-home-production-project/questions.json"
+    },
+    {
+      "subject": "cre",
+      "learning_area": "CRE",
+      "term": 1,
+      "strand": "Christian values",
+      "sub_strand": "Honesty and integrity",
+      "question_count": 30,
+      "path": "grade7/question-banks/grade7/cre/term1/honesty-and-integrity/questions.json"
+    },
+    {
+      "subject": "cre",
+      "learning_area": "CRE",
+      "term": 1,
+      "strand": "Creation",
+      "sub_strand": "Creation and responsibility",
+      "question_count": 30,
+      "path": "grade7/question-banks/grade7/cre/term1/creation-and-responsibility/questions.json"
+    },
+    {
+      "subject": "cre",
+      "learning_area": "CRE",
+      "term": 1,
+      "strand": "Prayer",
+      "sub_strand": "Prayer and worship",
+      "question_count": 30,
+      "path": "grade7/question-banks/grade7/cre/term1/prayer-and-worship/questions.json"
+    },
+    {
+      "subject": "cre",
+      "learning_area": "CRE",
+      "term": 1,
+      "strand": "Relationships",
+      "sub_strand": "Family and community",
+      "question_count": 30,
+      "path": "grade7/question-banks/grade7/cre/term1/family-and-community/questions.json"
+    },
+    {
+      "subject": "cre",
+      "learning_area": "CRE",
+      "term": 1,
+      "strand": "The Bible",
+      "sub_strand": "The Bible and its message",
+      "question_count": 30,
+      "path": "grade7/question-banks/grade7/cre/term1/the-bible-and-its-message/questions.json"
+    },
+    {
+      "subject": "cre",
+      "learning_area": "CRE",
+      "term": 2,
+      "strand": "Christian values",
+      "sub_strand": "Forgiveness and reconciliation",
+      "question_count": 30,
+      "path": "grade7/question-banks/grade7/cre/term2/forgiveness-and-reconciliation/questions.json"
+    },
+    {
+      "subject": "cre",
+      "learning_area": "CRE",
+      "term": 2,
+      "strand": "Church and community",
+      "sub_strand": "Worship and fellowship",
+      "question_count": 30,
+      "path": "grade7/question-banks/grade7/cre/term2/worship-and-fellowship/questions.json"
+    },
+    {
+      "subject": "cre",
+      "learning_area": "CRE",
+      "term": 2,
+      "strand": "Life of Jesus",
+      "sub_strand": "Teachings and actions of Jesus",
+      "question_count": 30,
+      "path": "grade7/question-banks/grade7/cre/term2/teachings-and-actions-of-jesus/questions.json"
+    },
+    {
+      "subject": "cre",
+      "learning_area": "CRE",
+      "term": 2,
+      "strand": "Moral choices",
+      "sub_strand": "Responsible decisions",
+      "question_count": 30,
+      "path": "grade7/question-banks/grade7/cre/term2/responsible-decisions/questions.json"
+    },
+    {
+      "subject": "cre",
+      "learning_area": "CRE",
+      "term": 2,
+      "strand": "Service",
+      "sub_strand": "Helping others",
+      "question_count": 30,
+      "path": "grade7/question-banks/grade7/cre/term2/helping-others/questions.json"
+    },
+    {
+      "subject": "cre",
+      "learning_area": "CRE",
+      "term": 3,
+      "strand": "Christian living",
+      "sub_strand": "Stewardship",
+      "question_count": 30,
+      "path": "grade7/question-banks/grade7/cre/term3/stewardship/questions.json"
+    },
+    {
+      "subject": "cre",
+      "learning_area": "CRE",
+      "term": 3,
+      "strand": "Christian values",
+      "sub_strand": "Justice, peace and respect",
+      "question_count": 30,
+      "path": "grade7/question-banks/grade7/cre/term3/justice-peace-and-respect/questions.json"
+    },
+    {
+      "subject": "cre",
+      "learning_area": "CRE",
+      "term": 3,
+      "strand": "Community",
+      "sub_strand": "Contribution to society",
+      "question_count": 30,
+      "path": "grade7/question-banks/grade7/cre/term3/contribution-to-society/questions.json"
+    },
+    {
+      "subject": "cre",
+      "learning_area": "CRE",
+      "term": 3,
+      "strand": "Life skills",
+      "sub_strand": "Resilience and self-discipline",
+      "question_count": 30,
+      "path": "grade7/question-banks/grade7/cre/term3/resilience-and-self-discipline/questions.json"
+    },
+    {
+      "subject": "cre",
+      "learning_area": "CRE",
+      "term": 3,
+      "strand": "Reflection",
+      "sub_strand": "Personal values and service",
+      "question_count": 30,
+      "path": "grade7/question-banks/grade7/cre/term3/personal-values-and-service/questions.json"
+    },
+    {
+      "subject": "creative-arts-sports",
+      "learning_area": "CREATIVE ARTS & SPORTS",
+      "term": 1,
+      "strand": "Movement",
+      "sub_strand": "Body awareness and movement",
+      "question_count": 30,
+      "path": "grade7/question-banks/grade7/creative-arts-sports/term1/body-awareness-and-movement/questions.json"
+    },
+    {
+      "subject": "creative-arts-sports",
+      "learning_area": "CREATIVE ARTS & SPORTS",
+      "term": 1,
+      "strand": "Music",
+      "sub_strand": "Rhythm and musical patterns",
+      "question_count": 30,
+      "path": "grade7/question-banks/grade7/creative-arts-sports/term1/rhythm-and-musical-patterns/questions.json"
+    },
+    {
+      "subject": "creative-arts-sports",
+      "learning_area": "CREATIVE ARTS & SPORTS",
+      "term": 1,
+      "strand": "Sports",
+      "sub_strand": "Fundamental movement skills",
+      "question_count": 30,
+      "path": "grade7/question-banks/grade7/creative-arts-sports/term1/fundamental-movement-skills/questions.json"
+    },
+    {
+      "subject": "creative-arts-sports",
+      "learning_area": "CREATIVE ARTS & SPORTS",
+      "term": 1,
+      "strand": "Visual Arts",
+      "sub_strand": "Drawing and composition",
+      "question_count": 30,
+      "path": "grade7/question-banks/grade7/creative-arts-sports/term1/drawing-and-composition/questions.json"
+    },
+    {
+      "subject": "creative-arts-sports",
+      "learning_area": "CREATIVE ARTS & SPORTS",
+      "term": 1,
+      "strand": "Visual Arts",
+      "sub_strand": "Elements of art",
+      "question_count": 30,
+      "path": "grade7/question-banks/grade7/creative-arts-sports/term1/elements-of-art/questions.json"
+    },
+    {
+      "subject": "creative-arts-sports",
+      "learning_area": "CREATIVE ARTS & SPORTS",
+      "term": 2,
+      "strand": "Craft",
+      "sub_strand": "Materials and construction",
+      "question_count": 30,
+      "path": "grade7/question-banks/grade7/creative-arts-sports/term2/materials-and-construction/questions.json"
+    },
+    {
+      "subject": "creative-arts-sports",
+      "learning_area": "CREATIVE ARTS & SPORTS",
+      "term": 2,
+      "strand": "Drama",
+      "sub_strand": "Role play and storytelling",
+      "question_count": 30,
+      "path": "grade7/question-banks/grade7/creative-arts-sports/term2/role-play-and-storytelling/questions.json"
+    },
+    {
+      "subject": "creative-arts-sports",
+      "learning_area": "CREATIVE ARTS & SPORTS",
+      "term": 2,
+      "strand": "Music",
+      "sub_strand": "Singing and performance",
+      "question_count": 30,
+      "path": "grade7/question-banks/grade7/creative-arts-sports/term2/singing-and-performance/questions.json"
+    },
+    {
+      "subject": "creative-arts-sports",
+      "learning_area": "CREATIVE ARTS & SPORTS",
+      "term": 2,
+      "strand": "Sports",
+      "sub_strand": "Games, rules and teamwork",
+      "question_count": 30,
+      "path": "grade7/question-banks/grade7/creative-arts-sports/term2/games-rules-and-teamwork/questions.json"
+    },
+    {
+      "subject": "creative-arts-sports",
+      "learning_area": "CREATIVE ARTS & SPORTS",
+      "term": 2,
+      "strand": "Visual Arts",
+      "sub_strand": "Colour and design",
+      "question_count": 30,
+      "path": "grade7/question-banks/grade7/creative-arts-sports/term2/colour-and-design/questions.json"
+    },
+    {
+      "subject": "creative-arts-sports",
+      "learning_area": "CREATIVE ARTS & SPORTS",
+      "term": 3,
+      "strand": "Creative project",
+      "sub_strand": "Portfolio and exhibition",
+      "question_count": 30,
+      "path": "grade7/question-banks/grade7/creative-arts-sports/term3/portfolio-and-exhibition/questions.json"
+    },
+    {
+      "subject": "creative-arts-sports",
+      "learning_area": "CREATIVE ARTS & SPORTS",
+      "term": 3,
+      "strand": "Drama",
+      "sub_strand": "Improvisation and performance",
+      "question_count": 30,
+      "path": "grade7/question-banks/grade7/creative-arts-sports/term3/improvisation-and-performance/questions.json"
+    },
+    {
+      "subject": "creative-arts-sports",
+      "learning_area": "CREATIVE ARTS & SPORTS",
+      "term": 3,
+      "strand": "Music",
+      "sub_strand": "Composition and appreciation",
+      "question_count": 30,
+      "path": "grade7/question-banks/grade7/creative-arts-sports/term3/composition-and-appreciation/questions.json"
+    },
+    {
+      "subject": "creative-arts-sports",
+      "learning_area": "CREATIVE ARTS & SPORTS",
+      "term": 3,
+      "strand": "Sports",
+      "sub_strand": "Fitness and personal wellbeing",
+      "question_count": 30,
+      "path": "grade7/question-banks/grade7/creative-arts-sports/term3/fitness-and-personal-wellbeing/questions.json"
+    },
+    {
+      "subject": "creative-arts-sports",
+      "learning_area": "CREATIVE ARTS & SPORTS",
+      "term": 3,
+      "strand": "Visual Arts",
+      "sub_strand": "Printmaking and presentation",
+      "question_count": 30,
+      "path": "grade7/question-banks/grade7/creative-arts-sports/term3/printmaking-and-presentation/questions.json"
+    },
+    {
+      "subject": "english",
+      "learning_area": "ENGLISH",
+      "term": 1,
+      "strand": "Listening and Speaking",
+      "sub_strand": "Listening for information",
+      "question_count": 30,
+      "path": "grade7/question-banks/grade7/english/term1/listening-for-information/questions.json"
+    },
+    {
+      "subject": "english",
+      "learning_area": "ENGLISH",
+      "term": 1,
+      "strand": "Listening and Speaking",
+      "sub_strand": "Oral communication",
+      "question_count": 30,
+      "path": "grade7/question-banks/grade7/english/term1/oral-communication/questions.json"
+    },
+    {
+      "subject": "english",
+      "learning_area": "ENGLISH",
+      "term": 1,
+      "strand": "Reading",
+      "sub_strand": "Reading fluency and comprehension",
+      "question_count": 30,
+      "path": "grade7/question-banks/grade7/english/term1/reading-fluency-and-comprehension/questions.json"
+    },
+    {
+      "subject": "english",
+      "learning_area": "ENGLISH",
+      "term": 1,
+      "strand": "Vocabulary",
+      "sub_strand": "Vocabulary development",
+      "question_count": 30,
+      "path": "grade7/question-banks/grade7/english/term1/vocabulary-development/questions.json"
+    },
+    {
+      "subject": "english",
+      "learning_area": "ENGLISH",
+      "term": 1,
+      "strand": "Writing",
+      "sub_strand": "Sentence and paragraph construction",
+      "question_count": 30,
+      "path": "grade7/question-banks/grade7/english/term1/sentence-and-paragraph-construction/questions.json"
+    },
+    {
+      "subject": "english",
+      "learning_area": "ENGLISH",
+      "term": 2,
+      "strand": "Grammar",
+      "sub_strand": "Tenses and subject-verb agreement",
+      "question_count": 30,
+      "path": "grade7/question-banks/grade7/english/term2/tenses-and-subject-verb-agreement/questions.json"
+    },
+    {
+      "subject": "english",
+      "learning_area": "ENGLISH",
+      "term": 2,
+      "strand": "Grammar",
+      "sub_strand": "Word classes and sentence patterns",
+      "question_count": 30,
+      "path": "grade7/question-banks/grade7/english/term2/word-classes-and-sentence-patterns/questions.json"
+    },
+    {
+      "subject": "english",
+      "learning_area": "ENGLISH",
+      "term": 2,
+      "strand": "Reading",
+      "sub_strand": "Literary texts and response",
+      "question_count": 30,
+      "path": "grade7/question-banks/grade7/english/term2/literary-texts-and-response/questions.json"
+    },
+    {
+      "subject": "english",
+      "learning_area": "ENGLISH",
+      "term": 2,
+      "strand": "Writing",
+      "sub_strand": "Descriptive and narrative composition",
+      "question_count": 30,
+      "path": "grade7/question-banks/grade7/english/term2/descriptive-and-narrative-composition/questions.json"
+    },
+    {
+      "subject": "english",
+      "learning_area": "ENGLISH",
+      "term": 2,
+      "strand": "Writing",
+      "sub_strand": "Functional writing",
+      "question_count": 30,
+      "path": "grade7/question-banks/grade7/english/term2/functional-writing/questions.json"
+    },
+    {
+      "subject": "english",
+      "learning_area": "ENGLISH",
+      "term": 3,
+      "strand": "Grammar",
+      "sub_strand": "Punctuation and language structures",
+      "question_count": 30,
+      "path": "grade7/question-banks/grade7/english/term3/punctuation-and-language-structures/questions.json"
+    },
+    {
+      "subject": "english",
+      "learning_area": "ENGLISH",
+      "term": 3,
+      "strand": "Integrated language",
+      "sub_strand": "Language project and portfolio",
+      "question_count": 30,
+      "path": "grade7/question-banks/grade7/english/term3/language-project-and-portfolio/questions.json"
+    },
+    {
+      "subject": "english",
+      "learning_area": "ENGLISH",
+      "term": 3,
+      "strand": "Listening and Speaking",
+      "sub_strand": "Presentations and discussion",
+      "question_count": 30,
+      "path": "grade7/question-banks/grade7/english/term3/presentations-and-discussion/questions.json"
+    },
+    {
+      "subject": "english",
+      "learning_area": "ENGLISH",
+      "term": 3,
+      "strand": "Reading",
+      "sub_strand": "Information texts and critical reading",
+      "question_count": 30,
+      "path": "grade7/question-banks/grade7/english/term3/information-texts-and-critical-reading/questions.json"
+    },
+    {
+      "subject": "english",
+      "learning_area": "ENGLISH",
+      "term": 3,
+      "strand": "Writing",
+      "sub_strand": "Reports and summaries",
+      "question_count": 30,
+      "path": "grade7/question-banks/grade7/english/term3/reports-and-summaries/questions.json"
+    },
+    {
+      "subject": "integrated-science",
+      "learning_area": "INTEGRATED SCIENCE",
+      "term": 1,
+      "strand": "Living things",
+      "sub_strand": "Cells and organisation",
+      "question_count": 30,
+      "path": "grade7/question-banks/grade7/integrated-science/term1/cells-and-organisation/questions.json"
+    },
+    {
+      "subject": "integrated-science",
+      "learning_area": "INTEGRATED SCIENCE",
+      "term": 1,
+      "strand": "Living things",
+      "sub_strand": "Classification of organisms",
+      "question_count": 30,
+      "path": "grade7/question-banks/grade7/integrated-science/term1/classification-of-organisms/questions.json"
+    },
+    {
+      "subject": "integrated-science",
+      "learning_area": "INTEGRATED SCIENCE",
+      "term": 1,
+      "strand": "Matter",
+      "sub_strand": "Mixtures and separation",
+      "question_count": 30,
+      "path": "grade7/question-banks/grade7/integrated-science/term1/mixtures-and-separation/questions.json"
+    },
+    {
+      "subject": "integrated-science",
+      "learning_area": "INTEGRATED SCIENCE",
+      "term": 1,
+      "strand": "Matter",
+      "sub_strand": "States and properties of matter",
+      "question_count": 30,
+      "path": "grade7/question-banks/grade7/integrated-science/term1/states-and-properties-of-matter/questions.json"
+    },
+    {
+      "subject": "integrated-science",
+      "learning_area": "INTEGRATED SCIENCE",
+      "term": 1,
+      "strand": "Scientific inquiry",
+      "sub_strand": "Science process skills and safety",
+      "question_count": 30,
+      "path": "grade7/question-banks/grade7/integrated-science/term1/science-process-skills-and-safety/questions.json"
+    },
+    {
+      "subject": "integrated-science",
+      "learning_area": "INTEGRATED SCIENCE",
+      "term": 2,
+      "strand": "Energy",
+      "sub_strand": "Forms and sources of energy",
+      "question_count": 30,
+      "path": "grade7/question-banks/grade7/integrated-science/term2/forms-and-sources-of-energy/questions.json"
+    },
+    {
+      "subject": "integrated-science",
+      "learning_area": "INTEGRATED SCIENCE",
+      "term": 2,
+      "strand": "Energy",
+      "sub_strand": "Heat transfer",
+      "question_count": 30,
+      "path": "grade7/question-banks/grade7/integrated-science/term2/heat-transfer/questions.json"
+    },
+    {
+      "subject": "integrated-science",
+      "learning_area": "INTEGRATED SCIENCE",
+      "term": 2,
+      "strand": "Environment",
+      "sub_strand": "Water and the environment",
+      "question_count": 30,
+      "path": "grade7/question-banks/grade7/integrated-science/term2/water-and-the-environment/questions.json"
+    },
+    {
+      "subject": "integrated-science",
+      "learning_area": "INTEGRATED SCIENCE",
+      "term": 2,
+      "strand": "Force and motion",
+      "sub_strand": "Forces and their effects",
+      "question_count": 30,
+      "path": "grade7/question-banks/grade7/integrated-science/term2/forces-and-their-effects/questions.json"
+    },
+    {
+      "subject": "integrated-science",
+      "learning_area": "INTEGRATED SCIENCE",
+      "term": 2,
+      "strand": "Living things",
+      "sub_strand": "Human body systems and health",
+      "question_count": 30,
+      "path": "grade7/question-banks/grade7/integrated-science/term2/human-body-systems-and-health/questions.json"
+    },
+    {
+      "subject": "integrated-science",
+      "learning_area": "INTEGRATED SCIENCE",
+      "term": 3,
+      "strand": "Earth and space",
+      "sub_strand": "Earth, weather and space",
+      "question_count": 30,
+      "path": "grade7/question-banks/grade7/integrated-science/term3/earth-weather-and-space/questions.json"
+    },
+    {
+      "subject": "integrated-science",
+      "learning_area": "INTEGRATED SCIENCE",
+      "term": 3,
+      "strand": "Ecology",
+      "sub_strand": "Ecosystems and interdependence",
+      "question_count": 30,
+      "path": "grade7/question-banks/grade7/integrated-science/term3/ecosystems-and-interdependence/questions.json"
+    },
+    {
+      "subject": "integrated-science",
+      "learning_area": "INTEGRATED SCIENCE",
+      "term": 3,
+      "strand": "Matter",
+      "sub_strand": "Physical and chemical changes",
+      "question_count": 30,
+      "path": "grade7/question-banks/grade7/integrated-science/term3/physical-and-chemical-changes/questions.json"
+    },
+    {
+      "subject": "integrated-science",
+      "learning_area": "INTEGRATED SCIENCE",
+      "term": 3,
+      "strand": "Scientific inquiry",
+      "sub_strand": "Investigation and communication",
+      "question_count": 30,
+      "path": "grade7/question-banks/grade7/integrated-science/term3/investigation-and-communication/questions.json"
+    },
+    {
+      "subject": "integrated-science",
+      "learning_area": "INTEGRATED SCIENCE",
+      "term": 3,
+      "strand": "Technology",
+      "sub_strand": "Science in everyday technology",
+      "question_count": 30,
+      "path": "grade7/question-banks/grade7/integrated-science/term3/science-in-everyday-technology/questions.json"
+    },
+    {
+      "subject": "kiswahili",
+      "learning_area": "KISWAHILI",
+      "term": 1,
+      "strand": "Kuandika",
+      "sub_strand": "Sentensi na aya",
+      "question_count": 30,
+      "path": "grade7/question-banks/grade7/kiswahili/term1/sentensi-na-aya/questions.json"
+    },
+    {
+      "subject": "kiswahili",
+      "learning_area": "KISWAHILI",
+      "term": 1,
+      "strand": "Kusikiliza na Kuzungumza",
+      "sub_strand": "Kusikiliza kwa makini",
+      "question_count": 30,
+      "path": "grade7/question-banks/grade7/kiswahili/term1/kusikiliza-kwa-makini/questions.json"
+    },
+    {
+      "subject": "kiswahili",
+      "learning_area": "KISWAHILI",
+      "term": 1,
+      "strand": "Kusikiliza na Kuzungumza",
+      "sub_strand": "Mazungumzo na adabu",
+      "question_count": 30,
+      "path": "grade7/question-banks/grade7/kiswahili/term1/mazungumzo-na-adabu/questions.json"
+    },
+    {
+      "subject": "kiswahili",
+      "learning_area": "KISWAHILI",
+      "term": 1,
+      "strand": "Kusoma",
+      "sub_strand": "Ufahamu wa kifungu",
+      "question_count": 30,
+      "path": "grade7/question-banks/grade7/kiswahili/term1/ufahamu-wa-kifungu/questions.json"
+    },
+    {
+      "subject": "kiswahili",
+      "learning_area": "KISWAHILI",
+      "term": 1,
+      "strand": "Msamiati",
+      "sub_strand": "Msamiati katika miktadha",
+      "question_count": 30,
+      "path": "grade7/question-banks/grade7/kiswahili/term1/msamiati-katika-miktadha/questions.json"
+    },
+    {
+      "subject": "kiswahili",
+      "learning_area": "KISWAHILI",
+      "term": 2,
+      "strand": "Kuandika",
+      "sub_strand": "Insha za masimulizi na maelezo",
+      "question_count": 30,
+      "path": "grade7/question-banks/grade7/kiswahili/term2/insha-za-masimulizi-na-maelezo/questions.json"
+    },
+    {
+      "subject": "kiswahili",
+      "learning_area": "KISWAHILI",
+      "term": 2,
+      "strand": "Kuandika",
+      "sub_strand": "Uandishi wa kiuamilifu",
+      "question_count": 30,
+      "path": "grade7/question-banks/grade7/kiswahili/term2/uandishi-wa-kiuamilifu/questions.json"
+    },
+    {
+      "subject": "kiswahili",
+      "learning_area": "KISWAHILI",
+      "term": 2,
+      "strand": "Kusoma",
+      "sub_strand": "Fasihi na ujumbe",
+      "question_count": 30,
+      "path": "grade7/question-banks/grade7/kiswahili/term2/fasihi-na-ujumbe/questions.json"
+    },
+    {
+      "subject": "kiswahili",
+      "learning_area": "KISWAHILI",
+      "term": 2,
+      "strand": "Sarufi",
+      "sub_strand": "Aina za maneno",
+      "question_count": 30,
+      "path": "grade7/question-banks/grade7/kiswahili/term2/aina-za-maneno/questions.json"
+    },
+    {
+      "subject": "kiswahili",
+      "learning_area": "KISWAHILI",
+      "term": 2,
+      "strand": "Sarufi",
+      "sub_strand": "Nyakati na upatanisho",
+      "question_count": 30,
+      "path": "grade7/question-banks/grade7/kiswahili/term2/nyakati-na-upatanisho/questions.json"
+    },
+    {
+      "subject": "kiswahili",
+      "learning_area": "KISWAHILI",
+      "term": 3,
+      "strand": "Kuandika",
+      "sub_strand": "Muhtasari na ripoti",
+      "question_count": 30,
+      "path": "grade7/question-banks/grade7/kiswahili/term3/muhtasari-na-ripoti/questions.json"
+    },
+    {
+      "subject": "kiswahili",
+      "learning_area": "KISWAHILI",
+      "term": 3,
+      "strand": "Kusikiliza na Kuzungumza",
+      "sub_strand": "Hotuba na majadiliano",
+      "question_count": 30,
+      "path": "grade7/question-banks/grade7/kiswahili/term3/hotuba-na-majadiliano/questions.json"
+    },
+    {
+      "subject": "kiswahili",
+      "learning_area": "KISWAHILI",
+      "term": 3,
+      "strand": "Kusoma",
+      "sub_strand": "Matini za habari",
+      "question_count": 30,
+      "path": "grade7/question-banks/grade7/kiswahili/term3/matini-za-habari/questions.json"
+    },
+    {
+      "subject": "kiswahili",
+      "learning_area": "KISWAHILI",
+      "term": 3,
+      "strand": "Matumizi ya lugha",
+      "sub_strand": "Mradi wa lugha",
+      "question_count": 30,
+      "path": "grade7/question-banks/grade7/kiswahili/term3/mradi-wa-lugha/questions.json"
+    },
+    {
+      "subject": "kiswahili",
+      "learning_area": "KISWAHILI",
+      "term": 3,
+      "strand": "Sarufi",
+      "sub_strand": "Alama za uandishi",
+      "question_count": 30,
+      "path": "grade7/question-banks/grade7/kiswahili/term3/alama-za-uandishi/questions.json"
+    },
+    {
+      "subject": "mathematics",
+      "learning_area": "MATHEMATICS",
+      "term": 1,
+      "strand": "Algebra",
+      "sub_strand": "Introduction to algebra",
+      "question_count": 30,
+      "path": "grade7/question-banks/grade7/mathematics/term1/introduction-to-algebra/questions.json"
+    },
+    {
+      "subject": "mathematics",
+      "learning_area": "MATHEMATICS",
+      "term": 1,
+      "strand": "Number",
+      "sub_strand": "Decimals and percentages",
+      "question_count": 30,
+      "path": "grade7/question-banks/grade7/mathematics/term1/decimals-and-percentages/questions.json"
+    },
+    {
+      "subject": "mathematics",
+      "learning_area": "MATHEMATICS",
+      "term": 1,
+      "strand": "Number",
+      "sub_strand": "Factors, multiples and divisibility",
+      "question_count": 30,
+      "path": "grade7/question-banks/grade7/mathematics/term1/factors-multiples-and-divisibility/questions.json"
+    },
+    {
+      "subject": "mathematics",
+      "learning_area": "MATHEMATICS",
+      "term": 1,
+      "strand": "Number",
+      "sub_strand": "Fractions",
+      "question_count": 30,
+      "path": "grade7/question-banks/grade7/mathematics/term1/fractions/questions.json"
+    },
+    {
+      "subject": "mathematics",
+      "learning_area": "MATHEMATICS",
+      "term": 1,
+      "strand": "Number",
+      "sub_strand": "Integers and operations",
+      "question_count": 30,
+      "path": "grade7/question-banks/grade7/mathematics/term1/integers-and-operations/questions.json"
+    },
+    {
+      "subject": "mathematics",
+      "learning_area": "MATHEMATICS",
+      "term": 2,
+      "strand": "Algebra",
+      "sub_strand": "Expressions and equations",
+      "question_count": 30,
+      "path": "grade7/question-banks/grade7/mathematics/term2/expressions-and-equations/questions.json"
+    },
+    {
+      "subject": "mathematics",
+      "learning_area": "MATHEMATICS",
+      "term": 2,
+      "strand": "Geometry",
+      "sub_strand": "Angles and plane figures",
+      "question_count": 30,
+      "path": "grade7/question-banks/grade7/mathematics/term2/angles-and-plane-figures/questions.json"
+    },
+    {
+      "subject": "mathematics",
+      "learning_area": "MATHEMATICS",
+      "term": 2,
+      "strand": "Geometry",
+      "sub_strand": "Perimeter and area",
+      "question_count": 30,
+      "path": "grade7/question-banks/grade7/mathematics/term2/perimeter-and-area/questions.json"
+    },
+    {
+      "subject": "mathematics",
+      "learning_area": "MATHEMATICS",
+      "term": 2,
+      "strand": "Measurement",
+      "sub_strand": "Length, mass and capacity",
+      "question_count": 30,
+      "path": "grade7/question-banks/grade7/mathematics/term2/length-mass-and-capacity/questions.json"
+    },
+    {
+      "subject": "mathematics",
+      "learning_area": "MATHEMATICS",
+      "term": 2,
+      "strand": "Measurement",
+      "sub_strand": "Time and temperature",
+      "question_count": 30,
+      "path": "grade7/question-banks/grade7/mathematics/term2/time-and-temperature/questions.json"
+    },
+    {
+      "subject": "mathematics",
+      "learning_area": "MATHEMATICS",
+      "term": 3,
+      "strand": "Financial literacy",
+      "sub_strand": "Money and budgeting",
+      "question_count": 30,
+      "path": "grade7/question-banks/grade7/mathematics/term3/money-and-budgeting/questions.json"
+    },
+    {
+      "subject": "mathematics",
+      "learning_area": "MATHEMATICS",
+      "term": 3,
+      "strand": "Geometry",
+      "sub_strand": "Solid shapes",
+      "question_count": 30,
+      "path": "grade7/question-banks/grade7/mathematics/term3/solid-shapes/questions.json"
+    },
+    {
+      "subject": "mathematics",
+      "learning_area": "MATHEMATICS",
+      "term": 3,
+      "strand": "Probability",
+      "sub_strand": "Chance and simple probability",
+      "question_count": 30,
+      "path": "grade7/question-banks/grade7/mathematics/term3/chance-and-simple-probability/questions.json"
+    },
+    {
+      "subject": "mathematics",
+      "learning_area": "MATHEMATICS",
+      "term": 3,
+      "strand": "Statistics",
+      "sub_strand": "Data collection and representation",
+      "question_count": 30,
+      "path": "grade7/question-banks/grade7/mathematics/term3/data-collection-and-representation/questions.json"
+    },
+    {
+      "subject": "mathematics",
+      "learning_area": "MATHEMATICS",
+      "term": 3,
+      "strand": "Statistics",
+      "sub_strand": "Mean, median and mode",
+      "question_count": 30,
+      "path": "grade7/question-banks/grade7/mathematics/term3/mean-median-and-mode/questions.json"
+    },
+    {
+      "subject": "pre-technical-studies",
+      "learning_area": "PRE-TECHNICAL STUDIES",
+      "term": 1,
+      "strand": "Design",
+      "sub_strand": "Design process and problem identification",
+      "question_count": 30,
+      "path": "grade7/question-banks/grade7/pre-technical-studies/term1/design-process-and-problem-identification/questions.json"
+    },
+    {
+      "subject": "pre-technical-studies",
+      "learning_area": "PRE-TECHNICAL STUDIES",
+      "term": 1,
+      "strand": "Drawing",
+      "sub_strand": "Freehand drawing and communication",
+      "question_count": 30,
+      "path": "grade7/question-banks/grade7/pre-technical-studies/term1/freehand-drawing-and-communication/questions.json"
+    },
+    {
+      "subject": "pre-technical-studies",
+      "learning_area": "PRE-TECHNICAL STUDIES",
+      "term": 1,
+      "strand": "Making",
+      "sub_strand": "Measurement and marking out",
+      "question_count": 30,
+      "path": "grade7/question-banks/grade7/pre-technical-studies/term1/measurement-and-marking-out/questions.json"
+    },
+    {
+      "subject": "pre-technical-studies",
+      "learning_area": "PRE-TECHNICAL STUDIES",
+      "term": 1,
+      "strand": "Materials",
+      "sub_strand": "Properties of materials",
+      "question_count": 30,
+      "path": "grade7/question-banks/grade7/pre-technical-studies/term1/properties-of-materials/questions.json"
+    },
+    {
+      "subject": "pre-technical-studies",
+      "learning_area": "PRE-TECHNICAL STUDIES",
+      "term": 1,
+      "strand": "Safety",
+      "sub_strand": "Workshop and tool safety",
+      "question_count": 30,
+      "path": "grade7/question-banks/grade7/pre-technical-studies/term1/workshop-and-tool-safety/questions.json"
+    },
+    {
+      "subject": "pre-technical-studies",
+      "learning_area": "PRE-TECHNICAL STUDIES",
+      "term": 2,
+      "strand": "Digital literacy",
+      "sub_strand": "Digital devices and responsible use",
+      "question_count": 30,
+      "path": "grade7/question-banks/grade7/pre-technical-studies/term2/digital-devices-and-responsible-use/questions.json"
+    },
+    {
+      "subject": "pre-technical-studies",
+      "learning_area": "PRE-TECHNICAL STUDIES",
+      "term": 2,
+      "strand": "Energy",
+      "sub_strand": "Energy in technology",
+      "question_count": 30,
+      "path": "grade7/question-banks/grade7/pre-technical-studies/term2/energy-in-technology/questions.json"
+    },
+    {
+      "subject": "pre-technical-studies",
+      "learning_area": "PRE-TECHNICAL STUDIES",
+      "term": 2,
+      "strand": "Making",
+      "sub_strand": "Joining and finishing",
+      "question_count": 30,
+      "path": "grade7/question-banks/grade7/pre-technical-studies/term2/joining-and-finishing/questions.json"
+    },
+    {
+      "subject": "pre-technical-studies",
+      "learning_area": "PRE-TECHNICAL STUDIES",
+      "term": 2,
+      "strand": "Mechanisms",
+      "sub_strand": "Simple mechanisms",
+      "question_count": 30,
+      "path": "grade7/question-banks/grade7/pre-technical-studies/term2/simple-mechanisms/questions.json"
+    },
+    {
+      "subject": "pre-technical-studies",
+      "learning_area": "PRE-TECHNICAL STUDIES",
+      "term": 2,
+      "strand": "Structures",
+      "sub_strand": "Structures and stability",
+      "question_count": 30,
+      "path": "grade7/question-banks/grade7/pre-technical-studies/term2/structures-and-stability/questions.json"
+    },
+    {
+      "subject": "pre-technical-studies",
+      "learning_area": "PRE-TECHNICAL STUDIES",
+      "term": 3,
+      "strand": "Design",
+      "sub_strand": "Product development",
+      "question_count": 30,
+      "path": "grade7/question-banks/grade7/pre-technical-studies/term3/product-development/questions.json"
+    },
+    {
+      "subject": "pre-technical-studies",
+      "learning_area": "PRE-TECHNICAL STUDIES",
+      "term": 3,
+      "strand": "Digital literacy",
+      "sub_strand": "Information and communication",
+      "question_count": 30,
+      "path": "grade7/question-banks/grade7/pre-technical-studies/term3/information-and-communication/questions.json"
+    },
+    {
+      "subject": "pre-technical-studies",
+      "learning_area": "PRE-TECHNICAL STUDIES",
+      "term": 3,
+      "strand": "Enterprise",
+      "sub_strand": "Needs, resources and enterprise",
+      "question_count": 30,
+      "path": "grade7/question-banks/grade7/pre-technical-studies/term3/needs-resources-and-enterprise/questions.json"
+    },
+    {
+      "subject": "pre-technical-studies",
+      "learning_area": "PRE-TECHNICAL STUDIES",
+      "term": 3,
+      "strand": "Environment",
+      "sub_strand": "Sustainable technology",
+      "question_count": 30,
+      "path": "grade7/question-banks/grade7/pre-technical-studies/term3/sustainable-technology/questions.json"
+    },
+    {
+      "subject": "pre-technical-studies",
+      "learning_area": "PRE-TECHNICAL STUDIES",
+      "term": 3,
+      "strand": "Project",
+      "sub_strand": "Integrated design project",
+      "question_count": 30,
+      "path": "grade7/question-banks/grade7/pre-technical-studies/term3/integrated-design-project/questions.json"
+    },
+    {
+      "subject": "social-studies",
+      "learning_area": "SOCIAL STUDIES",
+      "term": 1,
+      "strand": "Citizenship",
+      "sub_strand": "Identity, family and community",
+      "question_count": 30,
+      "path": "grade7/question-banks/grade7/social-studies/term1/identity-family-and-community/questions.json"
+    },
+    {
+      "subject": "social-studies",
+      "learning_area": "SOCIAL STUDIES",
+      "term": 1,
+      "strand": "Citizenship",
+      "sub_strand": "Rights and responsibilities",
+      "question_count": 30,
+      "path": "grade7/question-banks/grade7/social-studies/term1/rights-and-responsibilities/questions.json"
+    },
+    {
+      "subject": "social-studies",
+      "learning_area": "SOCIAL STUDIES",
+      "term": 1,
+      "strand": "Environment",
+      "sub_strand": "Local environment and mapping",
+      "question_count": 30,
+      "path": "grade7/question-banks/grade7/social-studies/term1/local-environment-and-mapping/questions.json"
+    },
+    {
+      "subject": "social-studies",
+      "learning_area": "SOCIAL STUDIES",
+      "term": 1,
+      "strand": "Geography",
+      "sub_strand": "Weather and climate",
+      "question_count": 30,
+      "path": "grade7/question-banks/grade7/social-studies/term1/weather-and-climate/questions.json"
+    },
+    {
+      "subject": "social-studies",
+      "learning_area": "SOCIAL STUDIES",
+      "term": 1,
+      "strand": "History",
+      "sub_strand": "Sources and timelines",
+      "question_count": 30,
+      "path": "grade7/question-banks/grade7/social-studies/term1/sources-and-timelines/questions.json"
+    },
+    {
+      "subject": "social-studies",
+      "learning_area": "SOCIAL STUDIES",
+      "term": 2,
+      "strand": "Economic activities",
+      "sub_strand": "Trade, work and livelihoods",
+      "question_count": 30,
+      "path": "grade7/question-banks/grade7/social-studies/term2/trade-work-and-livelihoods/questions.json"
+    },
+    {
+      "subject": "social-studies",
+      "learning_area": "SOCIAL STUDIES",
+      "term": 2,
+      "strand": "Environment",
+      "sub_strand": "Natural resources and conservation",
+      "question_count": 30,
+      "path": "grade7/question-banks/grade7/social-studies/term2/natural-resources-and-conservation/questions.json"
+    },
+    {
+      "subject": "social-studies",
+      "learning_area": "SOCIAL STUDIES",
+      "term": 2,
+      "strand": "Geography",
+      "sub_strand": "Physical features and resources",
+      "question_count": 30,
+      "path": "grade7/question-banks/grade7/social-studies/term2/physical-features-and-resources/questions.json"
+    },
+    {
+      "subject": "social-studies",
+      "learning_area": "SOCIAL STUDIES",
+      "term": 2,
+      "strand": "Government",
+      "sub_strand": "Leadership and governance",
+      "question_count": 30,
+      "path": "grade7/question-banks/grade7/social-studies/term2/leadership-and-governance/questions.json"
+    },
+    {
+      "subject": "social-studies",
+      "learning_area": "SOCIAL STUDIES",
+      "term": 2,
+      "strand": "History",
+      "sub_strand": "Communities and cultural heritage",
+      "question_count": 30,
+      "path": "grade7/question-banks/grade7/social-studies/term2/communities-and-cultural-heritage/questions.json"
+    },
+    {
+      "subject": "social-studies",
+      "learning_area": "SOCIAL STUDIES",
+      "term": 3,
+      "strand": "Citizenship",
+      "sub_strand": "Peace and conflict resolution",
+      "question_count": 30,
+      "path": "grade7/question-banks/grade7/social-studies/term3/peace-and-conflict-resolution/questions.json"
+    },
+    {
+      "subject": "social-studies",
+      "learning_area": "SOCIAL STUDIES",
+      "term": 3,
+      "strand": "Economic activities",
+      "sub_strand": "Saving and responsible consumption",
+      "question_count": 30,
+      "path": "grade7/question-banks/grade7/social-studies/term3/saving-and-responsible-consumption/questions.json"
+    },
+    {
+      "subject": "social-studies",
+      "learning_area": "SOCIAL STUDIES",
+      "term": 3,
+      "strand": "Environment",
+      "sub_strand": "Environmental challenges",
+      "question_count": 30,
+      "path": "grade7/question-banks/grade7/social-studies/term3/environmental-challenges/questions.json"
+    },
+    {
+      "subject": "social-studies",
+      "learning_area": "SOCIAL STUDIES",
+      "term": 3,
+      "strand": "Geography",
+      "sub_strand": "Settlement and population",
+      "question_count": 30,
+      "path": "grade7/question-banks/grade7/social-studies/term3/settlement-and-population/questions.json"
+    },
+    {
+      "subject": "social-studies",
+      "learning_area": "SOCIAL STUDIES",
+      "term": 3,
+      "strand": "Social inquiry",
+      "sub_strand": "Community study",
+      "question_count": 30,
+      "path": "grade7/question-banks/grade7/social-studies/term3/community-study/questions.json"
+    }
+  ]
+}
