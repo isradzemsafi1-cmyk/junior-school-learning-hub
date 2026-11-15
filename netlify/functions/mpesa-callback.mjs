@@ -19,7 +19,8 @@ export default async (request) => {
   const serviceKey = Netlify.env.get("SUPABASE_SERVICE_ROLE_KEY");
   const consumerKey = Netlify.env.get("MPESA_CONSUMER_KEY");
   const consumerSecret = Netlify.env.get("MPESA_CONSUMER_SECRET");
-  const shortcode = Netlify.env.get("MPESA_SHORTCODE");
+  // Match the Safaricom-confirmed production BusinessShortCode.
+  const shortcode = Netlify.env.get("MPESA_SHORTCODE") || "1420268";
   const passkey = Netlify.env.get("MPESA_PASSKEY");
 const isProduction = process.env.CONTEXT === "production";
 
