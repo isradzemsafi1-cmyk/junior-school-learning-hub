@@ -26,6 +26,12 @@ export default async (request) => {
     return respond(500, { success: false });
   }
 
+  // The callback query must authenticate with the same JSLH Store/Go-Live shortcode.
+  if (shortcode !== "1420268") {
+    console.error("M-Pesa callback shortcode does not match the confirmed JSLH Store number.");
+    return respond(500, { success: false });
+  }
+
   const catalog = {
     online_tuition: 100,
     premium_quizzes: 10,
