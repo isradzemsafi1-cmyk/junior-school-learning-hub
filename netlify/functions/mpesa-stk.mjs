@@ -47,7 +47,7 @@ export default async (request) => {
     const parsedCallback = new URL(callbackURL);
     callbackHost = parsedCallback.host;
     if (parsedCallback.protocol !== "https:" ||
-        /localhost|127\\.0\\.0\\.1/i.test(parsedCallback.hostname)) {
+        /localhost|127\.0\.0\.1/i.test(parsedCallback.hostname)) {
       throw new Error("Callback URL must be a public HTTPS address.");
     }
   } catch {
