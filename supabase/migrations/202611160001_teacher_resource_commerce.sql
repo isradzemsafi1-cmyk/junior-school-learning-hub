@@ -23,6 +23,7 @@ create table if not exists public.teacher_resource_purchases (
   payment_id uuid references public.payments(id),
   status text not null default 'pending' check (status in ('pending','paid','failed')),
   paid_at timestamptz,
+  expires_at timestamptz,
   created_at timestamptz not null default now(),
   unique(user_id, resource_id)
 );
