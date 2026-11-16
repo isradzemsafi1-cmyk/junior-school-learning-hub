@@ -18,7 +18,7 @@ export default async request => {
   } catch { return json(400,{error:"Invalid event payload."}); }
   if(!uuid(body.visitor_id)||!allowed.has(body.event_type)) return json(400,{error:"Invalid activity event."});
   let userId=null;
-  const token=(request.headers.get("authorization")||"").replace(/^Bearer\\s+/i,"");
+  const token=(request.headers.get("authorization")||"").replace(/^Bearer\s+/i,"");
   if(token){
     const verified=await fetch(`${url}/auth/v1/user`,{headers:{apikey:publishableKey,Authorization:`Bearer ${token}`}});
     if(verified.ok){const user=await verified.json();userId=user.id||null;}
