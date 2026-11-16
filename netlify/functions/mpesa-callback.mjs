@@ -65,9 +65,6 @@ const mpesaBaseUrl = isProduction
       Object.values(teacherCatalog).flat().map(item => [item.product_id, item.price_kes])
     )
   };
-  // Learner Centre topic modules are individually priced at KES 10.
-  // Topic access is still verified against server-owned content IDs before content is returned.
-  const learnerTopicProduct = /^learner_g[789]_[a-z0-9-]{1,70}$/.test.bind(/^learner_g[789]_[a-z0-9-]{1,70}$/);
 
 
   const durations = {
