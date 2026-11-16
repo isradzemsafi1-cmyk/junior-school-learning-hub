@@ -30,7 +30,9 @@
     }catch(_){}
   };
   window.JSLHActivity={track:(type,details)=>send(type,details||{})};
-  send("page_view",{metadata:{title:document.title,referrer:document.referrer?new URL(document.referrer).origin:""}});
+  const currentPath=location.pathname.toLowerCase();
+  const resourcePage=/resource|library|notes|revision|teacher-centre|teacher-resources/.test(currentPath);
+  send(resourcePage?"resource_view":"page_view",{metadata:{title:document.title,referrer:document.referrer?new URL(document.referrer).origin:""}});
   document.addEventListener("click",event=>{
     const target=event.target.closest("a,button,[data-resource-id],[data-track-event]");
     if(!target)return;
@@ -39,7 +41,8 @@
     const resourceId=target.dataset.resourceId||target.dataset.resource||null;
     const isDownload=target.hasAttribute("download")||/\\.pdf(?:$|[?#])/i.test(href);
     const isResource=!!resourceId||target.dataset.resourceType||/resource|notes|revision|library|download|premium|quiz/i.test(label+" "+href);
-    const type=target.dataset.trackEvent|| (isDownload?"resource_download":isResource?"resource_open":null);
+    const paymentAction=/pay now|make payment|unlock|mpesa|m-pesa|pay kes|purchase/i.test(label);
+    const type=target.dataset.trackEvent|| (paymentAction?"payment_prompt":isDownload?"resource_download":isResource?"resource_open":null);
     if(type)send(type,{
       resource_id:resourceId,resource_title:target.dataset.resourceTitle||label,
       resource_category:target.dataset.resourceCategory||target.dataset.resourceType||null,
