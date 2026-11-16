@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>KJSEA 2027 Revision Centre | Junior School Learning Hub</title>
+<style>
+:root{font-family:Inter,Arial,sans-serif;color:#1b2940;background:#f3f6fb}*{box-sizing:border-box}body{margin:0}.hero{background:linear-gradient(120deg,#102b55,#1769a8,#1599b7);color:#fff;padding:34px 20px}.wrap{max-width:1100px;margin:auto}.brand{font-weight:800;letter-spacing:.08em;font-size:12px}.hero h1{font-size:clamp(27px,5vw,42px);margin:15px 0 8px}.hero p{max-width:650px;color:#e2efff;line-height:1.6;font-size:14px}.main{max-width:1100px;margin:25px auto;padding:0 16px 50px}.section{margin:25px 0}.section h2{font-size:19px;color:#102b55}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:14px}.card{background:white;border:1px solid #e2e8f0;border-radius:13px;padding:17px;box-shadow:0 8px 24px #18375b0b}.card h3{font-size:15px;margin:0 0 7px;color:#102b55}.card p{font-size:12px;line-height:1.5;color:#718096;min-height:36px}.meta{display:flex;justify-content:space-between;align-items:center;margin-top:14px;font-size:10px;color:#64748b}.status{background:#fff4df;color:#94620d;border-radius:30px;padding:6px 9px;font-weight:700}.notice{background:#eff6ff;border:1px solid #dbeafe;color:#52657f;padding:14px;border-radius:10px;font-size:12px;line-height:1.6}.btn{display:inline-block;background:#1769d2;color:white;padding:10px 14px;border-radius:8px;text-decoration:none;font-weight:700;font-size:12px;margin-top:15px}footer{text-align:center;color:#718096;font-size:10px;padding:25px;border-top:1px solid #e2e8f0}
+</style></head><body>
+<header class="hero"><div class="wrap"><div class="brand">JUNIOR SCHOOL LEARNING HUB</div><h1>KJSEA 2027 Revision Centre</h1><p>Subject-organised revision resources for Grade 9 learners, including topical question collections for Grades 7–9 and 2026 past assessment papers.</p><a class="btn" href="../tuition-centre/">Back to Learner Centre</a></div></header>
+<main class="main">
+<div class="notice"><strong>Secure resource release:</strong> The catalogue and protected payment route are being prepared. PDF downloads and KES 10 checkout will be enabled only after each branded PDF has been uploaded and verified in private storage. No payment will be requested for a file that is not ready.</div>
+<section class="section"><h2>Topical Revision Books</h2><div class="grid" id="topical"></div></section>
+<section class="section"><h2>2026 Past Assessment Papers</h2><div class="grid" id="papers"></div></section>
+</main><footer>© Junior School Learning Hub · KJSEA 2027 Revision Collection</footer>
+<script>
+const items=[
+{id:"kjsea2027_integrated_science_topical",title:"Integrated Science Topical Revision",subject:"Integrated Science",grade:"Grades 7–9",type:"topical_revision"},
+{id:"kjsea2027_social_studies_topical",title:"Social Studies Topical Revision",subject:"Social Studies",grade:"Grades 7–9",type:"topical_revision"},
+{id:"kjsea2027_agriculture_topical",title:"Agriculture & Nutrition Topical Revision",subject:"Agriculture & Nutrition",grade:"Grades 7–9",type:"topical_revision"},
+{id:"kjsea2027_pre_technical_topical",title:"Pre-Technical Studies Topical Revision",subject:"Pre-Technical Studies",grade:"Grades 7–9",type:"topical_revision"},
+{id:"kjsea2027_kiswahili_topical",title:"Kiswahili Topical Revision",subject:"Kiswahili",grade:"Grades 7–9",type:"topical_revision"},
+{id:"kjsea2027_english_2026_paper",title:"English 2026 Past Assessment Paper",subject:"English",grade:"Grade 9",type:"past_paper"},
+{id:"kjsea2027_agriculture_2026_paper",title:"Agriculture & Nutrition 2026 Past Assessment Paper",subject:"Agriculture & Nutrition",grade:"Grade 9",type:"past_paper"},
+{id:"kjsea2027_integrated_science_2026_paper",title:"Integrated Science 2026 Past Assessment Paper",subject:"Integrated Science",grade:"Grade 9",type:"past_paper"},
+{id:"kjsea2027_social_studies_2026_paper",title:"Social Studies 2026 Past Assessment Paper",subject:"Social Studies",grade:"Grade 9",type:"past_paper"},
+{id:"kjsea2027_creative_arts_2026_paper",title:"Creative Arts & Sports 2026 Past Assessment Paper",subject:"Creative Arts & Sports",grade:"Grade 9",type:"past_paper"}
+];
+function card(x){return '<article class="card"><h3>'+x.title+'</h3><p>'+x.subject+' · '+x.grade+'</p><div class="meta"><span>JSLH KJSEA 2027</span><span class="status">Preparing secure PDF</span></div></article>'}
+document.getElementById("topical").innerHTML=items.filter(x=>x.type==="topical_revision").map(card).join("");
+document.getElementById("papers").innerHTML=items.filter(x=>x.type==="past_paper").map(card).join("");
+</script></body></html>
