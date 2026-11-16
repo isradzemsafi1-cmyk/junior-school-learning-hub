@@ -44,9 +44,13 @@ export default async (request) => {
   // Keep live callbacks on the verified production URL. Sandbox callbacks
   // return to this exact Deploy Preview so its isolated handler can read the
   // sandbox credentials scoped to Deploy Preview.
+  // Netlify's DEPLOY_PRIME_URL and URL are platform-provided process
+  // environment variables, not user-defined Netlify.env entries. Reading
+  // them from process.env ensures preview callbacks return to this preview's
+  // own deployed sandbox callback instead of the production custom domain.
   const publicSiteURL =
-    Netlify.env.get("DEPLOY_PRIME_URL") ||
-    Netlify.env.get("URL") ||
+    process.env.DEPLOY_PRIME_URL ||
+    (isProduction ? process.env.URL : null) ||
     new URL(request.url).origin;
   const configuredCallbackURL = isProduction
     ? Netlify.env.get("MPESA_CALLBACK_URL")
