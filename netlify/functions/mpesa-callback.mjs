@@ -26,11 +26,11 @@ export default async (request) => {
     ? (Netlify.env.get("MPESA_PRODUCTION_CONSUMER_SECRET") || Netlify.env.get("MPESA_CONSUMER_SECRET"))
     : Netlify.env.get("MPESA_SANDBOX_CONSUMER_SECRET");
   const shortcode = isProduction
-    ? (Netlify.env.get("MPESA_PRODUCTION_SHORTCODE") || Netlify.env.get("MPESA_SHORTCODE") || "1420268")
-    : (Netlify.env.get("MPESA_SANDBOX_SHORTCODE") || "174379");
+    ? (Netlify.env.get("MPESA_PRODUCTION_SHORTCODE") || Netlify.env.get("MPESA_SHORTCODE"))
+    : (Netlify.env.get("MPESA_SANDBOX_SHORTCODE"));
   const passkey = isProduction
     ? (Netlify.env.get("MPESA_PRODUCTION_PASSKEY") || Netlify.env.get("MPESA_PASSKEY"))
-    : (Netlify.env.get("MPESA_SANDBOX_PASSKEY") || "bfb279f9aa9bdbcf158e97dd71a467cd2e0c893059b10f78e6b72ada1ed2c919");
+    : (Netlify.env.get("MPESA_SANDBOX_PASSKEY"));
 
 const mpesaBaseUrl = isProduction
   ? "https://api.safaricom.co.ke"
