@@ -433,7 +433,19 @@ section{padding-top:50px;padding-bottom:50px}
 @media(max-width:760px){.kjsea-feature-card{grid-template-columns:auto minmax(0,1fr);gap:13px}.kjsea-feature-icon{width:52px;height:52px;font-size:27px}.kjsea-feature-action{grid-column:1/-1;align-items:stretch;min-width:0}.kjsea-feature-action .btn{width:100%}}
 </style>
 
-<style>body.homepage-clean #learner-resources,body.homepage-clean #career-resources,body.homepage-clean #learner-account{display:none!important}</style></head>
+<style>body.homepage-clean #learner-resources,body.homepage-clean #career-resources{display:none!important}
+body.homepage-clean #learner-account{display:none!important}
+body.homepage-clean #learner-account.account-modal.is-open{display:block!important;position:fixed!important;inset:0;z-index:1000;overflow-y:auto;background:rgba(5,13,43,.82);padding:28px 16px!important;scroll-padding-top:20px}
+body.homepage-clean #learner-account.account-modal.is-open>.heading{display:none}
+body.homepage-clean #learner-account.account-modal.is-open #learner-auth-shell,
+body.homepage-clean #learner-account.account-modal.is-open #learner-dashboard{max-width:980px;margin:18px auto;background:#fff;border-radius:26px}
+body.homepage-clean #learner-account.account-modal.is-open #source-topical-quiz-centre{display:none}
+#homepage-account-status{display:inline-flex}
+#homepage-account-status[hidden]{display:none!important}
+#homepage-account-open{border:2px solid #fff;background:#ffffff;color:#1730a8;box-shadow:none}
+#homepage-account-open:hover{background:#fff8e5}
+#homepage-account-status strong{background:#ffffff20;border:1px solid #ffffff55;border-radius:999px}
+@media(max-width:600px){.hero-ctas{align-items:stretch}.hero-ctas .btn{justify-content:center}#homepage-account-status{width:100%;justify-content:center}}</style></head>
 <body class="homepage-clean">
 <header>
 <a class="logo" href="#home">
@@ -466,6 +478,8 @@ section{padding-top:50px;padding-bottom:50px}
    <div class="hero-ctas" aria-label="Choose your centre">
       <a class="btn" href="#centres">Explore the Five Centres</a>
       <a class="btn blue" href="/learner-centre/">Open Learner Centre</a>
+      <button class="btn outline" id="homepage-account-open" type="button">🔐 Sign In / Create Account</button>
+      <span id="homepage-account-status" hidden style="align-items:center;gap:8px;flex-wrap:wrap"><strong id="homepage-welcome-name" style="color:#fff;padding:10px 12px">Welcome back!</strong><button class="btn outline" id="homepage-logout" type="button">Sign Out</button></span>
     </div>
   </div>
   <div class="hero-visual">
@@ -2517,8 +2531,49 @@ buildQuiz();
     refreshLearnerLeaderboard();
   };
 
+  function updateHomepageAccount(user) {
+    const openButton = document.getElementById("homepage-account-open");
+    const status = document.getElementById("homepage-account-status");
+    const welcome = document.getElementById("homepage-welcome-name");
+    if (!openButton || !status || !welcome) return;
+    if (user) {
+      const name = user.user_metadata?.full_name || user.email || "Learner";
+      openButton.hidden = true;
+      status.hidden = false;
+      welcome.textContent = "Welcome back, " + name + "!";
+      document.getElementById("learner-account")?.classList.remove("is-open");
+    } else {
+      openButton.hidden = false;
+      status.hidden = true;
+    }
+  }
+
+  const homepageAccount = document.getElementById("learner-account");
+  const openHomepageAccount = document.getElementById("homepage-account-open");
+  if (openHomepageAccount && homepageAccount) {
+    openHomepageAccount.addEventListener("click", () => {
+      homepageAccount.classList.add("account-modal", "is-open");
+      document.getElementById("login-tab")?.click();
+      document.getElementById("login-email")?.focus();
+    });
+    homepageAccount.addEventListener("click", event => {
+      if (event.target === homepageAccount) homepageAccount.classList.remove("is-open");
+    });
+    document.addEventListener("keydown", event => {
+      if (event.key === "Escape") homepageAccount.classList.remove("is-open");
+    });
+  }
+  document.getElementById("homepage-logout")?.addEventListener("click", async () => {
+    const { error } = await supabaseClient.auth.signOut();
+    if (error) {
+      const msg = document.getElementById("learner-message");
+      if (msg) { msg.textContent = error.message; msg.style.color = "#b42318"; }
+    }
+  });
+
   function showDashboard(user) {
     activeUser = user || null;
+    updateHomepageAccount(activeUser);
     if (!user) {
       dashboard.hidden = true;
       authShell.hidden = false;
