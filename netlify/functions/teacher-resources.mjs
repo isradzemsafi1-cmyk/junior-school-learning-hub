@@ -12,7 +12,7 @@ const reply = (status, body, headers = {}) =>
   });
 
 async function getUser(request) {
-  const token = (request.headers.get("authorization") || "").replace(/^Bearer\\s+/i, "");
+  const token = (request.headers.get("authorization") || "").replace(/^Bearer\s+/i, "");
   if (!token) return null;
   const r = await fetch(`${SUPABASE_URL()}/auth/v1/user`, {
     headers: { apikey: PUBLISHABLE_KEY, Authorization: `Bearer ${token}` }
