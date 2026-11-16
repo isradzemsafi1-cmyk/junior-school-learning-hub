@@ -264,6 +264,20 @@ const readJson = async (response, service) => {
       get("year") + get("month") + get("day") +
       get("hour") + get("minute") + get("second");
 
+    // Persist the exact timestamp used to generate the STK password before
+    // sending the request, so callback verification can reuse it.
+    const timestampSave = await fetch(
+      `${supabaseUrl}/rest/v1/payments?id=eq.${paymentId}`,
+      {
+        method: "PATCH",
+        headers: dbHeaders,
+        body: JSON.stringify({ mpesa_timestamp: timestamp })
+      }
+    );
+    if (!timestampSave.ok) {
+      throw new Error("Could not save the M-Pesa transaction timestamp.");
+    }
+
     const password = Buffer.from(
       shortcode + passkey + timestamp
     ).toString("base64");
