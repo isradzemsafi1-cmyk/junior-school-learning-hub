@@ -2549,6 +2549,14 @@ buildQuiz();
   }
 
   const homepageAccount = document.getElementById("learner-account");
+  document.addEventListener("click", event => {
+    const accountLink = event.target.closest('a[href="#learner-account"]');
+    if (!accountLink || !homepageAccount || accountLink.id === "homepage-account-open") return;
+    event.preventDefault();
+    homepageAccount.classList.add("account-modal", "is-open");
+    document.getElementById("login-tab")?.click();
+    document.getElementById("login-email")?.focus();
+  });
   const openHomepageAccount = document.getElementById("homepage-account-open");
   if (openHomepageAccount && homepageAccount) {
     openHomepageAccount.addEventListener("click", () => {
