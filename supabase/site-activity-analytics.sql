@@ -25,3 +25,16 @@ create index if not exists site_activity_events_resource_idx on public.site_acti
 alter table public.site_activity_events enable row level security;
 revoke all on public.site_activity_events from anon, authenticated;
 grant all on public.site_activity_events to service_role;
+
+-- Private allow-list for Super Administrators. Only service_role may read or modify it.
+create table if not exists public.admin_access (
+  user_id uuid primary key references auth.users(id) on delete cascade,
+  granted_by uuid references auth.users(id) on delete set null,
+  created_at timestamptz not null default now()
+);
+alter table public.admin_access enable row level security;
+revoke all on public.admin_access from anon, authenticated;
+grant all on public.admin_access to service_role;
+insert into public.admin_access(user_id,granted_by)
+values ('fa142297-9ff9-480b-a49e-992ecb0aedc5','fa142297-9ff9-480b-a49e-992ecb0aedc5')
+on conflict(user_id) do nothing;
