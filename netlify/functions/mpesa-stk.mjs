@@ -36,7 +36,7 @@ export default async (request) => {
     ? (Netlify.env.get("MPESA_PRODUCTION_SHORTCODE") || Netlify.env.get("MPESA_SHORTCODE"))
     : (Netlify.env.get("MPESA_SANDBOX_SHORTCODE"));
   const tillNumber = isProduction
-    ? (Netlify.env.get("MPESA_PRODUCTION_TILL_NUMBER") || Netlify.env.get("MPESA_TILL_NUMBER") || "1887415")
+    ? (Netlify.env.get("MPESA_PRODUCTION_TILL_NUMBER") || Netlify.env.get("MPESA_TILL_NUMBER"))
     : shortcode;
   const passkey = isProduction
     ? (Netlify.env.get("MPESA_PRODUCTION_PASSKEY") || Netlify.env.get("MPESA_PASSKEY"))
