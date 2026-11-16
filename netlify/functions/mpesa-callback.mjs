@@ -103,12 +103,19 @@ const mpesaBaseUrl = isProduction
     const callback = body?.Body?.stkCallback;
 
     if (!callback?.CheckoutRequestID) {
+      console.warn("M-Pesa callback received without CheckoutRequestID.", {
+        environment: isProduction ? "production" : "sandbox"
+      });
       return respond(400, { success: false });
     }
 
     const checkoutId = callback.CheckoutRequestID;
     const merchantId = callback.MerchantRequestID || "";
     const callbackCode = String(callback.ResultCode);
+    console.info("M-Pesa callback received.", {
+      environment: isProduction ? "production" : "sandbox",
+      resultCode: callbackCode
+    });
 
     const paymentResponse = await fetch(
       `${supabaseUrl}/rest/v1/payments?checkout_request_id=eq.${encodeURIComponent(checkoutId)}&select=*`,
@@ -123,7 +130,9 @@ const mpesaBaseUrl = isProduction
     const payment = payments[0];
 
     if (!payment) {
-      console.error("No matching payment record:", checkoutId);
+      console.error("M-Pesa callback has no matching payment record.", {
+        checkoutRequestId: checkoutId
+      });
       return respond(200, { ResultCode: 0, ResultDesc: "Received" });
     }
 
@@ -242,7 +251,12 @@ const mpesaBaseUrl = isProduction
       String(queryResult.ResultCode) !== "0" ||
       queryResult.CheckoutRequestID !== checkoutId
     ) {
-      console.error("Safaricom verification is pending or unsuccessful.");
+      console.error("Safaricom STK query did not verify the callback.", {
+        environment: isProduction ? "production" : "sandbox",
+        queryHttpStatus: queryResponse.status,
+        queryResultCode: queryResult.ResultCode ?? null,
+        checkoutRequestMatched: queryResult.CheckoutRequestID === checkoutId
+      });
       return respond(200, { ResultCode: 0, ResultDesc: "Received" });
     }
 
