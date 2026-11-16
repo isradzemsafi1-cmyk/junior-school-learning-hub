@@ -50,6 +50,7 @@ export default async (request) => {
     Netlify.env.get("DEPLOY_PRIME_URL") ||
     Netlify.env.get("URL") ||
     new URL(request.url).origin;
+  // Use the same canonical function route shown in Netlify function logs.
   const callbackURL = configuredCallbackURL || new URL(
     "/.netlify/functions/mpesa-callback",
     publicSiteURL.endsWith("/") ? publicSiteURL : `${publicSiteURL}/`
