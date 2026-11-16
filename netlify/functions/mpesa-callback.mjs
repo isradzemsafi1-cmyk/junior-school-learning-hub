@@ -343,3 +343,13 @@ const mpesaBaseUrl = isProduction
     });
   }
 };
+
+
+// Keep the legacy route for existing integrations and expose a Daraja-safe
+// alias whose URL contains none of Safaricom's commonly blocked keywords.
+export const config = {
+  path: [
+    "/.netlify/functions/mpesa-callback",
+    "/.netlify/functions/payment-callback"
+  ]
+};
