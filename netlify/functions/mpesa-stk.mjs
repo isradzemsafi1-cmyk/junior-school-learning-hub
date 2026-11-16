@@ -41,23 +41,13 @@ export default async (request) => {
   const passkey = isProduction
     ? (Netlify.env.get("MPESA_PRODUCTION_PASSKEY") || Netlify.env.get("MPESA_PASSKEY"))
     : (Netlify.env.get("MPESA_SANDBOX_PASSKEY"));
-  // Keep live callbacks on the verified production URL. Sandbox callbacks
-  // return to this exact Deploy Preview so its isolated handler can read the
-  // sandbox credentials scoped to Deploy Preview.
-  // Netlify's DEPLOY_PRIME_URL and URL are platform-provided process
-  // environment variables, not user-defined Netlify.env entries. Reading
-  // them from process.env ensures preview callbacks return to this preview's
-  // own deployed sandbox callback instead of the production custom domain.
-  const publicSiteURL =
-    process.env.DEPLOY_PRIME_URL ||
-    (isProduction ? process.env.URL : null) ||
-    new URL(request.url).origin;
+  // Live production checkout keeps its existing live callback. Sandbox
+  // checkout (including Deploy Previews) uses the verified custom-domain
+  // endpoint, which is deployed separately as a sandbox-only function.
   const configuredCallbackURL = isProduction
     ? Netlify.env.get("MPESA_CALLBACK_URL")
-    : new URL(
-        "/.netlify/functions/mpesa-sandbox-callback",
-        publicSiteURL
-      ).toString();
+    : (Netlify.env.get("MPESA_SANDBOX_CALLBACK_URL") ||
+       "https://juniorschoollearninghub.co.ke/.netlify/functions/mpesa-sandbox-callback");
   // Use the same canonical function route shown in Netlify function logs.
   const callbackURL = configuredCallbackURL || new URL(
     "/.netlify/functions/mpesa-callback",
