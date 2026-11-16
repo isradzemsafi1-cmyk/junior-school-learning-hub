@@ -1,29 +1,123 @@
 <!doctype html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#102b55">
 <title>KJSEA 2027 Revision Centre | Junior School Learning Hub</title>
 <style>
-:root{font-family:Inter,Arial,sans-serif;color:#1b2940;background:#f3f6fb}*{box-sizing:border-box}body{margin:0}.hero{background:linear-gradient(120deg,#102b55,#1769a8,#1599b7);color:#fff;padding:34px 20px}.wrap{max-width:1100px;margin:auto}.brand{font-weight:800;letter-spacing:.08em;font-size:12px}.hero h1{font-size:clamp(27px,5vw,42px);margin:15px 0 8px}.hero p{max-width:650px;color:#e2efff;line-height:1.6;font-size:14px}.main{max-width:1100px;margin:25px auto;padding:0 16px 50px}.section{margin:25px 0}.section h2{font-size:19px;color:#102b55}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:14px}.card{background:white;border:1px solid #e2e8f0;border-radius:13px;padding:17px;box-shadow:0 8px 24px #18375b0b}.card h3{font-size:15px;margin:0 0 7px;color:#102b55}.card p{font-size:12px;line-height:1.5;color:#718096;min-height:36px}.meta{display:flex;justify-content:space-between;align-items:center;margin-top:14px;font-size:10px;color:#64748b}.status{background:#fff4df;color:#94620d;border-radius:30px;padding:6px 9px;font-weight:700}.notice{background:#eff6ff;border:1px solid #dbeafe;color:#52657f;padding:14px;border-radius:10px;font-size:12px;line-height:1.6}.btn{display:inline-block;background:#1769d2;color:white;padding:10px 14px;border-radius:8px;text-decoration:none;font-weight:700;font-size:12px;margin-top:15px}footer{text-align:center;color:#718096;font-size:10px;padding:25px;border-top:1px solid #e2e8f0}
-</style></head><body>
-<header class="hero"><div class="wrap"><div class="brand">JUNIOR SCHOOL LEARNING HUB</div><h1>KJSEA 2027 Revision Centre</h1><p>Subject-organised revision resources for Grade 9 learners, including topical question collections for Grades 7–9 and 2026 past assessment papers.</p><a class="btn" href="../tuition-centre/">Back to Learner Centre</a></div></header>
-<main class="main">
-<div class="notice"><strong>Secure resource release:</strong> The catalogue and protected payment route are being prepared. PDF downloads and KES 10 checkout will be enabled only after each branded PDF has been uploaded and verified in private storage. No payment will be requested for a file that is not ready.</div>
-<section class="section"><h2>Topical Revision Books</h2><div class="grid" id="topical"></div></section>
-<section class="section"><h2>2026 Past Assessment Papers</h2><div class="grid" id="papers"></div></section>
-</main><footer>© Junior School Learning Hub · KJSEA 2027 Revision Collection</footer>
+:root{--navy:#102b55;--blue:#1769d2;--cyan:#1599b7;--ink:#1b2940;--muted:#718096;--line:#e5ebf3;--bg:#f4f7fb;--green:#13865b;--amber:#9a6410}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);font-family:Inter,Segoe UI,Arial,sans-serif;color:var(--ink)}
+header{background:linear-gradient(112deg,#102b55,#1558a4 62%,#159bb7);color:#fff;padding:30px 18px 34px}
+.wrap{max-width:1120px;margin:auto}.brand{font-size:11px;font-weight:900;letter-spacing:1.7px;color:#cde4ff}
+h1{font-size:clamp(28px,5vw,42px);line-height:1.1;margin:14px 0 9px}.hero-copy{max-width:700px;color:#deebff;font-size:14px;line-height:1.65;margin:0}
+.hero-meta{display:flex;gap:9px;flex-wrap:wrap;margin-top:18px}.hero-meta span{background:#ffffff20;border:1px solid #ffffff30;padding:7px 11px;border-radius:30px;font-size:11px;font-weight:700}
+main{max-width:1120px;margin:24px auto;padding:0 16px 48px}.intro{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;margin-bottom:18px}
+.intro h2{margin:0;color:var(--navy);font-size:20px}.intro p{margin:5px 0 0;color:var(--muted);font-size:12px}
+.btn{border:0;border-radius:9px;background:var(--blue);color:white;padding:11px 15px;font-size:12px;font-weight:800;cursor:pointer;text-decoration:none;display:inline-block}.btn.secondary{background:#edf4ff;color:#175db2;border:1px solid #d6e5fa}.btn:disabled{opacity:.55;cursor:not-allowed}
+.notice{background:#eff6ff;border:1px solid #dbeafe;border-radius:11px;padding:13px 15px;color:#52657f;font-size:12px;line-height:1.6;margin-bottom:17px}
+.toolbar{display:flex;gap:10px;flex-wrap:wrap;margin:18px 0}.toolbar input,.toolbar select,.field input{border:1px solid #dce4ee;border-radius:9px;padding:11px 12px;background:white;font:inherit;font-size:12px;min-width:180px}
+.toolbar input{flex:1}.section-title{display:flex;justify-content:space-between;align-items:center;margin:25px 0 12px}.section-title h3{margin:0;color:var(--navy);font-size:16px}.section-title small{color:var(--muted);font-size:11px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(245px,1fr));gap:13px}.card{background:white;border:1px solid var(--line);border-radius:14px;padding:17px;box-shadow:0 8px 24px #18375b0b;display:flex;flex-direction:column;min-height:190px}
+.card-top{display:flex;justify-content:space-between;gap:8px;align-items:flex-start}.type{font-size:9px;letter-spacing:.6px;text-transform:uppercase;color:#1769a8;background:#edf6ff;padding:6px 8px;border-radius:30px;font-weight:900}.price{font-size:12px;font-weight:900;color:var(--green);white-space:nowrap}
+.card h4{font-size:14px;color:var(--navy);margin:13px 0 6px;line-height:1.35}.card p{font-size:11px;line-height:1.5;color:var(--muted);margin:0 0 14px}.card-foot{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-top:auto}.status{font-size:10px;color:var(--amber);font-weight:800}.status.ready{color:var(--green)}.empty{padding:24px;text-align:center;border:1px dashed #cbd5e1;border-radius:12px;color:var(--muted);font-size:12px}
+.back{color:#fff;text-decoration:none;font-size:11px;font-weight:800;display:inline-block;margin-top:17px}.modal-back{display:none;position:fixed;inset:0;background:#10233f99;z-index:20;align-items:center;justify-content:center;padding:18px}.modal-back.show{display:flex}.modal{width:min(440px,100%);background:white;border-radius:15px;padding:21px;box-shadow:0 18px 60px #0d234255}.modal h3{margin:0 0 7px;color:var(--navy)}.modal p{font-size:12px;color:var(--muted);line-height:1.55}.field{display:grid;gap:6px;margin:13px 0}.field label{font-size:11px;font-weight:800}.field input{width:100%}.modal-actions{display:flex;gap:8px;justify-content:flex-end;margin-top:16px}.message{font-size:11px;color:#52657f;min-height:18px;margin-top:10px}
+footer{text-align:center;padding:23px;color:#8793a5;font-size:10px;border-top:1px solid var(--line)}
+@media(max-width:600px){header{padding:25px 16px}.card{min-height:175px}.toolbar>*{width:100%}.toolbar input,.toolbar select{min-width:0}}
+</style>
+</head>
+<body>
+<header><div class="wrap">
+<div class="brand">JUNIOR SCHOOL LEARNING HUB</div>
+<h1>KJSEA 2027 Revision Centre</h1>
+<p class="hero-copy">A carefully organised revision collection for Grades 7–9. Browse topical revision books and 2026 past assessment papers by learning area. Every document is purchased separately.</p>
+<div class="hero-meta"><span>Grades 7–9</span><span>KES 10 per document</span><span>Secure M-Pesa checkout</span></div>
+<a class="back" href="../tuition-centre/">← Back to Learner Centre</a>
+</div></header>
+<main>
+<div class="intro"><div><h2>Revision library</h2><p>Explore the collection before choosing the PDF you need.</p></div><button class="btn secondary" id="refreshBtn">↻ Refresh availability</button></div>
+<div class="notice"><b>How it works:</b> Sign in to your learner account, select one document and pay KES 10 using M-Pesa. The PDF opens only after Safaricom confirms the payment. A successful purchase gives you permanent repeat access to that document.</div>
+<div class="toolbar">
+<input id="search" type="search" placeholder="Search by subject or document title…">
+<select id="subject"><option value="">All learning areas</option><option>Mathematics</option><option>English</option><option>Kiswahili</option><option>Integrated Science</option><option>Social Studies</option><option>CRE</option><option>Agriculture & Nutrition</option><option>Pre-Technical Studies</option><option>Creative Arts & Sports</option></select>
+<select id="kind"><option value="">All document types</option><option value="topical_revision">Topical revision books</option><option value="past_paper">2026 past papers</option></select>
+</div>
+<div class="section-title"><h3>Topical revision books</h3><small id="topicalCount">9 documents</small></div>
+<div class="grid" id="topical"></div>
+<div class="section-title"><h3>2026 past assessment papers</h3><small id="paperCount">5 documents</small></div>
+<div class="grid" id="papers"></div>
+<p class="message" id="globalMessage" aria-live="polite"></p>
+</main>
+<footer>© Junior School Learning Hub · KJSEA 2027 Revision Collection</footer>
+<div class="modal-back" id="payModal" role="dialog" aria-modal="true" aria-labelledby="payTitle">
+<div class="modal"><h3 id="payTitle">Purchase revision document</h3><p id="payDescription"></p>
+<div class="field"><label for="phone">M-Pesa phone number</label><input id="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="07XXXXXXXX or 2547XXXXXXXX"></div>
+<p id="accountNote">You must be signed in to your Learner Centre account before checkout.</p>
+<div class="modal-actions"><button class="btn secondary" id="cancelPay">Cancel</button><button class="btn" id="confirmPay">Pay KES 10</button></div><p class="message" id="payMessage" aria-live="polite"></p>
+</div></div>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script>
-const items=[
-{id:"kjsea2027_integrated_science_topical",title:"Integrated Science Topical Revision",subject:"Integrated Science",grade:"Grades 7–9",type:"topical_revision"},
-{id:"kjsea2027_social_studies_topical",title:"Social Studies Topical Revision",subject:"Social Studies",grade:"Grades 7–9",type:"topical_revision"},
-{id:"kjsea2027_agriculture_topical",title:"Agriculture & Nutrition Topical Revision",subject:"Agriculture & Nutrition",grade:"Grades 7–9",type:"topical_revision"},
-{id:"kjsea2027_pre_technical_topical",title:"Pre-Technical Studies Topical Revision",subject:"Pre-Technical Studies",grade:"Grades 7–9",type:"topical_revision"},
-{id:"kjsea2027_kiswahili_topical",title:"Kiswahili Topical Revision",subject:"Kiswahili",grade:"Grades 7–9",type:"topical_revision"},
-{id:"kjsea2027_english_2026_paper",title:"English 2026 Past Assessment Paper",subject:"English",grade:"Grade 9",type:"past_paper"},
-{id:"kjsea2027_agriculture_2026_paper",title:"Agriculture & Nutrition 2026 Past Assessment Paper",subject:"Agriculture & Nutrition",grade:"Grade 9",type:"past_paper"},
-{id:"kjsea2027_integrated_science_2026_paper",title:"Integrated Science 2026 Past Assessment Paper",subject:"Integrated Science",grade:"Grade 9",type:"past_paper"},
-{id:"kjsea2027_social_studies_2026_paper",title:"Social Studies 2026 Past Assessment Paper",subject:"Social Studies",grade:"Grade 9",type:"past_paper"},
-{id:"kjsea2027_creative_arts_2026_paper",title:"Creative Arts & Sports 2026 Past Assessment Paper",subject:"Creative Arts & Sports",grade:"Grade 9",type:"past_paper"}
+const SUPABASE_URL="https://hqbqhnhgrgfxpedjzmnm.supabase.co";
+const SUPABASE_KEY="sb_publishable_uaOcRVaIwnvRl_wZhMhJ-Q_DhrqZyS_";
+const authClient=window.supabase.createClient(SUPABASE_URL,SUPABASE_KEY);
+const catalog=[
+{id:"kjsea2027_mathematics_topical",title:"Mathematics Topical Revision",subject:"Mathematics",grade:"Grades 7–9",type:"topical_revision",description:"Original JSLH topical practice questions arranged for Grades 7, 8 and 9."},
+{id:"kjsea2027_english_topical",title:"English Topical Revision",subject:"English",grade:"Grades 7–9",type:"topical_revision",description:"Original JSLH topical practice questions arranged for Grades 7, 8 and 9."},
+{id:"kjsea2027_kiswahili_topical",title:"Kiswahili Topical Revision",subject:"Kiswahili",grade:"Grades 7–9",type:"topical_revision",description:"Licensed topical revision collection with JSLH branding."},
+{id:"kjsea2027_integrated_science_topical",title:"Integrated Science Topical Revision",subject:"Integrated Science",grade:"Grades 7–9",type:"topical_revision",description:"Licensed topical revision collection with JSLH branding."},
+{id:"kjsea2027_social_studies_topical",title:"Social Studies Topical Revision",subject:"Social Studies",grade:"Grades 7–9",type:"topical_revision",description:"Licensed topical revision collection with JSLH branding."},
+{id:"kjsea2027_cre_topical",title:"CRE Topical Revision",subject:"CRE",grade:"Grades 7–9",type:"topical_revision",description:"Original JSLH topical practice questions arranged for Grades 7, 8 and 9."},
+{id:"kjsea2027_agriculture_topical",title:"Agriculture & Nutrition Topical Revision",subject:"Agriculture & Nutrition",grade:"Grades 7–9",type:"topical_revision",description:"Licensed topical revision collection with JSLH branding."},
+{id:"kjsea2027_pre_technical_topical",title:"Pre-Technical Studies Topical Revision",subject:"Pre-Technical Studies",grade:"Grades 7–9",type:"topical_revision",description:"Licensed topical revision collection with JSLH branding."},
+{id:"kjsea2027_creative_arts_sports_topical",title:"Creative Arts & Sports Topical Revision",subject:"Creative Arts & Sports",grade:"Grades 7–9",type:"topical_revision",description:"Original JSLH topical practice questions arranged for Grades 7, 8 and 9."},
+{id:"kjsea2027_english_2026_paper",title:"English 2026 Past Assessment Paper",subject:"English",grade:"Grade 9",type:"past_paper",description:"2026 past paper. Original assessment content retained."},
+{id:"kjsea2027_agriculture_2026_paper",title:"Agriculture & Nutrition 2026 Past Assessment Paper",subject:"Agriculture & Nutrition",grade:"Grade 9",type:"past_paper",description:"2026 past paper. Original assessment content retained."},
+{id:"kjsea2027_integrated_science_2026_paper",title:"Integrated Science 2026 Past Assessment Paper",subject:"Integrated Science",grade:"Grade 9",type:"past_paper",description:"2026 past paper. Original assessment content retained."},
+{id:"kjsea2027_social_studies_2026_paper",title:"Social Studies 2026 Past Assessment Paper",subject:"Social Studies",grade:"Grade 9",type:"past_paper",description:"2026 past paper. Original assessment content retained."},
+{id:"kjsea2027_creative_arts_2026_paper",title:"Creative Arts & Sports 2026 Past Assessment Paper",subject:"Creative Arts & Sports",grade:"Grade 9",type:"past_paper",description:"2026 past paper. Original assessment content retained."}
 ];
-function card(x){return '<article class="card"><h3>'+x.title+'</h3><p>'+x.subject+' · '+x.grade+'</p><div class="meta"><span>JSLH KJSEA 2027</span><span class="status">Preparing secure PDF</span></div></article>'}
-document.getElementById("topical").innerHTML=items.filter(x=>x.type==="topical_revision").map(card).join("");
-document.getElementById("papers").innerHTML=items.filter(x=>x.type==="past_paper").map(card).join("");
+let published=new Set(),selected=null;
+const $=id=>document.getElementById(id);
+function render(){
+ const term=$("search").value.trim().toLowerCase(),subject=$("subject").value,kind=$("kind").value;
+ const filtered=catalog.filter(x=>(!term||[x.title,x.subject,x.description].join(" ").toLowerCase().includes(term))&&(!subject||x.subject===subject)&&(!kind||x.type===kind));
+ for(const [type,target,count] of [["topical_revision","topical","topicalCount"],["past_paper","papers","paperCount"]]){
+  const rows=filtered.filter(x=>x.type===type);$(count).textContent=rows.length+" documents";
+  $(target).innerHTML=rows.length?rows.map(x=>card(x)).join(""):'<div class="empty">No documents match this filter.</div>';
+ }
+}
+function card(x){
+ const ready=published.has(x.id);
+ return '<article class="card"><div class="card-top"><span class="type">'+(x.type==="past_paper"?"2026 past paper":"Topical revision")+'</span><span class="price">KES 10</span></div><h4>'+x.title+'</h4><p>'+x.subject+' · '+x.grade+'<br>'+x.description+'</p><div class="card-foot"><span class="status '+(ready?"ready":"")+'">'+(ready?"Ready to purchase":"Preparing secure PDF")+'</span>'+(ready?'<button class="btn" data-buy="'+x.id+'">Buy document</button>':'<button class="btn" disabled>Coming soon</button>')+'</div></article>';
+}
+async function refresh(){
+ $("globalMessage").textContent="Checking secure document availability…";
+ try{
+  const r=await fetch("/.netlify/functions/learner-revision-resources",{cache:"no-store"});
+  const data=await r.json();if(!r.ok||!data.success)throw new Error(data.message||"Could not check document availability.");
+  published=new Set((data.resources||[]).map(x=>x.id));render();
+  $("globalMessage").textContent=published.size+" of "+catalog.length+" documents are currently available for secure checkout.";
+ }catch(e){$("globalMessage").textContent="The catalogue is displayed, but secure availability could not be checked. Please refresh shortly.";render();}
+}
+function openPay(id){
+ selected=catalog.find(x=>x.id===id);if(!selected)return;
+ $("payTitle").textContent="Purchase "+selected.title;$("payDescription").textContent=selected.subject+" · "+selected.grade+". Price: KES 10. After confirmed payment, this document remains available in your account.";
+ $("payMessage").textContent="";$("payModal").classList.add("show");
+}
+async function buy(){
+ const {data:{session}}=await authClient.auth.getSession();
+ if(!session){$("payMessage").textContent="Please sign in through the Learner Centre, then return here to purchase.";return;}
+ const phone=$("phone").value.trim();if(!phone){$("payMessage").textContent="Enter the M-Pesa number to receive the payment prompt.";return;}
+ $("confirmPay").disabled=true;$("payMessage").textContent="Sending secure M-Pesa request…";
+ try{
+  const r=await fetch("/.netlify/functions/mpesa-stk",{method:"POST",headers:{"Content-Type":"application/json",Authorization:"Bearer "+session.access_token},body:JSON.stringify({product_id:selected.id,phone})});
+  const data=await r.json();if(!r.ok||!data.success)throw new Error(data.message||"Payment request could not be started.");
+  $("payMessage").textContent=data.message||"M-Pesa prompt sent. Check your phone and enter your PIN to approve KES 10. After Safaricom confirms payment, close this message and select Open document.";
+  $("confirmPay").textContent="Request sent";
+ }catch(e){$("payMessage").textContent=e.message;$("confirmPay").disabled=false;}
+}
+document.addEventListener("click",e=>{const b=e.target.closest("[data-buy]");if(b)openPay(b.dataset.buy);});
+$("confirmPay").addEventListener("click",buy);$("cancelPay").addEventListener("click",()=>$("payModal").classList.remove("show"));
+$("refreshBtn").addEventListener("click",refresh);["search","subject","kind"].forEach(id=>$(id).addEventListener(id==="search"?"input":"change",render));
+$("payModal").addEventListener("click",e=>{if(e.target===$("payModal"))$("payModal").classList.remove("show");});
+refresh();
 </script></body></html>
