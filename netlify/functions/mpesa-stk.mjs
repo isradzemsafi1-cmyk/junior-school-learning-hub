@@ -93,6 +93,10 @@ export default async (request) => {
       Object.values(teacherCatalog).flat().map(item => [item.product_id, item.price_kes])
     )
   };
+  // Learner Centre topic modules are individually priced at KES 10.
+  // Topic access is still verified against server-owned content IDs before content is returned.
+  const learnerTopicProduct = /^learner_g[789]_[a-z0-9-]{1,70}$/.test.bind(/^learner_g[789]_[a-z0-9-]{1,70}$/);
+
 
 
   const missing = [
@@ -188,14 +192,14 @@ const readJson = async (response, service) => {
 
     const productId = String(body.product_id || "");
 
-    if (!Object.prototype.hasOwnProperty.call(catalog, productId)) {
+    if (!Object.prototype.hasOwnProperty.call(catalog, productId) && !learnerTopicProduct(productId)) {
       return respond(400, {
         success: false,
         message: "Please select a valid learning product."
       });
     }
 
-    const amount = catalog[productId];
+    const amount = learnerTopicProduct(productId) ? 10 : catalog[productId];
 
     let phone = String(body.phone || "").replace(/[\s+-]/g, "");
 
