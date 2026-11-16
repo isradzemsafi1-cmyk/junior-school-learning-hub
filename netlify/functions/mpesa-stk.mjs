@@ -89,7 +89,7 @@ export default async (request) => {
     [isProduction ? "MPESA_PRODUCTION_CONSUMER_KEY" : "MPESA_SANDBOX_CONSUMER_KEY", consumerKey],
     [isProduction ? "MPESA_PRODUCTION_CONSUMER_SECRET" : "MPESA_SANDBOX_CONSUMER_SECRET", consumerSecret],
     [isProduction ? "MPESA_PRODUCTION_SHORTCODE" : "MPESA_SANDBOX_SHORTCODE", shortcode],
-    [isProduction ? "MPESA_PRODUCTION_TILL_NUMBER" : "MPESA_SANDBOX_SHORTCODE", tillNumber],
+    ...(isProduction ? [["MPESA_PRODUCTION_TILL_NUMBER", tillNumber]] : []),
     [isProduction ? "MPESA_PRODUCTION_PASSKEY" : "MPESA_SANDBOX_PASSKEY", passkey]
   ].filter(([, value]) => !value).map(([name]) => name);
 
