@@ -217,12 +217,9 @@ const mpesaBaseUrl = isProduction
       throw new Error("Could not authenticate with Safaricom.");
     }
 
-    // Safaricom STK Push Query must use the original timestamp used
-    // when the corresponding STK Push password was generated.
-    const timestamp = String(payment.mpesa_timestamp || "");
-    if (!/^\\d{14}$/.test(timestamp)) {
-      throw new Error("Original M-Pesa timestamp is missing for verification.");
-    }
+    // Match the previously working Daraja verification flow: generate
+    // a fresh Nairobi timestamp for the STK Push Query password.
+    const timestamp = getTimestamp();
     const password = Buffer.from(
       shortcode + passkey + timestamp
     ).toString("base64");
