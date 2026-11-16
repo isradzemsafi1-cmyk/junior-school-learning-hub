@@ -36,11 +36,11 @@
   document.addEventListener("click",event=>{
     const target=event.target.closest("a,button,[data-resource-id],[data-track-event]");
     if(!target)return;
-    const label=(target.getAttribute("aria-label")||target.textContent||target.title||"").trim().replace(/\\s+/g," ").slice(0,180);
+    const label=(target.getAttribute("aria-label")||target.textContent||target.title||"").trim().replace(/\s+/g," ").slice(0,180);
     const href=target.getAttribute("href")||"";
     const resourceId=target.dataset.resourceId||target.dataset.resource||null;
     const context=(target.closest("[data-resource-id],.resource-card,.resource-item,.card,article,li")?.innerText||"")+" "+label+" "+href;
-    const isDownload=target.hasAttribute("download")||/\\.pdf(?:$|[?#])/i.test(href);
+    const isDownload=target.hasAttribute("download")||/\.pdf(?:$|[?#])/i.test(href);
     const isResource=!!resourceId||target.dataset.resourceType||/resource|notes|revision|library|download|premium|quiz/i.test(label+" "+href);
     const paymentAction=/pay now|make payment|unlock|mpesa|m-pesa|pay kes|purchase/i.test(label);
     const type=target.dataset.trackEvent|| (paymentAction?"payment_prompt":isDownload?"resource_download":isResource?"resource_open":null);
