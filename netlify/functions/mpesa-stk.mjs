@@ -97,7 +97,10 @@ export default async (request) => {
     console.error("Missing payment configuration:", missing);
     return respond(500, {
       success: false,
-      message: "Payment configuration is incomplete.",
+      environment: isProduction ? "production" : "sandbox",
+      message: isProduction
+        ? "Production M-Pesa configuration is incomplete. Please contact the site administrator."
+        : "Sandbox M-Pesa credentials are not configured for this deploy preview. No payment was initiated. Configure sandbox credentials in Netlify to test preview payments.",
       missing
     });
   }
