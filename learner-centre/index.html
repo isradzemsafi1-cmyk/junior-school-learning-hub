@@ -907,7 +907,7 @@ section{padding-top:50px;padding-bottom:50px}
 const SUPABASE_PUBLISHABLE_KEY = "sb_publishable_uaOcRVaIwnvRl_wZhMhJ-Q_DhrqZyS_";
 
 const { createClient } = window.supabase;
-const supabaseClient = createClient(SUPABASE_URL, SUPABASE_PUBLISHABLE_KEY);
+const supabaseClient = createClient(SUPABASE_URL, SUPABASE_PUBLISHABLE_KEY);\nwindow.jslhSupabase = supabaseClient;
  window.buyProduct = async function(productId) {
   const message = document.getElementById("paymentMessage");
   const phone = document.getElementById("mpesaPhone").value.trim();
@@ -2828,5 +2828,5 @@ buildQuiz();
 })();
 </script>
  <script src="/learner-centre/quiz-bank/js/source-topical-quiz-centre.js" defer></script>
-</body>
+<script src="/assets/js/site-activity-tracker.js" defer></script>\n</body>
 </html>
