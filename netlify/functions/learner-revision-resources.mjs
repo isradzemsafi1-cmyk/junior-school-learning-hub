@@ -4,7 +4,7 @@ const SERVICE_KEY=()=>Netlify.env.get("SUPABASE_SERVICE_ROLE_KEY");
 const PUBLISHABLE_KEY="sb_publishable_uaOcRVaIwnvRl_wZhMhJ-Q_DhrqZyS_";
 const BUCKET="learner-revision-premium";
 async function getUser(request){
- const token=(request.headers.get("authorization")||"").replace(/^Bearer\\s+/i,"");
+ const token=(request.headers.get("authorization")||"").replace(/^Bearer\s+/i,"");
  if(!token)return null;
  const r=await fetch(`${SUPABASE_URL()}/auth/v1/user`,{headers:{apikey:PUBLISHABLE_KEY,Authorization:`Bearer ${token}`}});
  if(!r.ok)return null;const u=await r.json();return u?.id?{id:u.id}:null;
