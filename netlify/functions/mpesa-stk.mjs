@@ -1,3 +1,5 @@
+import { teacherCatalog } from "../lib/teacher-catalog.mjs";
+
 
 export default async (request) => {
   const respond = (status, data) =>
@@ -13,51 +15,123 @@ export default async (request) => {
     });
   }
 
+  const supabaseUrl = Netlify.env.get("SUPABASE_URL");
+
+  const publishableKey =
+    "sb_publishable_uaOcRVaIwnvRl_wZhMhJ-Q_DhrqZyS_";
+
+  const serviceKey =
+    Netlify.env.get("SUPABASE_SERVICE_ROLE_KEY");
+
+  const isProduction = process.env.CONTEXT === "production";
+  // Keep sandbox and live Daraja credentials strictly separated. The sandbox
+  // shortcode/passkey below are Safaricom's published test values.
+  const consumerKey = isProduction
+    ? (Netlify.env.get("MPESA_PRODUCTION_CONSUMER_KEY") || Netlify.env.get("MPESA_CONSUMER_KEY"))
+    : Netlify.env.get("MPESA_SANDBOX_CONSUMER_KEY");
+  const consumerSecret = isProduction
+    ? (Netlify.env.get("MPESA_PRODUCTION_CONSUMER_SECRET") || Netlify.env.get("MPESA_CONSUMER_SECRET"))
+    : Netlify.env.get("MPESA_SANDBOX_CONSUMER_SECRET");
+  const shortcode = isProduction
+    ? (Netlify.env.get("MPESA_PRODUCTION_SHORTCODE") || Netlify.env.get("MPESA_SHORTCODE"))
+    : (Netlify.env.get("MPESA_SANDBOX_SHORTCODE"));
+  const tillNumber = isProduction
+    ? (Netlify.env.get("MPESA_PRODUCTION_TILL_NUMBER") || Netlify.env.get("MPESA_TILL_NUMBER"))
+    : shortcode;
+  const passkey = isProduction
+    ? (Netlify.env.get("MPESA_PRODUCTION_PASSKEY") || Netlify.env.get("MPESA_PASSKEY"))
+    : (Netlify.env.get("MPESA_SANDBOX_PASSKEY"));
+  // Live production checkout keeps its existing live callback. Sandbox
+  // checkout (including Deploy Previews) uses the verified custom-domain
+  // endpoint, which is deployed separately as a sandbox-only function.
+  const configuredCallbackURL = isProduction
+    ? Netlify.env.get("MPESA_CALLBACK_URL")
+    : (Netlify.env.get("MPESA_SANDBOX_CALLBACK_URL") ||
+       "https://juniorschoollearninghub.co.ke/.netlify/functions/mpesa-sandbox-callback");
+  // Use the same canonical function route shown in Netlify function logs.
+  const callbackURL = configuredCallbackURL || new URL(
+    "/.netlify/functions/mpesa-callback",
+    publicSiteURL.endsWith("/") ? publicSiteURL : `${publicSiteURL}/`
+  ).toString();
+  let callbackHost = "invalid";
+  try {
+    const parsedCallback = new URL(callbackURL);
+    callbackHost = parsedCallback.host;
+    if (parsedCallback.protocol !== "https:" ||
+        /localhost|127\.0\.0\.1/i.test(parsedCallback.hostname)) {
+      throw new Error("Callback URL must be a public HTTPS address.");
+    }
+  } catch {
+    return respond(500, {
+      success: false,
+      message: "The M-PESA callback URL is invalid. Configure MPESA_CALLBACK_URL as a public HTTPS endpoint or verify the Netlify site URL."
+    });
+  }
+
   const catalog = {
     online_tuition: 100,
     premium_quizzes: 20,
     grade7_notes: 10,
     grade8_notes: 10,
-    grade9_notes: 30
+    grade9_notes: 30,
+    career_guidance_full_package: 30,
+    grade10_selection_form: 30,
+    ...Object.fromEntries(
+      Object.values(teacherCatalog).flat().map(item => [item.product_id, item.price_kes])
+    )
   };
 
-  const supabaseUrl = Netlify.env.get("SUPABASE_URL");
-  const publishableKey =
-    "sb_publishable_uaOcRVaIwnvRl_wZhMhJ-Q_DhrqZyS_";
-  const serviceKey =
-    Netlify.env.get("SUPABASE_SERVICE_ROLE_KEY");
 
-  const consumerKey = Netlify.env.get("MPESA_CONSUMER_KEY");
-  const consumerSecret = Netlify.env.get("MPESA_CONSUMER_SECRET");
-  const shortcode = Netlify.env.get("MPESA_SHORTCODE");
-  const tillNumber = Netlify.env.get("MPESA_TILL_NUMBER");
-  const passkey = Netlify.env.get("MPESA_PASSKEY");
-  const callbackURL = Netlify.env.get("MPESA_CALLBACK_URL");
+  const missing = [
+    ["SUPABASE_URL", supabaseUrl],
+    ["SUPABASE_SERVICE_ROLE_KEY", serviceKey],
+    [isProduction ? "MPESA_PRODUCTION_CONSUMER_KEY" : "MPESA_SANDBOX_CONSUMER_KEY", consumerKey],
+    [isProduction ? "MPESA_PRODUCTION_CONSUMER_SECRET" : "MPESA_SANDBOX_CONSUMER_SECRET", consumerSecret],
+    [isProduction ? "MPESA_PRODUCTION_SHORTCODE" : "MPESA_SANDBOX_SHORTCODE", shortcode],
+    ...(isProduction ? [["MPESA_PRODUCTION_TILL_NUMBER", tillNumber]] : []),
+    [isProduction ? "MPESA_PRODUCTION_PASSKEY" : "MPESA_SANDBOX_PASSKEY", passkey]
+  ].filter(([, value]) => !value).map(([name]) => name);
 
-  if (!supabaseUrl || !serviceKey || !consumerKey ||
-      !consumerSecret || !shortcode || !tillNumber ||
-      !passkey || !callbackURL) {
+  if (missing.length) {
+    console.error("Missing payment configuration:", missing);
     return respond(500, {
       success: false,
-      message: "Production payment configuration is incomplete."
+      environment: isProduction ? "production" : "sandbox",
+      message: isProduction
+        ? "Production M-Pesa configuration is incomplete. Please contact the site administrator."
+        : "Sandbox M-Pesa credentials are not configured for this deploy preview. No payment was initiated. Configure sandbox credentials in Netlify to test preview payments.",
+      missing
     });
   }
 
-  if (!callbackURL.startsWith("https://")) {
-    return respond(500, {
-      success: false,
-      message: "A secure HTTPS callback URL is required."
-    });
-  }
+
 
   const dbHeaders = {
     apikey: serviceKey,
     Authorization: `Bearer ${serviceKey}`,
     "Content-Type": "application/json"
   };
-
+const mpesaBaseUrl = isProduction
+  ? "https://api.safaricom.co.ke"
+  : "https://sandbox.safaricom.co.ke";
   let paymentId;
+const readJson = async (response, service) => {
+  const raw = await response.text();
 
+  if (!raw.trim()) {
+    throw new Error(
+      `${service} returned an empty response. HTTP ${response.status}`
+    );
+  }
+
+  try {
+    return JSON.parse(raw);
+  } catch {
+    throw new Error(
+      `${service} returned invalid JSON. HTTP ${response.status}`
+    );
+  }
+};
   try {
     const body = await request.json();
 
@@ -90,7 +164,7 @@ export default async (request) => {
       });
     }
 
-    const user = await authResponse.json();
+    const user = await readJson(authResponse, "Supabase authentication");
 
     if (!user.id) {
       return respond(401, {
@@ -141,7 +215,7 @@ export default async (request) => {
       }
     );
 
-    const paymentRows = await paymentResponse.json();
+    const paymentRows = await readJson(paymentResponse, "Supabase payment record");
 
     if (!paymentResponse.ok || !paymentRows[0]?.id) {
       return respond(500, {
@@ -157,7 +231,7 @@ export default async (request) => {
     ).toString("base64");
 
     const tokenResponse = await fetch(
-      "https://api.safaricom.co.ke/oauth/v1/generate?grant_type=client_credentials",
+      `${mpesaBaseUrl}/oauth/v1/generate?grant_type=client_credentials`,
       {
         headers: {
           Authorization: `Basic ${credentials}`
@@ -165,7 +239,7 @@ export default async (request) => {
       }
     );
 
-    const tokenData = await tokenResponse.json();
+    const tokenData = await readJson(tokenResponse, "Safaricom OAuth");
 
     if (!tokenResponse.ok || !tokenData.access_token) {
       throw new Error("Safaricom authentication failed.");
@@ -193,8 +267,21 @@ export default async (request) => {
       shortcode + passkey + timestamp
     ).toString("base64");
 
+    const transactionType = isProduction
+      ? "CustomerBuyGoodsOnline"
+      : "CustomerPayBillOnline";
+    const partyB = isProduction ? tillNumber : shortcode;
+
+    console.log("Starting M-PESA STK request", {
+      environment: isProduction ? "production" : "sandbox",
+      businessShortCode: shortcode,
+      partyB,
+      transactionType,
+      callbackHost
+    });
+
     const stkResponse = await fetch(
-      "https://api.safaricom.co.ke/mpesa/stkpush/v1/processrequest",
+      `${mpesaBaseUrl}/mpesa/stkpush/v1/processrequest`,
       {
         method: "POST",
         headers: {
@@ -205,10 +292,10 @@ export default async (request) => {
           BusinessShortCode: shortcode,
           Password: password,
           Timestamp: timestamp,
-          TransactionType: "CustomerBuyGoodsOnline",
+          TransactionType: transactionType,
           Amount: amount,
           PartyA: phone,
-          PartyB: tillNumber,
+          PartyB: partyB,
           PhoneNumber: phone,
           CallBackURL: callbackURL,
           AccountReference: "JSLH",
@@ -217,7 +304,7 @@ export default async (request) => {
       }
     );
 
-    const result = await stkResponse.json();
+    const result = await readJson(stkResponse, "Safaricom STK Push");
 
     if (!stkResponse.ok || result.ResponseCode !== "0") {
       await fetch(
@@ -234,11 +321,25 @@ export default async (request) => {
         }
       );
 
+      // Keep the provider diagnostics useful without exposing credentials,
+      // payer phone numbers, payment IDs, or the complete callback URL.
+      console.error("Safaricom rejected STK initiation", {
+        httpStatus: stkResponse.status,
+        providerErrorCode: result.errorCode || result.ResponseCode || null,
+        providerRequestId: result.requestId || result.RequestId || null,
+        callbackHost,
+        environment: isProduction ? "production" : "sandbox",
+        message: result.errorMessage || result.ResponseDescription || null
+      });
       return respond(502, {
         success: false,
         message: result.errorMessage ||
           result.ResponseDescription ||
-          "Safaricom could not initiate payment."
+          "Safaricom could not initiate payment.",
+        providerErrorCode: result.errorCode || result.ResponseCode || null,
+        providerRequestId: result.requestId || result.RequestId || null,
+        callbackHost,
+        environment: isProduction ? "production" : "sandbox"
       });
     }
 

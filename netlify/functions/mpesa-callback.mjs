@@ -1,3 +1,5 @@
+import { teacherCatalog } from "../lib/teacher-catalog.mjs";
+
 
 export default async (request) => {
   const respond = (status, data) =>
@@ -15,11 +17,24 @@ export default async (request) => {
 
   const supabaseUrl = Netlify.env.get("SUPABASE_URL");
   const serviceKey = Netlify.env.get("SUPABASE_SERVICE_ROLE_KEY");
-  const consumerKey = Netlify.env.get("MPESA_CONSUMER_KEY");
-  const consumerSecret = Netlify.env.get("MPESA_CONSUMER_SECRET");
-  const shortcode = Netlify.env.get("MPESA_SHORTCODE");
-  const passkey = Netlify.env.get("MPESA_PASSKEY");
+  const isProduction = process.env.CONTEXT === "production";
+  // Use the same environment-specific credentials as the STK initiation.
+  const consumerKey = isProduction
+    ? (Netlify.env.get("MPESA_PRODUCTION_CONSUMER_KEY") || Netlify.env.get("MPESA_CONSUMER_KEY"))
+    : Netlify.env.get("MPESA_SANDBOX_CONSUMER_KEY");
+  const consumerSecret = isProduction
+    ? (Netlify.env.get("MPESA_PRODUCTION_CONSUMER_SECRET") || Netlify.env.get("MPESA_CONSUMER_SECRET"))
+    : Netlify.env.get("MPESA_SANDBOX_CONSUMER_SECRET");
+  const shortcode = isProduction
+    ? (Netlify.env.get("MPESA_PRODUCTION_SHORTCODE") || Netlify.env.get("MPESA_SHORTCODE"))
+    : (Netlify.env.get("MPESA_SANDBOX_SHORTCODE"));
+  const passkey = isProduction
+    ? (Netlify.env.get("MPESA_PRODUCTION_PASSKEY") || Netlify.env.get("MPESA_PASSKEY"))
+    : (Netlify.env.get("MPESA_SANDBOX_PASSKEY"));
 
+const mpesaBaseUrl = isProduction
+  ? "https://api.safaricom.co.ke"
+  : "https://sandbox.safaricom.co.ke";
   if (!supabaseUrl || !serviceKey || !consumerKey ||
       !consumerSecret || !shortcode || !passkey) {
     console.error("Callback configuration is incomplete.");
@@ -31,7 +46,12 @@ export default async (request) => {
     premium_quizzes: 20,
     grade7_notes: 10,
     grade8_notes: 10,
-    grade9_notes: 30
+    grade9_notes: 30,
+    career_guidance_full_package: 30,
+    grade10_selection_form: 30,
+    ...Object.fromEntries(
+      Object.values(teacherCatalog).flat().map(item => [item.product_id, item.price_kes])
+    )
   };
 
   const durations = {
@@ -39,7 +59,12 @@ export default async (request) => {
     grade8_notes: 12,
     grade9_notes: 24,
     online_tuition: 24,
-    premium_quizzes: 24
+    premium_quizzes: 24,
+    career_guidance_full_package: 720,
+    grade10_selection_form: 720,
+    ...Object.fromEntries(
+      Object.values(teacherCatalog).flat().map(item => [item.product_id, 168])
+    )
   };
 
   const dbHeaders = {
@@ -78,12 +103,19 @@ export default async (request) => {
     const callback = body?.Body?.stkCallback;
 
     if (!callback?.CheckoutRequestID) {
+      console.warn("M-Pesa callback received without CheckoutRequestID.", {
+        environment: isProduction ? "production" : "sandbox"
+      });
       return respond(400, { success: false });
     }
 
     const checkoutId = callback.CheckoutRequestID;
     const merchantId = callback.MerchantRequestID || "";
     const callbackCode = String(callback.ResultCode);
+    console.info("M-Pesa callback received.", {
+      environment: isProduction ? "production" : "sandbox",
+      resultCode: callbackCode
+    });
 
     const paymentResponse = await fetch(
       `${supabaseUrl}/rest/v1/payments?checkout_request_id=eq.${encodeURIComponent(checkoutId)}&select=*`,
@@ -98,7 +130,9 @@ export default async (request) => {
     const payment = payments[0];
 
     if (!payment) {
-      console.error("No matching payment record:", checkoutId);
+      console.error("M-Pesa callback has no matching payment record.", {
+        checkoutRequestId: checkoutId
+      });
       return respond(200, { ResultCode: 0, ResultDesc: "Received" });
     }
 
@@ -171,7 +205,7 @@ export default async (request) => {
     ).toString("base64");
 
     const tokenResponse = await fetch(
-      "https://api.safaricom.co.ke/oauth/v1/generate?grant_type=client_credentials",
+      `${mpesaBaseUrl}/oauth/v1/generate?grant_type=client_credentials`,
       {
         headers: { Authorization: `Basic ${credentials}` }
       }
@@ -183,13 +217,15 @@ export default async (request) => {
       throw new Error("Could not authenticate with Safaricom.");
     }
 
+    // Match the previously working Daraja verification flow: generate
+    // a fresh Nairobi timestamp for the STK Push Query password.
     const timestamp = getTimestamp();
     const password = Buffer.from(
       shortcode + passkey + timestamp
     ).toString("base64");
 
     const queryResponse = await fetch(
-      "https://api.safaricom.co.ke/mpesa/stkpushquery/v1/query",
+      `${mpesaBaseUrl}/mpesa/stkpushquery/v1/query`,
       {
         method: "POST",
         headers: {
@@ -212,7 +248,12 @@ export default async (request) => {
       String(queryResult.ResultCode) !== "0" ||
       queryResult.CheckoutRequestID !== checkoutId
     ) {
-      console.error("Safaricom verification is pending or unsuccessful.");
+      console.error("Safaricom STK query did not verify the callback.", {
+        environment: isProduction ? "production" : "sandbox",
+        queryHttpStatus: queryResponse.status,
+        queryResultCode: queryResult.ResultCode ?? null,
+        checkoutRequestMatched: queryResult.CheckoutRequestID === checkoutId
+      });
       return respond(200, { ResultCode: 0, ResultDesc: "Received" });
     }
 
