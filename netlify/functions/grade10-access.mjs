@@ -7,7 +7,7 @@ export default async(request)=>{
   if(request.method!=="GET")return json(405,{success:false,message:"GET only."});
   const url=SUPABASE_URL(),serviceKey=SERVICE_KEY();
   if(!url||!serviceKey)return json(500,{success:false,message:"Career access verification is not configured."});
-  const token=(request.headers.get("authorization")||"").replace(/^Bearer\\s+/i,"");
+  const token=(request.headers.get("authorization")||"").replace(/^Bearer\s+/i,"");
   if(!token)return json(401,{success:false,message:"Sign in to check your Grade 10 selection access."});
   try{
     const auth=await fetch(`${url}/auth/v1/user`,{headers:{apikey:PUBLISHABLE_KEY,Authorization:`Bearer ${token}`}});
