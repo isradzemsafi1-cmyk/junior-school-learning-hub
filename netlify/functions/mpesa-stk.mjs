@@ -33,14 +33,14 @@ export default async (request) => {
     ? (Netlify.env.get("MPESA_PRODUCTION_CONSUMER_SECRET") || Netlify.env.get("MPESA_CONSUMER_SECRET"))
     : Netlify.env.get("MPESA_SANDBOX_CONSUMER_SECRET");
   const shortcode = isProduction
-    ? (Netlify.env.get("MPESA_PRODUCTION_SHORTCODE") || Netlify.env.get("MPESA_SHORTCODE") || "1420268")
-    : (Netlify.env.get("MPESA_SANDBOX_SHORTCODE") || "174379");
+    ? (Netlify.env.get("MPESA_PRODUCTION_SHORTCODE") || Netlify.env.get("MPESA_SHORTCODE"))
+    : (Netlify.env.get("MPESA_SANDBOX_SHORTCODE"));
   const tillNumber = isProduction
     ? (Netlify.env.get("MPESA_PRODUCTION_TILL_NUMBER") || Netlify.env.get("MPESA_TILL_NUMBER") || "1887415")
     : shortcode;
   const passkey = isProduction
     ? (Netlify.env.get("MPESA_PRODUCTION_PASSKEY") || Netlify.env.get("MPESA_PASSKEY"))
-    : (Netlify.env.get("MPESA_SANDBOX_PASSKEY") || "bfb279f9aa9bdbcf158e97dd71a467cd2e0c893059b10f78e6b72ada1ed2c919");
+    : (Netlify.env.get("MPESA_SANDBOX_PASSKEY"));
   // Preview callbacks must return to the same preview deployment. Production
   // callbacks use the verified custom domain configured in Netlify.
   const configuredCallbackURL = isProduction
@@ -88,7 +88,7 @@ export default async (request) => {
     ["SUPABASE_SERVICE_ROLE_KEY", serviceKey],
     [isProduction ? "MPESA_PRODUCTION_CONSUMER_KEY" : "MPESA_SANDBOX_CONSUMER_KEY", consumerKey],
     [isProduction ? "MPESA_PRODUCTION_CONSUMER_SECRET" : "MPESA_SANDBOX_CONSUMER_SECRET", consumerSecret],
-    ["MPESA_SHORTCODE", shortcode],
+    [isProduction ? "MPESA_PRODUCTION_SHORTCODE" : "MPESA_SANDBOX_SHORTCODE", shortcode],
     [isProduction ? "MPESA_PRODUCTION_TILL_NUMBER" : "MPESA_SANDBOX_SHORTCODE", tillNumber],
     [isProduction ? "MPESA_PRODUCTION_PASSKEY" : "MPESA_SANDBOX_PASSKEY", passkey]
   ].filter(([, value]) => !value).map(([name]) => name);
