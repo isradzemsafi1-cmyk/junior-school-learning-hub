@@ -189,9 +189,12 @@ const mpesaBaseUrl = isProduction
       return respond(200, { ResultCode: 0, ResultDesc: "Received" });
     }
 
+    const isRevisionResource =
+      /^kjsea2027_[a-z0-9_]{3,80}$/.test(String(payment.product_id || ""));
+    const expectedAmount = isRevisionResource ? 10 : catalog[payment.product_id];
     if (
-      !Object.prototype.hasOwnProperty.call(catalog, payment.product_id) ||
-      Number(payment.amount) !== catalog[payment.product_id]
+      !Number.isFinite(expectedAmount) ||
+      Number(payment.amount) !== expectedAmount
     ) {
       throw new Error("Payment product or amount does not match.");
     }
@@ -289,7 +292,13 @@ const mpesaBaseUrl = isProduction
     }
 
     const hours = durations[payment.product_id];
-    const expiry = new Date(Date.now() + hours * 60 * 60 * 1000);
+    if (!isRevisionResource && (!Number.isFinite(hours) || hours <= 0)) {
+      throw new Error("Unknown entitlement duration.");
+    }
+    // A paid KJSEA PDF is a one-time purchase with permanent repeat access.
+    const expiry = isRevisionResource
+      ? new Date("9999-12-31T23:59:59.999Z")
+      : new Date(Date.now() + hours * 60 * 60 * 1000);
 
     const entitlementResponse = await fetch(
       `${supabaseUrl}/rest/v1/entitlements?on_conflict=user_id,product_id`,
@@ -333,4 +342,13 @@ const mpesaBaseUrl = isProduction
       ResultDesc: "Callback received."
     });
   }
+};
+
+
+// Preserve the legacy endpoint and add a Daraja-safe callback alias.
+export const config = {
+  path: [
+    "/.netlify/functions/mpesa-callback",
+    "/.netlify/functions/payment-callback"
+  ]
 };
