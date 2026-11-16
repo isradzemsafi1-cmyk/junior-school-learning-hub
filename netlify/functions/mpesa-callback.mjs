@@ -65,6 +65,10 @@ const mpesaBaseUrl = isProduction
       Object.values(teacherCatalog).flat().map(item => [item.product_id, item.price_kes])
     )
   };
+  // Learner Centre topic modules are individually priced at KES 10.
+  // Topic access is still verified against server-owned content IDs before content is returned.
+  const learnerTopicProduct = /^learner_g[789]_[a-z0-9-]{1,70}$/.test.bind(/^learner_g[789]_[a-z0-9-]{1,70}$/);
+
 
   const durations = {
     grade7_notes: 12,
@@ -78,6 +82,7 @@ const mpesaBaseUrl = isProduction
       Object.values(teacherCatalog).flat().map(item => [item.product_id, 168])
     )
   };
+  const learnerTopicProduct = /^learner_g[789]_[a-z0-9-]{1,70}$/.test.bind(/^learner_g[789]_[a-z0-9-]{1,70}$/);
 
   const dbHeaders = {
     apikey: serviceKey,
@@ -288,7 +293,8 @@ const mpesaBaseUrl = isProduction
       throw new Error("Could not update the verified payment.");
     }
 
-    const hours = durations[payment.product_id];
+    const hours = learnerTopicProduct(payment.product_id) ? 24 : durations[payment.product_id];
+    if (!Number.isFinite(hours) || hours <= 0) throw new Error("Unknown entitlement duration.");
     const expiry = new Date(Date.now() + hours * 60 * 60 * 1000);
 
     const entitlementResponse = await fetch(
