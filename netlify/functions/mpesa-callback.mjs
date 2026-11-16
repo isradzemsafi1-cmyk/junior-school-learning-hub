@@ -296,7 +296,9 @@ const mpesaBaseUrl = isProduction
       throw new Error("Unknown entitlement duration.");
     }
     // A paid KJSEA PDF is a one-time purchase with permanent repeat access.
-    const expiry = isRevisionResource
+    const isLifetimeGrade10Selection =
+      payment.product_id === "grade10_selection_form";
+    const expiry = (isRevisionResource || isLifetimeGrade10Selection)
       ? new Date("9999-12-31T23:59:59.999Z")
       : new Date(Date.now() + hours * 60 * 60 * 1000);
 
