@@ -191,9 +191,12 @@ const mpesaBaseUrl = isProduction
       return respond(200, { ResultCode: 0, ResultDesc: "Received" });
     }
 
+    const isLearnerTopicProduct =
+      /^learner_g[789]_[a-z0-9-]{1,70}$/.test(String(payment.product_id || ""));
+    const expectedAmount = isLearnerTopicProduct ? 10 : catalog[payment.product_id];
     if (
-      !Object.prototype.hasOwnProperty.call(catalog, payment.product_id) ||
-      Number(payment.amount) !== catalog[payment.product_id]
+      !Number.isFinite(expectedAmount) ||
+      Number(payment.amount) !== expectedAmount
     ) {
       throw new Error("Payment product or amount does not match.");
     }
