@@ -53,19 +53,9 @@ export default async (request) => {
   const passkey = isProduction
     ? (Netlify.env.get("MPESA_PRODUCTION_PASSKEY") || Netlify.env.get("MPESA_PASSKEY"))
     : (Netlify.env.get("MPESA_SANDBOX_PASSKEY"));
-  // Live production checkout keeps its existing live callback. Sandbox
-  // checkout (including Deploy Previews) uses the verified custom-domain
-  // endpoint, which is deployed separately as a sandbox-only function.
-  const publicSiteURL = Netlify.env.get("URL") || new URL(request.url).origin;
-  const configuredCallbackURL = isProduction
-    ? Netlify.env.get("MPESA_CALLBACK_URL")
-    : (Netlify.env.get("MPESA_SANDBOX_CALLBACK_URL") ||
-       "https://juniorschoollearninghub.co.ke/.netlify/functions/mpesa-sandbox-callback");
-  // Use the same canonical function route shown in Netlify function logs.
-  const callbackURL = configuredCallbackURL || new URL(
-    "/.netlify/functions/mpesa-callback",
-    publicSiteURL.endsWith("/") ? publicSiteURL : `${publicSiteURL}/`
-  ).toString();
+  // Always use the explicitly configured, public HTTPS callback. Its path
+  // must be Daraja-safe (payment-callback), without provider-reserved words.
+  const callbackURL = Netlify.env.get("MPESA_CALLBACK_URL") || "";
   let callbackHost = "invalid";
   try {
     const parsedCallback = new URL(callbackURL);
@@ -187,15 +177,24 @@ const readJson = async (response, service) => {
     }
 
     const productId = String(body.product_id || "");
-
-    if (!Object.prototype.hasOwnProperty.call(catalog, productId)) {
+    let isRevisionResource = false;
+    if (/^kjsea2027_[a-z0-9_]{3,80}$/.test(productId)) {
+      const resourceCheck = await fetch(
+        `${supabaseUrl}/rest/v1/learner_revision_resources?id=eq.${encodeURIComponent(productId)}&published=eq.true&select=id,price_kes&limit=1`,
+        { headers: dbHeaders }
+      );
+      if (!resourceCheck.ok) throw new Error("Could not validate KJSEA revision resource.");
+      const resources = await resourceCheck.json();
+      isRevisionResource = resources.length === 1 && Number(resources[0].price_kes) === 10;
+    }
+    if (!isRevisionResource && !Object.prototype.hasOwnProperty.call(catalog, productId)) {
       return respond(400, {
         success: false,
         message: "Please select a valid learning product."
       });
     }
 
-    const amount = catalog[productId];
+    const amount = isRevisionResource ? 10 : catalog[productId];
 
     let phone = String(body.phone || "").replace(/[\s+-]/g, "");
 
