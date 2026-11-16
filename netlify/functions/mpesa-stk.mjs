@@ -23,23 +23,35 @@ export default async (request) => {
   const serviceKey =
     Netlify.env.get("SUPABASE_SERVICE_ROLE_KEY");
 
-  const consumerKey = Netlify.env.get("MPESA_CONSUMER_KEY");
-  const consumerSecret = Netlify.env.get("MPESA_CONSUMER_SECRET");
-  // Safaricom confirmed these production Buy Goods identifiers for JSLH.
-  // Environment values may override them for an explicitly configured test account.
-  const shortcode = Netlify.env.get("MPESA_SHORTCODE") || "1420268";
-  const tillNumber = Netlify.env.get("MPESA_TILL_NUMBER") || "1887415";
-  const passkey = Netlify.env.get("MPESA_PASSKEY");
-  // Use Netlify's canonical public deployment URL. DEPLOY_PRIME_URL is the
-  // exact deploy-preview URL; URL is the configured production site URL.
-  // Fall back to the incoming request origin only for local/other contexts.
-  const configuredCallbackURL = Netlify.env.get("MPESA_CALLBACK_URL");
+  const isProduction = process.env.CONTEXT === "production";
+  // Keep sandbox and live Daraja credentials strictly separated. The sandbox
+  // shortcode/passkey below are Safaricom's published test values.
+  const consumerKey = isProduction
+    ? (Netlify.env.get("MPESA_PRODUCTION_CONSUMER_KEY") || Netlify.env.get("MPESA_CONSUMER_KEY"))
+    : Netlify.env.get("MPESA_SANDBOX_CONSUMER_KEY");
+  const consumerSecret = isProduction
+    ? (Netlify.env.get("MPESA_PRODUCTION_CONSUMER_SECRET") || Netlify.env.get("MPESA_CONSUMER_SECRET"))
+    : Netlify.env.get("MPESA_SANDBOX_CONSUMER_SECRET");
+  const shortcode = isProduction
+    ? (Netlify.env.get("MPESA_PRODUCTION_SHORTCODE") || Netlify.env.get("MPESA_SHORTCODE") || "1420268")
+    : (Netlify.env.get("MPESA_SANDBOX_SHORTCODE") || "174379");
+  const tillNumber = isProduction
+    ? (Netlify.env.get("MPESA_PRODUCTION_TILL_NUMBER") || Netlify.env.get("MPESA_TILL_NUMBER") || "1887415")
+    : shortcode;
+  const passkey = isProduction
+    ? (Netlify.env.get("MPESA_PRODUCTION_PASSKEY") || Netlify.env.get("MPESA_PASSKEY"))
+    : (Netlify.env.get("MPESA_SANDBOX_PASSKEY") || "bfb279f9aa9bdbcf158e97dd71a467cd2e0c893059b10f78e6b72ada1ed2c919");
+  // Preview callbacks must return to the same preview deployment. Production
+  // callbacks use the verified custom domain configured in Netlify.
+  const configuredCallbackURL = isProduction
+    ? Netlify.env.get("MPESA_CALLBACK_URL")
+    : Netlify.env.get("MPESA_SANDBOX_CALLBACK_URL");
   const publicSiteURL =
     Netlify.env.get("DEPLOY_PRIME_URL") ||
     Netlify.env.get("URL") ||
     new URL(request.url).origin;
   const callbackURL = configuredCallbackURL || new URL(
-    "/.netlify/functions/payment-callback",
+    "/.netlify/functions/payment-callback/",
     publicSiteURL.endsWith("/") ? publicSiteURL : `${publicSiteURL}/`
   ).toString();
   let callbackHost = "invalid";
@@ -74,11 +86,11 @@ export default async (request) => {
   const missing = [
     ["SUPABASE_URL", supabaseUrl],
     ["SUPABASE_SERVICE_ROLE_KEY", serviceKey],
-    ["MPESA_CONSUMER_KEY", consumerKey],
-    ["MPESA_CONSUMER_SECRET", consumerSecret],
+    [isProduction ? "MPESA_PRODUCTION_CONSUMER_KEY" : "MPESA_SANDBOX_CONSUMER_KEY", consumerKey],
+    [isProduction ? "MPESA_PRODUCTION_CONSUMER_SECRET" : "MPESA_SANDBOX_CONSUMER_SECRET", consumerSecret],
     ["MPESA_SHORTCODE", shortcode],
-    ["MPESA_TILL_NUMBER", tillNumber],
-    ["MPESA_PASSKEY", passkey]
+    [isProduction ? "MPESA_PRODUCTION_TILL_NUMBER" : "MPESA_SANDBOX_SHORTCODE", tillNumber],
+    [isProduction ? "MPESA_PRODUCTION_PASSKEY" : "MPESA_SANDBOX_PASSKEY", passkey]
   ].filter(([, value]) => !value).map(([name]) => name);
 
   if (missing.length) {
@@ -97,8 +109,6 @@ export default async (request) => {
     Authorization: `Bearer ${serviceKey}`,
     "Content-Type": "application/json"
   };
-const isProduction = process.env.CONTEXT === "production";
-
 const mpesaBaseUrl = isProduction
   ? "https://api.safaricom.co.ke"
   : "https://sandbox.safaricom.co.ke";
