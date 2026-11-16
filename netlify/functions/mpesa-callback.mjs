@@ -326,8 +326,7 @@ const mpesaBaseUrl = isProduction
     console.log(
       "Verified payment and activated:",
       payment.product_id,
-      hours,
-      "hours"
+      isPermanentRevision ? "permanent access" : `${hours} hours`
     );
 
     return respond(200, {
