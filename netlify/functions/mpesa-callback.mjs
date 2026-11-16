@@ -295,9 +295,11 @@ const mpesaBaseUrl = isProduction
       throw new Error("Could not update the verified payment.");
     }
 
-    const hours = (learnerTopicProduct(payment.product_id) || isRevisionResource) ? 24 : durations[payment.product_id];
-    if (!Number.isFinite(hours) || hours <= 0) throw new Error("Unknown entitlement duration.");
-    const expiry = new Date(Date.now() + hours * 60 * 60 * 1000);
+    const isPermanentRevision = isRevisionResource;
+    const hours = learnerTopicProduct(payment.product_id) ? 24 : durations[payment.product_id];
+    if (!isPermanentRevision && (!Number.isFinite(hours) || hours <= 0)) throw new Error("Unknown entitlement duration.");
+    // A paid KJSEA PDF is a one-time purchase with permanent repeat access.
+    const expiry = isPermanentRevision ? new Date("9999-12-31T23:59:59.999Z") : new Date(Date.now() + hours * 60 * 60 * 1000);
 
     const entitlementResponse = await fetch(
       `${supabaseUrl}/rest/v1/entitlements?on_conflict=user_id,product_id`,
