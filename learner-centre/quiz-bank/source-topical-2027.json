@@ -1,0 +1,705 @@
+{
+  "brand": "Junior School Learning Hub",
+  "title": "KJSEA 2027 Topical Revision Quiz Bank",
+  "grade_band": "Grades 7–9 (mixed topical practice)",
+  "source_package": "JSLH_KJSEA_2027_Supabase_Storage_Ready.zip",
+  "note": "Question wording and answer keys are based on the uploaded JSLH topical PDFs. Kiswahili comprehension MCQs are clearly identified as adapted from the source passage. This is a curated starter bank, not yet the complete PDF question collection.",
+  "question_count": 36,
+  "subjects": [
+    "Mathematics",
+    "English",
+    "Kiswahili",
+    "Integrated Science",
+    "Social Studies",
+    "Agriculture & Nutrition",
+    "Pre-Technical Studies",
+    "CRE",
+    "Creative Arts & Sports"
+  ],
+  "questions": [
+    {
+      "id": "JSLH-KJSEA27-MATHEMATICS-001",
+      "subject": "Mathematics",
+      "grade_band": "Grades 7–9",
+      "academic_year": 2027,
+      "question": "The HCF of 12 and 18 is:",
+      "options": [
+        "2",
+        "3",
+        "6",
+        "9"
+      ],
+      "correct_index": 2,
+      "explanation": "The common factors are 1, 2, 3 and 6. The greatest is 6.",
+      "strand": "Numbers",
+      "source_file": "2027/mathematics-topical.pdf",
+      "source_type": "source_mcq",
+      "verified_answer": true
+    },
+    {
+      "id": "JSLH-KJSEA27-MATHEMATICS-002",
+      "subject": "Mathematics",
+      "grade_band": "Grades 7–9",
+      "academic_year": 2027,
+      "question": "The reciprocal of 4/7 is:",
+      "options": [
+        "4/7",
+        "7/4",
+        "1/4",
+        "3/7"
+      ],
+      "correct_index": 1,
+      "explanation": "The reciprocal is found by interchanging the numerator and denominator.",
+      "strand": "Fractions",
+      "source_file": "2027/mathematics-topical.pdf",
+      "source_type": "source_mcq",
+      "verified_answer": true
+    },
+    {
+      "id": "JSLH-KJSEA27-MATHEMATICS-003",
+      "subject": "Mathematics",
+      "grade_band": "Grades 7–9",
+      "academic_year": 2027,
+      "question": "What is the next term in the sequence 5, 10, 15, 20, …?",
+      "options": [
+        "22",
+        "24",
+        "25",
+        "30"
+      ],
+      "correct_index": 2,
+      "explanation": "The sequence increases by 5 each time. 20 + 5 = 25.",
+      "strand": "Patterns",
+      "source_file": "2027/mathematics-topical.pdf",
+      "source_type": "source_mcq",
+      "verified_answer": true
+    },
+    {
+      "id": "JSLH-KJSEA27-MATHEMATICS-004",
+      "subject": "Mathematics",
+      "grade_band": "Grades 7–9",
+      "academic_year": 2027,
+      "question": "The sum of the interior angles of a triangle is:",
+      "options": [
+        "90°",
+        "180°",
+        "270°",
+        "360°"
+      ],
+      "correct_index": 1,
+      "explanation": "The interior angles of every triangle add up to 180°.",
+      "strand": "Geometry",
+      "source_file": "2027/mathematics-topical.pdf",
+      "source_type": "source_mcq",
+      "verified_answer": true
+    },
+    {
+      "id": "JSLH-KJSEA27-ENGLISH-001",
+      "subject": "English",
+      "grade_band": "Grades 7–9",
+      "academic_year": 2027,
+      "question": "Which is the most polite request?",
+      "options": [
+        "Give me your pen.",
+        "You must give me your pen.",
+        "Could I please borrow your pen?",
+        "I want your pen now."
+      ],
+      "correct_index": 2,
+      "explanation": "“Could I please…” uses a polite question form and courteous language.",
+      "strand": "Polite language",
+      "source_file": "2027/english-topical.pdf",
+      "source_type": "source_mcq",
+      "verified_answer": true
+    },
+    {
+      "id": "JSLH-KJSEA27-ENGLISH-002",
+      "subject": "English",
+      "grade_band": "Grades 7–9",
+      "academic_year": 2027,
+      "question": "Skimming is reading quickly to:",
+      "options": [
+        "memorise every word",
+        "get the general idea",
+        "count paragraphs",
+        "find spelling errors"
+      ],
+      "correct_index": 1,
+      "explanation": "Skimming helps a reader understand the general subject or main idea quickly.",
+      "strand": "Reading skills",
+      "source_file": "2027/english-topical.pdf",
+      "source_type": "source_mcq",
+      "verified_answer": true
+    },
+    {
+      "id": "JSLH-KJSEA27-ENGLISH-003",
+      "subject": "English",
+      "grade_band": "Grades 7–9",
+      "academic_year": 2027,
+      "question": "Scanning is used to:",
+      "options": [
+        "find specific information",
+        "enjoy rhythm",
+        "write a poem",
+        "summarise a story"
+      ],
+      "correct_index": 0,
+      "explanation": "Scanning means looking through a text for a particular fact, name, date or detail.",
+      "strand": "Reading skills",
+      "source_file": "2027/english-topical.pdf",
+      "source_type": "source_mcq",
+      "verified_answer": true
+    },
+    {
+      "id": "JSLH-KJSEA27-ENGLISH-004",
+      "subject": "English",
+      "grade_band": "Grades 7–9",
+      "academic_year": 2027,
+      "question": "The past tense of “teach” is:",
+      "options": [
+        "teached",
+        "taught",
+        "teaches",
+        "teaching"
+      ],
+      "correct_index": 1,
+      "explanation": "“Teach” is an irregular verb. Its simple past form is “taught”.",
+      "strand": "Grammar",
+      "source_file": "2027/english-topical.pdf",
+      "source_type": "source_mcq",
+      "verified_answer": true
+    },
+    {
+      "id": "JSLH-KJSEA27-KISWAHILI-001",
+      "subject": "Kiswahili",
+      "grade_band": "Grades 7–9",
+      "academic_year": 2027,
+      "question": "Katika kifungu cha Kiwanda cha Peponi, ni nini kilichosababisha vifo vya samaki na wanyama wa majini?",
+      "options": [
+        "Maji ya mvua pekee",
+        "Majitaka na kemikali kutoka kiwandani",
+        "Ukosefu wa chakula",
+        "Uvuvi wa kupita kiasi"
+      ],
+      "correct_index": 1,
+      "explanation": "Kifungu kinaeleza kuwa majitaka na kemikali kutoka kiwandani yalielekezwa mtoni na kusababisha uchafuzi.",
+      "strand": "Ufahamu wa kusoma",
+      "source_file": "2027/kiswahili-topical.pdf",
+      "source_type": "adapted_from_source_passage",
+      "verified_answer": true
+    },
+    {
+      "id": "JSLH-KJSEA27-KISWAHILI-002",
+      "subject": "Kiswahili",
+      "grade_band": "Grades 7–9",
+      "academic_year": 2027,
+      "question": "Kulingana na kifungu, ni nani waliofanya uchunguzi kuhusu maradhi ya wakazi?",
+      "options": [
+        "Wafanyabiashara",
+        "Wakazi wa mtaa",
+        "Wataalamu waliotumwa na serikali kuu",
+        "Wanafunzi wa shule"
+      ],
+      "correct_index": 2,
+      "explanation": "Wataalamu waliotumwa na serikali kuu walifanya uchunguzi na kubaini chanzo cha maradhi.",
+      "strand": "Ufahamu wa kusoma",
+      "source_file": "2027/kiswahili-topical.pdf",
+      "source_type": "adapted_from_source_passage",
+      "verified_answer": true
+    },
+    {
+      "id": "JSLH-KJSEA27-KISWAHILI-003",
+      "subject": "Kiswahili",
+      "grade_band": "Grades 7–9",
+      "academic_year": 2027,
+      "question": "Kiwanda cha Peponi kiliagizwa kufanya nini baada ya uchafuzi?",
+      "options": [
+        "Kuongeza uzalishaji",
+        "Kusafisha mto Kingo na kuondoa uchafu",
+        "Kuhamisha wakazi wote",
+        "Kufunga shule za eneo hilo"
+      ],
+      "correct_index": 1,
+      "explanation": "Kiwanda kiliagizwa kusitisha shughuli, kusafisha mto Kingo na kuondoa uchafu.",
+      "strand": "Ufahamu wa kusoma",
+      "source_file": "2027/kiswahili-topical.pdf",
+      "source_type": "adapted_from_source_passage",
+      "verified_answer": true
+    },
+    {
+      "id": "JSLH-KJSEA27-KISWAHILI-004",
+      "subject": "Kiswahili",
+      "grade_band": "Grades 7–9",
+      "academic_year": 2027,
+      "question": "Ni nahau ipi katika kifungu inayomaanisha kukubali kushindwa au kutii?",
+      "options": [
+        "Kutoa rushwa",
+        "Kulisalimu amri",
+        "Kuwa na soko kubwa",
+        "Kukuna shughuli"
+      ],
+      "correct_index": 1,
+      "explanation": "“Kulisalimu amri” hutumika kuonyesha kukubali kushindwa au kujisalimisha.",
+      "strand": "Nahau",
+      "source_file": "2027/kiswahili-topical.pdf",
+      "source_type": "adapted_from_source_passage",
+      "verified_answer": true
+    },
+    {
+      "id": "JSLH-KJSEA27-INTEGRATED-SCIENCE-001",
+      "subject": "Integrated Science",
+      "grade_band": "Grades 7–9",
+      "academic_year": 2027,
+      "question": "Which branch of science mainly studies living organisms?",
+      "options": [
+        "Physics",
+        "Chemistry",
+        "Biology",
+        "Geology"
+      ],
+      "correct_index": 2,
+      "explanation": "Biology is the branch of science concerned with living organisms and life processes.",
+      "strand": "Branches of science",
+      "source_file": "2027/integrated-science-topical.pdf",
+      "source_type": "source_mcq",
+      "verified_answer": true
+    },
+    {
+      "id": "JSLH-KJSEA27-INTEGRATED-SCIENCE-002",
+      "subject": "Integrated Science",
+      "grade_band": "Grades 7–9",
+      "academic_year": 2027,
+      "question": "Mwangi observes different substances mixing and reacting. Which branch of science is most directly concerned with substances and their reactions?",
+      "options": [
+        "Astronomy",
+        "Chemistry",
+        "Ecology",
+        "Botany"
+      ],
+      "correct_index": 1,
+      "explanation": "Chemistry studies substances, their properties, composition and the changes they undergo.",
+      "strand": "Branches of science",
+      "source_file": "2027/integrated-science-topical.pdf",
+      "source_type": "source_mcq",
+      "verified_answer": true
+    },
+    {
+      "id": "JSLH-KJSEA27-INTEGRATED-SCIENCE-003",
+      "subject": "Integrated Science",
+      "grade_band": "Grades 7–9",
+      "academic_year": 2027,
+      "question": "A learner is interested in how objects move and how energy is transferred. Which branch is most relevant?",
+      "options": [
+        "Botany",
+        "Physics",
+        "Chemistry",
+        "Geology"
+      ],
+      "correct_index": 1,
+      "explanation": "Physics studies matter, motion, forces and energy.",
+      "strand": "Branches of science",
+      "source_file": "2027/integrated-science-topical.pdf",
+      "source_type": "source_mcq",
+      "verified_answer": true
+    },
+    {
+      "id": "JSLH-KJSEA27-INTEGRATED-SCIENCE-004",
+      "subject": "Integrated Science",
+      "grade_band": "Grades 7–9",
+      "academic_year": 2027,
+      "question": "Understanding bacteria and hygiene helps a family mainly by:",
+      "options": [
+        "making them better artists",
+        "helping them understand health and hygiene",
+        "improving their dancing skills",
+        "making them better at sports"
+      ],
+      "correct_index": 1,
+      "explanation": "Knowledge of microorganisms and hygiene helps people prevent infection and maintain health.",
+      "strand": "Science in daily life",
+      "source_file": "2027/integrated-science-topical.pdf",
+      "source_type": "source_mcq",
+      "verified_answer": true
+    },
+    {
+      "id": "JSLH-KJSEA27-SOCIAL-STUDIES-001",
+      "subject": "Social Studies",
+      "grade_band": "Grades 7–9",
+      "academic_year": 2027,
+      "question": "What is one responsibility of society in protecting human rights?",
+      "options": [
+        "Promoting discrimination",
+        "Ensuring accountability for violations",
+        "Encouraging secrecy",
+        "Avoiding education"
+      ],
+      "correct_index": 1,
+      "explanation": "Society helps protect rights by reporting violations and supporting accountability and justice.",
+      "strand": "Human rights",
+      "source_file": "2027/social-studies-topical.pdf",
+      "source_type": "source_mcq",
+      "verified_answer": true
+    },
+    {
+      "id": "JSLH-KJSEA27-SOCIAL-STUDIES-002",
+      "subject": "Social Studies",
+      "grade_band": "Grades 7–9",
+      "academic_year": 2027,
+      "question": "Who played a key role in the Indian independence movement?",
+      "options": [
+        "Wangari Maathai",
+        "Mahatma Gandhi",
+        "Nelson Mandela",
+        "Kwame Nkrumah"
+      ],
+      "correct_index": 1,
+      "explanation": "Mahatma Gandhi was a major leader in India's independence movement.",
+      "strand": "History",
+      "source_file": "2027/social-studies-topical.pdf",
+      "source_type": "source_mcq",
+      "verified_answer": true
+    },
+    {
+      "id": "JSLH-KJSEA27-SOCIAL-STUDIES-003",
+      "subject": "Social Studies",
+      "grade_band": "Grades 7–9",
+      "academic_year": 2027,
+      "question": "What is one possible effect of globalisation?",
+      "options": [
+        "Cultural isolation",
+        "Economic growth",
+        "Technological regression",
+        "Decreased communication"
+      ],
+      "correct_index": 1,
+      "explanation": "Globalisation can expand trade, investment and access to markets, supporting economic growth.",
+      "strand": "Globalisation",
+      "source_file": "2027/social-studies-topical.pdf",
+      "source_type": "source_mcq",
+      "verified_answer": true
+    },
+    {
+      "id": "JSLH-KJSEA27-SOCIAL-STUDIES-004",
+      "subject": "Social Studies",
+      "grade_band": "Grades 7–9",
+      "academic_year": 2027,
+      "question": "Which action best promotes respect and inclusivity among learners?",
+      "options": [
+        "Avoid classmates with different opinions",
+        "Encourage classmates to share their cultural backgrounds and experiences",
+        "Avoid all class discussions",
+        "Socialise only with people who share your views"
+      ],
+      "correct_index": 1,
+      "explanation": "Inviting others to share their backgrounds encourages respect, understanding and inclusion.",
+      "strand": "Values and citizenship",
+      "source_file": "2027/social-studies-topical.pdf",
+      "source_type": "source_mcq",
+      "verified_answer": true
+    },
+    {
+      "id": "JSLH-KJSEA27-AGRICULTURE-NUTRITION-001",
+      "subject": "Agriculture & Nutrition",
+      "grade_band": "Grades 7–9",
+      "academic_year": 2027,
+      "question": "Lily is planning a garden that helps reduce surface runoff. What should she include?",
+      "options": [
+        "Concrete pathways",
+        "More flower beds",
+        "Water retention pits",
+        "Plastic decorations"
+      ],
+      "correct_index": 2,
+      "explanation": "Water retention pits collect runoff and allow more water to soak into the soil.",
+      "strand": "Water conservation",
+      "source_file": "2027/agriculture-nutrition-topical.pdf",
+      "source_type": "source_mcq",
+      "verified_answer": true
+    },
+    {
+      "id": "JSLH-KJSEA27-AGRICULTURE-NUTRITION-002",
+      "subject": "Agriculture & Nutrition",
+      "grade_band": "Grades 7–9",
+      "academic_year": 2027,
+      "question": "What can a school do to reduce rapid surface runoff from its grounds?",
+      "options": [
+        "Install waterproof tiles",
+        "Use cover cropping such as grass",
+        "Add glass covers",
+        "Lay metal sheets"
+      ],
+      "correct_index": 1,
+      "explanation": "Grass cover protects soil and slows water movement, reducing runoff and erosion.",
+      "strand": "Soil and water conservation",
+      "source_file": "2027/agriculture-nutrition-topical.pdf",
+      "source_type": "source_mcq",
+      "verified_answer": true
+    },
+    {
+      "id": "JSLH-KJSEA27-AGRICULTURE-NUTRITION-003",
+      "subject": "Agriculture & Nutrition",
+      "grade_band": "Grades 7–9",
+      "academic_year": 2027,
+      "question": "Which structure can help a community manage storm water in public areas?",
+      "options": [
+        "Sculptures",
+        "Detention basins",
+        "Tall fences",
+        "Concrete benches"
+      ],
+      "correct_index": 1,
+      "explanation": "Detention basins temporarily hold storm water and reduce the rate at which it flows away.",
+      "strand": "Water conservation",
+      "source_file": "2027/agriculture-nutrition-topical.pdf",
+      "source_type": "source_mcq",
+      "verified_answer": true
+    },
+    {
+      "id": "JSLH-KJSEA27-AGRICULTURE-NUTRITION-004",
+      "subject": "Agriculture & Nutrition",
+      "grade_band": "Grades 7–9",
+      "academic_year": 2027,
+      "question": "Which of the following is NOT a common effect of soil pollution?",
+      "options": [
+        "Reduced soil fertility",
+        "Contaminated groundwater",
+        "Increased crop yield",
+        "Harm to soil micro-organisms"
+      ],
+      "correct_index": 2,
+      "explanation": "Soil pollution can reduce fertility, contaminate water and harm soil organisms; increased yield is not an effect.",
+      "strand": "Soil pollution",
+      "source_file": "2027/agriculture-nutrition-topical.pdf",
+      "source_type": "source_mcq",
+      "verified_answer": true
+    },
+    {
+      "id": "JSLH-KJSEA27-PRE-TECHNICAL-STUDIES-001",
+      "subject": "Pre-Technical Studies",
+      "grade_band": "Grades 7–9",
+      "academic_year": 2027,
+      "question": "What does safety mean?",
+      "options": [
+        "A situation where one avoids causing harm to oneself and others while carrying out an activity",
+        "Keeping safe only from dangerous substances",
+        "A self-defence mechanism",
+        "Causing harm to oneself and others"
+      ],
+      "correct_index": 0,
+      "explanation": "Safety involves preventing harm to oneself and others during an activity.",
+      "strand": "Safety",
+      "source_file": "2027/pre-technical-studies-topical.pdf",
+      "source_type": "source_mcq",
+      "verified_answer": true
+    },
+    {
+      "id": "JSLH-KJSEA27-PRE-TECHNICAL-STUDIES-002",
+      "subject": "Pre-Technical Studies",
+      "grade_band": "Grades 7–9",
+      "academic_year": 2027,
+      "question": "Which is NOT an appropriate safety measure in a workplace?",
+      "options": [
+        "Walking barefoot",
+        "Wearing overalls",
+        "Wearing a face mask",
+        "Wearing hand gloves"
+      ],
+      "correct_index": 0,
+      "explanation": "Walking barefoot exposes a worker to injuries and hazards; protective clothing helps reduce risk.",
+      "strand": "Workplace safety",
+      "source_file": "2027/pre-technical-studies-topical.pdf",
+      "source_type": "source_mcq",
+      "verified_answer": true
+    },
+    {
+      "id": "JSLH-KJSEA27-PRE-TECHNICAL-STUDIES-003",
+      "subject": "Pre-Technical Studies",
+      "grade_band": "Grades 7–9",
+      "academic_year": 2027,
+      "question": "Which of the following is NOT an online threat?",
+      "options": [
+        "Using a strong password",
+        "Virus attack",
+        "Hacking",
+        "Data theft"
+      ],
+      "correct_index": 0,
+      "explanation": "A strong password is a protective measure. Viruses, hacking and data theft are online threats.",
+      "strand": "Digital safety",
+      "source_file": "2027/pre-technical-studies-topical.pdf",
+      "source_type": "source_mcq",
+      "verified_answer": true
+    },
+    {
+      "id": "JSLH-KJSEA27-PRE-TECHNICAL-STUDIES-004",
+      "subject": "Pre-Technical Studies",
+      "grade_band": "Grades 7–9",
+      "academic_year": 2027,
+      "question": "Which is a physical threat to a laptop?",
+      "options": [
+        "Cyberbullying",
+        "Data theft",
+        "Hacking",
+        "Hardware failure"
+      ],
+      "correct_index": 3,
+      "explanation": "Hardware failure is a physical or equipment-related threat to a digital device.",
+      "strand": "Digital devices",
+      "source_file": "2027/pre-technical-studies-topical.pdf",
+      "source_type": "source_mcq",
+      "verified_answer": true
+    },
+    {
+      "id": "JSLH-KJSEA27-CRE-001",
+      "subject": "CRE",
+      "grade_band": "Grades 7–9",
+      "academic_year": 2027,
+      "question": "CRE mainly helps learners to:",
+      "options": [
+        "memorise dates only",
+        "develop Christian understanding and values",
+        "avoid community life",
+        "reject responsibility"
+      ],
+      "correct_index": 1,
+      "explanation": "CRE supports Christian understanding, values and responsible living.",
+      "strand": "Introduction to CRE",
+      "source_file": "2027/cre-topical.pdf",
+      "source_type": "source_mcq",
+      "verified_answer": true
+    },
+    {
+      "id": "JSLH-KJSEA27-CRE-002",
+      "subject": "CRE",
+      "grade_band": "Grades 7–9",
+      "academic_year": 2027,
+      "question": "According to the biblical creation accounts, creation teaches that:",
+      "options": [
+        "creation has no value",
+        "God is the creator",
+        "humans should destroy nature",
+        "only humans matter"
+      ],
+      "correct_index": 1,
+      "explanation": "The creation accounts present God as the creator of the universe and life.",
+      "strand": "Creation",
+      "source_file": "2027/cre-topical.pdf",
+      "source_type": "source_mcq",
+      "verified_answer": true
+    },
+    {
+      "id": "JSLH-KJSEA27-CRE-003",
+      "subject": "CRE",
+      "grade_band": "Grades 7–9",
+      "academic_year": 2027,
+      "question": "Stewardship means:",
+      "options": [
+        "careless use",
+        "responsible care and management",
+        "wastefulness",
+        "ownership without duty"
+      ],
+      "correct_index": 1,
+      "explanation": "Stewardship is responsible care and management of what has been entrusted to people.",
+      "strand": "Creation",
+      "source_file": "2027/cre-topical.pdf",
+      "source_type": "source_mcq",
+      "verified_answer": true
+    },
+    {
+      "id": "JSLH-KJSEA27-CRE-004",
+      "subject": "CRE",
+      "grade_band": "Grades 7–9",
+      "academic_year": 2027,
+      "question": "An example of caring for creation is:",
+      "options": [
+        "dumping waste in rivers",
+        "planting trees",
+        "burning forests",
+        "poaching wildlife"
+      ],
+      "correct_index": 1,
+      "explanation": "Planting trees helps care for the environment and living things.",
+      "strand": "Creation",
+      "source_file": "2027/cre-topical.pdf",
+      "source_type": "source_mcq",
+      "verified_answer": true
+    },
+    {
+      "id": "JSLH-KJSEA27-CREATIVE-ARTS-SPORTS-001",
+      "subject": "Creative Arts & Sports",
+      "grade_band": "Grades 7–9",
+      "academic_year": 2027,
+      "question": "Which of the following is a visual art activity?",
+      "options": [
+        "Drawing",
+        "Sprinting",
+        "Singing",
+        "Swimming"
+      ],
+      "correct_index": 0,
+      "explanation": "Drawing is a visual art activity because it creates an image using lines and forms.",
+      "strand": "Visual arts",
+      "source_file": "2027/creative-arts-sports-topical.pdf",
+      "source_type": "source_mcq",
+      "verified_answer": true
+    },
+    {
+      "id": "JSLH-KJSEA27-CREATIVE-ARTS-SPORTS-002",
+      "subject": "Creative Arts & Sports",
+      "grade_band": "Grades 7–9",
+      "academic_year": 2027,
+      "question": "Rhythm is the:",
+      "options": [
+        "pattern of sounds and silences",
+        "colour of a costume",
+        "shape of a stage",
+        "length of a film"
+      ],
+      "correct_index": 0,
+      "explanation": "Rhythm is the organised pattern of sounds and silences over time.",
+      "strand": "Music",
+      "source_file": "2027/creative-arts-sports-topical.pdf",
+      "source_type": "source_mcq",
+      "verified_answer": true
+    },
+    {
+      "id": "JSLH-KJSEA27-CREATIVE-ARTS-SPORTS-003",
+      "subject": "Creative Arts & Sports",
+      "grade_band": "Grades 7–9",
+      "academic_year": 2027,
+      "question": "A role-play involves:",
+      "options": [
+        "acting out a situation",
+        "drawing a map",
+        "measuring a field",
+        "mixing paint"
+      ],
+      "correct_index": 0,
+      "explanation": "Role-play involves taking roles and acting out a situation or event.",
+      "strand": "Drama",
+      "source_file": "2027/creative-arts-sports-topical.pdf",
+      "source_type": "source_mcq",
+      "verified_answer": true
+    },
+    {
+      "id": "JSLH-KJSEA27-CREATIVE-ARTS-SPORTS-004",
+      "subject": "Creative Arts & Sports",
+      "grade_band": "Grades 7–9",
+      "academic_year": 2027,
+      "question": "A beat is:",
+      "options": [
+        "a regular pulse in music",
+        "a stage curtain",
+        "a costume",
+        "a painting"
+      ],
+      "correct_index": 0,
+      "explanation": "A beat is the steady pulse that helps organise music in time.",
+      "strand": "Music",
+      "source_file": "2027/creative-arts-sports-topical.pdf",
+      "source_type": "source_mcq",
+      "verified_answer": true
+    }
+  ]
+}
