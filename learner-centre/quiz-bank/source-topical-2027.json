@@ -4,7 +4,7 @@
   "grade_band": "Grades 7–9 (mixed topical practice)",
   "source_package": "JSLH_KJSEA_2027_Supabase_Storage_Ready.zip",
   "note": "Question wording and answer keys are based on the uploaded JSLH topical PDFs. Kiswahili comprehension MCQs are clearly identified as adapted from the source passage. This is a curated starter bank, not yet the complete PDF question collection.",
-  "question_count": 36,
+  "question_count": 37,
   "subjects": [
     "Mathematics",
     "English",
@@ -698,6 +698,25 @@
       "explanation": "A beat is the steady pulse that helps organise music in time.",
       "strand": "Music",
       "source_file": "2027/creative-arts-sports-topical.pdf",
+      "source_type": "source_mcq",
+      "verified_answer": true
+    },
+    {
+      "id": "JSLH-KJSEA27-INTEGRATED-SCIENCE-005",
+      "subject": "Integrated Science",
+      "grade_band": "Grades 7–9",
+      "academic_year": 2027,
+      "question": "In Tengecha community, science plays a crucial role in improving daily life. What is an example of how science enhances daily life in the community?",
+      "options": [
+        "Designing better houses",
+        "Creating traditional songs",
+        "Practising cultural dances",
+        "Enhancing storytelling techniques"
+      ],
+      "correct_index": 0,
+      "explanation": "Scientific knowledge can be used to design houses that withstand harsh weather and improve energy efficiency.",
+      "strand": "Science in daily life",
+      "source_file": "2027/integrated-science-topical.pdf",
       "source_type": "source_mcq",
       "verified_answer": true
     }
