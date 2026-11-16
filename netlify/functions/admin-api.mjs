@@ -143,6 +143,10 @@ export default async request => {
     if(action==="set_account_status"){
       const {user_id,active}=body;
       if(!user_id||typeof active!=="boolean")return json(400,{error:"Invalid account status request."});
+      const roleCheck=await rest(`tuition_profiles?id=eq.${encodeURIComponent(user_id)}&select=role`);
+      const roleRows=roleCheck.ok?await roleCheck.json():[];
+      if(!roleRows.length)return json(404,{error:"Member not found."});
+      if(roleRows[0].role==="admin")return json(403,{error:"Administrator accounts cannot be suspended from this screen."});
       const r=await authAdmin(`users/${encodeURIComponent(user_id)}`,{method:"PUT",body:JSON.stringify({ban_duration:active?"none":"876000h"})});
       if(!r.ok)return json(400,{error:"Account status could not be changed."});
       await log(active?"account_activated":"account_suspended",user_id,{});
