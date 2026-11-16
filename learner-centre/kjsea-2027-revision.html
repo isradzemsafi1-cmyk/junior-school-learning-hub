@@ -87,7 +87,7 @@ function render(){
 }
 function card(x){
  const ready=published.has(x.id);
- return '<article class="card"><div class="card-top"><span class="type">'+(x.type==="past_paper"?"2026 past paper":"Topical revision")+'</span><span class="price">KES 10</span></div><h4>'+x.title+'</h4><p>'+x.subject+' · '+x.grade+'<br>'+x.description+'</p><div class="card-foot"><span class="status '+(ready?"ready":"")+'">'+(ready?"Ready to purchase":"Preparing secure PDF")+'</span>'+(ready?'<button class="btn" data-buy="'+x.id+'">Buy document</button>':'<button class="btn" disabled>Coming soon</button>')+'</div></article>';
+ return '<article class="card"><div class="card-top"><span class="type">'+(x.type==="past_paper"?"2026 past paper":"Topical revision")+'</span><span class="price">KES 10</span></div><h4>'+x.title+'</h4><p>'+x.subject+' · '+x.grade+'<br>'+x.description+'</p><div class="card-foot"><span class="status '+(ready?"ready":"")+'">'+(ready?"Ready · KES 10":"Preparing secure PDF")+'</span>'+(ready?'<div><button class="btn" data-buy="'+x.id+'">Buy</button> <button class="btn secondary" data-open="'+x.id+'">Open</button></div>':'<button class="btn" disabled>Coming soon</button>')+'</div></article>';
 }
 async function refresh(){
  $("globalMessage").textContent="Checking secure document availability…";
@@ -115,7 +115,17 @@ async function buy(){
   $("confirmPay").textContent="Request sent";
  }catch(e){$("payMessage").textContent=e.message;$("confirmPay").disabled=false;}
 }
-document.addEventListener("click",e=>{const b=e.target.closest("[data-buy]");if(b)openPay(b.dataset.buy);});
+async function openPurchased(id){
+ const {data:{session}}=await authClient.auth.getSession();
+ if(!session){$("globalMessage").textContent="Sign in through the Learner Centre to open your purchased document.";return;}
+ $("globalMessage").textContent="Checking your purchase…";
+ try{
+  const r=await fetch("/.netlify/functions/learner-revision-resources?id="+encodeURIComponent(id),{headers:{Authorization:"Bearer "+session.access_token},cache:"no-store"});
+  if(!r.ok){const data=await r.json().catch(()=>({}));throw new Error(data.message||"Payment has not yet been confirmed for this document.");}
+  const blob=await r.blob();const url=URL.createObjectURL(blob);const a=document.createElement("a");a.href=url;a.download=(catalog.find(x=>x.id===id)?.title||"JSLH-revision").replace(/[^a-z0-9_-]+/gi,"-")+".pdf";document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),30000);$("globalMessage").textContent="Your purchased PDF is downloading.";
+ }catch(e){$("globalMessage").textContent=e.message;}
+}
+document.addEventListener("click",e=>{const b=e.target.closest("[data-buy]");if(b)openPay(b.dataset.buy);const o=e.target.closest("[data-open]");if(o)openPurchased(o.dataset.open);});
 $("confirmPay").addEventListener("click",buy);$("cancelPay").addEventListener("click",()=>$("payModal").classList.remove("show"));
 $("refreshBtn").addEventListener("click",refresh);["search","subject","kind"].forEach(id=>$(id).addEventListener(id==="search"?"input":"change",render));
 $("payModal").addEventListener("click",e=>{if(e.target===$("payModal"))$("payModal").classList.remove("show");});
