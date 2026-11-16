@@ -43,9 +43,11 @@ export default async (request) => {
     : (Netlify.env.get("MPESA_SANDBOX_PASSKEY"));
   // Preview callbacks must return to the same preview deployment. Production
   // callbacks use the verified custom domain configured in Netlify.
+  // Safaricom requires a publicly reachable callback on the verified domain.
+  // Preview STK requests use the dedicated sandbox-only handler on that domain.
   const configuredCallbackURL = isProduction
     ? Netlify.env.get("MPESA_CALLBACK_URL")
-    : Netlify.env.get("MPESA_SANDBOX_CALLBACK_URL");
+    : "https://juniorschoollearninghub.co.ke/.netlify/functions/mpesa-sandbox-callback";
   const publicSiteURL =
     Netlify.env.get("DEPLOY_PRIME_URL") ||
     Netlify.env.get("URL") ||
