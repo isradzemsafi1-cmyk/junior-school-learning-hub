@@ -1,5 +1,5 @@
-import { grade8Metadata } from "../content/grade8-mathematics-content.mjs";
-import grade9Content from "../content/grade9-library-content.mjs";
+import { grade8Metadata } from "./_shared/grade8-mathematics-content.mjs";
+import grade9Content from "./_shared/grade9-library-content.mjs";
 import { teacherCatalog } from "../lib/teacher-catalog.mjs";
 
 
