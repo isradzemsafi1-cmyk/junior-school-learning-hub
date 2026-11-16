@@ -1,5 +1,10 @@
+import { grade8Metadata } from "../content/grade8-mathematics-content.mjs";
+import grade9Content from "../content/grade9-library-content.mjs";
 import { teacherCatalog } from "../lib/teacher-catalog.mjs";
 
+
+const learnerSlug=(v,i)=>`${String(v||`topic-${i+1}`).toLowerCase().replace(/[^a-z0-9]+/g,"-").replace(/^-|-$/g,"").slice(0,60)}-${i+1}`;
+const grade9ProductIds=grade9Content.map((item,index)=>{const m=/<h2>\s*Topic:\s*([^<]+)<\/h2>/i.exec(item.notes||"");return `learner_g9_${learnerSlug(m?.[1]||item.subject,index)}`;});
 
 export default async (request) => {
   const respond = (status, data) =>
@@ -93,9 +98,6 @@ export default async (request) => {
       Object.values(teacherCatalog).flat().map(item => [item.product_id, item.price_kes])
     )
   };
-  // Learner Centre topic modules are individually priced at KES 10.
-  // Topic access is still verified against server-owned content IDs before content is returned.
-  const learnerTopicProduct = /^learner_g[789]_[a-z0-9-]{1,70}$/.test.bind(/^learner_g[789]_[a-z0-9-]{1,70}$/);
 
 
 
@@ -192,14 +194,19 @@ const readJson = async (response, service) => {
 
     const productId = String(body.product_id || "");
 
-    if (!Object.prototype.hasOwnProperty.call(catalog, productId) && !learnerTopicProduct(productId)) {
-      return respond(400, {
-        success: false,
-        message: "Please select a valid learning product."
-      });
+    let isLearnerTopic = false;
+    if (productId.startsWith("learner_g8_")) isLearnerTopic = grade8Metadata.some(item => item.resource_id === productId);
+    else if (productId.startsWith("learner_g9_")) isLearnerTopic = grade9ProductIds.includes(productId);
+    else if (productId.startsWith("learner_g7_")) {
+      const r = await fetch(`${supabaseUrl}/storage/v1/object/premium-learning-content/grade7-library-content.json`, { headers: { apikey: serviceKey, Authorization: `Bearer ${serviceKey}` } });
+      if (!r.ok) throw new Error("Could not validate Grade 7 topic.");
+      const data = await r.json();
+      isLearnerTopic = Array.isArray(data) && data.some((item,index) => `learner_g7_${learnerSlug(item.sub || item.strand || item.topic || item.subject,index)}` === productId);
     }
-
-    const amount = learnerTopicProduct(productId) ? 10 : catalog[productId];
+    if (!isLearnerTopic && !Object.prototype.hasOwnProperty.call(catalog, productId)) {
+      return respond(400, { success: false, message: "Please select a valid learning product." });
+    }
+    const amount = isLearnerTopic ? 10 : catalog[productId];
 
     let phone = String(body.phone || "").replace(/[\s+-]/g, "");
 
