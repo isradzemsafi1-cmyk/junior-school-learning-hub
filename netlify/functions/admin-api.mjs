@@ -44,7 +44,7 @@ export default async request => {
         return json(200,{events:events.ok?await events.json():[],admin_actions:admins.ok?await admins.json():[],profiles:profiles.ok?await profiles.json():[],warning:!events.ok?"Site activity table unavailable. Apply supabase/site-activity-analytics.sql.":null});
       }
       if(mode==="payments"){
-        const [payments,mpesa,orders,entitlements]=await Promise.all([
+        const [payments,mpesa,orders,entitlements,premiumEntitlements,premiumAccess]=await Promise.all([
           rest("payments?select=id,user_id,phone,amount,product_id,status,mpesa_receipt,result_desc,created_at,updated_at&order=created_at.desc&limit=500"),
           rest("mpesa_payments?select=id,user_id,phone_number,amount,currency,account_reference,status,mpesa_receipt_number,created_at,updated_at&order=created_at.desc&limit=500"),
           rest("teacher_download_orders?select=id,user_id,grade,resource_id,subject,resource_type,period,amount,status,download_count,paid_at,downloaded_at,created_at&order=created_at.desc&limit=500"),
