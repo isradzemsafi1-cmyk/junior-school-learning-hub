@@ -807,6 +807,7 @@ section{padding-top:50px;padding-bottom:50px}
    <p id="qla-studio-message" class="qla-message" aria-live="polite">Sign in with an authorised teacher account to manage quizzes.</p>
   </article>
   <article class="qla-card" id="qla-live-panel" hidden><div class="qla-live-head"><div><span class="qla-kicker">LIVE GAME</span><h3 id="qla-live-title">Quiz League Arena</h3><p>Game PIN: <strong id="qla-live-pin"></strong></p></div><button class="qla-btn qla-btn-outline" id="qla-refresh-game">Refresh lobby</button></div><div id="qla-live-content"></div></article>
+  <article id="source-topical-quiz-centre" class="qla-card" aria-label="KJSEA topical interactive quiz centre"><span class="qla-kicker">SELF-PACED AUTOMATED PRACTICE</span><p>Build confidence with source-based topical questions, instant marking and saved progress.</p></article>
   <details class="qla-practice"><summary>Open independent practice quizzes</summary><p>Use the existing self-paced quiz practice below. Scores continue to use the current learner dashboard saving mechanism.</p><div class="controls"><div><label for="quizGrade">Grade</label><select id="quizGrade"><option>Grade 7</option><option>Grade 8</option><option>Grade 9</option></select></div><div><label for="quizSubject">Learning area</label><select id="quizSubject"><option>Mathematics</option><option>English</option><option>Kiswahili</option><option>Integrated Science</option><option>Social Studies</option><option>CRE</option><option>Agriculture</option><option>Pre-Technical Studies</option><option>Creative Arts and Sports</option></select></div><div><label for="quizTerm">Term</label><select id="quizTerm"><option value="1">Term 1</option><option value="2">Term 2</option><option value="3">Term 3</option></select></div></div><div id="quizContent"></div><button class="btn" id="markQuiz" type="button">Submit answers and mark quiz</button><button class="btn outline" id="resetQuiz" type="button">Try again</button><div id="quizResult" aria-live="polite"></div><p class="small" id="quizSaveNote">Your practice scores can be saved to your learner dashboard when signed in.</p></details>
  </div>
 </section>
@@ -2826,5 +2827,6 @@ buildQuiz();
   window.renderLearnerExtras([]);
 })();
 </script>
+ <script src="/learner-centre/quiz-bank/js/source-topical-quiz-centre.js" defer></script>
 </body>
 </html>
