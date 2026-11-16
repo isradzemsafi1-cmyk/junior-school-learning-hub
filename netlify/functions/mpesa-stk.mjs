@@ -23,7 +23,19 @@ export default async (request) => {
   const serviceKey =
     Netlify.env.get("SUPABASE_SERVICE_ROLE_KEY");
 
-  const isProduction = process.env.CONTEXT === "production";
+  const requestHost = new URL(request.url).hostname.toLowerCase();
+  const deployContext =
+    Netlify.env.get("CONTEXT") ||
+    process.env.CONTEXT ||
+    process.env.NETLIFY_CONTEXT ||
+    "";
+  // Netlify's system CONTEXT was not reliably visible in the runtime for this
+  // site. The canonical custom domain is an unambiguous production signal;
+  // deploy-preview netlify.app hosts remain sandbox-only.
+  const isProduction =
+    deployContext === "production" ||
+    requestHost === "juniorschoollearninghub.co.ke" ||
+    requestHost === "www.juniorschoollearninghub.co.ke";
   // Keep sandbox and live Daraja credentials strictly separated. The sandbox
   // shortcode/passkey below are Safaricom's published test values.
   const consumerKey = isProduction
@@ -44,6 +56,7 @@ export default async (request) => {
   // Live production checkout keeps its existing live callback. Sandbox
   // checkout (including Deploy Previews) uses the verified custom-domain
   // endpoint, which is deployed separately as a sandbox-only function.
+  const publicSiteURL = Netlify.env.get("URL") || new URL(request.url).origin;
   const configuredCallbackURL = isProduction
     ? Netlify.env.get("MPESA_CALLBACK_URL")
     : (Netlify.env.get("MPESA_SANDBOX_CALLBACK_URL") ||
