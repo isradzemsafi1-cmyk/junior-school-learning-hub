@@ -959,7 +959,9 @@ export const teacherCatalog = {
       "product_id": "teacher_g7_096",
       "price_kes": 30,
       "storage_path": "grade7/Records_of_Work/Grade_7_Social_Studies_Term_3_Records_of_Work_2027.pdf"
-    },
+    }
+  ],
+  "8": [
     {
       "subject": "Agriculture",
       "category": "Schemes of Work",
