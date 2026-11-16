@@ -250,7 +250,7 @@
       "subject": "Integrated Science",
       "grade_band": "Grades 7–9",
       "academic_year": 2027,
-      "question": "Which branch of science mainly studies living organisms?",
+      "question": "Marion is curious about the world around her and loves exploring nature. She finds herself fascinated by the study of plants, animals and ecosystems. Which component of Integrated Science is Marion most interested in?",
       "options": [
         "Physics",
         "Chemistry",
@@ -258,7 +258,7 @@
         "Geology"
       ],
       "correct_index": 2,
-      "explanation": "Biology is the branch of science concerned with living organisms and life processes.",
+      "explanation": "Biology is the component concerned with living things, including plants, animals and ecosystems.",
       "strand": "Branches of science",
       "source_file": "2027/integrated-science-topical.pdf",
       "source_type": "source_mcq",
@@ -269,7 +269,7 @@
       "subject": "Integrated Science",
       "grade_band": "Grades 7–9",
       "academic_year": 2027,
-      "question": "Mwangi observes different substances mixing and reacting. Which branch of science is most directly concerned with substances and their reactions?",
+      "question": "During a classroom experiment, Mwangi observed different substances mixing and reacting to form new compounds. He learns about acids, bases and the periodic table. Which aspect of Integrated Science is Mwangi learning about?",
       "options": [
         "Astronomy",
         "Chemistry",
@@ -288,15 +288,15 @@
       "subject": "Integrated Science",
       "grade_band": "Grades 7–9",
       "academic_year": 2027,
-      "question": "A learner is interested in how objects move and how energy is transferred. Which branch is most relevant?",
+      "question": "Amani is interested in how objects move and the concept of energy. He often spends time building simple machines and studying how they work. Which field within Integrated Science is Amani exploring?",
       "options": [
-        "Botany",
+        "Biology",
         "Physics",
         "Chemistry",
-        "Geology"
+        "Environmental Science"
       ],
       "correct_index": 1,
-      "explanation": "Physics studies matter, motion, forces and energy.",
+      "explanation": "Physics studies motion, forces, energy and how machines work.",
       "strand": "Branches of science",
       "source_file": "2027/integrated-science-topical.pdf",
       "source_type": "source_mcq",
@@ -307,12 +307,12 @@
       "subject": "Integrated Science",
       "grade_band": "Grades 7–9",
       "academic_year": 2027,
-      "question": "Understanding bacteria and hygiene helps a family mainly by:",
+      "question": "Every morning, Mumbi uses her understanding of bacteria and hygiene to ensure her family stays healthy. She knows the importance of washing hands, safe food preparation and clean drinking water. How does Integrated Science benefit Mumbi's daily life?",
       "options": [
-        "making them better artists",
-        "helping them understand health and hygiene",
-        "improving their dancing skills",
-        "making them better at sports"
+        "By making her a better artist",
+        "By helping her understand health and hygiene",
+        "By improving her dancing skills",
+        "By making her better at sports"
       ],
       "correct_index": 1,
       "explanation": "Knowledge of microorganisms and hygiene helps people prevent infection and maintain health.",
