@@ -48,9 +48,11 @@ export default async request => {
           rest("payments?select=id,user_id,phone,amount,product_id,status,mpesa_receipt,result_desc,created_at,updated_at&order=created_at.desc&limit=500"),
           rest("mpesa_payments?select=id,user_id,phone_number,amount,currency,account_reference,status,mpesa_receipt_number,created_at,updated_at&order=created_at.desc&limit=500"),
           rest("teacher_download_orders?select=id,user_id,grade,resource_id,subject,resource_type,period,amount,status,download_count,paid_at,downloaded_at,created_at&order=created_at.desc&limit=500"),
-          rest("entitlements?select=id,user_id,product_id,active,expires_at,created_at&order=created_at.desc&limit=500")
+          rest("entitlements?select=id,user_id,product_id,active,expires_at,created_at&order=created_at.desc&limit=500"),
+          rest("premium_entitlements?select=id,user_id,product_name,starts_at,expires_at,created_at&order=created_at.desc&limit=500"),
+          rest("premium_access?select=id,user_id,library_key,expires_at,last_payment_reference,updated_at&order=updated_at.desc&limit=500")
         ]);
-        return json(200,{payments:payments.ok?await payments.json():[],mpesa:mpesa.ok?await mpesa.json():[],orders:orders.ok?await orders.json():[],entitlements:entitlements.ok?await entitlements.json():[]});
+        return json(200,{payments:payments.ok?await payments.json():[],mpesa:mpesa.ok?await mpesa.json():[],orders:orders.ok?await orders.json():[],entitlements:entitlements.ok?await entitlements.json():[],premium_entitlements:premiumEntitlements.ok?await premiumEntitlements.json():[],premium_access:premiumAccess.ok?await premiumAccess.json():[]});
       }
       const [users,logs,events]=await Promise.all([
         getUsers(),
