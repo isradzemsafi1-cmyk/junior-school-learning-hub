@@ -17,7 +17,19 @@ export default async (request) => {
 
   const supabaseUrl = Netlify.env.get("SUPABASE_URL");
   const serviceKey = Netlify.env.get("SUPABASE_SERVICE_ROLE_KEY");
-  const isProduction = process.env.CONTEXT === "production";
+  const requestHost = new URL(request.url).hostname.toLowerCase();
+  const deployContext =
+    Netlify.env.get("CONTEXT") ||
+    process.env.CONTEXT ||
+    process.env.NETLIFY_CONTEXT ||
+    "";
+  // Netlify's system CONTEXT was not reliably visible in the runtime for this
+  // site. The canonical custom domain is an unambiguous production signal;
+  // deploy-preview netlify.app hosts remain sandbox-only.
+  const isProduction =
+    deployContext === "production" ||
+    requestHost === "juniorschoollearninghub.co.ke" ||
+    requestHost === "www.juniorschoollearninghub.co.ke";
   // Use the same environment-specific credentials as the STK initiation.
   const consumerKey = isProduction
     ? (Netlify.env.get("MPESA_PRODUCTION_CONSUMER_KEY") || Netlify.env.get("MPESA_CONSUMER_KEY"))
