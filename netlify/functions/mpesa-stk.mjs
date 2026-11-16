@@ -1,5 +1,10 @@
+import { grade8Metadata } from "./_shared/grade8-mathematics-content.mjs";
+import grade9Content from "./_shared/grade9-library-content.mjs";
 import { teacherCatalog } from "../lib/teacher-catalog.mjs";
 
+
+const learnerSlug=(v,i)=>`${String(v||`topic-${i+1}`).toLowerCase().replace(/[^a-z0-9]+/g,"-").replace(/^-|-$/g,"").slice(0,60)}-${i+1}`;
+const grade9ProductIds=grade9Content.map((item,index)=>{const m=/<h2>\s*Topic:\s*([^<]+)<\/h2>/i.exec(item.notes||"");return `learner_g9_${learnerSlug(m?.[1]||item.subject,index)}`;});
 
 export default async (request) => {
   const respond = (status, data) =>
@@ -53,19 +58,13 @@ export default async (request) => {
   const passkey = isProduction
     ? (Netlify.env.get("MPESA_PRODUCTION_PASSKEY") || Netlify.env.get("MPESA_PASSKEY"))
     : (Netlify.env.get("MPESA_SANDBOX_PASSKEY"));
-  // Live production checkout keeps its existing live callback. Sandbox
-  // checkout (including Deploy Previews) uses the verified custom-domain
-  // endpoint, which is deployed separately as a sandbox-only function.
-  const publicSiteURL = Netlify.env.get("URL") || new URL(request.url).origin;
-  const configuredCallbackURL = isProduction
-    ? Netlify.env.get("MPESA_CALLBACK_URL")
-    : (Netlify.env.get("MPESA_SANDBOX_CALLBACK_URL") ||
-       "https://juniorschoollearninghub.co.ke/.netlify/functions/mpesa-sandbox-callback");
+  // Use the explicitly configured, publicly reachable HTTPS callback in
+  // every context. Deploy Preview configuration must point to that preview's
+  // own mpesa-callback function; production keeps its existing custom-domain
+  // callback. The callback selects sandbox/live credentials from its host.
+  const callbackURL = Netlify.env.get("MPESA_CALLBACK_URL") || "";
   // Use the same canonical function route shown in Netlify function logs.
-  const callbackURL = configuredCallbackURL || new URL(
-    "/.netlify/functions/mpesa-callback",
-    publicSiteURL.endsWith("/") ? publicSiteURL : `${publicSiteURL}/`
-  ).toString();
+
   let callbackHost = "invalid";
   try {
     const parsedCallback = new URL(callbackURL);
@@ -93,6 +92,7 @@ export default async (request) => {
       Object.values(teacherCatalog).flat().map(item => [item.product_id, item.price_kes])
     )
   };
+
 
 
   const missing = [
@@ -188,14 +188,29 @@ const readJson = async (response, service) => {
 
     const productId = String(body.product_id || "");
 
-    if (!Object.prototype.hasOwnProperty.call(catalog, productId)) {
-      return respond(400, {
-        success: false,
-        message: "Please select a valid learning product."
-      });
+    let isLearnerTopic = false;
+    if (productId.startsWith("learner_g8_")) isLearnerTopic = grade8Metadata.some(item => item.resource_id === productId);
+    else if (productId.startsWith("learner_g9_")) isLearnerTopic = grade9ProductIds.includes(productId);
+    else if (productId.startsWith("learner_g7_")) {
+      const r = await fetch(`${supabaseUrl}/storage/v1/object/premium-learning-content/grade7-library-content.json`, { headers: { apikey: serviceKey, Authorization: `Bearer ${serviceKey}` } });
+      if (!r.ok) throw new Error("Could not validate Grade 7 topic.");
+      const data = await r.json();
+      isLearnerTopic = Array.isArray(data) && data.some((item,index) => `learner_g7_${learnerSlug(item.sub || item.strand || item.topic || item.subject,index)}` === productId);
     }
-
-    const amount = catalog[productId];
+    let isRevisionResource = false;
+    if (/^kjsea2027_[a-z0-9_]{3,80}$/.test(productId)) {
+      const resourceCheck = await fetch(
+        `${supabaseUrl}/rest/v1/learner_revision_resources?id=eq.${encodeURIComponent(productId)}&published=eq.true&select=id,price_kes&limit=1`,
+        { headers: dbHeaders }
+      );
+      if (!resourceCheck.ok) throw new Error("Could not validate KJSEA revision resource.");
+      const resources = await resourceCheck.json();
+      isRevisionResource = resources.length === 1 && Number(resources[0].price_kes) === 10;
+    }
+    if (!isLearnerTopic && !isRevisionResource && !Object.prototype.hasOwnProperty.call(catalog, productId)) {
+      return respond(400, { success: false, message: "Please select a valid learning product." });
+    }
+    const amount = (isLearnerTopic || isRevisionResource) ? 10 : catalog[productId];
 
     let phone = String(body.phone || "").replace(/[\s+-]/g, "");
 

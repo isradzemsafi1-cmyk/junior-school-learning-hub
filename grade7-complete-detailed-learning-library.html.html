@@ -1,241 +1,28 @@
-<!doctype html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="theme-color" content="#102b50"><title>Grade 7 Complete Learning Library | Junior School Learning Hub</title>
-<style>
-:root{--navy:#102b50;--blue:#176b87;--gold:#ffbf36;--paper:#f4f7fb;--ink:#243247;--muted:#64748b;--line:#dce4ed}
-*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.65 Arial,sans-serif}
-header{background:var(--navy);color:white;padding:16px 5%;display:flex;gap:12px;justify-content:space-between;align-items:center;flex-wrap:wrap}
-header a{color:white;text-decoration:none;margin-left:14px}.brand{font-weight:800}
-.hero{background:linear-gradient(120deg,#102b50,#176b87);color:white;padding:35px 5%;text-align:center}.hero h1{margin:0;font-size:clamp(26px,5vw,40px)}
-main{max-width:1100px;margin:auto;padding:20px 15px 45px}.panel{background:white;border:1px solid var(--line);border-radius:13px;padding:19px;margin:16px 0;box-shadow:0 3px 14px #102b500d}
-.filters{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px}.filters label{font-size:13px;font-weight:bold;display:block;margin-bottom:4px}
-select,input{width:100%;padding:11px;border:1px solid #bdc9d7;border-radius:7px;background:white;font:inherit}
-h2,h3{color:var(--navy)}h2{border-bottom:2px solid var(--gold);padding-bottom:7px}
-h3{color:var(--blue);margin-bottom:6px}.meta{color:var(--muted);font-size:13px}
-.block{padding:12px 14px;border-left:4px solid var(--blue);background:#eef7fb;border-radius:6px;margin:12px 0}
-.worked{padding:13px 15px;background:#fff7df;border-left:4px solid var(--gold);border-radius:6px;margin:12px 0}
-button{border:0;background:var(--gold);color:var(--navy);font-weight:bold;border-radius:7px;padding:11px 15px;font:inherit;cursor:pointer;margin:6px 5px 6px 0}
-button.secondary{background:white;color:var(--blue);border:1px solid var(--blue)}
-.question{padding:13px 0;border-bottom:1px solid var(--line)}.question p{font-weight:bold;margin:0 0 7px}.option{display:block;margin:6px 0}.feedback{font-size:14px;margin-top:6px}
-.score{font-size:22px;font-weight:bold;color:var(--navy);margin-top:14px}
-footer{background:var(--navy);color:white;text-align:center;padding:22px}
-@media(max-width:600px){header{justify-content:center;text-align:center}.panel{padding:14px}}
-
-#accessPanel input{margin-bottom:10px}
-#purchaseArea{margin-top:16px;padding-top:12px;border-top:1px solid var(--line)}
-</style></head><body>
-<header><div class="brand">🎓 Junior School Learning Hub</div><nav><a href="https://juniorschoollearninghub.co.ke">Home</a><a href="#library">Library</a><a href="#assessment">Assessments</a></nav></header>
-<div class="hero"><h1>Grade 7 Complete Learning Library</h1><p>Mathematics & Integrated Science · Terms 1, 2 and 3</p><p>Strand-by-strand notes, worked examples, guided activities and automated assessments.</p></div>
-<main>
-
-<section class="panel" id="accessPanel">
-  <h2>Learner account and library access</h2>
-  <p id="accessMessage">Log in with your learner account to access the Grade 7 library.</p>
-  <div class="filters">
-    <div><label for="email">Email address</label><input id="email" type="email" autocomplete="username" placeholder="Enter your registered email"></div>
-    <div><label for="password">Password</label><input id="password" type="password" autocomplete="current-password" placeholder="Enter your password"></div>
-  </div>
-  <button id="loginButton" type="button">Log in</button>
-  <div id="purchaseArea" hidden>
-    <p><b>Grade 7 library access: KSh 10 for 12 hours.</b></p>
-    <label for="phone">M-Pesa phone number</label>
-    <input id="phone" type="tel" placeholder="e.g. 07XXXXXXXX" autocomplete="tel">
-    <button id="buyButton" type="button">Buy Grade 7 access – KSh 10</button>
-    <button id="checkAccessButton" class="secondary" type="button">I've completed payment – check access</button>
-  </div>
-  <p class="meta" id="accessStatus" aria-live="polite"></p>
-</section>
-<section class="panel">
-<h2>Learning library</h2>
-<div class="filters">
-<div><label for="subject">Learning area</label><select id="subject"><option>Mathematics</option><option>Integrated Science</option></select></div>
-<div><label for="term">Suggested term</label><select id="term"><option value="1">Term 1</option><option value="2">Term 2</option><option value="3">Term 3</option></select></div>
-<div><label for="topic">Strand / sub-strand</label><select id="topic"></select></div>
-<div><label for="search">Search topic</label><input id="search" placeholder="e.g. fractions, acids, angles"></div>
-</div>
-<p class="meta" id="count"></p>
-</section>
-<section class="panel" id="library"><div id="lesson"></div></section>
-<section class="panel" id="assessment">
-<h2>Automated assessment for this sub-strand</h2>
-<p id="quizDescription">Answer the questions and select Mark quiz. Each question gives instant feedback and an explanation.</p>
-<div id="quiz"></div><button id="mark">Mark quiz</button><button class="secondary" id="retry">Try again</button><div id="result" aria-live="polite"></div>
-</section>
-<section class="panel">
-<h2>Term and curriculum guidance</h2>
-<p>The strand and sub-strand coverage follows the revised KICD Grade 7 Mathematics and Integrated Science curriculum designs. Your uploaded Karunga scheme specifically confirms the Mathematics Term I sequence under Numbers, including whole numbers, factors, fractions, decimals and squares/square roots.</p>
-<p>The KICD curriculum designs list all Grade 7 strands but do not prescribe one universal term-by-term school sequence. For navigation, this resource groups Mathematics Numbers into Term 1; Algebra and Measurements into Term 2; and the remaining Measurements, Geometry and Data Handling into Term 3. Integrated Science is grouped as Scientific Investigation in Term 1; Mixtures, Elements and Compounds in Term 2; and Living Things and their Environment plus Force and Energy in Term 3. Treat this as a suggested distribution and align it with Karunga's approved schemes of work.</p>
-<p><b>Important:</b> Assessment questions are practice questions written for this learning resource, not official KNEC examination questions.</p>
-</section>
-</main><footer>Junior School Learning Hub · Empowering learners to learn, grow and excel.</footer>
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-<script>
-let DATA = [];
-const subject=document.getElementById('subject'),term=document.getElementById('term'),topic=document.getElementById('topic'),search=document.getElementById('search');
-let current=null;
-function filtered(){return DATA.filter(x=>x.subject===subject.value&&x.term===term.value&&(!search.value||[x.strand,x.sub,x.coverage].join(' ').toLowerCase().includes(search.value.toLowerCase())));}
-function refreshTopics(){
- const items=filtered();topic.innerHTML=items.map((x,i)=>`<option value="${DATA.indexOf(x)}">${x.sub}</option>`).join('');
- document.getElementById('count').textContent=`${items.length} sub-strands available in this selection.`;
- if(items.length){topic.value=DATA.indexOf(items[0]);render();}
- else{document.getElementById('lesson').innerHTML='<p>No matching topic in this term. Clear the search or select another term.</p>';document.getElementById('quiz').innerHTML='';}
-}
-function render(){
- current=DATA[Number(topic.value)];if(!current)return;
- document.getElementById('lesson').innerHTML=`
- <div class="meta">${current.subject} · Term ${current.term} · ${current.strand}</div>
- <h2>${current.sub}</h2><p><b>Sub-strand coverage:</b> ${current.coverage}</p>
- <h3>Lesson learning outcomes</h3><p>By the end of the sub-strand, the learner should be able to: ${current.outcomes}</p>
- <h3>Detailed learner notes</h3><p>${current.notes}</p>
- <div class="worked"><h3>Worked examples and explanations</h3><p>${current.worked}</p></div>
- <h3>Guided learning experiences</h3><p>The learner is guided to: ${current.experience}</p>
- <div class="block"><b>Key inquiry question(s)</b><p>${current.kiq}</p></div>
- <h3>Learning resources</h3><p>${current.resources}</p>
- <h3>Assessment questions after this sub-strand</h3><ol>${current.assessment.map(q=>`<li>${q}</li>`).join('')}</ol>
- <p class="meta">The assessment questions above are written-response practice. The automated quiz below provides immediate marking.</p>`;
- buildQuiz();
-}
-function buildQuiz(){
- const q=current.quiz;document.getElementById('quizDescription').textContent=`${current.sub}: ${q.length} multiple-choice questions. Select one answer for each question, then mark your work.`;
- document.getElementById('quiz').innerHTML=q.map((v,i)=>`<div class="question"><p>${i+1}. ${v[0]}</p>${v[1].map((a,j)=>`<label class="option"><input type="radio" name="q${i}" value="${j}"> ${String.fromCharCode(65+j)}. ${a}</label>`).join('')}<div class="feedback" id="f${i}"></div></div>`).join('');
- document.getElementById('result').innerHTML='';
-}
-document.getElementById('mark').addEventListener('click',()=>{
- const q=current.quiz;let score=0,answered=0;
- q.forEach((v,i)=>{const a=document.querySelector(`input[name="q${i}"]:checked`),f=document.getElementById(`f${i}`);
- if(a){answered++;if(Number(a.value)===v[2]){score++;f.textContent='✓ Correct. '+v[3];f.style.color='#17633b';}else{f.textContent='✗ Review: '+v[3];f.style.color='#a33';}}
- else{f.textContent='Not answered. '+v[3];f.style.color='#a33';}});
- const pct=Math.round(score/q.length*100);
- document.getElementById('result').innerHTML=`<div class="score">Score: ${score}/${q.length} (${pct}%)</div><p>${answered} of ${q.length} questions answered.</p><p>${pct>=80?'Excellent achievement. Move to the next sub-strand.':pct>=50?'Good effort. Read the explanations and practise again.':'Revisit the notes and worked examples, then try again.'}</p>`;
- saveGrade7Attempt({score,total:q.length,percentage:pct,answered,questions:q.map((v,i)=>({question:v[0],selected:document.querySelector(`input[name="q${i}"]:checked`)?.value??null,correct:v[2],topic:current.sub}))});
-});
-async function saveGrade7Attempt(attempt){
- const box=document.getElementById('result');const note=document.createElement('p');note.className='meta';box.appendChild(note);
- const {data:{session}}=await authClient.auth.getSession();
- if(!session){note.textContent='Log in to save this result to your learner dashboard.';return;}
- const {error}=await authClient.from('learner_quiz_attempts').insert({user_id:session.user.id,grade:'Grade 7',subject:current.subject,score:attempt.score,total:attempt.total,percentage:attempt.percentage,answered:attempt.answered,answers:attempt.questions});
- note.textContent=error?'Your quiz was marked, but the result could not be saved. Please try again.':'✅ Result saved to your learner dashboard.';
- if(error)console.error('Quiz result save failed:',error.message);
-}
-document.getElementById('retry').addEventListener('click',buildQuiz);
-subject.addEventListener('change',()=>{search.value='';refreshTopics();});
-term.addEventListener('change',()=>{search.value='';refreshTopics();});
-search.addEventListener('input',refreshTopics);
-topic.addEventListener('change',render);
-
-const SUPABASE_URL = "https://hqbqhnhgrgfxpedjzmnm.supabase.co";
-const SUPABASE_PUBLISHABLE_KEY = "sb_publishable_uaOcRVaIwnvRl_wZhMhJ-Q_DhrqZyS_";
-const authClient = window.supabase.createClient(SUPABASE_URL, SUPABASE_PUBLISHABLE_KEY);
-
-function accessMessage(message) {
-  document.getElementById('accessMessage').textContent = message;
-}
-function accessStatus(message) {
-  document.getElementById('accessStatus').textContent = message;
-}
-function showPurchase(show) {
-  document.getElementById('purchaseArea').hidden = !show;
-}
-function showLibraryUnavailable(message) {
-  DATA = [];
-  document.getElementById('count').textContent = '';
-  document.getElementById('lesson').textContent = message;
-  document.getElementById('quiz').innerHTML = '';
-  document.getElementById('quizDescription').textContent = 'The assessment will appear after library access is confirmed.';
-  document.getElementById('result').innerHTML = '';
-}
-async function loadGrade7Library() {
-  const { data: { session } } = await authClient.auth.getSession();
-  if (!session) {
-    showPurchase(false);
-    showLibraryUnavailable('Please log in above to open the Grade 7 learning library.');
-    accessMessage('Log in with your learner account to access the Grade 7 library.');
-    return;
-  }
-  accessMessage('Checking your Grade 7 library access...');
-  accessStatus('');
-  const response = await fetch('/.netlify/functions/get-grade7-library', {
-    method: 'GET',
-    headers: { Authorization: `Bearer ${session.access_token}` },
-    cache: 'no-store'
-  });
-  const result = await response.json().catch(() => ({}));
-  if (response.status === 401) {
-    showPurchase(false);
-    showLibraryUnavailable('Your login session has expired. Please log in again.');
-    accessMessage('Please log in again to continue.');
-    return;
-  }
-  if (response.status === 403) {
-    showPurchase(true);
-    showLibraryUnavailable('Grade 7 notes are locked. Purchase access to view the lessons and assessments.');
-    accessMessage('Your account is signed in, but Grade 7 access is not active.');
-    return;
-  }
-  if (!response.ok || !Array.isArray(result.content)) {
-    showPurchase(false);
-    showLibraryUnavailable(result.message || 'The library could not be loaded. Please try again.');
-    accessMessage('We could not load the library.');
-    return;
-  }
-  DATA = result.content;
-  showPurchase(false);
-  accessMessage('Grade 7 library access confirmed. Happy learning!');
-  accessStatus('');
-  refreshTopics();
-}
-document.getElementById('loginButton').addEventListener('click', async () => {
-  const email = document.getElementById('email').value.trim();
-  const password = document.getElementById('password').value;
-  if (!email || !password) {
-    accessStatus('Enter your email address and password.');
-    return;
-  }
-  accessStatus('Signing in...');
-  const { error } = await authClient.auth.signInWithPassword({ email, password });
-  if (error) {
-    accessStatus(error.message);
-    return;
-  }
-  await loadGrade7Library();
-});
-document.getElementById('buyButton').addEventListener('click', async () => {
-  const phone = document.getElementById('phone').value.trim();
-  if (!phone) {
-    accessStatus('Enter the M-Pesa phone number to receive the payment prompt.');
-    return;
-  }
-  const { data: { session } } = await authClient.auth.getSession();
-  if (!session) {
-    accessStatus('Please log in before purchasing access.');
-    return;
-  }
-  accessStatus('Sending your M-Pesa payment request...');
-  const response = await fetch('/.netlify/functions/mpesa-stk', {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-      Authorization: `Bearer ${session.access_token}`
-    },
-    body: JSON.stringify({ product_id: 'grade7_notes', phone })
-  });
-  const result = await response.json().catch(() => ({}));
-  if (!response.ok) {
-    accessStatus(result.message || 'Payment request failed. Please try again.');
-    return;
-  }
-  accessStatus(result.message || 'Payment prompt sent. Complete it on your phone, then select “check access”.');
-});
-document.getElementById('checkAccessButton').addEventListener('click', loadGrade7Library);
-authClient.auth.onAuthStateChange((_event, session) => {
-  if (!session) {
-    showPurchase(false);
-    showLibraryUnavailable('Please log in above to open the Grade 7 learning library.');
-    accessMessage('Log in with your learner account to access the Grade 7 library.');
-  }
-});
-loadGrade7Library().catch(error => {
-  console.error(error);
-  accessStatus('Unable to connect. Please refresh and try again.');
-});
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#102b50"><title>Grade 7 Complete Learning Library | Junior School Learning Hub</title><style>
+:root{--navy:#102b50;--blue:#176b87;--gold:#ffbf36;--paper:#f4f7fb;--ink:#243247;--muted:#64748b;--line:#dce4ed}*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.65 Arial,sans-serif}header{background:var(--navy);color:#fff;padding:15px 5%;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}header a{color:#fff;text-decoration:none;margin-right:14px}.brand{font-weight:800}.hero{background:linear-gradient(120deg,#102b50,#176b87);color:#fff;padding:34px 5%;text-align:center}.hero h1{margin:0;font-size:clamp(26px,5vw,40px)}main{max-width:1100px;margin:auto;padding:18px 14px 42px}.panel{background:#fff;border:1px solid var(--line);border-radius:14px;padding:19px;margin:15px 0;box-shadow:0 3px 14px #102b500d}.filters{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:12px}label{font-size:13px;font-weight:bold;display:block;margin-bottom:4px}input,select{width:100%;padding:11px;border:1px solid #bdc9d7;border-radius:8px;background:#fff;font:inherit}h2,h3{color:var(--navy)}h2{border-bottom:2px solid var(--gold);padding-bottom:7px}h3{color:var(--blue)}.meta{color:var(--muted);font-size:13px}button{border:0;background:var(--gold);color:var(--navy);font-weight:bold;border-radius:8px;padding:11px 15px;font:inherit;cursor:pointer;margin:6px 5px 6px 0}button.secondary{background:#fff;color:var(--blue);border:1px solid var(--blue)}button:disabled{opacity:.55;cursor:wait}#resourceList{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:12px}.resource{border:1px solid var(--line);border-radius:12px;padding:14px;background:#fff;text-align:left;width:100%;margin:0}.resource strong{display:block;color:var(--navy)}.resource span{display:block;color:var(--muted);font-size:13px;margin-top:5px}.tag{display:inline-block;background:#eef7fb;color:var(--blue);border-radius:20px;padding:2px 9px;font-size:12px;margin:6px 4px 0 0}#purchaseArea{background:#fff8e6;border:1px solid #f1d68b;border-radius:12px;padding:15px;margin-top:14px}.locked{padding:18px;border:1px dashed #d6b85d;border-radius:10px;background:#fffaf0}.question{padding:13px 0;border-bottom:1px solid var(--line)}.option{display:block;margin:6px 0}.feedback{font-size:14px}.score{font-size:22px;font-weight:bold;color:var(--navy)}footer{background:var(--navy);color:#fff;text-align:center;padding:22px}@media(max-width:600px){header{justify-content:center;text-align:center}.panel{padding:14px}}</style></head><body>
+<header><div class="brand">🎓 Junior School Learning Hub</div><nav><a href="/">Home</a><a href="#library">Browse topics</a><a href="/#learner-account">My Dashboard</a></nav></header><div class="hero"><h1>Grade 7 Complete Learning Library</h1><p>Mathematics · Integrated Science · Terms 1, 2 and 3</p><p>Browse topic titles and descriptions for free. Each topic includes notes and its practice quiz for KES 10, valid for 24 hours.</p></div><main>
+<section class="panel" id="library"><h2>Browse learning topics — free</h2><div class="filters"><div><label for="subjectFilter">Learning area</label><select id="subjectFilter"><option value="">All learning areas</option></select></div><div><label for="search">Search topics</label><input id="search" placeholder="Search by topic or description"></div></div><p id="listStatus" class="meta">Loading topic catalogue…</p><div id="resourceList"></div></section>
+<section class="panel"><h2>Learner account</h2><p id="accessMessage">Choose a topic to see its access options. Browsing is free.</p><div id="loginArea" class="filters"><div><label for="email">Full name (username) or registered email</label><input id="email" type="text" autocomplete="username" placeholder="Enter your full name username"></div><div><label for="password">Password</label><input id="password" type="password" autocomplete="current-password" placeholder="Password"></div></div><button id="loginButton" type="button">Sign in</button><button id="logoutButton" class="secondary" type="button" hidden>Sign out</button><p class="meta">New learner? <a href="/#learner-account">Create a free learner account</a> on the homepage.</p><div id="purchaseArea" hidden><p><b id="selectedTitle"></b></p><p>Unlock notes and practice quiz for <b>KES 10 / 24 hours</b>.</p><label for="phone">M-Pesa phone number</label><input id="phone" type="tel" placeholder="07XXXXXXXX"><button id="buyButton" type="button">Pay KES 10 with M-Pesa</button><button id="checkAccessButton" class="secondary" type="button">I have paid — open topic</button></div><p id="accessStatus" class="meta" aria-live="polite"></p></section>
+<section class="panel"><h2 id="lessonTitle">Selected topic</h2><div id="lesson" class="locked">Select a topic above. Full notes and quizzes are only returned after access is confirmed.</div><h2>Practice quiz</h2><p class="meta">The quiz appears with the topic notes after access is confirmed.</p><div id="quiz"></div><button id="mark" hidden>Mark quiz</button><button id="retry" class="secondary" hidden>Try again</button><div id="result" aria-live="polite"></div></section></main><footer>Junior School Learning Hub · Empowering learners to learn, grow and excel.</footer>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script><script>
+const GRADE=7,SUPABASE_URL="https://hqbqhnhgrgfxpedjzmnm.supabase.co",SUPABASE_PUBLISHABLE_KEY="sb_publishable_uaOcRVaIwnvRl_wZhMhJ-Q_DhrqZyS_",authClient=window.supabase.createClient(SUPABASE_URL,SUPABASE_PUBLISHABLE_KEY);
+const $=id=>document.getElementById(id);let resources=[],selected=null,current=null;
+const esc=s=>String(s==null?"":s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const sessionNow=async()=>{const x=await authClient.auth.getSession();return x.data.session};
+function learnerUsernameToAuthEmail(value){const input=String(value||"").trim();if(input.includes("@"))return input;const username=input.normalize("NFKD").replace(/[\u0300-\u036f]/g,"").toLowerCase().trim().replace(/[^a-z0-9]+/g,".").replace(/^\.+|\.+$/g,"");return username?username+"@learners.juniorschoollearninghub.co.ke":"";}
+function status(s){$("accessStatus").textContent=s||""}function access(s){$("accessMessage").textContent=s||""}
+async function catalogue(){const r=await fetch("/.netlify/functions/get-learner-topic?grade="+GRADE,{cache:"no-store"}),d=await r.json();if(!r.ok||!Array.isArray(d.resources))throw Error(d.message||"Could not load topic catalogue.");resources=d.resources;const subjects=[...new Set(resources.map(x=>x.subject).filter(Boolean))];$("subjectFilter").innerHTML='<option value="">All learning areas</option>'+subjects.map(x=>'<option>'+esc(x)+'</option>').join("");renderList()}
+function renderList(){const q=$("search").value.toLowerCase(),s=$("subjectFilter").value;const a=resources.filter(x=>(!s||x.subject===s)&&[x.title,x.description,x.subject].join(" ").toLowerCase().includes(q));$("resourceList").innerHTML=a.map(x=>'<button class="resource" type="button" data-id="'+esc(x.resource_id)+'"><strong>'+esc(x.title)+'</strong><span>'+esc(x.description||"Topic notes and practice quiz")+'</span><span class="tag">KES 10 · 24 hours</span>'+(x.term?'<span class="tag">Term '+esc(x.term)+'</span>':'')+(x.subject?'<span class="tag">'+esc(x.subject)+'</span>':'')+'</button>').join("");$("listStatus").textContent=a.length+" topic(s) shown. All titles and descriptions are free to browse.";document.querySelectorAll(".resource").forEach(b=>b.addEventListener("click",()=>choose(b.dataset.id)))}
+async function choose(id){selected=resources.find(x=>x.resource_id===id);current=null;$("lessonTitle").textContent=selected.title;$("lesson").innerHTML='<div class="locked">Checking your access…</div>';$("quiz").innerHTML="";$("result").innerHTML="";$("mark").hidden=true;$("retry").hidden=true;$("purchaseArea").hidden=true;const session=await sessionNow();$("loginArea").hidden=!!session;$("loginButton").hidden=!!session;$("logoutButton").hidden=!session;if(!session){$("lesson").innerHTML='<div class="locked">Sign in with your learner account to open this topic. Browsing is free.</div>';access("Sign in to continue with your selected topic.");return}await openTopic()}
+async function openTopic(){if(!selected)return;const session=await sessionNow();if(!session){access("Sign in before opening or paying for this topic.");return}status("Checking topic access…");const r=await fetch("/.netlify/functions/get-learner-topic?grade="+GRADE+"&resource_id="+encodeURIComponent(selected.resource_id),{headers:{Authorization:"Bearer "+session.access_token},cache:"no-store"}),d=await r.json().catch(()=>({}));if(r.status===403){current=null;$("lesson").innerHTML='<div class="locked">🔒 This topic is locked. Pay KES 10 to unlock its notes and quiz for 24 hours.</div>';$("purchaseArea").hidden=false;access("This topic is not unlocked yet.");status(d.message);return}if(!r.ok){status(d.message||"Unable to check access.");return}current=d.resource;$("purchaseArea").hidden=true;access("Topic unlocked. Repeat access is available until "+new Date(d.expires_at).toLocaleString()+".");status("");renderContent()}
+function renderContent(){const d=current;let h="";if(d.notes&&d.notes.indexOf("<")>=0){h=d.notes}else{h='<div class="meta">'+esc(d.subject||selected.subject||"")+(d.term?" · Term "+esc(d.term):"")+(d.strand?" · "+esc(d.strand):"")+'</div><h3>'+esc(d.sub||d.topic||selected.title)+'</h3>';[["Sub-strand coverage",d.coverage],["Learning outcomes",d.outcomes],["Learner notes",d.notes],["Worked examples",d.worked],["Guided learning experiences",d.experience],["Key inquiry question",d.kiq],["Learning resources",d.resources]].forEach(([label,value])=>{if(value)h+='<h3>'+label+'</h3><p>'+esc(value).replace(/\n/g,"<br>")+'</p>'});if(Array.isArray(d.assessment))h+='<h3>Written revision questions</h3><ol>'+d.assessment.map(x=>'<li>'+esc(x)+'</li>').join("")+'</ol>';if(Array.isArray(d.lessonDetails))h+='<h3>Lesson sequence</h3><ol>'+d.lessonDetails.map(x=>'<li>'+esc(x)+'</li>').join("")+'</ol>'}$("lesson").innerHTML=h||"Topic notes are not available.";buildQuiz()}
+function questions(){return(current&&current.quiz||[]).map(q=>Array.isArray(q)?{q:q[0],o:q[1],a:q[2],e:q[3]}:{q:q.q,o:q.o,a:q.a,e:q.e})}
+function buildQuiz(){$("result").innerHTML="";const q=questions();if(!q.length){$("quiz").innerHTML='<p class="meta">No automated quiz has been added. Use the written practice questions in the notes.</p>';$("mark").hidden=true;$("retry").hidden=true;return}$("quiz").innerHTML=q.map((v,i)=>'<div class="question"><p>'+(i+1)+'. '+esc(v.q)+'</p>'+(v.o||[]).map((o,j)=>'<label class="option"><input type="radio" name="q'+i+'" value="'+j+'"> '+String.fromCharCode(65+j)+'. '+esc(o)+'</label>').join("")+'<div class="feedback" id="fb'+i+'"></div></div>').join("");$("mark").hidden=false;$("retry").hidden=false}
+async function markQuiz(){const q=questions();let score=0,answered=0;q.forEach((v,i)=>{const a=document.querySelector('input[name="q'+i+'"]:checked'),f=$("fb"+i);if(a){answered++;if(Number(a.value)===Number(v.a)){score++;f.textContent="✓ Correct. "+(v.e||"")}else f.textContent="✗ Review: "+(v.e||"")}else f.textContent="Not answered. "+(v.e||"")});const pct=Math.round(score/q.length*100);$("result").innerHTML='<div class="score">Score: '+score+'/'+q.length+' ('+pct+'%)</div><p>'+answered+' of '+q.length+' answered.</p><p id="saveNote" class="meta">Saving result…</p>';const s=await sessionNow();if(!s){$("saveNote").textContent="Sign in to save your result.";return}const answers=q.map((v,i)=>({question:v.q,selected:document.querySelector('input[name="q'+i+'"]:checked')?.value??null,correct:v.a,topic:selected.title}));const {error}=await authClient.from("learner_quiz_attempts").insert({user_id:s.user.id,grade:"Grade "+GRADE,subject:current.subject||selected.subject||"Learning area",score:score,total:q.length,percentage:pct,answered:answered,answers:answers});$("saveNote").textContent=error?"Quiz marked, but saving failed. Please try again.":"✓ Result saved to your learner dashboard."}
+async function buy(){const s=await sessionNow();if(!s){access("Please sign in before paying.");return}const phone=$("phone").value.trim();if(!phone){status("Enter the M-Pesa number for the payment prompt.");return}const b=$("buyButton");b.disabled=true;status("Sending KES 10 M-Pesa prompt…");try{const r=await fetch("/.netlify/functions/mpesa-stk",{method:"POST",headers:{"Content-Type":"application/json",Authorization:"Bearer "+s.access_token},body:JSON.stringify({product_id:selected.resource_id,phone:phone})}),d=await r.json().catch(()=>({}));if(!r.ok)throw Error(d.message||"Payment request failed.");status(d.message||"Prompt sent. Complete payment, then select ‘I have paid — open topic’.")}catch(e){status(e.message)}finally{b.disabled=false}}
+$("loginButton").addEventListener("click",async()=>{const usernameOrEmail=$("email").value.trim(),email=learnerUsernameToAuthEmail(usernameOrEmail),password=$("password").value;if(!email||!password){status("Enter your full name username (or registered email) and password.");return}const b=$("loginButton");b.disabled=true;status("Signing in…");try{const {error}=await authClient.auth.signInWithPassword({email,password});if(error)throw error;$("loginArea").hidden=true;b.hidden=true;$("logoutButton").hidden=false;if(selected)await openTopic()}catch(e){status(e.message)}finally{b.disabled=false}});
+$("logoutButton").addEventListener("click",async()=>{await authClient.auth.signOut();$("loginArea").hidden=false;$("loginButton").hidden=false;$("logoutButton").hidden=true;$("purchaseArea").hidden=true;current=null;$("lesson").innerHTML='<div class="locked">Sign in to unlock the selected topic.</div>';$("quiz").innerHTML="";access("You have signed out.")});
+$("buyButton").addEventListener("click",buy);$("checkAccessButton").addEventListener("click",openTopic);$("mark").addEventListener("click",markQuiz);$("retry").addEventListener("click",buildQuiz);$("search").addEventListener("input",renderList);$("subjectFilter").addEventListener("change",renderList);
+authClient.auth.onAuthStateChange(e=>{if(e==="SIGNED_OUT"){current=null;$("purchaseArea").hidden=true}});
+catalogue().catch(e=>$("listStatus").textContent=e.message);
 </script></body></html>

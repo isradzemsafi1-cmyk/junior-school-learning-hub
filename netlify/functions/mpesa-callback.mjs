@@ -66,6 +66,7 @@ const mpesaBaseUrl = isProduction
     )
   };
 
+
   const durations = {
     grade7_notes: 12,
     grade8_notes: 12,
@@ -78,6 +79,7 @@ const mpesaBaseUrl = isProduction
       Object.values(teacherCatalog).flat().map(item => [item.product_id, 168])
     )
   };
+  const learnerTopicProduct = /^learner_g[789]_[a-z0-9-]{1,70}$/.test.bind(/^learner_g[789]_[a-z0-9-]{1,70}$/);
 
   const dbHeaders = {
     apikey: serviceKey,
@@ -189,9 +191,14 @@ const mpesaBaseUrl = isProduction
       return respond(200, { ResultCode: 0, ResultDesc: "Received" });
     }
 
+    const isLearnerTopicProduct =
+      /^learner_g[789]_[a-z0-9-]{1,70}$/.test(String(payment.product_id || ""));
+    const isRevisionResource =
+      /^kjsea2027_[a-z0-9_]{3,80}$/.test(String(payment.product_id || ""));
+    const expectedAmount = (isLearnerTopicProduct || isRevisionResource) ? 10 : catalog[payment.product_id];
     if (
-      !Object.prototype.hasOwnProperty.call(catalog, payment.product_id) ||
-      Number(payment.amount) !== catalog[payment.product_id]
+      !Number.isFinite(expectedAmount) ||
+      Number(payment.amount) !== expectedAmount
     ) {
       throw new Error("Payment product or amount does not match.");
     }
@@ -288,8 +295,11 @@ const mpesaBaseUrl = isProduction
       throw new Error("Could not update the verified payment.");
     }
 
-    const hours = durations[payment.product_id];
-    const expiry = new Date(Date.now() + hours * 60 * 60 * 1000);
+    const isPermanentRevision = isRevisionResource;
+    const hours = learnerTopicProduct(payment.product_id) ? 24 : durations[payment.product_id];
+    if (!isPermanentRevision && (!Number.isFinite(hours) || hours <= 0)) throw new Error("Unknown entitlement duration.");
+    // A paid KJSEA PDF is a one-time purchase with permanent repeat access.
+    const expiry = isPermanentRevision ? new Date("9999-12-31T23:59:59.999Z") : new Date(Date.now() + hours * 60 * 60 * 1000);
 
     const entitlementResponse = await fetch(
       `${supabaseUrl}/rest/v1/entitlements?on_conflict=user_id,product_id`,
@@ -316,8 +326,7 @@ const mpesaBaseUrl = isProduction
     console.log(
       "Verified payment and activated:",
       payment.product_id,
-      hours,
-      "hours"
+      isPermanentRevision ? "permanent access" : `${hours} hours`
     );
 
     return respond(200, {
@@ -333,4 +342,14 @@ const mpesaBaseUrl = isProduction
       ResultDesc: "Callback received."
     });
   }
+};
+
+
+// Keep the legacy route for existing integrations and expose a Daraja-safe
+// alias whose URL contains none of Safaricom's commonly blocked keywords.
+export const config = {
+  path: [
+    "/.netlify/functions/mpesa-callback",
+    "/.netlify/functions/payment-callback"
+  ]
 };
