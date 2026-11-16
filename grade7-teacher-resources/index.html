@@ -78,4 +78,5 @@ async function downloadFile(id){try{const token=await sessionToken();const item=
 document.getElementById('subject').addEventListener('change',render);document.getElementById('category').addEventListener('change',render);
 const refreshBtn=document.createElement('button');refreshBtn.className='secondary';refreshBtn.textContent='Refresh access';refreshBtn.onclick=()=>refresh().then(()=>msg('Access refreshed.')).catch(e=>msg(e.message));document.querySelector('.filters').appendChild(refreshBtn);
 load();
-</script></body></html>
+</script><script src="/assets/js/site-activity-tracker.js" defer></script>
+</body></html>
