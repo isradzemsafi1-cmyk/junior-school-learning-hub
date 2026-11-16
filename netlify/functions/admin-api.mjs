@@ -23,8 +23,8 @@ export default async request => {
   const accessRows=access.ok?await access.json():[];
   if(!bootstrapIds.includes(actor.id)&&!accessRows.length) return json(403,{error:"Administrator access denied."});
   const log=async(action,targetId=null,details={})=>{
-    const r=await rest("admin_activity_logs",{method:"POST",headers:{...headers,Prefer:"return=minimal"},body:JSON.stringify({admin_id:actor.id,action,target_user_id:targetId,details})});
-    if(!r.ok) console.error("Administrator audit log insert failed",r.status);
+    try { const r=await rest("admin_activity_logs",{method:"POST",headers:{...headers,Prefer:"return=minimal"},body:JSON.stringify({admin_id:actor.id,action,target_user_id:targetId,details})}); if(!r.ok) console.error("Administrator audit log insert failed",r.status); }
+    catch(error){ console.error("Administrator audit log unavailable",error); }
   };
   const getUsers=async()=>{
     const [ur,pr]=await Promise.all([authAdmin("users?page=1&per_page=1000"),rest("tuition_profiles?select=id,full_name,grade,phone,guardian_name,guardian_phone,role,created_at,updated_at&order=created_at.desc")]);
