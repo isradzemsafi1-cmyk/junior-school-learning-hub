@@ -1,5 +1,5 @@
-import { grade8Content, grade8Metadata } from "../content/grade8-mathematics-content.mjs";
-import grade9Content from "../content/grade9-library-content.mjs";
+import { grade8Content, grade8Metadata } from "./_shared/grade8-mathematics-content.mjs";
+import grade9Content from "./_shared/grade9-library-content.mjs";
 const slug=(v,i)=>`${String(v||`topic-${i+1}`).toLowerCase().replace(/[^a-z0-9]+/g,"-").replace(/^-|-$/g,"").slice(0,60)}-${i+1}`;
 const grade9Metadata=grade9Content.map((item,index)=>{const m=/<h2>\s*Topic:\s*([^<]+)<\/h2>/i.exec(item.notes||"");const title=m?.[1]?.trim()||item.subject;return{resource_id:`learner_g9_${slug(title,index)}`,title,description:`${item.subject} notes and practice quiz`,grade:9,subject:item.subject};});
 const respond=(status,data)=>new Response(JSON.stringify(data),{status,headers:{"Content-Type":"application/json","Cache-Control":"no-store"}});
