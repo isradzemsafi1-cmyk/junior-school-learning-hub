@@ -58,18 +58,11 @@ export default async (request) => {
   const passkey = isProduction
     ? (Netlify.env.get("MPESA_PRODUCTION_PASSKEY") || Netlify.env.get("MPESA_PASSKEY"))
     : (Netlify.env.get("MPESA_SANDBOX_PASSKEY"));
-  // Live production checkout keeps its existing live callback. Sandbox
-  // checkout (including Deploy Previews) uses the verified custom-domain
-  // endpoint, which is deployed separately as a sandbox-only function.
-  const publicSiteURL = Netlify.env.get("URL") || new URL(request.url).origin;
-  const configuredCallbackURL = isProduction
-    ? Netlify.env.get("MPESA_CALLBACK_URL")
-    : "";
-  // Preview STK requests must call the callback deployed with this same
-  // preview, so the callback uses sandbox credentials and never production.
-  const callbackURL = isProduction
-    ? configuredCallbackURL
-    : new URL("/.netlify/functions/mpesa-callback", request.url).toString();
+  // Use the explicitly configured, publicly reachable HTTPS callback in
+  // every context. Deploy Preview configuration must point to that preview's
+  // own mpesa-callback function; production keeps its existing custom-domain
+  // callback. The callback selects sandbox/live credentials from its host.
+  const callbackURL = Netlify.env.get("MPESA_CALLBACK_URL") || "";
   // Use the same canonical function route shown in Netlify function logs.
 
   let callbackHost = "invalid";
