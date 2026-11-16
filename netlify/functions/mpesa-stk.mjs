@@ -64,13 +64,14 @@ export default async (request) => {
   const publicSiteURL = Netlify.env.get("URL") || new URL(request.url).origin;
   const configuredCallbackURL = isProduction
     ? Netlify.env.get("MPESA_CALLBACK_URL")
-    : (Netlify.env.get("MPESA_SANDBOX_CALLBACK_URL") ||
-       "https://juniorschoollearninghub.co.ke/.netlify/functions/mpesa-sandbox-callback");
+    : "";
+  // Preview STK requests must call the callback deployed with this same
+  // preview, so the callback uses sandbox credentials and never production.
+  const callbackURL = isProduction
+    ? configuredCallbackURL
+    : new URL("/.netlify/functions/mpesa-callback", request.url).toString();
   // Use the same canonical function route shown in Netlify function logs.
-  const callbackURL = configuredCallbackURL || new URL(
-    "/.netlify/functions/mpesa-callback",
-    publicSiteURL.endsWith("/") ? publicSiteURL : `${publicSiteURL}/`
-  ).toString();
+
   let callbackHost = "invalid";
   try {
     const parsedCallback = new URL(callbackURL);
