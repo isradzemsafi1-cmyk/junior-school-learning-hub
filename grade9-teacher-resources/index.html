@@ -56,8 +56,8 @@ async function submitPayment(){
   errorBox.innerHTML='Please sign in before purchasing. <a href="/#learner-account">Sign in / Create account</a>';
   return;
  }
- const phone=document.getElementById('mpesaPhone').value.trim().replace(/[\\s+-]/g,'');
- if(!/^((0[17]\\d{8})|(254[17]\\d{8})|(\\+254[17]\\d{8}))$/.test(phone)){
+ const phone=document.getElementById('mpesaPhone').value.trim().replace(/[\s+-]/g,'');
+ if(!/^((0[17]\d{8})|(254[17]\d{8})|(\+254[17]\d{8}))$/.test(phone)){
   errorBox.textContent='Enter a valid Kenyan M-Pesa number, for example 0712345678 or 254712345678.';return;
  }
  if(!selectedProductId)return;
