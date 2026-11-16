@@ -17,12 +17,20 @@ export default async (request) => {
 
   const supabaseUrl = Netlify.env.get("SUPABASE_URL");
   const serviceKey = Netlify.env.get("SUPABASE_SERVICE_ROLE_KEY");
-  const consumerKey = Netlify.env.get("MPESA_CONSUMER_KEY");
-  const consumerSecret = Netlify.env.get("MPESA_CONSUMER_SECRET");
-  // Match the Safaricom-confirmed production BusinessShortCode.
-  const shortcode = Netlify.env.get("MPESA_SHORTCODE") || "1420268";
-  const passkey = Netlify.env.get("MPESA_PASSKEY");
-const isProduction = process.env.CONTEXT === "production";
+  const isProduction = process.env.CONTEXT === "production";
+  // Use the same environment-specific credentials as the STK initiation.
+  const consumerKey = isProduction
+    ? (Netlify.env.get("MPESA_PRODUCTION_CONSUMER_KEY") || Netlify.env.get("MPESA_CONSUMER_KEY"))
+    : Netlify.env.get("MPESA_SANDBOX_CONSUMER_KEY");
+  const consumerSecret = isProduction
+    ? (Netlify.env.get("MPESA_PRODUCTION_CONSUMER_SECRET") || Netlify.env.get("MPESA_CONSUMER_SECRET"))
+    : Netlify.env.get("MPESA_SANDBOX_CONSUMER_SECRET");
+  const shortcode = isProduction
+    ? (Netlify.env.get("MPESA_PRODUCTION_SHORTCODE") || Netlify.env.get("MPESA_SHORTCODE") || "1420268")
+    : (Netlify.env.get("MPESA_SANDBOX_SHORTCODE") || "174379");
+  const passkey = isProduction
+    ? (Netlify.env.get("MPESA_PRODUCTION_PASSKEY") || Netlify.env.get("MPESA_PASSKEY"))
+    : (Netlify.env.get("MPESA_SANDBOX_PASSKEY") || "bfb279f9aa9bdbcf158e97dd71a467cd2e0c893059b10f78e6b72ada1ed2c919");
 
 const mpesaBaseUrl = isProduction
   ? "https://api.safaricom.co.ke"
