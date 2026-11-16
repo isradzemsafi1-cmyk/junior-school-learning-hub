@@ -120,4 +120,5 @@ function markQuiz(){
  if(window.saveLearnerQuizAttempt)window.saveLearnerQuizAttempt({grade:'Grade 8',subject:'Mathematics',score,total:d.quiz.length,percentage:pct,answered,topic:d.sub,questions:d.quiz.map((q,i)=>({question:q[0],selected:document.querySelector(`input[name="q${i}"]:checked`)?.value??null,correct:q[2],topic:d.sub}))});
 }
 init();
-</script></body></html>
+</script><script src="/assets/js/site-activity-tracker.js" defer></script>
+</body></html>
