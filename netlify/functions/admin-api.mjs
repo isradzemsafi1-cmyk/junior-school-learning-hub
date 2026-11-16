@@ -11,7 +11,7 @@ export default async request => {
   const bootstrapIds=(Netlify.env.get("JSLH_ADMIN_USER_IDS")||"").split(",").map(x=>x.trim()).filter(Boolean);
   if(!url||!serviceKey||!publishableKey) return json(503,{error:"Administrator service is not configured."});
   if(!["GET","POST"].includes(request.method)) return json(405,{error:"Method not allowed."});
-  const token=(request.headers.get("authorization")||"").replace(/^Bearer\\s+/i,"");
+  const token=(request.headers.get("authorization")||"").replace(/^Bearer\s+/i,"");
   if(!token) return json(401,{error:"Please sign in."});
   const auth=await fetch(`${url}/auth/v1/user`,{headers:{apikey:publishableKey,Authorization:`Bearer ${token}`}});
   if(!auth.ok) return json(401,{error:"Your session is invalid. Sign in again."});
