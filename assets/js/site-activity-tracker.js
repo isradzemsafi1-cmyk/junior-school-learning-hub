@@ -39,6 +39,7 @@
     const label=(target.getAttribute("aria-label")||target.textContent||target.title||"").trim().replace(/\\s+/g," ").slice(0,180);
     const href=target.getAttribute("href")||"";
     const resourceId=target.dataset.resourceId||target.dataset.resource||null;
+    const context=(target.closest("[data-resource-id],.resource-card,.resource-item,.card,article,li")?.innerText||"")+" "+label+" "+href;
     const isDownload=target.hasAttribute("download")||/\\.pdf(?:$|[?#])/i.test(href);
     const isResource=!!resourceId||target.dataset.resourceType||/resource|notes|revision|library|download|premium|quiz/i.test(label+" "+href);
     const paymentAction=/pay now|make payment|unlock|mpesa|m-pesa|pay kes|purchase/i.test(label);
@@ -46,7 +47,7 @@
     if(type)send(type,{
       resource_id:resourceId,resource_title:target.dataset.resourceTitle||label,
       resource_category:target.dataset.resourceCategory||target.dataset.resourceType||null,
-      access_type:target.dataset.accessType||(/premium|paid/i.test(label+" "+href)?"premium":/free/i.test(label+" "+href)?"free":"unknown"),
+      access_type:target.dataset.accessType||(/premium|paid/i.test(context)?"premium":/free/i.test(context)?"free":"unknown"),
       grade:target.dataset.grade||null,metadata:{href:href.slice(0,500),label}
     });
   },true);
