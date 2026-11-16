@@ -204,10 +204,20 @@ const readJson = async (response, service) => {
       const data = await r.json();
       isLearnerTopic = Array.isArray(data) && data.some((item,index) => `learner_g7_${learnerSlug(item.sub || item.strand || item.topic || item.subject,index)}` === productId);
     }
-    if (!isLearnerTopic && !Object.prototype.hasOwnProperty.call(catalog, productId)) {
+    let isRevisionResource = false;
+    if (/^kjsea2027_[a-z0-9_]{3,80}$/.test(productId)) {
+      const resourceCheck = await fetch(
+        `${supabaseUrl}/rest/v1/learner_revision_resources?id=eq.${encodeURIComponent(productId)}&published=eq.true&select=id,price_kes&limit=1`,
+        { headers: dbHeaders }
+      );
+      if (!resourceCheck.ok) throw new Error("Could not validate KJSEA revision resource.");
+      const resources = await resourceCheck.json();
+      isRevisionResource = resources.length === 1 && Number(resources[0].price_kes) === 10;
+    }
+    if (!isLearnerTopic && !isRevisionResource && !Object.prototype.hasOwnProperty.call(catalog, productId)) {
       return respond(400, { success: false, message: "Please select a valid learning product." });
     }
-    const amount = isLearnerTopic ? 10 : catalog[productId];
+    const amount = (isLearnerTopic || isRevisionResource) ? 10 : catalog[productId];
 
     let phone = String(body.phone || "").replace(/[\s+-]/g, "");
 
