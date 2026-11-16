@@ -961,29 +961,6 @@ export const teacherCatalog = {
       "storage_path": "grade7/Records_of_Work/Grade_7_Social_Studies_Term_3_Records_of_Work_2027.pdf"
     },
     {
-      "subject": "All Learning Areas",
-      "category": "Schemes of Work",
-      "label": "Grade7 All Nine Learning Areas 36 Schemes Revised",
-      "filename": "Grade7_2027_All_Nine_Learning_Areas_36_Schemes_Revised.pdf",
-      "path": "Schemes_of_Work/Grade7_2027_All_Nine_Learning_Areas_36_Schemes_Revised.pdf",
-      "product_id": "teacher_g7_097",
-      "price_kes": 70,
-      "storage_path": "grade7/Schemes_of_Work/Grade7_2027_All_Nine_Learning_Areas_36_Schemes_Revised.pdf"
-    }
-  ],
-  "8": [
-    {
-      "subject": "Agriculture",
-      "category": "Schemes of Work",
-      "label": "Agriculture Full Year Scheme of Work",
-      "filename": "Grade_8_2027_Agriculture_Full_Year_Scheme_of_Work.pdf",
-      "path": "Agriculture/Schemes of Work/Grade_8_2027_Agriculture_Full_Year_Scheme_of_Work.pdf",
-      "bytes": 77512,
-      "product_id": "teacher_g8_001",
-      "price_kes": 70,
-      "storage_path": "grade8/Agriculture/Schemes of Work/Grade_8_2027_Agriculture_Full_Year_Scheme_of_Work.pdf"
-    },
-    {
       "subject": "Agriculture",
       "category": "Schemes of Work",
       "label": "Agriculture Scheme of Work Term 1",
@@ -1114,17 +1091,6 @@ export const teacherCatalog = {
       "product_id": "teacher_g8_013",
       "price_kes": 30,
       "storage_path": "grade8/Agriculture/Records of Work/Grade_8_2027_Agriculture_Records_of_Work_Term_3.pdf"
-    },
-    {
-      "subject": "Christian Religious Education (CRE)",
-      "category": "Schemes of Work",
-      "label": "CRE Full Year Scheme of Work",
-      "filename": "Grade_8_2027_CRE_Full_Year_Scheme_of_Work.pdf",
-      "path": "CRE/Schemes of Work/Grade_8_2027_CRE_Full_Year_Scheme_of_Work.pdf",
-      "bytes": 86833,
-      "product_id": "teacher_g8_014",
-      "price_kes": 70,
-      "storage_path": "grade8/CRE/Schemes of Work/Grade_8_2027_CRE_Full_Year_Scheme_of_Work.pdf"
     },
     {
       "subject": "Christian Religious Education (CRE)",
@@ -1261,17 +1227,6 @@ export const teacherCatalog = {
     {
       "subject": "Creative Arts and Sports",
       "category": "Schemes of Work",
-      "label": "Creative Arts and Sports Full Year Scheme of Work",
-      "filename": "Grade_8_2027_Creative_Arts_and_Sports_Full_Year_Scheme_of_Work.pdf",
-      "path": "Creative Arts and Sports/Schemes of Work/Grade_8_2027_Creative_Arts_and_Sports_Full_Year_Scheme_of_Work.pdf",
-      "bytes": 100498,
-      "product_id": "teacher_g8_027",
-      "price_kes": 70,
-      "storage_path": "grade8/Creative Arts and Sports/Schemes of Work/Grade_8_2027_Creative_Arts_and_Sports_Full_Year_Scheme_of_Work.pdf"
-    },
-    {
-      "subject": "Creative Arts and Sports",
-      "category": "Schemes of Work",
       "label": "Creative Arts and Sports Scheme of Work Term 1",
       "filename": "Grade_8_2027_Creative_Arts_and_Sports_Scheme_of_Work_Term_1.pdf",
       "path": "Creative Arts and Sports/Schemes of Work/Grade_8_2027_Creative_Arts_and_Sports_Scheme_of_Work_Term_1.pdf",
@@ -1400,17 +1355,6 @@ export const teacherCatalog = {
       "product_id": "teacher_g8_039",
       "price_kes": 30,
       "storage_path": "grade8/Creative Arts and Sports/Records of Work/Grade_8_2027_Creative_Arts_and_Sports_Records_of_Work_Term_3.pdf"
-    },
-    {
-      "subject": "English",
-      "category": "Schemes of Work",
-      "label": "English Full Year Scheme of Work",
-      "filename": "Grade_8_2027_English_Full_Year_Scheme_of_Work.pdf",
-      "path": "English/Schemes of Work/Grade_8_2027_English_Full_Year_Scheme_of_Work.pdf",
-      "bytes": 1153947,
-      "product_id": "teacher_g8_040",
-      "price_kes": 70,
-      "storage_path": "grade8/English/Schemes of Work/Grade_8_2027_English_Full_Year_Scheme_of_Work.pdf"
     },
     {
       "subject": "English",
@@ -1547,17 +1491,6 @@ export const teacherCatalog = {
     {
       "subject": "Integrated Science",
       "category": "Schemes of Work",
-      "label": "Integrated Science Full Year Scheme of Work",
-      "filename": "Grade_8_2027_Integrated_Science_Full_Year_Scheme_of_Work.pdf",
-      "path": "Integrated Science/Schemes of Work/Grade_8_2027_Integrated_Science_Full_Year_Scheme_of_Work.pdf",
-      "bytes": 89485,
-      "product_id": "teacher_g8_053",
-      "price_kes": 70,
-      "storage_path": "grade8/Integrated Science/Schemes of Work/Grade_8_2027_Integrated_Science_Full_Year_Scheme_of_Work.pdf"
-    },
-    {
-      "subject": "Integrated Science",
-      "category": "Schemes of Work",
       "label": "Integrated Science Scheme of Work Term 1",
       "filename": "Grade_8_2027_Integrated_Science_Scheme_of_Work_Term_1.pdf",
       "path": "Integrated Science/Schemes of Work/Grade_8_2027_Integrated_Science_Scheme_of_Work_Term_1.pdf",
@@ -1686,17 +1619,6 @@ export const teacherCatalog = {
       "product_id": "teacher_g8_065",
       "price_kes": 30,
       "storage_path": "grade8/Integrated Science/Records of Work/Grade_8_2027_Integrated_Science_Records_of_Work_Term_3.pdf"
-    },
-    {
-      "subject": "Kiswahili",
-      "category": "Schemes of Work",
-      "label": "Kiswahili Full Year Scheme of Work",
-      "filename": "Grade_8_2027_Kiswahili_Full_Year_Scheme_of_Work.pdf",
-      "path": "Kiswahili/Schemes of Work/Grade_8_2027_Kiswahili_Full_Year_Scheme_of_Work.pdf",
-      "bytes": 87809,
-      "product_id": "teacher_g8_066",
-      "price_kes": 70,
-      "storage_path": "grade8/Kiswahili/Schemes of Work/Grade_8_2027_Kiswahili_Full_Year_Scheme_of_Work.pdf"
     },
     {
       "subject": "Kiswahili",
@@ -1833,17 +1755,6 @@ export const teacherCatalog = {
     {
       "subject": "Mathematics",
       "category": "Schemes of Work",
-      "label": "Mathematics Full Year Scheme of Work",
-      "filename": "Grade_8_2027_Mathematics_Full_Year_Scheme_of_Work.pdf",
-      "path": "Mathematics/Schemes of Work/Grade_8_2027_Mathematics_Full_Year_Scheme_of_Work.pdf",
-      "bytes": 108502,
-      "product_id": "teacher_g8_079",
-      "price_kes": 70,
-      "storage_path": "grade8/Mathematics/Schemes of Work/Grade_8_2027_Mathematics_Full_Year_Scheme_of_Work.pdf"
-    },
-    {
-      "subject": "Mathematics",
-      "category": "Schemes of Work",
       "label": "Mathematics Scheme of Work Term 1",
       "filename": "Grade_8_2027_Mathematics_Scheme_of_Work_Term_1.pdf",
       "path": "Mathematics/Schemes of Work/Grade_8_2027_Mathematics_Scheme_of_Work_Term_1.pdf",
@@ -1976,17 +1887,6 @@ export const teacherCatalog = {
     {
       "subject": "Pre-Technical Studies",
       "category": "Schemes of Work",
-      "label": "Pre Technical Studies Full Year Scheme of Work",
-      "filename": "Grade_8_2027_Pre_Technical_Studies_Full_Year_Scheme_of_Work.pdf",
-      "path": "Pre-Technical Studies/Schemes of Work/Grade_8_2027_Pre_Technical_Studies_Full_Year_Scheme_of_Work.pdf",
-      "bytes": 78994,
-      "product_id": "teacher_g8_092",
-      "price_kes": 70,
-      "storage_path": "grade8/Pre-Technical Studies/Schemes of Work/Grade_8_2027_Pre_Technical_Studies_Full_Year_Scheme_of_Work.pdf"
-    },
-    {
-      "subject": "Pre-Technical Studies",
-      "category": "Schemes of Work",
       "label": "Pre Technical Studies Scheme of Work Term 1",
       "filename": "Grade_8_2027_Pre_Technical_Studies_Scheme_of_Work_Term_1.pdf",
       "path": "Pre-Technical Studies/Schemes of Work/Grade_8_2027_Pre_Technical_Studies_Scheme_of_Work_Term_1.pdf",
@@ -2115,17 +2015,6 @@ export const teacherCatalog = {
       "product_id": "teacher_g8_104",
       "price_kes": 30,
       "storage_path": "grade8/Pre-Technical Studies/Records of Work/Grade_8_2027_Pre_Technical_Studies_Records_of_Work_Term_3.pdf"
-    },
-    {
-      "subject": "Social Studies",
-      "category": "Schemes of Work",
-      "label": "Social Studies Full Year Scheme of Work",
-      "filename": "Grade_8_2027_Social_Studies_Full_Year_Scheme_of_Work.pdf",
-      "path": "Social Studies/Schemes of Work/Grade_8_2027_Social_Studies_Full_Year_Scheme_of_Work.pdf",
-      "bytes": 80053,
-      "product_id": "teacher_g8_105",
-      "price_kes": 70,
-      "storage_path": "grade8/Social Studies/Schemes of Work/Grade_8_2027_Social_Studies_Full_Year_Scheme_of_Work.pdf"
     },
     {
       "subject": "Social Studies",
@@ -2339,17 +2228,6 @@ export const teacherCatalog = {
       "storage_path": "grade9/Kiswahili/CATs/CAT 1 and Marking Scheme.pdf"
     },
     {
-      "subject": "Pre-Technical Studies",
-      "category": "Schemes of Work",
-      "label": "Full-Year Scheme of Work",
-      "filename": "Full Year Scheme of Work.pdf",
-      "path": "Pre-Technical Studies/Schemes of Work/Full Year Scheme of Work.pdf",
-      "bytes": 194932,
-      "product_id": "teacher_g9_008",
-      "price_kes": 70,
-      "storage_path": "grade9/Pre-Technical Studies/Schemes of Work/Full Year Scheme of Work.pdf"
-    },
-    {
       "subject": "English",
       "category": "CATs",
       "label": "CAT 2",
@@ -2425,17 +2303,6 @@ export const teacherCatalog = {
       "product_id": "teacher_g9_015",
       "price_kes": 20,
       "storage_path": "grade9/Creative Arts and Sports/CATs/CAT 2 and Marking Scheme.pdf"
-    },
-    {
-      "subject": "Mathematics",
-      "category": "Schemes of Work",
-      "label": "Full-Year Scheme of Work",
-      "filename": "Full Year Scheme of Work.pdf",
-      "path": "Mathematics/Schemes of Work/Full Year Scheme of Work.pdf",
-      "bytes": 366948,
-      "product_id": "teacher_g9_016",
-      "price_kes": 70,
-      "storage_path": "grade9/Mathematics/Schemes of Work/Full Year Scheme of Work.pdf"
     },
     {
       "subject": "Agriculture",
@@ -2548,17 +2415,6 @@ export const teacherCatalog = {
       "storage_path": "grade9/Social Studies/Examinations/End of Term 2 Examination and Marking Scheme.pdf"
     },
     {
-      "subject": "Social Studies",
-      "category": "Schemes of Work",
-      "label": "Full-Year Scheme of Work",
-      "filename": "Full Year Scheme of Work.pdf",
-      "path": "Social Studies/Schemes of Work/Full Year Scheme of Work.pdf",
-      "bytes": 205782,
-      "product_id": "teacher_g9_027",
-      "price_kes": 70,
-      "storage_path": "grade9/Social Studies/Schemes of Work/Full Year Scheme of Work.pdf"
-    },
-    {
       "subject": "Integrated Science",
       "category": "Examinations",
       "label": "Term 2 Examination",
@@ -2568,17 +2424,6 @@ export const teacherCatalog = {
       "product_id": "teacher_g9_028",
       "price_kes": 30,
       "storage_path": "grade9/Integrated Science/Examinations/End of Term 2 Examination and Marking Scheme.pdf"
-    },
-    {
-      "subject": "Integrated Science",
-      "category": "Schemes of Work",
-      "label": "Full-Year Scheme of Work",
-      "filename": "Full Year Scheme of Work.pdf",
-      "path": "Integrated Science/Schemes of Work/Full Year Scheme of Work.pdf",
-      "bytes": 379641,
-      "product_id": "teacher_g9_029",
-      "price_kes": 70,
-      "storage_path": "grade9/Integrated Science/Schemes of Work/Full Year Scheme of Work.pdf"
     },
     {
       "subject": "Integrated Science",
@@ -2625,17 +2470,6 @@ export const teacherCatalog = {
       "storage_path": "grade9/Pre-Technical Studies/CATs/CAT 1 and Marking Scheme.pdf"
     },
     {
-      "subject": "Creative Arts and Sports",
-      "category": "Schemes of Work",
-      "label": "Full-Year Scheme of Work",
-      "filename": "Full Year Scheme of Work.pdf",
-      "path": "Creative Arts and Sports/Schemes of Work/Full Year Scheme of Work.pdf",
-      "bytes": 220669,
-      "product_id": "teacher_g9_034",
-      "price_kes": 70,
-      "storage_path": "grade9/Creative Arts and Sports/Schemes of Work/Full Year Scheme of Work.pdf"
-    },
-    {
       "subject": "Christian Religious Education (CRE)",
       "category": "Examinations",
       "label": "Term 1 Examination",
@@ -2656,17 +2490,6 @@ export const teacherCatalog = {
       "product_id": "teacher_g9_036",
       "price_kes": 30,
       "storage_path": "grade9/English/Examinations/End of Term 1 Examination and Marking Scheme.pdf"
-    },
-    {
-      "subject": "Agriculture",
-      "category": "Schemes of Work",
-      "label": "Full-Year Scheme of Work",
-      "filename": "Full Year Scheme of Work.pdf",
-      "path": "Agriculture/Schemes of Work/Full Year Scheme of Work.pdf",
-      "bytes": 189045,
-      "product_id": "teacher_g9_037",
-      "price_kes": 70,
-      "storage_path": "grade9/Agriculture/Schemes of Work/Full Year Scheme of Work.pdf"
     },
     {
       "subject": "English",
@@ -2700,17 +2523,6 @@ export const teacherCatalog = {
       "product_id": "teacher_g9_040",
       "price_kes": 50,
       "storage_path": "grade9/English/Learner Notes/Detailed Full Year Learner Notes.pdf"
-    },
-    {
-      "subject": "Christian Religious Education (CRE)",
-      "category": "Schemes of Work",
-      "label": "Full-Year Scheme of Work",
-      "filename": "Full Year Scheme of Work.pdf",
-      "path": "Christian Religious Education (CRE)/Schemes of Work/Full Year Scheme of Work.pdf",
-      "bytes": 140683,
-      "product_id": "teacher_g9_041",
-      "price_kes": 70,
-      "storage_path": "grade9/Christian Religious Education (CRE)/Schemes of Work/Full Year Scheme of Work.pdf"
     },
     {
       "subject": "Creative Arts and Sports",
@@ -2755,17 +2567,6 @@ export const teacherCatalog = {
       "product_id": "teacher_g9_045",
       "price_kes": 30,
       "storage_path": "grade9/Creative Arts and Sports/Examinations/End of Term 1 Examination and Marking Scheme.pdf"
-    },
-    {
-      "subject": "English",
-      "category": "Schemes of Work",
-      "label": "Full-Year Scheme of Work",
-      "filename": "Full Year Scheme of Work.pdf",
-      "path": "English/Schemes of Work/Full Year Scheme of Work.pdf",
-      "bytes": 214511,
-      "product_id": "teacher_g9_046",
-      "price_kes": 70,
-      "storage_path": "grade9/English/Schemes of Work/Full Year Scheme of Work.pdf"
     },
     {
       "subject": "English",
@@ -2964,17 +2765,6 @@ export const teacherCatalog = {
       "product_id": "teacher_g9_064",
       "price_kes": 20,
       "storage_path": "grade9/Social Studies/CATs/CAT 1 and Marking Scheme.pdf"
-    },
-    {
-      "subject": "Kiswahili",
-      "category": "Schemes of Work",
-      "label": "Full-Year Scheme of Work",
-      "filename": "Full Year Scheme of Work.pdf",
-      "path": "Kiswahili/Schemes of Work/Full Year Scheme of Work.pdf",
-      "bytes": 118043,
-      "product_id": "teacher_g9_065",
-      "price_kes": 70,
-      "storage_path": "grade9/Kiswahili/Schemes of Work/Full Year Scheme of Work.pdf"
     },
     {
       "subject": "Social Studies",
