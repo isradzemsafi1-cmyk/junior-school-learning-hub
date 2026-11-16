@@ -697,7 +697,7 @@ export const teacherCatalog = {
       "filename": "Grade_7_Agriculture_Nutrition_Term_1_Records_of_Work_2027.pdf",
       "path": "Records_of_Work/Grade_7_Agriculture_Nutrition_Term_1_Records_of_Work_2027.pdf",
       "product_id": "teacher_g7_070",
-      "price_kes": 50,
+      "price_kes": 30,
       "storage_path": "grade7/Records_of_Work/Grade_7_Agriculture_Nutrition_Term_1_Records_of_Work_2027.pdf"
     },
     {
@@ -707,7 +707,7 @@ export const teacherCatalog = {
       "filename": "Grade_7_Agriculture_Nutrition_Term_2_Records_of_Work_2027.pdf",
       "path": "Records_of_Work/Grade_7_Agriculture_Nutrition_Term_2_Records_of_Work_2027.pdf",
       "product_id": "teacher_g7_071",
-      "price_kes": 50,
+      "price_kes": 30,
       "storage_path": "grade7/Records_of_Work/Grade_7_Agriculture_Nutrition_Term_2_Records_of_Work_2027.pdf"
     },
     {
@@ -717,7 +717,7 @@ export const teacherCatalog = {
       "filename": "Grade_7_Agriculture_Nutrition_Term_3_Records_of_Work_2027.pdf",
       "path": "Records_of_Work/Grade_7_Agriculture_Nutrition_Term_3_Records_of_Work_2027.pdf",
       "product_id": "teacher_g7_072",
-      "price_kes": 50,
+      "price_kes": 30,
       "storage_path": "grade7/Records_of_Work/Grade_7_Agriculture_Nutrition_Term_3_Records_of_Work_2027.pdf"
     },
     {
@@ -727,7 +727,7 @@ export const teacherCatalog = {
       "filename": "Grade_7_Cre_Term_1_Records_of_Work_2027.pdf",
       "path": "Records_of_Work/Grade_7_Cre_Term_1_Records_of_Work_2027.pdf",
       "product_id": "teacher_g7_073",
-      "price_kes": 50,
+      "price_kes": 30,
       "storage_path": "grade7/Records_of_Work/Grade_7_Cre_Term_1_Records_of_Work_2027.pdf"
     },
     {
@@ -737,7 +737,7 @@ export const teacherCatalog = {
       "filename": "Grade_7_Cre_Term_2_Records_of_Work_2027.pdf",
       "path": "Records_of_Work/Grade_7_Cre_Term_2_Records_of_Work_2027.pdf",
       "product_id": "teacher_g7_074",
-      "price_kes": 50,
+      "price_kes": 30,
       "storage_path": "grade7/Records_of_Work/Grade_7_Cre_Term_2_Records_of_Work_2027.pdf"
     },
     {
@@ -747,7 +747,7 @@ export const teacherCatalog = {
       "filename": "Grade_7_Cre_Term_3_Records_of_Work_2027.pdf",
       "path": "Records_of_Work/Grade_7_Cre_Term_3_Records_of_Work_2027.pdf",
       "product_id": "teacher_g7_075",
-      "price_kes": 50,
+      "price_kes": 30,
       "storage_path": "grade7/Records_of_Work/Grade_7_Cre_Term_3_Records_of_Work_2027.pdf"
     },
     {
@@ -757,7 +757,7 @@ export const teacherCatalog = {
       "filename": "Grade_7_Creative_Arts_Sports_Term_1_Records_of_Work_2027.pdf",
       "path": "Records_of_Work/Grade_7_Creative_Arts_Sports_Term_1_Records_of_Work_2027.pdf",
       "product_id": "teacher_g7_076",
-      "price_kes": 50,
+      "price_kes": 30,
       "storage_path": "grade7/Records_of_Work/Grade_7_Creative_Arts_Sports_Term_1_Records_of_Work_2027.pdf"
     },
     {
@@ -767,7 +767,7 @@ export const teacherCatalog = {
       "filename": "Grade_7_Creative_Arts_Sports_Term_2_Records_of_Work_2027.pdf",
       "path": "Records_of_Work/Grade_7_Creative_Arts_Sports_Term_2_Records_of_Work_2027.pdf",
       "product_id": "teacher_g7_077",
-      "price_kes": 50,
+      "price_kes": 30,
       "storage_path": "grade7/Records_of_Work/Grade_7_Creative_Arts_Sports_Term_2_Records_of_Work_2027.pdf"
     },
     {
@@ -777,7 +777,7 @@ export const teacherCatalog = {
       "filename": "Grade_7_Creative_Arts_Sports_Term_3_Records_of_Work_2027.pdf",
       "path": "Records_of_Work/Grade_7_Creative_Arts_Sports_Term_3_Records_of_Work_2027.pdf",
       "product_id": "teacher_g7_078",
-      "price_kes": 50,
+      "price_kes": 30,
       "storage_path": "grade7/Records_of_Work/Grade_7_Creative_Arts_Sports_Term_3_Records_of_Work_2027.pdf"
     },
     {
@@ -787,7 +787,7 @@ export const teacherCatalog = {
       "filename": "Grade_7_English_Term_1_Records_of_Work_2027.pdf",
       "path": "Records_of_Work/Grade_7_English_Term_1_Records_of_Work_2027.pdf",
       "product_id": "teacher_g7_079",
-      "price_kes": 50,
+      "price_kes": 30,
       "storage_path": "grade7/Records_of_Work/Grade_7_English_Term_1_Records_of_Work_2027.pdf"
     },
     {
@@ -797,7 +797,7 @@ export const teacherCatalog = {
       "filename": "Grade_7_English_Term_2_Records_of_Work_2027.pdf",
       "path": "Records_of_Work/Grade_7_English_Term_2_Records_of_Work_2027.pdf",
       "product_id": "teacher_g7_080",
-      "price_kes": 50,
+      "price_kes": 30,
       "storage_path": "grade7/Records_of_Work/Grade_7_English_Term_2_Records_of_Work_2027.pdf"
     },
     {
@@ -807,7 +807,7 @@ export const teacherCatalog = {
       "filename": "Grade_7_English_Term_3_Records_of_Work_2027.pdf",
       "path": "Records_of_Work/Grade_7_English_Term_3_Records_of_Work_2027.pdf",
       "product_id": "teacher_g7_081",
-      "price_kes": 50,
+      "price_kes": 30,
       "storage_path": "grade7/Records_of_Work/Grade_7_English_Term_3_Records_of_Work_2027.pdf"
     },
     {
@@ -817,7 +817,7 @@ export const teacherCatalog = {
       "filename": "Grade_7_Integrated_Science_Term_1_Records_of_Work_2027.pdf",
       "path": "Records_of_Work/Grade_7_Integrated_Science_Term_1_Records_of_Work_2027.pdf",
       "product_id": "teacher_g7_082",
-      "price_kes": 50,
+      "price_kes": 30,
       "storage_path": "grade7/Records_of_Work/Grade_7_Integrated_Science_Term_1_Records_of_Work_2027.pdf"
     },
     {
@@ -827,7 +827,7 @@ export const teacherCatalog = {
       "filename": "Grade_7_Integrated_Science_Term_2_Records_of_Work_2027.pdf",
       "path": "Records_of_Work/Grade_7_Integrated_Science_Term_2_Records_of_Work_2027.pdf",
       "product_id": "teacher_g7_083",
-      "price_kes": 50,
+      "price_kes": 30,
       "storage_path": "grade7/Records_of_Work/Grade_7_Integrated_Science_Term_2_Records_of_Work_2027.pdf"
     },
     {
@@ -837,7 +837,7 @@ export const teacherCatalog = {
       "filename": "Grade_7_Integrated_Science_Term_3_Records_of_Work_2027.pdf",
       "path": "Records_of_Work/Grade_7_Integrated_Science_Term_3_Records_of_Work_2027.pdf",
       "product_id": "teacher_g7_084",
-      "price_kes": 50,
+      "price_kes": 30,
       "storage_path": "grade7/Records_of_Work/Grade_7_Integrated_Science_Term_3_Records_of_Work_2027.pdf"
     },
     {
@@ -847,7 +847,7 @@ export const teacherCatalog = {
       "filename": "Grade_7_Kiswahili_Term_1_Records_of_Work_2027.pdf",
       "path": "Records_of_Work/Grade_7_Kiswahili_Term_1_Records_of_Work_2027.pdf",
       "product_id": "teacher_g7_085",
-      "price_kes": 50,
+      "price_kes": 30,
       "storage_path": "grade7/Records_of_Work/Grade_7_Kiswahili_Term_1_Records_of_Work_2027.pdf"
     },
     {
@@ -857,7 +857,7 @@ export const teacherCatalog = {
       "filename": "Grade_7_Kiswahili_Term_2_Records_of_Work_2027.pdf",
       "path": "Records_of_Work/Grade_7_Kiswahili_Term_2_Records_of_Work_2027.pdf",
       "product_id": "teacher_g7_086",
-      "price_kes": 50,
+      "price_kes": 30,
       "storage_path": "grade7/Records_of_Work/Grade_7_Kiswahili_Term_2_Records_of_Work_2027.pdf"
     },
     {
@@ -867,7 +867,7 @@ export const teacherCatalog = {
       "filename": "Grade_7_Kiswahili_Term_3_Records_of_Work_2027.pdf",
       "path": "Records_of_Work/Grade_7_Kiswahili_Term_3_Records_of_Work_2027.pdf",
       "product_id": "teacher_g7_087",
-      "price_kes": 50,
+      "price_kes": 30,
       "storage_path": "grade7/Records_of_Work/Grade_7_Kiswahili_Term_3_Records_of_Work_2027.pdf"
     },
     {
@@ -877,7 +877,7 @@ export const teacherCatalog = {
       "filename": "Grade_7_Mathematics_Term_1_Records_of_Work_2027.pdf",
       "path": "Records_of_Work/Grade_7_Mathematics_Term_1_Records_of_Work_2027.pdf",
       "product_id": "teacher_g7_088",
-      "price_kes": 50,
+      "price_kes": 30,
       "storage_path": "grade7/Records_of_Work/Grade_7_Mathematics_Term_1_Records_of_Work_2027.pdf"
     },
     {
@@ -887,7 +887,7 @@ export const teacherCatalog = {
       "filename": "Grade_7_Mathematics_Term_2_Records_of_Work_2027.pdf",
       "path": "Records_of_Work/Grade_7_Mathematics_Term_2_Records_of_Work_2027.pdf",
       "product_id": "teacher_g7_089",
-      "price_kes": 50,
+      "price_kes": 30,
       "storage_path": "grade7/Records_of_Work/Grade_7_Mathematics_Term_2_Records_of_Work_2027.pdf"
     },
     {
@@ -897,7 +897,7 @@ export const teacherCatalog = {
       "filename": "Grade_7_Mathematics_Term_3_Records_of_Work_2027.pdf",
       "path": "Records_of_Work/Grade_7_Mathematics_Term_3_Records_of_Work_2027.pdf",
       "product_id": "teacher_g7_090",
-      "price_kes": 50,
+      "price_kes": 30,
       "storage_path": "grade7/Records_of_Work/Grade_7_Mathematics_Term_3_Records_of_Work_2027.pdf"
     },
     {
@@ -907,7 +907,7 @@ export const teacherCatalog = {
       "filename": "Grade_7_Pre_Technical_Studies_Term_1_Records_of_Work_2027.pdf",
       "path": "Records_of_Work/Grade_7_Pre_Technical_Studies_Term_1_Records_of_Work_2027.pdf",
       "product_id": "teacher_g7_091",
-      "price_kes": 50,
+      "price_kes": 30,
       "storage_path": "grade7/Records_of_Work/Grade_7_Pre_Technical_Studies_Term_1_Records_of_Work_2027.pdf"
     },
     {
@@ -917,7 +917,7 @@ export const teacherCatalog = {
       "filename": "Grade_7_Pre_Technical_Studies_Term_2_Records_of_Work_2027.pdf",
       "path": "Records_of_Work/Grade_7_Pre_Technical_Studies_Term_2_Records_of_Work_2027.pdf",
       "product_id": "teacher_g7_092",
-      "price_kes": 50,
+      "price_kes": 30,
       "storage_path": "grade7/Records_of_Work/Grade_7_Pre_Technical_Studies_Term_2_Records_of_Work_2027.pdf"
     },
     {
@@ -927,7 +927,7 @@ export const teacherCatalog = {
       "filename": "Grade_7_Pre_Technical_Studies_Term_3_Records_of_Work_2027.pdf",
       "path": "Records_of_Work/Grade_7_Pre_Technical_Studies_Term_3_Records_of_Work_2027.pdf",
       "product_id": "teacher_g7_093",
-      "price_kes": 50,
+      "price_kes": 30,
       "storage_path": "grade7/Records_of_Work/Grade_7_Pre_Technical_Studies_Term_3_Records_of_Work_2027.pdf"
     },
     {
@@ -937,7 +937,7 @@ export const teacherCatalog = {
       "filename": "Grade_7_Social_Studies_Term_1_Records_of_Work_2027.pdf",
       "path": "Records_of_Work/Grade_7_Social_Studies_Term_1_Records_of_Work_2027.pdf",
       "product_id": "teacher_g7_094",
-      "price_kes": 50,
+      "price_kes": 30,
       "storage_path": "grade7/Records_of_Work/Grade_7_Social_Studies_Term_1_Records_of_Work_2027.pdf"
     },
     {
@@ -947,7 +947,7 @@ export const teacherCatalog = {
       "filename": "Grade_7_Social_Studies_Term_2_Records_of_Work_2027.pdf",
       "path": "Records_of_Work/Grade_7_Social_Studies_Term_2_Records_of_Work_2027.pdf",
       "product_id": "teacher_g7_095",
-      "price_kes": 50,
+      "price_kes": 30,
       "storage_path": "grade7/Records_of_Work/Grade_7_Social_Studies_Term_2_Records_of_Work_2027.pdf"
     },
     {
@@ -957,7 +957,7 @@ export const teacherCatalog = {
       "filename": "Grade_7_Social_Studies_Term_3_Records_of_Work_2027.pdf",
       "path": "Records_of_Work/Grade_7_Social_Studies_Term_3_Records_of_Work_2027.pdf",
       "product_id": "teacher_g7_096",
-      "price_kes": 50,
+      "price_kes": 30,
       "storage_path": "grade7/Records_of_Work/Grade_7_Social_Studies_Term_3_Records_of_Work_2027.pdf"
     },
     {
@@ -1079,7 +1079,7 @@ export const teacherCatalog = {
       "path": "Agriculture/Records of Work/Grade_8_2027_Agriculture_Full_Year_Records_of_Work.pdf",
       "bytes": 45339,
       "product_id": "teacher_g8_010",
-      "price_kes": 50,
+      "price_kes": 30,
       "storage_path": "grade8/Agriculture/Records of Work/Grade_8_2027_Agriculture_Full_Year_Records_of_Work.pdf"
     },
     {
@@ -1090,7 +1090,7 @@ export const teacherCatalog = {
       "path": "Agriculture/Records of Work/Grade_8_2027_Agriculture_Records_of_Work_Term_1.pdf",
       "bytes": 33417,
       "product_id": "teacher_g8_011",
-      "price_kes": 50,
+      "price_kes": 30,
       "storage_path": "grade8/Agriculture/Records of Work/Grade_8_2027_Agriculture_Records_of_Work_Term_1.pdf"
     },
     {
@@ -1101,7 +1101,7 @@ export const teacherCatalog = {
       "path": "Agriculture/Records of Work/Grade_8_2027_Agriculture_Records_of_Work_Term_2.pdf",
       "bytes": 33581,
       "product_id": "teacher_g8_012",
-      "price_kes": 50,
+      "price_kes": 30,
       "storage_path": "grade8/Agriculture/Records of Work/Grade_8_2027_Agriculture_Records_of_Work_Term_2.pdf"
     },
     {
@@ -1112,7 +1112,7 @@ export const teacherCatalog = {
       "path": "Agriculture/Records of Work/Grade_8_2027_Agriculture_Records_of_Work_Term_3.pdf",
       "bytes": 33529,
       "product_id": "teacher_g8_013",
-      "price_kes": 50,
+      "price_kes": 30,
       "storage_path": "grade8/Agriculture/Records of Work/Grade_8_2027_Agriculture_Records_of_Work_Term_3.pdf"
     },
     {
@@ -1222,7 +1222,7 @@ export const teacherCatalog = {
       "path": "CRE/Records of Work/Grade_8_2027_CRE_Full_Year_Records_of_Work.pdf",
       "bytes": 46009,
       "product_id": "teacher_g8_023",
-      "price_kes": 50,
+      "price_kes": 30,
       "storage_path": "grade8/CRE/Records of Work/Grade_8_2027_CRE_Full_Year_Records_of_Work.pdf"
     },
     {
@@ -1233,7 +1233,7 @@ export const teacherCatalog = {
       "path": "CRE/Records of Work/Grade_8_2027_CRE_Records_of_Work_Term_1.pdf",
       "bytes": 33838,
       "product_id": "teacher_g8_024",
-      "price_kes": 50,
+      "price_kes": 30,
       "storage_path": "grade8/CRE/Records of Work/Grade_8_2027_CRE_Records_of_Work_Term_1.pdf"
     },
     {
@@ -1244,7 +1244,7 @@ export const teacherCatalog = {
       "path": "CRE/Records of Work/Grade_8_2027_CRE_Records_of_Work_Term_2.pdf",
       "bytes": 33574,
       "product_id": "teacher_g8_025",
-      "price_kes": 50,
+      "price_kes": 30,
       "storage_path": "grade8/CRE/Records of Work/Grade_8_2027_CRE_Records_of_Work_Term_2.pdf"
     },
     {
@@ -1255,7 +1255,7 @@ export const teacherCatalog = {
       "path": "CRE/Records of Work/Grade_8_2027_CRE_Records_of_Work_Term_3.pdf",
       "bytes": 33877,
       "product_id": "teacher_g8_026",
-      "price_kes": 50,
+      "price_kes": 30,
       "storage_path": "grade8/CRE/Records of Work/Grade_8_2027_CRE_Records_of_Work_Term_3.pdf"
     },
     {
@@ -1365,7 +1365,7 @@ export const teacherCatalog = {
       "path": "Creative Arts and Sports/Records of Work/Grade_8_2027_Creative_Arts_and_Sports_Full_Year_Records_of_Work.pdf",
       "bytes": 52054,
       "product_id": "teacher_g8_036",
-      "price_kes": 50,
+      "price_kes": 30,
       "storage_path": "grade8/Creative Arts and Sports/Records of Work/Grade_8_2027_Creative_Arts_and_Sports_Full_Year_Records_of_Work.pdf"
     },
     {
@@ -1376,7 +1376,7 @@ export const teacherCatalog = {
       "path": "Creative Arts and Sports/Records of Work/Grade_8_2027_Creative_Arts_and_Sports_Records_of_Work_Term_1.pdf",
       "bytes": 36506,
       "product_id": "teacher_g8_037",
-      "price_kes": 50,
+      "price_kes": 30,
       "storage_path": "grade8/Creative Arts and Sports/Records of Work/Grade_8_2027_Creative_Arts_and_Sports_Records_of_Work_Term_1.pdf"
     },
     {
@@ -1387,7 +1387,7 @@ export const teacherCatalog = {
       "path": "Creative Arts and Sports/Records of Work/Grade_8_2027_Creative_Arts_and_Sports_Records_of_Work_Term_2.pdf",
       "bytes": 34675,
       "product_id": "teacher_g8_038",
-      "price_kes": 50,
+      "price_kes": 30,
       "storage_path": "grade8/Creative Arts and Sports/Records of Work/Grade_8_2027_Creative_Arts_and_Sports_Records_of_Work_Term_2.pdf"
     },
     {
@@ -1398,7 +1398,7 @@ export const teacherCatalog = {
       "path": "Creative Arts and Sports/Records of Work/Grade_8_2027_Creative_Arts_and_Sports_Records_of_Work_Term_3.pdf",
       "bytes": 36253,
       "product_id": "teacher_g8_039",
-      "price_kes": 50,
+      "price_kes": 30,
       "storage_path": "grade8/Creative Arts and Sports/Records of Work/Grade_8_2027_Creative_Arts_and_Sports_Records_of_Work_Term_3.pdf"
     },
     {
@@ -1508,7 +1508,7 @@ export const teacherCatalog = {
       "path": "English/Records of Work/Grade_8_2027_English_Full_Year_Records_of_Work.pdf",
       "bytes": 46294,
       "product_id": "teacher_g8_049",
-      "price_kes": 50,
+      "price_kes": 30,
       "storage_path": "grade8/English/Records of Work/Grade_8_2027_English_Full_Year_Records_of_Work.pdf"
     },
     {
@@ -1519,7 +1519,7 @@ export const teacherCatalog = {
       "path": "English/Records of Work/Grade_8_2027_English_Records_of_Work_Term_1.pdf",
       "bytes": 36020,
       "product_id": "teacher_g8_050",
-      "price_kes": 50,
+      "price_kes": 30,
       "storage_path": "grade8/English/Records of Work/Grade_8_2027_English_Records_of_Work_Term_1.pdf"
     },
     {
@@ -1530,7 +1530,7 @@ export const teacherCatalog = {
       "path": "English/Records of Work/Grade_8_2027_English_Records_of_Work_Term_2.pdf",
       "bytes": 35626,
       "product_id": "teacher_g8_051",
-      "price_kes": 50,
+      "price_kes": 30,
       "storage_path": "grade8/English/Records of Work/Grade_8_2027_English_Records_of_Work_Term_2.pdf"
     },
     {
@@ -1541,7 +1541,7 @@ export const teacherCatalog = {
       "path": "English/Records of Work/Grade_8_2027_English_Records_of_Work_Term_3.pdf",
       "bytes": 28552,
       "product_id": "teacher_g8_052",
-      "price_kes": 50,
+      "price_kes": 30,
       "storage_path": "grade8/English/Records of Work/Grade_8_2027_English_Records_of_Work_Term_3.pdf"
     },
     {
@@ -1651,7 +1651,7 @@ export const teacherCatalog = {
       "path": "Integrated Science/Records of Work/Grade_8_2027_Integrated_Science_Full_Year_Records_of_Work.pdf",
       "bytes": 58057,
       "product_id": "teacher_g8_062",
-      "price_kes": 50,
+      "price_kes": 30,
       "storage_path": "grade8/Integrated Science/Records of Work/Grade_8_2027_Integrated_Science_Full_Year_Records_of_Work.pdf"
     },
     {
@@ -1662,7 +1662,7 @@ export const teacherCatalog = {
       "path": "Integrated Science/Records of Work/Grade_8_2027_Integrated_Science_Records_of_Work_Term_1.pdf",
       "bytes": 39331,
       "product_id": "teacher_g8_063",
-      "price_kes": 50,
+      "price_kes": 30,
       "storage_path": "grade8/Integrated Science/Records of Work/Grade_8_2027_Integrated_Science_Records_of_Work_Term_1.pdf"
     },
     {
@@ -1673,7 +1673,7 @@ export const teacherCatalog = {
       "path": "Integrated Science/Records of Work/Grade_8_2027_Integrated_Science_Records_of_Work_Term_2.pdf",
       "bytes": 39247,
       "product_id": "teacher_g8_064",
-      "price_kes": 50,
+      "price_kes": 30,
       "storage_path": "grade8/Integrated Science/Records of Work/Grade_8_2027_Integrated_Science_Records_of_Work_Term_2.pdf"
     },
     {
@@ -1684,7 +1684,7 @@ export const teacherCatalog = {
       "path": "Integrated Science/Records of Work/Grade_8_2027_Integrated_Science_Records_of_Work_Term_3.pdf",
       "bytes": 34953,
       "product_id": "teacher_g8_065",
-      "price_kes": 50,
+      "price_kes": 30,
       "storage_path": "grade8/Integrated Science/Records of Work/Grade_8_2027_Integrated_Science_Records_of_Work_Term_3.pdf"
     },
     {
@@ -1794,7 +1794,7 @@ export const teacherCatalog = {
       "path": "Kiswahili/Records of Work/Grade_8_2027_Kiswahili_Full_Year_Records_of_Work.pdf",
       "bytes": 48191,
       "product_id": "teacher_g8_075",
-      "price_kes": 50,
+      "price_kes": 30,
       "storage_path": "grade8/Kiswahili/Records of Work/Grade_8_2027_Kiswahili_Full_Year_Records_of_Work.pdf"
     },
     {
@@ -1805,7 +1805,7 @@ export const teacherCatalog = {
       "path": "Kiswahili/Records of Work/Grade_8_2027_Kiswahili_Records_of_Work_Term_1.pdf",
       "bytes": 35645,
       "product_id": "teacher_g8_076",
-      "price_kes": 50,
+      "price_kes": 30,
       "storage_path": "grade8/Kiswahili/Records of Work/Grade_8_2027_Kiswahili_Records_of_Work_Term_1.pdf"
     },
     {
@@ -1816,7 +1816,7 @@ export const teacherCatalog = {
       "path": "Kiswahili/Records of Work/Grade_8_2027_Kiswahili_Records_of_Work_Term_2.pdf",
       "bytes": 33810,
       "product_id": "teacher_g8_077",
-      "price_kes": 50,
+      "price_kes": 30,
       "storage_path": "grade8/Kiswahili/Records of Work/Grade_8_2027_Kiswahili_Records_of_Work_Term_2.pdf"
     },
     {
@@ -1827,7 +1827,7 @@ export const teacherCatalog = {
       "path": "Kiswahili/Records of Work/Grade_8_2027_Kiswahili_Records_of_Work_Term_3.pdf",
       "bytes": 32504,
       "product_id": "teacher_g8_078",
-      "price_kes": 50,
+      "price_kes": 30,
       "storage_path": "grade8/Kiswahili/Records of Work/Grade_8_2027_Kiswahili_Records_of_Work_Term_3.pdf"
     },
     {
@@ -1937,7 +1937,7 @@ export const teacherCatalog = {
       "path": "Mathematics/Records of Work/Grade_8_2027_Mathematics_Full_Year_Records_of_Work.pdf",
       "bytes": 73437,
       "product_id": "teacher_g8_088",
-      "price_kes": 50,
+      "price_kes": 30,
       "storage_path": "grade8/Mathematics/Records of Work/Grade_8_2027_Mathematics_Full_Year_Records_of_Work.pdf"
     },
     {
@@ -1948,7 +1948,7 @@ export const teacherCatalog = {
       "path": "Mathematics/Records of Work/Grade_8_2027_Mathematics_Records_of_Work_Term_1.pdf",
       "bytes": 40369,
       "product_id": "teacher_g8_089",
-      "price_kes": 50,
+      "price_kes": 30,
       "storage_path": "grade8/Mathematics/Records of Work/Grade_8_2027_Mathematics_Records_of_Work_Term_1.pdf"
     },
     {
@@ -1959,7 +1959,7 @@ export const teacherCatalog = {
       "path": "Mathematics/Records of Work/Grade_8_2027_Mathematics_Records_of_Work_Term_2.pdf",
       "bytes": 42517,
       "product_id": "teacher_g8_090",
-      "price_kes": 50,
+      "price_kes": 30,
       "storage_path": "grade8/Mathematics/Records of Work/Grade_8_2027_Mathematics_Records_of_Work_Term_2.pdf"
     },
     {
@@ -1970,7 +1970,7 @@ export const teacherCatalog = {
       "path": "Mathematics/Records of Work/Grade_8_2027_Mathematics_Records_of_Work_Term_3.pdf",
       "bytes": 42518,
       "product_id": "teacher_g8_091",
-      "price_kes": 50,
+      "price_kes": 30,
       "storage_path": "grade8/Mathematics/Records of Work/Grade_8_2027_Mathematics_Records_of_Work_Term_3.pdf"
     },
     {
@@ -2080,7 +2080,7 @@ export const teacherCatalog = {
       "path": "Pre-Technical Studies/Records of Work/Grade_8_2027_Pre_Technical_Studies_Full_Year_Records_of_Work.pdf",
       "bytes": 49140,
       "product_id": "teacher_g8_101",
-      "price_kes": 50,
+      "price_kes": 30,
       "storage_path": "grade8/Pre-Technical Studies/Records of Work/Grade_8_2027_Pre_Technical_Studies_Full_Year_Records_of_Work.pdf"
     },
     {
@@ -2091,7 +2091,7 @@ export const teacherCatalog = {
       "path": "Pre-Technical Studies/Records of Work/Grade_8_2027_Pre_Technical_Studies_Records_of_Work_Term_1.pdf",
       "bytes": 36522,
       "product_id": "teacher_g8_102",
-      "price_kes": 50,
+      "price_kes": 30,
       "storage_path": "grade8/Pre-Technical Studies/Records of Work/Grade_8_2027_Pre_Technical_Studies_Records_of_Work_Term_1.pdf"
     },
     {
@@ -2102,7 +2102,7 @@ export const teacherCatalog = {
       "path": "Pre-Technical Studies/Records of Work/Grade_8_2027_Pre_Technical_Studies_Records_of_Work_Term_2.pdf",
       "bytes": 34767,
       "product_id": "teacher_g8_103",
-      "price_kes": 50,
+      "price_kes": 30,
       "storage_path": "grade8/Pre-Technical Studies/Records of Work/Grade_8_2027_Pre_Technical_Studies_Records_of_Work_Term_2.pdf"
     },
     {
@@ -2113,7 +2113,7 @@ export const teacherCatalog = {
       "path": "Pre-Technical Studies/Records of Work/Grade_8_2027_Pre_Technical_Studies_Records_of_Work_Term_3.pdf",
       "bytes": 31755,
       "product_id": "teacher_g8_104",
-      "price_kes": 50,
+      "price_kes": 30,
       "storage_path": "grade8/Pre-Technical Studies/Records of Work/Grade_8_2027_Pre_Technical_Studies_Records_of_Work_Term_3.pdf"
     },
     {
@@ -2223,7 +2223,7 @@ export const teacherCatalog = {
       "path": "Social Studies/Records of Work/Grade_8_2027_Social_Studies_Full_Year_Records_of_Work.pdf",
       "bytes": 45999,
       "product_id": "teacher_g8_114",
-      "price_kes": 50,
+      "price_kes": 30,
       "storage_path": "grade8/Social Studies/Records of Work/Grade_8_2027_Social_Studies_Full_Year_Records_of_Work.pdf"
     },
     {
@@ -2234,7 +2234,7 @@ export const teacherCatalog = {
       "path": "Social Studies/Records of Work/Grade_8_2027_Social_Studies_Records_of_Work_Term_1.pdf",
       "bytes": 34439,
       "product_id": "teacher_g8_115",
-      "price_kes": 50,
+      "price_kes": 30,
       "storage_path": "grade8/Social Studies/Records of Work/Grade_8_2027_Social_Studies_Records_of_Work_Term_1.pdf"
     },
     {
@@ -2245,7 +2245,7 @@ export const teacherCatalog = {
       "path": "Social Studies/Records of Work/Grade_8_2027_Social_Studies_Records_of_Work_Term_2.pdf",
       "bytes": 33995,
       "product_id": "teacher_g8_116",
-      "price_kes": 50,
+      "price_kes": 30,
       "storage_path": "grade8/Social Studies/Records of Work/Grade_8_2027_Social_Studies_Records_of_Work_Term_2.pdf"
     },
     {
@@ -2256,7 +2256,7 @@ export const teacherCatalog = {
       "path": "Social Studies/Records of Work/Grade_8_2027_Social_Studies_Records_of_Work_Term_3.pdf",
       "bytes": 31279,
       "product_id": "teacher_g8_117",
-      "price_kes": 50,
+      "price_kes": 30,
       "storage_path": "grade8/Social Studies/Records of Work/Grade_8_2027_Social_Studies_Records_of_Work_Term_3.pdf"
     }
   ],
