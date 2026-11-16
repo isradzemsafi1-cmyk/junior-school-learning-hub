@@ -51,7 +51,7 @@ export default async (request) => {
     Netlify.env.get("URL") ||
     new URL(request.url).origin;
   const callbackURL = configuredCallbackURL || new URL(
-    "/.netlify/functions/payment-callback/",
+    "/.netlify/functions/mpesa-callback",
     publicSiteURL.endsWith("/") ? publicSiteURL : `${publicSiteURL}/`
   ).toString();
   let callbackHost = "invalid";
