@@ -193,7 +193,9 @@ const mpesaBaseUrl = isProduction
 
     const isLearnerTopicProduct =
       /^learner_g[789]_[a-z0-9-]{1,70}$/.test(String(payment.product_id || ""));
-    const expectedAmount = isLearnerTopicProduct ? 10 : catalog[payment.product_id];
+    const isRevisionResource =
+      /^kjsea2027_[a-z0-9_]{3,80}$/.test(String(payment.product_id || ""));
+    const expectedAmount = (isLearnerTopicProduct || isRevisionResource) ? 10 : catalog[payment.product_id];
     if (
       !Number.isFinite(expectedAmount) ||
       Number(payment.amount) !== expectedAmount
@@ -293,7 +295,7 @@ const mpesaBaseUrl = isProduction
       throw new Error("Could not update the verified payment.");
     }
 
-    const hours = learnerTopicProduct(payment.product_id) ? 24 : durations[payment.product_id];
+    const hours = (learnerTopicProduct(payment.product_id) || isRevisionResource) ? 24 : durations[payment.product_id];
     if (!Number.isFinite(hours) || hours <= 0) throw new Error("Unknown entitlement duration.");
     const expiry = new Date(Date.now() + hours * 60 * 60 * 1000);
 
