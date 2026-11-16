@@ -221,4 +221,5 @@ $('mark').addEventListener('click', markQuiz);
 $('retry').addEventListener('click', buildQuiz);
 authClient.auth.onAuthStateChange((event) => { if(event === 'SIGNED_OUT') loadGrade9Library(); });
 loadGrade9Library().catch(error => { console.error(error); accessStatus('Unable to connect. Please refresh and try again.'); });
-</script></body></html>
+</script><script src="/assets/js/site-activity-tracker.js" defer></script>
+</body></html>
