@@ -772,6 +772,20 @@ section{padding-top:50px;padding-bottom:50px}
    </article>
   </div>
   <article class="qla-card qla-studio" id="qla-teacher-studio" hidden><div class="qla-studio-head"><div><span class="qla-kicker">LEARNER & TEACHER ACCESS</span><h3>📝 Quiz Creator Studio</h3><p>Create, edit, organise and publish quizzes, then challenge friends in live competitions.</p></div><span class="qla-lock">🔐 Signed-in creator access</span></div>
+   <article class="qla-card" style="margin:14px 0;background:#f5f9ff;border:1px solid #cfe0f5">
+    <h4>📚 Teacher curriculum importer · official source only</h4>
+    <p>Import text copied from the official KICD curriculum design. The extractor preserves source wording and flags uncertain entries. Review the result against the original PDF before saving.</p>
+    <div class="qla-grid qla-grid-studio">
+     <div><label for="qla-import-grade">Curriculum grade</label><select id="qla-import-grade"><option>Grade 1</option><option>Grade 2</option><option>Grade 3</option><option>Grade 4</option><option>Grade 5</option><option>Grade 6</option><option>Grade 7</option><option>Grade 8</option><option>Grade 9</option><option>Grade 10</option><option>Grade 11</option><option>Grade 12</option></select></div>
+     <div><label for="qla-import-area">Exact learning area / subject</label><input id="qla-import-area" maxlength="180" placeholder="Copy the official title"></div>
+     <div><label for="qla-import-year">Academic year</label><input id="qla-import-year" type="number" min="2024" max="2035" value="2027"></div>
+     <div><label for="qla-import-term">Term allocation</label><select id="qla-import-term"><option>Term 1</option><option>Term 2</option><option>Term 3</option></select></div>
+    </div>
+    <label for="qla-import-source">Source title / KICD design reference</label><input id="qla-import-source" maxlength="240" placeholder="Exact curriculum design title and version">
+    <label for="qla-import-text">Curriculum design text (paste copied text; max 65,000 characters)</label><textarea id="qla-import-text" rows="6" maxlength="65000" placeholder="Paste the relevant pages containing strand headings, sub-strands and specific learning outcomes..."></textarea>
+    <button type="button" class="qla-btn qla-btn-outline" id="qla-import-curriculum">Extract and save verified curriculum structure</button>
+    <p class="qla-message" id="qla-import-status" aria-live="polite">Only authorised teachers can import curriculum designs. Learners can use saved curriculum entries to create games.</p>
+   </article>
    <div class="qla-grid qla-grid-studio">
     <div><label for="qla-editor-grade">Grade</label><select id="qla-editor-grade"><option>Grade 7</option><option>Grade 8</option><option>Grade 9</option></select></div>
     <div><label for="qla-editor-subject">Learning area</label><select id="qla-editor-subject"><option>Mathematics</option><option>English</option><option>Kiswahili</option><option>Integrated Science</option><option>Social Studies</option><option>CRE</option><option>Agriculture</option><option>Pre-Technical Studies</option><option>Creative Arts and Sports</option></select></div>
@@ -2175,6 +2189,34 @@ buildQuiz();
  $('qla-generate-quiz').addEventListener('click',()=>qlaGenerateAndPublish().catch(e=>say('qla-gen-message',e.message)));
 
  
+ async function qlaImportCurriculum(){
+  try{
+   if(!(await isTeacher()))throw Error('Only authorised teachers can import and manage curriculum designs.');
+   const grade=$('qla-import-grade').value,learningArea=$('qla-import-area').value.trim(),academicYear=String($('qla-import-year').value),term=$('qla-import-term').value,sourceName=$('qla-import-source').value.trim(),sourceText=$('qla-import-text').value.trim();
+   if(!learningArea||!sourceText)throw Error('Enter the exact learning-area title and paste curriculum design text.');
+   if(sourceText.length<150)throw Error('Paste a larger readable section from the curriculum design.');
+   const session=await supabaseClient.auth.getSession(),token=session?.data?.session?.access_token;if(!token)throw Error('Please sign in again.');
+   $('qla-import-curriculum').disabled=true;say('qla-import-status','Extracting source-grounded curriculum outcomes. Please wait…');
+   const response=await fetch('/.netlify/functions/teacher-curriculum-extract',{method:'POST',headers:{'Content-Type':'application/json','Authorization':'Bearer '+token},body:JSON.stringify({grade,learningArea,sourceName,sourceText})});
+   const result=await response.json();if(!response.ok)throw Error(result.error||'Curriculum extraction failed.');
+   const outcomes=result.curriculum?.outcomes||[];
+   const grouped=new Map();
+   for(const item of outcomes){
+    const strand=String(item.strand||'').trim(),sub=String(item.subStrand||'').trim();
+    if(!strand||!sub||strand==='Needs teacher verification')continue;
+    const key=strand+'|||'+sub;if(!grouped.has(key))grouped.set(key,{strand,sub,items:[]});grouped.get(key).items.push(item.text);
+   }
+   if(!grouped.size)throw Error('No clearly linked strand/sub-strand outcomes were extracted. Check the source pages and try again.');
+   const rows=[...grouped.values()].map(g=>({grade,learning_area:learningArea,academic_year:academicYear,term,strand:g.strand,sub_strand:g.sub,learning_outcomes:g.items.join('\n'),curriculum_notes:g.items.join('\n'),source_reference:(result.curriculum.sourceTitle||sourceName)+' · '+(result.curriculum.designVersion||'version not identified')+' · teacher verification required'}));
+   const {error}=await supabaseClient.from('qla_curriculum_topics').upsert(rows,{onConflict:'grade,learning_area,academic_year,term,strand,sub_strand'});
+   if(error)throw error;
+   const warnings=(result.curriculum.warnings||[]).slice(0,3).join(' | ');
+   say('qla-import-status',rows.length+' curriculum strand/sub-strand entries saved from '+sourceName+'. Verify every entry against the original KICD design before learner use.'+(warnings?' Warnings: '+warnings:''));
+   await qlaLoadGeneratorAreas();await qlaLoadGeneratorTopics();
+  }catch(e){say('qla-import-status',e.message||'Could not import curriculum.');}
+  finally{$('qla-import-curriculum').disabled=false;}
+ }
+ $('qla-import-curriculum').addEventListener('click',qlaImportCurriculum);
  async function saveQuiz(publish){try{if(!(await currentUser()))throw Error('Sign in before creating a quiz.');const title=$('qla-quiz-title').value.trim();if(!title)throw Error('Enter a quiz title.');if(!draftQuestions.length)throw Error('Add at least one question.');const user=await currentUser();const payload={title,grade:$('qla-editor-grade').value,learning_area:$('qla-editor-subject').value,difficulty:$('qla-difficulty').value,default_time_seconds:Number($('qla-default-time').value),status:publish?'published':'draft',created_by:user.id};const {data:quiz,error}=await supabaseClient.from('qla_quizzes').insert(payload).select().single();if(error)throw error;const rows=draftQuestions.map((q,i)=>({...q,quiz_id:quiz.id,position:i+1,created_by:user.id}));const {error:qe}=await supabaseClient.from('qla_questions').insert(rows);if(qe){await supabaseClient.from('qla_quizzes').delete().eq('id',quiz.id);throw qe;}say('qla-studio-message',publish?'Quiz published and ready to host.':'Quiz saved as a draft.');await loadHostQuizzes();draftQuestions=[];renderDraft();$('qla-quiz-title').value='';clearEditor();}catch(e){say('qla-studio-message',e.message||'Could not save quiz.');}}
  $('qla-save-draft').addEventListener('click',()=>saveQuiz(false));$('qla-publish-quiz').addEventListener('click',()=>saveQuiz(true));
  async function loadHostQuizzes(){try{const user=await currentUser();if(!user)return;const {data,error}=await supabaseClient.from('qla_quizzes').select('id,title,grade,learning_area').eq('status','published').eq('created_by',user.id).order('created_at',{ascending:false});if(error)throw error;$('qla-host-quiz').innerHTML='<option value="">Select a quiz</option>'+(data||[]).map(q=>`<option value="${q.id}">${safe(q.grade)} · ${safe(q.learning_area)} · ${safe(q.title)}</option>`).join('');}catch(e){say('qla-host-message','Quiz list unavailable: '+e.message);}}
