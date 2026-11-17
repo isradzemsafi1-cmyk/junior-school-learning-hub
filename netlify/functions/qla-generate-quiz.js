@@ -5,13 +5,14 @@ exports.handler=async(event)=>{
  if(event.httpMethod!=="POST")return reply(405,{error:"Method not allowed."});
  const apiKey=process.env.OPENAI_API_KEY,supabaseUrl=process.env.SUPABASE_URL,supabaseAnonKey=process.env.SUPABASE_ANON_KEY;
  if(!apiKey||!supabaseUrl||!supabaseAnonKey)return reply(503,{error:"AI quiz generation is not configured. Check the server environment variables."});
- const token=(event.headers.authorization||event.headers.Authorization||"").replace(/^Bearer\\s+/i,"");
+ const token=(event.headers.authorization||event.headers.Authorization||"").replace(/^Bearer\s+/i,"");
  if(!token)return reply(401,{error:"Sign in before creating an AI quiz."});
  let input;try{input=JSON.parse(event.body||"{}");}catch{return reply(400,{error:"Invalid request body."});}
  for(const k of ["grade","learningArea","academicYear","term","strand","subStrand"])if(!String(input[k]||"").trim())return reply(400,{error:"Select "+k+" from the verified curriculum register."});
  if(!Array.from({length:12},(_,i)=>"Grade "+(i+1)).includes(input.grade))return reply(400,{error:"Choose a grade from 1 to 12."});
  const count=Math.max(5,Math.min(30,Number(input.questionCount)||20));
- const difficulty=["Easy","Medium","Hard","Mixed"].includes(input.difficulty)?input.difficulty:"Mixed";\n const format=input.questionFormat==="mcq"?"mcq":"mixed";
+ const difficulty=["Easy","Medium","Hard","Mixed"].includes(input.difficulty)?input.difficulty:"Mixed";
+ const format=input.questionFormat==="mcq"?"mcq":"mixed";
  try{
   const auth=await fetch(supabaseUrl+"/auth/v1/user",{headers:{apikey:supabaseAnonKey,Authorization:"Bearer "+token}});
   if(!auth.ok)return reply(401,{error:"Your session has expired. Sign in again."});
