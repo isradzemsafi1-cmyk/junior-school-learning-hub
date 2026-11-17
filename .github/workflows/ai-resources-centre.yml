@@ -8,6 +8,8 @@ on:
     branches: [feature/ai-resources-centre]
     paths:
       - "ai-resources-centre/**"
+permissions:
+  contents: read
 jobs:
   build:
     runs-on: ubuntu-latest
