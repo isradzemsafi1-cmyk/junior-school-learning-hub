@@ -17,6 +17,7 @@
 <div class="field full"><label for="docType">Document type *</label><select id="docType"><option>Scheme of Work</option><option>Lesson Plan</option><option>Records of Work</option><option>Assessment / CAT</option><option>End-Term Examination</option><option>Marking Scheme</option><option>Assessment Rubric</option><option>Lesson Notes</option><option>Topical Questions</option><option>Worksheet</option><option>Learner Progress Report</option><option>Remedial Teaching Plan</option><option>Academic Department Report</option><option>Class Timetable</option><option>Meeting Minutes</option><option>Departmental Report</option><option>Teacher Appraisal Evidence</option></select></div>
 <div class="field"><label for="grade">Grade *</label><select id="grade"><option>Grade 1</option><option>Grade 2</option><option>Grade 3</option><option>Grade 4</option><option>Grade 5</option><option>Grade 6</option><option>Grade 7</option><option>Grade 8</option><option>Grade 9</option><option>Grade 10</option><option>Grade 11</option><option>Grade 12</option></select></div>
 <div class="field"><label for="area">Learning area *</label><select id="area"></select></div>
+<div class="field full"><label for="pathway">Senior School pathway / track (Grades 10–12)</label><input id="pathway" placeholder="Optional: STEM, Social Sciences, Arts and Sports Science, or the school-approved pathway"></div>
 <div class="field"><label for="term">Term *</label><select id="term"><option>Term 1</option><option>Term 2</option><option>Term 3</option><option>Full Year</option></select></div>
 <div class="field"><label for="year">Academic year *</label><input id="year" type="number" min="2024" max="2035" value="2027"></div>
 <div class="field"><label for="school">School name</label><input id="school" placeholder="Leave blank if not required"></div>
@@ -49,7 +50,7 @@ let generated="",generatedTitle="";
 const $=id=>document.getElementById(id);
 const gradeAreas={
   lower:["English","Kiswahili","Mathematics","Environmental Activities","Creative Activities","CRE","IRE","HRE","Indigenous Languages"],
-  upper:["English","Kiswahili","Mathematics","Agriculture and Nutrition","Social Studies","Creative Activities","Science and Technology","CRE","IRE","HRE","Indigenous Languages","Arabic","Mandarin","French","German"],
+  upper:["English","Kiswahili","Mathematics","Agriculture","Social Studies","Creative Arts","Science and Technology","CRE","IRE","HRE","Indigenous Languages","Arabic","Mandarin","French","German"],
   junior:["English","Kiswahili","Mathematics","Integrated Science","Social Studies","Agriculture","Pre-Technical Studies","Creative Arts and Sports","CRE","IRE","HRE","Indigenous Languages","Arabic","Mandarin","French","German"],
   senior:["English","Kiswahili","Core Mathematics","Essential Mathematics","Community Service Learning","Agriculture","Aviation","Biology","Chemistry","General Science","Geography","History and Citizenship","Home Science","ICT","Literature in English","Fasihi ya Kiswahili","Fine Arts","Music and Dance","Physical Education","Physics","Sports and Recreation","Theatre and Film","Power Mechanics","Woodwork","Marine and Fisheries"]
 };
@@ -60,8 +61,8 @@ function populateLearningAreas(){
  select.innerHTML="";
  choices.forEach(name=>{const option=document.createElement("option");option.value=name;option.textContent=name;select.appendChild(option);});
  if(choices.includes(previous))select.value=previous;
- if(g>=10){$("notes").placeholder="Senior School: specify the learner's pathway and the exact Grade "+g+" curriculum design/subject scope. The available subjects shown are drawn from KICD Senior School design categories; selection depends on pathway and school offering.";}
- else {$("notes").placeholder="Paste curriculum design extracts, scope and sequence, or teacher notes. AI will avoid guessing where details are missing.";}
+ if(g>=10){$("pathway").disabled=false;$("pathway").placeholder="Optional: STEM, Social Sciences, Arts and Sports Science, or exact school pathway";$("notes").placeholder="Senior School: specify the learner's pathway and the exact Grade "+g+" curriculum design/subject scope. The available subjects shown are drawn from KICD Senior School design categories; selection depends on pathway and school offering.";}
+ else {$("pathway").value="";$("pathway").disabled=true;$("pathway").placeholder="Only used for Grades 10–12";$("notes").placeholder="Paste curriculum design extracts, scope and sequence, or teacher notes. AI will avoid guessing where details are missing.";}
 }
 $("grade").addEventListener("change",populateLearningAreas);
 populateLearningAreas();
@@ -85,7 +86,7 @@ $("generate").addEventListener("click",async()=>{
  const {data,error}=await sb.auth.getSession();if(error||!data.session){status("Please sign in first. Open the homepage and use your authorised teacher account.","error");return;}
  const topic=$("topic").value.trim();if(!topic){status("Enter the sub-strand or topic before generating.","error");$("topic").focus();return;}
  const btn=$("generate");btn.disabled=true;btn.textContent="Generating your document…";status("AI is preparing your professional document. This may take a little while.");
- const payload={documentType:$("docType").value,grade:$("grade").value,learningArea:$("area").value,term:$("term").value,academicYear:$("year").value,schoolName:$("school").value,teacherName:$("teacher").value,strand:$("strand").value,topic,learningOutcomes:$("outcomes").value,curriculumNotes:$("notes").value,termWeeks:$("weeks").value,lessonsPerWeek:$("lessons").value,midtermWeeks:$("midterm").value,assessmentWeeks:$("assessment").value,instructions:$("instructions").value};
+ const payload={documentType:$("docType").value,grade:$("grade").value,pathway:$("pathway").value,learningArea:$("area").value,term:$("term").value,academicYear:$("year").value,schoolName:$("school").value,teacherName:$("teacher").value,strand:$("strand").value,topic,learningOutcomes:$("outcomes").value,curriculumNotes:$("notes").value,termWeeks:$("weeks").value,lessonsPerWeek:$("lessons").value,midtermWeeks:$("midterm").value,assessmentWeeks:$("assessment").value,instructions:$("instructions").value};
  try{
   const r=await fetch("/.netlify/functions/teacher-document-generate",{method:"POST",headers:{"Content-Type":"application/json",Authorization:"Bearer "+data.session.access_token},body:JSON.stringify(payload)});
   const d=await r.json();if(!r.ok)throw new Error(d.error||"Could not generate document.");
