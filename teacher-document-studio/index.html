@@ -178,8 +178,6 @@ $("recommendOutcomes").addEventListener("click",async()=>{
  finally{btn.disabled=false;btn.textContent="✨ AI-select outcomes for my topic";}
 });
 $("loadSavedOutcomes").addEventListener("click",loadSaved);
-$("grade").addEventListener("change",()=>{updateOfficialLink();loadSaved();});
-$("area").addEventListener("change",loadSaved);
 
 const gradeAreas={
   lower:["English Activities","Kiswahili","Mathematics","Environmental Activities","Creative Activities","Religious Education: CRE","Religious Education: IRE","Religious Education: HRE","Indigenous Language"],
@@ -200,6 +198,8 @@ function populateLearningAreas(){
 $("grade").addEventListener("change",populateLearningAreas);
 populateLearningAreas();
 updateOfficialLink();loadSaved();
+$("grade").addEventListener("change",()=>{updateOfficialLink();loadSaved();});
+$("area").addEventListener("change",loadSaved);
 function status(message,kind=""){ $("status").className="status "+kind; $("status").textContent=message; }
 function esc(s){return String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));}
 function markdownToHtml(md){
