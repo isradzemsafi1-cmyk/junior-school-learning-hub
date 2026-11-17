@@ -2243,7 +2243,7 @@ buildQuiz();
      if(account)account.scrollIntoView({behavior:'smooth',block:'start'});
      const loginField=document.getElementById('login-email');
      if(loginField)setTimeout(()=>loginField.focus({preventScroll:true}),450);
-     say('learner-auth-message','Please sign in or create a free learner account to open the AI Quiz Generator.');
+     document.getElementById('learner-message').textContent='Please sign in or create a free learner account to open the AI Quiz Generator.';
    });
  }
  const requestedPin=new URLSearchParams(location.search).get('qla');if(requestedPin&&/^\d{6}$/.test(requestedPin)){$('qla-game-pin').value=requestedPin;$('qla-game-pin').scrollIntoView({behavior:'smooth',block:'center'});}
