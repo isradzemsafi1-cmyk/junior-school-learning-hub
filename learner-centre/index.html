@@ -772,7 +772,7 @@ section{padding-top:50px;padding-bottom:50px}
    </article>
   </div>
   <article class="qla-card qla-studio" id="qla-teacher-studio" hidden><div class="qla-studio-head"><div><span class="qla-kicker">LEARNER & TEACHER ACCESS</span><h3>📝 Quiz Creator Studio</h3><p>Create, edit, organise and publish quizzes, then challenge friends in live competitions.</p></div><span class="qla-lock">🔐 Signed-in creator access</span></div>
-   <article class="qla-card" style="margin:14px 0;background:#f5f9ff;border:1px solid #cfe0f5">
+   <article class="qla-card" id="qla-curriculum-import" style="margin:14px 0;background:#f5f9ff;border:1px solid #cfe0f5">
     <h4>📚 Teacher curriculum importer · official source only</h4>
     <p>Import text copied from the official KICD curriculum design. The extractor preserves source wording and flags uncertain entries. Review the result against the original PDF before saving.</p>
     <div class="qla-grid qla-grid-studio">
@@ -2087,7 +2087,7 @@ buildQuiz();
  const say=(id,msg)=>{if($(id))$(id).textContent=msg;};
  const currentUser=async()=>{const {data,error}=await supabaseClient.auth.getUser();if(error)throw error;return data.user;};
  const isTeacher=async()=>{const u=await currentUser();if(!u)return false;const {data,error}=await supabaseClient.rpc('is_tuition_teacher');if(error)throw error;return data===true;};
- async function refreshTeacherArenaAccess(){const host=$('qla-host-panel'),studio=$('qla-teacher-studio'),hostButton=$('qla-open-host');try{const allowed=await isTeacher();const signedIn=!!(await currentUser());if(host)host.hidden=!signedIn;if(studio)studio.hidden=!signedIn;if(hostButton)hostButton.hidden=!signedIn;if(await currentUser())await loadHostQuizzes();}catch(e){if(host)host.hidden=true;if(studio)studio.hidden=true;if(hostButton)hostButton.hidden=true;console.warn('Teacher Arena access check failed:',e.message);}}
+ async function refreshTeacherArenaAccess(){const host=$('qla-host-panel'),studio=$('qla-teacher-studio'),hostButton=$('qla-open-host'),importPanel=$('qla-curriculum-import');try{const allowed=await isTeacher();const signedIn=!!(await currentUser());if(host)host.hidden=!signedIn;if(studio)studio.hidden=!signedIn;if(hostButton)hostButton.hidden=!signedIn;if(importPanel)importPanel.hidden=!allowed;if(await currentUser())await loadHostQuizzes();}catch(e){if(host)host.hidden=true;if(studio)studio.hidden=true;if(hostButton)hostButton.hidden=true;if(importPanel)importPanel.hidden=true;console.warn('Teacher Arena access check failed:',e.message);}}
  const safe=(s)=>String(s||'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
  function typeChanged(){const t=$('qla-question-type').value;$('qla-options-wrap').hidden=t!=='mcq';$('qla-tf-wrap').hidden=t!=='tf';$('qla-typed-wrap').hidden=t!=='typed';}
  function readQuestion(){const type=$('qla-question-type').value,q=$('qla-question-text').value.trim(),ex=$('qla-explanation').value.trim();if(!q)throw Error('Enter the question first.');if(type==='mcq'){const options=['a','b','c','d'].map(x=>$('qla-opt-'+x).value.trim());if(options.some(x=>!x))throw Error('Fill all four options.');return {type,question:q,options,correct_index:Number($('qla-correct').value),accepted_answers:[],explanation:ex};}if(type==='tf')return {type,question:q,options:['True','False'],correct_index:$('qla-tf-correct').value==='true'?0:1,accepted_answers:[],explanation:ex};const accepted=$('qla-accepted').value.split('|').map(x=>x.trim()).filter(Boolean);if(!accepted.length)throw Error('Enter at least one accepted answer.');return {type,question:q,options:[],correct_index:null,accepted_answers:accepted,explanation:ex};}
@@ -2256,7 +2256,7 @@ buildQuiz();
  $('qla-open-host').addEventListener('click',()=>$('qla-host-panel').scrollIntoView({behavior:'smooth'}));$('qla-open-join').addEventListener('click',()=>$('qla-game-pin').focus());$('qla-refresh-game').addEventListener('click',()=>refreshGame().catch(e=>say('qla-join-message',e.message)));
  const requestedPin=new URLSearchParams(location.search).get('qla');if(requestedPin&&/^\d{6}$/.test(requestedPin)){$('qla-game-pin').value=requestedPin;$('qla-game-pin').scrollIntoView({behavior:'smooth',block:'center'});}
  // Teacher authorization and all answer validation/scoring are enforced by database functions.
- qlaLoadGeneratorAreas().then(qlaLoadGeneratorTopics);refreshTeacherArenaAccess();supabaseClient.auth.onAuthStateChange(()=>{setTimeout(refreshTeacherArenaAccess,0);});typeChanged();renderDraft();
+ qlaLoadGeneratorAreas().then(qlaLoadGeneratorTopics);refreshTeacherArenaAccess();supabaseClient.auth.onAuthStateChange(()=>{setTimeout(()=>{refreshTeacherArenaAccess();qlaLoadGeneratorAreas().then(qlaLoadGeneratorTopics);},0);});typeChanged();renderDraft();
 })();
 </script>
 
