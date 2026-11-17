@@ -6,7 +6,7 @@
     "1-3": {
       "level": "Lower Primary",
       "learning_areas": [
-        "English",
+        "English Activities",
         "Kiswahili",
         "Mathematics",
         "Environmental Activities",
@@ -14,7 +14,7 @@
         "Religious Education: CRE",
         "Religious Education: IRE",
         "Religious Education: HRE",
-        "Indigenous Languages"
+        "Indigenous Language"
       ],
       "source": "https://kicd.ac.ke/cbc-materials/lower-primary/"
     },
@@ -33,7 +33,7 @@
         "Religious Education: HRE",
         "Indigenous Language",
         "Arabic",
-        "Mandarin Chinese",
+        "Mandarin",
         "French",
         "German"
       ],
@@ -42,18 +42,18 @@
     "7-9": {
       "level": "Junior School",
       "learning_areas": [
-        "English",
-        "Kiswahili",
-        "Mathematics",
-        "Integrated Science",
-        "Social Studies",
         "Agriculture",
         "Pre-Technical Studies",
         "Creative Arts and Sports",
         "Religious Education: CRE",
         "Religious Education: IRE",
         "Religious Education: HRE",
-        "Indigenous Languages",
+        "Integrated Science",
+        "Social Studies",
+        "Mathematics",
+        "English",
+        "Kiswahili",
+        "Indigenous Language",
         "Arabic",
         "Mandarin",
         "French",
@@ -130,13 +130,21 @@
     "KICD_grade_ten": "https://kicd.ac.ke/cbc-materials/curriculum-designs/grade-ten/",
     "KICD_approved_materials": "https://kicd.ac.ke/cbc-materials/approved-cbc-course-materials/",
     "KNEC": "https://www.knec.ac.ke/",
-    "KICD_2026_complementary_materials_guidelines": "https://kicd.ac.ke/wp-content/uploads/2026/09/COMPLEMENTARY-MATERIALS-SUBMISSION-DOCUMENT-SEPTEMBER-2026.pdf"
+    "KICD_2026_complementary_materials_guidelines": "https://kicd.ac.ke/wp-content/uploads/2026/09/COMPLEMENTARY-MATERIALS-SUBMISSION-DOCUMENT-SEPTEMBER-2026.pdf",
+    "KICD_grade_five": "https://kicd.ac.ke/cbc-materials/curriculum-designs/grade-five-designs/",
+    "KICD_grade_six": "https://kicd.ac.ke/cbc-materials/curriculum-designs/grade-six-designs/",
+    "KICD_grade_seven": "https://kicd.ac.ke/cbc-materials/curriculum-designs/grade-seven-designs/",
+    "KICD_grade_eight": "https://kicd.ac.ke/cbc-materials/curriculum-designs/grade-eight-designs/",
+    "KICD_grade_nine": "https://kicd.ac.ke/cbc-materials/curriculum-designs/grade-nine-designs/",
+    "KICD_grade_eleven": "https://kicd.ac.ke/cbc-materials/curriculum-designs/grade-eleven/",
+    "KICD_grade_twelve": "https://kicd.ac.ke/cbc-materials/curriculum-designs/grade-twelve/"
   },
   "implementation_notes": [
     "Use the exact grade-specific curriculum design before generating strand, sub-strand, outcome, lesson-allocation or scope-and-sequence details.",
     "Senior School selection is pathway-dependent; the displayed subject list is a catalogue of design subjects, not a claim that every subject is offered to every learner.",
     "KICD develops curriculum designs and evaluates/approves curriculum support materials. KNEC conducts national assessment and examinations; do not describe a generated teaching document as KNEC-approved.",
     "Learning-area lists are versioned and must be checked against the current official KICD designs and circulars before use.",
-    "The 2026 KICD complementary-materials guidelines list the current rationalised learning-area catalogue by school level. Use the grade-specific curriculum design itself for the exact teaching scope and sequence."
+    "The 2026 KICD complementary-materials guidelines list the current rationalised learning-area catalogue by school level. Use the grade-specific curriculum design itself for the exact teaching scope and sequence.",
+    "The in-app outcome bank is teacher-imported and teacher-reviewed. No complete national corpus of verbatim outcomes is preloaded; teachers import the matching official grade/learning-area design PDF or paste its text."
   ]
 }
