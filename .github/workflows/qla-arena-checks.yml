@@ -1,0 +1,47 @@
+name: Quiz League Arena Checks
+
+on:
+  pull_request:
+    paths:
+      - "learner-centre/index.html"
+      - "netlify/functions/qla-generate-quiz.js"
+      - "supabase/qla-grades-1-12-learner-games.sql"
+      - ".github/workflows/qla-arena-checks.yml"
+  push:
+    branches:
+      - main
+      - feature/ai-quiz-league-arena-grades-1-12
+    paths:
+      - "learner-centre/index.html"
+      - "netlify/functions/qla-generate-quiz.js"
+      - "supabase/qla-grades-1-12-learner-games.sql"
+
+permissions:
+  contents: read
+
+jobs:
+  syntax:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Check AI quiz function syntax
+        run: node --check netlify/functions/qla-generate-quiz.js
+      - name: Check learner-centre inline JavaScript
+        run: |
+          node --input-type=module <<'NODE'
+          import fs from 'node:fs';
+          import vm from 'node:vm';
+          const html = fs.readFileSync('learner-centre/index.html', 'utf8');
+          const scripts = [...html.matchAll(/<script(?:\s[^>]*)?>([\s\S]*?)<\/script>/gi)]
+            .map(match => match[1].trim()).filter(Boolean);
+          if (!scripts.length) throw new Error('No inline scripts found');
+          scripts.forEach((source, index) => new vm.Script(source, { filename: `learner-centre-inline-${index + 1}.js` }));
+          if (!html.includes('<option>Grade 1</option>') || !html.includes('<option>Grade 12</option>')) throw new Error('Arena grade selectors must include Grades 1-12');
+          for (const id of ['qla-gen-count','qla-gen-difficulty','qla-gen-format','qla-gen-strand','qla-gen-substrand']) {
+            if (!html.includes(`id="${id}"`)) throw new Error(`Missing generator control: ${id}`);
+          }
+          console.log(`Validated ${scripts.length} inline script(s), all grade levels and AI generator controls.`);
+          NODE
