@@ -2214,7 +2214,7 @@ buildQuiz();
  $('qla-open-host').addEventListener('click',()=>$('qla-host-panel').scrollIntoView({behavior:'smooth'}));$('qla-open-join').addEventListener('click',()=>$('qla-game-pin').focus());$('qla-refresh-game').addEventListener('click',()=>refreshGame().catch(e=>say('qla-join-message',e.message)));
  const requestedPin=new URLSearchParams(location.search).get('qla');if(requestedPin&&/^\d{6}$/.test(requestedPin)){$('qla-game-pin').value=requestedPin;$('qla-game-pin').scrollIntoView({behavior:'smooth',block:'center'});}
  // Teacher authorization and all answer validation/scoring are enforced by database functions.
- refreshTeacherArenaAccess();supabaseClient.auth.onAuthStateChange(()=>{setTimeout(refreshTeacherArenaAccess,0);});typeChanged();renderDraft();
+ qlaLoadGeneratorAreas().then(qlaLoadGeneratorTopics);refreshTeacherArenaAccess();supabaseClient.auth.onAuthStateChange(()=>{setTimeout(refreshTeacherArenaAccess,0);});typeChanged();renderDraft();
 })();
 </script>
 
