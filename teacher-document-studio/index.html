@@ -25,10 +25,10 @@
 <div class="field"><label for="topic">Sub-strand / topic *</label><input id="topic" required placeholder="Enter topic or topic list"></div>
 <div class="field full"><label for="outcomes">Specific learning outcomes</label><textarea id="outcomes" placeholder="Paste the relevant outcomes, one per line. Include Knowledge, Skills and Attitudes where available."></textarea></div>
 <div class="field full"><label for="notes">Curriculum notes / source content</label><textarea id="notes" placeholder="Paste curriculum design extracts, scope and sequence, or teacher notes. AI will avoid guessing where details are missing."></textarea></div>
-<div class="field"><label for="weeks">Weeks in term</label><input id="weeks" type="number" min="1" max="20" placeholder="e.g. 14"></div>
-<div class="field"><label for="lessons">Lessons per week</label><input id="lessons" type="number" min="1" max="12" placeholder="e.g. 5"></div>
-<div class="field"><label for="midterm">Midterm break week(s)</label><input id="midterm" placeholder="e.g. 8"></div>
-<div class="field"><label for="assessment">Assessment / closing week(s)</label><input id="assessment" placeholder="e.g. 14"></div>
+<div class="field"><label for="weeks">Weeks in term</label><input id="weeks" type="number" min="1" max="20" value="14"></div>
+<div class="field"><label for="lessons">Lessons per week</label><input id="lessons" type="number" min="1" max="12" value="5"></div>
+<div class="field"><label for="midterm">Midterm break week(s)</label><input id="midterm" value="8"></div>
+<div class="field"><label for="assessment">Assessment / closing week(s)</label><input id="assessment" value="14"></div>
 <div class="field full"><label for="instructions">Additional instructions</label><textarea id="instructions" placeholder="e.g. Include three single lessons and one double lesson per week; reserve the final week for assessment and closing."></textarea></div>
 </div>
 <p class="hint">For accurate curriculum alignment, provide the relevant current KICD curriculum design outcomes or notes. Generated content is a draft for teacher verification, not an official KICD-approved document.</p>
@@ -61,6 +61,8 @@ function markdownToHtml(md){
  }flushTable();closeList();return out.join("");
 }
 function header(){const school=$("school").value.trim(),teacher=$("teacher").value.trim();return '<div class="brand"><strong>JUNIOR SCHOOL LEARNING HUB</strong><span>Professional CBC / CBE Teaching Document</span></div><h1>'+esc(generatedTitle)+'</h1><p><strong>School:</strong> '+esc(school||"____________________________")+' &nbsp; <strong>Teacher:</strong> '+esc(teacher||"____________________________")+'</p><p><strong>Grade:</strong> '+esc($("grade").value)+' &nbsp; <strong>Learning Area:</strong> '+esc($("area").value)+' &nbsp; <strong>Term:</strong> '+esc($("term").value)+' &nbsp; <strong>Year:</strong> '+esc($("year").value)+'</p><hr>';}
+$("instructions").value="Use five lessons per teaching week: three single lessons and one double lesson (Lessons 4–5 combined). Reserve the final week for end-term assessment and school closing. For Terms 1 and 2, reserve Week 8 for midterm break.";
+$("term").addEventListener("change",()=>{const t=$("term").value;if(t==="Term 1"){$("weeks").value=14;$("midterm").value="8";$("assessment").value="14";}else if(t==="Term 2"){$("weeks").value=13;$("midterm").value="8";$("assessment").value="13";}else if(t==="Term 3"){$("weeks").value=9;$("midterm").value="";$("assessment").value="9";}else{$("weeks").value="";$("midterm").value="";$("assessment").value="";}});
 $("generate").addEventListener("click",async()=>{
  const {data,error}=await sb.auth.getSession();if(error||!data.session){status("Please sign in first. Open the homepage and use your authorised teacher account.","error");return;}
  const topic=$("topic").value.trim();if(!topic){status("Enter the sub-strand or topic before generating.","error");$("topic").focus();return;}
