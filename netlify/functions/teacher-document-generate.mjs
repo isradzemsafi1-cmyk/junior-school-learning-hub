@@ -8,9 +8,9 @@ export default async (request) => {
   const token = authorization.startsWith("Bearer ") ? authorization.slice(7) : "";
   if (!token) return reply(401, { error: "Please sign in with your Learning Hub account first." });
   const supabaseUrl = Netlify.env.get("SUPABASE_URL") || "https://hqbqhnhgrgfxpedjzmnm.supabase.co";
-  const supabaseKey = Netlify.env.get("SUPABASE_ANON_KEY") || "sb_publishable_uaOcRVaIwnvRl_wZhMhJ-Q_DhrqZyS_";
-  const geminiKey = Netlify.env.get("GEMINI_API_KEY");
-  if (!geminiKey) return reply(503, { error: "AI document generation is not configured yet. The site administrator must add GEMINI_API_KEY to Netlify environment variables." });
+  const supabaseKey = Netlify.env.get("SUPABASE_PUBLISHABLE_KEY") || Netlify.env.get("SUPABASE_ANON_KEY") || "sb_publishable_uaOcRVaIwnvRl_wZhMhJ-Q_DhrqZyS_";
+  const openaiKey = Netlify.env.get("OPENAI_API_KEY");
+  if (!openaiKey) return reply(503, { error: "AI document generation is not configured. The site administrator must add OPENAI_API_KEY to Netlify environment variables." });
   try {
     const authResponse = await fetch(supabaseUrl + "/auth/v1/user", {
       headers: { apikey: supabaseKey, Authorization: "Bearer " + token }
@@ -42,16 +42,25 @@ CURRICULUM RULES:
 DOCUMENT INPUT:
 ${JSON.stringify(data, null, 2)}
 Generate the requested document now.`;
-    const aiResponse = await fetch("https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=" + encodeURIComponent(geminiKey), {
-      method: "POST", headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ contents: [{ role: "user", parts: [{ text: prompt }] }], generationConfig: { temperature: 0.35, maxOutputTokens: 8192 } })
+    const aiResponse = await fetch("https://api.openai.com/v1/chat/completions", {
+      method: "POST",
+      headers: { "Content-Type": "application/json", Authorization: "Bearer " + openaiKey },
+      body: JSON.stringify({
+        model: "gpt-4.1-mini",
+        messages: [
+          { role: "system", content: "You create professional Kenyan CBC/CBE teaching documents. Follow the curriculum accuracy rules in the user message. Never invent official curriculum details or claim KNEC approval." },
+          { role: "user", content: prompt }
+        ],
+        temperature: 0.35,
+        max_tokens: 8192
+      })
     });
     const result = await aiResponse.json();
     if (!aiResponse.ok) {
-      console.error("Gemini generation failed:", result?.error?.message || aiResponse.status);
+      console.error("OpenAI document generation failed:", result?.error?.message || aiResponse.status);
       return reply(502, { error: "The AI service could not generate this document. Please try again later." });
     }
-    const document = result?.candidates?.[0]?.content?.parts?.map(p => p.text || "").join("\n").trim();
+    const document = result?.choices?.[0]?.message?.content?.trim();
     if (!document) return reply(502, { error: "The AI service returned an empty document. Please try again." });
     return reply(200, { success: true, document, generatedFor: { grade: data.grade, learningArea: data.learningArea, documentType: data.documentType } });
   } catch (error) {
