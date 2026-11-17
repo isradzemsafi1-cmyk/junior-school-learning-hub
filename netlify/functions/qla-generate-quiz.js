@@ -3,7 +3,7 @@ const headers={"Content-Type":"application/json"};
 const reply=(statusCode,body)=>({statusCode,headers,body:JSON.stringify(body)});
 exports.handler=async(event)=>{
  if(event.httpMethod!=="POST")return reply(405,{error:"Method not allowed."});
- const apiKey=process.env.OPENAI_API_KEY,supabaseUrl=process.env.SUPABASE_URL,supabaseAnonKey=process.env.SUPABASE_ANON_KEY;
+ const apiKey=process.env.OPENAI_API_KEY,supabaseUrl=process.env.SUPABASE_URL,supabaseAnonKey=process.env.SUPABASE_ANON_KEY||process.env.SUPABASE_PUBLISHABLE_KEY;
  if(!apiKey||!supabaseUrl||!supabaseAnonKey)return reply(503,{error:"AI quiz generation is not configured. Check the server environment variables."});
  const token=(event.headers.authorization||event.headers.Authorization||"").replace(/^Bearer\s+/i,"");
  if(!token)return reply(401,{error:"Sign in before creating an AI quiz."});
