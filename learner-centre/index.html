@@ -2112,7 +2112,22 @@ buildQuiz();
   qlaGenSetOptions('qla-gen-substrand',subs.map(x=>({value:x,label:x})),'Select sub-strand');
   $('qla-gen-substrand').disabled=!subs.length;
  }
- ['qla-editor-grade','qla-editor-subject','qla-gen-year','qla-gen-term'].forEach(id=>$(id).addEventListener('change',qlaLoadGeneratorTopics));
+ async function qlaLoadGeneratorAreas(){
+  const grade=$('qla-editor-grade').value,year=String($('qla-gen-year').value||'').trim();
+  const el=$('qla-editor-subject');if(!el)return;
+  try{
+   const {data,error}=await supabaseClient.from('qla_curriculum_topics').select('learning_area').eq('grade',grade).eq('academic_year',year).eq('is_active',true).order('learning_area');
+   if(error)throw error;
+   const areas=[...new Set((data||[]).map(x=>x.learning_area).filter(Boolean))];
+   const previous=el.value;
+   el.innerHTML='<option value="">Select an imported official learning area</option>'+areas.map(x=>'<option value="'+safe(x)+'">'+safe(x)+'</option>').join('');
+   if(areas.includes(previous))el.value=previous;
+   say('qla-gen-topic-status',areas.length?areas.length+' verified learning area(s) are available for '+grade+'.':'No verified learning areas have been imported for '+grade+' and '+year+'. A teacher must import the relevant official KICD design first.');
+  }catch(e){say('qla-gen-topic-status','Could not load learning areas: '+e.message);}
+ }
+ $('qla-editor-grade').addEventListener('change',async()=>{await qlaLoadGeneratorAreas();await qlaLoadGeneratorTopics();});
+ $('qla-gen-year').addEventListener('change',async()=>{await qlaLoadGeneratorAreas();await qlaLoadGeneratorTopics();});
+ ['qla-editor-subject','qla-gen-term'].forEach(id=>$(id).addEventListener('change',qlaLoadGeneratorTopics));
  $('qla-gen-strand').addEventListener('change',qlaLoadGeneratorSubstrands);
  async function qlaGenerateAndPublish(){
   const grade=$('qla-editor-grade').value,area=$('qla-editor-subject').value,year=String($('qla-gen-year').value||'').trim(),term=$('qla-gen-term').value;
@@ -2129,7 +2144,7 @@ buildQuiz();
   if(!(await currentUser()))throw Error('Sign in before generating a quiz.');
   const user=await currentUser();
   const title=`${grade} · ${area} · ${sub} · ${term} · ${year}`;
-  $('qla-generate-quiz').disabled=true;$('qla-generate-quiz').textContent='Generating 30 questions…';
+  $('qla-generate-quiz').disabled=true;$('qla-generate-quiz').textContent='Generating your quiz…';
   say('qla-gen-message','Preparing questions from the selected curriculum outcomes. This may take a short while.');
   try{
    const session=await supabaseClient.auth.getSession();
@@ -2152,10 +2167,10 @@ buildQuiz();
    $('qla-host-grade').value=grade;$('qla-host-subject').value=area;
    const hostOption=$('qla-host-quiz').querySelector(`option[value="${quiz.id}"]`);
    if(hostOption)$('qla-host-quiz').value=quiz.id;
-   say('qla-gen-message',`Published successfully: ${title}. 30 questions are ready. Select the quiz under Host a live game and create a PIN.`);
+   say('qla-gen-message',`Published successfully: ${title}. questions are ready. Select the quiz under Host a live game and create a PIN.`);
    say('qla-studio-message','Automatic quiz published and ready to host.');
   }catch(e){say('qla-gen-message',e.message||'Could not generate the quiz.');}
-  finally{$('qla-generate-quiz').disabled=false;$('qla-generate-quiz').textContent='Generate 30 questions and publish quiz';}
+  finally{$('qla-generate-quiz').disabled=false;$('qla-generate-quiz').textContent='Generate AI quiz and publish';}
  }
  $('qla-generate-quiz').addEventListener('click',()=>qlaGenerateAndPublish().catch(e=>say('qla-gen-message',e.message)));
 
