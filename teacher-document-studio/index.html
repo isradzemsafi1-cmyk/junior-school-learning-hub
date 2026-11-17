@@ -79,7 +79,7 @@ const $=id=>document.getElementById(id);
 const curriculumStoreKey="jsh_curriculum_outcomes_v1";
 let extractedCurriculum=null;
 const gradeDesignUrls={
-  1:"https://kicd.ac.ke/cbc-materials/curriculum-designs/lower-primary/",
+  1:"https://kicd.ac.ke/cbc-materials/lower-primary/",
   2:"https://kicd.ac.ke/cbc-materials/curriculum-designs/lower-primary/",
   3:"https://kicd.ac.ke/cbc-materials/curriculum-designs/lower-primary/",
   4:"https://kicd.ac.ke/cbc-materials/curriculum-designs/grade-four-designs/",
@@ -108,7 +108,7 @@ function renderOutcomePicker(items){
   label.append(tag,document.createElement("br"),body);row.append(check,label);host.append(row);
  });
 }
-function currentOutcomes(){const items=readCurriculumStore()[curriculumKey()]||[];return items;}
+function currentDesign(){const item=readCurriculumStore()[curriculumKey()];return item&&!Array.isArray(item)?item:null;}\nfunction currentOutcomes(){const item=readCurriculumStore()[curriculumKey()]||[];return Array.isArray(item)?item:(item.outcomes||[]);}
 function loadSaved(){const items=currentOutcomes();renderOutcomePicker(items);$("curriculumStatus").textContent=items.length+" saved curriculum outcomes loaded for "+curriculumKey().replace("|"," · ")+". Select the ones needed for this lesson.";}
 function syncSelectedOutcomes(){
  const items=currentOutcomes();const checks=[...$("outcomePicker").querySelectorAll('input[type="checkbox"]')];
@@ -127,7 +127,9 @@ async function extractDesignText(sourceText,sourceName){
  if(!extractedCurriculum||!Array.isArray(extractedCurriculum.outcomes))throw new Error("The AI response did not contain a valid outcomes list.");
  extractedCurriculum.sourceName=sourceName;extractedCurriculum.grade=$("grade").value;extractedCurriculum.learningArea=$("area").value;
  $("saveOutcomes").disabled=false;
- $("extractedPreview").innerHTML='<p><strong>Extracted '+extractedCurriculum.outcomes.length+' outcomes.</strong> Check the strand and sub-strand labels. The AI has been instructed to preserve the wording from the supplied source; verify it against the PDF before saving.</p>';
+ const sections=[["General learning outcomes",extractedCurriculum.generalLearningOutcomes],["Key inquiry questions",extractedCurriculum.keyInquiryQuestions],["Suggested learning experiences",extractedCurriculum.suggestedLearningExperiences],["Core competencies",extractedCurriculum.coreCompetencies],["Values",extractedCurriculum.values],["Pertinent and contemporary issues",extractedCurriculum.pcis],["Assessment guidance",extractedCurriculum.assessmentGuidance],["Assessment rubrics",extractedCurriculum.assessmentRubrics],["Extraction warnings",extractedCurriculum.warnings]];
+ const details=sections.filter(x=>Array.isArray(x[1])&&x[1].length).map(x=>"<h4>"+esc(x[0])+"</h4><ul>"+x[1].map(v=>"<li>"+esc(v)+"</li>").join("")+"</ul>").join("");
+ $("extractedPreview").innerHTML='<p><strong>Extracted '+extractedCurriculum.outcomes.length+' specific learning outcomes.</strong> Verify all wording and strand links against the original PDF before saving.</p>'+details;
  renderOutcomePicker(extractedCurriculum.outcomes.map(o=>({...o,selected:false})));
  statusEl.textContent="Review "+extractedCurriculum.outcomes.length+" extracted outcomes. Save them to your library when satisfied.";
 }
@@ -157,7 +159,7 @@ $("saveOutcomes").addEventListener("click",()=>{
  if(!extractedCurriculum)return;
  const items=extractedCurriculum.outcomes.map(o=>({strand:String(o.strand||"Unspecified strand"),subStrand:String(o.subStrand||""),text:String(o.text||"").trim(),selected:false})).filter(o=>o.text);
  if(!items.length){$("curriculumStatus").textContent="No valid outcomes to save.";return;}
- const store=readCurriculumStore();store[curriculumKey()]=items;writeCurriculumStore(store);renderOutcomePicker(items);
+ const store=readCurriculumStore();store[curriculumKey()]={...extractedCurriculum,outcomes:items};writeCurriculumStore(store);renderOutcomePicker(items);
  $("curriculumStatus").textContent="Saved "+items.length+" outcomes for "+curriculumKey().replace("|"," · ")+". Select the required outcomes; you can edit their text below.";
  $("saveOutcomes").disabled=true;
 });
@@ -217,7 +219,7 @@ $("generate").addEventListener("click",async()=>{
  const {data,error}=await sb.auth.getSession();if(error||!data.session){status("Please sign in first. Open the homepage and use your authorised teacher account.","error");return;}
  const topic=$("topic").value.trim();if(!topic){status("Enter the sub-strand or topic before generating.","error");$("topic").focus();return;}
  const btn=$("generate");btn.disabled=true;btn.textContent="Generating your document…";status("AI is preparing your professional document. This may take a little while.");
- const payload={documentType:$("docType").value,grade:$("grade").value,pathway:$("pathway").value,learningArea:$("area").value,term:$("term").value,academicYear:$("year").value,schoolName:$("school").value,teacherName:$("teacher").value,strand:$("strand").value,topic,learningOutcomes:$("outcomes").value,curriculumNotes:$("notes").value,termWeeks:$("weeks").value,lessonsPerWeek:$("lessons").value,midtermWeeks:$("midterm").value,assessmentWeeks:$("assessment").value,instructions:$("instructions").value};
+ const payload={documentType:$("docType").value,grade:$("grade").value,pathway:$("pathway").value,learningArea:$("area").value,term:$("term").value,academicYear:$("year").value,schoolName:$("school").value,teacherName:$("teacher").value,strand:$("strand").value,topic,learningOutcomes:$("outcomes").value,curriculumNotes:$("notes").value+"\\n\\nImported source-grounded curriculum components (verify against the source): "+JSON.stringify(currentDesign()?{sourceName:currentDesign().sourceName,designVersion:currentDesign().designVersion,generalLearningOutcomes:currentDesign().generalLearningOutcomes,keyInquiryQuestions:currentDesign().keyInquiryQuestions,suggestedLearningExperiences:currentDesign().suggestedLearningExperiences,coreCompetencies:currentDesign().coreCompetencies,values:currentDesign().values,pcis:currentDesign().pcis,assessmentGuidance:currentDesign().assessmentGuidance,assessmentRubrics:currentDesign().assessmentRubrics,warnings:currentDesign().warnings}:{}),termWeeks:$("weeks").value,lessonsPerWeek:$("lessons").value,midtermWeeks:$("midterm").value,assessmentWeeks:$("assessment").value,instructions:$("instructions").value};
  try{
   const r=await fetch("/.netlify/functions/teacher-document-generate",{method:"POST",headers:{"Content-Type":"application/json",Authorization:"Bearer "+data.session.access_token},body:JSON.stringify(payload)});
   const d=await r.json();if(!r.ok)throw new Error(d.error||"Could not generate document.");
