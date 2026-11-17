@@ -114,7 +114,7 @@ function loadSaved(){const items=currentOutcomes();renderOutcomePicker(items);$(
 function syncSelectedOutcomes(){
  const items=currentOutcomes();const checks=[...$("outcomePicker").querySelectorAll('input[type="checkbox"]')];
  const selected=checks.filter(c=>c.checked).map(c=>items[Number(c.dataset.index)]).filter(Boolean);
- $("outcomes").value=selected.map(o=>o.text).join("\\n");
+ $("outcomes").value=selected.map(o=>o.text).join("\n");
  if(selected.length){const strands=[...new Set(selected.map(o=>o.strand).filter(Boolean))];if(!$("strand").value.trim()&&strands.length===1)$("strand").value=strands[0];}
 }
 $("outcomePicker").addEventListener("change",e=>{if(e.target.matches('input[type="checkbox"]'))syncSelectedOutcomes();});
@@ -139,7 +139,7 @@ async function pdfText(file){
  pdfjsLib.GlobalWorkerOptions.workerSrc="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js";
  const bytes=new Uint8Array(await file.arrayBuffer());const pdf=await pdfjsLib.getDocument({data:bytes}).promise;let text="";
  const pageLimit=Math.min(pdf.numPages,160);
- for(let n=1;n<=pageLimit;n++){const p=await pdf.getPage(n);const c=await p.getTextContent();text+="\\n[PAGE "+n+"]\\n"+c.items.map(x=>x.str).join(" ");}
+ for(let n=1;n<=pageLimit;n++){const p=await pdf.getPage(n);const c=await p.getTextContent();text+="\n[PAGE "+n+"]\n"+c.items.map(x=>x.str).join(" ");}
  if(pdf.numPages>pageLimit)throw new Error("This PDF has more than 160 pages. Split it into smaller subject/grade sections and import each section.");
  return text;
 }
@@ -220,7 +220,7 @@ $("generate").addEventListener("click",async()=>{
  const {data,error}=await sb.auth.getSession();if(error||!data.session){status("Please sign in first. Open the homepage and use your authorised teacher account.","error");return;}
  const topic=$("topic").value.trim();if(!topic){status("Enter the sub-strand or topic before generating.","error");$("topic").focus();return;}
  const btn=$("generate");btn.disabled=true;btn.textContent="Generating your document…";status("AI is preparing your professional document. This may take a little while.");
- const payload={documentType:$("docType").value,grade:$("grade").value,pathway:$("pathway").value,learningArea:$("area").value,term:$("term").value,academicYear:$("year").value,schoolName:$("school").value,teacherName:$("teacher").value,strand:$("strand").value,topic,learningOutcomes:$("outcomes").value,curriculumNotes:$("notes").value+"\\n\\nImported source-grounded curriculum components (verify against the source): "+JSON.stringify(currentDesign()?{sourceName:currentDesign().sourceName,designVersion:currentDesign().designVersion,generalLearningOutcomes:currentDesign().generalLearningOutcomes,keyInquiryQuestions:currentDesign().keyInquiryQuestions,suggestedLearningExperiences:currentDesign().suggestedLearningExperiences,coreCompetencies:currentDesign().coreCompetencies,values:currentDesign().values,pcis:currentDesign().pcis,assessmentGuidance:currentDesign().assessmentGuidance,assessmentRubrics:currentDesign().assessmentRubrics,warnings:currentDesign().warnings}:{}),termWeeks:$("weeks").value,lessonsPerWeek:$("lessons").value,midtermWeeks:$("midterm").value,assessmentWeeks:$("assessment").value,instructions:$("instructions").value};
+ const payload={documentType:$("docType").value,grade:$("grade").value,pathway:$("pathway").value,learningArea:$("area").value,term:$("term").value,academicYear:$("year").value,schoolName:$("school").value,teacherName:$("teacher").value,strand:$("strand").value,topic,learningOutcomes:$("outcomes").value,curriculumNotes:$("notes").value+"\n\nImported source-grounded curriculum components (verify against the source): "+JSON.stringify(currentDesign()?{sourceName:currentDesign().sourceName,designVersion:currentDesign().designVersion,generalLearningOutcomes:currentDesign().generalLearningOutcomes,keyInquiryQuestions:currentDesign().keyInquiryQuestions,suggestedLearningExperiences:currentDesign().suggestedLearningExperiences,coreCompetencies:currentDesign().coreCompetencies,values:currentDesign().values,pcis:currentDesign().pcis,assessmentGuidance:currentDesign().assessmentGuidance,assessmentRubrics:currentDesign().assessmentRubrics,warnings:currentDesign().warnings}:{}),termWeeks:$("weeks").value,lessonsPerWeek:$("lessons").value,midtermWeeks:$("midterm").value,assessmentWeeks:$("assessment").value,instructions:$("instructions").value};
  try{
   const r=await fetch("/.netlify/functions/teacher-document-generate",{method:"POST",headers:{"Content-Type":"application/json",Authorization:"Bearer "+data.session.access_token},body:JSON.stringify(payload)});
   const d=await r.json();if(!r.ok)throw new Error(d.error||"Could not generate document.");
