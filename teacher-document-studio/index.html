@@ -173,7 +173,7 @@ $("recommendOutcomes").addEventListener("click",async()=>{
   $("curriculumStatus").textContent=selected.size+" curriculum outcomes selected by AI. "+(result.reason||"Review the selections and edit the wording below before generating.");
  }catch(e){$("curriculumStatus").textContent=e.message;}
  finally{btn.disabled=false;btn.textContent="✨ AI-select outcomes for my topic";}
-
+});
 $("loadSavedOutcomes").addEventListener("click",loadSaved);
 $("grade").addEventListener("change",()=>{updateOfficialLink();loadSaved();});
 $("area").addEventListener("change",loadSaved);
@@ -196,6 +196,7 @@ function populateLearningAreas(){
 }
 $("grade").addEventListener("change",populateLearningAreas);
 populateLearningAreas();
+updateOfficialLink();loadSaved();
 function status(message,kind=""){ $("status").className="status "+kind; $("status").textContent=message; }
 function esc(s){return String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));}
 function markdownToHtml(md){
