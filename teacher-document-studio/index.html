@@ -108,7 +108,8 @@ function renderOutcomePicker(items){
   label.append(tag,document.createElement("br"),body);row.append(check,label);host.append(row);
  });
 }
-function currentDesign(){const item=readCurriculumStore()[curriculumKey()];return item&&!Array.isArray(item)?item:null;}\nfunction currentOutcomes(){const item=readCurriculumStore()[curriculumKey()]||[];return Array.isArray(item)?item:(item.outcomes||[]);}
+function currentDesign(){const item=readCurriculumStore()[curriculumKey()];return item&&!Array.isArray(item)?item:null;}
+function currentOutcomes(){const item=readCurriculumStore()[curriculumKey()]||[];return Array.isArray(item)?item:(item.outcomes||[]);}
 function loadSaved(){const items=currentOutcomes();renderOutcomePicker(items);$("curriculumStatus").textContent=items.length+" saved curriculum outcomes loaded for "+curriculumKey().replace("|"," · ")+". Select the ones needed for this lesson.";}
 function syncSelectedOutcomes(){
  const items=currentOutcomes();const checks=[...$("outcomePicker").querySelectorAll('input[type="checkbox"]')];
