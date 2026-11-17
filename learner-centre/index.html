@@ -583,6 +583,15 @@ section{padding-top:50px;padding-bottom:50px}
 
 <section class="centre-workspace alt" id="learner-resources">
  <div class="heading"><span class="eyebrow">Learner Centre</span><h2>📚 Your Learning Space</h2><p>All learner libraries, nine learning areas, revision resources and interactive quizzes are organised in one colourful learning hub.</p><a class="btn blue" href="/learner-centre/">🚀 Open the Learner Centre</a></div>
+ <nav class="learner-quick-nav" aria-label="Learner Centre quick links" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(155px,1fr));gap:12px;max-width:1240px;margin:0 auto 24px">
+  <a href="/learner-centre/kjsea-2027-revision.html" style="display:flex;align-items:center;gap:10px;padding:15px;background:#fff;border:1px solid #e2e7f6;border-radius:16px;text-decoration:none;font-weight:800;color:#1730a8;box-shadow:0 8px 22px -12px #1730a866">🏆 <span>KJSEA 2027 Revision</span></a>
+  <a href="#grades" style="display:flex;align-items:center;gap:10px;padding:15px;background:#fff;border:1px solid #e2e7f6;border-radius:16px;text-decoration:none;font-weight:800;color:#1730a8">📘 <span>Grade Libraries</span></a>
+  <a href="#learning-notes" style="display:flex;align-items:center;gap:10px;padding:15px;background:#fff;border:1px solid #e2e7f6;border-radius:16px;text-decoration:none;font-weight:800;color:#1730a8">📖 <span>Learning Notes</span></a>
+  <a href="#revision" style="display:flex;align-items:center;gap:10px;padding:15px;background:#fff;border:1px solid #e2e7f6;border-radius:16px;text-decoration:none;font-weight:800;color:#1730a8">📝 <span>Revision Papers</span></a>
+  <a href="#quiz" style="display:flex;align-items:center;gap:10px;padding:15px;background:#fff;border:1px solid #e2e7f6;border-radius:16px;text-decoration:none;font-weight:800;color:#1730a8">⚡ <span>AI Quiz Generator</span></a>
+  <a href="#payments" style="display:flex;align-items:center;gap:10px;padding:15px;background:#fff;border:1px solid #e2e7f6;border-radius:16px;text-decoration:none;font-weight:800;color:#1730a8">💳 <span>Learning Purchases</span></a>
+  <a href="#learner-account" style="display:flex;align-items:center;gap:10px;padding:15px;background:#fff;border:1px solid #e2e7f6;border-radius:16px;text-decoration:none;font-weight:800;color:#1730a8">🎓 <span>My Dashboard</span></a>
+ </nav>
  <div class="workspace-list">
   <article class="kjsea-feature-card" aria-labelledby="kjsea-feature-title">
    <div class="kjsea-feature-icon" aria-hidden="true">🏆</div>
@@ -751,10 +760,10 @@ section{padding-top:50px;padding-bottom:50px}
   <p><a class="btn blue" href="/career-guidance-centre/">Open Career Guidance Centre</a></p>
  </div>
  <div class="workspace-list">
-  <details class="workspace-accordion">
-   <summary><span><strong>🏆 Quiz League Arena &amp; Teacher Quiz Studio</strong><small>Join competitions, host games and manage published quizzes</small></span><span class="quiz-toggle-icon">＋</span></summary>
+  <details class="workspace-accordion" open>
+   <summary><span><strong>⚡ AI Quiz Generator &amp; Quiz League Arena</strong><small>Create practice quizzes automatically, join live games and track your progress</small></span><span class="quiz-toggle-icon">＋</span></summary>
    <section class="alt" id="quiz">
- <div class="heading"><h2>🏆 Quiz League Arena</h2><p>Think Fast. Play Smart. Rise to the Top. Host live competitions, challenge classmates and climb the leaderboard.</p></div>
+ <div class="heading"><h2>⚡ AI Quiz Generator &amp; 🏆 Quiz League Arena</h2><p>Choose your grade and learning area to generate fresh AI practice questions—no PDF or curriculum upload needed. Then practise independently or host a live competition.</p><a class="btn blue" href="#qla-auto-generator">Go to AI Quiz Generator ↓</a></div>
  <div class="qla-shell">
   <div class="qla-hero"><div><span class="qla-kicker">LIVE LEARNING COMPETITION</span><h3>🏆 QUIZ LEAGUE ARENA</h3><p>Grades 1–12 · Curriculum-based challenges · Real-time multiplayer</p></div><div class="qla-hero-actions"><button class="qla-btn qla-btn-light" id="qla-open-host" hidden>🎤 Host a game</button><button class="qla-btn qla-btn-gold" id="qla-open-join">🎮 Join a game</button></div></div>
   <div class="qla-grid">
@@ -771,7 +780,7 @@ section{padding-top:50px;padding-bottom:50px}
     <button class="qla-btn qla-btn-gold" id="qla-join-game">Join competition</button><p class="qla-message" id="qla-join-message" aria-live="polite"></p>
    </article>
   </div>
-  <article class="qla-card qla-studio" id="qla-teacher-studio" hidden><div class="qla-studio-head"><div><span class="qla-kicker">LEARNER & TEACHER ACCESS</span><h3>📝 Quiz Creator Studio</h3><p>Create, edit, organise and publish quizzes, then challenge friends in live competitions.</p></div><span class="qla-lock">🔐 Signed-in creator access</span></div>
+  <article class="qla-card qla-studio" id="qla-teacher-studio" hidden><div class="qla-studio-head"><div><span class="qla-kicker">SIGNED-IN LEARNER & TEACHER ACCESS</span><h3>⚡ AI Quiz Generator &amp; Quiz Creator Studio</h3><p>Generate a complete practice quiz automatically by selecting your grade and learning area. You can also create, edit, organise and publish your own quizzes.</p></div><span class="qla-lock">🔐 Signed-in creator access</span></div>
    <article class="qla-card" id="qla-curriculum-import" style="margin:14px 0;background:#f5f9ff;border:1px solid #cfe0f5">
     <h4>📚 Teacher curriculum importer · official source only</h4>
     <p>Import text copied from the official KICD curriculum design. The extractor preserves source wording and flags uncertain entries. Review the result against the original PDF before saving.</p>
@@ -793,8 +802,8 @@ section{padding-top:50px;padding-bottom:50px}
    <label for="qla-quiz-title">Quiz title</label><input id="qla-quiz-title" maxlength="100" placeholder="e.g. Algebra Challenge – Round 1">
    <div class="qla-grid qla-grid-studio"><div><label for="qla-difficulty">Difficulty</label><select id="qla-difficulty"><option>Easy</option><option selected>Medium</option><option>Hard</option></select></div><div><label for="qla-default-time">Default time per question</label><select id="qla-default-time"><option>10</option><option selected>20</option><option>30</option><option>60</option></select></div></div>
    <div class="qla-question-editor" id="qla-auto-generator" style="border:2px solid #d8e7fb;background:#f7fbff;margin:16px 0;padding:16px;border-radius:16px">
-    <h4>⚡ Automatic AI Quiz Generator</h4>
-    <p>Select a grade and learning area. The AI creates a fresh practice quiz automatically—no PDF, notes, curriculum upload or teacher import required.</p>
+    <h4>⚡ Generate a Practice Quiz Automatically</h4>
+    <p>Choose a grade and learning area. The AI creates and publishes a fresh practice quiz for you—no PDF, notes, curriculum upload or teacher import required.</p>
     <div class="qla-grid qla-grid-studio">
      <div><label for="qla-gen-year">Academic year</label><input id="qla-gen-year" type="number" min="2024" max="2035" value="2027"></div>
      <div><label for="qla-gen-term">Learning period</label><select id="qla-gen-term"><option>Term 1</option><option>Term 2</option><option>Term 3</option><option selected>Full Year</option></select></div>
