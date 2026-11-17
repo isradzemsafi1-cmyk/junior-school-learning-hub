@@ -2230,6 +2230,22 @@ buildQuiz();
  $('qla-create-game').addEventListener('click',createGame);
  $('qla-join-game').addEventListener('click',async()=>{try{const pin=$('qla-game-pin').value.trim(),nickname=$('qla-nickname').value.trim();if(!/^\d{6}$/.test(pin))throw Error('Enter a six-digit PIN.');if(!nickname)throw Error('Enter a display name.');const {data:joined,error}=await supabaseClient.rpc('qla_join_game',{p_pin:pin,p_nickname:nickname});if(error)throw error;activeGame=joined;playerSession={player_id:joined.player_id,player_token:joined.player_token};lastQuestionNo=0;showGame('Welcome, '+nickname,pin);say('qla-join-message','You joined successfully.');startPolling();}catch(e){say('qla-join-message',e.message||'Could not join game.');}});
  $('qla-open-host').addEventListener('click',()=>$('qla-host-panel').scrollIntoView({behavior:'smooth'}));$('qla-open-join').addEventListener('click',()=>$('qla-game-pin').focus());$('qla-refresh-game').addEventListener('click',()=>refreshGame().catch(e=>say('qla-join-message',e.message)));
+ // The AI generator is intentionally available only to signed-in learners/teachers.
+ // If a signed-out visitor follows its shortcut, guide them to the sign-in form
+ // instead of trying to scroll to a hidden generator.
+ const generatorShortcut=document.querySelector('a[href="#qla-auto-generator"]');
+ if(generatorShortcut){
+   generatorShortcut.addEventListener('click',async function(event){
+     const studio=$('qla-teacher-studio');
+     if(studio&&!studio.hidden)return;
+     event.preventDefault();
+     const account=document.getElementById('learner-account');
+     if(account)account.scrollIntoView({behavior:'smooth',block:'start'});
+     const loginField=document.getElementById('login-email');
+     if(loginField)setTimeout(()=>loginField.focus({preventScroll:true}),450);
+     say('learner-auth-message','Please sign in or create a free learner account to open the AI Quiz Generator.');
+   });
+ }
  const requestedPin=new URLSearchParams(location.search).get('qla');if(requestedPin&&/^\d{6}$/.test(requestedPin)){$('qla-game-pin').value=requestedPin;$('qla-game-pin').scrollIntoView({behavior:'smooth',block:'center'});}
  // Teacher authorization and all answer validation/scoring are enforced by database functions.
  qlaLoadGeneratorAreas().then(qlaLoadGeneratorTopics);refreshTeacherArenaAccess();supabaseClient.auth.onAuthStateChange(()=>{setTimeout(()=>{refreshTeacherArenaAccess();qlaLoadGeneratorAreas().then(qlaLoadGeneratorTopics);},0);});typeChanged();renderDraft();
