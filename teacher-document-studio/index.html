@@ -161,24 +161,27 @@ $("saveOutcomes").addEventListener("click",()=>{
  $("curriculumStatus").textContent="Saved "+items.length+" outcomes for "+curriculumKey().replace("|"," · ")+". Select the required outcomes; you can edit their text below.";
  $("saveOutcomes").disabled=true;
 });
-$("recommendOutcomes").addEventListener("click",()=>{
+$("recommendOutcomes").addEventListener("click",async()=>{
  const items=currentOutcomes();if(!items.length){$("curriculumStatus").textContent="Load or import a curriculum design first.";return;}
- const terms=($("topic").value+" "+$("strand").value+" "+$("notes").value).toLowerCase().split(/[^a-z0-9]+/).filter(x=>x.length>2);
- if(!terms.length){$("curriculumStatus").textContent="Enter a topic or strand first so AI can identify relevant outcomes.";return;}
- const scored=items.map((o,i)=>({i,score:terms.reduce((n,t)=>n+((o.text+" "+o.strand+" "+o.subStrand).toLowerCase().includes(t)?1:0),0)})).sort((a,b)=>b.score-a.score);
- const best=scored.filter(x=>x.score>0).slice(0,8);
- if(!best.length){$("curriculumStatus").textContent="No strong topic match was found. Select outcomes manually from the list.";return;}
- const selected=new Set(best.map(x=>x.i));renderOutcomePicker(items.map((o,i)=>({...o,selected:selected.has(i)})));syncSelectedOutcomes();
- $("curriculumStatus").textContent="Recommended "+best.length+" matching outcomes based on your topic and strand. Review and edit before generating.";
-});
+ if(!$("topic").value.trim()){$("curriculumStatus").textContent="Enter the lesson topic or sub-strand first.";return;}
+ const btn=$("recommendOutcomes");btn.disabled=true;btn.textContent="AI selecting…";
+ try{
+  const {data,error}=await sb.auth.getSession();if(error||!data.session)throw new Error("Please sign in before using AI outcome selection.");
+  const response=await fetch("/.netlify/functions/teacher-curriculum-recommend",{method:"POST",headers:{"Content-Type":"application/json",Authorization:"Bearer "+data.session.access_token},body:JSON.stringify({grade:$("grade").value,learningArea:$("area").value,strand:$("strand").value,topic:$("topic").value,outcomes:items})});
+  const result=await response.json();if(!response.ok)throw new Error(result.error||"AI outcome selection failed.");
+  const selected=new Set(result.selectedIndexes||[]);renderOutcomePicker(items.map((o,i)=>({...o,selected:selected.has(i)})));syncSelectedOutcomes();
+  $("curriculumStatus").textContent=selected.size+" curriculum outcomes selected by AI. "+(result.reason||"Review the selections and edit the wording below before generating.");
+ }catch(e){$("curriculumStatus").textContent=e.message;}
+ finally{btn.disabled=false;btn.textContent="✨ AI-select outcomes for my topic";}
+
 $("loadSavedOutcomes").addEventListener("click",loadSaved);
 $("grade").addEventListener("change",()=>{updateOfficialLink();loadSaved();});
 $("area").addEventListener("change",loadSaved);
 
 const gradeAreas={
-  lower:["English","Kiswahili","Mathematics","Environmental Activities","Creative Activities","CRE","IRE","HRE","Indigenous Languages"],
-  upper:["English","Kiswahili","Mathematics","Agriculture & Nutrition","Social Studies","Creative Activities","Science and Technology","CRE","IRE","HRE","Indigenous Languages","Arabic","Mandarin","French","German"],
-  junior:["English","Kiswahili","Mathematics","Integrated Science","Social Studies","Agriculture","Pre-Technical Studies","Creative Arts and Sports","CRE","IRE","HRE","Indigenous Languages","Arabic","Mandarin","French","German"],
+  lower:["English Activities","Kiswahili","Mathematics","Environmental Activities","Creative Activities","Religious Education: CRE","Religious Education: IRE","Religious Education: HRE","Indigenous Language"],
+  upper:["English","Kiswahili","Mathematics","Agriculture & Nutrition","Social Studies","Creative Activities","Science & Technology","Religious Education: CRE","Religious Education: IRE","Religious Education: HRE","Indigenous Language","Arabic","Mandarin","French","German"],
+  junior:["English","Kiswahili","Mathematics","Integrated Science","Social Studies","Agriculture","Pre-Technical Studies","Creative Arts and Sports","Religious Education: CRE","Religious Education: IRE","Religious Education: HRE","Indigenous Language","Arabic","Mandarin","French","German"],
   senior:["English","Kiswahili","Lugha ya Kiswahili","Fasihi ya Kiswahili","Literature in English","Indigenous Languages","Arabic","French","German","Mandarin Chinese","Kenya Sign Language","Core Mathematics","Essential Mathematics","Community Service Learning","Christian Religious Education","Islamic Religious Education","Hindu Religious Education","Business Studies","History and Citizenship","Geography","Physical Education","Sports and Recreation","Music and Dance","Theatre and Film","Fine Arts","Agriculture","Computer Studies","Home Science","ICT","Biology","Chemistry","Physics","General Science","Building and Construction","Metal Work","Woodwork","Aviation","Electricity","Power Mechanics","Media Technology","Marine Technology"]
 };
 function populateLearningAreas(){
