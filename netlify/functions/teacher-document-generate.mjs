@@ -24,14 +24,14 @@ export default async (request) => {
     if (["documentType", "learningArea", "topic"].some(k => !String(input[k] || "").trim()))
       return reply(400, { error: "Document type, learning area and topic are required." });
     const clean = value => String(value || "").slice(0, 12000);
-    const data = Object.fromEntries(["documentType","grade","learningArea","term","academicYear","schoolName","teacherName","strand","topic","learningOutcomes","curriculumNotes","termWeeks","lessonsPerWeek","midtermWeeks","assessmentWeeks","instructions"].map(k => [k, clean(input[k])]));
+    const data = Object.fromEntries(["documentType","grade","pathway","learningArea","term","academicYear","schoolName","teacherName","strand","topic","learningOutcomes","curriculumNotes","termWeeks","lessonsPerWeek","midtermWeeks","assessmentWeeks","instructions"].map(k => [k, clean(input[k])]));
     const prompt = `You are the professional curriculum-document assistant for Junior School Learning Hub in Kenya. Generate a complete, carefully structured and editable first draft for the requested school document.
 CURRICULUM RULES:
 - Align to the grade-specific Kenyan CBC/CBE curriculum design and supplied learning area.
 - Do not invent official strands, sub-strands, lesson allocations, assessment standards, curriculum codes or KNEC requirements.
 - Use the exact curriculum details supplied in CURRICULUM NOTES and LEARNING OUTCOMES. If important details are absent, mark them "TEACHER TO VERIFY AGAINST THE CURRENT KICD CURRICULUM DESIGN" rather than fabricating them.
 - KICD curriculum designs define learning areas, strands, sub-strands and expected learning outcomes. KNEC is the assessment body; do not claim KNEC approved a teaching document.
-- For Grades 10–12, recognise Senior School pathway and subject choices. If pathway is not specified, state that the teacher must confirm the learner's pathway and exact subject design.
+- For Grades 10–12, use the supplied pathway information: ${data.pathway || "not specified"}. Senior School subjects depend on pathway; if no pathway is specified, state that the teacher must confirm the learner's pathway and exact subject design.
 - For CBC/CBE lesson plans, express outcomes through Knowledge, Skills and Attitudes where appropriate. Learning experiences should be learner-centred, practical, inclusive and competency-focused.
 - Schemes of Work: use columns WK, LSN, TOPIC, SUB-TOPIC, OBJECTIVES, L/ACTIVITIES, L/T AIDS, REFERENCE, REMARKS.
 - Lesson Plans: include lesson details, specific learning outcomes, key inquiry questions, learning experiences, core competencies, values, pertinent and contemporary issues where relevant, resources, assessment and reflection.
