@@ -6,11 +6,13 @@ on:
       - "teacher-document-studio/**"
       - "netlify/functions/teacher-curriculum-*.mjs"
       - "netlify/functions/teacher-document-generate.mjs"
+      - "netlify/functions/teacher-document-refine.mjs"
       - ".github/workflows/teacher-curriculum-studio.yml"
   push:
     branches:
       - main
       - feature/teacher-curriculum-outcome-library
+      - feature/refined-editable-teacher-documents
     paths:
       - "teacher-document-studio/**"
       - "netlify/functions/teacher-curriculum-*.mjs"
@@ -33,6 +35,7 @@ jobs:
           node --check netlify/functions/teacher-curriculum-extract.mjs
           node --check netlify/functions/teacher-curriculum-recommend.mjs
           node --check netlify/functions/teacher-document-generate.mjs
+          node --check netlify/functions/teacher-document-refine.mjs
       - name: Check inline Teacher Studio JavaScript syntax
         run: |
           node --input-type=module <<'NODE'
