@@ -39,7 +39,7 @@ jobs:
             .map(match => match[1].trim()).filter(Boolean);
           if (!scripts.length) throw new Error('No inline scripts found');
           scripts.forEach((source, index) => new vm.Script(source, { filename: `learner-centre-inline-${index + 1}.js` }));
-          if (!html.includes('Array.from({length:12}') || !html.includes('Grade ${i+1}')) throw new Error('Arena grade selectors must generate all twelve grades');
+          if (!html.includes('<option>Grade 1</option>') || !html.includes('<option>Grade 12</option>')) throw new Error('Arena grade selectors must include Grades 1-12');
           for (const id of ['qla-gen-count','qla-gen-difficulty','qla-gen-strand','qla-gen-substrand']) {
             if (!html.includes(`id="${id}"`)) throw new Error(`Missing generator control: ${id}`);
           }
