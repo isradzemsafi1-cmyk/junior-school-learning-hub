@@ -40,7 +40,7 @@ jobs:
           if (!scripts.length) throw new Error('No inline scripts found');
           scripts.forEach((source, index) => new vm.Script(source, { filename: `learner-centre-inline-${index + 1}.js` }));
           if (!html.includes('<option>Grade 1</option>') || !html.includes('<option>Grade 12</option>')) throw new Error('Arena grade selectors must include Grades 1-12');
-          for (const id of ['qla-gen-count','qla-gen-difficulty','qla-gen-format','qla-gen-strand','qla-gen-substrand']) {
+          for (const id of ['qla-gen-count','qla-gen-difficulty','qla-gen-format','qla-gen-focus','qla-generate-quiz']) {
             if (!html.includes(`id="${id}"`)) throw new Error(`Missing generator control: ${id}`);
           }
           console.log(`Validated ${scripts.length} inline script(s), all grade levels and AI generator controls.`);
