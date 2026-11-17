@@ -28,7 +28,7 @@ exports.handler = async (event) => {
  if (event.httpMethod !== "POST") return reply(405,{error:"Method not allowed."});
  const apiKey=process.env.OPENAI_API_KEY, supabaseUrl=process.env.SUPABASE_URL, anon=process.env.SUPABASE_ANON_KEY;
  if(!apiKey||!supabaseUrl||!anon) return reply(503,{error:"AI document generation is not configured. The site administrator must configure OPENAI_API_KEY, SUPABASE_URL and SUPABASE_ANON_KEY in Netlify."});
- const token=(event.headers.authorization||event.headers.Authorization||"").replace(/^Bearer\\s+/i,"");
+ const token=(event.headers.authorization||event.headers.Authorization||"").replace(/^Bearer\s+/i,"");
  if(!token) return reply(401,{error:"Please sign in with an authorised teacher account."});
  let input; try{input=JSON.parse(event.body||"{}")}catch{return reply(400,{error:"Invalid request body."})}
  const required=["documentType","grade","learningArea","term","academicYear","topic"];
@@ -72,7 +72,7 @@ Return the document as clean Markdown. Do not include commentary about being an 
   const response=await fetch("https://api.openai.com/v1/responses",{method:"POST",headers:{Authorization:"Bearer "+apiKey,"Content-Type":"application/json"},body:JSON.stringify({model:process.env.OPENAI_MODEL||"gpt-4.1-mini",instructions:"You are a highly experienced Kenyan Junior School CBC/CBE teacher, curriculum planner and professional school-document editor. Follow the user-supplied curriculum evidence carefully.",input:prompt,max_output_tokens:8500})});
   const payload=await response.json();
   if(!response.ok) return reply(502,{error:payload.error?.message||"The AI service could not generate the document. Please try again."});
-  const content=payload.output_text||(payload.output||[]).flatMap(x=>x.content||[]).filter(x=>x.type==="output_text").map(x=>x.text).join("\\n");
+  const content=payload.output_text||(payload.output||[]).flatMap(x=>x.content||[]).filter(x=>x.type==="output_text").map(x=>x.text).join("\n");
   if(!content||!content.trim()) return reply(502,{error:"The AI returned an empty document. Please try again."});
   return reply(200,{document:content.trim(),documentType:input.documentType});
  }catch(error){return reply(502,{error:"Document generation failed. Please try again. "+(error.message||"")})}
