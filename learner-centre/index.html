@@ -921,7 +921,8 @@ section{padding-top:50px;padding-bottom:50px}
 const SUPABASE_PUBLISHABLE_KEY = "sb_publishable_uaOcRVaIwnvRl_wZhMhJ-Q_DhrqZyS_";
 
 const { createClient } = window.supabase;
-const supabaseClient = createClient(SUPABASE_URL, SUPABASE_PUBLISHABLE_KEY);\nwindow.jslhSupabase = supabaseClient;
+const supabaseClient = createClient(SUPABASE_URL, SUPABASE_PUBLISHABLE_KEY);
+window.jslhSupabase = supabaseClient;
  window.buyProduct = async function(productId) {
   const message = document.getElementById("paymentMessage");
   const phone = document.getElementById("mpesaPhone").value.trim();
