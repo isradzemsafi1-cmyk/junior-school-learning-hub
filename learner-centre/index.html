@@ -756,22 +756,22 @@ section{padding-top:50px;padding-bottom:50px}
    <section class="alt" id="quiz">
  <div class="heading"><h2>🏆 Quiz League Arena</h2><p>Think Fast. Play Smart. Rise to the Top. Host live competitions, challenge classmates and climb the leaderboard.</p></div>
  <div class="qla-shell">
-  <div class="qla-hero"><div><span class="qla-kicker">LIVE LEARNING COMPETITION</span><h3>🏆 QUIZ LEAGUE ARENA</h3><p>Grades 7–9 · All nine learning areas · Real-time multiplayer</p></div><div class="qla-hero-actions"><button class="qla-btn qla-btn-light" id="qla-open-host" hidden>🎤 Host a game</button><button class="qla-btn qla-btn-gold" id="qla-open-join">🎮 Join a game</button></div></div>
+  <div class="qla-hero"><div><span class="qla-kicker">LIVE LEARNING COMPETITION</span><h3>🏆 QUIZ LEAGUE ARENA</h3><p>Grades 1–12 · Curriculum-based challenges · Real-time multiplayer</p></div><div class="qla-hero-actions"><button class="qla-btn qla-btn-light" id="qla-open-host" hidden>🎤 Host a game</button><button class="qla-btn qla-btn-gold" id="qla-open-join">🎮 Join a game</button></div></div>
   <div class="qla-grid">
-   <article class="qla-card" id="qla-host-panel" hidden><h3>🎤 Host a live game</h3><p>Create a competition from a published teacher quiz.</p>
-    <label for="qla-host-grade">Grade</label><select id="qla-host-grade"><option>Grade 7</option><option>Grade 8</option><option>Grade 9</option></select>
+   <article class="qla-card" id="qla-host-panel" hidden><h3>🎤 Host a live game</h3><p>Create a competition from one of your published quizzes.</p>
+    <label for="qla-host-grade">Grade</label><select id="qla-host-grade"><option>Grade 1</option><option>Grade 2</option><option>Grade 3</option><option>Grade 4</option><option>Grade 5</option><option>Grade 6</option><option>Grade 7</option><option>Grade 8</option><option>Grade 9</option><option>Grade 10</option><option>Grade 11</option><option>Grade 12</option></select>
     <label for="qla-host-subject">Learning area</label><select id="qla-host-subject"><option>Mathematics</option><option>English</option><option>Kiswahili</option><option>Integrated Science</option><option>Social Studies</option><option>CRE</option><option>Agriculture</option><option>Pre-Technical Studies</option><option>Creative Arts and Sports</option></select>
     <label for="qla-host-quiz">Published quiz</label><select id="qla-host-quiz"><option value="">Select a quiz</option></select>
     <label for="qla-host-timer">Seconds per question</label><select id="qla-host-timer"><option>10</option><option selected>20</option><option>30</option><option>60</option></select>
     <button class="qla-btn qla-btn-blue" id="qla-create-game">Create game PIN</button><p class="qla-message" id="qla-host-message" aria-live="polite"></p>
    </article>
-   <article class="qla-card"><h3>🎮 Join a game</h3><p>Enter the PIN shared by your teacher.</p>
+   <article class="qla-card"><h3>🎮 Join a game</h3><p>Enter the PIN shared by your teacher, friend or game host.</p>
     <label for="qla-game-pin">Six-digit game PIN</label><input id="qla-game-pin" inputmode="numeric" maxlength="6" placeholder="e.g. 482193">
     <label for="qla-nickname">Display name</label><input id="qla-nickname" maxlength="24" placeholder="Your game name">
     <button class="qla-btn qla-btn-gold" id="qla-join-game">Join competition</button><p class="qla-message" id="qla-join-message" aria-live="polite"></p>
    </article>
   </div>
-  <article class="qla-card qla-studio" id="qla-teacher-studio" hidden><div class="qla-studio-head"><div><span class="qla-kicker">AUTHORISED TEACHERS</span><h3>📝 Teacher Quiz Studio</h3><p>Create, edit, organise and publish your own quizzes for live competitions.</p></div><span class="qla-lock">🔒 Teacher access</span></div>
+  <article class="qla-card qla-studio" id="qla-teacher-studio" hidden><div class="qla-studio-head"><div><span class="qla-kicker">LEARNER & TEACHER ACCESS</span><h3>📝 Quiz Creator Studio</h3><p>Create, edit, organise and publish quizzes, then challenge friends in live competitions.</p></div><span class="qla-lock">🔐 Signed-in creator access</span></div>
    <div class="qla-grid qla-grid-studio">
     <div><label for="qla-editor-grade">Grade</label><select id="qla-editor-grade"><option>Grade 7</option><option>Grade 8</option><option>Grade 9</option></select></div>
     <div><label for="qla-editor-subject">Learning area</label><select id="qla-editor-subject"><option>Mathematics</option><option>English</option><option>Kiswahili</option><option>Integrated Science</option><option>Social Studies</option><option>CRE</option><option>Agriculture</option><option>Pre-Technical Studies</option><option>Creative Arts and Sports</option></select></div>
@@ -780,7 +780,7 @@ section{padding-top:50px;padding-bottom:50px}
    <div class="qla-grid qla-grid-studio"><div><label for="qla-difficulty">Difficulty</label><select id="qla-difficulty"><option>Easy</option><option selected>Medium</option><option>Hard</option></select></div><div><label for="qla-default-time">Default time per question</label><select id="qla-default-time"><option>10</option><option selected>20</option><option>30</option><option>60</option></select></div></div>
    <div class="qla-question-editor" id="qla-auto-generator" style="border:2px solid #d8e7fb;background:#f7fbff;margin:16px 0;padding:16px;border-radius:16px">
     <h4>⚡ Automatic CBC Quiz Generator</h4>
-    <p>Choose a grade, learning area, term, year, strand and sub-strand. The system prepares 30 curriculum-based questions and publishes the quiz for a live PIN game.</p>
+    <p>Choose a grade, learning area, term, year, strand and sub-strand. AI creates your chosen number of questions from the exact verified curriculum strand and sub-strand, then publishes your quiz for a live PIN game.</p>
     <div class="qla-grid qla-grid-studio">
      <div><label for="qla-gen-year">Curriculum / academic year</label><input id="qla-gen-year" type="number" min="2024" max="2035" value="2027"></div>
      <div><label for="qla-gen-term">Term</label><select id="qla-gen-term"><option>Term 1</option><option>Term 2</option><option>Term 3</option><option>Full Year</option></select></div>
