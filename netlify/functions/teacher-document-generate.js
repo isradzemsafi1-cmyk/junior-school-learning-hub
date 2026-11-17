@@ -26,7 +26,7 @@ const typeGuidance = {
 };
 exports.handler = async (event) => {
  if (event.httpMethod !== "POST") return reply(405,{error:"Method not allowed."});
- const apiKey=process.env.OPENAI_API_KEY, supabaseUrl=process.env.SUPABASE_URL, anon=process.env.SUPABASE_ANON_KEY;
+ const apiKey=process.env.OPENAI_API_KEY, supabaseUrl=process.env.SUPABASE_URL, anon=process.env.SUPABASE_ANON_KEY||process.env.SUPABASE_PUBLISHABLE_KEY;
  if(!apiKey||!supabaseUrl||!anon) return reply(503,{error:"AI document generation is not configured. The site administrator must configure OPENAI_API_KEY, SUPABASE_URL and SUPABASE_ANON_KEY in Netlify."});
  const token=(event.headers.authorization||event.headers.Authorization||"").replace(/^Bearer\s+/i,"");
  if(!token) return reply(401,{error:"Please sign in with an authorised teacher account."});
