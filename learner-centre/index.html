@@ -803,7 +803,7 @@ section{padding-top:50px;padding-bottom:50px}
     </div>
     <p class="qla-message" id="qla-gen-topic-status" aria-live="polite">Curriculum topics will load after you select the grade, learning area and year.</p>
     <div class="qla-editor-actions">
-     <div class="qla-grid"><div><label for="qla-gen-count">Number of questions</label><select id="qla-gen-count"><option value="10">10 questions</option><option value="15">15 questions</option><option value="20" selected>20 questions</option><option value="30">30 questions</option></select></div><div><label for="qla-gen-difficulty">Difficulty</label><select id="qla-gen-difficulty"><option>Easy</option><option>Medium</option><option>Hard</option><option selected>Mixed</option></select></div></div><button type="button" class="qla-btn qla-btn-blue" id="qla-generate-quiz">Generate AI quiz and publish</button>
+     <div class="qla-grid"><div><label for="qla-gen-count">Number of questions</label><select id="qla-gen-count"><option value="10">10 questions</option><option value="15">15 questions</option><option value="20" selected>20 questions</option><option value="30">30 questions</option></select></div><div><label for="qla-gen-difficulty">Difficulty</label><select id="qla-gen-difficulty"><option>Easy</option><option>Medium</option><option>Hard</option><option selected>Mixed</option></select></div><div><label for="qla-gen-format">Question formats</label><select id="qla-gen-format"><option value="mixed" selected>Mixed: MCQ, True/False &amp; typed</option><option value="mcq">Multiple choice only</option></select></div></div><button type="button" class="qla-btn qla-btn-blue" id="qla-generate-quiz">Generate AI quiz and publish</button>
     </div>
     <p class="qla-message" id="qla-gen-message" aria-live="polite">Learners and teachers can create quizzes from verified curriculum topics. Sign in first.</p>
    </div>
@@ -2167,7 +2167,7 @@ buildQuiz();
    if(!token)throw Error('Please sign in again as an authorised teacher.');
    const response=await fetch('/.netlify/functions/qla-generate-quiz',{
     method:'POST',headers:{'Content-Type':'application/json','Authorization':'Bearer '+token},
-    body:JSON.stringify({grade,learningArea:area,academicYear:year,term,strand,subStrand:sub,questionCount:Number($('qla-gen-count')?.value||20),difficulty:$('qla-gen-difficulty')?.value||'Medium'})
+    body:JSON.stringify({grade,learningArea:area,academicYear:year,term,strand,subStrand:sub,questionCount:Number($('qla-gen-count')?.value||20),difficulty:$('qla-gen-difficulty')?.value||'Medium',questionFormat:$('qla-gen-format')?.value||'mixed'})
    });
    const result=await response.json();
    if(!response.ok)throw Error(result.error||'Question generation failed.');
@@ -2175,7 +2175,7 @@ buildQuiz();
    const payload={title,grade,learning_area:area,difficulty:$('qla-gen-difficulty')?.value||'Medium',default_time_seconds:Number($('qla-default-time').value),status:'published',created_by:user.id,academic_year:year,term,strand,sub_strand:sub,generation_source:'ai_curriculum'};
    const {data:quiz,error}=await supabaseClient.from('qla_quizzes').insert(payload).select().single();
    if(error)throw error;
-   const rows=result.questions.map((q,i)=>({quiz_id:quiz.id,position:i+1,type:'mcq',question:q.question,options:q.options,correct_index:q.correct_index,accepted_answers:[],explanation:q.explanation,created_by:user.id}));
+   const rows=result.questions.map((q,i)=>({quiz_id:quiz.id,position:i+1,type:q.type||'mcq',question:q.question,options:q.options||[],correct_index:q.correct_index,accepted_answers:q.accepted_answers||[],explanation:q.explanation,created_by:user.id}));
    const {error:qe}=await supabaseClient.from('qla_questions').insert(rows);
    if(qe){await supabaseClient.from('qla_quizzes').delete().eq('id',quiz.id);throw qe;}
    await loadHostQuizzes();
