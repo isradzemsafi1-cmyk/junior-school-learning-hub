@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>AI Teacher Document Studio | Junior School Learning Hub</title>
+<meta name="description" content="Generate professional CBC/CBE-aligned schemes of work, lesson plans, records of work, assessments and school documents with AI.">
+<style>
+:root{font-family:Inter,Arial,sans-serif;color:#17243a;background:#f3f6fb;--navy:#14376c;--blue:#2468ad;--line:#dce5ef;--muted:#607086}*{box-sizing:border-box}body{margin:0}header{background:linear-gradient(120deg,#102b55,#1762a5 68%,#168a9b);color:white;padding:28px max(5%,calc((100% - 1180px)/2))}header a{color:#fff;text-decoration:none;font-weight:700}header h1{font-size:clamp(26px,4vw,38px);margin:14px 0 5px}header p{margin:0;color:#e5f1ff}.wrap{max-width:1180px;margin:24px auto;padding:0 18px}.intro,.panel{background:#fff;border:1px solid var(--line);border-radius:16px;padding:22px;margin:16px 0;box-shadow:0 6px 20px #142c4d0b}.intro{display:flex;gap:16px;align-items:center}.intro .symbol{font-size:34px}.intro p{margin:3px 0;color:var(--muted)}.layout{display:grid;grid-template-columns:minmax(300px,.9fr) minmax(0,1.1fr);gap:18px;align-items:start}.fields{display:grid;grid-template-columns:1fr 1fr;gap:12px}.field{min-width:0}.field.full{grid-column:1/-1}label{display:block;font-size:13px;font-weight:800;color:#23466f;margin-bottom:5px}input,select,textarea{width:100%;padding:11px 12px;border:1px solid #cbd6e4;border-radius:9px;background:white;font:inherit;color:#17243a}textarea{min-height:88px;resize:vertical}small,.muted{color:var(--muted)}.hint{font-size:12px;line-height:1.5;margin-top:5px}.btn{border:0;border-radius:9px;padding:12px 16px;font-weight:800;cursor:pointer;background:var(--blue);color:white}.btn.secondary{background:#eaf1f8;color:#17446f}.btn:disabled{opacity:.55;cursor:not-allowed}.actions{display:flex;gap:9px;flex-wrap:wrap;margin-top:15px}.status{padding:11px 13px;border-radius:9px;background:#eef5ff;color:#23466f;margin-top:13px;min-height:42px;font-size:13px}.status.error{background:#fff0f0;color:#a12626}.status.success{background:#edf9f2;color:#17633a}.preview-head{display:flex;justify-content:space-between;gap:10px;align-items:center;flex-wrap:wrap}.paper{background:#fff;border:1px solid #dce2eb;min-height:460px;padding:34px 38px;margin-top:14px;box-shadow:0 5px 18px #182c4710;color:#202b3d;line-height:1.65;overflow-wrap:anywhere}.paper .brand{text-align:center;border-bottom:2px solid #1d4e89;padding-bottom:13px;margin-bottom:20px}.paper .brand strong{display:block;color:#173b70;font-size:18px;letter-spacing:.04em}.paper .brand span{font-size:10px;color:#607086;letter-spacing:.12em;text-transform:uppercase}.paper h1{font-size:22px;text-align:center;color:#15376c;margin:16px 0}.paper h2{font-size:16px;color:#174d80;border-bottom:1px solid #dce5ef;padding-bottom:4px;margin:22px 0 8px}.paper h3{font-size:14px;color:#23466f;margin:16px 0 6px}.paper p{margin:7px 0}.paper ul,.paper ol{padding-left:23px}.paper li{margin:4px 0}.paper table{border-collapse:collapse;width:100%;font-size:11px;margin:12px 0;display:block;overflow-x:auto}.paper th,.paper td{border:1px solid #aebdce;padding:7px;text-align:left;vertical-align:top}.paper th{background:#eaf1f8;color:#173b70}.paper blockquote{border-left:3px solid #2468ad;padding-left:12px;color:#52647a}.paper .placeholder{color:#68788a;font-style:italic}.empty{text-align:center;color:#708096;padding:90px 10px}.foot{font-size:12px;color:#718096;text-align:center;padding:22px}.doc-list{display:flex;flex-wrap:wrap;gap:7px;margin-top:10px}.doc-list span{background:#eef4fb;border-radius:20px;padding:5px 9px;font-size:11px;color:#345779;font-weight:700}
+@media(max-width:850px){.layout{grid-template-columns:1fr}.paper{padding:22px 16px}.fields{grid-template-columns:1fr 1fr}}@media(max-width:520px){.fields{grid-template-columns:1fr}.field.full{grid-column:auto}.intro{align-items:flex-start}}
+@media print{body{background:#fff}.no-print,header,.intro,.form-panel,.preview-head,.foot{display:none!important}.wrap{max-width:none;margin:0;padding:0}.layout{display:block}.panel{border:0;box-shadow:none;margin:0;padding:0}.paper{border:0;box-shadow:none;margin:0;padding:12mm;min-height:0}.paper table{display:table;overflow:visible;page-break-inside:auto}.paper tr{page-break-inside:avoid}.paper h2,.paper h3{page-break-after:avoid}}
+</style></head><body>
+<header><a href="/">← Junior School Learning Hub</a><h1>✨ AI Teacher Document Studio</h1><p>Professional CBC/CBE teaching and school documents · Grades 7–9</p></header>
+<div class="wrap">
+<section class="intro"><div class="symbol">📚</div><div><strong>Plan, prepare and document your teaching with AI.</strong><p>Choose a document, provide your curriculum details and generate a complete first draft. Review it carefully before using it in school.</p><div class="doc-list"><span>Schemes of Work</span><span>Lesson Plans</span><span>Records of Work</span><span>Assessments</span><span>Reports</span><span>School Documents</span></div></div></section>
+<div class="layout">
+<section class="panel form-panel">
+<h2>1. Document details</h2>
+<div class="fields">
+<div class="field full"><label for="docType">Document type *</label><select id="docType"><option>Scheme of Work</option><option>Lesson Plan</option><option>Records of Work</option><option>Assessment / CAT</option><option>End-Term Examination</option><option>Marking Scheme</option><option>Assessment Rubric</option><option>Lesson Notes</option><option>Topical Questions</option><option>Worksheet</option><option>Learner Progress Report</option><option>Remedial Teaching Plan</option><option>Academic Department Report</option><option>Class Timetable</option><option>Meeting Minutes</option><option>Departmental Report</option><option>Teacher Appraisal Evidence</option></select></div>
+<div class="field"><label for="grade">Grade *</label><select id="grade"><option>Grade 7</option><option>Grade 8</option><option>Grade 9</option></select></div>
+<div class="field"><label for="area">Learning area *</label><select id="area"><option>Mathematics</option><option>English</option><option>Kiswahili</option><option>Integrated Science</option><option>Social Studies</option><option>CRE</option><option>Agriculture</option><option>Pre-Technical Studies</option><option>Creative Arts and Sports</option></select></div>
+<div class="field"><label for="term">Term *</label><select id="term"><option>Term 1</option><option>Term 2</option><option>Term 3</option><option>Full Year</option></select></div>
+<div class="field"><label for="year">Academic year *</label><input id="year" type="number" min="2024" max="2035" value="2027"></div>
+<div class="field"><label for="school">School name</label><input id="school" placeholder="Leave blank if not required"></div>
+<div class="field"><label for="teacher">Teacher name</label><input id="teacher" placeholder="Teacher's name"></div>
+<div class="field"><label for="strand">Strand</label><input id="strand" placeholder="Enter strand"></div>
+<div class="field"><label for="topic">Sub-strand / topic *</label><input id="topic" required placeholder="Enter topic or topic list"></div>
+<div class="field full"><label for="outcomes">Specific learning outcomes</label><textarea id="outcomes" placeholder="Paste the relevant outcomes, one per line. Include Knowledge, Skills and Attitudes where available."></textarea></div>
+<div class="field full"><label for="notes">Curriculum notes / source content</label><textarea id="notes" placeholder="Paste curriculum design extracts, scope and sequence, or teacher notes. AI will avoid guessing where details are missing."></textarea></div>
+<div class="field"><label for="weeks">Weeks in term</label><input id="weeks" type="number" min="1" max="20" placeholder="e.g. 14"></div>
+<div class="field"><label for="lessons">Lessons per week</label><input id="lessons" type="number" min="1" max="12" placeholder="e.g. 5"></div>
+<div class="field"><label for="midterm">Midterm break week(s)</label><input id="midterm" placeholder="e.g. 8"></div>
+<div class="field"><label for="assessment">Assessment / closing week(s)</label><input id="assessment" placeholder="e.g. 14"></div>
+<div class="field full"><label for="instructions">Additional instructions</label><textarea id="instructions" placeholder="e.g. Include three single lessons and one double lesson per week; reserve the final week for assessment and closing."></textarea></div>
+</div>
+<p class="hint">For accurate curriculum alignment, provide the relevant current KICD curriculum design outcomes or notes. Generated content is a draft for teacher verification, not an official KICD-approved document.</p>
+<div class="actions"><button class="btn" id="generate">✨ Generate document with AI</button><button class="btn secondary" id="clear">Clear form</button></div>
+<div class="status" id="status" aria-live="polite">Sign in with an authorised teacher account to use AI generation.</div>
+</section>
+<section class="panel">
+<div class="preview-head"><div><h2>2. Document preview</h2><small id="previewSub">Your generated document will appear here.</small></div><div class="actions no-print" style="margin:0"><button class="btn secondary" id="word" disabled>Download Word</button><button class="btn secondary" id="pdf" disabled>Save PDF / Print</button></div></div>
+<div class="paper" id="paper"><div class="empty">✨<br><strong>Your professional document will appear here.</strong><br>Complete the details and select Generate.</div></div>
+</section>
+</div>
+<p class="foot">Junior School Learning Hub · AI Teacher Document Studio · Always review generated documents and verify curriculum details against current official designs.</p>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script>
+const sb=window.supabase.createClient("https://hqbqhnhgrgfxpedjzmnm.supabase.co","sb_publishable_uaOcRVaIwnvRl_wZhMhJ-Q_DhrqZyS_");
+let generated="",generatedTitle="";
+const $=id=>document.getElementById(id);
+function status(message,kind=""){ $("status").className="status "+kind; $("status").textContent=message; }
+function esc(s){return String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));}
+function markdownToHtml(md){
+ const lines=md.replace(/\r/g,"").split("\n"),out=[];let inList="",table=[];
+ const flushTable=()=>{if(!table.length)return;const rows=table.filter(x=>!/^\s*\|?\s*:?-{3,}/.test(x));if(rows.length){out.push("<table>"+rows.map((r,i)=>{const cells=r.trim().replace(/^\||\|$/g,"").split("|").map(x=>x.trim());return "<tr>"+cells.map(c=>i===0?"<th>"+esc(c)+"</th>":"<td>"+esc(c)+"</td>").join("")+"</tr>";}).join("")+"</table>");}table=[];};
+ const closeList=()=>{if(inList){out.push("</"+inList+">");inList="";}};
+ for(const raw of lines){const line=raw.trim();if(line.startsWith("|")){closeList();table.push(line);continue;}flushTable();if(!line){closeList();continue;}
+ let m=line.match(/^(#{1,3})\s+(.+)/);if(m){closeList();const level=m[1].length;out.push("<h"+level+">"+esc(m[2])+"</h"+level+">");continue;}
+ m=line.match(/^[-*]\s+(.+)/);if(m){if(inList!=="ul"){closeList();out.push("<ul>");inList="ul";}out.push("<li>"+esc(m[1])+"</li>");continue;}
+ m=line.match(/^\d+[.)]\s+(.+)/);if(m){if(inList!=="ol"){closeList();out.push("<ol>");inList="ol";}out.push("<li>"+esc(m[1])+"</li>");continue;}
+ closeList();if(/^---+$/.test(line)){out.push("<hr>");continue;}out.push("<p>"+esc(line).replace(/\*\*(.+?)\*\*/g,"<strong>$1</strong>")+"</p>");
+ }flushTable();closeList();return out.join("");
+}
+function header(){const school=$("school").value.trim(),teacher=$("teacher").value.trim();return '<div class="brand"><strong>JUNIOR SCHOOL LEARNING HUB</strong><span>Professional CBC / CBE Teaching Document</span></div><h1>'+esc(generatedTitle)+'</h1><p><strong>School:</strong> '+esc(school||"____________________________")+' &nbsp; <strong>Teacher:</strong> '+esc(teacher||"____________________________")+'</p><p><strong>Grade:</strong> '+esc($("grade").value)+' &nbsp; <strong>Learning Area:</strong> '+esc($("area").value)+' &nbsp; <strong>Term:</strong> '+esc($("term").value)+' &nbsp; <strong>Year:</strong> '+esc($("year").value)+'</p><hr>';}
+$("generate").addEventListener("click",async()=>{
+ const {data,error}=await sb.auth.getSession();if(error||!data.session){status("Please sign in first. Open the homepage and use your authorised teacher account.","error");return;}
+ const topic=$("topic").value.trim();if(!topic){status("Enter the sub-strand or topic before generating.","error");$("topic").focus();return;}
+ const btn=$("generate");btn.disabled=true;btn.textContent="Generating your document…";status("AI is preparing your professional document. This may take a little while.");
+ const payload={documentType:$("docType").value,grade:$("grade").value,learningArea:$("area").value,term:$("term").value,academicYear:$("year").value,schoolName:$("school").value,teacherName:$("teacher").value,strand:$("strand").value,topic,learningOutcomes:$("outcomes").value,curriculumNotes:$("notes").value,termWeeks:$("weeks").value,lessonsPerWeek:$("lessons").value,midtermWeeks:$("midterm").value,assessmentWeeks:$("assessment").value,instructions:$("instructions").value};
+ try{
+  const r=await fetch("/.netlify/functions/teacher-document-generate",{method:"POST",headers:{"Content-Type":"application/json",Authorization:"Bearer "+data.session.access_token},body:JSON.stringify(payload)});
+  const d=await r.json();if(!r.ok)throw new Error(d.error||"Could not generate document.");
+  generated=d.document;generatedTitle=payload.documentType+" — "+payload.learningArea+" "+payload.grade;
+  $("paper").innerHTML=header()+markdownToHtml(generated)+'<hr><p class="placeholder"><em>Prepared with AI assistance. Teacher review and verification against the current KICD curriculum design are required.</em></p>';
+  $("previewSub").textContent="Generated successfully · Review and edit the source details before exporting.";
+  $("word").disabled=false;$("pdf").disabled=false;status("Document generated successfully. Review all content before downloading or printing.","success");
+ }catch(e){status(e.message,"error");}
+ finally{btn.disabled=false;btn.textContent="✨ Generate document with AI";}
+});
+$("word").addEventListener("click",()=>{if(!generated)return;const html='<!doctype html><html><head><meta charset="utf-8"><style>body{font-family:Arial,sans-serif;color:#202b3d;line-height:1.5}.brand{text-align:center;border-bottom:2px solid #1d4e89;padding:12px}.brand strong{display:block;color:#173b70;font-size:18px}h1{text-align:center;color:#15376c}h2{color:#174d80;border-bottom:1px solid #ddd}table{border-collapse:collapse;width:100%;font-size:10pt}td,th{border:1px solid #999;padding:6px;vertical-align:top}th{background:#eaf1f8}</style></head><body>'+header()+markdownToHtml(generated)+'</body></html>';const blob=new Blob([html],{type:"application/msword"});const url=URL.createObjectURL(blob);const a=document.createElement("a");a.href=url;a.download=(generatedTitle.replace(/[^a-z0-9]+/gi,"-").toLowerCase()||"teacher-document")+".doc";a.click();URL.revokeObjectURL(url);});
+$("pdf").addEventListener("click",()=>window.print());
+$("clear").addEventListener("click",()=>{["school","teacher","strand","topic","outcomes","notes","weeks","lessons","midterm","assessment","instructions"].forEach(id=>$(id).value="");generated="";$("paper").innerHTML='<div class="empty">Complete the details and select Generate.</div>';$("word").disabled=true;$("pdf").disabled=true;status("Form cleared.");});
+(async()=>{const {data}=await sb.auth.getSession();if(data.session)status("Signed in. Teacher access will be verified securely when you generate a document.","success");})();
+</script>
+<script src="/assets/js/site-activity-tracker.js" defer></script>
+</body></html>
