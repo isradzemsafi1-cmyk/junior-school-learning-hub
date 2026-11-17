@@ -72,3 +72,7 @@ end $$;
 
 grant select on public.qla_curriculum_topics to authenticated;
 grant select,insert,update,delete on public.qla_quizzes,public.qla_questions to authenticated;
+
+-- Mixed difficulty is supported by the AI quiz builder.
+alter table public.qla_quizzes drop constraint if exists qla_quizzes_difficulty_check;
+alter table public.qla_quizzes add constraint qla_quizzes_difficulty_check check (difficulty = any (array['Easy','Medium','Hard','Mixed']));
