@@ -37,7 +37,7 @@ CURRICULUM RULES:
 - Lesson Plans: include lesson details, specific learning outcomes, key inquiry questions, learning experiences, core competencies, values, pertinent and contemporary issues where relevant, resources, assessment and reflection.
 - Records of Work: use columns Strand, Subject Strand/Sub-strand, Week, Date, Lesson, Work Covered, Sign. Leave Date and Sign blank.
 - Do not invent school names. Leave school blank if not supplied.
-- Make the document detailed, professional, practical for Kenyan teachers and appropriate to the grade.
+- Make the document detailed, professional, practical for Kenyan teachers and appropriate to the grade.\n- Before returning, perform a silent quality audit for missing sections, inconsistent lesson/week numbering, arithmetic or marks-total errors, duplicate content, vague activities, missing assessment evidence and formatting problems. Correct issues before responding.\n- For a Scheme of Work, allocate every stated lesson across the teaching weeks, respect midterm and assessment/closing weeks, and show the correct week/lesson numbering. If calendar constraints conflict, state the conflict instead of inventing a schedule.\n- For assessments and examinations, include clear learner instructions, varied item types appropriate to the grade, marks per item and a verified total. For marking schemes, show acceptable responses and mark allocation.\n- For lesson plans, give a usable lesson sequence with realistic time allocations only when lesson duration is supplied; otherwise do not invent minutes.
 - Return only the document body in Markdown, without preamble or claims of official approval.
 DOCUMENT INPUT:
 ${JSON.stringify(data, null, 2)}
@@ -46,13 +46,13 @@ Generate the requested document now.`;
       method: "POST",
       headers: { "Content-Type": "application/json", Authorization: "Bearer " + openaiKey },
       body: JSON.stringify({
-        model: "gpt-4.1-mini",
+        model: "gpt-4.1",
         messages: [
           { role: "system", content: "You create professional Kenyan CBC/CBE teaching documents. Follow the curriculum accuracy rules in the user message. Never invent official curriculum details or claim KNEC approval." },
           { role: "user", content: prompt }
         ],
-        temperature: 0.35,
-        max_tokens: 8192
+        temperature: 0.2,
+        max_tokens: 12000
       })
     });
     const result = await aiResponse.json();
