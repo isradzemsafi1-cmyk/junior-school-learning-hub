@@ -24,7 +24,35 @@
 <div class="field"><label for="teacher">Teacher name</label><input id="teacher" placeholder="Teacher's name"></div>
 <div class="field"><label for="strand">Strand</label><input id="strand" placeholder="Enter strand"></div>
 <div class="field"><label for="topic">Sub-strand / topic *</label><input id="topic" required placeholder="Enter topic or topic list"></div>
-<div class="field full"><label for="outcomes">Specific learning outcomes</label><textarea id="outcomes" placeholder="Paste the relevant outcomes, one per line. Include Knowledge, Skills and Attitudes where available."></textarea></div>
+<div class="field full"><section class="curriculum-tools" aria-labelledby="curriculumTitle">
+<style>
+.curriculum-tools{border:1px solid #bfd4e9;background:#f4f8fd;border-radius:12px;padding:14px;margin:4px 0 10px}.curriculum-tools h3{margin:0 0 6px;color:#153e70;font-size:16px}.curriculum-tools p{font-size:12px;line-height:1.5;color:#52647a;margin:5px 0 10px}.curriculum-tools .source-row{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin:8px 0}.curriculum-tools .source-row>*{flex:1;min-width:180px}.curriculum-tools .mini{font-size:12px;padding:9px 11px}.curriculum-tools .outcome-list{max-height:250px;overflow:auto;background:white;border:1px solid #d5e0ed;border-radius:9px;padding:8px;margin-top:10px}.curriculum-tools .outcome-item{display:flex;gap:8px;padding:8px 5px;border-bottom:1px solid #edf1f6;align-items:flex-start}.curriculum-tools .outcome-item:last-child{border:0}.curriculum-tools .outcome-item input{width:auto;margin-top:4px;flex:none}.curriculum-tools .outcome-item label{font-weight:500;color:#263b55;line-height:1.4;margin:0}.curriculum-tools .tag{display:inline-block;border-radius:20px;padding:3px 7px;background:#e2edf9;color:#28537c;font-size:10px;font-weight:700}.curriculum-tools a{color:#175a9a;font-weight:700}.curriculum-tools .status-line{font-size:12px;min-height:18px;color:#315879}.curriculum-tools textarea{min-height:80px}.curriculum-tools .outcome-actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:8px}
+</style>
+<h3 id="curriculumTitle">📘 Official curriculum outcomes library</h3>
+<p>Import the relevant official KICD curriculum design PDF or paste its text. AI will organise the source into strands, sub-strands, specific learning outcomes, key inquiry questions and suggested learning experiences. Review the extracted wording before saving it to your personal curriculum library.</p>
+<div class="source-row">
+<a id="officialDesignLink" href="https://kicd.ac.ke/cbc-materials/curriculum-designs/regular-curriculum-designs/" target="_blank" rel="noopener">Open official KICD design for this grade ↗</a>
+<a href="https://kicd.ac.ke/cbc-materials/curriculum-designs/grade-ten/" target="_blank" rel="noopener">Senior School pathway designs ↗</a>
+</div>
+<div class="source-row">
+<input id="designPdf" type="file" accept="application/pdf,.pdf" aria-label="Upload KICD curriculum design PDF">
+<button class="btn secondary mini" type="button" id="extractPdf">Extract from PDF with AI</button>
+</div>
+<label for="designText">Or paste text copied from the official curriculum design</label>
+<textarea id="designText" placeholder="Paste the design pages containing strands, sub-strands, specific learning outcomes, key inquiry questions and suggested learning experiences."></textarea>
+<div class="outcome-actions">
+<button class="btn mini" type="button" id="extractText">Extract curriculum structure</button>
+<button class="btn secondary mini" type="button" id="saveOutcomes" disabled>Save reviewed outcomes to my library</button>
+</div>
+<p class="status-line" id="curriculumStatus" aria-live="polite">No curriculum design imported yet. Your imported outcomes are saved in this browser for reuse.</p>
+<div id="extractedPreview"></div>
+<div class="outcome-actions">
+<button class="btn secondary mini" type="button" id="recommendOutcomes">✨ AI-select outcomes for my topic</button>
+<button class="btn secondary mini" type="button" id="loadSavedOutcomes">Load saved outcomes</button>
+</div>
+<div class="outcome-list" id="outcomePicker"><p class="muted">Import a design or load saved outcomes to see selectable outcomes here.</p></div>
+<p class="hint">Official wording is kept separate from AI suggestions. You can edit every selected outcome in the editable learning-outcomes box below. This library is currently stored in this browser; it is not yet shared across different teacher accounts or devices.</p>
+</section></div><div class="field full"><label for="outcomes">Specific learning outcomes</label><textarea id="outcomes" placeholder="Paste the relevant outcomes, one per line. Include Knowledge, Skills and Attitudes where available."></textarea></div>
 <div class="field full"><label for="notes">Curriculum notes / source content</label><textarea id="notes" placeholder="Paste curriculum design extracts, scope and sequence, or teacher notes. AI will avoid guessing where details are missing."></textarea></div>
 <div class="field"><label for="weeks">Weeks in term</label><input id="weeks" type="number" min="1" max="20" value="14"></div>
 <div class="field"><label for="lessons">Lessons per week</label><input id="lessons" type="number" min="1" max="12" value="5"></div>
@@ -43,11 +71,110 @@
 </div>
 <p class="foot">Junior School Learning Hub · AI Teacher Document Studio · Always review generated documents and verify curriculum details against current official designs.</p>
 </div>
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>\n<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
 <script>
 const sb=window.supabase.createClient("https://hqbqhnhgrgfxpedjzmnm.supabase.co","sb_publishable_uaOcRVaIwnvRl_wZhMhJ-Q_DhrqZyS_");
 let generated="",generatedTitle="";
 const $=id=>document.getElementById(id);
+const curriculumStoreKey="jsh_curriculum_outcomes_v1";
+let extractedCurriculum=null;
+const gradeDesignUrls={
+  1:"https://kicd.ac.ke/cbc-materials/curriculum-designs/lower-primary/",
+  2:"https://kicd.ac.ke/cbc-materials/curriculum-designs/lower-primary/",
+  3:"https://kicd.ac.ke/cbc-materials/curriculum-designs/lower-primary/",
+  4:"https://kicd.ac.ke/cbc-materials/curriculum-designs/grade-four-designs/",
+  5:"https://kicd.ac.ke/cbc-materials/curriculum-designs/grade-five-designs/",
+  6:"https://kicd.ac.ke/cbc-materials/curriculum-designs/grade-six-designs/",
+  7:"https://kicd.ac.ke/cbc-materials/curriculum-designs/grade-seven-designs/",
+  8:"https://kicd.ac.ke/cbc-materials/curriculum-designs/grade-eight-designs/",
+  9:"https://kicd.ac.ke/cbc-materials/curriculum-designs/grade-nine-designs/",
+  10:"https://kicd.ac.ke/cbc-materials/curriculum-designs/grade-ten/",
+  11:"https://kicd.ac.ke/cbc-materials/curriculum-designs/grade-eleven/",
+  12:"https://kicd.ac.ke/cbc-materials/curriculum-designs/grade-twelve/"
+};
+function curriculumKey(){return $( "grade" ).value+"|"+$( "area" ).value;}
+function readCurriculumStore(){try{return JSON.parse(localStorage.getItem(curriculumStoreKey)||"{}");}catch{return {};}}
+function writeCurriculumStore(store){localStorage.setItem(curriculumStoreKey,JSON.stringify(store));}
+function updateOfficialLink(){const g=Number($("grade").value.replace("Grade ",""));$("officialDesignLink").href=gradeDesignUrls[g]||"https://kicd.ac.ke/cbc-materials/curriculum-designs/regular-curriculum-designs/";}
+function renderOutcomePicker(items){
+ const host=$("outcomePicker");host.innerHTML="";
+ if(!items||!items.length){host.innerHTML='<p class="muted">No outcomes are saved for this grade and learning area yet. Import the official design above.</p>';return;}
+ items.forEach((item,i)=>{
+  const row=document.createElement("div");row.className="outcome-item";
+  const check=document.createElement("input");check.type="checkbox";check.id="curriculumOutcome"+i;check.dataset.index=i;check.checked=!!item.selected;
+  const label=document.createElement("label");label.htmlFor=check.id;
+  const tag=document.createElement("span");tag.className="tag";tag.textContent=item.strand+(item.subStrand?" · "+item.subStrand:"");
+  const body=document.createElement("span");body.textContent=item.text;
+  label.append(tag,document.createElement("br"),body);row.append(check,label);host.append(row);
+ });
+}
+function currentOutcomes(){const items=readCurriculumStore()[curriculumKey()]||[];return items;}
+function loadSaved(){const items=currentOutcomes();renderOutcomePicker(items);$("curriculumStatus").textContent=items.length+" saved curriculum outcomes loaded for "+curriculumKey().replace("|"," · ")+". Select the ones needed for this lesson.";}
+function syncSelectedOutcomes(){
+ const items=currentOutcomes();const checks=[...$("outcomePicker").querySelectorAll('input[type="checkbox"]')];
+ const selected=checks.filter(c=>c.checked).map(c=>items[Number(c.dataset.index)]).filter(Boolean);
+ $("outcomes").value=selected.map(o=>o.text).join("\\n");
+ if(selected.length){const strands=[...new Set(selected.map(o=>o.strand).filter(Boolean))];if(!$("strand").value.trim()&&strands.length===1)$("strand").value=strands[0];}
+}
+$("outcomePicker").addEventListener("change",e=>{if(e.target.matches('input[type="checkbox"]'))syncSelectedOutcomes();});
+async function extractDesignText(sourceText,sourceName){
+ const {data,error}=await sb.auth.getSession();if(error||!data.session)throw new Error("Please sign in before importing curriculum designs.");
+ if(!sourceText.trim())throw new Error("No readable curriculum text was found. Paste the relevant text or try another PDF.");
+ const statusEl=$("curriculumStatus");statusEl.textContent="AI is reading the source and structuring the curriculum outcomes…";
+ const res=await fetch("/.netlify/functions/teacher-curriculum-extract",{method:"POST",headers:{"Content-Type":"application/json",Authorization:"Bearer "+data.session.access_token},body:JSON.stringify({grade:$("grade").value,learningArea:$("area").value,pathway:$("pathway").value,sourceName,sourceText:sourceText.slice(0,65000)})});
+ const payload=await res.json();if(!res.ok)throw new Error(payload.error||"Could not extract curriculum design.");
+ extractedCurriculum=payload.curriculum;
+ if(!extractedCurriculum||!Array.isArray(extractedCurriculum.outcomes))throw new Error("The AI response did not contain a valid outcomes list.");
+ extractedCurriculum.sourceName=sourceName;extractedCurriculum.grade=$("grade").value;extractedCurriculum.learningArea=$("area").value;
+ $("saveOutcomes").disabled=false;
+ $("extractedPreview").innerHTML='<p><strong>Extracted '+extractedCurriculum.outcomes.length+' outcomes.</strong> Check the strand and sub-strand labels. The AI has been instructed to preserve the wording from the supplied source; verify it against the PDF before saving.</p>';
+ renderOutcomePicker(extractedCurriculum.outcomes.map(o=>({...o,selected:false})));
+ statusEl.textContent="Review "+extractedCurriculum.outcomes.length+" extracted outcomes. Save them to your library when satisfied.";
+}
+async function pdfText(file){
+ if(!window.pdfjsLib)throw new Error("PDF reader did not load. Please paste the curriculum text instead.");
+ pdfjsLib.GlobalWorkerOptions.workerSrc="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js";
+ const bytes=new Uint8Array(await file.arrayBuffer());const pdf=await pdfjsLib.getDocument({data:bytes}).promise;let text="";
+ const pageLimit=Math.min(pdf.numPages,160);
+ for(let n=1;n<=pageLimit;n++){const p=await pdf.getPage(n);const c=await p.getTextContent();text+="\\n[PAGE "+n+"]\\n"+c.items.map(x=>x.str).join(" ");}
+ if(pdf.numPages>pageLimit)throw new Error("This PDF has more than 160 pages. Split it into smaller subject/grade sections and import each section.");
+ return text;
+}
+$("extractPdf").addEventListener("click",async()=>{
+ const file=$("designPdf").files[0];if(!file){$("curriculumStatus").textContent="Choose a curriculum design PDF first.";return;}
+ const b=$("extractPdf");b.disabled=true;b.textContent="Reading PDF…";
+ try{const text=await pdfText(file);await extractDesignText(text,file.name);}
+ catch(e){$("curriculumStatus").textContent=e.message;}
+ finally{b.disabled=false;b.textContent="Extract from PDF with AI";}
+});
+$("extractText").addEventListener("click",async()=>{
+ const b=$("extractText");b.disabled=true;
+ try{await extractDesignText($("designText").value,"Teacher-pasted KICD curriculum design text");}
+ catch(e){$("curriculumStatus").textContent=e.message;}
+ finally{b.disabled=false;}
+});
+$("saveOutcomes").addEventListener("click",()=>{
+ if(!extractedCurriculum)return;
+ const items=extractedCurriculum.outcomes.map(o=>({strand:String(o.strand||"Unspecified strand"),subStrand:String(o.subStrand||""),text:String(o.text||"").trim(),selected:false})).filter(o=>o.text);
+ if(!items.length){$("curriculumStatus").textContent="No valid outcomes to save.";return;}
+ const store=readCurriculumStore();store[curriculumKey()]=items;writeCurriculumStore(store);renderOutcomePicker(items);
+ $("curriculumStatus").textContent="Saved "+items.length+" outcomes for "+curriculumKey().replace("|"," · ")+". Select the required outcomes; you can edit their text below.";
+ $("saveOutcomes").disabled=true;
+});
+$("recommendOutcomes").addEventListener("click",()=>{
+ const items=currentOutcomes();if(!items.length){$("curriculumStatus").textContent="Load or import a curriculum design first.";return;}
+ const terms=($("topic").value+" "+$("strand").value+" "+$("notes").value).toLowerCase().split(/[^a-z0-9]+/).filter(x=>x.length>2);
+ if(!terms.length){$("curriculumStatus").textContent="Enter a topic or strand first so AI can identify relevant outcomes.";return;}
+ const scored=items.map((o,i)=>({i,score:terms.reduce((n,t)=>n+((o.text+" "+o.strand+" "+o.subStrand).toLowerCase().includes(t)?1:0),0)})).sort((a,b)=>b.score-a.score);
+ const best=scored.filter(x=>x.score>0).slice(0,8);
+ if(!best.length){$("curriculumStatus").textContent="No strong topic match was found. Select outcomes manually from the list.";return;}
+ const selected=new Set(best.map(x=>x.i));renderOutcomePicker(items.map((o,i)=>({...o,selected:selected.has(i)})));syncSelectedOutcomes();
+ $("curriculumStatus").textContent="Recommended "+best.length+" matching outcomes based on your topic and strand. Review and edit before generating.";
+});
+$("loadSavedOutcomes").addEventListener("click",loadSaved);
+$("grade").addEventListener("change",()=>{updateOfficialLink();loadSaved();});
+$("area").addEventListener("change",loadSaved);
+
 const gradeAreas={
   lower:["English","Kiswahili","Mathematics","Environmental Activities","Creative Activities","CRE","IRE","HRE","Indigenous Languages"],
   upper:["English","Kiswahili","Mathematics","Agriculture & Nutrition","Social Studies","Creative Activities","Science and Technology","CRE","IRE","HRE","Indigenous Languages","Arabic","Mandarin","French","German"],
