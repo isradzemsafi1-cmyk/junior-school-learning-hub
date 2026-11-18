@@ -33,7 +33,20 @@
  const client=window.supabase.createClient(SUPABASE_URL,SUPABASE_PUBLISHABLE_KEY);
  const params=new URLSearchParams(location.search);
  const rawNext=params.get("next")||"/";
- const next=rawNext.startsWith("/")&&!rawNext.startsWith("//")&&!rawNext.startsWith("/access")?rawNext:"/";
+ const allowedCentrePrefixes=[
+  "/learner-centre/","/grade7-teacher-resources/","/grade8-teacher-resources/",
+  "/grade9-teacher-resources/","/teacher-document-studio/","/digital-school-centre/",
+  "/career-guidance-centre/","/tuition-centre/","/admin/"
+ ];
+ let next="/";
+ try {
+  const requested=new URL(rawNext,location.origin);
+  const isHome=requested.pathname==="/";
+  const isAllowedCentre=allowedCentrePrefixes.some(prefix=>requested.pathname.startsWith(prefix));
+  if(requested.origin===location.origin&&(isHome||isAllowedCentre)&&requested.pathname!=="/access/"){
+   next=requested.pathname+requested.search+requested.hash;
+  }
+ } catch {}
  const message=document.getElementById("message");
  const destination=document.getElementById("destination");
  const labels=[["/learner-centre","Learner Centre"],["/grade7-teacher-resources","Teacher Centre"],["/grade8-teacher-resources","Teacher Centre"],["/grade9-teacher-resources","Teacher Centre"],["/teacher-document-studio","Teacher Centre"],["/digital-school-centre","Digital School Centre"],["/career-guidance-centre","Career & Excellence Centre"],["/tuition-centre","Online Tuition Centre"],["/admin","Administration Centre"]];
