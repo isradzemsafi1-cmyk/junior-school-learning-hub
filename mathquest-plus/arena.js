@@ -1,0 +1,31 @@
+(()=>{
+ const $=id=>document.getElementById(id),rand=n=>Math.floor(Math.random()*n),pick=a=>a[rand(a.length)];
+ const make=(g,t,l,q,ans,wrong,ex,hi)=>{const opts=[String(ans),...wrong.map(String)];while(opts.length<4)opts.push(String(Number(ans)+rand(13)+1));const a=[...new Set(opts)].sort(()=>Math.random()-.5);return{id:"daily-"+g+"-"+Math.random().toString(36).slice(2),grade:g,topic:t,level:l,q,a,correct:a.indexOf(String(ans)),explain:ex,hint:hi};};
+ const extra=[];
+ for(let g=1;g<=12;g++){
+  const base=g<=3?10:g<=6?100:g<=9?1000:10000;
+  for(let i=0;i<24;i++){
+   let a,b,ans,q,t,l,wrong,ex,hi,k=i%6;
+   if(k===0){a=rand(base)+1;b=rand(base)+1;ans=a+b;q="Calculate "+a+" + "+b+".";t="Operations";l=g<4?"Foundation":"Developing";wrong=[ans+1,Math.max(0,ans-1),Math.abs(a-b)];ex=a+" + "+b+" = "+ans+".";hi="Add place values, regrouping when necessary.";}
+   else if(k===1){a=rand(base)+base;b=rand(a);ans=a-b;q="Calculate "+a+" − "+b+".";t="Operations";l="Developing";wrong=[ans+1,ans+10,Math.abs(b-a)];ex=a+" − "+b+" = "+ans+".";hi="Line up place values before subtracting.";}
+   else if(k===2){a=rand(g<4?10:25)+2;b=rand(g<4?10:20)+2;ans=a*b;q="Calculate "+a+" × "+b+".";t="Multiplication";l=g<4?"Foundation":"Proficient";wrong=[ans+a,ans+b,ans-a];ex=a+" × "+b+" = "+ans+".";hi="Use repeated addition or split one factor.";}
+   else if(k===3){b=rand(10)+2;ans=rand(20)+2;a=b*ans;q="Calculate "+a+" ÷ "+b+".";t="Division";l="Developing";wrong=[ans+1,Math.max(1,ans-1),a+b];ex=a+" ÷ "+b+" = "+ans+", because "+b+" × "+ans+" = "+a+".";hi="Ask how many groups of the divisor make the dividend.";}
+   else if(k===4){a=rand(20)+5;b=rand(10)+1;ans=a*b;q="There are "+a+" packets with "+b+" pencils in each. How many pencils are there?";t="Word problems";l="Proficient";wrong=[ans+a,ans-b,ans+b];ex=a+" × "+b+" = "+ans+" pencils.";hi="Equal groups are solved using multiplication.";}
+   else{a=rand(20)+5;b=rand(10)+1;ans=a+b;q="A number is "+a+". It increases by "+b+". What is the new number?";t="Number";l="Foundation";wrong=[a-b,a*b,ans+10];ex=a+" + "+b+" = "+ans+".";hi="Increase means add.";}
+   extra.push(make(g,t,l,q,ans,wrong,ex,hi));
+  }
+  if(g>=4)for(let i=0;i<10;i++){let x=rand(15)+2,c=rand(20)+2,r=x+c;extra.push(make(g,"Algebra","Developing","Solve for x: x + "+c+" = "+r+".",x,[x+1,x-1,r+c],"Subtract "+c+" from both sides: x = "+r+" − "+c+" = "+x+".","Undo addition by subtracting."));}
+  if(g>=5)for(let i=0;i<8;i++){let den=pick([2,3,4,5,10]),whole=den*pick([2,3,4,5]),num=rand(den-1)+1,ans=whole/den*num;extra.push(make(g,"Fractions","Proficient","Find "+num+"/"+den+" of "+whole+".",ans,[ans+num,ans-num,whole-num],"Divide "+whole+" by "+den+", then multiply by "+num+".","Divide by the denominator first."));}
+ }
+ const original=Array.isArray(window.Q)?window.Q.length:0;if(Array.isArray(window.Q))window.Q.push(...extra);
+ const count=$("count");if(count&&!Array.from(count.options).some(o=>o.value==="50")){let o=document.createElement("option");o.value="50";o.textContent="50 questions — marathon";count.insertBefore(o,count.lastElementChild);}
+ if($("available"))$("available").textContent=(original+extra.length)+"+ practice questions, including fresh generated variations every visit.";
+ const st=document.createElement("style");st.textContent=".arena-invite{background:linear-gradient(120deg,#fff7df,#f0eaff);border:1px solid #f2d88d}.invite-actions{display:flex;gap:10px;flex-wrap:wrap}.invite-actions button{flex:1;min-width:180px}.arena-tag{display:inline-block;background:#e6f7ef;color:#12633d;padding:5px 10px;border-radius:30px;font-size:.78rem;font-weight:800}";document.head.append(st);
+ const p=document.createElement("section");p.className="panel arena-invite";p.innerHTML='<span class="arena-tag">⚽ FRIEND CHALLENGE</span><h2 style="margin-top:10px">Challenge a friend to a Maths Match!</h2><p>Send a friend a MATHQUEST+ invitation. They can open the same grade and start their own match. Compare scores and see who becomes the Maths Champion!</p><div class="row"><div><label for="inviteGrade">Match grade</label><select id="inviteGrade">'+Array.from({length:12},(_,i)=>'<option value="'+(i+1)+'">Grade '+(i+1)+'</option>').join("")+'</select></div><div><label for="inviteName">Your player name</label><input id="inviteName" maxlength="24" placeholder="e.g. Math Champion"></div></div><div class="invite-actions"><button class="gold" id="sendInvite">📨 Invite a friend</button><button class="light" id="copyInvite">🔗 Copy challenge link</button></div><p class="tiny muted" id="inviteStatus">This invitation shares the game link. Live head-to-head rooms and synchronised scores require the secure real-time backend.</p>';
+ if($("game"))$("game").after(p);
+ const grade=$("grade"),ig=$("inviteGrade");if(grade&&ig)ig.value=grade.value||"1";ig.addEventListener("change",()=>{if(grade)grade.value=ig.value;});
+ const link=()=>{let u=new URL(location.href);u.searchParams.set("invite","1");u.searchParams.set("grade",ig.value);return u.toString();};
+ const invite=async()=>{let name=$("inviteName").value.trim()||"A friend",url=link(),data={title:"MATHQUEST+ Maths Match",text:name+" has challenged you to a Grade "+ig.value+" Mathematics match! Open MATHQUEST+ and see if you can beat the score.",url};try{if(navigator.share)await navigator.share(data);else{await navigator.clipboard.writeText(url);$("inviteStatus").textContent="Challenge link copied. Send it to your friend!";}}catch(e){if(e.name!=="AbortError")$("inviteStatus").textContent="Copy the challenge link and send it to your friend.";}}; 
+ $("sendInvite").onclick=invite;$("copyInvite").onclick=async()=>{try{await navigator.clipboard.writeText(link());$("inviteStatus").textContent="Challenge link copied. Send it through WhatsApp or your messaging app!";}catch(e){$("inviteStatus").textContent=link();}};
+ let params=new URLSearchParams(location.search);if(params.get("invite")==="1"){let g=params.get("grade");if(g&&grade){grade.value=String(Math.max(1,Math.min(12,Number(g)||1)));ig.value=grade.value;}$("inviteStatus").textContent="You have opened a friend's Maths Match invitation. Start your mission and compare your result!";}
+})();
