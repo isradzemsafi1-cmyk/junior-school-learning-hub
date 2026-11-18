@@ -1,0 +1,10 @@
+{
+  "name": "MATHQUEST+ — Junior School Learning Hub",
+  "short_name": "MATHQUEST+",
+  "start_url": "/mathquest-plus/",
+  "scope": "/mathquest-plus/",
+  "display": "standalone",
+  "background_color": "#f5f7ff",
+  "theme_color": "#10245f",
+  "description": "Joyful mathematics missions for Grades 1–12."
+}
