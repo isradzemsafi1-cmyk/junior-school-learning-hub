@@ -556,6 +556,7 @@ body.homepage-clean #learner-account.account-modal.is-open #source-topical-quiz-
   <a class="nav-cta" href="/access/?next=/" aria-label="Sign in to access the centres">Sign In</a>
   <a href="#home">Home</a>
   <a href="#learner-centre">Learner Centre</a>
+  <a href="/mathquest-plus/">🎮 MATHQUEST+</a>
   <a href="#teacher-centre">Teacher Centre</a>
   <a href="#school-centre">Digital School Centre</a>
   <a href="#career-centre">Career &amp; Excellence</a>
@@ -576,6 +577,7 @@ body.homepage-clean #learner-account.account-modal.is-open #source-topical-quiz-
    <div class="hero-ctas" aria-label="Choose your centre">
       <a class="btn" href="#centres">Explore the Five Centres</a>
       <a class="btn blue" href="/learner-centre/">Open Learner Centre</a>
+      <a class="btn" href="/mathquest-plus/">🎮 Play MATHQUEST+</a>
       <button class="btn outline" id="homepage-account-open" type="button">🔐 Sign In / Create Account</button>
       <span id="homepage-account-status" hidden style="align-items:center;gap:8px;flex-wrap:wrap"><strong id="homepage-welcome-name" style="color:#fff;padding:10px 12px">Welcome back!</strong><button class="btn outline" id="homepage-logout" type="button">Sign Out</button></span>
     </div>
@@ -627,6 +629,13 @@ body.homepage-clean #learner-account.account-modal.is-open #source-topical-quiz-
  </div>
 </div>
 
+
+<section id="mathquest-feature" class="alt" style="padding-top:42px;padding-bottom:42px">
+ <div class="notice reveal" style="max-width:1240px;margin:0 auto;display:grid;grid-template-columns:1fr auto;gap:20px;align-items:center;text-align:left;padding:clamp(22px,4vw,38px)">
+  <div><span class="pill" style="background:#fff3d1;color:#765000">NEW · GRADES 1–12</span><h2 style="font-size:clamp(25px,4vw,38px);margin:10px 0">🎮 MATHQUEST+ — Make Mathematics Your Adventure!</h2><p>From first numbers to advanced mathematics, learners can choose their grade, take fun missions, unlock XP and stars, practise with hints and worked explanations, and challenge a friend in pass-and-play mode. Play online or continue practising offline after the game has loaded.</p><div class="kjsea-feature-meta"><span>📚 Grades 1–12</span><span>⭐ XP &amp; achievements</span><span>🧠 Hints &amp; explanations</span><span>📴 Offline practice</span></div></div>
+  <div style="min-width:220px;text-align:center"><a class="btn" href="/mathquest-plus/" style="font-size:17px;padding:15px 24px">Start Playing Now 🚀</a><p class="small" style="color:#eef1ff;margin-top:8px">Sign in to your Learning Hub account first.</p></div>
+ </div>
+</section>
 
 <section id="centres" class="access-centres-section">
  <div class="heading reveal">
@@ -3014,7 +3023,7 @@ buildQuiz();
  const centrePrefixes=[
   "/learner-centre/","/grade7-teacher-resources/","/grade8-teacher-resources/",
   "/grade9-teacher-resources/","/teacher-document-studio/","/digital-school-centre/",
-  "/career-guidance-centre/","/tuition-centre/","/admin/"
+  "/career-guidance-centre/","/tuition-centre/","/admin/","/mathquest-plus/"
  ];
  document.addEventListener("click",async function(event){
   const link=event.target.closest("a[href]");
