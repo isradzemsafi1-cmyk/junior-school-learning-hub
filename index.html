@@ -553,6 +553,7 @@ body.homepage-clean #learner-account.account-modal.is-open #source-topical-quiz-
 <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">☰ Menu</button>
 
 <nav id="site-nav" aria-label="Main navigation">
+  <a class="nav-cta" href="/access/?next=/" aria-label="Sign in to access the centres">Sign In</a>
   <a href="#home">Home</a>
   <a href="#learner-centre">Learner Centre</a>
   <a href="#teacher-centre">Teacher Centre</a>
@@ -560,7 +561,6 @@ body.homepage-clean #learner-account.account-modal.is-open #source-topical-quiz-
   <a href="#career-centre">Career &amp; Excellence</a>
   <a href="#tuition-centre">Online Tuition</a>
   <a href="#follow-community">Follow Us</a>
-  <a class="nav-cta" href="#learner-account">Sign In</a>
 </nav>
 </header>
 
@@ -3006,5 +3006,37 @@ buildQuiz();
 })();
 </script>
  <script src="/learner-centre/quiz-bank/js/source-topical-quiz-centre.js" defer></script>
-<script src="/assets/js/site-activity-tracker.js" defer></script>\n</body>
+<script src="/assets/js/site-activity-tracker.js" defer></script>\n<script>
+/* Centre entry: route visitors through the shared sign-in gateway.
+   The public homepage remains crawlable and publicly viewable. */
+(function(){
+ const centrePrefixes=[
+  "/learner-centre/","/grade7-teacher-resources/","/grade8-teacher-resources/",
+  "/grade9-teacher-resources/","/teacher-document-studio/","/digital-school-centre/",
+  "/career-guidance-centre/","/tuition-centre/","/admin/"
+ ];
+ document.addEventListener("click",async function(event){
+  const link=event.target.closest("a[href]");
+  if(!link)return;
+  let url;
+  try{url=new URL(link.href,location.href)}catch{return}
+  if(url.origin!==location.origin||!centrePrefixes.some(prefix=>url.pathname.startsWith(prefix)))return;
+  if(!window.jslhSupabase?.auth)return;
+  event.preventDefault();
+  try{
+   const {data,error}=await window.jslhSupabase.auth.getSession();
+   if(error||!data.session){
+    const next=url.pathname+url.search+url.hash;
+    location.href="/access/?next="+encodeURIComponent(next);
+    return;
+   }
+   location.href=url.href;
+  }catch{
+   const next=url.pathname+url.search+url.hash;
+   location.href="/access/?next="+encodeURIComponent(next);
+  }
+ },true);
+})();
+</script>
+</body>
 </html>
