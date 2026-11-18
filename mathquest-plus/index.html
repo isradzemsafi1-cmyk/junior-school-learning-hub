@@ -24,8 +24,30 @@ main{padding:20px 14px 50px}.panel{background:#fff;border:1px solid var(--line);
 <script>
 const SUPABASE_URL="https://hqbqhnhgrgfxpedjzmnm.supabase.co";
 const SUPABASE_PUBLISHABLE_KEY="sb_publishable_uaOcRVaIwnvRl_wZhMhJ-Q_DhrqZyS_";
-const authClient=window.supabase.createClient(SUPABASE_URL,SUPABASE_PUBLISHABLE_KEY);
-(async()=>{try{const {data,error}=await authClient.auth.getSession();if(error||!data.session){location.replace("/access/?next="+encodeURIComponent("/mathquest-plus/"));return;}const u=data.session.user;document.getElementById("accountStatus").textContent="Welcome, "+(u.user_metadata?.full_name||u.user_metadata?.display_name||"learner");}catch(e){location.replace("/access/?next="+encodeURIComponent("/mathquest-plus/"));}})();
+let authClient=null,activeUserId=null;
+async function bootLearnerAccess(){
+ const cachedUser=localStorage.getItem("mqplus_last_user");
+ try{
+  if(window.supabase?.createClient){
+   authClient=window.supabase.createClient(SUPABASE_URL,SUPABASE_PUBLISHABLE_KEY);
+   const {data,error}=await authClient.auth.getSession();
+   if(!error&&data.session){
+    const u=data.session.user;activeUserId=u.id;localStorage.setItem("mqplus_last_user",u.id);
+    document.getElementById("accountStatus").textContent="Welcome, "+(u.user_metadata?.full_name||u.user_metadata?.display_name||"learner");
+    authClient.auth.onAuthStateChange((_event,session)=>{if(!session){localStorage.removeItem("mqplus_last_user");}});
+   }else if(cachedUser){activeUserId=cachedUser;document.getElementById("accountStatus").textContent="Offline practice";}
+   else{location.replace("/access/?next="+encodeURIComponent("/mathquest-plus/"));return;}
+  }else if(cachedUser){activeUserId=cachedUser;document.getElementById("accountStatus").textContent="Offline practice";}
+  else{location.replace("/access/?next="+encodeURIComponent("/mathquest-plus/"));return;}
+ }catch(e){
+  if(cachedUser){activeUserId=cachedUser;document.getElementById("accountStatus").textContent="Offline practice";}
+  else{location.replace("/access/?next="+encodeURIComponent("/mathquest-plus/"));return;}
+ }
+ key="jslh_mathquest_progress_v1_"+activeUserId;
+ try{stats=JSON.parse(localStorage.getItem(key)||"null")||{xp:0,tried:0,correct:0,byGrade:{}};}catch{stats={xp:0,tried:0,correct:0,byGrade:{}};}
+ refresh();
+}
+bootLearnerAccess();
 const Q=[
 [1,"Number","Foundation","What number comes after 6?",["5","7","8","9"],1,"Counting forward: 6, 7, 8.","Say the number sequence aloud and take one step forward."],
 [1,"Geometry","Foundation","Which shape has three sides?",["Circle","Square","Triangle","Rectangle"],2,"A triangle has three straight sides.","Count the sides of each shape."],
@@ -65,8 +87,7 @@ const Q=[
 [12,"Statistics","Advanced","Approximately what percentage of a normal distribution lies within one standard deviation of the mean?",["50%","68%","95%","99.7%"],1,"The empirical rule gives about 68% within ±1 standard deviation.","Recall the 68–95–99.7 rule."]
 ].map((x,i)=>({id:i+1,grade:x[0],topic:x[1],level:x[2],q:x[3],a:x[4],correct:x[5],explain:x[6],hint:x[7]}));
 const $=id=>document.getElementById(id);let userId="guest",session=[],pos=0,score=0,answered=false,turn=1,timer=null,seconds=60,current=null;
-const key="jslh_mathquest_progress_v1";
-let stats={xp:0,tried:0,correct:0,byGrade:{}};try{stats=JSON.parse(localStorage.getItem(key)||"null")||stats;}catch{}
+let key="jslh_mathquest_progress_v1";let stats={xp:0,tried:0,correct:0,byGrade:{}};
 for(let g=1;g<=12;g++){let o=document.createElement("option");o.value=g;o.textContent="Grade "+g;$("grade").append(o);}
 [...new Set(Q.map(q=>q.topic))].sort().forEach(t=>{let o=document.createElement("option");o.value=t;o.textContent=t;$("topic").append(o);});
 $("available").textContent="Starter missions: "+Q.length+" challenges across all 12 grades.";
@@ -78,6 +99,5 @@ function answer(i,btn){if(answered)return;answered=true;let ok=i===current.corre
 $("start").onclick=start;$("next").onclick=()=>{pos++;show();};$("hint").onclick=()=>{if(current)$("feedback").textContent="Hint: "+current.hint;};$("explain").onclick=()=>{if(current)$("feedback").textContent=current.explain;};$("finish").onclick=finish;
 function finish(){clearInterval(timer);timer=null;if(!$("game").classList.contains("hidden")){$("game").classList.add("hidden");$("bar").style.width="100%";alert("Mission complete! You earned "+score+" XP. Keep learning and keep shining!");}}
 const mottos=["You can do difficult things. Take one step at a time! 💪","Every mistake is a clue that helps your brain grow. 🌱","Mathematics is not a race. Understanding is your superpower! 🧠","Practice today. Confidence tomorrow. Champion forever! 🏆","Your curiosity is your greatest learning tool. ✨"];$("mottoBtn").onclick=()=>{$("motto").textContent=mottos[Math.floor(Math.random()*mottos.length)];};
-refresh();
 if("serviceWorker"in navigator&&location.protocol.startsWith("http"))navigator.serviceWorker.register("/mathquest-plus/service-worker.js").catch(()=>{});
 </script></body></html>
