@@ -17,7 +17,7 @@
   if(g>=4)for(let i=0;i<10;i++){let x=rand(15)+2,c=rand(20)+2,r=x+c;extra.push(make(g,"Algebra","Developing","Solve for x: x + "+c+" = "+r+".",x,[x+1,x-1,r+c],"Subtract "+c+" from both sides: x = "+r+" − "+c+" = "+x+".","Undo addition by subtracting."));}
   if(g>=5)for(let i=0;i<8;i++){let den=pick([2,3,4,5,10]),whole=den*pick([2,3,4,5]),num=rand(den-1)+1,ans=whole/den*num;extra.push(make(g,"Fractions","Proficient","Find "+num+"/"+den+" of "+whole+".",ans,[ans+num,ans-num,whole-num],"Divide "+whole+" by "+den+", then multiply by "+num+".","Divide by the denominator first."));}
  }
- const original=Array.isArray(window.Q)?window.Q.length:0;if(Array.isArray(window.Q))window.Q.push(...extra);
+ const original=typeof Q!=="undefined"?Q.length:0;if(typeof Q!=="undefined")Q.push(...extra);
  const count=$("count");if(count&&!Array.from(count.options).some(o=>o.value==="50")){let o=document.createElement("option");o.value="50";o.textContent="50 questions — marathon";count.insertBefore(o,count.lastElementChild);}
  if($("available"))$("available").textContent=(original+extra.length)+"+ practice questions, including fresh generated variations every visit.";
  const st=document.createElement("style");st.textContent=".arena-invite{background:linear-gradient(120deg,#fff7df,#f0eaff);border:1px solid #f2d88d}.invite-actions{display:flex;gap:10px;flex-wrap:wrap}.invite-actions button{flex:1;min-width:180px}.arena-tag{display:inline-block;background:#e6f7ef;color:#12633d;padding:5px 10px;border-radius:30px;font-size:.78rem;font-weight:800}";document.head.append(st);
