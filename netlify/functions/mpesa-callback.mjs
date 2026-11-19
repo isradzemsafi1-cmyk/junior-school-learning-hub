@@ -54,6 +54,7 @@ const mpesaBaseUrl = isProduction
   }
 
   const catalog = {
+    games_12h_pass: 10,
     online_tuition: 100,
     premium_quizzes: 20,
     grade7_notes: 10,
@@ -67,6 +68,7 @@ const mpesaBaseUrl = isProduction
   };
 
   const durations = {
+    games_12h_pass: 12,
     grade7_notes: 12,
     grade8_notes: 12,
     grade9_notes: 24,
