@@ -185,6 +185,25 @@
    }
   }
  }
+
+ // Guarantee a usable bank for EVERY listed grade × topic × difficulty selection.
+ const comboMinimum=8;
+ for(let g=1;g<=12;g++)for(const t of topicsByGrade[g])for(const level of levels){
+  let have=Q.filter(x=>x.grade===g&&x.topic===t&&x.level===level).length,attempt=0;
+  while(have<comboMinimum&&attempt<250){
+   const seed=(g*7919)+(topicsByGrade[g].indexOf(t)*104729)+(levels.indexOf(level)*15485863)+(attempt*32452843)+97;
+   let state=seed>>>0;const originalRandom=Math.random;
+   Math.random=()=>{state=(state*1664525+1013904223)>>>0;return state/4294967296;};
+   let item;try{item=question(g,t,level,attempt+have*37+seed);}finally{Math.random=originalRandom;}
+   const key=[item.grade,item.topic,item.level,item.q].join("|");
+   if(!seen.has(key)){Q.push(item);seen.add(key);have++;}
+   attempt++;
+  }
+ }
+ const verifiedCombos={};
+ for(let g=1;g<=12;g++)for(const t of topicsByGrade[g])for(const level of levels){
+  verifiedCombos[g+"|"+t+"|"+level]=Q.filter(x=>x.grade===g&&x.topic===t&&x.level===level).length;
+ }
  
  const topic=$("topic"),old=topic.value;
  const allTopics=[...new Set(Q.map(x=>x.topic))].sort();
