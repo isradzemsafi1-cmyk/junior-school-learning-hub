@@ -22,6 +22,7 @@
  const formulas={
   Number:"Place value; order of operations (BODMAS); factors × multiples = product; HCF and LCM.",
   Operations:"Addition and subtraction are inverse operations; multiplication is repeated addition; division is the inverse of multiplication.",
+  Patterns:"Look for what changes from one term to the next. Arithmetic pattern: add/subtract a constant difference. Multiplicative pattern: multiply/divide by a constant factor. Square numbers: n².",
   Fractions:"Fraction of a quantity = numerator/denominator × quantity. For a/b + c/b = (a+c)/b. Equivalent fractions: multiply or divide numerator and denominator by the same non-zero number.",
   Decimals:"Align decimal points when adding/subtracting. To multiply by 10, 100 or 1,000, move digits left; to divide, move digits right.",
   Percentages:"Percentage = (part ÷ whole) × 100%. Amount = rate/100 × whole. New value after increase = original × (1 + rate/100).",
@@ -70,6 +71,13 @@
     else if(d===1){ans=a-b;q="Evaluate "+a+" − "+b+".";ex=a+" − "+b+" = "+ans+".";h="Subtract carefully; use a number line if helpful.";}
     else if(d===2){ans=a*b;q="Calculate "+a+" × "+b+".";ex=a+" × "+b+" = "+ans+".";h="Use multiplication facts or split one factor.";}
     else {b=rand(9)+2;ans=a%b===0?a/b:a+b;q=a%b===0?"Evaluate "+a+" ÷ "+b+".":"A quantity of "+a+" is increased by "+b+". Find the result.";ex=a%b===0?a+" ÷ "+b+" = "+ans+".":a+" + "+b+" = "+ans+".";h="Identify the operation and show each step.";}
+    break;
+   case "Patterns":
+    a=rand(12)+1;b=rand(6)+2;n=rand(6)+4;
+    if(d===0){ans=a+b;q="Complete the pattern: "+a+", "+(a+b)+", "+(a+2*b)+", __.";ex="The pattern increases by "+b+" each time, so the next term is "+ans+".";h="Find the common difference between consecutive terms.";}
+    else if(d===1){ans=a+(n-1)*b;q="A pattern starts "+a+", "+(a+b)+", "+(a+2*b)+", ... Find the "+n+"th term.";ex="Nth term = first term + (n−1)×difference = "+a+"+("+n+"−1)×"+b+" = "+ans+".";h="Find the first term and common difference.";}
+    else if(d===2){ans=n*n;q="Find the "+n+"th square number.";ex=n+"² = "+ans+".";h="Square numbers are 1, 4, 9, 16, 25, ...";}
+    else{ans=Math.pow(2,n);q="A bacteria culture doubles every hour. Starting with 1 bacterium, how many are there after "+n+" hours?";ex="There are 1×2^"+n+" = "+ans+" bacteria.";h="Repeated doubling is a power of 2.";}
     break;
    case "Fractions":
     n=pick([2,3,4,5,6,8,10]);a=rand(n-1)+1;b=n*pick([2,3,4,5,6]);
