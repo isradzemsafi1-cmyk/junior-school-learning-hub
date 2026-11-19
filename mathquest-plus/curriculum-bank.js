@@ -6,12 +6,12 @@
  const pick=a=>a[rand(a.length)];
  const levels=["Foundation","Developing","Proficient","Advanced"];
  const topicsByGrade={
-  1:["Number","Operations","Patterns","Geometry","Measurement","Data"],
-  2:["Number","Operations","Patterns","Geometry","Measurement","Data"],
-  3:["Number","Operations","Fractions","Patterns","Geometry","Measurement","Data"],
-  4:["Number","Operations","Fractions","Decimals","Geometry","Measurement","Data"],
-  5:["Number","Operations","Fractions","Decimals","Percentages","Geometry","Measurement","Data"],
-  6:["Number","Operations","Fractions","Decimals","Percentages","Ratio","Geometry","Measurement","Data"],
+  1:["Number","Operations","Multiplication","Division","Word problems","Patterns","Geometry","Measurement","Data"],
+  2:["Number","Operations","Multiplication","Division","Word problems","Patterns","Geometry","Measurement","Data"],
+  3:["Number","Operations","Multiplication","Division","Fractions","Word problems","Patterns","Geometry","Measurement","Data"],
+  4:["Number","Operations","Multiplication","Division","Fractions","Decimals","Word problems","Patterns","Geometry","Measurement","Data"],
+  5:["Number","Operations","Multiplication","Division","Fractions","Decimals","Percentages","Ratio","Word problems","Patterns","Geometry","Measurement","Data"],
+  6:["Number","Operations","Multiplication","Division","Fractions","Decimals","Percentages","Ratio","Word problems","Patterns","Geometry","Measurement","Data"],
   7:["Number","Integers","Fractions","Decimals","Percentages","Ratio","Algebra","Geometry","Measurement","Data","Probability","Graphs"],
   8:["Number","Integers","Fractions","Decimals","Percentages","Ratio","Algebra","Geometry","Measurement","Data","Probability","Graphs","Sequences"],
   9:["Number","Integers","Fractions","Decimals","Percentages","Ratio","Algebra","Geometry","Measurement","Data","Probability","Graphs","Sequences","Trigonometry"],
@@ -22,6 +22,9 @@
  const formulas={
   Number:"Place value; order of operations (BODMAS); factors × multiples = product; HCF and LCM.",
   Operations:"Addition and subtraction are inverse operations; multiplication is repeated addition; division is the inverse of multiplication.",
+  Multiplication:"Product = number of equal groups × number in each group. Use arrays, partitioning and distributive law to multiply.",
+  Division:"Dividend ÷ divisor = quotient. Check division by multiplying quotient × divisor; remainder must be smaller than divisor.",
+  "Word problems":"Read, identify known and unknown quantities, choose an operation, estimate, calculate and check whether the answer is reasonable.",
   Patterns:"Look for what changes from one term to the next. Arithmetic pattern: add/subtract a constant difference. Multiplicative pattern: multiply/divide by a constant factor. Square numbers: n².",
   Fractions:"Fraction of a quantity = numerator/denominator × quantity. For a/b + c/b = (a+c)/b. Equivalent fractions: multiply or divide numerator and denominator by the same non-zero number.",
   Decimals:"Align decimal points when adding/subtracting. To multiply by 10, 100 or 1,000, move digits left; to divide, move digits right.",
@@ -65,12 +68,20 @@
   let a,b,n,ans,q,ex,h;
   switch(t){
    case "Number": case "Operations": case "Integers":
-    a=rand(20*s+10)+1;b=rand(12*s+8)+1;
+    a=rand(g<=3?20:g<=6?100:g<=9?500:1000)+1;b=rand(g<=3?12:g<=6?80:g<=9?300:500)+1;
     if(t==="Integers"||g>=7){a=rand(30)+5;b=rand(25)+1;if(rand(2)){a=-a;}}
     if(d===0){ans=a+b;q="Calculate "+a+" + "+b+".";ex=a+" + "+b+" = "+ans+".";h="Add the values, keeping track of place value and signs.";}
     else if(d===1){ans=a-b;q="Evaluate "+a+" − "+b+".";ex=a+" − "+b+" = "+ans+".";h="Subtract carefully; use a number line if helpful.";}
     else if(d===2){ans=a*b;q="Calculate "+a+" × "+b+".";ex=a+" × "+b+" = "+ans+".";h="Use multiplication facts or split one factor.";}
     else {b=rand(9)+2;ans=a%b===0?a/b:a+b;q=a%b===0?"Evaluate "+a+" ÷ "+b+".":"A quantity of "+a+" is increased by "+b+". Find the result.";ex=a%b===0?a+" ÷ "+b+" = "+ans+".":a+" + "+b+" = "+ans+".";h="Identify the operation and show each step.";}
+    break;
+   case "Multiplication":
+    a=rand(g<=3?10:g<=6?30:100)+2;b=rand(g<=3?10:g<=6?20:100)+2;ans=a*b;q="Calculate "+a+" × "+b+".";ex=a+" × "+b+" = "+ans+".";h="Use known multiplication facts, arrays or partition one factor.";break;
+   case "Division":
+    b=rand(g<=3?10:g<=6?20:50)+2;ans=rand(g<=3?10:g<=6?30:100)+2;a=b*ans;q="Calculate "+a+" ÷ "+b+".";ex=a+" ÷ "+b+" = "+ans+", because "+b+" × "+ans+" = "+a+".";h="Think: how many groups of "+b+" make "+a+"?";break;
+   case "Word problems":
+    a=rand(g<=3?20:g<=6?100:500)+5;b=rand(g<=3?10:g<=6?30:100)+2;
+    if(d===0){ans=a+b;q="A learner has "+a+" counters and receives "+b+" more. How many counters are there now?";ex=a+" + "+b+" = "+ans+" counters.";h="Receives more means add.";}else if(d===1){ans=a*b;q="There are "+a+" boxes with "+b+" pencils in each. How many pencils are there altogether?";ex=a+" × "+b+" = "+ans+" pencils.";h="Equal groups suggest multiplication.";}else if(d===2){ans=a-b;q="A shop has "+a+" exercise books and sells "+b+". How many remain?";ex=a+" − "+b+" = "+ans+" books.";h="Find what remains by subtracting.";}else{b=rand(10)+2;a=b*(rand(g<=3?5:20)+2);ans=a/b;q=a+" sweets are shared equally among "+b+" learners. How many sweets does each learner receive?";ex=a+" ÷ "+b+" = "+ans+" sweets for each learner.";h="Share the total equally: divide by the number of learners.";}
     break;
    case "Patterns":
     a=rand(12)+1;b=rand(6)+2;n=rand(6)+4;
@@ -158,16 +169,34 @@
  }
  const seen=new Set(Q.map(x=>[x.grade,x.topic,x.level,x.q].join("|")));
  let added=0;
- for(let g=1;g<=12;g++) for(const t of topicsByGrade[g]) for(const l of levels) for(let i=0;i<5;i++){
-  const item=question(g,t,l,i),key=[item.grade,item.topic,item.level,item.q].join("|");
-  if(!seen.has(key)){Q.push(item);seen.add(key);added++;}
+ const beforeByGrade={};for(let g=1;g<=12;g++)beforeByGrade[g]=Q.filter(x=>x.grade===g).length;const totalByGrade={...beforeByGrade};
+ for(let g=1;g<=12;g++){
+  const gradeTopics=topicsByGrade[g];
+  for(let li=0;li<levels.length;li++){
+   const level=levels[li];let made=0,attempt=0;
+   while(made<Math.ceil((500-beforeByGrade[g])/levels.length)&&totalByGrade[g]<500&&attempt<1200){
+    const t=gradeTopics[(made+li*3)%gradeTopics.length],seed=(g*1000003)+(li*9176)+(made*131)+attempt+17;
+    let state=seed>>>0;const originalRandom=Math.random;
+    Math.random=()=>{state=(state*1664525+1013904223)>>>0;return state/4294967296;};
+    let item;try{item=question(g,t,level,made+attempt);}finally{Math.random=originalRandom;}
+    const key=[item.grade,item.topic,item.level,item.q].join("|");
+    if(!seen.has(key)){Q.push(item);seen.add(key);added++;made++;totalByGrade[g]++;}
+    attempt++;
+   }
+  }
  }
+ 
  const topic=$("topic"),old=topic.value;
  const allTopics=[...new Set(Q.map(x=>x.topic))].sort();
- topic.innerHTML='<option value="all">Surprise me — all topics</option>'+allTopics.map(t=>'<option value="'+t.replace(/&/g,"&amp;").replace(/"/g,"&quot;")+'">'+t+'</option>').join("");
- if(allTopics.includes(old))topic.value=old;
+ function renderTopics(){
+  const g=Number($("grade").value),previous=topic.value;
+  const availableTopics=[...new Set(Q.filter(x=>x.grade===g).map(x=>x.topic))].sort();
+  topic.innerHTML='<option value="all">Surprise me — all topics</option>'+availableTopics.map(t=>'<option value="'+t.replace(/&/g,"&amp;").replace(/"/g,"&quot;")+'">'+t+'</option>').join("");
+  topic.value=availableTopics.includes(previous)?previous:"all";
+ }
+ renderTopics();
  const count=$("available");
- if(count)count.textContent=Q.length+"+ questions across Grades 1–12, all listed topics and all four challenge levels.";
+ if(count)count.textContent=Q.length+" questions across Grades 1–12 · "+Object.entries(totalByGrade).map(([g,n])=>"G"+g+": "+n).join(" · ");
  const panel=document.createElement("section");
  panel.className="panel";
  panel.innerHTML='<h2>📘 Formula &amp; Strategy Locker</h2><p class="muted">Quick revision before you enter the arena. Select a topic to see key rules and formulas.</p><label for="formulaTopic">Choose a formula topic</label><select id="formulaTopic"></select><div id="formulaText" class="feedback" style="white-space:pre-wrap"></div>';
@@ -178,7 +207,7 @@
  ft.addEventListener("change",showFormula);showFormula();
  const grade=$("grade"),missionTopic=$("topic");
  function updateAvailability(){const g=Number(grade.value),t=missionTopic.value,l=$("level").value;const n=Q.filter(x=>x.grade===g&&(t==="all"||x.topic===t)&&(l==="all"||x.level===l)).length;if(count)count.textContent=n+" questions available for this selection.";}
- grade.addEventListener("change",updateAvailability);missionTopic.addEventListener("change",updateAvailability);$("level").addEventListener("change",updateAvailability);updateAvailability();
+ grade.addEventListener("change",()=>{renderTopics();updateAvailability();});missionTopic.addEventListener("change",updateAvailability);$("level").addEventListener("change",updateAvailability);updateAvailability();
  const style=document.createElement("style");style.textContent=".arena-invite{border:1px solid #e7c76d}.formula-locker{border-left:5px solid #ffc23d}#formulaText{font-weight:650;line-height:1.8}";document.head.append(style);panel.classList.add("formula-locker");
  console.info("MATHQUEST+ bank added",added,"questions; total",Q.length);
 })();
