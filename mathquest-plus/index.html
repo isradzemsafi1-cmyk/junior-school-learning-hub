@@ -21,6 +21,7 @@ main{padding:20px 14px 50px}.panel{background:#fff;border:1px solid var(--line);
 <section class="panel"><h2>💜 A little encouragement</h2><p id="motto">Mistakes are proof that you are trying. Every challenge makes you stronger!</p><button class="light" id="mottoBtn">Give me encouragement 🌈</button><p class="tiny muted">Practice bank: automatically generated questions with worked methods and varied values. Use the current curriculum and teacher guidance when preparing formal assessments.</p></section>
 </main><div class="footer">MATHQUEST+ · Junior School Learning Hub · Learn Today. Lead Tomorrow.</div>
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="/shared/game-access-pass.js"></script>
 <script>
 const SUPABASE_URL="https://hqbqhnhgrgfxpedjzmnm.supabase.co";
 const SUPABASE_PUBLISHABLE_KEY="sb_publishable_uaOcRVaIwnvRl_wZhMhJ-Q_DhrqZyS_";
@@ -43,6 +44,7 @@ async function bootLearnerAccess(){
   if(cachedUser){activeUserId=cachedUser;document.getElementById("accountStatus").textContent="Offline practice";}
   else{location.replace("/access/?next="+encodeURIComponent("/mathquest-plus/"));return;}
  }
+ if(!await window.JSLHGameAccess.require())return;
  key="jslh_mathquest_progress_v1_"+activeUserId;
  try{stats=JSON.parse(localStorage.getItem(key)||"null")||{xp:0,tried:0,correct:0,byGrade:{}};}catch{stats={xp:0,tried:0,correct:0,byGrade:{}};}
  refresh();

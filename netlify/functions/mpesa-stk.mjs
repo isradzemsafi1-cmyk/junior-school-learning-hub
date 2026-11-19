@@ -72,6 +72,7 @@ export default async (request) => {
   }
 
   const catalog = {
+    games_12h_pass: 10,
     online_tuition: 100,
     premium_quizzes: 20,
     grade7_notes: 10,
