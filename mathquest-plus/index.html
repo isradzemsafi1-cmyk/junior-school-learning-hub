@@ -100,4 +100,6 @@ $("start").onclick=start;$("next").onclick=()=>{pos++;show();};$("hint").onclick
 function finish(){clearInterval(timer);timer=null;if(!$("game").classList.contains("hidden")){$("game").classList.add("hidden");$("bar").style.width="100%";alert("Mission complete! You earned "+score+" XP. Keep learning and keep shining!");}}
 const mottos=["You can do difficult things. Take one step at a time! 💪","Every mistake is a clue that helps your brain grow. 🌱","Mathematics is not a race. Understanding is your superpower! 🧠","Practice today. Confidence tomorrow. Champion forever! 🏆","Your curiosity is your greatest learning tool. ✨"];$("mottoBtn").onclick=()=>{$("motto").textContent=mottos[Math.floor(Math.random()*mottos.length)];};
 if("serviceWorker"in navigator&&location.protocol.startsWith("http"))navigator.serviceWorker.register("/mathquest-plus/service-worker.js").catch(()=>{});
-</script><script src="/mathquest-plus/arena.js"></script></body></html>
+</script><script src="/mathquest-plus/arena.js"></script>
+<script src="/mathquest-plus/curriculum-bank.js"></script>
+<script src="/mathquest-plus/matchday.js"></script></body></html>
