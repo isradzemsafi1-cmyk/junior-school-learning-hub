@@ -1,0 +1,10 @@
+{
+  "name": "EduGames World — Junior School Learning Hub",
+  "short_name": "EduGames World",
+  "start_url": "/edugames-world/",
+  "scope": "/edugames-world/",
+  "display": "standalone",
+  "background_color": "#f5f7ff",
+  "theme_color": "#111d55",
+  "description": "Twelve educational game worlds for Grades 1–12."
+}
