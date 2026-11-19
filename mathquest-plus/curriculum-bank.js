@@ -68,7 +68,7 @@
   let a,b,n,ans,q,ex,h;
   switch(t){
    case "Number": case "Operations": case "Integers":
-    a=rand(20*s+10)+1;b=rand(12*s+8)+1;
+    a=rand(g<=3?20:g<=6?100:g<=9?500:1000)+1;b=rand(g<=3?12:g<=6?80:g<=9?300:500)+1;
     if(t==="Integers"||g>=7){a=rand(30)+5;b=rand(25)+1;if(rand(2)){a=-a;}}
     if(d===0){ans=a+b;q="Calculate "+a+" + "+b+".";ex=a+" + "+b+" = "+ans+".";h="Add the values, keeping track of place value and signs.";}
     else if(d===1){ans=a-b;q="Evaluate "+a+" − "+b+".";ex=a+" − "+b+" = "+ans+".";h="Subtract carefully; use a number line if helpful.";}
@@ -169,23 +169,23 @@
  }
  const seen=new Set(Q.map(x=>[x.grade,x.topic,x.level,x.q].join("|")));
  let added=0;
- const beforeByGrade={};for(let g=1;g<=12;g++)beforeByGrade[g]=Q.filter(x=>x.grade===g).length;
+ const beforeByGrade={};for(let g=1;g<=12;g++)beforeByGrade[g]=Q.filter(x=>x.grade===g).length;const totalByGrade={...beforeByGrade};
  for(let g=1;g<=12;g++){
   const gradeTopics=topicsByGrade[g];
   for(let li=0;li<levels.length;li++){
    const level=levels[li];let made=0,attempt=0;
-   while(made<Math.ceil((500-beforeByGrade[g])/levels.length)&&Q.filter(x=>x.grade===g).length<500&&attempt<1200){
+   while(made<Math.ceil((500-beforeByGrade[g])/levels.length)&&totalByGrade[g]<500&&attempt<1200){
     const t=gradeTopics[(made+li*3)%gradeTopics.length],seed=(g*1000003)+(li*9176)+(made*131)+attempt+17;
     let state=seed>>>0;const originalRandom=Math.random;
     Math.random=()=>{state=(state*1664525+1013904223)>>>0;return state/4294967296;};
     let item;try{item=question(g,t,level,made+attempt);}finally{Math.random=originalRandom;}
     const key=[item.grade,item.topic,item.level,item.q].join("|");
-    if(!seen.has(key)){Q.push(item);seen.add(key);added++;made++;}
+    if(!seen.has(key)){Q.push(item);seen.add(key);added++;made++;totalByGrade[g]++;}
     attempt++;
    }
   }
  }
- const totalByGrade={};for(let g=1;g<=12;g++)totalByGrade[g]=Q.filter(x=>x.grade===g).length;
+ 
  const topic=$("topic"),old=topic.value;
  const allTopics=[...new Set(Q.map(x=>x.topic))].sort();
  function renderTopics(){
