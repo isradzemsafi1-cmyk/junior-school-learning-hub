@@ -59,7 +59,7 @@
   const options=vals.slice(0,4).sort(()=>Math.random()-.5);
   return {id:"bank-"+g+"-"+t.toLowerCase().replace(/[^a-z]/g,"")+"-"+Math.random().toString(36).slice(2),grade:g,topic:t,level:l,q,a:options,correct:options.indexOf(correct),explain:ex,hint};
  }
- function question(g,t,l){
+ function question(g,t,l,variant=0){
   const d=levels.indexOf(l),s=g+d;
   let a,b,n,ans,q,ex,h;
   switch(t){
@@ -101,7 +101,11 @@
     else {q="Expand "+a+"(x + "+b+").";ans=a+"x + "+(a*b);ex="Multiply each term by "+a+": "+a+"×x + "+a+"×"+b+" = "+ans+".";h="Use the distributive law a(b+c)=ab+ac.";}
     break;
    case "Geometry":
-    if(d===0){n=pick([3,4,5,6,8]);ans=n===3?"Triangle":n===4?"Quadrilateral":n===5?"Pentagon":n===6?"Hexagon":"Octagon";q="What is the name of a polygon with "+n+" sides?";ex="A polygon with "+n+" sides is a "+ans+".";h="Recall the names of polygons by their number of sides.";}
+    if(variant%5===0&&d===0){n=pick([3,4,5,6,8]);ans=n===3?"Triangle":n===4?"Quadrilateral":n===5?"Pentagon":n===6?"Hexagon":"Octagon";q="What is the name of a polygon with "+n+" sides?";ex="A polygon with "+n+" sides is a "+ans+".";h="Recall the names of polygons by their number of sides.";}
+    else if(variant%5===1&&g<=6){a=pick([2,3,4,5]);ans=a*2;q="How many lines of symmetry does a square have?";ans=4;ex="A square has four lines of symmetry: two diagonals and two lines through the midpoints of opposite sides.";h="Imagine folding the square into matching halves.";}
+    else if(variant%5===2&&g>=7){a=pick([35,40,50,60]);b=pick([30,45,55,65]);ans=180-a-b;q="Two angles of a triangle are "+a+"° and "+b+"°. Calculate the third angle.";ex="180° − "+a+"° − "+b+"° = "+ans+"°.";h="The interior angles of a triangle add up to 180°.";}
+    else if(variant%5===3&&g>=8){a=rand(8)+3;b=rand(8)+3;ans=a*b;q="A parallelogram has base "+a+" cm and perpendicular height "+b+" cm. Find its area.";ex="Area = base × perpendicular height = "+a+" × "+b+" = "+ans+" cm².";h="Use A = bh; use the perpendicular height, not the sloping side.";}
+    else if(variant%5===4&&g>=9){a=pick([3,5,6,8]);b=pick([4,12,8,15]);ans=Math.sqrt(a*a+b*b);q="A right-angled triangle has perpendicular sides "+a+" cm and "+b+" cm. Find the hypotenuse to 2 decimal places.";ans=fmt(ans);ex="c = √(a²+b²) = √("+a+"²+"+b+"²) = "+ans+" cm.";h="Apply Pythagoras' theorem: square both shorter sides, add, then take the square root.";}
     else if(d===1){a=pick([35,40,50,60,70]);b=pick([30,45,55,65]);ans=180-a-b;q="A triangle has angles "+a+"° and "+b+"°. Find the third angle.";ex="Angles in a triangle sum to 180°: 180° − "+a+"° − "+b+"° = "+ans+"°.";h="The three interior angles add up to 180°.";}
     else if(d===2){a=rand(12)+4;b=rand(10)+3;ans=2*(a+b);q="Find the perimeter of a rectangle of length "+a+" cm and width "+b+" cm.";ex="P=2(l+w)=2("+a+"+"+b+")="+ans+" cm.";h="Add length and width, then multiply by two.";}
     else {n=pick([5,6,8,10,12]);ans=360/n;q="Find each exterior angle of a regular "+n+"-sided polygon.";ex="Exterior angle = 360° ÷ "+n+" = "+ans+"°.";h="The exterior angles of any polygon add up to 360°.";}
@@ -147,7 +151,7 @@
  const seen=new Set(Q.map(x=>[x.grade,x.topic,x.level,x.q].join("|")));
  let added=0;
  for(let g=1;g<=12;g++) for(const t of topicsByGrade[g]) for(const l of levels) for(let i=0;i<5;i++){
-  const item=question(g,t,l),key=[item.grade,item.topic,item.level,item.q].join("|");
+  const item=question(g,t,l,i),key=[item.grade,item.topic,item.level,item.q].join("|");
   if(!seen.has(key)){Q.push(item);seen.add(key);added++;}
  }
  const topic=$("topic"),old=topic.value;
