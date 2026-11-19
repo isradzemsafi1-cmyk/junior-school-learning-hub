@@ -44,12 +44,19 @@
  function fmt(n){return Number.isInteger(n)?String(n):String(Math.round(n*100)/100);}
  function mk(g,t,l,q,ans,ex,hint,unit=""){
   const correct=String(ans)+(unit||"");
-  let vals=[String(ans)];
-  let candidates=[ans+1,ans-1,ans+2,ans-2,ans*2,ans/2,ans+5,Math.max(0,ans-5)];
-  for(const v of candidates){if(Number.isFinite(v)&&!vals.includes(String(v)+(unit||""))&&vals.length<4)vals.push(v);}
-  while(vals.length<4) vals.push(vals.length*7+3);
-  vals=vals.slice(0,4).map(v=>String(v)+(unit||""));
-  const options=vals.sort(()=>Math.random()-.5);
+  let vals=[correct];
+  const numeric=String(ans).trim()!==""&&Number.isFinite(Number(ans));
+  let candidates=[];
+  if(numeric){const v=Number(ans);candidates=[v+1,v-1,v+2,v-2,v*2,v/2,v+5,Math.max(0,v-5)];}
+  else if(t==="Geometry"){candidates=["Triangle","Quadrilateral","Pentagon","Hexagon","Octagon","Circle","Heptagon"];}
+  else if(t==="Fractions"){const p=String(ans).split("/");candidates=[(Number(p[0])+1)+"/"+p[1],p[0]+"/"+(Number(p[1])+1),Math.max(1,Number(p[0])-1)+"/"+p[1],p[0]+"/"+Math.max(2,Number(p[1])-1)];}
+  else if(t==="Ratio"){const p=String(ans).split(":");candidates=[(Number(p[0])+1)+":"+p[1],p[0]+":"+(Number(p[1])+1),(Number(p[0])*2)+":"+p[1],p[0]+":"+(Number(p[1])*2)];}
+  else if(t==="Algebra"){candidates=[String(ans).replace("+","−"),String(ans).replace("x","x²"),String(ans).replace(/\d+/,m=>String(Number(m)+1)),"x + "+String(ans)];}
+  else if(t==="Calculus"){candidates=[String(ans).replace("x^","x^"+""),String(ans).replace(/^\d+/,"1"),"0",""+String(ans)+" + C"];}
+  else {candidates=["None of the other options","Not enough information","0"];}
+  for(const v of candidates){const s=String(v)+(unit||"");if(s!==correct&&!vals.includes(s)&&vals.length<4)vals.push(s);}
+  while(vals.length<4) vals.push("Option "+String.fromCharCode(65+vals.length));
+  const options=vals.slice(0,4).sort(()=>Math.random()-.5);
   return {id:"bank-"+g+"-"+t.toLowerCase().replace(/[^a-z]/g,"")+"-"+Math.random().toString(36).slice(2),grade:g,topic:t,level:l,q,a:options,correct:options.indexOf(correct),explain:ex,hint};
  }
  function question(g,t,l){
