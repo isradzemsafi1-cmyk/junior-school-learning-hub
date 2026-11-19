@@ -81,7 +81,7 @@
     b=rand(g<=3?10:g<=6?20:50)+2;ans=rand(g<=3?10:g<=6?30:100)+2;a=b*ans;q="Calculate "+a+" ÷ "+b+".";ex=a+" ÷ "+b+" = "+ans+", because "+b+" × "+ans+" = "+a+".";h="Think: how many groups of "+b+" make "+a+"?";break;
    case "Word problems":
     a=rand(g<=3?20:g<=6?100:500)+5;b=rand(g<=3?10:g<=6?30:100)+2;
-    if(d===0){ans=a+b;q="A learner has "+a+" counters and receives "+b+" more. How many counters are there now?";ex=a+" + "+b+" = "+ans+" counters.";h="Receives more means add.";}else if(d===1){ans=a*b;q="There are "+a+" boxes with "+b+" pencils in each. How many pencils are there altogether?";ex=a+" × "+b+" = "+ans+" pencils.";h="Equal groups suggest multiplication.";}else if(d===2){ans=a-b;q="A shop has "+a+" exercise books and sells "+b+". How many remain?";ex=a+" − "+b+" = "+ans+" books.";h="Find what remains by subtracting.";}else{b=rand(10)+2;ans=a*b;q=a+" sweets are shared equally among "+b+" learners. How many sweets does each learner receive?";ans=a*b;ex="Each learner receives "+ans+" sweets because "+a+" × "+b+" = "+ans+".";h="This is an equal-groups multiplication or sharing problem.";}
+    if(d===0){ans=a+b;q="A learner has "+a+" counters and receives "+b+" more. How many counters are there now?";ex=a+" + "+b+" = "+ans+" counters.";h="Receives more means add.";}else if(d===1){ans=a*b;q="There are "+a+" boxes with "+b+" pencils in each. How many pencils are there altogether?";ex=a+" × "+b+" = "+ans+" pencils.";h="Equal groups suggest multiplication.";}else if(d===2){ans=a-b;q="A shop has "+a+" exercise books and sells "+b+". How many remain?";ex=a+" − "+b+" = "+ans+" books.";h="Find what remains by subtracting.";}else{b=rand(10)+2;a=b*(rand(g<=3?5:20)+2);ans=a/b;q=a+" sweets are shared equally among "+b+" learners. How many sweets does each learner receive?";ex=a+" ÷ "+b+" = "+ans+" sweets for each learner.";h="Share the total equally: divide by the number of learners.";}
     break;
    case "Patterns":
     a=rand(12)+1;b=rand(6)+2;n=rand(6)+4;
@@ -188,8 +188,13 @@
  const totalByGrade={};for(let g=1;g<=12;g++)totalByGrade[g]=Q.filter(x=>x.grade===g).length;
  const topic=$("topic"),old=topic.value;
  const allTopics=[...new Set(Q.map(x=>x.topic))].sort();
- topic.innerHTML='<option value="all">Surprise me — all topics</option>'+allTopics.map(t=>'<option value="'+t.replace(/&/g,"&amp;").replace(/"/g,"&quot;")+'">'+t+'</option>').join("");
- if(allTopics.includes(old))topic.value=old;
+ function renderTopics(){
+  const g=Number($("grade").value),previous=topic.value;
+  const availableTopics=[...new Set(Q.filter(x=>x.grade===g).map(x=>x.topic))].sort();
+  topic.innerHTML='<option value="all">Surprise me — all topics</option>'+availableTopics.map(t=>'<option value="'+t.replace(/&/g,"&amp;").replace(/"/g,"&quot;")+'">'+t+'</option>').join("");
+  topic.value=availableTopics.includes(previous)?previous:"all";
+ }
+ renderTopics();
  const count=$("available");
  if(count)count.textContent=Q.length+" questions across Grades 1–12 · "+Object.entries(totalByGrade).map(([g,n])=>"G"+g+": "+n).join(" · ");
  const panel=document.createElement("section");
@@ -202,7 +207,7 @@
  ft.addEventListener("change",showFormula);showFormula();
  const grade=$("grade"),missionTopic=$("topic");
  function updateAvailability(){const g=Number(grade.value),t=missionTopic.value,l=$("level").value;const n=Q.filter(x=>x.grade===g&&(t==="all"||x.topic===t)&&(l==="all"||x.level===l)).length;if(count)count.textContent=n+" questions available for this selection.";}
- grade.addEventListener("change",updateAvailability);missionTopic.addEventListener("change",updateAvailability);$("level").addEventListener("change",updateAvailability);updateAvailability();
+ grade.addEventListener("change",()=>{renderTopics();updateAvailability();});missionTopic.addEventListener("change",updateAvailability);$("level").addEventListener("change",updateAvailability);updateAvailability();
  const style=document.createElement("style");style.textContent=".arena-invite{border:1px solid #e7c76d}.formula-locker{border-left:5px solid #ffc23d}#formulaText{font-weight:650;line-height:1.8}";document.head.append(style);panel.classList.add("formula-locker");
  console.info("MATHQUEST+ bank added",added,"questions; total",Q.length);
 })();
