@@ -36,5 +36,5 @@ document.getElementById('departmentCards').innerHTML=depts.map(d=>'<article clas
 const htmlCode=document.getElementById('htmlCode'),cssCode=document.getElementById('cssCode'),jsCode=document.getElementById('jsCode'),preview=document.getElementById('preview'),buildStatus=document.getElementById('buildStatus'),runStatus=document.getElementById('runStatus'),projectList=document.getElementById('projectList'),projectStatus=document.getElementById('projectStatus'),projectType=document.getElementById('projectType');
 htmlCode.value=starter.html;cssCode.value=starter.css;jsCode.value=starter.js;
 document.getElementById('generate').addEventListener('click',generate);document.getElementById('runBtn').addEventListener('click',run);document.getElementById('resetBtn').addEventListener('click',()=>{htmlCode.value=starter.html;cssCode.value=starter.css;jsCode.value=starter.js;run();});document.getElementById('downloadBtn').addEventListener('click',download);
-document.getElementById('saveProjectBtn')?.addEventListener('click',save);document.querySelectorAll('.top .btn').forEach(b=>b.addEventListener('click',save));run();renderProjects();
+document.getElementById('saveProjectBtn').addEventListener('click',save);run();renderProjects();
 </script></body></html>
