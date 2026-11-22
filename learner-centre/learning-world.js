@@ -8,7 +8,7 @@
     {s:"Mathematics",q:"A school has 240 learners. If 35% are in Grade 8, how many Grade 8 learners are there?",o:["72","84","96","105"],a:1,e:"35% of 240 = 0.35 × 240 = 84 learners."},
     {s:"Mathematics",q:"Simplify the ratio 18:24 to its lowest terms.",o:["2:3","3:4","4:3","6:8"],a:1,e:"The highest common factor of 18 and 24 is 6. Divide both terms by 6 to get 3:4."},
     {s:"Mathematics",q:"Find the area of a triangle with base 12 cm and perpendicular height 7 cm.",o:["19 cm²","42 cm²","84 cm²","38 cm²"],a:1,e:"Area = ½ × base × height = ½ × 12 × 7 = 42 cm²."},
-    {s:"Mathematics",q:"Evaluate 3² + 4 × 2.",o:["26","22","14","50"],a:2,e:"Use order of operations: 3² = 9; 4 × 2 = 8; 9 + 8 = 17. Check: the correct result is 17."},
+    {s:"Mathematics",q:"Evaluate 3² + 4 × 2.",o:["26","22","17","50"],a:2,e:"Use order of operations: 3² = 9; 4 × 2 = 8; 9 + 8 = 17."},
     {s:"Mathematics",q:"A book costs KSh 800. A 10% discount is offered. What is the sale price?",o:["KSh 720","KSh 790","KSh 700","KSh 880"],a:0,e:"10% of 800 is 80. Sale price = 800 − 80 = KSh 720."},
     {s:"Integrated Science",q:"Which process changes liquid water into water vapour at the surface?",o:["Condensation","Evaporation","Freezing","Melting"],a:1,e:"Evaporation occurs when particles at the liquid surface gain enough energy to enter the gas state."},
     {s:"Integrated Science",q:"Which component provides energy in a simple electric circuit?",o:["Switch","Connecting wire","Cell","Bulb"],a:2,e:"A cell supplies electrical energy. The wires connect components, the switch opens or closes the circuit, and the bulb converts electrical energy to light and heat."},
