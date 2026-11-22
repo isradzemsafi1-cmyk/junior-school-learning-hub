@@ -101,7 +101,7 @@
     ["What is compassion?","Recognising another person's difficulty and responding with care."],
     ["Name two elements of art.","Any two of line, shape, form, colour, texture, space and value."]
   ];
-  const styles = \`
+  const styles = `
   #jslh-learning-world{--lw-navy:#10234e;--lw-blue:#244be2;--lw-purple:#7843d9;--lw-gold:#ffc23d;color:#1d294b;margin:34px auto;max-width:1240px;padding:clamp(16px,3vw,30px);font-family:Nunito,Arial,sans-serif}
   #jslh-learning-world *{box-sizing:border-box}#jslh-learning-world .lw-hero{padding:clamp(22px,4vw,40px);border-radius:26px;color:#fff;background:radial-gradient(circle at 85% 15%,#ffbf4a55,transparent 30%),linear-gradient(125deg,#10234e,#244be2 58%,#7843d9);box-shadow:0 18px 40px -22px #10234e}
   #jslh-learning-world h2,#jslh-learning-world h3,#jslh-learning-world h4{line-height:1.2}#jslh-learning-world .lw-hero h2{font-size:clamp(27px,4vw,42px);margin:8px 0}#jslh-learning-world .lw-hero p{max-width:760px;color:#e5ebff}
@@ -137,7 +137,7 @@
   #jslh-learning-world .lw-preview{width:100%;height:180px;border:1px solid #cbd5ea;border-radius:12px;background:#fff}
   #jslh-learning-world .lw-disclaimer{padding:13px 15px;border-radius:12px;background:#f1f4fb;color:#586783;font-size:12px}
   @media(max-width:600px){#jslh-learning-world .lw-tabs{display:grid;grid-template-columns:repeat(2,minmax(0,1fr))}#jslh-learning-world .lw-tab{font-size:13px}#jslh-learning-world .lw-hero{border-radius:18px}}
-  \`;
+  `;
   const root=document.createElement("section");root.id="jslh-learning-world";root.setAttribute("aria-label","Learner Learning World");
   root.innerHTML='<style>'+styles+'</style>'+
   '<div class="lw-hero"><div class="lw-kicker">Junior School Learning Hub · Grades 7–9</div><h2>🌍 Your Learning World starts here</h2><p>Explore original topic lessons, worked examples, practice questions, revision flashcards, careers and safe beginner coding. Learn at your own pace, then test what you understand.</p><div class="lw-toolbar"><span class="lw-kicker">Choose your grade</span><select id="lw-grade" aria-label="Choose grade"><option>Grade 7</option><option>Grade 8</option><option>Grade 9</option></select><span class="lw-muted" style="color:#e5ebff">The learning notes below are useful revision and enrichment across Grades 7–9; check your current class scheme for exact term coverage.</span></div></div>'+
