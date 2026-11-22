@@ -463,7 +463,33 @@ section{padding-top:50px;padding-bottom:50px}
 @media(max-width:760px){.kjsea-feature-card{grid-template-columns:auto minmax(0,1fr);gap:13px}.kjsea-feature-icon{width:52px;height:52px;font-size:27px}.kjsea-feature-action{grid-column:1/-1;align-items:stretch;min-width:0}.kjsea-feature-action .btn{width:100%}}
 </style>
 
-<style>body.learner-only> :not(header):not(#learner-resources):not(#career-resources):not(#learner-account):not(footer){display:none!important}body.learner-only>header nav a[href^='#']{white-space:nowrap}body.learner-only #learner-resources>.heading>a{display:none}body.learner-only #learner-resources{padding-top:38px}body.learner-only #career-resources{padding-top:28px}</style></head>
+<style>body.learner-only> :not(header):not(#learner-resources):not(#career-resources):not(#learner-account):not(footer){display:none!important}body.learner-only>header nav a[href^='#']{white-space:nowrap}body.learner-only #learner-resources>.heading>a{display:none}body.learner-only #learner-resources{padding-top:38px}body.learner-only #career-resources{padding-top:28px}</style><style id="jslh-responsive-layout-fix">
+/* Consistent responsive layout: prevent card, heading and control collisions. */
+html{scroll-padding-top:82px}body{overflow-x:hidden}section{scroll-margin-top:86px}
+section .heading{width:100%;max-width:850px;margin-left:auto;margin-right:auto}
+section .heading h2,section h2,section h3{overflow-wrap:anywhere}
+section p,section li,section a,section button{overflow-wrap:anywhere}
+.cards,.shortcuts,.access-centres,.grade-cards,.subject-grid,.lw-grid{grid-template-columns:repeat(auto-fit,minmax(min(100%,245px),1fr));align-items:stretch}
+.card,.access-centre,.grade-card,.subject-card,.paper-row,.panel,.lw-card{min-width:0;max-width:100%}
+.btn,button{max-width:100%;white-space:normal;line-height:1.35}
+.controls{align-items:end}.controls>*{min-width:0;max-width:100%}
+input,select,textarea{width:100%;min-width:0;max-width:100%}
+details>summary{cursor:pointer;line-height:1.4;overflow-wrap:anywhere}
+#jslh-learning-world{width:min(100%,1280px);max-width:1280px;margin:24px auto;padding:0 clamp(12px,3vw,28px);scroll-margin-top:90px}
+#jslh-learning-world .lw-section{padding:clamp(14px,2.5vw,26px);min-width:0}
+#jslh-learning-world .lw-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,235px),1fr));gap:14px}
+#jslh-learning-world .lw-card{height:100%;min-width:0;overflow-wrap:anywhere}
+#jslh-learning-world .lw-toolbar{display:flex;flex-wrap:wrap;align-items:center;gap:9px}
+#jslh-learning-world .lw-toolbar>*{min-width:0;max-width:100%}
+#jslh-learning-world .lw-tabs{position:sticky;top:72px;z-index:10;background:#f6f8ff;padding:8px 0;display:flex;flex-wrap:wrap;gap:8px}
+#jslh-learning-world .lw-tab{flex:1 1 145px;min-width:0;white-space:normal}
+#jslh-learning-world .lw-topic-body{min-width:0;overflow-wrap:anywhere}
+#jslh-learning-world .lw-example,#jslh-learning-world .lw-practice{max-width:100%;overflow-wrap:anywhere}
+#jslh-learning-world iframe{max-width:100%}
+@media(max-width:760px){section{padding:clamp(28px,6vw,42px) 4%}.heading{margin-bottom:22px}.heading p{font-size:15px}.card,.panel{padding:18px}#jslh-learning-world{padding:0 10px;margin:16px auto}#jslh-learning-world .lw-tabs{top:60px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr))}#jslh-learning-world .lw-tab{width:100%;font-size:13px;padding:10px 8px}#jslh-learning-world .lw-section{padding:12px 4px}}
+@media(max-width:420px){.btn{padding:10px 14px;font-size:13px}.controls{display:grid;grid-template-columns:minmax(0,1fr)}#jslh-learning-world .lw-tabs{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}#jslh-learning-world .lw-hero{padding:20px 16px}}
+</style>
+</head>
 <body class="learner-only">
 <header>
 <a class="logo" href="#home">
@@ -2907,5 +2933,7 @@ buildQuiz();
 })();
 </script>
  <script src="/learner-centre/quiz-bank/js/source-topical-quiz-centre.js" defer></script>
-<script src="/assets/js/site-activity-tracker.js" defer></script>\n</body>
+<script src="/assets/js/site-activity-tracker.js" defer></script>\n
+<script src="/learner-centre/learning-world.js" defer></script>
+</body>
 </html>
