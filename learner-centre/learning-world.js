@@ -3,6 +3,7 @@
    Curriculum alignment is a guide, not a claim of KICD approval. */
 (function () {
   "use strict";
+  const LEARNING_WORLD_VERSION = "1.0.1";
   if (document.getElementById("jslh-learning-world")) return;
   const quiz = [
     {s:"Mathematics",q:"A school has 240 learners. If 35% are in Grade 8, how many Grade 8 learners are there?",o:["72","84","96","105"],a:1,e:"35% of 240 = 0.35 × 240 = 84 learners."},
