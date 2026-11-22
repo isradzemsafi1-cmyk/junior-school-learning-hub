@@ -408,6 +408,28 @@ section{padding-top:50px;padding-bottom:50px}
 @media(max-width:980px){.access-centres.five-centres{grid-template-columns:1fr;max-width:680px}.access-centres.five-centres #tuition-centre{grid-column:auto}}
 @media(max-width:650px){.centre-workspace{padding:36px 5%}.workspace-accordion>summary{padding:15px}.workspace-accordion>summary strong{font-size:15px}}
 
+
+/* Responsive centre-card and section-heading alignment correction */
+#centres{position:relative;display:block;isolation:isolate;overflow:visible}
+#centres>.heading{display:block;position:relative;float:none;clear:both;width:min(100%,850px);margin:0 auto 30px;padding:0 10px;text-align:center;z-index:1}
+#centres>.heading h2{line-height:1.16;overflow-wrap:anywhere}
+#centres .access-centres{position:relative;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,285px),1fr));align-items:stretch;gap:18px;width:min(100%,1200px);margin:0 auto}
+#centres .access-centre{position:relative;display:flex;flex-direction:column;min-width:0;height:100%;overflow:visible;padding:clamp(18px,3vw,26px)}
+#centres .access-centre h3{line-height:1.2;overflow-wrap:anywhere}
+#centres .access-centre p{line-height:1.6}
+#centres .access-actions{display:flex;flex-wrap:wrap;align-items:stretch;gap:8px;margin-top:auto;padding-top:14px}
+#centres .access-actions .btn{max-width:100%;white-space:normal;text-align:center;line-height:1.35;justify-content:center}
+#centres .access-centre .pill{align-self:flex-start;max-width:100%;white-space:normal;line-height:1.35}
+@media(max-width:600px){
+ #centres{padding:38px 4%!important}
+ #centres>.heading{margin-bottom:24px}
+ #centres>.heading h2{font-size:clamp(26px,7vw,35px)}
+ #centres .access-centres{grid-template-columns:minmax(0,1fr);gap:13px}
+ #centres .access-centre{padding:19px;border-radius:19px}
+ #centres .access-actions{display:grid;grid-template-columns:minmax(0,1fr);gap:8px}
+ #centres .access-actions .btn{width:100%;margin:0}
+}
+
 </style>
 <script>document.documentElement.classList.add('js')</script>
 
