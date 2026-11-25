@@ -3,8 +3,8 @@
   "term": 1,
   "year": 2027,
   "source": "User-uploaded OPENER 001 2027 Term 1 Grade 7 PDF (86 pages)",
-  "status": "source-audit",
-  "note": "Topic map extracted from the supplied paper. This is not the 2,000-question bank and must not be presented as completed learner content.",
+  "status": "source-audit-expanded",
+  "note": "Expanded source audit from direct page extraction of the user-supplied 86-page OPENER 001 2027 Term 1 Grade 7 paper. This remains a topic map, not a completed question bank.",
   "areas": [
     {
       "id": "agriculture",
@@ -83,11 +83,19 @@
       "name": "Integrated Science",
       "sourcePages": "from page 21 onward",
       "topics": [
+        "laboratory safety rules and heating instruments",
+        "friction and methods of reducing friction",
+        "composition of atmospheric air and uses of gases",
+        "Bunsen burner parts and functions: collar, air hole, base, gas hose and gas inlet",
+        "blood groups",
+        "human skeleton bones: tibia, radius, skull, pelvis, ribs, femur and humerus",
+        "acid-base identification using indicators",
+        "safe handling of a light microscope",
+        "human heart parts",
         "laboratory apparatus identification",
         "first-aid kit components",
-        "density calculations",
-        "reading a meniscus",
-        "laboratory safety and injury response"
+        "density calculation from mass and volume",
+        "reading and drawing a meniscus"
       ]
     },
     {
@@ -95,7 +103,27 @@
       "name": "IRE",
       "sourcePages": "from page 21 onward",
       "topics": [
-        "Islamic worship and purification topics in the supplied paper; detailed page extraction required before question drafting"
+        "differences between Shahada and Tashahhud",
+        "meaning of Swalah and essential conditions",
+        "meaning of Twahara and Najaasat",
+        "types of Najaasat",
+        "three classes of water",
+        "circumstances making Ghusl compulsory",
+        "occasions when Ghusl is Sunnah",
+        "procedure and importance of Ghusl",
+        "acts forbidden to a person in Janaba",
+        "acts forbidden during menstruation",
+        "meaning and performance of Wudhu",
+        "factors and essential conditions of Wudhu",
+        "Sunnah and voluntary acts in Wudhu",
+        "acts that nullify Wudhu",
+        "meaning, reasons, conditions and nullifiers of Tayammum",
+        "meaning and etiquette of Istinjaa and toilet use",
+        "groups exempted from facing Qibla",
+        "ordained prayer times and prohibited prayer times",
+        "qualities of a Muadhin",
+        "differences between Adhan and Iqaamah",
+        "types of prayers"
       ]
     },
     {
@@ -114,7 +142,30 @@
       "name": "Kiswahili",
       "sourcePages": "from page 21 onward",
       "topics": [
-        "Kiswahili language skills and grammar as covered in the supplied paper; detailed page extraction required before question drafting"
+        "ufahamu: mawasiliano ya jadi na ya kisasa",
+        "vyombo vya mawasiliano: usafiri, mazungumzo na picha",
+        "maana ya msamiati katika muktadha: ana kwa ana na dunia kuwa kijiji kimoja",
+        "aina kuu za sauti za Kiswahili",
+        "vigezo vya kuainisha konsonanti",
+        "aina za konsonanti vipasuo",
+        "majukumu ya lugha",
+        "miundo ya silabi KI, KKI na II",
+        "ngeli za nomino",
+        "vinyume vya sentensi",
+        "ukanushi wa sentensi",
+        "uchanganuzi wa sentensi: nomino, kitenzi, kielezi, kiunganishi na kivumishi",
+        "sauti ambatano nyw, nd na ngw",
+        "shadda katika maneno",
+        "ufafanuzi wa sauti na aina zake",
+        "uakifishaji",
+        "aina za nomino: majina maalumu, wingi, vitu na makundi",
+        "vivumishi vya sifa, kuuliza na kuonyesha",
+        "viambishi vya ngeli",
+        "uchanganuzi wa sentensi kwa njia ya mstari",
+        "hali ya udogo",
+        "isimujamii na miktadha ya matumizi ya lugha",
+        "ufahamu: mashindano ya kandanda ya Afrika",
+        "insha ya kusisimua kutokana na picha"
       ]
     },
     {
@@ -170,5 +221,12 @@
       ]
     }
   ],
-  "nextBuildRule": "Draft and verify the 80 MCQ + 120 structured questions for each area using the complete page text and curriculum scope. Clearly label curriculum-created supplementary practice. Do not deploy until all 30 area-term files pass the repository validator."
+  "nextBuildRule": "Use these exact source topics to draft original JSLH practice. Preserve Kiswahili terminology and IRE terms. Add curriculum-aligned supplementary questions only where clearly labeled. Do not present this audit as a 2,000-question bank.",
+  "sourcePageCoverage": {
+    "integrated-science": "pages 35-39",
+    "ire": "pages 40-45",
+    "kiswahili": "pages 46-59",
+    "mathematics": "pages 60-69",
+    "pre-technical": "pages 70-78"
+  }
 }
