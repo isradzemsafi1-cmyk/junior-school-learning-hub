@@ -4,7 +4,7 @@
   "year": 2027,
   "title": "Junior School Learning Hub Grade 7 Term 1 Revision Bank",
   "sourceBasis": "User-supplied OPENER 001 2027 Term 1 Grade 7 paper, pages 35–39 (Integrated Science). Questions are original JSLH practice based on the paper's topics, not copied answer schemes.",
-  "contentStatus": "development draft; answer positions rebalanced without changing option correctness; content review and all-term validation still required",
+  "contentStatus": "development draft; 50 subject-specific structured questions replaced in Term 1; full editorial review and remaining generic-template cleanup required",
   "subjects": [
     {
       "id": "agriculture",
@@ -1468,28 +1468,28 @@
           4
         ],
         [
-          "Give four uses or applications of soil conservation.",
-          "Award one mark for each distinct, relevant use. Avoid double-credit for synonymous answers. Topic focus: soil conservation. A contour bund slows water moving down a slope.",
+          "A farmer notices that seedlings in a nursery are overcrowded and weak. Explain four actions the farmer should take to improve their growth.",
+          "Award 1 mark each: thin overcrowded seedlings; water appropriately; remove weeds; provide suitable shade/hardening; control pests and diseases; maintain clean nursery beds.",
           4
         ],
         [
-          "Give four uses or applications of seedbed.",
-          "Award one mark for each distinct, relevant use. Avoid double-credit for synonymous answers. Topic focus: seedbed. A fine, level seedbed supports uniform germination.",
+          "Describe how to prepare a fine seedbed for small seeds.",
+          "Award: clear vegetation (1); dig/loosen soil (1); break large soil clods (1); remove stones/roots (1); level and make a fine tilth (1).",
+          5
+        ],
+        [
+          "A farmer plans to plant maize at the onset of rains. Give four reasons why checking the weather forecast is useful.",
+          "Any four: predicts likely rainfall; helps select planting date; reduces risk of seed rotting in dry soil; avoids losses from heavy rain/flooding; supports labour planning; improves germination and establishment.",
           4
         ],
         [
-          "Give four uses or applications of planting.",
-          "Award one mark for each distinct, relevant use. Avoid double-credit for synonymous answers. Topic focus: planting. Dibbling places seeds in individual planting stations.",
-          4
+          "Explain three ways weeds reduce crop yields and state one control method for each.",
+          "Competition for water/nutrients/light/space (1 each); matching controls such as hand-weeding, mulching, crop rotation, timely cultivation or approved herbicide use (1 each).",
+          6
         ],
         [
-          "Give four uses or applications of weeds.",
-          "Award one mark for each distinct, relevant use. Avoid double-credit for synonymous answers. Topic focus: weeds. Weeds compete for light, water, nutrients and space.",
-          4
-        ],
-        [
-          "Give four uses or applications of water.",
-          "Award one mark for each distinct, relevant use. Avoid double-credit for synonymous answers. Topic focus: water. Mulch reduces direct evaporation and can suppress weeds.",
+          "A household has vegetable peels, dry leaves and plastic packaging. Explain how each should be managed safely.",
+          "Peels: compost/feed where suitable (1); dry leaves: compost/mulch (1); plastic: reuse/recycle or dispose through approved collection (1); do not burn or dump plastics (1).",
           4
         ]
       ],
@@ -2961,29 +2961,29 @@
           4
         ],
         [
-          "Define drawing. (Practice task 2)",
-          "Accept a correct definition identifying the key features of the concept (2); award remaining marks for relevant, distinct points, one mark each. Topic focus: drawing. Still life focuses on non-moving objects arranged for observation.",
-          2
+          "Describe the steps for producing a balanced still-life drawing of three objects.",
+          "Award: arrange objects (1); observe shapes/proportions (1); sketch outlines lightly (1); show overlap and placement (1); add light, shade and details (1); review composition (1).",
+          6
         ],
         [
-          "Define colour. (Practice task 2)",
-          "Accept a correct definition identifying the key features of the concept (2); award remaining marks for relevant, distinct points, one mark each. Topic focus: colour. Primary colours are used to mix other colours in the traditional colour wheel.",
-          2
+          "Explain the difference between a tint and a shade. Give one example of making each.",
+          "Tint: colour mixed with white to make it lighter (1); valid example (1). Shade: colour mixed with black to make it darker (1); valid example (1).",
+          4
         ],
         [
-          "Define art. (Practice task 2)",
-          "Accept a correct definition identifying the key features of the concept (2); award remaining marks for relevant, distinct points, one mark each. Topic focus: art. Sculpture occupies length, width and height.",
-          2
+          "A learner is preparing a poster for a school sports day. State four design choices that will make the message clear.",
+          "Any four: readable lettering; strong contrast; suitable colour scheme; clear heading; balanced layout; relevant images; limited text; correct event details.",
+          4
         ],
         [
-          "Define sports. (Practice task 2)",
-          "Accept a correct definition identifying the key features of the concept (2); award remaining marks for relevant, distinct points, one mark each. Topic focus: sports. Footwork rules restrict running with the ball.",
-          2
+          "Explain four safety practices to observe when performing a dance routine.",
+          "Any four: warm up; use a clear non-slippery space; wear suitable clothing/footwear; maintain safe spacing; use safe movements; cool down; stop if injured.",
+          4
         ],
         [
-          "Define dance. (Practice task 2)",
-          "Accept a correct definition identifying the key features of the concept (2); award remaining marks for relevant, distinct points, one mark each. Topic focus: dance. Warm-up prepares the body and reduces injury risk.",
-          2
+          "Describe how a team can use passing and communication to maintain possession in a ball game.",
+          "Award: pass to an unmarked teammate (1); move into space after passing (1); call/use clear signals (1); choose accurate pass (1); support the player with the ball (1).",
+          5
         ]
       ],
       "source": {
@@ -4459,29 +4459,29 @@
           4
         ],
         [
-          "Describe how conflict resolution can help prevent violence among learners.",
-          "Award up to 3 marks: encourages calm discussion; helps parties listen and understand; supports fair agreements/mediation; reduces anger and retaliation.",
-          3
+          "Using the first biblical creation account, outline what God created on each of the first six days.",
+          "Award 1 mark for each: day 1 light; day 2 sky/firmament; day 3 dry land, seas and vegetation; day 4 sun, moon and stars; day 5 fish and birds; day 6 land animals and human beings.",
+          6
         ],
         [
-          "Explain why human beings should not interpret dominion over creation as permission to destroy the environment.",
-          "Award up to 3 marks: dominion is a responsibility/stewardship; creation is valuable; destruction harms people and other living things; resources should be used sustainably for future generations.",
-          3
-        ],
-        [
-          "A local wetland is being filled with rubbish and drained. Describe four reasons why the community should protect it.",
-          "Award 1 mark each: supports biodiversity; filters water; reduces flooding; provides livelihoods/resources; stores water; maintains ecological balance.",
+          "Explain four ways a Christian learner can demonstrate stewardship of the environment at school.",
+          "Any four explained: plant/care for trees; conserve water; avoid littering; sort/recycle waste; protect living things; use resources responsibly; join clean-up activities.",
           4
         ],
         [
-          "Give three examples of how a learner can practise responsible use of resources in school.",
-          "Award 1 mark each: avoid wasting paper; switch off unused lights; close taps; reuse learning materials; dispose of waste correctly; care for books and equipment.",
-          3
+          "State four differences between the first and second biblical creation accounts as presented in Genesis.",
+          "Accept four accurate contrasts: first gives a six-day sequence, second focuses on human life/garden; first uses a structured day pattern, second a narrative; first creates male and female together, second narrates formation of man then woman; different order/emphasis of events.",
+          4
         ],
         [
-          "Explain how studying CRE can contribute to responsible citizenship.",
-          "Award up to 3 marks: teaches respect for others; encourages honesty and service; promotes care for environment; supports peaceful coexistence; develops accountability and concern for community.",
-          3
+          "A learner is pressured by friends to misuse drugs. Explain four actions the learner should take.",
+          "Any four: refuse firmly; leave risky situation; seek help from trusted adult; choose supportive friends; take part in healthy activities; learn risks; report unsafe pressure.",
+          4
+        ],
+        [
+          "Explain how honesty and forgiveness can restore relationships after a disagreement.",
+          "Award: admit wrongdoing truthfully (1); listen to affected person (1); apologise sincerely (1); forgive without revenge (1); make amends/change behaviour to rebuild trust (1).",
+          5
         ]
       ]
     },
@@ -5947,29 +5947,29 @@
           4
         ],
         [
-          "Correct the sentence and explain two corrections: 'If she will study hard, she would pass her exams.'",
-          "If she studied hard, she would pass her exams. (2); explanation of if-clause past form and would in result clause (1 each).",
-          4
-        ],
-        [
-          "Write a suitable subject line and opening for an email to your class teacher requesting permission to join a school club.",
-          "Relevant subject line (1); respectful salutation (1); clear purpose in opening (2).",
-          4
-        ],
-        [
-          "Give four examples of figurative language or sound devices used in poetry.",
-          "Simile, metaphor, personification, alliteration, onomatopoeia, repetition, rhyme. Any four.",
-          4
-        ],
-        [
-          "Explain how a title can help a reader predict the content of a passage.",
-          "It signals the topic, setting or central idea and activates relevant expectations before reading. Award up to 2.",
+          "Rewrite the following sentence in reported speech: Mary said, “I have completed my assignment.”",
+          "Mary said that she had completed her assignment. Award 1 mark for correct tense/backshift and 1 for pronoun/reporting structure.",
           2
         ],
         [
-          "Write a short review of a book you have read, stating its title, main character, favourite event and recommendation.",
-          "Award: title/author if known (1); main character (2); event (2); reasoned recommendation (2); organisation and language (3).",
+          "Use each of the following words in a meaningful sentence to show its meaning: (a) advice (b) advise.",
+          "One correct sentence showing advice as a noun (1); one showing advise as a verb (1).",
+          2
+        ],
+        [
+          "Write a paragraph of about 80 words describing how learners can keep their classroom clean.",
+          "Award: relevant ideas (3); logical sequence/coherence (2); appropriate vocabulary (2); grammar and punctuation (2); paragraphing (1).",
           10
+        ],
+        [
+          "Identify the subject and object in: “The science teacher demonstrated the experiment.”",
+          "Subject: The science teacher (1); object: the experiment (1).",
+          2
+        ],
+        [
+          "Change into the passive voice: “The prefects cleaned the classroom.”",
+          "The classroom was cleaned by the prefects. Award correct object-to-subject change (1) and verb form/by-phrase (1).",
+          2
         ]
       ],
       "source": {
@@ -7445,29 +7445,29 @@
           2
         ],
         [
-          "State three ways to reduce the risk of chemical exposure during practical work.",
-          "Award 1 mark each: wear appropriate protective equipment; use small quantities; avoid touching/tasting; follow instructions; wash hands; keep containers labelled.",
-          3
+          "A learner is given a mixture of sand, salt and water. Describe how to obtain dry sand and salt separately.",
+          "Filter mixture to retain sand (1); wash/dry sand (1); collect filtrate (1); evaporate water from salt solution (1); crystallise/dry salt (1).",
+          5
         ],
         [
-          "Describe the procedure for reporting and recording an accident in the laboratory.",
-          "Award up to 3 marks: stop work and alert teacher immediately; give accurate details of what happened/injury/substance; follow first-aid/emergency directions and ensure incident is recorded by responsible staff.",
-          3
+          "Explain how a plant cell is adapted for making food by photosynthesis.",
+          "Chloroplasts contain chlorophyll to absorb light (2); large vacuole helps maintain turgidity (1); cell wall supports the cell (1); broad leaf arrangement may maximise light capture (1).",
+          5
         ],
         [
-          "Explain why a first-aid kit should be accessible but its contents should be used responsibly.",
-          "Award up to 2 marks: quick access supports prompt response; only trained/authorised persons should use items appropriately and replenish/report use.",
-          2
+          "Describe an investigation to compare how quickly equal amounts of ice melt in sunlight and in shade.",
+          "Use equal ice masses (1); place in similar containers (1); expose one to sunlight and one to shade (1); measure melting time/remaining mass at intervals (1); keep other conditions similar and record results (1).",
+          5
         ],
         [
-          "State two limitations of using only visual observation to identify an unknown laboratory substance.",
-          "Award 1 mark each: different substances may look alike; appearance alone cannot safely establish identity/properties; testing requires approved supervised methods.",
-          2
-        ],
-        [
-          "Describe how you would compare the densities of two regular solid blocks using a balance and ruler.",
-          "Award up to 4 marks: measure mass of each; measure dimensions; calculate volume; calculate density for each; compare values.",
+          "Distinguish between a physical change and a chemical change, giving two examples of each.",
+          "Physical: no new substance formed; examples melting ice/dissolving sugar (2). Chemical: new substance formed; examples rusting iron/burning paper (2).",
           4
+        ],
+        [
+          "Explain three ways water pollution can affect living organisms and the environment.",
+          "Any three explained: harms/kills aquatic organisms; reduces dissolved oxygen; spreads disease; contaminates drinking water; disrupts food chains; damages habitats.",
+          3
         ]
       ]
     },
@@ -8933,28 +8933,28 @@
           3
         ],
         [
-          "Explain three reasons why faith is important. (Practice task 2)",
-          "Award marks for three relevant reasons, each briefly explained. Do not award repeated ideas. Topic focus: faith. Shahada is the testimony of faith.",
-          3
+          "Outline the correct sequence of actions when performing Wudhu before Swalah.",
+          "Award for correct sequence: intention; wash hands; rinse mouth and nose; wash face; wash arms to elbows; wipe head/ears; wash feet to ankles. Any six in correct order.",
+          6
         ],
         [
-          "Explain three reasons why prayer is important. (Practice task 2)",
-          "Award marks for three relevant reasons, each briefly explained. Do not award repeated ideas. Topic focus: prayer. Swalah is the formal daily prayer.",
-          3
+          "Explain four reasons why Muslims observe the five daily prayers.",
+          "Any four: obedience to Allah; remembrance of Allah; spiritual discipline; promotes cleanliness; strengthens faith; encourages good conduct; creates unity among Muslims.",
+          4
         ],
         [
-          "Explain three reasons why purification is important. (Practice task 2)",
-          "Award marks for three relevant reasons, each briefly explained. Do not award repeated ideas. Topic focus: purification. Wudhu is a prescribed form of purification before prayer.",
-          3
+          "Differentiate between Fardh and Sunnah acts of worship and give one example of each.",
+          "Fardh is obligatory (1), e.g. five daily prayers (1); Sunnah is practice recommended from Prophet Muhammad (1), e.g. voluntary prayers (1).",
+          4
         ],
         [
-          "Explain three reasons why worship is important. (Practice task 2)",
-          "Award marks for three relevant reasons, each briefly explained. Do not award repeated ideas. Topic focus: worship. Voluntary acts are performed in addition to obligatory duties.",
-          3
+          "State four conditions that should be observed before performing Swalah.",
+          "Any four: prayer time has entered; purification; clean body/clothes/place; cover awrah; face Qibla where able; intention.",
+          4
         ],
         [
-          "Explain three reasons why conduct is important. (Practice task 2)",
-          "Award marks for three relevant reasons, each briefly explained. Do not award repeated ideas. Topic focus: conduct. The imam should be competent and conduct the prayer responsibly.",
+          "Explain three ways a Muslim learner can demonstrate good conduct towards classmates.",
+          "Any three explained: honesty; respect; kindness; helping others; avoiding insults/backbiting; keeping promises; fairness; peaceful conflict resolution.",
           3
         ]
       ],
@@ -10426,29 +10426,29 @@
           4
         ],
         [
-          "Explain two challenges associated with sarufi and suggest a response to each. (Practice task 2)",
-          "Award one mark for each valid challenge and one for a suitable response. Accept reasonable alternatives. Topic focus: sarufi. Nomino hutaja majina ya watu, vitu, mahali au hali.",
+          "Tunga sentensi moja kwa kila neno lifuatalo ili kuonyesha maana yake: (a) tamaduni (b) mawasiliano.",
+          "Sentensi sahihi inayoonyesha maana ya tamaduni (alama 1); sentensi sahihi inayoonyesha maana ya mawasiliano (alama 1).",
+          2
+        ],
+        [
+          "Eleza tofauti kati ya nomino za pekee na nomino za kawaida, ukitoa mifano miwili ya kila aina.",
+          "Nomino za pekee hutaja jina maalumu, mfano Amina/Nairobi (alama 2); nomino za kawaida hutaja watu/vitu kwa jumla, mfano mtoto/mji (alama 2).",
           4
         ],
         [
-          "Explain two challenges associated with fonolojia and suggest a response to each. (Practice task 2)",
-          "Award one mark for each valid challenge and one for a suitable response. Accept reasonable alternatives. Topic focus: fonolojia. Irabu hutamkwa bila kizuizi kikubwa katika mkondo wa hewa.",
+          "Andika aya ya maneno 60–80 kuhusu umuhimu wa kutunza mazingira ya shule.",
+          "Maudhui yanayofaa (alama 3); mpangilio wa mawazo (alama 2); msamiati mwafaka (alama 2); sarufi na tahajia (alama 2); uakifishaji (alama 1).",
+          10
+        ],
+        [
+          "Taja na ueleze njia nne ambazo mwanafunzi anaweza kutumia kuwasiliana ujumbe kwa heshima.",
+          "Njia nne zenye maelezo: mazungumzo ya adabu; barua pepe rasmi; ujumbe mfupi wenye lugha nzuri; ishara zinazofaa; kusikiliza bila kukatiza; kutumia salamu.",
           4
         ],
         [
-          "Explain two challenges associated with mawasiliano and suggest a response to each. (Practice task 2)",
-          "Award one mark for each valid challenge and one for a suitable response. Accept reasonable alternatives. Topic focus: mawasiliano. Ishara zinaweza kuwasilisha ujumbe bila maneno.",
-          4
-        ],
-        [
-          "Explain two challenges associated with uandishi and suggest a response to each. (Practice task 2)",
-          "Award one mark for each valid challenge and one for a suitable response. Accept reasonable alternatives. Topic focus: uandishi. Alama ya kuuliza huonyesha sentensi ya swali.",
-          4
-        ],
-        [
-          "Give four uses or applications of sarufi. (Practice task 2)",
-          "Award one mark for each distinct, relevant use. Avoid double-credit for synonymous answers. Topic focus: sarufi. Nomino hutaja majina ya watu, vitu, mahali au hali.",
-          4
+          "Badilisha sentensi hii iwe katika wakati uliopita: “Wanafunzi wanasoma vitabu maktabani.”",
+          "Wanafunzi walisoma vitabu maktabani. Alama 1 kwa kiambishi cha wakati uliopita na alama 1 kwa sentensi sahihi.",
+          2
         ]
       ],
       "source": {
@@ -11919,29 +11919,29 @@
           4
         ],
         [
-          "Describe four steps or procedures related to percentage. (Practice task 2)",
-          "Award one mark for each correct step in a logical sequence. Accept equivalent safe procedures. Topic focus: percentage. 25% is one quarter; one quarter of 80 is 20.",
+          "A trader bought 3 exercise books at KSh 45 each and 2 pens at KSh 25 each. Calculate the total cost and the change from KSh 200.",
+          "Books: 3×45=135 (1); pens: 2×25=50 (1); total=185 (1); change=200−185=KSh 15 (1).",
           4
         ],
         [
-          "Describe four steps or procedures related to measurement. (Practice task 2)",
-          "Award one mark for each correct step in a logical sequence. Accept equivalent safe procedures. Topic focus: measurement. A hectare is 10,000 square metres.",
+          "Solve 4x − 7 = 21. Show your working.",
+          "Add 7 to both sides: 4x=28 (1); divide by 4 (1); x=7 (1).",
+          3
+        ],
+        [
+          "A rectangular garden is 12 m long and 7 m wide. Find its perimeter and area.",
+          "Perimeter=2(12+7)=38 m (2); area=12×7=84 m² (2).",
           4
         ],
         [
-          "Describe four steps or procedures related to geometry. (Practice task 2)",
-          "Award one mark for each correct step in a logical sequence. Accept equivalent safe procedures. Topic focus: geometry. The interior angles of a triangle add up to 180 degrees.",
-          4
+          "A learner scored 12, 15, 9, 14 and 10 in five quizzes. Find the mean score.",
+          "Sum=12+15+9+14+10=60 (1); divide by 5 (1); mean=12 (1).",
+          3
         ],
         [
-          "Describe four steps or procedures related to algebra. (Practice task 2)",
-          "Award one mark for each correct step in a logical sequence. Accept equivalent safe procedures. Topic focus: algebra. Subtract 5 from both sides to obtain x = 7.",
-          4
-        ],
-        [
-          "State four safety measures or good practices related to number. (Practice task 2)",
-          "Award one mark for each relevant precaution. Answers must relate directly to the stated activity. Topic focus: number. The digit 7 is in the hundreds place.",
-          4
+          "A bag contains 3 red, 2 blue and 5 green counters. Find the probability of selecting (a) a blue counter (b) a counter that is not green.",
+          "Total=10 (1); P(blue)=2/10=1/5 (1); not green=5/10=1/2 (1).",
+          3
         ]
       ],
       "source": {
@@ -13412,28 +13412,28 @@
           4
         ],
         [
-          "Describe four steps or procedures related to safety. (Practice task 2)",
-          "Award one mark for each correct step in a logical sequence. Accept equivalent safe procedures. Topic focus: safety. PPE helps protect the user from hazards.",
+          "Describe four steps to follow when making a simple product from a design brief.",
+          "Identify need/problem (1); develop/choose design idea (1); prepare drawing and measurements (1); select materials/tools and plan safe making (1); construct and evaluate (1).",
+          5
+        ],
+        [
+          "Explain four reasons why personal protective equipment is important in a workshop.",
+          "Any four: protects eyes/hands/feet; reduces cuts/burns; prevents dust inhalation; improves visibility; reduces injury severity; supports safe working habits.",
           4
         ],
         [
-          "Describe four steps or procedures related to tools. (Practice task 2)",
-          "Award one mark for each correct step in a logical sequence. Accept equivalent safe procedures. Topic focus: tools. A screwdriver engages the head of a screw.",
+          "A learner must join two pieces of thin wood. Name two suitable joining methods and state one tool needed for each.",
+          "Nails and hammer (2); screws and screwdriver (2); wood adhesive and applicator (2). Any two method-tool pairs.",
           4
         ],
         [
-          "Describe four steps or procedures related to computer. (Practice task 2)",
-          "Award one mark for each correct step in a logical sequence. Accept equivalent safe procedures. Topic focus: computer. Hardware refers to tangible computer components.",
+          "Distinguish between hardware and software in a computer system and give two examples of each.",
+          "Hardware is physical components (1), e.g. keyboard/monitor (1); software is programs/instructions (1), e.g. operating system/word processor (1).",
           4
         ],
         [
-          "Describe four steps or procedures related to entrepreneurship. (Practice task 2)",
-          "Award one mark for each correct step in a logical sequence. Accept equivalent safe procedures. Topic focus: entrepreneurship. An entrepreneur organises resources to provide goods or services.",
-          4
-        ],
-        [
-          "State four safety measures or good practices related to materials. (Practice task 2)",
-          "Award one mark for each relevant precaution. Answers must relate directly to the stated activity. Topic focus: materials. Conductors allow electric current to flow.",
+          "Explain four ways to reduce waste when selecting and using workshop materials.",
+          "Measure accurately; plan cutting layout; reuse offcuts; select correct material size; store materials safely; recycle suitable waste. Any four.",
           4
         ]
       ],
@@ -14905,29 +14905,29 @@
           4
         ],
         [
-          "Define earth. (Practice task 2)",
-          "Accept a correct definition identifying the key features of the concept (2); award remaining marks for relevant, distinct points, one mark each. Topic focus: earth. The Equator divides Earth into Northern and Southern Hemispheres.",
-          2
+          "Explain how a map scale helps a learner estimate the real distance between two places.",
+          "Scale shows relationship between map distance and ground distance (1); measure map distance (1); apply scale ratio/conversion (1); state real distance with correct unit (1).",
+          4
         ],
         [
-          "Define weather. (Practice task 2)",
-          "Accept a correct definition identifying the key features of the concept (2); award remaining marks for relevant, distinct points, one mark each. Topic focus: weather. A rain gauge collects and measures rainfall.",
-          2
+          "State four factors that influence where people establish settlements.",
+          "Any four: water availability; fertile land; relief; climate; security; transport; employment; social services; trade opportunities.",
+          4
         ],
         [
-          "Define population. (Practice task 2)",
-          "Accept a correct definition identifying the key features of the concept (2); award remaining marks for relevant, distinct points, one mark each. Topic focus: population. Population density is people per unit area.",
-          2
+          "Explain three ways communities can preserve cultural heritage while respecting other communities.",
+          "Any three explained: teach languages/traditions; preserve historic sites; document oral histories; hold cultural events respectfully; protect artefacts; promote inter-community learning.",
+          3
         ],
         [
-          "Define maps. (Practice task 2)",
-          "Accept a correct definition identifying the key features of the concept (2); award remaining marks for relevant, distinct points, one mark each. Topic focus: maps. A key or legend explains map symbols.",
-          2
+          "Describe four ways weather conditions affect people's daily activities in Kenya.",
+          "Any four linked examples: rainfall affects farming/travel; temperature affects clothing/work; wind affects fishing/aviation; storms affect safety; sunshine supports drying/solar energy.",
+          4
         ],
         [
-          "Define culture. (Practice task 2)",
-          "Accept a correct definition identifying the key features of the concept (2); award remaining marks for relevant, distinct points, one mark each. Topic focus: culture. Culture includes shared practices, values and traditions.",
-          2
+          "Explain three ways responsible use of natural resources supports sustainable development.",
+          "Any three explained: conserves resources for future generations; protects ecosystems; supports livelihoods; reduces pollution; maintains soil/water quality; promotes long-term economic activity.",
+          3
         ]
       ],
       "source": {
