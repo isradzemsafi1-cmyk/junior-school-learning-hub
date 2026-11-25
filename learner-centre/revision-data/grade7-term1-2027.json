@@ -4157,8 +4157,250 @@
     {
       "id": "kiswahili",
       "name": "Kiswahili",
-      "mcq": [],
-      "structured": []
+      "mcq": [
+        [
+          "Neno ‘mawasiliano’ linatokana na kitenzi gani?",
+          [
+            "Wasili",
+            "Soma",
+            "Andika",
+            "Safiri"
+          ],
+          0,
+          "Mawasiliano linatokana na wasili."
+        ],
+        [
+          "Ni njia ipi ya jadi ya mawasiliano iliyotajwa kwenye kifungu?",
+          [
+            "Moshi",
+            "Barua pepe",
+            "Televisheni",
+            "Simu"
+          ],
+          0,
+          "Moshi ni mojawapo ya njia za jadi zilizotajwa."
+        ],
+        [
+          "Mawasiliano ya kisasa yanahusisha:",
+          [
+            "Simu na mtandao",
+            "Mbiu pekee",
+            "Moshi pekee",
+            "Ngoma pekee"
+          ],
+          0,
+          "Simu na mtandao ni njia za kisasa."
+        ],
+        [
+          "Vyombo vya mawasiliano vimeelezwa katika vipengele vingapi?",
+          [
+            "Viwili",
+            "Vitatu",
+            "Vinne",
+            "Vitano"
+          ],
+          1,
+          "Kifungu kinataja usafiri, mazungumzo na picha."
+        ],
+        [
+          "Sauti za Kiswahili zimegawanywa katika makundi mawili makuu ya:",
+          [
+            "Irabu na konsonanti",
+            "Nomino na vitenzi",
+            "Vitenzi na vielezi",
+            "Viwakilishi na vivumishi"
+          ],
+          0,
+          "Makundi makuu ni irabu na konsonanti."
+        ],
+        [
+          "Muundo wa silabi KI unamaanisha:",
+          [
+            "Konsonanti + irabu",
+            "Konsonanti + konsonanti + irabu",
+            "Irabu + irabu",
+            "Irabu + konsonanti"
+          ],
+          0,
+          "KI ni konsonanti ikifuatiwa na irabu."
+        ],
+        [
+          "Neno ‘mwerevu’ katika ‘mtoto mwerevu’ ni:",
+          [
+            "Kitenzi",
+            "Kivumishi",
+            "Kielezi",
+            "Kiunganishi"
+          ],
+          1,
+          "Mwerevu linaeleza sifa ya mtoto."
+        ],
+        [
+          "Kinyume cha ‘mrefu’ ni:",
+          [
+            "Mfupi",
+            "Mrefu zaidi",
+            "Mpana",
+            "Mrefu sana"
+          ],
+          0,
+          "Mfupi ni kinyume cha mrefu."
+        ],
+        [
+          "Katika sentensi ‘Mwanafunzi anasoma kitabu’, kitenzi ni:",
+          [
+            "Mwanafunzi",
+            "Anasoma",
+            "Kitabu",
+            "A"
+          ],
+          1,
+          "Anasoma linaonyesha tendo."
+        ],
+        [
+          "Isimu jamii huchunguza:",
+          [
+            "Uhusiano wa lugha na jamii",
+            "Hesabu pekee",
+            "Mimea pekee",
+            "Michezo pekee"
+          ],
+          0,
+          "Isimu jamii huchunguza lugha katika muktadha wa jamii."
+        ]
+      ],
+      "structured": [
+        [
+          "Eleza maana ya mawasiliano.",
+          "Ni mchakato wa kupeleka au kubadilishana ujumbe kutoka kwa mtu/kitu/mahali hadi kwa mwingine. (2)",
+          2
+        ],
+        [
+          "Taja njia tatu za jadi za mawasiliano zilizotajwa katika kifungu.",
+          "Moshi, ngomezi na kupiga mbiu. (1 kila moja)",
+          3
+        ],
+        [
+          "Taja njia nne za kisasa za mawasiliano zilizotajwa katika kifungu.",
+          "Simu, mtandao, televisheni na wavuti. (1 kila moja)",
+          4
+        ],
+        [
+          "Taja vipengele vitatu vya vyombo/njia za mawasiliano kulingana na kifungu.",
+          "Usafiri, mazungumzo na picha. (1 kila moja)",
+          3
+        ],
+        [
+          "Eleza maana ya ‘ulimwengu umekuwa kijiji kimoja kikubwa’.",
+          "Teknolojia ya mawasiliano imefanya watu wa maeneo mbalimbali kuwasiliana kwa urahisi na haraka kana kwamba wako karibu. (2)",
+          2
+        ],
+        [
+          "Toa visawe vya maneno haya: (a) waraka (b) televisheni.",
+          "(a) barua/hati (1); (b) runinga (1).",
+          2
+        ],
+        [
+          "Taja aina mbili kuu za sauti za Kiswahili.",
+          "Irabu na konsonanti. (1 kila moja)",
+          2
+        ],
+        [
+          "Taja vigezo vitatu vya kuainisha konsonanti.",
+          "Mahali pa kutamkia, namna ya kutamka na hali ya nyuzi sauti/kutumia nyuzi sauti. (1 kila moja)",
+          3
+        ],
+        [
+          "Taja aina mbili za konsonanti vipasuo.",
+          "Kwa mfano /p, b, t, d, k, g/; taja mbili zozote sahihi. (1 kila moja)",
+          2
+        ],
+        [
+          "Andika majukumu matatu ya lugha.",
+          "Mawasiliano, kuelimisha, kuburudisha, kuhifadhi utamaduni, kueleza hisia/kutoa taarifa. Yoyote matatu.",
+          3
+        ],
+        [
+          "Toa mifano miwili ya maneno yenye muundo wa silabi KI na miwili ya KKI.",
+          "KI: baba, kiti, simu (mifano sahihi miwili); KKI: nchi, njia, mbili (mifano sahihi miwili). (1 kila mfano)",
+          4
+        ],
+        [
+          "Bainisha ngeli za nomino hizi: ngoma, ukuta, macho, ugonjwa, mmea, maiti.",
+          "Ngoma—U-ZI (au ngeli ya U-ZI kulingana na matumizi); ukuta—U-ZI; macho—LI-YA; ugonjwa—U-ZI; mmea—U-I; maiti—A-WA/MA-MA kulingana na uainishaji unaotumika. Thibitisha kwa upatanisho sahihi wa sentensi; alama 1 kila moja.",
+          6
+        ],
+        [
+          "Andika sentensi hizi katika hali ya kukanusha: (a) Mkulima analima shamba. (b) Mwanafunzi anasoma kitabu.",
+          "(a) Mkulima halimi shamba. (1); (b) Mwanafunzi hasomi kitabu. (1)",
+          2
+        ],
+        [
+          "Tambua aina za maneno katika sentensi: Mtoto anacheza vizuri.",
+          "Mtoto—nomino (1); anacheza—kitenzi (1); vizuri—kielezi (1).",
+          3
+        ],
+        [
+          "Toa neno moja lenye kila sauti ambatano: nyw, nd, ngw.",
+          "Mifano sahihi ya kila sauti kulingana na matumizi ya Kiswahili sanifu; alama 1 kila moja.",
+          3
+        ],
+        [
+          "Weka shadda katika maneno: karatasi, shairi, barabara na mto.",
+          "Karatási; sháiri; barabára; mtó. (1 kila moja; zingatia silabi yenye mkazo katika matamshi sanifu).",
+          4
+        ],
+        [
+          "Fafanua maana ya sauti katika lugha.",
+          "Ni mlio unaotamkwa na kutumika kujenga maneno katika lugha. (2)",
+          2
+        ],
+        [
+          "Akifisha: ann musa musa unaitwa musa na nani ann na mama.",
+          "Ann: “Musa, Musa, unaitwa Musa na nani?” Musa: “Ann na mama.” (3)",
+          3
+        ],
+        [
+          "Eleza maana ya isimu jamii.",
+          "Tawi la isimu linalochunguza uhusiano kati ya lugha na jamii inayoitumia. (2)",
+          2
+        ],
+        [
+          "Taja mambo manne yanayozingatiwa katika matumizi ya lugha katika jamii.",
+          "Muktadha, hadhira, mada, madhumuni, uhusiano wa wazungumzaji, mahali na wakati. Yoyote manne.",
+          4
+        ],
+        [
+          "Taja faida tatu za mashindano ya michezo kwa nchi inayoandaa mashindano kulingana na kifungu.",
+          "Huleta wageni/watalii, huboresha miundombinu/mawasiliano na kukuza uchumi. (1 kila moja)",
+          3
+        ],
+        [
+          "Eleza sababu mbili zinazoweza kumfanya mchezaji arudishwe nyumbani kwenye mashindano kulingana na kifungu.",
+          "Kutumia dawa za kuongeza nguvu za misuli, kupigana au kulewa. Yoyote mawili.",
+          2
+        ],
+        [
+          "Eleza maana ya maneno haya kama yalivyotumika katika kifungu: (a) fulusi (b) kabumbu (c) shamrashamra.",
+          "(a) pesa (1); (b) mpira wa miguu (1); (c) sherehe/furaha/mishemishemo (1).",
+          3
+        ],
+        [
+          "Andika insha fupi ya kusisimua kuhusu tukio la michezo shuleni.",
+          "Utangulizi (1), mtiririko wa matukio (2), lugha na msamiati (2), hitimisho (1).",
+          6
+        ],
+        [
+          "Andika sentensi mbili zenye vivumishi na upige mstari vivumishi hivyo.",
+          "Sentensi mbili sahihi (1 kila moja); vivumishi vimeonyeshwa kwa usahihi (1 kila kimoja).",
+          4
+        ]
+      ],
+      "source": {
+        "paper": "OPENER 001 2027 TERM 1 GRADE 7",
+        "pages": "46–59",
+        "basis": "Ufahamu kuhusu mawasiliano ya jadi na kisasa; sarufi, sauti, konsonanti, miundo ya silabi, ngeli, vinyume, ukanusho, aina za maneno, shadda, uakifishaji, isimu jamii, ufahamu wa michezo na insha."
+      }
     },
     {
       "id": "mathematics",
