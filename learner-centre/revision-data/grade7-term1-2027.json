@@ -9,8 +9,360 @@
     {
       "id": "agriculture",
       "name": "Agriculture & Nutrition",
-      "mcq": [],
-      "structured": []
+      "mcq": [
+        [
+          "Agroforestry is the practice of:",
+          [
+            "Growing trees with crops or livestock on the same land",
+            "Growing crops only indoors",
+            "Keeping fish in tanks",
+            "Removing all trees"
+          ],
+          0,
+          "Agroforestry integrates trees with agricultural production."
+        ],
+        [
+          "Which is a benefit of agroforestry?",
+          [
+            "Soil erosion control",
+            "Increased soil loss",
+            "Reduced biodiversity",
+            "More runoff"
+          ],
+          0,
+          "Tree roots help hold soil and reduce erosion."
+        ],
+        [
+          "Which is a planting material for establishing trees?",
+          [
+            "Seed",
+            "Stone",
+            "Glass",
+            "Metal"
+          ],
+          0,
+          "Seeds can be used to establish trees."
+        ],
+        [
+          "Which structure helps conserve surface runoff?",
+          [
+            "Terrace",
+            "Chimney",
+            "Window",
+            "Fence post"
+          ],
+          0,
+          "Terraces slow runoff and encourage infiltration."
+        ],
+        [
+          "Soil tilth refers to the:",
+          [
+            "Physical condition of soil for plant growth",
+            "Colour of a seed",
+            "Height of a tree",
+            "Age of a farm"
+          ],
+          0,
+          "Tilth describes soil condition, especially suitability for cultivation."
+        ],
+        [
+          "Which is a category of soil tilth?",
+          [
+            "Fine tilth",
+            "Metallic tilth",
+            "Liquid tilth",
+            "Plastic tilth"
+          ],
+          0,
+          "Fine tilth is one category used in seedbed preparation."
+        ],
+        [
+          "Which is a vegetative planting material?",
+          [
+            "Stem cutting",
+            "Stone",
+            "Sand",
+            "Dry leaf litter"
+          ],
+          0,
+          "Stem cuttings are vegetative planting materials."
+        ],
+        [
+          "Which is a method of planting crops?",
+          [
+            "Broadcasting",
+            "Welding",
+            "Weaving",
+            "Painting"
+          ],
+          0,
+          "Broadcasting is a crop planting method."
+        ],
+        [
+          "Which factor can help predict planting time?",
+          [
+            "Weather forecasts",
+            "Colour of a hoe",
+            "Shape of a cooking pot",
+            "Price of shoes"
+          ],
+          0,
+          "Weather information helps farmers plan planting."
+        ],
+        [
+          "Home Science education helps learners to:",
+          [
+            "Manage home and family resources",
+            "Avoid hygiene",
+            "Waste food",
+            "Ignore safety"
+          ],
+          0,
+          "Home Science develops practical home-management skills."
+        ],
+        [
+          "Which is a safe practice when roasting food?",
+          [
+            "Keep food at a safe distance from flames",
+            "Leave fire unattended",
+            "Use wet electrical cords",
+            "Touch hot metal with bare hands"
+          ],
+          0,
+          "Safe distance reduces burns and fire risks."
+        ],
+        [
+          "When buying household goods, one should consider:",
+          [
+            "Quality and price",
+            "Colour only",
+            "Packaging only",
+            "Brand name only"
+          ],
+          0,
+          "Quality and price are important considerations."
+        ],
+        [
+          "Reusing a container means:",
+          [
+            "Using it again for another suitable purpose",
+            "Burning it immediately",
+            "Throwing it away",
+            "Breaking it"
+          ],
+          0,
+          "Reuse extends the useful life of an item."
+        ],
+        [
+          "Recycling involves:",
+          [
+            "Processing used materials into new products",
+            "Using an item once",
+            "Dumping all waste",
+            "Hiding waste"
+          ],
+          0,
+          "Recycling converts waste materials into usable products."
+        ],
+        [
+          "A deficiency disease may result from:",
+          [
+            "Lack of a nutrient",
+            "Too much exercise only",
+            "Drinking clean water",
+            "Sleeping early"
+          ],
+          0,
+          "Nutrient deficiencies can cause deficiency diseases."
+        ],
+        [
+          "Improvising kitchen equipment means:",
+          [
+            "Making or adapting alternatives when standard tools are unavailable",
+            "Buying only expensive equipment",
+            "Avoiding food preparation",
+            "Using broken tools unsafely"
+          ],
+          0,
+          "Improvisation provides a practical substitute."
+        ],
+        [
+          "Which is a household goods sales outlet?",
+          [
+            "Supermarket",
+            "Classroom",
+            "Bus stop",
+            "Playground"
+          ],
+          0,
+          "Supermarkets sell household goods."
+        ],
+        [
+          "Which action can help save income when shopping?",
+          [
+            "Compare prices",
+            "Buy without planning",
+            "Ignore quality",
+            "Purchase unnecessary items"
+          ],
+          0,
+          "Price comparison can reduce spending."
+        ],
+        [
+          "Which is a challenge when buying household goods?",
+          [
+            "Price fluctuations",
+            "Clear labels",
+            "Reliable supply",
+            "Good quality"
+          ],
+          0,
+          "Changing prices can make budgeting difficult."
+        ],
+        [
+          "Cotton fibre is generally:",
+          [
+            "Soft and absorbent",
+            "Metallic and magnetic",
+            "Hard and brittle",
+            "Waterproof"
+          ],
+          0,
+          "Cotton is soft and absorbent."
+        ]
+      ],
+      "structured": [
+        [
+          "Define agroforestry.",
+          "The practice of deliberately growing trees or shrubs together with crops and/or livestock on the same land. (2)",
+          2
+        ],
+        [
+          "State four environmental benefits of agroforestry trees.",
+          "Reduce soil erosion, provide shade, improve biodiversity, act as windbreaks, add organic matter, conserve water/carbon. Any four.",
+          4
+        ],
+        [
+          "Name three planting materials used to establish agroforestry trees.",
+          "Seeds, seedlings, stem cuttings, root suckers or other suitable vegetative materials. Any three.",
+          3
+        ],
+        [
+          "Name three structures used to conserve surface runoff.",
+          "Terraces, contour bunds, water-retention pits, infiltration ditches, check dams. Any three.",
+          3
+        ],
+        [
+          "State four practices used when caring for established agroforestry trees.",
+          "Watering, mulching, weeding, pruning, protecting from livestock/pests, applying manure. Any four.",
+          4
+        ],
+        [
+          "Give four sites where crops may be planted.",
+          "Seedbeds, fields/gardens, containers, raised beds, ridges or planting holes. Any four appropriate sites.",
+          4
+        ],
+        [
+          "Define soil tilth.",
+          "The physical condition or state of soil in relation to its suitability for cultivation and plant growth. (2)",
+          2
+        ],
+        [
+          "Name three categories of soil tilth according to planting material size.",
+          "Fine, medium and coarse tilth. (1 each)",
+          3
+        ],
+        [
+          "Describe three steps in preparing a ground seedbed.",
+          "Clear vegetation/debris; dig or loosen soil; break clods and level/rake to a suitable tilth. (1 each)",
+          3
+        ],
+        [
+          "Give two main categories of planting materials.",
+          "Sexual materials (seeds) and vegetative/asexual materials. (1 each)",
+          2
+        ],
+        [
+          "Name three vegetative planting materials.",
+          "Stem cuttings, root cuttings, suckers, tubers, bulbs, rhizomes. Any three.",
+          3
+        ],
+        [
+          "State three methods of planting crops.",
+          "Broadcasting, drilling/row planting, dibbling, transplanting. Any three.",
+          3
+        ],
+        [
+          "Give one way of predicting the time of planting.",
+          "Use weather forecasts/seasonal rainfall information or observe reliable local rainfall patterns. (2)",
+          2
+        ],
+        [
+          "State two factors that determine time of planting.",
+          "Onset and reliability of rains, soil moisture, crop type, temperature, availability of water or market timing. Any two explained.",
+          2
+        ],
+        [
+          "State four roles of Home Science education.",
+          "Promotes healthy living, food/nutrition knowledge, home management, budgeting/resource use, hygiene and safety, family relationships. Any four.",
+          4
+        ],
+        [
+          "Give three guidelines for cooking food by roasting.",
+          "Prepare food appropriately; use moderate, even heat; turn food as needed; cook thoroughly; avoid charring. Any three.",
+          3
+        ],
+        [
+          "State three safety measures when roasting food.",
+          "Use suitable tools/oven mitts; keep flammable items away; supervise fire/heat; use stable equipment; avoid touching hot surfaces. Any three.",
+          3
+        ],
+        [
+          "State four factors to consider when buying household goods and services.",
+          "Price, quality, durability, need, safety, quantity, warranty, availability and seller reliability. Any four.",
+          4
+        ],
+        [
+          "Differentiate between reusing and recycling and give one example of each.",
+          "Reuse means using an item again without major processing (1), e.g. jar as storage (1); recycling processes waste into new material/product (1), e.g. paper into new paper (1).",
+          4
+        ],
+        [
+          "Explain two reasons for improvising food-preparation equipment.",
+          "Makes cooking possible when standard equipment is unavailable; reduces cost; encourages creativity and resource use. Any two explained.",
+          2
+        ],
+        [
+          "Name four outlets where household goods and services may be obtained.",
+          "Supermarkets, shops, markets, wholesalers, online stores, cooperatives. Any four.",
+          4
+        ],
+        [
+          "State four methods of buying household goods and services.",
+          "Cash purchase, hire purchase, credit, lay-by, online purchase, instalment payment. Any four.",
+          4
+        ],
+        [
+          "Give five ways of saving income when buying household goods.",
+          "Prepare a budget, compare prices, buy only needed items, use shopping lists, buy durable goods, avoid impulse buying, take advantage of genuine discounts. Any five.",
+          5
+        ],
+        [
+          "State five challenges people may face when buying household goods and services.",
+          "High prices, counterfeit goods, poor quality, shortages, misleading advertising, transport costs, price changes, limited access. Any five.",
+          5
+        ],
+        [
+          "State three properties of cotton fibre.",
+          "Soft, absorbent, breathable, comfortable, washable and strong when wet. Any three.",
+          3
+        ]
+      ],
+      "source": {
+        "paper": "OPENER 001 2027 TERM 1 GRADE 7",
+        "pages": "3–9",
+        "basis": "Water conservation, agroforestry, runoff structures, soil tilth, seedbeds, planting materials/methods/time, weeds, Home Science, roasting, consumer choices, reuse/recycling, nutrition, household goods, saving and cotton fibres. Supplementary JSLH practice included."
+      }
     },
     {
       "id": "creative-arts",
