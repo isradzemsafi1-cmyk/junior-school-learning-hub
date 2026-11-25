@@ -449,6 +449,61 @@
           ],
           0,
           "Protection prevents damage to young trees."
+        ],
+        [
+          "Which structure slows surface runoff on a sloping farm?",
+          [
+            "Contour bund",
+            "Open drain downhill",
+            "Bare path",
+            "Unprotected channel"
+          ],
+          0,
+          "A contour bund slows runoff and reduces erosion."
+        ],
+        [
+          "Which nutrient deficiency may cause goitre?",
+          [
+            "Iodine",
+            "Iron",
+            "Vitamin C",
+            "Protein"
+          ],
+          0,
+          "Iodine deficiency can cause goitre."
+        ],
+        [
+          "Which action reduces food contamination?",
+          [
+            "Wash hands before handling food",
+            "Use dirty utensils",
+            "Leave food uncovered",
+            "Mix raw and cooked food"
+          ],
+          0,
+          "Handwashing reduces transfer of germs."
+        ],
+        [
+          "Which household waste can be composted?",
+          [
+            "Vegetable peels",
+            "Broken glass",
+            "Plastic bags",
+            "Metal cans"
+          ],
+          0,
+          "Vegetable peels decompose into compost."
+        ],
+        [
+          "Which factor matters when choosing a sales outlet?",
+          [
+            "Accessibility to customers",
+            "Colour of owner's shoes",
+            "Weather on another continent",
+            "Number of nearby birds"
+          ],
+          0,
+          "Accessibility affects customers' ability to reach an outlet."
         ]
       ],
       "structured": [
@@ -701,12 +756,37 @@
           "Explain three reasons why a household should save part of its income.",
           "Meet emergencies; plan future needs; reduce borrowing; finance education/assets. Any three.",
           3
+        ],
+        [
+          "Explain how contour farming conserves soil and water.",
+          "Cultivates across slope; slows runoff; increases infiltration; reduces erosion. Any four.",
+          4
+        ],
+        [
+          "State four ways to prevent food wastage at home.",
+          "Plan meals; buy suitable quantities; store correctly; use leftovers safely; check expiry dates. Any four.",
+          4
+        ],
+        [
+          "Explain why household income should be budgeted.",
+          "Prioritises needs; controls spending; supports saving; reduces debt; prepares for emergencies. Any four.",
+          4
+        ],
+        [
+          "Give four safe practices when using a charcoal or wood stove.",
+          "Stable position; ventilation; keep children away; use suitable fuel; extinguish safely. Any four.",
+          4
+        ],
+        [
+          "Give four ways of caring for young agroforestry trees.",
+          "Water; mulch; weed; protect from livestock; replace dead seedlings; prune appropriately. Any four.",
+          4
         ]
       ],
       "source": {
         "paper": "OPENER 001 2027 TERM 1 GRADE 7",
         "pages": "3–9",
-        "basis": "Water conservation, agroforestry, runoff structures, soil tilth, seedbeds, planting materials/methods/time, weeds, Home Science, roasting, consumer choices, reuse/recycling, nutrition, household goods, saving and cotton fibres. Supplementary JSLH practice included. Additional JSLH supplementary practice added for further revision."
+        "basis": "Water conservation, agroforestry, runoff structures, soil tilth, seedbeds, planting materials/methods/time, weeds, Home Science, roasting, consumer choices, reuse/recycling, nutrition, household goods, saving and cotton fibres. Supplementary JSLH practice included. Additional JSLH supplementary practice added for further revision. Further JSLH supplementary practice added."
       }
     },
     {
@@ -1152,6 +1232,61 @@
           ],
           0,
           "Formation is the spatial arrangement of dancers."
+        ],
+        [
+          "Which art element refers to lightness or darkness?",
+          [
+            "Value",
+            "Rhythm",
+            "Pitch",
+            "Tempo"
+          ],
+          0,
+          "Value describes lightness or darkness."
+        ],
+        [
+          "Which technique uses dots to create tone?",
+          [
+            "Stippling",
+            "Dribbling",
+            "Pivoting",
+            "Singing"
+          ],
+          0,
+          "Stippling builds tone with dots."
+        ],
+        [
+          "Which pass sends a ball from chest level?",
+          [
+            "Chest pass",
+            "Overhead pass",
+            "Throw-in",
+            "Penalty kick"
+          ],
+          0,
+          "A chest pass sends the ball from chest level."
+        ],
+        [
+          "What should dancers do before vigorous practice?",
+          [
+            "Warm up",
+            "Skip preparation",
+            "Practise on a slippery floor",
+            "Ignore spacing"
+          ],
+          0,
+          "Warm-up prepares muscles and joints."
+        ],
+        [
+          "Which instrument produces sound when shaken?",
+          [
+            "Shaker",
+            "Guitar",
+            "Flute",
+            "Piano"
+          ],
+          0,
+          "A shaker produces sound when its contents move."
         ]
       ],
       "structured": [
@@ -1404,12 +1539,37 @@
           "State four roles of music in a community.",
           "Entertainment, worship, education, communication, ceremonies, cultural preservation and unity. Any four.",
           4
+        ],
+        [
+          "Explain four ways artists can show texture in a drawing.",
+          "Hatching, cross-hatching, stippling, rubbing, varied line patterns and shading. Any four.",
+          4
+        ],
+        [
+          "State four safety rules when practising games.",
+          "Warm up; safe surface; suitable footwear; follow rules; safe equipment; hydrate. Any four.",
+          4
+        ],
+        [
+          "Describe how to receive a chest pass.",
+          "Watch ball; move into line; extend hands; cushion ball; maintain balance. Award up to 4.",
+          4
+        ],
+        [
+          "Give four preparations before a stage presentation.",
+          "Rehearse; check costume/props; warm up; inspect stage; learn cues; arrange formation. Any four.",
+          4
+        ],
+        [
+          "Explain the role of rhythm in dance.",
+          "Organises movement in time with beat, supports coordination and creates patterns. Award up to 3.",
+          3
         ]
       ],
       "source": {
         "paper": "OPENER 001 2027 TERM 1 GRADE 7",
         "pages": "15–21",
-        "basis": "3D forms, still-life, composition, painting, colour wheel, primary/analogous colours, colour properties, perspective, tints/shades/intensity/gradation, netball, handball, footwork, dance safety, performance and sound production. Additional JSLH supplementary practice added for further revision."
+        "basis": "3D forms, still-life, composition, painting, colour wheel, primary/analogous colours, colour properties, perspective, tints/shades/intensity/gradation, netball, handball, footwork, dance safety, performance and sound production. Additional JSLH supplementary practice added for further revision. Further JSLH supplementary practice added."
       }
     },
     {
@@ -6114,6 +6274,61 @@
           ],
           0,
           "Iqaamah signals the immediate start of prayer."
+        ],
+        [
+          "Which prayer is performed just after sunset?",
+          [
+            "Maghrib",
+            "Fajr",
+            "Dhuhr",
+            "Asr"
+          ],
+          0,
+          "Maghrib is performed after sunset."
+        ],
+        [
+          "Which action is part of Wudhu?",
+          [
+            "Washing the face",
+            "Washing shoes only",
+            "Applying perfume",
+            "Changing clothes"
+          ],
+          0,
+          "Washing the face is part of Wudhu."
+        ],
+        [
+          "Which foot is traditionally used first when entering a mosque?",
+          [
+            "Right foot",
+            "Left foot",
+            "Either foot only",
+            "Both together"
+          ],
+          0,
+          "The right foot is used when entering a mosque."
+        ],
+        [
+          "Qibla refers to:",
+          [
+            "Direction of prayer",
+            "Call to prayer",
+            "Ablution",
+            "Charity"
+          ],
+          0,
+          "Qibla is the direction faced during prayer."
+        ],
+        [
+          "Adhan is associated with:",
+          [
+            "Calling Muslims to prayer",
+            "Breaking the fast",
+            "Giving a sermon only",
+            "Performing Ghusl"
+          ],
+          0,
+          "Adhan calls Muslims to prayer."
         ]
       ],
       "structured": [
@@ -6366,12 +6581,37 @@
           "Explain the role of a Muadhin in a Muslim community.",
           "Calls the Adhan at the correct time and helps inform the community that prayer time has entered. (2)",
           2
+        ],
+        [
+          "State four Sunnah acts of Wudhu.",
+          "Begin with Bismillah; wash hands first; rinse mouth/nose; begin with right side; use miswak; repeat as taught. Any four.",
+          4
+        ],
+        [
+          "Differentiate Adhan and Iqaamah.",
+          "Adhan announces prayer time (1); Iqaamah announces imminent start of congregational prayer (1).",
+          2
+        ],
+        [
+          "State four reasons for cleanliness before prayer.",
+          "Required for worship; removes impurity; promotes health; demonstrates obedience. Any four.",
+          4
+        ],
+        [
+          "Describe Ghusl as taught in class.",
+          "Intention; wash hands/private parts as appropriate; perform Wudhu if taught; ensure water reaches whole body. Award up to 4.",
+          4
+        ],
+        [
+          "Give four examples of good mosque etiquette.",
+          "Enter quietly; keep clean; avoid disturbing worshippers; respect prayer space; avoid littering. Any four.",
+          4
         ]
       ],
       "source": {
         "paper": "OPENER 001 2027 TERM 1 GRADE 7",
         "pages": "40–45",
-        "basis": "Shahada/Tashahhud, Swalah, conditions, Twahara/Najaasat, water classes, Ghusl, Wudhu, Tayammum, Istinjaa, Qibla, prayer times, Muadhin, Adhan/Iqaamah and types of prayer. Added supplementary JSLH practice aligned to the listed source topics."
+        "basis": "Shahada/Tashahhud, Swalah, conditions, Twahara/Najaasat, water classes, Ghusl, Wudhu, Tayammum, Istinjaa, Qibla, prayer times, Muadhin, Adhan/Iqaamah and types of prayer. Added supplementary JSLH practice aligned to the listed source topics. Further JSLH supplementary practice added."
       }
     },
     {
@@ -6597,6 +6837,61 @@
           ],
           0,
           "Habari za asubuhi ni salamu ya asubuhi."
+        ],
+        [
+          "Kinyume cha 'chafu' ni:",
+          [
+            "Safi",
+            "Mbaya",
+            "Kavu",
+            "Nzito"
+          ],
+          0,
+          "Safi ni kinyume cha chafu."
+        ],
+        [
+          "Wingi wa 'kiti' ni:",
+          [
+            "Viti",
+            "Makiti",
+            "Miti",
+            "Kikiti"
+          ],
+          0,
+          "Kiti huwa viti."
+        ],
+        [
+          "Katika 'Asha anaimba vizuri', neno 'anaimba' ni:",
+          [
+            "Kitenzi",
+            "Nomino",
+            "Kivumishi",
+            "Kielezi"
+          ],
+          0,
+          "Anaimba huonyesha tendo."
+        ],
+        [
+          "'Kwa sababu' hutumika kuonyesha:",
+          [
+            "Sababu",
+            "Mahali",
+            "Wakati pekee",
+            "Idadi"
+          ],
+          0,
+          "Kwa sababu hutaja sababu."
+        ],
+        [
+          "Nukta hutumiwa:",
+          [
+            "Mwisho wa sentensi",
+            "Mwanzoni mwa kila neno",
+            "Badala ya herufi",
+            "Kati ya silabi"
+          ],
+          0,
+          "Nukta huonyesha mwisho wa sentensi."
         ]
       ],
       "structured": [
@@ -6849,12 +7144,37 @@
           "Eleza tofauti kati ya lugha rasmi na lugha isiyo rasmi.",
           "Lugha rasmi hutumika katika mazingira rasmi; isiyo rasmi hutumika katika mazungumzo ya kawaida. Toa tofauti mbili zilizoelezwa. (4)",
           4
+        ],
+        [
+          "Tunga sentensi yenye nomino, kitenzi na kivumishi.",
+          "Sentensi sahihi yenye nomino, kitenzi na kivumishi. (3)",
+          3
+        ],
+        [
+          "Eleza tofauti kati ya kiwakilishi na kivumishi.",
+          "Kiwakilishi husimama badala ya nomino (1); kivumishi hueleza sifa/idadi ya nomino (1).",
+          2
+        ],
+        [
+          "Taja njia nne za kuimarisha mawasiliano shuleni.",
+          "Kusikiliza; lugha ya adabu; taarifa wazi; kuuliza maswali; kuheshimu maoni. Any four.",
+          4
+        ],
+        [
+          "Andika sentensi moja ya kuuliza na moja ya kutoa amri.",
+          "Swali sahihi lenye alama ya kuuliza (1); amri inayofaa (1).",
+          2
+        ],
+        [
+          "Eleza umuhimu wa alama za uakifishaji.",
+          "Hufafanua maana; huonyesha mapumziko; hutofautisha maswali na kauli; hufanya maandishi yaeleweke. Any three.",
+          3
         ]
       ],
       "source": {
         "paper": "OPENER 001 2027 TERM 1 GRADE 7",
         "pages": "46–59",
-        "basis": "Ufahamu kuhusu mawasiliano ya jadi na kisasa; sarufi, sauti, konsonanti, miundo ya silabi, ngeli, vinyume, ukanusho, aina za maneno, shadda, uakifishaji, isimu jamii, ufahamu wa michezo na insha. Added supplementary JSLH practice aligned to the listed source topics."
+        "basis": "Ufahamu kuhusu mawasiliano ya jadi na kisasa; sarufi, sauti, konsonanti, miundo ya silabi, ngeli, vinyume, ukanusho, aina za maneno, shadda, uakifishaji, isimu jamii, ufahamu wa michezo na insha. Added supplementary JSLH practice aligned to the listed source topics. Further JSLH supplementary practice added."
       }
     },
     {
@@ -8281,6 +8601,61 @@
           ],
           0,
           "Maps help locate places and plan journeys."
+        ],
+        [
+          "The imaginary line at 0° latitude is the:",
+          [
+            "Equator",
+            "Tropic of Cancer",
+            "Arctic Circle",
+            "Prime Meridian"
+          ],
+          0,
+          "The Equator is at 0° latitude."
+        ],
+        [
+          "The Prime Meridian is at:",
+          [
+            "0° longitude",
+            "0° latitude",
+            "90° north",
+            "180° latitude"
+          ],
+          0,
+          "The Prime Meridian is 0° longitude."
+        ],
+        [
+          "Which instrument measures rainfall?",
+          [
+            "Rain gauge",
+            "Wind vane",
+            "Thermometer",
+            "Barometer"
+          ],
+          0,
+          "A rain gauge measures rainfall."
+        ],
+        [
+          "Which is Earth's outermost solid layer?",
+          [
+            "Crust",
+            "Outer core",
+            "Inner core",
+            "Lower mantle"
+          ],
+          0,
+          "The crust is the outermost solid layer."
+        ],
+        [
+          "Earth's movement on its axis is called:",
+          [
+            "Rotation",
+            "Revolution",
+            "Erosion",
+            "Condensation"
+          ],
+          0,
+          "Rotation is Earth's spin on its axis."
         ]
       ],
       "structured": [
@@ -8433,12 +8808,37 @@
           "State four effects of Earth's rotation on human activities.",
           "Creates day/night cycle; causes differences in local time; influences daily work/rest schedules; apparent movement of Sun affects timing of activities. Any four explained.",
           4
+        ],
+        [
+          "State four elements of weather.",
+          "Temperature, rainfall, wind, humidity, cloud cover and air pressure. Any four.",
+          4
+        ],
+        [
+          "Explain four effects of Earth's rotation.",
+          "Day and night; apparent movement of sun; local time differences; deflection of winds/currents. Any four.",
+          4
+        ],
+        [
+          "State four reasons maps are useful.",
+          "Show locations; routes; estimate distance; display physical/human features; support planning. Any four.",
+          4
+        ],
+        [
+          "Name four weather instruments and what each measures.",
+          "Thermometer—temperature; rain gauge—rainfall; wind vane—direction; anemometer—wind speed; barometer—pressure. Any four.",
+          4
+        ],
+        [
+          "Differentiate latitude and longitude.",
+          "Latitude measures angular distance north/south of Equator (2); longitude measures east/west of Prime Meridian (2).",
+          4
         ]
       ],
       "source": {
         "paper": "OPENER 001 2027 TERM 1 GRADE 7",
         "pages": "79–85",
-        "basis": "Social Studies components; Earth structure, rotation/revolution; weather instruments/elements; communities; population; minerals; culture/heritage; African capitals; latitude/time calculation; maps; solar system; origin theories; shape of Earth and effects of rotation. Supplementary practice items added by JSLH."
+        "basis": "Social Studies components; Earth structure, rotation/revolution; weather instruments/elements; communities; population; minerals; culture/heritage; African capitals; latitude/time calculation; maps; solar system; origin theories; shape of Earth and effects of rotation. Supplementary practice items added by JSLH. Further JSLH supplementary practice added."
       }
     }
   ]
