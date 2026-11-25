@@ -21,8 +21,688 @@
     {
       "id": "cre",
       "name": "CRE",
-      "mcq": [],
-      "structured": []
+      "mcq": [
+        [
+          "Which statement is a similarity between the biblical creation account and many African creation stories?",
+          [
+            "A supreme creator is responsible for the origin of life",
+            "The world made itself without any cause",
+            "Human beings created the sky",
+            "Creation happened by modern machines"
+          ],
+          0,
+          "Both traditions commonly describe a supreme creator as the source of creation."
+        ],
+        [
+          "According to Genesis 1, what did God create on the first day?",
+          [
+            "Light",
+            "Sun and moon",
+            "Land animals",
+            "Human beings"
+          ],
+          0,
+          "Genesis 1 describes the creation of light on the first day."
+        ],
+        [
+          "What was created on the second day in the first biblical creation account?",
+          [
+            "The sky/expanse separating waters",
+            "The sun and moon",
+            "Land animals",
+            "Human beings"
+          ],
+          0,
+          "The second day describes the expanse separating waters."
+        ],
+        [
+          "Which creation work is associated with the third day in Genesis 1?",
+          [
+            "Dry land, seas and vegetation",
+            "Sun, moon and stars",
+            "Birds and fish",
+            "Human beings"
+          ],
+          0,
+          "The third day describes dry land, seas and plants."
+        ],
+        [
+          "What was created on the fourth day according to Genesis 1?",
+          [
+            "Sun, moon and stars",
+            "Fish and birds",
+            "Domestic animals",
+            "Man and woman"
+          ],
+          0,
+          "The heavenly lights are appointed on the fourth day."
+        ],
+        [
+          "Which creatures were created on the fifth day in Genesis 1?",
+          [
+            "Fish and birds",
+            "Trees and grass",
+            "Sun and moon",
+            "Human beings"
+          ],
+          0,
+          "The fifth day includes creatures of the waters and birds."
+        ],
+        [
+          "Which creation work is associated with the sixth day?",
+          [
+            "Land animals and human beings",
+            "Light and darkness",
+            "The sky",
+            "The sun and stars"
+          ],
+          0,
+          "Genesis 1 places land animals and human beings on the sixth day."
+        ],
+        [
+          "What did God do on the seventh day in the first creation account?",
+          [
+            "Rested and blessed the day",
+            "Created the oceans",
+            "Created human beings",
+            "Created the sun"
+          ],
+          0,
+          "The seventh day is described as a day of rest and blessing."
+        ],
+        [
+          "Which book contains the two biblical creation accounts studied in Grade 7 CRE?",
+          [
+            "Genesis",
+            "Exodus",
+            "Psalms",
+            "Matthew"
+          ],
+          0,
+          "The creation accounts are found in Genesis."
+        ],
+        [
+          "Which reference gives the second biblical creation account in the source paper?",
+          [
+            "Genesis 2:4–25",
+            "Exodus 3:1–10",
+            "Psalm 23",
+            "Matthew 5:1–12"
+          ],
+          0,
+          "The supplied assessment specifically identifies Genesis 2:4–25."
+        ],
+        [
+          "In Genesis 2, what was formed from the dust of the ground?",
+          [
+            "The man",
+            "The sun",
+            "The sea",
+            "The stars"
+          ],
+          0,
+          "Genesis 2 describes God forming the man from the dust of the ground."
+        ],
+        [
+          "According to Genesis 2, what did God do after forming the man from dust?",
+          [
+            "Breathed into his nostrils the breath of life",
+            "Placed him in a boat",
+            "Made him king of Egypt",
+            "Sent him to build a city"
+          ],
+          0,
+          "The account says God breathed the breath of life into the man."
+        ],
+        [
+          "What was the name of the garden where God placed the man in Genesis 2?",
+          [
+            "Eden",
+            "Gethsemane",
+            "Jericho",
+            "Bethlehem"
+          ],
+          0,
+          "Genesis 2 names the garden Eden."
+        ],
+        [
+          "What was the man instructed to do in the Garden of Eden?",
+          [
+            "Work it and take care of it",
+            "Destroy all the trees",
+            "Leave it uncultivated",
+            "Sell its animals"
+          ],
+          0,
+          "The man was placed in the garden to work it and care for it."
+        ],
+        [
+          "What was created as a companion for the man in Genesis 2?",
+          [
+            "The woman",
+            "A king",
+            "A soldier",
+            "A prophet"
+          ],
+          0,
+          "The account describes the creation of the woman as a companion."
+        ],
+        [
+          "Which attribute of God is shown by creation of the world?",
+          [
+            "Power",
+            "Dishonesty",
+            "Jealousy of human achievement",
+            "Weakness"
+          ],
+          0,
+          "Creation demonstrates God's power."
+        ],
+        [
+          "Which attribute of God is reflected in providing plants and food for living things?",
+          [
+            "Care and provision",
+            "Cruelty",
+            "Forgetfulness",
+            "Partiality"
+          ],
+          0,
+          "Providing for living things reflects care and provision."
+        ],
+        [
+          "Which statement best expresses the Christian belief that God is eternal?",
+          [
+            "God has no beginning or end",
+            "God exists for one year",
+            "God was created by people",
+            "God grows old like humans"
+          ],
+          0,
+          "Eternal means without beginning or end."
+        ],
+        [
+          "Why do Christians care for animals, fish and birds?",
+          [
+            "They are part of God's creation and should be treated responsibly",
+            "They have no value",
+            "They should all be kept as pets",
+            "They are only useful for entertainment"
+          ],
+          0,
+          "Christians understand living creatures as part of God's creation and a trust to care for."
+        ],
+        [
+          "Which action shows care for birds?",
+          [
+            "Providing safe nesting places and protecting habitats",
+            "Destroying nests for fun",
+            "Throwing stones at them",
+            "Poisoning their food"
+          ],
+          0,
+          "Protecting habitats and nests helps birds survive."
+        ],
+        [
+          "Which action helps protect fish?",
+          [
+            "Avoiding pollution of rivers and lakes",
+            "Pouring oil into streams",
+            "Using poison to catch fish",
+            "Dumping plastic into water"
+          ],
+          0,
+          "Clean water is essential for aquatic life."
+        ],
+        [
+          "Which practice supports animal welfare?",
+          [
+            "Providing clean water, food and shelter",
+            "Overworking animals without rest",
+            "Abandoning sick animals",
+            "Beating animals for amusement"
+          ],
+          0,
+          "Responsible care includes food, water, shelter and humane treatment."
+        ],
+        [
+          "Which is a likely effect of misusing natural resources?",
+          [
+            "Soil erosion and environmental degradation",
+            "Improved soil fertility everywhere",
+            "Unlimited clean water",
+            "More wildlife habitats"
+          ],
+          0,
+          "Misuse can damage land and ecosystems, including through soil erosion."
+        ],
+        [
+          "How can cutting trees carelessly affect the environment?",
+          [
+            "It can cause soil erosion and loss of habitats",
+            "It increases forest cover",
+            "It prevents all floods",
+            "It creates more wildlife habitats"
+          ],
+          0,
+          "Tree removal can expose soil and destroy habitats."
+        ],
+        [
+          "Which action is an example of sustainable use of natural resources?",
+          [
+            "Planting trees to replace those cut down",
+            "Dumping waste into rivers",
+            "Overgrazing communal land",
+            "Burning forests for recreation"
+          ],
+          0,
+          "Replanting trees helps maintain resources for future generations."
+        ],
+        [
+          "Which is an appropriate use of the Bible during worship?",
+          [
+            "Reading passages and guiding prayers or teaching",
+            "Using it as a football",
+            "Tearing pages for decoration",
+            "Replacing all school books with it"
+          ],
+          0,
+          "The Bible is read and used for teaching and worship."
+        ],
+        [
+          "How may the Bible be used during a Christian wedding?",
+          [
+            "Readings and guidance on marriage",
+            "As a musical instrument",
+            "As a legal identity card",
+            "To decorate food"
+          ],
+          0,
+          "Scripture may be read to guide and bless the marriage ceremony."
+        ],
+        [
+          "How can the Bible be used when visiting a sick person?",
+          [
+            "Reading encouraging passages and offering comfort",
+            "Testing the person's eyesight",
+            "Replacing prescribed treatment",
+            "Keeping the person isolated"
+          ],
+          0,
+          "Bible passages may provide spiritual encouragement and comfort."
+        ],
+        [
+          "How many books are in the Protestant Old Testament?",
+          [
+            "39",
+            "27",
+            "12",
+            "66"
+          ],
+          0,
+          "The Protestant Old Testament contains 39 books."
+        ],
+        [
+          "How many books are in the Protestant New Testament?",
+          [
+            "27",
+            "39",
+            "46",
+            "12"
+          ],
+          0,
+          "The New Testament contains 27 books."
+        ],
+        [
+          "How many books are in the Protestant Bible altogether?",
+          [
+            "66",
+            "39",
+            "27",
+            "73"
+          ],
+          0,
+          "The Protestant Bible has 39 Old Testament and 27 New Testament books."
+        ],
+        [
+          "Which of the following is one of the major prophets?",
+          [
+            "Isaiah",
+            "Ruth",
+            "Jonah",
+            "Malachi"
+          ],
+          0,
+          "Isaiah is traditionally grouped among the major prophets."
+        ],
+        [
+          "Which list contains books traditionally associated with the major prophets?",
+          [
+            "Isaiah, Jeremiah, Lamentations, Ezekiel and Daniel",
+            "Genesis, Exodus, Leviticus, Numbers and Deuteronomy",
+            "Matthew, Mark, Luke, John and Acts",
+            "Ruth, Esther, Job, Psalms and Proverbs"
+          ],
+          0,
+          "The five books traditionally grouped in this category are Isaiah, Jeremiah, Lamentations, Ezekiel and Daniel."
+        ],
+        [
+          "Which life skill helps people understand another person's feelings?",
+          [
+            "Empathy",
+            "Bullying",
+            "Dishonesty",
+            "Aggression"
+          ],
+          0,
+          "Empathy is the ability to understand and share another person's feelings."
+        ],
+        [
+          "Which life skill helps people settle disagreements peacefully?",
+          [
+            "Conflict resolution",
+            "Name-calling",
+            "Threatening",
+            "Avoidance of every discussion"
+          ],
+          0,
+          "Conflict-resolution skills help people address disagreements constructively."
+        ],
+        [
+          "Which behaviour shows effective communication in a friendship?",
+          [
+            "Listening carefully and speaking respectfully",
+            "Interrupting constantly",
+            "Spreading private information",
+            "Shouting to win every argument"
+          ],
+          0,
+          "Respectful listening and speaking support healthy relationships."
+        ],
+        [
+          "Which is a commonly abused drug in Kenya?",
+          [
+            "Alcohol",
+            "Clean drinking water",
+            "Fresh fruit",
+            "Milk"
+          ],
+          0,
+          "Alcohol is among substances that may be misused or abused."
+        ],
+        [
+          "Which is a possible reason some young people begin abusing drugs?",
+          [
+            "Peer pressure",
+            "Accurate health education",
+            "Strong support systems",
+            "Positive role models"
+          ],
+          0,
+          "Peer pressure can influence young people to experiment with drugs."
+        ],
+        [
+          "Which is a possible consequence of drug abuse?",
+          [
+            "Dependence and damage to health",
+            "Improved judgement at all times",
+            "Guaranteed academic success",
+            "Stronger family relationships"
+          ],
+          0,
+          "Drug abuse can lead to dependence and physical, mental and social harm."
+        ],
+        [
+          "Which is a safe response to an online stranger asking for a home address?",
+          [
+            "Do not share it; tell a trusted adult",
+            "Send the address immediately",
+            "Arrange to meet alone",
+            "Post it publicly"
+          ],
+          0,
+          "Personal information should not be shared with unknown people online."
+        ],
+        [
+          "Which action is an example of cyberbullying?",
+          [
+            "Repeatedly sending hurtful or threatening messages",
+            "Sending a polite school reminder",
+            "Sharing a public weather report",
+            "Asking a teacher for help"
+          ],
+          0,
+          "Cyberbullying involves using digital communication to harm or intimidate others."
+        ],
+        [
+          "What should a learner do before sharing another person's photograph online?",
+          [
+            "Obtain permission and consider privacy",
+            "Share it secretly",
+            "Add insulting comments",
+            "Post their location without consent"
+          ],
+          0,
+          "Respecting consent and privacy is important when sharing images."
+        ],
+        [
+          "Which is a responsible use of social media?",
+          [
+            "Sharing accurate, respectful and appropriate content",
+            "Spreading rumours",
+            "Impersonating another person",
+            "Posting private details of classmates"
+          ],
+          0,
+          "Responsible use protects others and avoids misinformation or harm."
+        ]
+      ],
+      "structured": [
+        [
+          "State five similarities between the biblical creation account and African creation stories.",
+          "Award 1 mark each for relevant similarities supported by taught examples, such as belief in a supreme creator; creation of the world and living things; human beings having a special place; creation being purposeful; people receiving responsibility to care for creation.",
+          5
+        ],
+        [
+          "Explain five ways Christians can protect and care for animals, fish and birds.",
+          "Award 1 mark each: provide food/water/shelter; protect habitats; avoid cruelty; prevent pollution; report poaching/illegal trade; support conservation; care for domestic animals responsibly.",
+          5
+        ],
+        [
+          "Give five reasons why Christians should care for animals, fish and birds.",
+          "Award 1 mark each: they are God's creation; they support ecological balance; they provide food/livelihoods; they are valuable to future generations; humans have responsibility/stewardship; they deserve humane treatment.",
+          5
+        ],
+        [
+          "State four effects of misusing natural resources.",
+          "Award 1 mark each: soil erosion; deforestation; water/air pollution; loss of biodiversity; climate impacts; depletion of resources; desertification.",
+          4
+        ],
+        [
+          "Describe four ways the Bible may be used in different places and occasions.",
+          "Award 1 mark each with context: worship/church reading; personal devotion/prayer; teaching and guidance at home/school; weddings/funerals; visiting and comforting the sick; counselling.",
+          4
+        ],
+        [
+          "State the number of books in the Old Testament and New Testament of the Protestant Bible.",
+          "Award 1 mark for Old Testament—39; 1 mark for New Testament—27.",
+          2
+        ],
+        [
+          "Explain two reasons why the Bible is divided into the Old Testament and New Testament.",
+          "Award 1 mark each: they contain different sections/collections of writings; the New Testament focuses on Jesus Christ and the early church while the Old Testament records earlier history, law, poetry and prophets.",
+          2
+        ],
+        [
+          "Name five writers traditionally associated with the major prophet books as taught in CRE.",
+          "Award 1 mark each: Isaiah, Jeremiah, Ezekiel, Daniel and the writer associated with Lamentations (traditionally Jeremiah in many school treatments). Accept the expected syllabus framing.",
+          5
+        ],
+        [
+          "Identify three life skills that help maintain healthy relationships and explain how each helps.",
+          "Award 1 mark for each skill plus explanation, up to 6: communication, empathy, assertiveness, decision-making, self-awareness, conflict resolution, negotiation.",
+          6
+        ],
+        [
+          "Name four commonly abused drugs or substances in Kenya.",
+          "Award 1 mark each for relevant examples: alcohol, tobacco/nicotine, cannabis/bhang, miraa/khat, inhalants or other substances identified in the curriculum.",
+          4
+        ],
+        [
+          "State five reasons why some young people may abuse drugs.",
+          "Award 1 mark each: peer pressure; curiosity/experimentation; stress or emotional difficulties; family/social influence; easy availability; desire to fit in; misinformation; unemployment/boredom.",
+          5
+        ],
+        [
+          "Give two examples of social media platforms used by young people.",
+          "Award 1 mark each for any two current or familiar platforms, e.g. WhatsApp, Instagram, TikTok, Facebook, Snapchat or YouTube.",
+          2
+        ],
+        [
+          "Explain five dangers of chatting or meeting online strangers.",
+          "Award 1 mark each: grooming/exploitation; fraud/scams; identity theft; cyberbullying/threats; physical danger at meetings; sharing private images; disclosure of personal location; malware or account compromise.",
+          5
+        ],
+        [
+          "List five ways in which social media can be misused.",
+          "Award 1 mark each: spreading rumours/misinformation; cyberbullying; sharing private information; impersonation; posting harmful/violent content; scams; plagiarism; excessive use that disrupts responsibilities.",
+          5
+        ],
+        [
+          "Explain what is meant by studying Christian Religious Education (CRE).",
+          "Award 2 marks: learning about Christian beliefs, teachings, values and practices using the Bible and Christian tradition; applying these teachings to daily life.",
+          2
+        ],
+        [
+          "State four importance of studying CRE.",
+          "Award 1 mark each: develops moral values; strengthens faith/understanding; promotes respect and peaceful coexistence; guides decision-making; encourages responsibility; builds positive relationships.",
+          4
+        ],
+        [
+          "Explain two ways CRE helps learners relate well with others.",
+          "Award 1 mark each: teaches love/respect/forgiveness; encourages honesty, empathy, sharing, tolerance and peaceful conflict resolution.",
+          2
+        ],
+        [
+          "List three moral and religious values acquired through studying CRE.",
+          "Award 1 mark each: love, honesty, respect, forgiveness, kindness, responsibility, justice, humility, obedience, compassion.",
+          3
+        ],
+        [
+          "Outline the creation work on each of the seven days in the first biblical creation account in Genesis 1.",
+          "Award 1 mark each: day 1 light; day 2 expanse/sky separating waters; day 3 dry land, seas and vegetation; day 4 sun, moon and stars; day 5 fish/sea creatures and birds; day 6 land animals and human beings; day 7 God rested and blessed the day.",
+          7
+        ],
+        [
+          "Describe six events in the second biblical creation account in Genesis 2:4–25.",
+          "Award up to 6 marks: no cultivated plants/rain described at the beginning; God formed man from dust; breathed life into him; planted garden in Eden; placed man there to work/care for it; gave instruction about the tree; formed animals and brought them to man; created woman as companion; man and woman were together without shame.",
+          10
+        ],
+        [
+          "Name five attributes or qualities of God shown in the Genesis creation stories.",
+          "Award 1 mark each: powerful/omnipotent; loving; wise; creator; provider; orderly; eternal; caring; purposeful; sovereign.",
+          5
+        ],
+        [
+          "State five similarities between the two biblical creation accounts.",
+          "Award 1 mark each: God is creator; human beings are created by God; creation is purposeful; human beings have a special role; God provides for human needs; creation includes land/vegetation/animals; human life is valued.",
+          5
+        ],
+        [
+          "Give three differences between the first and second biblical creation accounts.",
+          "Award up to 6 marks: first account is structured around six days and a seventh day of rest; second gives a closer narrative of the formation and placement of man and woman; first describes creation in a broad sequence; second focuses on Eden, the man, woman and their relationship; first uses 'God' language as presented in Genesis 1; second uses the more detailed garden narrative in Genesis 2. Award paired contrasts.",
+          6
+        ],
+        [
+          "Explain why the seventh day is important in the first creation account.",
+          "Award up to 2 marks: God rested from the work of creation; the day was blessed/made holy and provides a pattern for rest and worship.",
+          2
+        ],
+        [
+          "Describe the responsibility given to human beings towards the rest of creation in the Genesis accounts.",
+          "Award up to 3 marks: care for/tend the earth; use resources responsibly; protect living things; avoid waste and destruction; act as stewards rather than careless exploiters.",
+          3
+        ],
+        [
+          "Give three examples of how learners can practise Christian care for the environment at school.",
+          "Award 1 mark each: plant/care for trees; keep grounds clean; conserve water; avoid littering; protect animals; sort/recycle waste; use resources carefully.",
+          3
+        ],
+        [
+          "Explain two ways misuse of water resources can affect people and other living things.",
+          "Award 1 mark each: polluted water causes disease/death; reduced clean water affects homes/farming; aquatic habitats are damaged; fish and other organisms die.",
+          2
+        ],
+        [
+          "Describe three ways Christians may use biblical teachings to make decisions in everyday life.",
+          "Award 1 mark each with example: honesty in schoolwork; forgiveness after conflict; kindness/helping those in need; respect for parents/others; responsible stewardship; avoiding harmful behaviour.",
+          3
+        ],
+        [
+          "A learner sees classmates throwing stones at birds near the school. Explain four actions the learner could take to protect the birds.",
+          "Award 1 mark each: ask them to stop safely; explain harm; inform a teacher; protect nesting area; avoid disturbing birds; encourage habitat care.",
+          4
+        ],
+        [
+          "A stream near a village is being polluted by dumped waste. Explain four consequences and suggest one Christian responsibility in response.",
+          "Award up to 4 marks: contaminated drinking water/disease; death of fish; loss of habitats; unpleasant surroundings; responsibility to protect creation, organise clean-up safely or report pollution.",
+          4
+        ],
+        [
+          "Describe four ways the Bible can guide family life.",
+          "Award 1 mark each: love and respect; forgiveness; honesty; care for children/elderly; peaceful conflict resolution; responsibility and service.",
+          4
+        ],
+        [
+          "Explain the difference between the Old Testament and the New Testament in the Christian Bible.",
+          "Award up to 3 marks: Old Testament contains writings about creation, Israel's history, law, poetry and prophets before Jesus; New Testament records Jesus' life/teaching, early church and Christian letters; Protestant counts are 39 and 27.",
+          3
+        ],
+        [
+          "State four reasons why people may read the Bible during difficult times.",
+          "Award 1 mark each: comfort; hope; guidance; encouragement; strength; reassurance; reflection and prayer.",
+          4
+        ],
+        [
+          "Describe three qualities of a healthy friendship that are encouraged by CRE values.",
+          "Award 1 mark each: honesty; trust; respect; kindness; forgiveness; empathy; responsibility; good communication.",
+          3
+        ],
+        [
+          "Explain how assertiveness differs from aggression in maintaining relationships.",
+          "Award up to 2 marks: assertiveness expresses needs/opinions clearly and respectfully; aggression uses threats, force or disrespect to impose one's wishes.",
+          2
+        ],
+        [
+          "A friend pressures you to try an unknown drug. Explain four safe steps you can take.",
+          "Award 1 mark each: refuse firmly; leave unsafe situation; seek help from trusted adult/counsellor; choose supportive friends; learn risks; report threats or coercion.",
+          4
+        ],
+        [
+          "Give three reasons why drug abuse can interfere with learning and school life.",
+          "Award 1 mark each: affects memory/concentration; causes absenteeism/poor performance; leads to behaviour/discipline problems; damages health/relationships; may lead to dependence.",
+          3
+        ],
+        [
+          "Explain four safety rules for communicating with people online.",
+          "Award 1 mark each: do not share address/password/school details; use privacy settings; do not send intimate/private images; block/report suspicious users; tell trusted adult; do not meet strangers alone; verify information.",
+          4
+        ],
+        [
+          "A learner receives a message saying they have won a prize and must send their password. What should the learner do and why?",
+          "Award up to 3 marks: do not send password; do not click suspicious link; report/block message and tell trusted adult; passwords are private and message may be a scam.",
+          3
+        ],
+        [
+          "Describe three effects of cyberbullying on a learner.",
+          "Award 1 mark each: fear/anxiety/sadness; reduced confidence; isolation; poor concentration/attendance; emotional distress; harm to reputation.",
+          3
+        ],
+        [
+          "Explain why consent and respect for privacy are important before posting another person's photograph.",
+          "Award up to 2 marks: protects dignity and personal information; prevents embarrassment, misuse or harm; respects the person's choice.",
+          2
+        ]
+      ]
     },
     {
       "id": "english",
