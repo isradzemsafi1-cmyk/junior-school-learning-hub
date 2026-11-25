@@ -1514,8 +1514,200 @@
     {
       "id": "english",
       "name": "English",
-      "mcq": [],
-      "structured": []
+      "mcq": [
+        [
+          "Which word is a synonym of “disclosed”? ",
+          [
+            "Revealed",
+            "Concealed",
+            "Denied",
+            "Forgotten"
+          ],
+          0,
+          "Disclosed means revealed."
+        ],
+        [
+          "Which adjective order is correct?",
+          [
+            "A beautiful old wooden chair",
+            "A wooden beautiful old chair",
+            "An old beautiful wooden chair",
+            "A wooden old beautiful chair"
+          ],
+          0,
+          "Opinion, age and material follow this order."
+        ],
+        [
+          "We shall attend, ____?",
+          [
+            "shall we",
+            "shan’t we",
+            "do we",
+            "will we"
+          ],
+          1,
+          "A positive statement takes a negative question tag."
+        ],
+        [
+          "Barely had we arrived ____ it began to rain.",
+          [
+            "than",
+            "when",
+            "then",
+            "while"
+          ],
+          1,
+          "Barely is followed by when."
+        ],
+        [
+          "He was acquitted ____ the charge.",
+          [
+            "from",
+            "of",
+            "with",
+            "at"
+          ],
+          1,
+          "The correct expression is acquitted of."
+        ],
+        [
+          "A woman whose husband has died is a ____.",
+          [
+            "bride",
+            "widow",
+            "widower",
+            "hostess"
+          ],
+          1,
+          "A widow is a woman whose spouse has died."
+        ],
+        [
+          "The suffix -less means ____.",
+          [
+            "full of",
+            "without",
+            "before",
+            "again"
+          ],
+          1,
+          "-less means without."
+        ],
+        [
+          "A homophone of flower is ____.",
+          [
+            "flour",
+            "floor",
+            "flaw",
+            "flee"
+          ],
+          0,
+          "Flower and flour have the same pronunciation."
+        ],
+        [
+          "The major distraction in the study dialogue is the ____.",
+          [
+            "mobile phone",
+            "dictionary",
+            "notebook",
+            "timetable"
+          ],
+          0,
+          "The teacher tells the learner to put away the phone."
+        ],
+        [
+          "Who is named as the poet of the school-life poem?",
+          [
+            "Daya Nandan",
+            "John Keats",
+            "William Blake",
+            "Robert Frost"
+          ],
+          0,
+          "The source credits Daya Nandan."
+        ]
+      ],
+      "structured": [
+        [
+          "Write synonyms for disclosed, brave and surrendered.",
+          "Revealed; courageous; yielded/gave up. (1 each)",
+          3
+        ],
+        [
+          "Change into direct speech: She said that she would come later.",
+          "She said, “I will come later.” (2)",
+          2
+        ],
+        [
+          "Give the comparative and superlative forms of careful.",
+          "More careful; most careful. (1 each)",
+          2
+        ],
+        [
+          "Explain the meanings of do away with and wind up.",
+          "Abolish/eliminate; conclude/end. (1 each)",
+          2
+        ],
+        [
+          "Complete: Barely had she arrived ___ the bell rang; acquitted ___ the charge.",
+          "When; of. (1 each)",
+          2
+        ],
+        [
+          "Distinguish between adverse and averse.",
+          "Adverse means harmful/unfavourable; averse means opposed/disinclined. (2)",
+          2
+        ],
+        [
+          "Give one word for a woman whose husband has died and a person who writes poems.",
+          "Widow; poet. (1 each)",
+          2
+        ],
+        [
+          "Form adjectives using -less: care, use and cloud.",
+          "Careless; useless; cloudless. (1 each)",
+          3
+        ],
+        [
+          "Explain the difference between who and whom.",
+          "Who is used as subject; whom as object. (2)",
+          2
+        ],
+        [
+          "Give homophones for flower, no and son.",
+          "Flour; know; sun. (1 each)",
+          3
+        ],
+        [
+          "State four virtues encouraged in the school-values passage.",
+          "Love, hard work, politeness, respect, self-control, honesty or integrity. Any four (1 each).",
+          4
+        ],
+        [
+          "Explain the proverb “Charity begins at home”.",
+          "Good conduct and care should first be learnt/practised in the family. (2)",
+          2
+        ],
+        [
+          "State four pieces of study advice given by the teacher in the dialogue.",
+          "Put away mobile phone; read thoroughly; understand rather than memorise; focus on one theme; practise old papers; group study. Any four.",
+          4
+        ],
+        [
+          "Give two benefits of solving old question papers.",
+          "Familiarity with question format, practice, time management or identifying gaps. Any two.",
+          2
+        ],
+        [
+          "State the main message of the school-life poem.",
+          "School is valuable and joyful through learning, teachers, friendships and recreation. (2)",
+          2
+        ]
+      ],
+      "source": {
+        "paper": "OPENER 001 2027 TERM 1 GRADE 7",
+        "pages": "22–33",
+        "basis": "Writing, grammar, oral skills, etiquette, comprehension, dialogue, poetry and folktale. This is an initial source-based batch; supplementary questions are original JSLH items."
+      }
     },
     {
       "id": "integrated-science",
