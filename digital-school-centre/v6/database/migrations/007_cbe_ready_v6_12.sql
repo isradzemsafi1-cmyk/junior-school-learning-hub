@@ -265,6 +265,21 @@ with check (
  )
 );
 
+-- Replace school-wide teacher snapshot reads with assignment-scoped access.
+drop policy if exists "report snapshots authorised read" on public.report_card_snapshots;
+create policy "report snapshots leaders read" on public.report_card_snapshots for select to authenticated
+using (public.has_school_role(school_id,array['school_owner','director','headteacher','deputy_headteacher','dos','administrator','registrar']));
+create policy "report snapshots assigned teachers read" on public.report_card_snapshots for select to authenticated
+using (
+ exists (
+  select 1 from public.learners l
+  join public.assessment_staff_assignments a on a.school_id=l.school_id and a.user_id=(select auth.uid()) and a.active
+  where l.id=report_card_snapshots.learner_id and l.school_id=report_card_snapshots.school_id
+   and exists (select 1 from public.school_memberships sm where sm.school_id=a.school_id and sm.user_id=(select auth.uid()) and sm.active and sm.role in ('teacher','class_teacher'))
+   and a.grade_id=l.grade_id and (a.stream_id is null or a.stream_id=l.stream_id)
+ )
+);
+
 -- Guardian self-service: only linked learners and finalised result snapshots/marks.
 drop policy if exists "guardians read own profile" on public.guardians;
 create policy "guardians read own profile" on public.guardians for select to authenticated using (auth_user_id=(select auth.uid()));
