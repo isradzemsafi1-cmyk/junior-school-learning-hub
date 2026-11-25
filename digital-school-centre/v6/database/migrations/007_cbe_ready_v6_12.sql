@@ -277,6 +277,7 @@ using (
   where l.id=report_card_snapshots.learner_id and l.school_id=report_card_snapshots.school_id
    and exists (select 1 from public.school_memberships sm where sm.school_id=a.school_id and sm.user_id=(select auth.uid()) and sm.active and sm.role in ('teacher','class_teacher'))
    and a.grade_id=l.grade_id and (a.stream_id is null or a.stream_id=l.stream_id)
+   and a.learning_area_id is null
  )
 );
 
