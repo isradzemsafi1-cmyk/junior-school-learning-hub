@@ -585,6 +585,118 @@
           ]
         ]
       }
+    ],
+    "answerPositionRebalance": {
+      "status": "completed",
+      "method": "Reordered existing four-option choices while preserving the original correct option text and moving its answer index to a balanced distribution; no answer content was independently re-verified by this operation.",
+      "learningAreas": [
+        {
+          "id": "agriculture",
+          "mcq": 80,
+          "answerDistribution": [
+            20,
+            20,
+            20,
+            20
+          ]
+        },
+        {
+          "id": "creative-arts",
+          "mcq": 80,
+          "answerDistribution": [
+            20,
+            20,
+            20,
+            20
+          ]
+        },
+        {
+          "id": "cre",
+          "mcq": 80,
+          "answerDistribution": [
+            20,
+            20,
+            20,
+            20
+          ]
+        },
+        {
+          "id": "english",
+          "mcq": 80,
+          "answerDistribution": [
+            20,
+            20,
+            20,
+            20
+          ]
+        },
+        {
+          "id": "integrated-science",
+          "mcq": 80,
+          "answerDistribution": [
+            20,
+            20,
+            20,
+            20
+          ]
+        },
+        {
+          "id": "ire",
+          "mcq": 80,
+          "answerDistribution": [
+            20,
+            20,
+            20,
+            20
+          ]
+        },
+        {
+          "id": "kiswahili",
+          "mcq": 80,
+          "answerDistribution": [
+            20,
+            20,
+            20,
+            20
+          ]
+        },
+        {
+          "id": "mathematics",
+          "mcq": 80,
+          "answerDistribution": [
+            20,
+            20,
+            20,
+            20
+          ]
+        },
+        {
+          "id": "pre-technical",
+          "mcq": 80,
+          "answerDistribution": [
+            20,
+            20,
+            20,
+            20
+          ]
+        },
+        {
+          "id": "social-studies",
+          "mcq": 80,
+          "answerDistribution": [
+            20,
+            20,
+            20,
+            20
+          ]
+        }
+      ]
+    },
+    "remainingReleaseBlockers": [
+      "Structured-question templates and generic prompts remain and require subject-specific replacement.",
+      "Correct answers and explanations still require subject-matter review against source papers, schemes and marking guides.",
+      "Term 2 and Term 3 do not yet have complete 80-MCQ plus 120-structured banks for all ten learning areas.",
+      "The complete 30-bank validator has not passed."
     ]
   },
   "term2Draft": {
