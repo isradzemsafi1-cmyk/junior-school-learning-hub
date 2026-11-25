@@ -1,0 +1,812 @@
+{
+  "grade": 7,
+  "term": 2,
+  "year": 2027,
+  "title": "Grade 7 Term 2 Original Practice Questions — Batch 01",
+  "contentStatus": "development batch; 90 original questions across nine learning areas; not a complete term bank; IRE is withheld pending an IRE-specific 2027 scheme source",
+  "sourceBasis": "Original JSLH questions written against Term 2 topic strands surfaced in the user's Grade 7 2027 schemes of work. They are not copied from examination papers. The available scheme collection covers nine learning areas; IRE-specific Term 2 topics require its own scheme before authoring.",
+  "batchNumber": 1,
+  "subjects": [
+    {
+      "id": "agriculture",
+      "name": "Agriculture & Nutrition",
+      "mcq": [
+        [
+          "Which observation best shows that a growing crop needs watering?",
+          [
+            "Leaves are wilting and the soil is dry",
+            "The soil is moist",
+            "New leaves are healthy",
+            "The plant is upright"
+          ],
+          0,
+          "Wilting together with dry soil is a sign of water stress."
+        ],
+        [
+          "Which practice helps conserve irrigation water? ",
+          [
+            "Flooding paths",
+            "Watering at midday in strong sun",
+            "Applying water near the plant roots",
+            "Leaving taps running"
+          ],
+          2,
+          "Targeted watering near roots reduces wastage."
+        ],
+        [
+          "Which record helps a farmer know how much feed livestock consume?",
+          [
+            "Weather chart",
+            "Feeding record",
+            "Visitor book",
+            "Class register"
+          ],
+          1,
+          "A feeding record tracks the type and amount of feed given."
+        ],
+        [
+          "A suitable livestock house should be:",
+          [
+            "Poorly ventilated",
+            "Wet and overcrowded",
+            "Difficult to clean",
+            "Dry, secure and well ventilated"
+          ],
+          3,
+          "Dry, secure, ventilated housing supports animal welfare."
+        ],
+        [
+          "Why should a farmer record farm inputs and outputs?",
+          [
+            "To plan and assess farm performance",
+            "To hide farm losses",
+            "To avoid keeping accounts",
+            "To increase wastage"
+          ],
+          0,
+          "Records help track costs, production and decisions."
+        ]
+      ],
+      "structured": [
+        [
+          "State four routine practices used to maintain a growing crop.",
+          "Award 1 mark each: watering as required; weeding; mulching; thinning; staking; pest/disease monitoring; applying appropriate manure/fertiliser.",
+          4
+        ],
+        [
+          "Give three ways a farmer can conserve water when irrigating crops.",
+          "Any three, 1 mark each: drip irrigation; watering near roots; irrigating in cool hours; mulching; repairing leaks; harvesting rainwater; using watering cans carefully.",
+          3
+        ],
+        [
+          "Name four basic needs of a healthy farm animal.",
+          "Any four: adequate feed; clean water; suitable shelter; space; hygiene; veterinary care; protection from injury and stress.",
+          4
+        ],
+        [
+          "Explain two reasons for keeping livestock housing clean.",
+          "1 mark each explanation: reduces disease and parasite spread; improves animal comfort; reduces smell/flies; protects feed and water from contamination.",
+          4
+        ],
+        [
+          "A farmer bought 6 bags of feed at KSh 1,250 each and sold eggs worth KSh 4,800. Calculate the feed cost and state why the farmer should record both figures.",
+          "Feed cost = 6 × 1,250 = KSh 7,500 (2); records show expenditure and income and help calculate whether the enterprise is making a profit or loss (2).",
+          4
+        ]
+      ],
+      "source": "Original JSLH practice questions aligned to the Grade 7 Term 2 scheme strands; editorial verification required."
+    },
+    {
+      "id": "creative-arts",
+      "name": "Creative Arts & Sports",
+      "mcq": [
+        [
+          "Which colour relationship uses colours opposite each other on the colour wheel?",
+          [
+            "Analogous",
+            "Complementary",
+            "Monochromatic",
+            "Neutral"
+          ],
+          1,
+          "Complementary colours are opposite on the colour wheel."
+        ],
+        [
+          "A design is balanced when:",
+          [
+            "Visual weight is arranged in a stable way",
+            "Every object is placed on one side",
+            "Only one colour is used",
+            "All spaces are left empty"
+          ],
+          0,
+          "Balance distributes visual weight to create stability."
+        ],
+        [
+          "Which action improves safety before a sports activity?",
+          [
+            "Ignoring the playing surface",
+            "Starting at full speed",
+            "Checking the space and warming up",
+            "Sharing damaged equipment"
+          ],
+          2,
+          "Checking the area and warming up reduce avoidable injuries."
+        ],
+        [
+          "In a team game, a player should pass to a teammate who:",
+          [
+            "Is closely marked with no space",
+            "Is in a useful position to receive",
+            "Has turned away and cannot see",
+            "Is outside the playing area"
+          ],
+          1,
+          "A useful passing option is available and able to receive the ball."
+        ],
+        [
+          "A tint is made by adding:",
+          [
+            "Black to a colour",
+            "Grey to a colour",
+            "Brown to a colour",
+            "White to a colour"
+          ],
+          3,
+          "Adding white makes a tint."
+        ]
+      ],
+      "structured": [
+        [
+          "Explain the difference between a tint and a shade, giving one example of each.",
+          "Tint: a colour lightened by adding white (1); shade: a colour darkened by adding black (1); suitable examples (1 each).",
+          4
+        ],
+        [
+          "State four principles a learner should consider when designing a clear poster.",
+          "Any four: balance; contrast; emphasis; unity; proportion; readable lettering; appropriate colour; clear layout; suitable image-text relationship.",
+          4
+        ],
+        [
+          "Give four safety checks to make before a ball game.",
+          "Any four: inspect playing surface; check equipment; remove obstacles; wear suitable footwear/clothing; warm up; ensure adequate space; follow rules.",
+          4
+        ],
+        [
+          "Describe three ways a player can support effective teamwork during a game.",
+          "Any three explained: communicate; move into space; pass accurately; follow rules; encourage teammates; defend responsibly; share play.",
+          6
+        ],
+        [
+          "A team scores 18 goals in 6 matches. Calculate its average goals per match and explain what the average represents.",
+          "18 ÷ 6 = 3 goals (2); the team scored an average of 3 goals per match (1).",
+          3
+        ]
+      ],
+      "source": "Original JSLH practice questions aligned to the Grade 7 Term 2 scheme strands; editorial verification required."
+    },
+    {
+      "id": "cre",
+      "name": "CRE",
+      "mcq": [
+        [
+          "Which action best demonstrates forgiveness after a disagreement?",
+          [
+            "Planning revenge",
+            "Spreading rumours",
+            "Accepting an apology and seeking peace",
+            "Refusing to listen"
+          ],
+          2,
+          "Forgiveness involves letting go of resentment and seeking reconciliation."
+        ],
+        [
+          "A parable is mainly used to:",
+          [
+            "List historical dates",
+            "Teach a moral or spiritual lesson through a story",
+            "Give scientific measurements",
+            "Record family names"
+          ],
+          1,
+          "Parables communicate lessons through familiar stories."
+        ],
+        [
+          "Which action shows responsible use of social media?",
+          [
+            "Sharing private information publicly",
+            "Forwarding every message",
+            "Posting hurtful comments",
+            "Checking information before sharing"
+          ],
+          3,
+          "Checking information helps prevent spreading false or harmful content."
+        ],
+        [
+          "Which is an example of the Church serving the community?",
+          [
+            "Providing health and education support",
+            "Encouraging discrimination",
+            "Destroying public facilities",
+            "Preventing children from learning"
+          ],
+          0,
+          "Churches may contribute through education, health and community support."
+        ],
+        [
+          "A healthy family relationship is strengthened by:",
+          [
+            "Dishonesty",
+            "Respectful communication",
+            "Violence",
+            "Neglect"
+          ],
+          1,
+          "Respectful communication supports trust and understanding."
+        ]
+      ],
+      "structured": [
+        [
+          "Give four ways a learner can promote peace in school.",
+          "Any four: listen respectfully; resolve disagreements calmly; avoid bullying; forgive; report serious harm to a trusted adult; cooperate; respect differences.",
+          4
+        ],
+        [
+          "Explain two lessons Christians may learn from a parable.",
+          "Award up to 2 marks each for a clearly explained moral/spiritual lesson linked to a parable, such as compassion, honesty, forgiveness, humility or care for others.",
+          4
+        ],
+        [
+          "State four guidelines for responsible use of social media.",
+          "Any four: protect passwords; avoid sharing personal details; verify information; use respectful language; report harmful content; seek adult help; limit screen time; do not meet online strangers alone.",
+          4
+        ],
+        [
+          "Describe three ways a church can contribute to education or health in a community.",
+          "Any three explained: establish/support schools; provide scholarships; health education; clinics/medical outreach; counselling; support vulnerable families.",
+          6
+        ],
+        [
+          "A learner has offended a friend. Outline four steps the learner could take to restore the relationship.",
+          "Any four appropriate steps: acknowledge wrongdoing; apologise sincerely; listen to the friend; make amends; forgive; agree on respectful behaviour; avoid repeating the offence.",
+          4
+        ]
+      ],
+      "source": "Original JSLH practice questions aligned to the Grade 7 Term 2 scheme strands; editorial verification required."
+    },
+    {
+      "id": "english",
+      "name": "English",
+      "mcq": [
+        [
+          "Which word is a noun in the sentence 'The careful learner completed the task'?",
+          [
+            "careful",
+            "completed",
+            "learner",
+            "the"
+          ],
+          2,
+          "Learner names a person and functions as a noun."
+        ],
+        [
+          "Choose the correct verb: 'Yesterday, Amina ___ the story.'",
+          [
+            "reads",
+            "read",
+            "reading",
+            "has read"
+          ],
+          1,
+          "The past tense of read is written read."
+        ],
+        [
+          "Which sentence uses a comparative adjective correctly?",
+          [
+            "This bag is heavier than that one.",
+            "This bag is more heavy than that one.",
+            "This bag is heaviest than that one.",
+            "This bag heavier that one."
+          ],
+          0,
+          "Heavier is the comparative form of heavy."
+        ],
+        [
+          "The main idea of a paragraph is:",
+          [
+            "A minor detail",
+            "The central point the paragraph communicates",
+            "The last punctuation mark",
+            "The longest word"
+          ],
+          1,
+          "The main idea expresses the paragraph's central message."
+        ],
+        [
+          "Which punctuation mark ends a direct question?",
+          [
+            "Comma",
+            "Full stop",
+            "Colon",
+            "Question mark"
+          ],
+          3,
+          "A question mark ends a direct question."
+        ]
+      ],
+      "structured": [
+        [
+          "Rewrite in the past tense: 'The pupils carry their books and arrange the desks.'",
+          "The pupils carried their books and arranged the desks. Award 1 mark for each correct verb.",
+          2
+        ],
+        [
+          "Write a paragraph of 5–6 sentences explaining how learners can keep their school safe. Include a topic sentence and at least three supporting ideas.",
+          "Award: relevant topic sentence (1); at least three relevant supporting ideas (3); logical sequence/cohesion (1); correct grammar and punctuation (1).",
+          6
+        ],
+        [
+          "Identify the nouns and verbs in: 'The class captain organised the meeting and invited the teacher.'",
+          "Nouns: class/captain, meeting, teacher (any 2–3, 1 mark); verbs: organised, invited (2 marks).",
+          4
+        ],
+        [
+          "Give the comparative and superlative forms of: bright, careful and good.",
+          "bright – brighter – brightest; careful – more careful – most careful; good – better – best. Award 1 mark per correct set.",
+          3
+        ],
+        [
+          "Read: 'Heavy rain filled the school gutters. Learners removed leaves and plastic so that water could flow freely.' State the problem and two actions taken.",
+          "Problem: gutters were blocked/filling with rainwater (1); actions: removed leaves (1) and plastic (1).",
+          3
+        ]
+      ],
+      "source": "Original JSLH practice questions aligned to the Grade 7 Term 2 scheme strands; editorial verification required."
+    },
+    {
+      "id": "integrated-science",
+      "name": "Integrated Science",
+      "mcq": [
+        [
+          "Which form of energy is stored in a stretched spring?",
+          [
+            "Chemical",
+            "Elastic potential",
+            "Sound",
+            "Light"
+          ],
+          1,
+          "A stretched spring stores elastic potential energy."
+        ],
+        [
+          "Heat transfer through a metal spoon placed in hot tea mainly occurs by:",
+          [
+            "Conduction",
+            "Convection",
+            "Radiation",
+            "Evaporation"
+          ],
+          0,
+          "Conduction transfers heat through direct particle interactions in a solid."
+        ],
+        [
+          "Which force opposes motion between two surfaces in contact?",
+          [
+            "Magnetism",
+            "Gravity",
+            "Friction",
+            "Upthrust"
+          ],
+          2,
+          "Friction acts against relative motion between surfaces."
+        ],
+        [
+          "Which action helps keep drinking water safe?",
+          [
+            "Storing it in an open dirty container",
+            "Mixing it with soil",
+            "Using an uncovered bucket",
+            "Storing it in a clean covered container"
+          ],
+          3,
+          "A clean covered container helps prevent contamination."
+        ],
+        [
+          "Which body system transports oxygen and nutrients around the body?",
+          [
+            "Digestive",
+            "Circulatory",
+            "Skeletal",
+            "Nervous"
+          ],
+          1,
+          "Blood in the circulatory system transports oxygen and nutrients."
+        ]
+      ],
+      "structured": [
+        [
+          "Name four forms of energy and give one example of each.",
+          "Any four correctly matched: heat—hot stove; light—Sun/lamp; sound—drum; electrical—fan; chemical—food/battery; kinetic—moving bicycle; potential—raised object/spring. 1 mark each.",
+          4
+        ],
+        [
+          "Describe an investigation to compare how quickly heat travels through a metal spoon and a wooden stick. Include one safety precaution.",
+          "Place equal lengths/material samples with one end in warm water; observe/compare warming at equal distances or use wax markers (2); keep conditions similar and record observations (1); handle hot water with teacher supervision/use tongs (1).",
+          4
+        ],
+        [
+          "State three effects a force can have on an object and give an example of one effect.",
+          "Any three effects: start/stop motion; change speed; change direction; change shape; example linked correctly (1).",
+          4
+        ],
+        [
+          "Give four ways of protecting a local water source from pollution.",
+          "Any four: dispose waste properly; keep chemicals away; maintain sanitation; protect riverbanks; avoid washing near source; treat wastewater; prevent livestock access where necessary.",
+          4
+        ],
+        [
+          "A learner pushes a box but it does not move. Explain the role of friction and state one way to make the box easier to move.",
+          "Static friction balances the applied push up to its limiting value (2); reduce friction using rollers/lubrication or reduce load/increase applied force safely (1).",
+          3
+        ]
+      ],
+      "source": "Original JSLH practice questions aligned to the Grade 7 Term 2 scheme strands; editorial verification required."
+    },
+    {
+      "id": "kiswahili",
+      "name": "Kiswahili",
+      "mcq": [
+        [
+          "Katika sentensi 'Watoto wanasoma vitabu', neno 'wanasoma' ni:",
+          [
+            "Nomino",
+            "Kitenzi",
+            "Kivumishi",
+            "Kiwakilishi"
+          ],
+          1,
+          "'Wanasoma' linaonyesha tendo, kwa hivyo ni kitenzi."
+        ],
+        [
+          "Wingi wa neno 'jicho' ni:",
+          [
+            "Macho",
+            "Majicho",
+            "Vijicho",
+            "Jichos"
+          ],
+          0,
+          "Wingi wa jicho ni macho."
+        ],
+        [
+          "Kinyume cha neno 'jasiri' ni:",
+          [
+            "Shupavu",
+            "Mwoga",
+            "Mwenye bidii",
+            "Mwenye furaha"
+          ],
+          1,
+          "Mwoga ni kinyume cha jasiri."
+        ],
+        [
+          "Ni alama gani hutumika mwishoni mwa sentensi ya swali?",
+          [
+            "Koma",
+            "Nukta",
+            "Alama ya kuuliza",
+            "Kistari"
+          ],
+          2,
+          "Alama ya kuuliza huonyesha swali."
+        ],
+        [
+          "Sentensi ipi ina kivumishi?",
+          [
+            "Mtoto anakimbia.",
+            "Mwalimu amefika.",
+            "Ndege anaruka.",
+            "Msichana mrefu anaimba."
+          ],
+          3,
+          "'Mrefu' kinaeleza sifa ya msichana."
+        ]
+      ],
+      "structured": [
+        [
+          "Tunga sentensi moja kwa kila neno: bidii, mazingira na ushirikiano.",
+          "Sentensi tatu zenye matumizi sahihi ya maneno yaliyotolewa. Alama 1 kila sentensi.",
+          3
+        ],
+        [
+          "Andika wingi wa maneno haya: jicho, ua, mtoto na kikapu.",
+          "Macho; maua; watoto; vikapu. Alama 1 kila jibu.",
+          4
+        ],
+        [
+          "Eleza tofauti kati ya nomino na kitenzi, kisha utoe mfano mmoja wa kila aina.",
+          "Nomino hutaja mtu, kitu, mahali au dhana (1); mfano sahihi (1); kitenzi huonyesha tendo au hali (1); mfano sahihi (1).",
+          4
+        ],
+        [
+          "Andika aya ya sentensi tano kuhusu umuhimu wa kutunza mazingira ya shule.",
+          "Maudhui yanayofaa (2); mpangilio na mshikamano (1); sarufi na tahajia (1); aya ina sentensi tano (1).",
+          5
+        ],
+        [
+          "Tumia alama sahihi za uakifishaji kuandika upya: mama alisema watoto msicheze karibu na barabara",
+          "Mama alisema, “Watoto, msicheze karibu na barabara.” Alama za usemi (1), koma/utangulizi (1), herufi kubwa na nukta (1).",
+          3
+        ]
+      ],
+      "source": "Original JSLH practice questions aligned to the Grade 7 Term 2 scheme strands; editorial verification required."
+    },
+    {
+      "id": "mathematics",
+      "name": "Mathematics",
+      "mcq": [
+        [
+          "Solve: 3x + 5 = 20.",
+          [
+            "x = 3",
+            "x = 5",
+            "x = 8",
+            "x = 15"
+          ],
+          1,
+          "3x = 15, so x = 5."
+        ],
+        [
+          "An angle of 125° is:",
+          [
+            "Acute",
+            "Right",
+            "Obtuse",
+            "Reflex"
+          ],
+          2,
+          "125° is greater than 90° and less than 180°."
+        ],
+        [
+          "A rectangle is 9 cm long and 4 cm wide. Its perimeter is:",
+          [
+            "13 cm",
+            "26 cm",
+            "36 cm",
+            "72 cm"
+          ],
+          1,
+          "Perimeter = 2(9 + 4) = 26 cm."
+        ],
+        [
+          "2.5 kg is equal to:",
+          [
+            "25 g",
+            "250 g",
+            "2,050 g",
+            "2,500 g"
+          ],
+          3,
+          "1 kg = 1,000 g; 2.5 kg = 2,500 g."
+        ],
+        [
+          "The time 14:35 in 12-hour notation is:",
+          [
+            "2:35 a.m.",
+            "4:35 p.m.",
+            "2:35 p.m.",
+            "12:35 p.m."
+          ],
+          2,
+          "14:35 is 2:35 p.m."
+        ]
+      ],
+      "structured": [
+        [
+          "Solve the equation 4y − 7 = 21. Show your working.",
+          "4y = 28 (1); y = 7 (1).",
+          2
+        ],
+        [
+          "A rectangular garden measures 12 m by 7 m. Calculate its perimeter and area.",
+          "Perimeter = 2(12+7) = 38 m (2); area = 12×7 = 84 m² (2).",
+          4
+        ],
+        [
+          "Convert 3.75 litres into millilitres and 4,600 g into kilograms.",
+          "3.75 L = 3,750 mL (1); 4,600 g = 4.6 kg (1).",
+          2
+        ],
+        [
+          "A lesson begins at 8:25 a.m. and ends at 10:05 a.m. Calculate its duration.",
+          "1 hour 40 minutes. Correct subtraction/working (2), answer with units (1).",
+          3
+        ],
+        [
+          "Classify these angles: 45°, 90°, 135° and 180°.",
+          "45° acute; 90° right; 135° obtuse; 180° straight. 1 mark each.",
+          4
+        ]
+      ],
+      "source": "Original JSLH practice questions aligned to the Grade 7 Term 2 scheme strands; editorial verification required."
+    },
+    {
+      "id": "pre-technical",
+      "name": "Pre-Technical Studies",
+      "mcq": [
+        [
+          "Which shape is generally most stable as a simple frame because it resists changing shape?",
+          [
+            "Triangle",
+            "Unbraced square",
+            "Loose rectangle",
+            "Open line"
+          ],
+          0,
+          "Triangular bracing helps a frame resist deformation."
+        ],
+        [
+          "A wide base usually makes a structure:",
+          [
+            "Less stable",
+            "More stable",
+            "Heavier only",
+            "Unable to stand"
+          ],
+          1,
+          "A wider base generally increases stability."
+        ],
+        [
+          "Which tool is most suitable for measuring a length accurately?",
+          [
+            "Paintbrush",
+            "Chisel",
+            "Tape measure",
+            "Pliers"
+          ],
+          2,
+          "A tape measure is designed to measure length."
+        ],
+        [
+          "Which item is personal protective equipment when cutting wood?",
+          [
+            "Loose scarf",
+            "Open sandals",
+            "Dangling jewellery",
+            "Safety goggles"
+          ],
+          3,
+          "Safety goggles protect the eyes from flying particles."
+        ],
+        [
+          "A design brief should clearly state:",
+          [
+            "The problem, user needs and requirements",
+            "Only the colour of the final product",
+            "The price of unrelated items",
+            "The maker's favourite subject"
+          ],
+          0,
+          "A design brief defines the problem and requirements."
+        ]
+      ],
+      "structured": [
+        [
+          "State four factors that affect the stability of a simple structure.",
+          "Any four: width of base; height; centre of gravity; mass distribution; strength of joints; material; bracing; shape.",
+          4
+        ],
+        [
+          "Explain why triangular bracing is used in frames. Give one example of where it may be seen.",
+          "Triangle keeps its shape under load and helps prevent racking/deformation (2); example such as roof truss, bridge frame or tower support (1).",
+          3
+        ],
+        [
+          "List four workshop safety rules to follow when measuring and cutting materials.",
+          "Any four: wear goggles; secure workpiece; use correct tool; keep hands clear; measure before cutting; keep workspace tidy; avoid loose clothing; follow instructions.",
+          4
+        ],
+        [
+          "A learner is designing a simple book stand. Identify three user needs and one test that could be used to evaluate the design.",
+          "Any three needs e.g. holds book at readable angle; stable; suitable size; smooth safe edges; durable (3); test by placing a book on it and checking stability/use (1).",
+          4
+        ],
+        [
+          "Describe the steps for producing a simple design solution from a problem to a finished product.",
+          "Identify problem/user (1); research/brief (1); sketch and select design (1); choose materials/tools and plan (1); make safely (1); test/evaluate and improve (1).",
+          6
+        ]
+      ],
+      "source": "Original JSLH practice questions aligned to the Grade 7 Term 2 scheme strands; editorial verification required."
+    },
+    {
+      "id": "social-studies",
+      "name": "Social Studies",
+      "mcq": [
+        [
+          "Which physical feature is a raised area of land with a summit?",
+          [
+            "Valley",
+            "Mountain",
+            "Plain",
+            "Plateau"
+          ],
+          1,
+          "A mountain is a high raised landform, usually with steep slopes."
+        ],
+        [
+          "A map key is used to:",
+          [
+            "Show the meaning of symbols",
+            "Measure rainfall",
+            "Name every road",
+            "Give the map's price"
+          ],
+          0,
+          "The key explains symbols used on a map."
+        ],
+        [
+          "Which resource is renewable when managed sustainably?",
+          [
+            "Coal",
+            "Petroleum",
+            "Wind",
+            "Natural gas"
+          ],
+          2,
+          "Wind is naturally replenished."
+        ],
+        [
+          "Which factor may encourage people to settle in a particular area?",
+          [
+            "Lack of water",
+            "Frequent insecurity",
+            "No transport access",
+            "Reliable water supply"
+          ],
+          3,
+          "Reliable water supports homes, farming and other activities."
+        ],
+        [
+          "The main purpose of a scale on a map is to show:",
+          [
+            "The map's colour",
+            "The relationship between map distance and ground distance",
+            "The direction of north only",
+            "The height of all buildings"
+          ],
+          1,
+          "A scale relates measured map distance to actual ground distance."
+        ]
+      ],
+      "structured": [
+        [
+          "Name four physical features found in a landscape.",
+          "Any four: mountains, hills, valleys, plains, plateaus, rivers, lakes, escarpments, coastal features.",
+          4
+        ],
+        [
+          "Explain three ways physical features can influence human settlement.",
+          "Any three explained: water availability; fertile soils; transport/access; climate; tourism/resources; barriers or hazards; flat land for construction.",
+          6
+        ],
+        [
+          "A map scale is 1:50,000. What ground distance is represented by 4 cm on the map? Show your working.",
+          "4 × 50,000 = 200,000 cm (1); 200,000 cm = 2,000 m = 2 km (2).",
+          3
+        ],
+        [
+          "Give four ways a community can use natural resources sustainably.",
+          "Any four: controlled harvesting; reforestation; soil conservation; water conservation; recycling; regulated fishing/grazing; use renewable energy; protect habitats.",
+          4
+        ],
+        [
+          "State three effects of poor access to transport on a rural community.",
+          "Any three explained: difficulty reaching markets; delayed access to health/education; higher transport costs; limited employment/trade; difficulty moving farm produce.",
+          6
+        ]
+      ],
+      "source": "Original JSLH practice questions aligned to the Grade 7 Term 2 scheme strands; editorial verification required."
+    }
+  ]
+}
