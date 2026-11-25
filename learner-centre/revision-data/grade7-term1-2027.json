@@ -367,8 +367,360 @@
     {
       "id": "creative-arts",
       "name": "Creative Arts & Sports",
-      "mcq": [],
-      "structured": []
+      "mcq": [
+        [
+          "A three-dimensional artwork has:",
+          [
+            "Length, width and height",
+            "Only length",
+            "Only colour",
+            "Only sound"
+          ],
+          0,
+          "A 3D form has three dimensions."
+        ],
+        [
+          "Which is an example of a 3D artwork?",
+          [
+            "Sculpture",
+            "Sketch",
+            "Photograph",
+            "Flat outline"
+          ],
+          0,
+          "A sculpture occupies three dimensions."
+        ],
+        [
+          "A still-life drawing represents:",
+          [
+            "Arranged non-living objects",
+            "A moving race",
+            "A landscape only",
+            "A musical performance"
+          ],
+          0,
+          "Still life depicts arranged objects."
+        ],
+        [
+          "Which is a painting tool?",
+          [
+            "Brush",
+            "Whistle",
+            "Netball",
+            "Ruler only"
+          ],
+          0,
+          "A brush applies paint."
+        ],
+        [
+          "A colour wheel is used to:",
+          [
+            "Organise colours and show relationships",
+            "Measure distance",
+            "Record sound",
+            "Draw court lines"
+          ],
+          0,
+          "The wheel displays colour relationships."
+        ],
+        [
+          "Which are the primary colours in the traditional pigment colour model?",
+          [
+            "Red, yellow, blue",
+            "Green, orange, purple",
+            "Black, white, grey",
+            "Red, green, violet"
+          ],
+          0,
+          "Traditional primary pigment colours are red, yellow and blue."
+        ],
+        [
+          "Which pair contains analogous colours?",
+          [
+            "Red and orange",
+            "Red and green",
+            "Blue and orange",
+            "Yellow and purple"
+          ],
+          0,
+          "Analogous colours are neighbours on the colour wheel."
+        ],
+        [
+          "The three basic properties of colour include hue, value and:",
+          [
+            "Intensity",
+            "Weight",
+            "Texture",
+            "Length"
+          ],
+          0,
+          "Intensity is the third common colour property."
+        ],
+        [
+          "Adding white to a colour produces a:",
+          [
+            "Tint",
+            "Shade",
+            "Tone only",
+            "Primary colour"
+          ],
+          0,
+          "A tint is made by adding white."
+        ],
+        [
+          "Adding black to a colour produces a:",
+          [
+            "Tint",
+            "Shade",
+            "Highlight",
+            "Hue"
+          ],
+          1,
+          "A shade is made by adding black."
+        ],
+        [
+          "Perspective in art helps create an impression of:",
+          [
+            "Depth and distance",
+            "Sound",
+            "Texture only",
+            "Movement only"
+          ],
+          0,
+          "Perspective represents depth on a flat surface."
+        ],
+        [
+          "Red mixed with yellow produces:",
+          [
+            "Orange",
+            "Green",
+            "Purple",
+            "Brown"
+          ],
+          0,
+          "Red and yellow combine to make orange."
+        ],
+        [
+          "A pass in netball used to move the ball over a short distance is often a:",
+          [
+            "Chest pass",
+            "Penalty kick",
+            "Serve",
+            "Punt"
+          ],
+          0,
+          "A chest pass is a common short accurate pass."
+        ],
+        [
+          "How many players from each team are on court in netball?",
+          [
+            "5",
+            "6",
+            "7",
+            "11"
+          ],
+          2,
+          "A standard netball team has seven players on court."
+        ],
+        [
+          "A netball player must pass or shoot within:",
+          [
+            "3 seconds",
+            "5 seconds",
+            "10 seconds",
+            "30 seconds"
+          ],
+          0,
+          "The player has three seconds."
+        ],
+        [
+          "A standard handball court measures:",
+          [
+            "20 m × 30 m",
+            "20 m × 40 m",
+            "20 m × 50 m",
+            "20 m × 60 m"
+          ],
+          1,
+          "The standard indoor handball court is 20 by 40 metres."
+        ],
+        [
+          "A handball penalty throw is taken from the:",
+          [
+            "6 m line",
+            "7 m line",
+            "9 m line",
+            "12 m line"
+          ],
+          1,
+          "The penalty throw is taken from the 7-metre line."
+        ],
+        [
+          "Which is a percussion instrument?",
+          [
+            "Drum",
+            "Flute",
+            "Violin",
+            "Trumpet"
+          ],
+          0,
+          "A drum is struck to produce sound."
+        ],
+        [
+          "A guitar produces sound when its strings:",
+          [
+            "Vibrate",
+            "Melt",
+            "Absorb light",
+            "Expand with heat"
+          ],
+          0,
+          "Plucked or strummed strings vibrate."
+        ],
+        [
+          "A soloist is a performer who:",
+          [
+            "Sings or performs a solo part",
+            "Only conducts an orchestra",
+            "Repairs instruments",
+            "Only watches"
+          ],
+          0,
+          "A soloist performs alone or leads a solo section."
+        ]
+      ],
+      "structured": [
+        [
+          "Define a 3D art form and give three examples.",
+          "A form with length, width and height (1); examples such as sculpture, pottery, carving, modelling. Any three (1 each).",
+          4
+        ],
+        [
+          "Define still-life drawing.",
+          "A drawing of arranged non-living objects, such as fruits, utensils or bottles. (2)",
+          2
+        ],
+        [
+          "Explain the meaning of composition in visual art.",
+          "The arrangement of visual elements in an artwork to create an organised and balanced whole. (2)",
+          2
+        ],
+        [
+          "Define painting and name three tools/materials used.",
+          "Applying pigment/paint to a surface to create an image (2); brush, paint, palette, paper/canvas, water. Any three (1 each).",
+          5
+        ],
+        [
+          "What is a colour wheel?",
+          "A circular arrangement of colours showing relationships among primary, secondary and related colours. (2)",
+          2
+        ],
+        [
+          "Name the three primary colours in the traditional pigment model.",
+          "Red, yellow and blue. (1 each)",
+          3
+        ],
+        [
+          "Give three pairs of analogous colours.",
+          "Red/orange, yellow/orange, yellow/green, blue/green, blue/violet, red/violet. Any three adjacent pairs.",
+          3
+        ],
+        [
+          "Name the three basic properties of colour.",
+          "Hue, value and intensity/saturation. (1 each)",
+          3
+        ],
+        [
+          "Define perspective in drawing.",
+          "A technique for representing three-dimensional depth and distance on a two-dimensional surface. (2)",
+          2
+        ],
+        [
+          "Name three components or elements used when constructing perspective.",
+          "Horizon line, vanishing point and orthogonal/receding lines. (1 each)",
+          3
+        ],
+        [
+          "Explain tint and shade.",
+          "Tint is made by adding white to a colour; shade is made by adding black. (1 each)",
+          2
+        ],
+        [
+          "Describe how to create an intensity scale using orange paint.",
+          "Mix red and yellow to make orange; progressively alter the mixture with its complement/neutralising colour or controlled pigment addition to show stronger to duller intensity. Award for safe, logical graduated procedure. (3)",
+          3
+        ],
+        [
+          "Explain how to make a colour gradation strip from red to yellow.",
+          "Prepare red and yellow; mix successive proportions in steps; paint adjacent bands showing gradual transition through orange. (3)",
+          3
+        ],
+        [
+          "Define passing and reception in ball games.",
+          "Passing is sending the ball to a teammate (1); reception is receiving/controlling a ball from another player (1).",
+          2
+        ],
+        [
+          "Define pivoting and marking in games.",
+          "Pivoting is turning on a planted foot while maintaining control (1); marking is guarding/opposing a player to limit their movement or options (1).",
+          2
+        ],
+        [
+          "Name two types of passes used in handball.",
+          "Overarm/shoulder pass, bounce pass, chest pass, wrist pass. Any two.",
+          2
+        ],
+        [
+          "State the dimensions of a standard handball court.",
+          "20 m by 40 m. (1)",
+          1
+        ],
+        [
+          "From what distance is a handball penalty throw taken?",
+          "7 metres from the goal. (1)",
+          1
+        ],
+        [
+          "State two landing techniques used in netball footwork.",
+          "One-foot landing and two-foot landing. (1 each)",
+          2
+        ],
+        [
+          "How many players from each team play on a netball court?",
+          "Seven players. (1)",
+          1
+        ],
+        [
+          "State the time limit for a netball player to pass or shoot after receiving the ball.",
+          "Three seconds. (1)",
+          1
+        ],
+        [
+          "Give four ways dancers can remain safe during a performance.",
+          "Warm up, clear the stage, wear suitable footwear/costume, check props, follow instructions, avoid unsafe lifts. Any four.",
+          4
+        ],
+        [
+          "Name two activities dancers should do before a stage performance.",
+          "Warm-up/stretching and rehearsal; checking costume/props or stage positions also acceptable. Any two.",
+          2
+        ],
+        [
+          "Name two materials used to make a sisal skirt.",
+          "Sisal fibre and string/thread; suitable waistband or binding material also accepted. (1 each)",
+          2
+        ],
+        [
+          "Explain how a whistle and a guitar produce sound.",
+          "Whistle: blown air vibrates (1); guitar: plucked/strummed strings vibrate (1).",
+          2
+        ]
+      ],
+      "source": {
+        "paper": "OPENER 001 2027 TERM 1 GRADE 7",
+        "pages": "15–21",
+        "basis": "3D forms, still-life, composition, painting, colour wheel, primary/analogous colours, colour properties, perspective, tints/shades/intensity/gradation, netball, handball, footwork, dance safety, performance and sound production."
+      }
     },
     {
       "id": "cre",
