@@ -19,7 +19,6 @@ function addUI(){
  }
  const main=$('app');
  if(main&&!$('p-progress'))main.insertAdjacentHTML('beforeend','<section id="p-progress" class="hidden"><div class="panel"><div class="row"><div><h3>Learner progress & intervention</h3><p class="muted">Compare recorded results across examinations and review qualitative CBE evidence.</p></div><div class="field" style="min-width:260px"><label>Learner</label><select id="progressLearner" onchange="renderLearnerProgress()"></select></div></div><div id="progressMetrics" class="metricgrid"></div><h3>Progress by learning area</h3><div id="progressTable"></div><h3>Support signals</h3><div id="interventionTable"></div><p class="muted">The 50% screening threshold is an illustrative school support prompt, not an official KNEC grade or an automated diagnosis. Teachers should review the learner’s full evidence.</p><h3>CBE qualitative evidence</h3><div id="evidenceTable"></div></div></section>');
- }
 }
 function fillEnhancementOptions(){
  if(typeof data==='undefined')return;
