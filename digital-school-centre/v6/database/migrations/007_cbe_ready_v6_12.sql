@@ -97,6 +97,13 @@ alter table public.learner_interventions enable row level security;
 alter table public.school_cbe_settings enable row level security;
 alter table public.guardian_communications enable row level security;
 
+grant select, insert, update, delete on public.assessment_staff_assignments to authenticated;
+grant select, insert, update, delete on public.curriculum_strands to authenticated;
+grant select, insert, update, delete on public.assessment_component_strands to authenticated;
+grant select, insert, update, delete on public.learner_interventions to authenticated;
+grant select, insert, update, delete on public.school_cbe_settings to authenticated;
+grant select, insert, update, delete on public.guardian_communications to authenticated;
+
 drop policy if exists "asa admins manage" on public.assessment_staff_assignments;
 create policy "asa admins manage" on public.assessment_staff_assignments for all to authenticated
 using (public.has_school_role(school_id,array['school_owner','director','headteacher','deputy_headteacher','dos','administrator']))
