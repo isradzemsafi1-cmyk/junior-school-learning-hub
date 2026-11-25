@@ -27,6 +27,14 @@ const TARGET_MCQ = 80;
 const TARGET_STRUCTURED = 120;
 const failures = [];
 const summaries = [];
+const GENERIC_STRUCTURED_PATTERNS = [
+  /characteristics or examples of/i, /reasons why .+ is important/i,
+  /steps or procedures related to/i, /safety measures or good practices related to/i,
+  /challenges associated with .+ and suggest a response/i,
+  /uses or applications of/i, /compare .+ with a related concept/i,
+  /demonstrate correct use or application of/i,
+  /factors to consider when selecting or applying/i
+];
 
 function fail(file, message) { failures.push(file + ': ' + message); }
 function normalise(value) { return String(value || '').toLowerCase().replace(/[^a-z0-9]+/g, ' ').trim(); }
@@ -56,6 +64,7 @@ for (const term of [1, 2, 3]) {
     if (subject.structured.length < TARGET_STRUCTURED) fail(filename, id + ': only ' + subject.structured.length + ' structured questions; target is ' + TARGET_STRUCTURED);
 
     const seen = new Set();
+    const answerCounts = [0, 0, 0, 0];
     for (let i = 0; i < subject.mcq.length; i++) {
       const q = subject.mcq[i];
       if (!Array.isArray(q) || q.length < 4) { fail(filename, id + ': malformed MCQ #' + (i + 1)); continue; }
@@ -66,6 +75,7 @@ for (const term of [1, 2, 3]) {
       seen.add(key);
       if (!Array.isArray(options) || options.length !== 4 || options.some(option => typeof option !== 'string' || !option.trim())) fail(filename, id + ': MCQ #' + (i + 1) + ' must have four non-empty options');
       if (!Number.isInteger(answer) || answer < 0 || answer > 3) fail(filename, id + ': invalid answer index in MCQ #' + (i + 1));
+      if (Number.isInteger(answer)) answerCounts[answer] = (answerCounts[answer] || 0) + 1;
       if (typeof explanation !== 'string' || explanation.trim().length < 8) fail(filename, id + ': missing explanation in MCQ #' + (i + 1));
     }
     for (let i = 0; i < subject.structured.length; i++) {
@@ -77,9 +87,12 @@ for (const term of [1, 2, 3]) {
       if (seen.has(key)) fail(filename, id + ': duplicate prompt: ' + prompt.slice(0, 90));
       seen.add(key);
       if (typeof guide !== 'string' || guide.trim().length < 12) fail(filename, id + ': missing marking guide in structured question #' + (i + 1));
+      if (typeof prompt === 'string' && GENERIC_STRUCTURED_PATTERNS.some(pattern => pattern.test(prompt))) fail(filename, id + ': generic/template structured prompt #' + (i + 1) + ': ' + prompt.slice(0, 100));
       if (!Number.isInteger(marks) || marks < 1) fail(filename, id + ': invalid marks in structured question #' + (i + 1));
     }
-    summaries.push({ term, id, mcq: subject.mcq.length, structured: subject.structured.length, total: subject.mcq.length + subject.structured.length });
+    const maxAnswerShare = Math.max(...answerCounts) / Math.max(1, subject.mcq.length);
+    if (subject.mcq.length >= TARGET_MCQ && maxAnswerShare > 0.65) fail(filename, id + ': answer key distribution is too concentrated (' + answerCounts.join('/') + '); review option positions');
+    summaries.push({ term, id, mcq: subject.mcq.length, structured: subject.structured.length, total: subject.mcq.length + subject.structured.length, answerCounts: answerCounts.join('/') });
   }
 }
 
