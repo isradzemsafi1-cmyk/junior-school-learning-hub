@@ -2548,6 +2548,281 @@
           ],
           0,
           "The teacher advises understanding, focused study and practice with old papers."
+        ],
+        [
+          "Choose the correct synonym for 'narrating'.",
+          [
+            "Telling",
+            "Hiding",
+            "Destroying",
+            "Forgetting"
+          ],
+          0,
+          "Narrating means telling or recounting events."
+        ],
+        [
+          "Which word is the opposite of 'humble'?",
+          [
+            "Proud",
+            "Modest",
+            "Gentle",
+            "Polite"
+          ],
+          0,
+          "Proud is an antonym of humble."
+        ],
+        [
+          "Choose the correct opposite of 'forbidden'.",
+          [
+            "Allowed",
+            "Prohibited",
+            "Banned",
+            "Restricted"
+          ],
+          0,
+          "Allowed is the opposite of forbidden."
+        ],
+        [
+          "Which word means a person who is about to be married?",
+          [
+            "Bridegroom",
+            "Widow",
+            "Orphan",
+            "Host"
+          ],
+          0,
+          "A bridegroom is a man about to be married."
+        ],
+        [
+          "Which word is a noun in the sentence 'The children played happily'?",
+          [
+            "Children",
+            "Played",
+            "Happily",
+            "The"
+          ],
+          0,
+          "Children names people and functions as the subject noun."
+        ],
+        [
+          "Which word is an adjective in 'a beautiful garden'?",
+          [
+            "Beautiful",
+            "Garden",
+            "A",
+            "In"
+          ],
+          0,
+          "Beautiful describes the noun garden."
+        ],
+        [
+          "Which word is a verb in 'The farmers prepared the field'?",
+          [
+            "Farmers",
+            "Prepared",
+            "Field",
+            "The"
+          ],
+          1,
+          "Prepared expresses the action."
+        ],
+        [
+          "Which word is an adverb in 'She answered politely'?",
+          [
+            "She",
+            "Answered",
+            "Politely",
+            "None"
+          ],
+          2,
+          "Politely modifies the verb answered."
+        ],
+        [
+          "Choose the correct plural of 'child'.",
+          [
+            "Children",
+            "Childs",
+            "Childes",
+            "Childrens"
+          ],
+          0,
+          "Children is the irregular plural."
+        ],
+        [
+          "Choose the correct spelling.",
+          [
+            "Acquainted",
+            "Acquinted",
+            "Aquantied",
+            "Acquaintted"
+          ],
+          0,
+          "Acquainted is the correct spelling."
+        ],
+        [
+          "Which sentence is punctuated correctly?",
+          [
+            "“Good morning,” said Amina.",
+            "“Good morning” said, Amina.",
+            "Good morning,” said Amina.",
+            "“Good morning, said Amina.”"
+          ],
+          0,
+          "The spoken words are enclosed in quotation marks and followed by a reporting clause."
+        ],
+        [
+          "Choose the correct article: 'She bought ____ umbrella.'",
+          [
+            "a",
+            "an",
+            "the a",
+            "no"
+          ],
+          1,
+          "An is used before a vowel sound."
+        ],
+        [
+          "Choose the correct conjunction: 'He studied hard ____ he passed.'",
+          [
+            "so",
+            "although",
+            "unless",
+            "but"
+          ],
+          0,
+          "So introduces the result."
+        ],
+        [
+          "Choose the correct preposition: 'The pupils arrived ____ school early.'",
+          [
+            "at",
+            "on",
+            "by",
+            "from"
+          ],
+          0,
+          "The usual expression is arrive at school."
+        ],
+        [
+          "Choose the correct form: 'Neither of the boys ____ absent.'",
+          [
+            "was",
+            "were",
+            "are",
+            "have"
+          ],
+          0,
+          "Neither is singular in this construction."
+        ],
+        [
+          "Which sentence is in the past tense?",
+          [
+            "They visited the museum.",
+            "They visit the museum.",
+            "They will visit the museum.",
+            "They are visiting the museum."
+          ],
+          0,
+          "Visited is the simple past tense."
+        ],
+        [
+          "Choose the correct passive form of 'The chef cooked the meal.'",
+          [
+            "The meal was cooked by the chef.",
+            "The meal cooked the chef.",
+            "The chef was cooked by the meal.",
+            "The meal is cooking the chef."
+          ],
+          0,
+          "The object becomes the subject and the verb takes the passive form."
+        ],
+        [
+          "Which is a compound sentence?",
+          [
+            "I read and my sister wrote.",
+            "Because it rained.",
+            "Running very fast.",
+            "The tall building."
+          ],
+          0,
+          "A compound sentence joins independent clauses."
+        ],
+        [
+          "Choose the correct question tag: 'She can swim, ____?'",
+          [
+            "can't she",
+            "can she",
+            "doesn't she",
+            "isn't she"
+          ],
+          0,
+          "A positive statement with can takes the negative tag can't she."
+        ],
+        [
+          "Choose the correct reported speech: He said, 'I am tired.'",
+          [
+            "He said that he was tired.",
+            "He said that I am tired.",
+            "He says he tired.",
+            "He said that he is tiring."
+          ],
+          0,
+          "Backshift am to was and change the pronoun to match the speaker."
+        ],
+        [
+          "Which expression politely asks someone to repeat information?",
+          [
+            "Pardon me, could you repeat that?",
+            "Talk louder now!",
+            "You are unclear.",
+            "I refuse to listen."
+          ],
+          0,
+          "A polite request uses courteous wording."
+        ],
+        [
+          "A poem's 'rhyme' refers to:",
+          [
+            "Similar ending sounds",
+            "The number of paragraphs",
+            "The writer's address",
+            "The title only"
+          ],
+          0,
+          "Rhyme is repetition of similar sounds, often at line endings."
+        ],
+        [
+          "The person who writes a poem is the:",
+          [
+            "Poet",
+            "Audience",
+            "Editor only",
+            "Speaker's friend"
+          ],
+          0,
+          "A poet is a writer of poems."
+        ],
+        [
+          "Which is the best opening for a friendly letter to a guardian?",
+          [
+            "Dear Mum,",
+            "To whom it may concern only",
+            "Dear Sir/Madam in every case",
+            "Hey stranger"
+          ],
+          0,
+          "A friendly letter uses an appropriate personal salutation."
+        ],
+        [
+          "Which detail belongs in the closing of a friendly letter?",
+          [
+            "A suitable sign-off and the writer's name",
+            "A new title in the middle",
+            "A list of unrelated words",
+            "The recipient's examination score"
+          ],
+          0,
+          "A friendly letter ends with a closing phrase and the writer's name."
         ]
       ],
       "structured": [
@@ -2750,12 +3025,212 @@
           "Write a friendly letter to your guardian describing life in your new junior school. Include the correct format.",
           "Award: writer's address/date (1); salutation (1); relevant opening and account of school life (2); coherent details about lessons, teachers, friends/activities (3); suitable closing and name (2); grammar and organisation (1).",
           10
+        ],
+        [
+          "Write a sentence using each word correctly: (a) humble (b) forbidden (c) disclosed.",
+          "Three meaningful, grammatically correct sentences using the words in context. (1 each)",
+          3
+        ],
+        [
+          "Give the antonyms of: (a) easy (b) blessed (c) humble (d) forbidden.",
+          "(a) difficult/hard (1); (b) cursed/unfortunate (1); (c) proud/arrogant (1); (d) allowed/permitted (1).",
+          4
+        ],
+        [
+          "Give synonyms of: (a) nuisance (b) sufficient (c) grasp (d) thoroughly.",
+          "(a) annoyance/trouble (1); (b) enough/adequate (1); (c) understand/comprehend (1); (d) completely/carefully (1).",
+          4
+        ],
+        [
+          "Identify the subject and object: (a) She cooked a delicious meal. (b) The farmers prepared the farm.",
+          "(a) subject—She; object—a delicious meal (2); (b) subject—The farmers; object—the farm (2).",
+          4
+        ],
+        [
+          "Identify the part of speech of the bold word: (a) a **warm** sweater (b) a **brand** new car (c) they **disembarked** at the harbour.",
+          "(a) adjective (1); (b) adverb/intensifier (1); (c) verb (1).",
+          3
+        ],
+        [
+          "Change into passive voice: 'The learners cleaned the classroom.'",
+          "The classroom was cleaned by the learners. Award 1 for correct subject/object change and 1 for verb form.",
+          2
+        ],
+        [
+          "Change into active voice: 'The story was read by the teacher.'",
+          "The teacher read the story. (2)",
+          2
+        ],
+        [
+          "Rewrite in the past tense: 'The pupils walk to school and greet their teacher.'",
+          "The pupils walked to school and greeted their teacher. (2)",
+          2
+        ],
+        [
+          "Rewrite in the future tense: 'Amina writes a letter to her aunt.'",
+          "Amina will write a letter to her aunt. (2)",
+          2
+        ],
+        [
+          "Join using 'although': 'It was raining. The match continued.'",
+          "Although it was raining, the match continued. (2)",
+          2
+        ],
+        [
+          "Join using 'because': 'The learner was late. The bus broke down.'",
+          "The learner was late because the bus broke down. (2)",
+          2
+        ],
+        [
+          "Punctuate correctly: where are you going asked the teacher",
+          "“Where are you going?” asked the teacher. (2)",
+          2
+        ],
+        [
+          "Rewrite in reported speech: Mary said, 'I have completed my assignment.'",
+          "Mary said that she had completed her assignment. (2)",
+          2
+        ],
+        [
+          "Rewrite in direct speech: The visitor asked whether I was ready.",
+          "The visitor asked, “Are you ready?” (2)",
+          2
+        ],
+        [
+          "Give the correct question tags: (a) They are ready, ____? (b) You haven't eaten, ____? (c) Let's begin, ____?",
+          "(a) aren't they? (1); (b) have you? (1); (c) shall we? (1).",
+          3
+        ],
+        [
+          "Use the correct comparative or superlative: (a) tall (two boys) (b) good (best of all) (c) interesting (more than one book).",
+          "(a) taller (1); (b) best (1); (c) more interesting (1).",
+          3
+        ],
+        [
+          "Complete with suitable relative pronouns: (a) The girl ____ won is my cousin. (b) The man ____ car was stolen reported to police. (c) The book ____ I borrowed is useful.",
+          "(a) who (1); (b) whose (1); (c) which/that (1).",
+          3
+        ],
+        [
+          "Form adverbs from: (a) careful (b) happy (c) quiet.",
+          "(a) carefully (1); (b) happily (1); (c) quietly (1).",
+          3
+        ],
+        [
+          "Form nouns using suitable suffixes: (a) educate (b) govern (c) kind.",
+          "(a) education (1); (b) government (1); (c) kindness (1).",
+          3
+        ],
+        [
+          "Use each pair correctly in separate sentences: (a) their/there (b) your/you're.",
+          "Four sentences showing correct distinction and meaning. (1 each)",
+          4
+        ],
+        [
+          "Explain the difference between 'advice' and 'advise'.",
+          "Advice is a noun meaning a recommendation (1); advise is a verb meaning to recommend (1).",
+          2
+        ],
+        [
+          "Give five polite expressions suitable for classroom conversation.",
+          "Accept: excuse me; please; thank you; I am sorry; pardon me; may I contribute?; could you help me? Any five.",
+          5
+        ],
+        [
+          "State four features of an effective friendly letter.",
+          "Sender's address/date; greeting/salutation; clear organised message; suitable closing/signature. Any four.",
+          4
+        ],
+        [
+          "Write a short paragraph of 80–100 words describing how you prepare for an examination.",
+          "Award: relevant ideas and sequence (3); clear paragraphing/cohesion (2); grammar/vocabulary (2); punctuation/spelling (2); word limit/task fulfilment (1).",
+          10
+        ],
+        [
+          "Write a dialogue of at least six exchanges between a learner and a librarian asking for a book.",
+          "Award: appropriate opening/closing (2); relevant requests and responses (3); polite language/turn-taking (2); grammar and punctuation (2); coherence (1).",
+          10
+        ],
+        [
+          "Read this sentence: 'The pupils worked carefully because the task was difficult.' Identify one noun, one verb, one adverb, one conjunction and one adjective.",
+          "Noun—pupils/task (1); verb—worked/was (1); adverb—carefully (1); conjunction—because (1); adjective—difficult (1).",
+          5
+        ],
+        [
+          "Explain two ways a reader can identify the main idea of a passage.",
+          "Read the whole passage and note repeated/central ideas; examine topic sentence/title; distinguish main points from examples. Any two explained.",
+          4
+        ],
+        [
+          "State three qualities of a good oral presentation.",
+          "Clear voice, suitable pace, eye contact, confidence, correct pronunciation, audience awareness. Any three.",
+          3
+        ],
+        [
+          "Explain the difference between a speaker and an audience in a dialogue or performance.",
+          "Speaker communicates the message (1); audience listens/receives and responds to it (1).",
+          2
+        ],
+        [
+          "Write a short narrative paragraph about a time you helped another learner.",
+          "Award: clear setting and event (2); logical sequence (2); relevant details (2); language accuracy (2); appropriate ending (2).",
+          10
+        ],
+        [
+          "Explain why a writer uses rhyming words in a poem.",
+          "To create musical quality/rhythm, make lines memorable and link ideas or sounds. Any two explained.",
+          4
+        ],
+        [
+          "Identify two examples of imagery a poet may use and explain their effect.",
+          "Any two valid sensory descriptions/metaphors with an explanation of the picture or feeling created. (2 each)",
+          4
+        ],
+        [
+          "Rewrite the sentence using a suitable phrasal verb: 'The meeting ended at 4 p.m.'",
+          "The meeting wound up at 4 p.m. (2)",
+          2
+        ],
+        [
+          "Use 'look after', 'give up' and 'find out' in meaningful sentences.",
+          "Three grammatically correct sentences demonstrating the meanings. (1 each)",
+          3
+        ],
+        [
+          "Give the plural forms: (a) woman (b) mouse (c) leaf (d) child (e) city.",
+          "(a) women (1); (b) mice (1); (c) leaves (1); (d) children (1); (e) cities (1).",
+          5
+        ],
+        [
+          "Rewrite correctly: 'She don't like neither tea or coffee.'",
+          "She does not like either tea or coffee. (2)",
+          2
+        ],
+        [
+          "Write a paragraph explaining three ways learners can avoid distractions while studying.",
+          "Any three explained: silence/put away phone, set study timetable, choose quiet place, take planned breaks, organise materials. Award up to 6.",
+          6
+        ],
+        [
+          "Compose a suitable title and opening sentence for a story about an unexpected visitor.",
+          "Relevant title (1) and engaging, grammatically correct opening sentence (2).",
+          3
+        ],
+        [
+          "Write a formal invitation to a school debate, including date, venue, time and purpose.",
+          "Award: suitable heading/recipient (1); purpose (1); date/time/venue (3); courteous invitation (2); closing/contact/signature (2); accuracy (1).",
+          10
+        ],
+        [
+          "Write a summary of a short passage in your own words, keeping only its main points.",
+          "Award: identifies main ideas (4); concise and relevant (2); own words (2); grammar and sequence (2).",
+          10
         ]
       ],
       "source": {
         "paper": "OPENER 001 2027 TERM 1 GRADE 7",
         "pages": "22–33",
-        "basis": "Writing, grammar, oral skills, etiquette, comprehension, dialogue, poetry and folktale. This is an initial source-based batch; supplementary questions are original JSLH items. English-specific source coverage: friendly letter to guardian; synonyms; direct/indirect speech; adjective order and comparison; question tags; modal auxiliaries and conditionals; phrasal verbs; verb forms; conjunctions/prepositions; commonly confused words; one-word substitutions; suffixes; relative pronouns; parts of speech; oral etiquette; comprehension of school values, examination preparation, a school-life poem and a narrative; subject and object identification. This batch includes original JSLH practice based on these skills."
+        "basis": "Writing, grammar, oral skills, etiquette, comprehension, dialogue, poetry and folktale. This is an initial source-based batch; supplementary questions are original JSLH items. English-specific source coverage: friendly letter to guardian; synonyms; direct/indirect speech; adjective order and comparison; question tags; modal auxiliaries and conditionals; phrasal verbs; verb forms; conjunctions/prepositions; commonly confused words; one-word substitutions; suffixes; relative pronouns; parts of speech; oral etiquette; comprehension of school values, examination preparation, a school-life poem and a narrative; subject and object identification. This batch includes original JSLH practice based on these skills. Additional JSLH supplementary English practice: synonyms/antonyms, parts of speech, sentence construction, tense, voice, conjunctions, punctuation, reported speech, question tags, relative pronouns, word formation, oral communication, letter writing, dialogue, narrative, poetry and reading skills."
       }
     },
     {
