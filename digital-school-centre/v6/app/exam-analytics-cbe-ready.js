@@ -82,6 +82,7 @@ function renderCommunications(){if(!$('commRegister'))return;$('commRegister').i
 function renderAssignments(){
  if(!$('accessRegister'))return;
  $('accessRegister').innerHTML=extra.assignments.length?'<div class="tablewrap"><table><tr><th>Staff user</th><th>Grade</th><th>Stream</th><th>Learning area</th><th>Active</th><th>Action</th></tr>'+extra.assignments.map(x=>'<tr><td>'+esc(extra.staff.find(s=>s.auth_user_id===x.user_id)?.full_name||x.user_id)+'</td><td>'+esc(data.grades.find(g=>g.id===x.grade_id)?.name||'')+'</td><td>'+esc(data.streams.find(s=>s.id===x.stream_id)?.name||'All streams')+'</td><td>'+esc(data.areas.find(a=>a.id===x.learning_area_id)?.name||'All learning areas')+'</td><td>'+ (x.active?'Yes':'No')+'</td><td>'+(x.active?'<button class="btn alt" data-assignment-off="'+x.id+'">Deactivate</button>':'—')+'</td></tr>').join('')+'</table></div>':'<div class="empty">No assignment-scoped staff permissions have been configured.</div>';
+ renderCommunications();
 }
 function renderProgress(){
  const panel=$('p-progress');if(!panel)return;
