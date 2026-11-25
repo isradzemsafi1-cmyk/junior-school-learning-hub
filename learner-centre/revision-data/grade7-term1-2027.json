@@ -3909,8 +3909,250 @@
     {
       "id": "ire",
       "name": "IRE",
-      "mcq": [],
-      "structured": []
+      "mcq": [
+        [
+          "Swalah refers to:",
+          [
+            "The prescribed Islamic prayer",
+            "Fasting only",
+            "Giving charity only",
+            "Pilgrimage only"
+          ],
+          0,
+          "Swalah is the prescribed prayer."
+        ],
+        [
+          "Twahara means:",
+          [
+            "Ritual purity",
+            "Trade",
+            "Charity",
+            "Travel"
+          ],
+          0,
+          "Twahara refers to ritual cleanliness/purity."
+        ],
+        [
+          "Najaasat refers to:",
+          [
+            "Impurities",
+            "Voluntary prayer",
+            "Charity",
+            "Recitation"
+          ],
+          0,
+          "Najaasat means impurities."
+        ],
+        [
+          "Which is used for Wudhu when available and suitable?",
+          [
+            "Pure water",
+            "Oil",
+            "Juice",
+            "Milk"
+          ],
+          0,
+          "Wudhu is performed using pure water."
+        ],
+        [
+          "Ghusl is:",
+          [
+            "A ritual bath",
+            "A call to prayer",
+            "A charity payment",
+            "A journey"
+          ],
+          0,
+          "Ghusl is the ritual bath."
+        ],
+        [
+          "Wudhu is:",
+          [
+            "Ablution before prayer",
+            "A type of fasting",
+            "A sermon",
+            "A pilgrimage"
+          ],
+          0,
+          "Wudhu is ritual ablution."
+        ],
+        [
+          "Tayammum is performed using:",
+          [
+            "Clean earth/dust when permitted",
+            "Perfume",
+            "Cooking oil",
+            "Salt water"
+          ],
+          0,
+          "Tayammum is dry ablution using clean earth."
+        ],
+        [
+          "Istinjaa means:",
+          [
+            "Cleaning oneself after relieving oneself",
+            "Calling the Adhan",
+            "Giving a sermon",
+            "Facing the Qibla"
+          ],
+          0,
+          "Istinjaa is cleansing after answering the call of nature."
+        ],
+        [
+          "The person who calls the Adhan is the:",
+          [
+            "Muadhin",
+            "Imam only",
+            "Qadi",
+            "Teacher"
+          ],
+          0,
+          "A Muadhin calls the Adhan."
+        ],
+        [
+          "Iqaamah is called to:",
+          [
+            "Announce that the prayer is about to begin",
+            "End the fasting month",
+            "Begin a journey",
+            "Collect charity"
+          ],
+          0,
+          "Iqaamah signals the immediate commencement of congregational prayer."
+        ]
+      ],
+      "structured": [
+        [
+          "Define Swalah.",
+          "The prescribed acts of worship/prayer performed by Muslims at appointed times with specified conditions. (2)",
+          2
+        ],
+        [
+          "State three essential conditions of Swalah.",
+          "Purity, covering the awrah, facing the Qibla where required, entry of prayer time, intention. Any three.",
+          3
+        ],
+        [
+          "Define Twahara and Najaasat.",
+          "Twahara is ritual purity/cleanliness (2); Najaasat refers to ritual impurities (2).",
+          4
+        ],
+        [
+          "Name two types of Najaasat as taught in Islamic Religious Education.",
+          "Accept the classifications taught in the learner’s course, such as major and minor impurity, with a correct explanation. (1 each)",
+          2
+        ],
+        [
+          "State the three classes of water in the study of purification.",
+          "Pure and purifying water; pure but not purifying water; impure water. (1 each)",
+          3
+        ],
+        [
+          "Give three circumstances in which Ghusl becomes compulsory.",
+          "After sexual intercourse; after ejaculation/wet dream; at the end of menstruation or postnatal bleeding. Any three.",
+          3
+        ],
+        [
+          "State three occasions when Ghusl is Sunnah.",
+          "Before Friday prayer, Eid prayer and entering ihram; accept other recognised Sunnah occasions taught. Any three.",
+          3
+        ],
+        [
+          "Outline five steps in performing Ghusl.",
+          "Make intention; wash hands/private parts; perform Wudhu; pour water over head; wash whole body ensuring water reaches all parts. Any five in correct order.",
+          5
+        ],
+        [
+          "State three importance of Ghusl.",
+          "Restores ritual purity, enables acts of worship requiring major purification, promotes cleanliness. Any three.",
+          3
+        ],
+        [
+          "State three acts prohibited for a person in Janaba before Ghusl.",
+          "Performing Swalah, circumambulating the Kaaba, reciting/touching the Quran according to the taught rulings. Any three.",
+          3
+        ],
+        [
+          "Define Wudhu.",
+          "Ritual washing of specified body parts with clean water in preparation for worship. (2)",
+          2
+        ],
+        [
+          "State three factors to observe when performing Wudhu.",
+          "Use pure water, remove barriers preventing water reaching skin, observe correct order/sequence, make intention. Any three.",
+          3
+        ],
+        [
+          "Mention three voluntary acts of Wudhu.",
+          "Begin with Bismillah, use miswak, wash parts three times, begin with right side, rinse mouth/nose. Any three.",
+          3
+        ],
+        [
+          "State three things that nullify Wudhu.",
+          "Passing urine/faeces/wind, deep sleep or loss of consciousness, other recognised nullifiers taught in class. Any three.",
+          3
+        ],
+        [
+          "Define Tayammum and state two reasons for performing it.",
+          "Dry ritual purification using clean earth/dust (2); lack of water or inability to use water due to illness/danger. (1 each)",
+          4
+        ],
+        [
+          "State three conditions for valid Tayammum.",
+          "Intention; clean earth/dust; water unavailable or its use harmful; perform at appropriate prayer time according to taught rule. Any three.",
+          3
+        ],
+        [
+          "State three things that nullify Tayammum.",
+          "Finding/being able to use water, occurrence of a Wudhu nullifier, end of the reason permitting Tayammum. Any three.",
+          3
+        ],
+        [
+          "Define Istinjaa and state two materials used for cleansing.",
+          "Cleansing private parts after relieving oneself (2); water and suitable clean material such as tissue/stone where permitted. (1 each)",
+          4
+        ],
+        [
+          "State four toilet etiquettes in Islam.",
+          "Enter with left foot, exit with right foot, avoid facing/turning back to Qibla where applicable, maintain privacy, use left hand for cleansing, keep place clean. Any four.",
+          4
+        ],
+        [
+          "State three situations in which a Muslim may be excused from facing the Qibla.",
+          "During genuine danger/fear, when unable due to illness or incapacity, during certain voluntary prayers while travelling on a moving mount/vehicle according to the taught ruling. Any three.",
+          3
+        ],
+        [
+          "Name the five ordained daily prayers and their usual times.",
+          "Fajr—dawn; Dhuhr—after midday; Asr—afternoon; Maghrib—after sunset; Isha—night. (1 each)",
+          5
+        ],
+        [
+          "State three times when voluntary prayer is prohibited.",
+          "At sunrise, when the sun is at its zenith, and at sunset. (1 each)",
+          3
+        ],
+        [
+          "State four qualities of a Muadhin.",
+          "Muslim, mature/sensible, trustworthy, good voice, knowledgeable about prayer times, punctual. Any four.",
+          4
+        ],
+        [
+          "Give four differences between Adhan and Iqaamah.",
+          "Adhan calls people to prayer; Iqaamah announces its immediate start; Adhan is generally longer; Iqaamah is shorter; wording/repetition differs according to taught form. Any four paired contrasts.",
+          4
+        ],
+        [
+          "Name three types of prayers in Islam.",
+          "Fard/obligatory, Sunnah, Nafl/voluntary; other valid categories taught. Any three.",
+          3
+        ]
+      ],
+      "source": {
+        "paper": "OPENER 001 2027 TERM 1 GRADE 7",
+        "pages": "40–45",
+        "basis": "Shahada/Tashahhud, Swalah, conditions, Twahara/Najaasat, water classes, Ghusl, Wudhu, Tayammum, Istinjaa, Qibla, prayer times, Muadhin, Adhan/Iqaamah and types of prayer."
+      }
     },
     {
       "id": "kiswahili",
