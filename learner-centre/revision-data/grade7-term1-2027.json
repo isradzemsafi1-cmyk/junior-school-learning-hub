@@ -902,6 +902,17 @@
           ],
           0,
           "Wafting reduces direct exposure to concentrated vapours."
+        ],
+        [
+          "Which precaution should be taken when diluting or mixing laboratory solutions under teacher instruction?",
+          [
+            "Add substances carefully and follow the teacher's method",
+            "Pour quickly towards the face",
+            "Use bare hands to stir",
+            "Taste the mixture"
+          ],
+          0,
+          "Careful handling and following instructions reduce splashes and exposure."
         ]
       ],
       "structured": [
@@ -1203,6 +1214,81 @@
         [
           "A learner obtains a density of 0.8 g/cm³ for a sample. Explain what this value means.",
           "Award up to 2 marks: each cubic centimetre of the sample has a mass of 0.8 g.",
+          2
+        ],
+        [
+          "Explain why the same mass of two materials can occupy different volumes.",
+          "Award up to 2 marks: materials may have different densities; lower-density material occupies a larger volume for the same mass.",
+          2
+        ],
+        [
+          "A learner records a mass of 125 g and a volume of 25 cm³. Calculate density and state what the answer tells you.",
+          "Award 1 mark for D=m/V; 1 for 125÷25; 1 for 5 g/cm³; 1 for interpretation that each cm³ has mass 5 g.",
+          4
+        ],
+        [
+          "State three observations that may indicate that a chemical reaction has occurred during a supervised experiment.",
+          "Award 1 mark each: colour change; gas/bubbles produced; temperature change; precipitate formed; light or new odour produced (only if safely observed).",
+          3
+        ],
+        [
+          "Give two reasons why laboratory chemicals should be labelled clearly.",
+          "Award 1 mark each: identify contents; communicate hazards/precautions; prevent accidental misuse or mixing.",
+          2
+        ],
+        [
+          "Describe how to respond if a glass beaker breaks during a practical lesson.",
+          "Award up to 3 marks: stop work and alert teacher; keep others away; do not pick shards with bare hands; teacher/appropriate tool clears glass into designated container.",
+          3
+        ],
+        [
+          "State three differences between a measuring cylinder and a beaker.",
+          "Award 1 mark each: measuring cylinder is graduated for volume measurement; generally narrower/taller; beaker is mainly for holding/mixing/heating and gives less precise volume readings.",
+          3
+        ],
+        [
+          "Explain why a measuring cylinder should be placed on a flat surface before reading a liquid volume.",
+          "Award up to 2 marks: keeps cylinder upright; helps obtain an accurate meniscus reading and avoids spillage.",
+          2
+        ],
+        [
+          "Name two ways the body is protected by bones and give an example for each.",
+          "Award 1 mark per valid pair: skull protects brain; ribs protect heart/lungs; vertebrae protect spinal cord.",
+          2
+        ],
+        [
+          "Describe the role of valves in the heart.",
+          "Award up to 2 marks: prevent backflow of blood; ensure blood flows in one direction through the heart.",
+          2
+        ],
+        [
+          "Explain why blood must pass through the lungs before being pumped to the rest of the body.",
+          "Award up to 2 marks: blood takes in oxygen; releases carbon dioxide; oxygenated blood supplies body cells for respiration.",
+          2
+        ],
+        [
+          "State two ways a learner can prevent infection when giving basic first aid.",
+          "Award 1 mark each: use disposable gloves/barrier; wash hands; use sterile/clean dressing; dispose of contaminated materials safely.",
+          2
+        ],
+        [
+          "A learner measures 18 cm³ of water and adds an object. The level rises to 26 cm³. Find the object's volume and explain the method.",
+          "Award 1 mark for final minus initial; 1 for 26−18; 1 for 8 cm³; 1 for displacement explanation.",
+          4
+        ],
+        [
+          "Explain why a learner should not use the coarse adjustment knob when the high-power objective is close to a slide.",
+          "Award up to 2 marks: large movement may drive objective into slide; can break slide or damage lens; use fine adjustment carefully.",
+          2
+        ],
+        [
+          "Describe two differences between the luminous and non-luminous Bunsen burner flames and state which is preferred for strong heating.",
+          "Award 1 mark each for colour/air/temperature and 1 for identifying non-luminous blue flame as hotter and preferred for strong heating.",
+          3
+        ],
+        [
+          "State the function of the gas inlet and the gas hose in a Bunsen burner.",
+          "Award 1 mark each: hose conveys gas from supply; gas inlet admits gas into burner.",
           2
         ]
       ]
