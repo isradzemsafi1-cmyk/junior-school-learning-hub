@@ -64,7 +64,7 @@ create table if not exists public.learner_interventions (
   updated_at timestamptz not null default now(),
   constraint intervention_learner_school_fk foreign key (learner_id,school_id) references public.learners(id,school_id),
   constraint intervention_area_school_fk foreign key (learning_area_id,school_id) references public.learning_areas(id,school_id),
-  constraint intervention_strand_school_fk foreign key (strand_id,school_id) references public.curriculum_strands(id,school_id) on delete set null
+  constraint intervention_strand_school_fk foreign key (strand_id,school_id) references public.curriculum_strands(id,school_id)
 );
 create index if not exists idx_interventions_learner on public.learner_interventions(school_id,learner_id,status);
 
