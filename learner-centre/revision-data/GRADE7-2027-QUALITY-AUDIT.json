@@ -1,0 +1,657 @@
+{
+  "title": "Grade 7 Revision Bank — Content Quality Audit",
+  "generatedAt": "2026-11-25",
+  "branch": "feature/grade7-revision-bank-200-per-area",
+  "status": "AUDIT REQUIRED — NOT RELEASE READY",
+  "target": {
+    "learningAreas": 10,
+    "terms": 3,
+    "mcqPerAreaPerTerm": 80,
+    "structuredPerAreaPerTerm": 120,
+    "totalQuestions": 6000
+  },
+  "term1": {
+    "mcq": 800,
+    "structured": 1202,
+    "total": 2002,
+    "learningAreas": [
+      {
+        "id": "agriculture",
+        "name": "Agriculture & Nutrition",
+        "mcq": 80,
+        "structured": 120,
+        "genericStructuredCount": 57,
+        "genericStructuredExamples": [
+          {
+            "i": 50,
+            "p": "Explain three reasons why a household should save part of its income."
+          },
+          {
+            "i": 65,
+            "p": "State three characteristics or examples of agroforestry."
+          },
+          {
+            "i": 66,
+            "p": "State three characteristics or examples of soil conservation."
+          },
+          {
+            "i": 67,
+            "p": "State three characteristics or examples of seedbed."
+          },
+          {
+            "i": 68,
+            "p": "State three characteristics or examples of planting."
+          },
+          {
+            "i": 69,
+            "p": "State three characteristics or examples of weeds."
+          },
+          {
+            "i": 70,
+            "p": "State three characteristics or examples of water."
+          },
+          {
+            "i": 71,
+            "p": "State three characteristics or examples of nutrition."
+          },
+          {
+            "i": 72,
+            "p": "State three characteristics or examples of consumer."
+          },
+          {
+            "i": 73,
+            "p": "State three characteristics or examples of household."
+          },
+          {
+            "i": 74,
+            "p": "State three characteristics or examples of fibre."
+          },
+          {
+            "i": 75,
+            "p": "Explain three reasons why agroforestry is important."
+          }
+        ],
+        "mcqAnswerDistribution": {
+          "0": 80
+        },
+        "exactDuplicateMcqPrompts": []
+      },
+      {
+        "id": "creative-arts",
+        "name": "Creative Arts & Sports",
+        "mcq": 80,
+        "structured": 120,
+        "genericStructuredCount": 54,
+        "genericStructuredExamples": [
+          {
+            "i": 62,
+            "p": "State three characteristics or examples of drawing."
+          },
+          {
+            "i": 63,
+            "p": "State three characteristics or examples of colour."
+          },
+          {
+            "i": 64,
+            "p": "State three characteristics or examples of art."
+          },
+          {
+            "i": 65,
+            "p": "State three characteristics or examples of sports."
+          },
+          {
+            "i": 66,
+            "p": "State three characteristics or examples of dance."
+          },
+          {
+            "i": 67,
+            "p": "State three characteristics or examples of music."
+          },
+          {
+            "i": 68,
+            "p": "Explain three reasons why drawing is important."
+          },
+          {
+            "i": 69,
+            "p": "Explain three reasons why colour is important."
+          },
+          {
+            "i": 70,
+            "p": "Explain three reasons why art is important."
+          },
+          {
+            "i": 71,
+            "p": "Explain three reasons why sports is important."
+          },
+          {
+            "i": 72,
+            "p": "Explain three reasons why dance is important."
+          },
+          {
+            "i": 73,
+            "p": "Explain three reasons why music is important."
+          }
+        ],
+        "mcqAnswerDistribution": {
+          "0": 76,
+          "1": 3,
+          "2": 1
+        },
+        "exactDuplicateMcqPrompts": []
+      },
+      {
+        "id": "cre",
+        "name": "CRE",
+        "mcq": 80,
+        "structured": 121,
+        "genericStructuredCount": 7,
+        "genericStructuredExamples": [
+          {
+            "i": 3,
+            "p": "Give five reasons why Christians should care for animals, fish and birds."
+          },
+          {
+            "i": 7,
+            "p": "Explain two reasons why the Bible is divided into the Old Testament and New Testament."
+          },
+          {
+            "i": 11,
+            "p": "State five reasons why some young people may abuse drugs."
+          },
+          {
+            "i": 33,
+            "p": "State four reasons why people may read the Bible during difficult times."
+          },
+          {
+            "i": 37,
+            "p": "Give three reasons why drug abuse can interfere with learning and school life."
+          },
+          {
+            "i": 57,
+            "p": "Explain three reasons why young people may be vulnerable to peer pressure regarding drugs."
+          },
+          {
+            "i": 119,
+            "p": "A local wetland is being filled with rubbish and drained. Describe four reasons why the community should protect it."
+          }
+        ],
+        "mcqAnswerDistribution": {
+          "0": 80
+        },
+        "exactDuplicateMcqPrompts": []
+      },
+      {
+        "id": "english",
+        "name": "English",
+        "mcq": 80,
+        "structured": 120,
+        "genericStructuredCount": 0,
+        "genericStructuredExamples": [],
+        "mcqAnswerDistribution": {
+          "0": 70,
+          "1": 9,
+          "2": 1
+        },
+        "exactDuplicateMcqPrompts": [
+          [
+            2,
+            15,
+            "Which adjective order is correct?"
+          ],
+          [
+            6,
+            25,
+            "A woman whose husband has died is a:"
+          ]
+        ]
+      },
+      {
+        "id": "integrated-science",
+        "name": "Integrated Science",
+        "mcq": 80,
+        "structured": 121,
+        "genericStructuredCount": 2,
+        "genericStructuredExamples": [
+          {
+            "i": 54,
+            "p": "Give two reasons why oxygen is important to living things and one reason why carbon dioxide is important to plants."
+          },
+          {
+            "i": 64,
+            "p": "Give two reasons why laboratory chemicals should be labelled clearly."
+          }
+        ],
+        "mcqAnswerDistribution": {
+          "0": 65,
+          "1": 11,
+          "2": 4
+        },
+        "exactDuplicateMcqPrompts": []
+      },
+      {
+        "id": "ire",
+        "name": "IRE",
+        "mcq": 80,
+        "structured": 120,
+        "genericStructuredCount": 55,
+        "genericStructuredExamples": [
+          {
+            "i": 61,
+            "p": "State three characteristics or examples of faith."
+          },
+          {
+            "i": 62,
+            "p": "State three characteristics or examples of prayer."
+          },
+          {
+            "i": 63,
+            "p": "State three characteristics or examples of purification."
+          },
+          {
+            "i": 64,
+            "p": "State three characteristics or examples of worship."
+          },
+          {
+            "i": 65,
+            "p": "State three characteristics or examples of conduct."
+          },
+          {
+            "i": 66,
+            "p": "Explain three reasons why faith is important."
+          },
+          {
+            "i": 67,
+            "p": "Explain three reasons why prayer is important."
+          },
+          {
+            "i": 68,
+            "p": "Explain three reasons why purification is important."
+          },
+          {
+            "i": 69,
+            "p": "Explain three reasons why worship is important."
+          },
+          {
+            "i": 70,
+            "p": "Explain three reasons why conduct is important."
+          },
+          {
+            "i": 71,
+            "p": "Describe four steps or procedures related to faith."
+          },
+          {
+            "i": 72,
+            "p": "Describe four steps or procedures related to prayer."
+          }
+        ],
+        "mcqAnswerDistribution": {
+          "0": 80
+        },
+        "exactDuplicateMcqPrompts": [
+          [
+            7,
+            13,
+            "Tayammum is performed using:"
+          ],
+          [
+            8,
+            18,
+            "Istinjaa means:"
+          ],
+          [
+            9,
+            34,
+            "The person who calls the Adhan is the?"
+          ]
+        ]
+      },
+      {
+        "id": "kiswahili",
+        "name": "Kiswahili",
+        "mcq": 80,
+        "structured": 120,
+        "genericStructuredCount": 57,
+        "genericStructuredExamples": [
+          {
+            "i": 60,
+            "p": "State three characteristics or examples of sarufi."
+          },
+          {
+            "i": 61,
+            "p": "State three characteristics or examples of fonolojia."
+          },
+          {
+            "i": 62,
+            "p": "State three characteristics or examples of mawasiliano."
+          },
+          {
+            "i": 63,
+            "p": "State three characteristics or examples of uandishi."
+          },
+          {
+            "i": 64,
+            "p": "Explain three reasons why sarufi is important."
+          },
+          {
+            "i": 65,
+            "p": "Explain three reasons why fonolojia is important."
+          },
+          {
+            "i": 66,
+            "p": "Explain three reasons why mawasiliano is important."
+          },
+          {
+            "i": 67,
+            "p": "Explain three reasons why uandishi is important."
+          },
+          {
+            "i": 68,
+            "p": "Describe four steps or procedures related to sarufi."
+          },
+          {
+            "i": 69,
+            "p": "Describe four steps or procedures related to fonolojia."
+          },
+          {
+            "i": 70,
+            "p": "Describe four steps or procedures related to mawasiliano."
+          },
+          {
+            "i": 71,
+            "p": "Describe four steps or procedures related to uandishi."
+          }
+        ],
+        "mcqAnswerDistribution": {
+          "0": 77,
+          "1": 3
+        },
+        "exactDuplicateMcqPrompts": [
+          [
+            16,
+            36,
+            "Kinyume cha 'ingia' ni?"
+          ]
+        ]
+      },
+      {
+        "id": "mathematics",
+        "name": "Mathematics",
+        "mcq": 80,
+        "structured": 120,
+        "genericStructuredCount": 73,
+        "genericStructuredExamples": [
+          {
+            "i": 42,
+            "p": "State three characteristics or examples of number."
+          },
+          {
+            "i": 43,
+            "p": "State three characteristics or examples of fraction."
+          },
+          {
+            "i": 44,
+            "p": "State three characteristics or examples of percentage."
+          },
+          {
+            "i": 45,
+            "p": "State three characteristics or examples of measurement."
+          },
+          {
+            "i": 46,
+            "p": "State three characteristics or examples of geometry."
+          },
+          {
+            "i": 47,
+            "p": "State three characteristics or examples of algebra."
+          },
+          {
+            "i": 48,
+            "p": "Explain three reasons why number is important."
+          },
+          {
+            "i": 49,
+            "p": "Explain three reasons why fraction is important."
+          },
+          {
+            "i": 50,
+            "p": "Explain three reasons why percentage is important."
+          },
+          {
+            "i": 51,
+            "p": "Explain three reasons why measurement is important."
+          },
+          {
+            "i": 52,
+            "p": "Explain three reasons why geometry is important."
+          },
+          {
+            "i": 53,
+            "p": "Explain three reasons why algebra is important."
+          }
+        ],
+        "mcqAnswerDistribution": {
+          "0": 58,
+          "1": 13,
+          "2": 7,
+          "3": 2
+        },
+        "exactDuplicateMcqPrompts": [
+          [
+            22,
+            43,
+            "The sum of angles in a triangle is?"
+          ],
+          [
+            23,
+            44,
+            "A right angle measures?"
+          ]
+        ]
+      },
+      {
+        "id": "pre-technical",
+        "name": "Pre-Technical Studies",
+        "mcq": 80,
+        "structured": 120,
+        "genericStructuredCount": 73,
+        "genericStructuredExamples": [
+          {
+            "i": 42,
+            "p": "State three characteristics or examples of materials."
+          },
+          {
+            "i": 43,
+            "p": "State three characteristics or examples of design."
+          },
+          {
+            "i": 44,
+            "p": "State three characteristics or examples of safety."
+          },
+          {
+            "i": 45,
+            "p": "State three characteristics or examples of tools."
+          },
+          {
+            "i": 46,
+            "p": "State three characteristics or examples of computer."
+          },
+          {
+            "i": 47,
+            "p": "State three characteristics or examples of entrepreneurship."
+          },
+          {
+            "i": 48,
+            "p": "Explain three reasons why materials is important."
+          },
+          {
+            "i": 49,
+            "p": "Explain three reasons why design is important."
+          },
+          {
+            "i": 50,
+            "p": "Explain three reasons why safety is important."
+          },
+          {
+            "i": 51,
+            "p": "Explain three reasons why tools is important."
+          },
+          {
+            "i": 52,
+            "p": "Explain three reasons why computer is important."
+          },
+          {
+            "i": 53,
+            "p": "Explain three reasons why entrepreneurship is important."
+          }
+        ],
+        "mcqAnswerDistribution": {
+          "0": 74,
+          "1": 2,
+          "2": 4
+        },
+        "exactDuplicateMcqPrompts": [
+          [
+            4,
+            28,
+            "Which is a non-ferrous metal?"
+          ]
+        ]
+      },
+      {
+        "id": "social-studies",
+        "name": "Social Studies",
+        "mcq": 80,
+        "structured": 120,
+        "genericStructuredCount": 72,
+        "genericStructuredExamples": [
+          {
+            "i": 44,
+            "p": "State three characteristics or examples of earth."
+          },
+          {
+            "i": 45,
+            "p": "State three characteristics or examples of weather."
+          },
+          {
+            "i": 46,
+            "p": "State three characteristics or examples of population."
+          },
+          {
+            "i": 47,
+            "p": "State three characteristics or examples of maps."
+          },
+          {
+            "i": 48,
+            "p": "State three characteristics or examples of culture."
+          },
+          {
+            "i": 49,
+            "p": "State three characteristics or examples of minerals."
+          },
+          {
+            "i": 50,
+            "p": "State three characteristics or examples of solar system."
+          },
+          {
+            "i": 51,
+            "p": "State three characteristics or examples of time."
+          },
+          {
+            "i": 52,
+            "p": "Explain three reasons why earth is important."
+          },
+          {
+            "i": 53,
+            "p": "Explain three reasons why weather is important."
+          },
+          {
+            "i": 54,
+            "p": "Explain three reasons why population is important."
+          },
+          {
+            "i": 55,
+            "p": "Explain three reasons why maps is important."
+          }
+        ],
+        "mcqAnswerDistribution": {
+          "0": 79,
+          "2": 1
+        },
+        "exactDuplicateMcqPrompts": [
+          [
+            6,
+            28,
+            "Which instrument measures rainfall?"
+          ]
+        ]
+      }
+    ]
+  },
+  "term2Draft": {
+    "mcq": 45,
+    "structured": 18,
+    "areas": 9,
+    "missingMathematics": true
+  },
+  "term3Draft": {
+    "mcq": 45,
+    "structured": 18,
+    "areas": 9,
+    "missingMathematics": true
+  },
+  "crossTermDraftOverlap": [
+    {
+      "id": "agriculture",
+      "identicalMCQ": 5,
+      "identicalStructured": 2
+    },
+    {
+      "id": "creative-arts",
+      "identicalMCQ": 5,
+      "identicalStructured": 2
+    },
+    {
+      "id": "cre",
+      "identicalMCQ": 5,
+      "identicalStructured": 2
+    },
+    {
+      "id": "english",
+      "identicalMCQ": 5,
+      "identicalStructured": 2
+    },
+    {
+      "id": "integrated-science",
+      "identicalMCQ": 5,
+      "identicalStructured": 2
+    },
+    {
+      "id": "ire",
+      "identicalMCQ": 5,
+      "identicalStructured": 2
+    },
+    {
+      "id": "kiswahili",
+      "identicalMCQ": 5,
+      "identicalStructured": 2
+    },
+    {
+      "id": "pre-technical",
+      "identicalMCQ": 5,
+      "identicalStructured": 2
+    },
+    {
+      "id": "social-studies",
+      "identicalMCQ": 5,
+      "identicalStructured": 2
+    }
+  ],
+  "criticalFindings": [
+    "Term 1 MCQ answer keys are heavily biased to option A in most learning areas; several areas have all 80 answers at index 0.",
+    "Term 1 structured banks contain generic placeholder patterns, especially definition/importance/procedure/safety/uses/challenge prompts mechanically generated from broad topic words.",
+    "Term 2 and Term 3 batch drafts are identical question-for-question for the same areas; they cannot be counted as independent term coverage.",
+    "Term 2 and Term 3 drafts each contain only 5 MCQs and 2 structured questions per area and omit Mathematics.",
+    "The existing Term 1 structured counts include 121 in CRE and Integrated Science, so totals are 2,002 rather than exactly 2,000; remove or reclassify extras after review."
+  ],
+  "releaseDecision": "Do not merge or publish these banks as complete. Keep all draft material isolated until source alignment, answer-key balancing, duplicate review, marking-guide review and validator pass."
+}
