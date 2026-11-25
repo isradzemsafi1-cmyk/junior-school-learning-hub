@@ -3630,8 +3630,415 @@
     {
       "id": "pre-technical",
       "name": "Pre-Technical Studies",
-      "mcq": [],
-      "structured": []
+      "mcq": [
+        [
+          "Which of these is a metal?",
+          [
+            "Copper",
+            "Sulphur",
+            "Carbon",
+            "Oxygen"
+          ],
+          0,
+          "Copper is a metal."
+        ],
+        [
+          "Which of these is a non-metal?",
+          [
+            "Iron",
+            "Aluminium",
+            "Sulphur",
+            "Copper"
+          ],
+          2,
+          "Sulphur is a non-metal."
+        ],
+        [
+          "A material that contains iron as its main component is:",
+          [
+            "Non-ferrous",
+            "Ferrous",
+            "Synthetic",
+            "Ceramic"
+          ],
+          1,
+          "Ferrous materials contain iron."
+        ],
+        [
+          "Which is a non-ferrous metal?",
+          [
+            "Mild steel",
+            "Cast iron",
+            "Aluminium",
+            "Wrought iron"
+          ],
+          2,
+          "Aluminium does not have iron as its main constituent."
+        ],
+        [
+          "Which is a natural non-metallic material?",
+          [
+            "Rubber from latex",
+            "PVC",
+            "Nylon",
+            "Acrylic"
+          ],
+          0,
+          "Natural rubber is obtained from latex."
+        ],
+        [
+          "Which is a synthetic non-metallic material?",
+          [
+            "Cotton",
+            "Wool",
+            "PVC",
+            "Sisal"
+          ],
+          2,
+          "PVC is manufactured synthetically."
+        ],
+        [
+          "Which property describes a material's ability to be drawn into wires?",
+          [
+            "Malleability",
+            "Ductility",
+            "Brittleness",
+            "Hardness"
+          ],
+          1,
+          "Ductility is the ability to be drawn into wires."
+        ],
+        [
+          "Which property describes resistance to scratching or indentation?",
+          [
+            "Hardness",
+            "Elasticity",
+            "Transparency",
+            "Density"
+          ],
+          0,
+          "Hardness is resistance to indentation or scratching."
+        ],
+        [
+          "Which career commonly works with electrical wiring?",
+          [
+            "Electrician",
+            "Farmer",
+            "Tailor",
+            "Chef"
+          ],
+          0,
+          "Electricians install and maintain electrical wiring."
+        ],
+        [
+          "Which tool is used to tighten or loosen a screw?",
+          [
+            "Screwdriver",
+            "Pliers",
+            "Saw",
+            "File"
+          ],
+          0,
+          "A screwdriver turns screws."
+        ],
+        [
+          "Entrepreneurship contributes to the economy by:",
+          [
+            "Creating employment",
+            "Increasing idleness",
+            "Stopping trade",
+            "Reducing skills"
+          ],
+          0,
+          "Businesses create jobs."
+        ],
+        [
+          "A personal goal is:",
+          [
+            "A target an individual intends to achieve",
+            "A tool in a workshop",
+            "A type of metal",
+            "A computer key"
+          ],
+          0,
+          "A personal goal is an intended achievement."
+        ],
+        [
+          "Which is a useful quality of a good goal?",
+          [
+            "Unclear",
+            "Unrealistic",
+            "Specific",
+            "Impossible"
+          ],
+          2,
+          "Specific goals are clear."
+        ],
+        [
+          "A talent is best described as:",
+          [
+            "A natural aptitude",
+            "A computer programme",
+            "A purchased tool",
+            "A business debt"
+          ],
+          0,
+          "Talent is a natural aptitude or special ability."
+        ],
+        [
+          "An ability is:",
+          [
+            "A capacity to perform a task",
+            "A metal alloy",
+            "A business location",
+            "A type of software"
+          ],
+          0,
+          "Ability is the capacity to do something."
+        ],
+        [
+          "Which action can nurture a learner's talent?",
+          [
+            "Regular practice",
+            "Avoiding feedback",
+            "Never participating",
+            "Hiding all work"
+          ],
+          0,
+          "Practice develops talent."
+        ],
+        [
+          "Which is an ethical business practice?",
+          [
+            "Honest advertising",
+            "Selling counterfeit goods",
+            "Stealing ideas",
+            "Misleading customers"
+          ],
+          0,
+          "Honest advertising respects customers."
+        ],
+        [
+          "A business environment includes:",
+          [
+            "Conditions and factors affecting a business",
+            "Only the business owner",
+            "Only the cash box",
+            "Only the building"
+          ],
+          0,
+          "It includes internal and external factors affecting operations."
+        ],
+        [
+          "A need is something that is:",
+          [
+            "Essential for living",
+            "Always luxurious",
+            "Bought only for fashion",
+            "Never useful"
+          ],
+          0,
+          "Needs are essential."
+        ],
+        [
+          "Which is a characteristic of an entrepreneur?",
+          [
+            "Creativity",
+            "Dishonesty",
+            "Avoiding decisions",
+            "Refusing to learn"
+          ],
+          0,
+          "Creativity helps identify opportunities and solutions."
+        ],
+        [
+          "Which can be a source of a business idea?",
+          [
+            "Customer needs",
+            "Random guessing only",
+            "Ignoring the community",
+            "Avoiding observation"
+          ],
+          0,
+          "Unmet customer needs can inspire business ideas."
+        ],
+        [
+          "Which is the correct first step when shutting down a computer?",
+          [
+            "Save your work",
+            "Pull out the power cable",
+            "Pour water on it",
+            "Remove the keyboard"
+          ],
+          0,
+          "Save work before closing programmes and shutting down."
+        ],
+        [
+          "Which facility helps provide fresh air in a room?",
+          [
+            "Window",
+            "Carpet",
+            "Curtain",
+            "Cabinet"
+          ],
+          0,
+          "Windows allow air circulation."
+        ],
+        [
+          "Why should food and drinks be kept away from computers?",
+          [
+            "They can spill and damage equipment",
+            "They improve processing speed",
+            "They cool the keyboard",
+            "They clean the monitor"
+          ],
+          0,
+          "Liquid spills can cause short circuits and damage."
+        ],
+        [
+          "A UPS is mainly used to:",
+          [
+            "Provide temporary backup power",
+            "Print documents",
+            "Increase screen size",
+            "Connect a mouse"
+          ],
+          0,
+          "A UPS supplies temporary power during an outage."
+        ]
+      ],
+      "structured": [
+        [
+          "Give two examples of metals and three examples of non-metals.",
+          "Metals: iron, copper, aluminium, zinc. Any two (2); non-metals: oxygen, carbon, sulphur, nitrogen. Any three (3).",
+          5
+        ],
+        [
+          "Distinguish between metallic and non-metallic materials.",
+          "Metals generally conduct heat/electricity, are lustrous, malleable and ductile; non-metals generally have lower conductivity and may be brittle or non-lustrous. Award valid paired differences up to 4.",
+          4
+        ],
+        [
+          "Describe six physical properties used to identify materials.",
+          "Colour, lustre, hardness, density, texture, strength, malleability, ductility, conductivity, transparency. Any six explained or named (1 each).",
+          6
+        ],
+        [
+          "State two physical properties of ferrous metals.",
+          "Often magnetic; generally strong/hard; may rust/corrode; relatively high density. Any two.",
+          2
+        ],
+        [
+          "Give two physical properties of non-ferrous metals.",
+          "Generally non-magnetic; often corrosion-resistant; may be lightweight; good conductors. Any two.",
+          2
+        ],
+        [
+          "Distinguish between natural and synthetic non-metallic materials, giving three examples of each.",
+          "Natural: obtained from plants/animals/minerals, e.g. cotton, wool, sisal, natural rubber. Synthetic: human-made by chemical/industrial processes, e.g. nylon, PVC, acrylic. Up to 6.",
+          6
+        ],
+        [
+          "Name three careers related to materials in the locality.",
+          "Carpenter, mason, welder, tailor, plumber, metalworker, potter, glassworker. Any three.",
+          3
+        ],
+        [
+          "State four importance of materials found in the locality.",
+          "Used for construction, making tools/equipment, clothing, furniture, transport, packaging and household goods. Any four.",
+          4
+        ],
+        [
+          "Name two careers related to the use of metals.",
+          "Welder, blacksmith, metal fabricator, mechanic, plumber. Any two.",
+          2
+        ],
+        [
+          "Give five careers involved in processing or using non-metallic materials.",
+          "Tailor, textile worker, potter, glassworker, plastics processor, paper maker, leather worker. Any five.",
+          5
+        ],
+        [
+          "State five factors to consider when selecting a material for an item.",
+          "Strength, durability, cost, availability, weight, appearance, safety, ease of working, suitability for purpose. Any five.",
+          5
+        ],
+        [
+          "Explain the importance of entrepreneurship to Kenya’s economy.",
+          "Creates employment, generates income, provides goods/services, promotes innovation, uses local resources, pays taxes and supports economic growth. Any five.",
+          5
+        ],
+        [
+          "Define personal goals and give two examples.",
+          "Targets an individual intends to achieve (2); examples such as improving reading, learning a skill or saving money (any two).",
+          4
+        ],
+        [
+          "State four benefits of setting personal goals.",
+          "Provides direction, motivates effort, helps measure progress, improves time management, builds confidence. Any four.",
+          4
+        ],
+        [
+          "State five factors to consider when setting personal goals.",
+          "Personal interests, abilities, available resources, time, realistic targets, priorities, measurable outcomes. Any five.",
+          5
+        ],
+        [
+          "Define talent and ability.",
+          "Talent is a natural aptitude or special potential; ability is the capacity/skill to perform a task. (1 each)",
+          2
+        ],
+        [
+          "Give four differences between talent and ability.",
+          "Talent is often natural/early evident; ability can be developed through learning; talent may need practice to become skill; ability is demonstrated capacity to perform. Any four clear contrasts.",
+          4
+        ],
+        [
+          "State five ways learners can nurture talents and abilities.",
+          "Practise regularly, seek coaching, participate in clubs/competitions, set goals, accept feedback, use resources, persevere. Any five.",
+          5
+        ],
+        [
+          "State four ethical issues in using talents and abilities in business.",
+          "Honesty, respect for intellectual property, fairness, avoiding exploitation, confidentiality, truthful promotion, giving credit. Any four.",
+          4
+        ],
+        [
+          "Define business environment.",
+          "The internal and external conditions/factors that influence how a business operates. (2)",
+          2
+        ],
+        [
+          "Distinguish between needs and wants, giving three examples of each.",
+          "Needs are essentials for living; wants are desirable but not essential. Examples: food, shelter, clothing; toys, luxury phone, designer accessories. Award 6.",
+          6
+        ],
+        [
+          "State five characteristics of an entrepreneur.",
+          "Creative, innovative, hardworking, confident, willing to take calculated risks, persistent, disciplined, good decision-maker. Any five.",
+          5
+        ],
+        [
+          "Give five sources of business ideas.",
+          "Customer needs, personal skills/hobbies, market research, observation, existing products/services, community problems, new technology. Any five.",
+          5
+        ],
+        [
+          "Describe four steps for shutting down a computer safely.",
+          "Save work; close open applications; use operating system Shut down command; wait until computer powers off before switching off supply. (1 each)",
+          4
+        ],
+        [
+          "Identify three facilities that ensure proper ventilation in a room.",
+          "Windows, doors, ventilators/air vents, fans or air-conditioning. Any three.",
+          3
+        ]
+      ],
+      "source": {
+        "paper": "OPENER 001 2027 TERM 1 GRADE 7",
+        "pages": "70–78",
+        "basis": "Materials and their properties; ferrous/non-ferrous and natural/synthetic materials; careers; entrepreneurship; personal goals; talents and abilities; business environment; needs/wants; computer safety, ergonomics, UPS, third-generation computers and keyboard. Original JSLH supplementary practice included."
+      }
     },
     {
       "id": "social-studies",
