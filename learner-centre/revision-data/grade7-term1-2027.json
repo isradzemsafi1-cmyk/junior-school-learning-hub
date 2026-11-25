@@ -229,6 +229,226 @@
           ],
           0,
           "Cotton is soft and absorbent."
+        ],
+        [
+          "Which practice reduces water loss from soil around young trees?",
+          [
+            "Mulching",
+            "Burning crop residues",
+            "Removing all ground cover",
+            "Frequent deep ploughing"
+          ],
+          0,
+          "Mulch covers the soil and reduces evaporation."
+        ],
+        [
+          "Which is a benefit of planting trees along farm boundaries?",
+          [
+            "They can act as windbreaks",
+            "They increase soil erosion",
+            "They prevent all rainfall",
+            "They remove soil nutrients"
+          ],
+          0,
+          "Boundary trees can reduce wind speed and protect crops."
+        ],
+        [
+          "A seedbed should be prepared to have:",
+          [
+            "A suitable fine and level tilth",
+            "Large stones throughout",
+            "Compacted wet soil",
+            "Deep standing water"
+          ],
+          0,
+          "A suitable tilth supports germination and seedling growth."
+        ],
+        [
+          "Which tool is commonly used to break soil clods during seedbed preparation?",
+          [
+            "Rake",
+            "Spoon",
+            "Needle",
+            "Paintbrush"
+          ],
+          0,
+          "A rake helps break clods and level the seedbed."
+        ],
+        [
+          "Which planting method places seeds in continuous rows?",
+          [
+            "Drilling",
+            "Broadcasting",
+            "Scattering randomly",
+            "Pruning"
+          ],
+          0,
+          "Drilling places seeds in rows."
+        ],
+        [
+          "Which method involves placing seeds at separate points or holes?",
+          [
+            "Dibbling",
+            "Winnowing",
+            "Threshing",
+            "Mulching"
+          ],
+          0,
+          "Dibbling places seeds in planting holes at set spacing."
+        ],
+        [
+          "Why should weeds be removed from a crop field?",
+          [
+            "They compete for water, nutrients and light",
+            "They always increase yields",
+            "They produce fertiliser immediately",
+            "They prevent all pests"
+          ],
+          0,
+          "Weeds compete with crops for growth resources."
+        ],
+        [
+          "Which is a safe way to remove weeds manually?",
+          [
+            "Use suitable tools and protective footwear",
+            "Pull weeds beside moving machinery",
+            "Work barefoot among sharp objects",
+            "Leave tools scattered"
+          ],
+          0,
+          "Suitable tools and footwear reduce injury risk."
+        ],
+        [
+          "Which food preparation method cooks food using direct heat?",
+          [
+            "Roasting",
+            "Freezing",
+            "Refrigeration",
+            "Fermentation only"
+          ],
+          0,
+          "Roasting uses dry heat."
+        ],
+        [
+          "Which action helps prevent burns when handling roasted food?",
+          [
+            "Use oven gloves or suitable holders",
+            "Touch the hot tray directly",
+            "Pour cold water on electrical equipment",
+            "Carry the tray above another person"
+          ],
+          0,
+          "Heat-resistant protection prevents burns."
+        ],
+        [
+          "Which nutrient deficiency is commonly associated with anaemia?",
+          [
+            "Iron",
+            "Vitamin C only",
+            "Iodine only",
+            "Calcium only"
+          ],
+          0,
+          "Iron deficiency is a common cause of anaemia."
+        ],
+        [
+          "Which nutrient is important for strong bones and teeth?",
+          [
+            "Calcium",
+            "Vitamin C only",
+            "Iron only",
+            "Carbohydrate"
+          ],
+          0,
+          "Calcium supports bone and teeth formation."
+        ],
+        [
+          "A balanced diet contains:",
+          [
+            "Different nutrients in suitable proportions",
+            "Only carbohydrates",
+            "Only proteins",
+            "Only fats"
+          ],
+          0,
+          "A balanced diet supplies the nutrients needed by the body."
+        ],
+        [
+          "Which is an example of a food rich in protein?",
+          [
+            "Beans",
+            "Sugar",
+            "Cooking oil",
+            "Cassava flour"
+          ],
+          0,
+          "Beans are a plant source of protein."
+        ],
+        [
+          "Which practice helps preserve household income?",
+          [
+            "Prepare and follow a budget",
+            "Buy goods impulsively",
+            "Ignore prices",
+            "Borrow for every purchase"
+          ],
+          0,
+          "Budgeting helps control expenditure."
+        ],
+        [
+          "A consumer should check the expiry date because it:",
+          [
+            "Indicates the date after which quality or safety may be affected",
+            "Shows the item's colour",
+            "Tells the shop's opening time",
+            "Shows the weight of the shopper"
+          ],
+          0,
+          "Expiry information helps consumers avoid unsafe or poor-quality products."
+        ],
+        [
+          "Which is an example of recycling?",
+          [
+            "Processing waste paper into new paper",
+            "Using a jar again without processing",
+            "Leaving bottles in a field",
+            "Burning plastic in an open space"
+          ],
+          0,
+          "Recycling processes used material into a new product."
+        ],
+        [
+          "Which item can be reused safely as a storage container after cleaning?",
+          [
+            "A suitable glass jar",
+            "A torn chemical container",
+            "A rusty sharp tin",
+            "A leaking pesticide bottle"
+          ],
+          0,
+          "A clean, food-safe jar can be reused for storage."
+        ],
+        [
+          "Which feature makes cotton suitable for absorbent clothing?",
+          [
+            "It absorbs moisture",
+            "It is naturally waterproof",
+            "It is metallic",
+            "It cannot be washed"
+          ],
+          0,
+          "Cotton fibres absorb moisture."
+        ],
+        [
+          "Why should agroforestry seedlings be protected from livestock?",
+          [
+            "Livestock may browse or trample them",
+            "Livestock provide sunlight",
+            "Seedlings need to be eaten",
+            "Trampling improves root growth"
+          ],
+          0,
+          "Protection prevents damage to young trees."
         ]
       ],
       "structured": [
@@ -356,12 +576,137 @@
           "State three properties of cotton fibre.",
           "Soft, absorbent, breathable, comfortable, washable and strong when wet. Any three.",
           3
+        ],
+        [
+          "Explain four ways trees in an agroforestry system can improve the farm environment.",
+          "Reduce soil erosion; provide shade/windbreaks; add organic matter; support biodiversity; improve water infiltration. Any four explained.",
+          4
+        ],
+        [
+          "Describe how to establish a tree seedling in a prepared planting hole.",
+          "Select healthy seedling; prepare suitable hole; remove container carefully; place upright at correct depth; refill and firm soil; water and mulch. Award up to 5.",
+          5
+        ],
+        [
+          "State four reasons for watering newly planted seedlings.",
+          "Helps roots establish; prevents wilting; supports nutrient uptake; maintains moisture during dry periods. Any four.",
+          4
+        ],
+        [
+          "Give four signs that a seedbed is poorly prepared.",
+          "Large clods; stones and rubbish; uneven surface; compacted soil; poor drainage; excessive weeds. Any four.",
+          4
+        ],
+        [
+          "Describe three differences between broadcasting and drilling seeds.",
+          "Broadcasting scatters seed over an area; drilling places seed in rows; drilling gives more uniform spacing/depth and easier weeding. Any three contrasts.",
+          3
+        ],
+        [
+          "Explain four effects of weeds on crop growth.",
+          "Compete for nutrients, water, light and space; harbour pests/diseases; interfere with harvesting; reduce crop yield. Any four.",
+          4
+        ],
+        [
+          "State four precautions when using hand tools for weeding.",
+          "Use correct tool; wear protective footwear/gloves; maintain safe distance; carry tools carefully; store after use. Any four.",
+          4
+        ],
+        [
+          "Name four factors that influence the choice of a crop planting method.",
+          "Crop type/seed size; soil condition; land size; available labour/equipment; spacing needs; moisture. Any four.",
+          4
+        ],
+        [
+          "Give four ways of conserving water on a farm.",
+          "Mulching, roof-water harvesting, water pans/tanks, contour structures, drip irrigation, repairing leaks. Any four.",
+          4
+        ],
+        [
+          "Explain three reasons for using weather forecasts when planning planting.",
+          "Helps identify expected rainfall; reduces risk of planting into dry spells; assists timing of land preparation and crop establishment. Any three.",
+          3
+        ],
+        [
+          "State four safe practices when roasting food.",
+          "Use clean equipment; control heat; keep children away from fire; use protective holders; cook thoroughly; avoid leaving fire unattended. Any four.",
+          4
+        ],
+        [
+          "Explain four factors to consider when selecting household cooking equipment.",
+          "Safety, durability, cost, suitability, ease of cleaning, energy use, size and availability. Any four explained.",
+          4
+        ],
+        [
+          "Describe four ways to prevent food contamination during preparation.",
+          "Wash hands; clean utensils/surfaces; separate raw and cooked foods; use safe water; cover food; store at safe temperatures. Any four.",
+          4
+        ],
+        [
+          "State four causes of nutrient deficiency in a diet.",
+          "Limited food variety; poverty/food insecurity; illness or poor absorption; poor feeding practices; lack of nutrition knowledge. Any four.",
+          4
+        ],
+        [
+          "Give one symptom and one prevention measure for iron-deficiency anaemia.",
+          "Symptoms: tiredness, pale skin, weakness or dizziness (1); prevention: iron-rich foods such as beans/green vegetables/meat and appropriate dietary vitamin C (1).",
+          2
+        ],
+        [
+          "Explain the importance of reading labels when buying household goods.",
+          "Identify ingredients/materials; check instructions/warnings; compare quantity/price; check expiry/manufacturer details. Any four.",
+          4
+        ],
+        [
+          "State four ways of avoiding waste when shopping for household goods.",
+          "Prepare list; budget; compare quantity and price; buy needed amounts; check quality/expiry; avoid impulse buying. Any four.",
+          4
+        ],
+        [
+          "Differentiate between reuse and reduce, giving one example of each.",
+          "Reuse means use an item again (1) e.g. refill a suitable jar (1); reduce means use fewer resources/create less waste (1) e.g. avoid excess packaging (1).",
+          4
+        ],
+        [
+          "State four safe ways of disposing of household waste.",
+          "Separate recyclables; compost suitable organic waste; use approved collection; safely contain hazardous waste; avoid dumping/burning plastics. Any four.",
+          4
+        ],
+        [
+          "Describe four properties of cotton fibre that make it useful in clothing.",
+          "Soft, absorbent, breathable, comfortable, washable, takes dye and is reasonably strong. Any four.",
+          4
+        ],
+        [
+          "Give four uses of cotton fibre or cotton fabric.",
+          "Clothing, towels, bedding, bandages, reusable bags, household textiles. Any four.",
+          4
+        ],
+        [
+          "Explain three ways to care for cotton garments.",
+          "Wash appropriately; dry thoroughly; iron at suitable temperature; store clean and dry; treat stains promptly. Any three.",
+          3
+        ],
+        [
+          "State four advantages of using locally available materials to improvise kitchen equipment.",
+          "Lower cost; readily available; reduces waste; encourages creativity; can be repaired/replaced easily. Any four.",
+          4
+        ],
+        [
+          "Describe four considerations when choosing a sales outlet for household goods.",
+          "Price, quality, distance/accessibility, reputation, availability, return policy and safety. Any four.",
+          4
+        ],
+        [
+          "Explain three reasons why a household should save part of its income.",
+          "Meet emergencies; plan future needs; reduce borrowing; finance education/assets. Any three.",
+          3
         ]
       ],
       "source": {
         "paper": "OPENER 001 2027 TERM 1 GRADE 7",
         "pages": "3–9",
-        "basis": "Water conservation, agroforestry, runoff structures, soil tilth, seedbeds, planting materials/methods/time, weeds, Home Science, roasting, consumer choices, reuse/recycling, nutrition, household goods, saving and cotton fibres. Supplementary JSLH practice included."
+        "basis": "Water conservation, agroforestry, runoff structures, soil tilth, seedbeds, planting materials/methods/time, weeds, Home Science, roasting, consumer choices, reuse/recycling, nutrition, household goods, saving and cotton fibres. Supplementary JSLH practice included. Additional JSLH supplementary practice added for further revision."
       }
     },
     {
@@ -587,6 +932,226 @@
           ],
           0,
           "A soloist performs alone or leads a solo section."
+        ],
+        [
+          "The outline of an object in a drawing is called its:",
+          [
+            "Contour",
+            "Rhythm",
+            "Tempo",
+            "Pitch"
+          ],
+          0,
+          "A contour is the visible outline of a form."
+        ],
+        [
+          "Which arrangement creates balance in a composition?",
+          [
+            "Placing visual elements thoughtfully",
+            "Crowding all objects in one corner",
+            "Ignoring space",
+            "Using only one tiny object"
+          ],
+          0,
+          "Balance comes from arranging elements to create visual stability."
+        ],
+        [
+          "Which tool is used to blend soft pencil shading?",
+          [
+            "Blending stump",
+            "Whistle",
+            "Netball",
+            "Drumstick"
+          ],
+          0,
+          "A blending stump smooths graphite or charcoal shading."
+        ],
+        [
+          "A secondary colour is made by:",
+          [
+            "Mixing two primary colours",
+            "Mixing black with white only",
+            "Adding water to paper",
+            "Drawing an outline"
+          ],
+          0,
+          "Secondary colours result from mixing two primary colours."
+        ],
+        [
+          "Which colour is complementary to red in the traditional colour wheel?",
+          [
+            "Green",
+            "Orange",
+            "Yellow",
+            "Violet"
+          ],
+          0,
+          "Green is opposite red on the traditional colour wheel."
+        ],
+        [
+          "A darker area created by adding black to a hue is a:",
+          [
+            "Shade",
+            "Tint",
+            "Highlight",
+            "Primary colour"
+          ],
+          0,
+          "Adding black creates a shade."
+        ],
+        [
+          "The part of an artwork that appears closest to the viewer is the:",
+          [
+            "Foreground",
+            "Background",
+            "Horizon",
+            "Vanishing point"
+          ],
+          0,
+          "The foreground is the nearest area."
+        ],
+        [
+          "Which technique can show texture in a drawing?",
+          [
+            "Hatching",
+            "Measuring sound",
+            "Passing a ball",
+            "Singing"
+          ],
+          0,
+          "Hatching uses repeated lines to suggest tone and texture."
+        ],
+        [
+          "Which pass is useful for moving a ball over a longer distance in netball?",
+          [
+            "Overhead pass",
+            "Bounce only",
+            "Penalty kick",
+            "Throw-in"
+          ],
+          0,
+          "An overhead pass can cover a longer distance."
+        ],
+        [
+          "A player who receives a pass should first:",
+          [
+            "Watch and control the ball",
+            "Turn away from the ball",
+            "Close their eyes",
+            "Kick it away"
+          ],
+          0,
+          "Watching and controlling the ball helps secure possession."
+        ],
+        [
+          "In netball, footwork rules limit:",
+          [
+            "Movement while holding the ball",
+            "The number of team colours",
+            "The court markings",
+            "The height of the goal post"
+          ],
+          0,
+          "Footwork rules restrict movement with possession."
+        ],
+        [
+          "In handball, players may move with the ball while:",
+          [
+            "Dribbling within the rules",
+            "Holding it indefinitely",
+            "Using their feet deliberately",
+            "Leaving the court"
+          ],
+          0,
+          "Players may move while dribbling, subject to the rules."
+        ],
+        [
+          "A warm-up before dance helps to:",
+          [
+            "Prepare muscles and reduce injury risk",
+            "Make the floor slippery",
+            "Replace rehearsal",
+            "Stop breathing"
+          ],
+          0,
+          "Warm-ups prepare the body for physical activity."
+        ],
+        [
+          "A stage prop is:",
+          [
+            "An object used during a performance",
+            "A type of audience",
+            "A musical scale",
+            "A court line"
+          ],
+          0,
+          "Props are objects used by performers."
+        ],
+        [
+          "The person who leads a song performance is a:",
+          [
+            "Soloist",
+            "Spectator",
+            "Referee",
+            "Stage carpenter"
+          ],
+          0,
+          "A soloist leads or performs a solo part."
+        ],
+        [
+          "A drum produces sound when its:",
+          [
+            "Membrane vibrates",
+            "Wood melts",
+            "Paint dries",
+            "Handle rotates"
+          ],
+          0,
+          "Striking the drum makes its stretched membrane vibrate."
+        ],
+        [
+          "A semibreve in common time usually lasts:",
+          [
+            "Four beats",
+            "One beat",
+            "Half a beat",
+            "Two beats"
+          ],
+          0,
+          "A semibreve is commonly four crotchet beats."
+        ],
+        [
+          "A quaver is commonly equal to:",
+          [
+            "Half a crotchet",
+            "Two semibreves",
+            "Four minims",
+            "Three crotchets"
+          ],
+          0,
+          "A quaver is half the duration of a crotchet."
+        ],
+        [
+          "Which action is good stage etiquette?",
+          [
+            "Wait for your cue before entering",
+            "Push other performers",
+            "Block the audience's view",
+            "Ignore the stage manager"
+          ],
+          0,
+          "Following cues supports a safe, organised performance."
+        ],
+        [
+          "A dance formation describes:",
+          [
+            "How dancers are arranged in space",
+            "The price of costumes",
+            "The pitch of a whistle",
+            "The size of a painting"
+          ],
+          0,
+          "Formation is the spatial arrangement of dancers."
         ]
       ],
       "structured": [
@@ -714,12 +1279,137 @@
           "Explain how a whistle and a guitar produce sound.",
           "Whistle: blown air vibrates (1); guitar: plucked/strummed strings vibrate (1).",
           2
+        ],
+        [
+          "Explain four ways to create a sense of depth in a still-life drawing.",
+          "Use overlapping; vary size; place nearer objects lower/larger; use perspective; apply shading and tonal contrast. Any four explained.",
+          4
+        ],
+        [
+          "State four principles to consider when composing a visual artwork.",
+          "Balance, proportion, emphasis, rhythm, unity, contrast and movement. Any four.",
+          4
+        ],
+        [
+          "Describe how to create a smooth tonal scale using a pencil.",
+          "Draw a strip; shade from light to dark using gradual pressure; blend carefully; maintain even transitions. Award up to 4.",
+          4
+        ],
+        [
+          "Explain the difference between a tint, shade and tone.",
+          "Tint adds white; shade adds black; tone is produced by adding grey or modifying intensity. (1 each)",
+          3
+        ],
+        [
+          "Name four secondary or tertiary colours and explain how one is mixed.",
+          "Examples: orange, green, violet; tertiary examples such as red-orange or blue-green. Explain one valid mixture. Award up to 4.",
+          4
+        ],
+        [
+          "State four ways perspective can make a drawing appear realistic.",
+          "Parallel lines appear to converge; distant objects look smaller; overlapping shows position; reduced detail/contrast suggests distance. Any four.",
+          4
+        ],
+        [
+          "Give four safety measures when using paints and art tools.",
+          "Use materials as instructed; avoid ingestion/contact with eyes; ventilate area; clean spills; store sharp tools safely; wash hands. Any four.",
+          4
+        ],
+        [
+          "Describe four stages in preparing a still-life composition.",
+          "Select objects; arrange them; observe viewpoint/light; sketch outlines; refine proportion; shade/colour. Any four in sequence.",
+          4
+        ],
+        [
+          "Explain the difference between chest, bounce, shoulder and overhead passes in ball games.",
+          "Describe direction/technique of any four passes accurately. (1 each)",
+          4
+        ],
+        [
+          "State four skills needed for effective netball reception.",
+          "Watch ball; move into position; extend hands; cushion/control ball; maintain balance; communicate. Any four.",
+          4
+        ],
+        [
+          "Explain the purpose of pivoting in netball.",
+          "Allows a player to turn on a landing foot to find a teammate or passing space without committing a footwork infringement. Award up to 2.",
+          2
+        ],
+        [
+          "State four examples of footwork or movement infringements in netball.",
+          "Moving/dragging landing foot illegally; hopping; stepping again before releasing ball; lifting pivot foot contrary to rules. Any four acceptable descriptions.",
+          4
+        ],
+        [
+          "Give four differences between netball and handball.",
+          "Number of players, court/goal design, ball handling and dribbling rules, scoring method, positions/area restrictions. Any four valid contrasts.",
+          4
+        ],
+        [
+          "Describe four ways a team can defend effectively in handball.",
+          "Mark attackers; block passing lanes; maintain defensive formation; communicate; track players; intercept passes safely. Any four.",
+          4
+        ],
+        [
+          "State four preparations before a dance performance.",
+          "Rehearse; warm up; check costume/props; inspect stage; agree formations/cues; hydrate. Any four.",
+          4
+        ],
+        [
+          "Explain four functions of a soloist in a group song.",
+          "Leads a verse/line; introduces melody; gives cues; sings a featured part; supports audience engagement. Any four.",
+          4
+        ],
+        [
+          "Name four percussion instruments and state how each produces sound.",
+          "Drum—struck membrane; shaker—shaken contents; xylophone—struck bars; tambourine—shaken/struck jingles. Any four pairs.",
+          4
+        ],
+        [
+          "Explain the function of a resonator in a drum.",
+          "It helps amplify and enrich the sound produced by the vibrating drum membrane. (2)",
+          2
+        ],
+        [
+          "Write the French rhythm names for quaver, crotchet, minim and semibreve as taught in music notation.",
+          "Accept the curriculum-taught French rhythm syllables/names for each note value. Award one per correct response; verify against the class notation convention.",
+          4
+        ],
+        [
+          "Describe how a guitar produces sound and how the sound is made louder.",
+          "Plucked/strummed strings vibrate (1); sound box/resonator amplifies the vibrations (1).",
+          2
+        ],
+        [
+          "State four ways performers can show good stage etiquette.",
+          "Enter/exit on cue; respect other performers; avoid blocking views; handle props carefully; remain quiet offstage. Any four.",
+          4
+        ],
+        [
+          "Explain four ways to avoid injury during dance practice.",
+          "Warm up; use safe floor; wear suitable footwear; maintain spacing; use correct technique; avoid unsafe lifts. Any four.",
+          4
+        ],
+        [
+          "Describe how to make a simple sisal skirt safely.",
+          "Prepare sisal fibres; measure and prepare waistband; attach fibres evenly; secure knots/stitches; trim and check fit. Award up to 4.",
+          4
+        ],
+        [
+          "Explain the difference between rhythm and tempo.",
+          "Rhythm is the pattern of sounds and silences (1); tempo is the speed of the beat (1).",
+          2
+        ],
+        [
+          "State four roles of music in a community.",
+          "Entertainment, worship, education, communication, ceremonies, cultural preservation and unity. Any four.",
+          4
         ]
       ],
       "source": {
         "paper": "OPENER 001 2027 TERM 1 GRADE 7",
         "pages": "15–21",
-        "basis": "3D forms, still-life, composition, painting, colour wheel, primary/analogous colours, colour properties, perspective, tints/shades/intensity/gradation, netball, handball, footwork, dance safety, performance and sound production."
+        "basis": "3D forms, still-life, composition, painting, colour wheel, primary/analogous colours, colour properties, perspective, tints/shades/intensity/gradation, netball, handball, footwork, dance safety, performance and sound production. Additional JSLH supplementary practice added for further revision."
       }
     },
     {
