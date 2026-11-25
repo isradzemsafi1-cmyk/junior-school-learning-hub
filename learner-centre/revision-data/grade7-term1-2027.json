@@ -1,0 +1,673 @@
+{
+  "grade": 7,
+  "term": 1,
+  "year": 2027,
+  "title": "Junior School Learning Hub Grade 7 Term 1 Revision Bank",
+  "sourceBasis": "User-supplied OPENER 001 2027 Term 1 Grade 7 paper, pages 35–39 (Integrated Science). Questions are original JSLH practice based on the paper's topics, not copied answer schemes.",
+  "contentStatus": "in-progress; not for production release until all ten learning areas reach 80 MCQ and 120 structured questions and validation passes",
+  "subjects": [
+    {
+      "id": "agriculture",
+      "name": "Agriculture & Nutrition",
+      "mcq": [],
+      "structured": []
+    },
+    {
+      "id": "creative-arts",
+      "name": "Creative Arts & Sports",
+      "mcq": [],
+      "structured": []
+    },
+    {
+      "id": "cre",
+      "name": "CRE",
+      "mcq": [],
+      "structured": []
+    },
+    {
+      "id": "english",
+      "name": "English",
+      "mcq": [],
+      "structured": []
+    },
+    {
+      "id": "integrated-science",
+      "name": "Integrated Science",
+      "mcq": [
+        [
+          "Which rule should a learner follow before using laboratory apparatus?",
+          [
+            "Read the instructions and obtain permission",
+            "Taste the substance",
+            "Run while carrying glassware",
+            "Mix unknown chemicals"
+          ],
+          0,
+          "Reading instructions and following the teacher's directions prevents accidents."
+        ],
+        [
+          "What should a learner do after a chemical splashes into the eyes?",
+          [
+            "Rub the eyes",
+            "Rinse immediately with plenty of clean running water and report",
+            "Cover both eyes and continue working",
+            "Apply an unknown ointment"
+          ],
+          1,
+          "Immediate flushing and reporting are essential first-aid steps."
+        ],
+        [
+          "Which apparatus is designed to measure liquid volume accurately?",
+          [
+            "Tripod stand",
+            "Measuring cylinder",
+            "Wire gauze",
+            "Spatula"
+          ],
+          1,
+          "A measuring cylinder has graduations for measuring liquid volume."
+        ],
+        [
+          "Which instrument is commonly used to heat substances in a school laboratory?",
+          [
+            "Bunsen burner",
+            "Metre rule",
+            "Thermometer",
+            "Balance"
+          ],
+          0,
+          "A Bunsen burner provides a flame for heating."
+        ],
+        [
+          "Which part of a Bunsen burner regulates the amount of air entering?",
+          [
+            "Base",
+            "Collar",
+            "Gas hose",
+            "Gas inlet"
+          ],
+          1,
+          "Turning the collar opens or closes the air hole."
+        ],
+        [
+          "What is the function of the air hole in a Bunsen burner?",
+          [
+            "To admit air for mixing with gas",
+            "To support the burner",
+            "To measure temperature",
+            "To connect the burner to a tap"
+          ],
+          0,
+          "Air mixes with the gas and affects combustion and flame characteristics."
+        ],
+        [
+          "Which part of a Bunsen burner connects it to the gas supply?",
+          [
+            "Collar",
+            "Barrel",
+            "Gas hose",
+            "Base"
+          ],
+          2,
+          "The gas hose carries gas from the supply to the burner."
+        ],
+        [
+          "Why should the base of a Bunsen burner be broad and stable?",
+          [
+            "To increase the flame colour",
+            "To prevent the burner from toppling",
+            "To cool the gas",
+            "To measure the gas pressure"
+          ],
+          1,
+          "A stable base reduces the risk of the burner falling."
+        ],
+        [
+          "Which gas forms the largest proportion of air?",
+          [
+            "Oxygen",
+            "Carbon dioxide",
+            "Nitrogen",
+            "Argon"
+          ],
+          2,
+          "Nitrogen makes up about 78% of dry air."
+        ],
+        [
+          "Which gas is needed for ordinary combustion?",
+          [
+            "Oxygen",
+            "Nitrogen",
+            "Neon",
+            "Helium"
+          ],
+          0,
+          "Oxygen supports combustion."
+        ],
+        [
+          "Which gas do green plants use during photosynthesis?",
+          [
+            "Hydrogen",
+            "Carbon dioxide",
+            "Nitrogen",
+            "Argon"
+          ],
+          1,
+          "Plants take in carbon dioxide to make food during photosynthesis."
+        ],
+        [
+          "Which gas is released by green plants during photosynthesis?",
+          [
+            "Oxygen",
+            "Methane",
+            "Nitrogen",
+            "Carbon monoxide"
+          ],
+          0,
+          "Oxygen is released as a product of photosynthesis."
+        ],
+        [
+          "Which method can reduce friction between moving machine parts?",
+          [
+            "Adding lubricant",
+            "Adding rough sand",
+            "Increasing the load",
+            "Removing wheels"
+          ],
+          0,
+          "Lubricants form a layer that reduces direct contact between surfaces."
+        ],
+        [
+          "Which surface is likely to produce the greatest friction when pushed against another?",
+          [
+            "Smooth glass",
+            "Oiled metal",
+            "Rough sandpaper",
+            "Polished tile"
+          ],
+          2,
+          "Rough surfaces interlock more than smooth surfaces."
+        ],
+        [
+          "Why are treads made on the soles of shoes?",
+          [
+            "To increase grip",
+            "To reduce shoe weight",
+            "To make shoes waterproof",
+            "To increase slipperiness"
+          ],
+          0,
+          "Treads improve friction between shoes and the ground."
+        ],
+        [
+          "Which statement describes friction?",
+          [
+            "A force that opposes relative motion between surfaces",
+            "A force that always pulls objects upwards",
+            "A form of light",
+            "A measure of mass"
+          ],
+          0,
+          "Friction acts against sliding or attempted sliding between surfaces."
+        ],
+        [
+          "Which blood group is commonly called the universal red-cell donor group?",
+          [
+            "AB positive",
+            "O negative",
+            "A positive",
+            "B negative"
+          ],
+          1,
+          "O negative red cells lack A, B and Rh(D) antigens; transfusion still requires professional compatibility checks."
+        ],
+        [
+          "Which blood group has both A and B antigens on red blood cells?",
+          [
+            "A",
+            "B",
+            "AB",
+            "O"
+          ],
+          2,
+          "AB red blood cells carry both A and B antigens."
+        ],
+        [
+          "Which bone protects the brain?",
+          [
+            "Femur",
+            "Skull",
+            "Tibia",
+            "Radius"
+          ],
+          1,
+          "The skull encloses and protects the brain."
+        ],
+        [
+          "Which bone is found in the upper arm?",
+          [
+            "Humerus",
+            "Femur",
+            "Tibia",
+            "Pelvis"
+          ],
+          0,
+          "The humerus is the long bone of the upper arm."
+        ],
+        [
+          "Which bone is found in the thigh?",
+          [
+            "Radius",
+            "Femur",
+            "Rib",
+            "Skull"
+          ],
+          1,
+          "The femur is the thigh bone and is the longest bone in the human body."
+        ],
+        [
+          "Which bone is located in the lower leg and is commonly called the shin bone?",
+          [
+            "Tibia",
+            "Humerus",
+            "Radius",
+            "Pelvis"
+          ],
+          0,
+          "The tibia is the larger bone in the lower leg."
+        ],
+        [
+          "Which bone is found in the forearm on the thumb side?",
+          [
+            "Femur",
+            "Radius",
+            "Tibia",
+            "Skull"
+          ],
+          1,
+          "The radius is one of the two forearm bones and lies on the thumb side in anatomical position."
+        ],
+        [
+          "What is the main function of the rib cage?",
+          [
+            "To protect the heart and lungs",
+            "To digest food",
+            "To produce urine",
+            "To control body temperature"
+          ],
+          0,
+          "The ribs form a protective cage around organs in the chest."
+        ],
+        [
+          "Which part of the skeleton supports the trunk and attaches the lower limbs?",
+          [
+            "Pelvis",
+            "Skull",
+            "Radius",
+            "Humerus"
+          ],
+          0,
+          "The pelvis supports the trunk and forms the connection to the lower limbs."
+        ],
+        [
+          "Which organ pumps blood around the body?",
+          [
+            "Lungs",
+            "Heart",
+            "Kidney",
+            "Stomach"
+          ],
+          1,
+          "The heart is a muscular pump that circulates blood."
+        ],
+        [
+          "Which blood vessel carries blood away from the heart?",
+          [
+            "Vein",
+            "Artery",
+            "Capillary only",
+            "Nerve"
+          ],
+          1,
+          "Arteries carry blood away from the heart."
+        ],
+        [
+          "What is the function of the lungs in the circulatory and respiratory systems?",
+          [
+            "Exchange oxygen and carbon dioxide",
+            "Pump blood",
+            "Filter solid food",
+            "Produce bile"
+          ],
+          0,
+          "Gas exchange occurs between air in the lungs and blood."
+        ],
+        [
+          "Which instrument is used to view very small objects that cannot be seen clearly with the naked eye?",
+          [
+            "Microscope",
+            "Telescope",
+            "Thermometer",
+            "Barometer"
+          ],
+          0,
+          "A microscope magnifies small objects."
+        ],
+        [
+          "How should a learner carry a light microscope?",
+          [
+            "By holding the arm and supporting the base",
+            "By holding the eyepiece only",
+            "By swinging it by the cord",
+            "By holding the stage only"
+          ],
+          0,
+          "Holding the arm and supporting the base helps prevent dropping and damage."
+        ],
+        [
+          "Which apparatus is used to transfer small quantities of liquid drop by drop?",
+          [
+            "Dropper",
+            "Tripod stand",
+            "Tongs",
+            "Test-tube rack"
+          ],
+          0,
+          "A dropper delivers liquid in small drops."
+        ],
+        [
+          "Which item is suitable for a basic first-aid kit?",
+          [
+            "Sterile gauze",
+            "Cooking oil",
+            "Fertiliser",
+            "Paint thinner"
+          ],
+          0,
+          "Sterile gauze can cover wounds and help control bleeding."
+        ],
+        [
+          "What is the first action when a learner notices a minor bleeding wound?",
+          [
+            "Apply clean pressure using sterile dressing",
+            "Rub soil into it",
+            "Leave it uncovered in dirty surroundings",
+            "Pour concentrated acid on it"
+          ],
+          0,
+          "Clean direct pressure helps control bleeding; serious wounds need urgent adult/medical help."
+        ],
+        [
+          "A substance has a mass of 200 g and a volume of 50 cm³. What is its density?",
+          [
+            "4 g/cm³",
+            "10 g/cm³",
+            "150 g/cm³",
+            "250 g/cm³"
+          ],
+          0,
+          "Density = mass ÷ volume = 200 ÷ 50 = 4 g/cm³."
+        ],
+        [
+          "A block has a mass of 90 g and a volume of 30 cm³. Calculate its density.",
+          [
+            "3 g/cm³",
+            "60 g/cm³",
+            "120 g/cm³",
+            "2 700 g/cm³"
+          ],
+          0,
+          "Density = 90 ÷ 30 = 3 g/cm³."
+        ],
+        [
+          "A liquid is measured in a measuring cylinder. At which part of the meniscus should water be read?",
+          [
+            "Bottom of the meniscus at eye level",
+            "Top of the meniscus from above",
+            "Side of the cylinder",
+            "Any point while tilted"
+          ],
+          0,
+          "For water and most clear liquids, read the bottom of the meniscus at eye level."
+        ],
+        [
+          "Why should the eye be level with the meniscus when taking a reading?",
+          [
+            "To avoid parallax error",
+            "To increase the liquid volume",
+            "To change the density",
+            "To make the liquid evaporate"
+          ],
+          0,
+          "Viewing at eye level reduces reading errors caused by parallax."
+        ],
+        [
+          "Which tool is most suitable for measuring the mass of a small solid object?",
+          [
+            "Beam balance",
+            "Measuring cylinder",
+            "Thermometer",
+            "Stopwatch"
+          ],
+          0,
+          "A balance measures mass."
+        ],
+        [
+          "Which indicator can be used to help identify whether a solution is acidic or basic?",
+          [
+            "Litmus paper",
+            "Filter paper",
+            "Sandpaper",
+            "Graph paper"
+          ],
+          0,
+          "Litmus changes colour in acidic and alkaline solutions."
+        ],
+        [
+          "What colour does blue litmus paper turn in an acidic solution?",
+          [
+            "Red",
+            "Green",
+            "Blue",
+            "White"
+          ],
+          0,
+          "Acids turn blue litmus paper red."
+        ],
+        [
+          "Which practice is safest when heating a test tube?",
+          [
+            "Point its open end away from people",
+            "Point it towards a friend",
+            "Seal it tightly",
+            "Hold it with bare fingers"
+          ],
+          0,
+          "The open end should point away from everyone because hot liquid or vapour may spurt."
+        ]
+      ],
+      "structured": [
+        [
+          "State four laboratory safety rules that learners should observe during practical lessons.",
+          "Award 1 mark each for any four: follow teacher instructions; do not taste chemicals; do not run; wear protective gear where required; report spills/injuries; handle glassware carefully; keep the work area tidy.",
+          4
+        ],
+        [
+          "Explain the correct response when a chemical accidentally splashes onto a learner's skin.",
+          "Award up to 3 marks: rinse affected skin immediately with plenty of clean running water; remove contaminated clothing/jewellery while rinsing if safe; inform the teacher and seek appropriate medical attention.",
+          3
+        ],
+        [
+          "Name two laboratory heating instruments and state one use of each.",
+          "Award 1 mark for each correct instrument and use: Bunsen burner—heating; spirit burner—heating; hot plate—heating substances/solutions.",
+          4
+        ],
+        [
+          "Describe two ways of reducing friction between moving machine parts and explain how each works.",
+          "Award 2 marks each: lubrication separates surfaces; use rollers/ball bearings changes sliding friction to rolling friction; polishing smooths surfaces. Explanation required.",
+          4
+        ],
+        [
+          "Give two situations in daily life where friction is useful and explain its importance.",
+          "Award 1 mark for each valid situation and 1 for explanation: walking—grip; vehicle brakes—slows/stops wheels; writing—pencil/pen grips paper; tyre treads—traction.",
+          4
+        ],
+        [
+          "State four components of air and give an approximate proportion or role for each.",
+          "Award 1 mark each: nitrogen about 78%; oxygen about 21%; argon and other noble gases about 0.9%; carbon dioxide about 0.04% (values may be approximate).",
+          4
+        ],
+        [
+          "Explain two uses of oxygen and two uses of carbon dioxide.",
+          "Award 1 mark each: oxygen supports respiration; oxygen supports combustion/medical oxygen; carbon dioxide used by plants in photosynthesis; carbon dioxide used in fire extinguishers or carbonated drinks.",
+          4
+        ],
+        [
+          "Draw and label a Bunsen burner, showing the base, gas inlet, gas hose, collar, air hole and barrel.",
+          "Award marks for a recognisable outline (1) and correct labels (up to 5).",
+          6
+        ],
+        [
+          "Describe the function of the collar, air hole, base, gas hose and gas inlet of a Bunsen burner.",
+          "Award 1 mark each: collar opens/closes air hole; air hole admits air; base supports burner; gas hose conveys gas; gas inlet admits gas into burner.",
+          5
+        ],
+        [
+          "Distinguish between a luminous flame and a non-luminous flame produced by a Bunsen burner.",
+          "Award 1 mark each for colour/appearance, air supply, temperature/soot: luminous is yellow, less air, cooler/sooty; non-luminous is blue, more air, hotter/cleaner.",
+          4
+        ],
+        [
+          "Name four blood groups in the ABO system and state the antigens found on their red blood cells.",
+          "Award 1 mark each: A—A antigen; B—B antigen; AB—A and B antigens; O—neither A nor B antigen.",
+          4
+        ],
+        [
+          "State four functions of the human skeleton.",
+          "Award 1 mark each: support; protection of internal organs; movement with muscles; blood-cell production in bone marrow; mineral storage.",
+          4
+        ],
+        [
+          "Identify the bones that form the skull, upper arm, thigh, lower leg and forearm.",
+          "Award 1 mark each: skull; humerus; femur; tibia; radius (ulna may also be named for the forearm).",
+          5
+        ],
+        [
+          "Explain how the rib cage protects internal organs.",
+          "Award up to 3 marks: ribs form a cage around the chest; protect the heart and lungs; the cage moves during breathing while providing protection.",
+          3
+        ],
+        [
+          "Describe the pathway of blood through the heart and lungs in a simplified sequence.",
+          "Award up to 4 marks: body to right side of heart; right side pumps blood to lungs; lungs oxygenate blood; blood returns to left side; left side pumps blood to the body.",
+          4
+        ],
+        [
+          "State three ways of handling and caring for a light microscope.",
+          "Award 1 mark each: carry with two hands (arm and base); place on a stable bench; clean lenses with lens tissue; start with low-power objective; store covered after use.",
+          3
+        ],
+        [
+          "Name four apparatus commonly found in a Grade 7 laboratory and state one use of each.",
+          "Award 1 mark for each correct apparatus-use pair, e.g. measuring cylinder—volume; beaker—holding/mixing; thermometer—temperature; balance—mass; dropper—small liquid quantities; test tube—small reactions.",
+          4
+        ],
+        [
+          "List four items that may be found in a first-aid kit and state one use of each.",
+          "Award 1 mark per correct item-use pair: sterile gauze/dressing—cover wound; bandage—secure dressing; adhesive plasters—small cuts; antiseptic wipes—clean around minor wounds; gloves—barrier protection.",
+          4
+        ],
+        [
+          "A learner has a cut that is bleeding. Describe the steps an adult should take to give basic first aid.",
+          "Award up to 4 marks: ensure scene safety and use gloves/barrier; apply firm direct pressure with clean dressing; seek adult/medical assistance for severe or persistent bleeding; do not remove soaked dressing—add another layer; reassure learner.",
+          4
+        ],
+        [
+          "Define density and write the formula used to calculate it.",
+          "Award 1 mark for mass per unit volume; 1 mark for density = mass ÷ volume (D = m/V).",
+          2
+        ],
+        [
+          "A metal block has a mass of 360 g and a volume of 45 cm³. Calculate its density, showing your working.",
+          "Award 1 mark for formula; 1 for substitution; 1 for correct answer 8 g/cm³.",
+          3
+        ],
+        [
+          "A stone has a mass of 150 g. Its volume is 60 cm³. Calculate its density and include the correct unit.",
+          "Award 1 mark for formula/substitution; 1 for calculation; 1 for 2.5 g/cm³.",
+          3
+        ],
+        [
+          "Explain how the volume of an irregular solid can be found using water displacement.",
+          "Award up to 4 marks: record initial water volume; lower object fully without splashing; record final volume; subtract initial from final; difference is object volume.",
+          4
+        ],
+        [
+          "Describe how to read the volume of water in a measuring cylinder accurately.",
+          "Award up to 3 marks: place cylinder upright on level bench; allow water to settle; position eye level with meniscus; read bottom of meniscus for water.",
+          3
+        ],
+        [
+          "What is a meniscus? Explain why it forms in a measuring cylinder.",
+          "Award 2 marks: curved upper surface of a liquid; caused by interaction/adhesion between liquid and container and cohesion within the liquid.",
+          2
+        ],
+        [
+          "A learner reads water in a measuring cylinder from above the meniscus. Name the error and explain how it can be avoided.",
+          "Award 2 marks: parallax error; place eye level with the bottom of the meniscus.",
+          2
+        ],
+        [
+          "Distinguish between an acid and a base using litmus paper.",
+          "Award 2 marks: acid turns blue litmus red; base/alkali turns red litmus blue (for soluble bases).",
+          2
+        ],
+        [
+          "State two precautions when using a microscope to observe a slide.",
+          "Award 2 marks: begin with low power; use coarse adjustment only on low power; avoid allowing objective lens to hit slide; use fine adjustment for sharp focus; handle slide carefully.",
+          2
+        ],
+        [
+          "Explain why a learner should not taste or directly smell laboratory chemicals.",
+          "Award 2 marks: substances may be poisonous/corrosive/irritating; vapours may harm the respiratory system; unknown substances must not be tested by tasting or direct sniffing.",
+          2
+        ],
+        [
+          "A learner mixes two unknown substances and notices heat and gas. State three actions the learner should take.",
+          "Award 1 mark each: stop mixing; move away if unsafe and avoid inhaling fumes; alert teacher immediately; do not touch/taste mixture; follow teacher's emergency instructions.",
+          3
+        ]
+      ]
+    },
+    {
+      "id": "ire",
+      "name": "IRE",
+      "mcq": [],
+      "structured": []
+    },
+    {
+      "id": "kiswahili",
+      "name": "Kiswahili",
+      "mcq": [],
+      "structured": []
+    },
+    {
+      "id": "mathematics",
+      "name": "Mathematics",
+      "mcq": [],
+      "structured": []
+    },
+    {
+      "id": "pre-technical",
+      "name": "Pre-Technical Studies",
+      "mcq": [],
+      "structured": []
+    },
+    {
+      "id": "social-studies",
+      "name": "Social Studies",
+      "mcq": [],
+      "structured": []
+    }
+  ]
+}
