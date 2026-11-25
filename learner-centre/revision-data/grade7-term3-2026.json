@@ -1,0 +1,750 @@
+{
+  "title": "Grade 7 Term 3 Revision Collection 2026",
+  "brand": "Junior School Learning Hub",
+  "version": 1,
+  "sourceNote": "Original practice material developed using the uploaded assessment as a topic and competency guide. Questions are newly authored and are not copied from the source paper.",
+  "grade": 7,
+  "term": 3,
+  "subjects": [
+    {
+      "id": "mathematics",
+      "name": "Mathematics",
+      "icon": "📐",
+      "mcq": [
+        [
+          "Write 0.00056 in standard form.",
+          [
+            "5.6 × 10⁻⁴",
+            "5.6 × 10⁴",
+            "56 × 10⁻⁵",
+            "0.56 × 10⁻³"
+          ],
+          0,
+          "Move the decimal four places to the right: 5.6 × 10⁻⁴."
+        ],
+        [
+          "A school has 468 learners. If 3/4 are present, how many are present?",
+          [
+            "351",
+            "312",
+            "356",
+            "368"
+          ],
+          0,
+          "468 × 3/4 = 351."
+        ],
+        [
+          "Solve 5x − 7 = 28.",
+          [
+            "5",
+            "7",
+            "9",
+            "11"
+          ],
+          2,
+          "5x = 35, so x = 7. Correction: the correct option is B."
+        ],
+        [
+          "A rectangle measures 12 cm by 7 cm. Find its perimeter.",
+          [
+            "19 cm",
+            "38 cm",
+            "84 cm",
+            "42 cm"
+          ],
+          1,
+          "Perimeter = 2(12 + 7) = 38 cm."
+        ],
+        [
+          "The mean of 4, 6, 8 and 10 is:",
+          [
+            "6",
+            "7",
+            "8",
+            "9"
+          ],
+          1,
+          "Mean = (4 + 6 + 8 + 10) ÷ 4 = 7."
+        ]
+      ],
+      "structured": [
+        [
+          "A shop buys a school bag for KSh 1,600 and sells it at a profit of 15%. Calculate the selling price.",
+          "Profit = 15/100 × 1,600 = KSh 240. Selling price = 1,600 + 240 = KSh 1,840.",
+          3
+        ],
+        [
+          "A rectangular garden is 18 m long and 11 m wide. Calculate its area and the cost of fencing it at KSh 250 per metre.",
+          "Area = 18 × 11 = 198 m². Perimeter = 2(18 + 11) = 58 m. Fencing cost = 58 × 250 = KSh 14,500.",
+          4
+        ]
+      ]
+    },
+    {
+      "id": "integrated-science",
+      "name": "Integrated Science",
+      "icon": "🔬",
+      "mcq": [
+        [
+          "Which laboratory apparatus is most suitable for measuring 25 cm³ of a liquid accurately?",
+          [
+            "Beaker",
+            "Measuring cylinder",
+            "Test-tube holder",
+            "Evaporating dish"
+          ],
+          1,
+          "A measuring cylinder is designed to measure liquid volumes."
+        ],
+        [
+          "Which process separates an insoluble solid from a liquid?",
+          [
+            "Distillation",
+            "Filtration",
+            "Evaporation",
+            "Chromatography"
+          ],
+          1,
+          "Filtration traps the insoluble solid on filter paper."
+        ],
+        [
+          "Which part of a light microscope is used to adjust the amount of light?",
+          [
+            "Stage",
+            "Mirror or illuminator",
+            "Objective lens",
+            "Arm"
+          ],
+          1,
+          "The mirror or illuminator directs light through the specimen."
+        ],
+        [
+          "Which one is a chemical change?",
+          [
+            "Melting ice",
+            "Cutting paper",
+            "Rusting iron",
+            "Dissolving sugar"
+          ],
+          2,
+          "Rusting forms a new substance, iron oxide."
+        ],
+        [
+          "The main function of the placenta is to:",
+          [
+            "Produce urine",
+            "Exchange materials between mother and foetus",
+            "Store food for the mother",
+            "Control body temperature"
+          ],
+          1,
+          "The placenta enables exchange of nutrients, gases and wastes."
+        ]
+      ],
+      "structured": [
+        [
+          "Describe how you would separate a mixture of sand, salt and water to obtain dry sand and salt crystals.",
+          "Filter the mixture to separate sand. Wash and dry the sand. Heat the filtrate gently to concentrate it, then allow it to cool so salt crystals form; collect and dry the crystals.",
+          4
+        ],
+        [
+          "State two precautions when using a light microscope and give a reason for each.",
+          "Carry it with two hands to prevent dropping. Clean lenses only with lens tissue to avoid scratching them. (Any two well-explained precautions.)",
+          2
+        ]
+      ]
+    },
+    {
+      "id": "english",
+      "name": "English",
+      "icon": "📘",
+      "mcq": [
+        [
+          "Choose the correctly punctuated sentence.",
+          [
+            "Where are you going asked Amina.",
+            "“Where are you going?” asked Amina.",
+            "“Where are you going”, asked Amina?",
+            "Where are you going? asked Amina"
+          ],
+          1,
+          "A direct question takes a question mark inside the quotation marks."
+        ],
+        [
+          "The word closest in meaning to 'cautious' is:",
+          [
+            "Careless",
+            "Careful",
+            "Angry",
+            "Cheerful"
+          ],
+          1,
+          "Cautious means careful to avoid danger or mistakes."
+        ],
+        [
+          "Choose the correct plural form of 'analysis'.",
+          [
+            "Analysises",
+            "Analysiseses",
+            "Analyses",
+            "Analysis"
+          ],
+          2,
+          "The plural of analysis is analyses."
+        ],
+        [
+          "Identify the adverb: 'The learner answered the question confidently.'",
+          [
+            "Learner",
+            "Answered",
+            "Question",
+            "Confidently"
+          ],
+          3,
+          "Confidently describes how the learner answered."
+        ],
+        [
+          "Which expression is an example of personification?",
+          [
+            "The wind whispered through the trees.",
+            "The boy ran quickly.",
+            "The room was large.",
+            "She has a blue bag."
+          ],
+          0,
+          "The wind is given the human action of whispering."
+        ]
+      ],
+      "structured": [
+        [
+          "Write a formal letter to your school head requesting permission to organise a clean-up activity. Include the purpose, proposed date and materials needed.",
+          "Award marks for correct sender/recipient format, date, salutation, clear subject, polite request, relevant details, appropriate closing and accurate language.",
+          10
+        ],
+        [
+          "Read this short situation: Two friends find a wallet containing money and an identity card. Explain two responsible actions they should take and why.",
+          "They should hand it to a teacher or trusted authority and avoid using the money. The identity card can help locate the owner; honesty protects the owner's property.",
+          4
+        ]
+      ]
+    },
+    {
+      "id": "kiswahili",
+      "name": "Kiswahili",
+      "icon": "📝",
+      "mcq": [
+        [
+          "Methali 'Haraka haraka haina baraka' inamaanisha nini?",
+          [
+            "Kufanya kazi kwa pupa huleta makosa",
+            "Kuchelewa ni vizuri",
+            "Kila kazi ni rahisi",
+            "Safari ni ndefu"
+          ],
+          0,
+          "Methali hii hufundisha kuwa pupa inaweza kusababisha makosa."
+        ],
+        [
+          "Wingi wa neno 'jicho' ni:",
+          [
+            "Majicho",
+            "Macho",
+            "Jichoni",
+            "Vijicho"
+          ],
+          1,
+          "Wingi wa jicho ni macho."
+        ],
+        [
+          "Neno 'polepole' ni aina gani ya kielezi?",
+          [
+            "Kielezi cha namna",
+            "Kielezi cha wakati",
+            "Kielezi cha mahali",
+            "Kielezi cha idadi"
+          ],
+          0,
+          "Polepole huonyesha jinsi tendo linavyofanyika."
+        ],
+        [
+          "Katika shairi, mstari mmoja wa ubeti huitwaje?",
+          [
+            "Kibwagizo",
+            "Mshororo",
+            "Mizani",
+            "Vina"
+          ],
+          1,
+          "Mstari wa shairi huitwa mshororo."
+        ],
+        [
+          "Kinyume cha neno 'jasiri' ni:",
+          [
+            "Shujaa",
+            "Mwoga",
+            "Mwenye bidii",
+            "Mwerevu"
+          ],
+          1,
+          "Mwoga ni kinyume cha jasiri."
+        ]
+      ],
+      "structured": [
+        [
+          "Andika insha ya aya tatu kuhusu umuhimu wa kutunza mazingira ya shule. Tumia mifano halisi.",
+          "Tathmini utangulizi, hoja zinazofaa, mifano kama kupanda miti na kutupa taka mahali panapofaa, mtiririko wa mawazo, sarufi na hitimisho.",
+          10
+        ],
+        [
+          "Eleza sifa mbili za mhusika mwema katika hadithi na utoe mfano wa kila sifa.",
+          "Majibu yanaweza kutaja uaminifu, huruma, bidii, ushirikiano au uwajibikaji; kila sifa iungwe mkono na mfano unaoeleweka.",
+          4
+        ]
+      ]
+    },
+    {
+      "id": "pre-technical",
+      "name": "Pre-Technical Studies",
+      "icon": "🛠️",
+      "mcq": [
+        [
+          "A drawing instrument used to draw a circle is a:",
+          [
+            "Set square",
+            "Compass",
+            "T-square",
+            "Protractor"
+          ],
+          1,
+          "A compass is used to draw circles and arcs."
+        ],
+        [
+          "Which computer component processes instructions?",
+          [
+            "Monitor",
+            "Keyboard",
+            "CPU",
+            "Speaker"
+          ],
+          2,
+          "The central processing unit executes instructions."
+        ],
+        [
+          "A line drawn to show a hidden edge in technical drawing is usually:",
+          [
+            "Thick continuous",
+            "Dashed",
+            "Wavy",
+            "Zigzag"
+          ],
+          1,
+          "Hidden details are represented using dashed lines."
+        ],
+        [
+          "Which material is a good electrical conductor?",
+          [
+            "Rubber",
+            "Plastic",
+            "Copper",
+            "Wood"
+          ],
+          2,
+          "Copper allows electric current to pass through easily."
+        ],
+        [
+          "Which action promotes safe use of digital devices?",
+          [
+            "Sharing passwords",
+            "Opening unknown links",
+            "Using strong passwords",
+            "Leaving devices in rain"
+          ],
+          2,
+          "Strong passwords help protect accounts and information."
+        ]
+      ],
+      "structured": [
+        [
+          "Name three measuring or marking-out tools and state one use for each.",
+          "Tape measure—measuring length; try square—checking right angles; pencil/scriber—marking lines; ruler—measuring or drawing straight lines. Any three correct pairs.",
+          3
+        ],
+        [
+          "State three ways of caring for workshop tools.",
+          "Clean and dry after use; store in the correct place; use each tool for its intended purpose; oil moving metal parts where appropriate; report damaged tools.",
+          3
+        ]
+      ]
+    },
+    {
+      "id": "creative-arts",
+      "name": "Creative Arts & Sports",
+      "icon": "🎨",
+      "mcq": [
+        [
+          "In music, the symbol that indicates silence is called a:",
+          [
+            "Note",
+            "Rest",
+            "Clef",
+            "Bar line"
+          ],
+          1,
+          "A rest indicates a period of silence."
+        ],
+        [
+          "Which activity helps improve flexibility?",
+          [
+            "Stretching",
+            "Sprinting only",
+            "Weight lifting only",
+            "Standing still"
+          ],
+          0,
+          "Stretching improves the range of movement at joints."
+        ],
+        [
+          "Red, yellow and blue are traditionally classified as:",
+          [
+            "Secondary colours",
+            "Neutral colours",
+            "Primary colours",
+            "Tertiary colours"
+          ],
+          2,
+          "They are commonly taught as primary colours."
+        ],
+        [
+          "In football, a player uses the inside of the foot mainly to:",
+          [
+            "Control and pass the ball",
+            "Head the ball",
+            "Throw the ball",
+            "Catch the ball"
+          ],
+          0,
+          "The inside of the foot offers control for accurate passing."
+        ],
+        [
+          "A composition showing objects as they appear from one viewpoint uses:",
+          [
+            "Perspective",
+            "Repetition only",
+            "Symmetry only",
+            "Texture only"
+          ],
+          0,
+          "Perspective creates the impression of depth and distance."
+        ]
+      ],
+      "structured": [
+        [
+          "Describe two safety measures to observe when practising a javelin throw.",
+          "Ensure the throwing area is clear; throw only on the teacher's signal; carry the javelin point-down; retrieve only when instructed; never aim at people.",
+          2
+        ],
+        [
+          "Explain two ways colour can be used to create emphasis in a poster.",
+          "Use a contrasting colour for the main message; use a bright or warm colour on the focal image; limit competing colours so the key information stands out.",
+          2
+        ]
+      ]
+    },
+    {
+      "id": "agriculture",
+      "name": "Agriculture & Nutrition",
+      "icon": "🌱",
+      "mcq": [
+        [
+          "Which practice helps reduce soil erosion on a sloping farm?",
+          [
+            "Burning vegetation",
+            "Contour farming",
+            "Overgrazing",
+            "Removing all grass"
+          ],
+          1,
+          "Contour farming slows runoff by following the slope's contour lines."
+        ],
+        [
+          "Which tool is most suitable for loosening soil around young seedlings?",
+          [
+            "Spade",
+            "Hand fork",
+            "Sickle",
+            "Wheelbarrow"
+          ],
+          1,
+          "A hand fork loosens soil carefully around small plants."
+        ],
+        [
+          "Which method preserves vegetables by removing moisture?",
+          [
+            "Drying",
+            "Boiling briefly",
+            "Washing",
+            "Sorting"
+          ],
+          0,
+          "Drying reduces moisture needed for microbial growth."
+        ],
+        [
+          "A balanced diet contains:",
+          [
+            "Only carbohydrates",
+            "Only proteins",
+            "Different nutrients in suitable amounts",
+            "Only vitamins"
+          ],
+          2,
+          "A balanced diet supplies all essential nutrients in suitable proportions."
+        ],
+        [
+          "Which animal product is obtained from bees?",
+          [
+            "Milk",
+            "Honey",
+            "Wool",
+            "Eggs"
+          ],
+          1,
+          "Bees produce honey."
+        ]
+      ],
+      "structured": [
+        [
+          "State three practices that promote hygiene when keeping poultry.",
+          "Provide clean drinking water; clean feeders and drinkers; keep the poultry house dry and ventilated; dispose of droppings safely; isolate sick birds.",
+          3
+        ],
+        [
+          "Explain two reasons for processing harvested honey before packaging it for sale.",
+          "To remove wax, dead bees and other impurities; to improve quality and appearance; to reduce contamination and support safe storage.",
+          2
+        ]
+      ]
+    },
+    {
+      "id": "cre",
+      "name": "Christian Religious Education",
+      "icon": "✝️",
+      "mcq": [
+        [
+          "According to the creation account in Genesis, human beings were created:",
+          [
+            "In God's image",
+            "To live alone",
+            "Before light",
+            "Without responsibility"
+          ],
+          0,
+          "Genesis teaches that human beings were created in God's image."
+        ],
+        [
+          "Which action demonstrates good stewardship of the environment?",
+          [
+            "Dumping waste in rivers",
+            "Planting and caring for trees",
+            "Burning forests",
+            "Wasting water"
+          ],
+          1,
+          "Stewardship includes caring responsibly for creation."
+        ],
+        [
+          "Moses received the Ten Commandments at:",
+          [
+            "Mount Sinai",
+            "Mount Carmel",
+            "Jericho",
+            "Bethlehem"
+          ],
+          0,
+          "The biblical account places the giving of the commandments at Mount Sinai."
+        ],
+        [
+          "Which value is shown by helping a person in need?",
+          [
+            "Greed",
+            "Compassion",
+            "Pride",
+            "Dishonesty"
+          ],
+          1,
+          "Helping others demonstrates compassion."
+        ],
+        [
+          "The main purpose of prayer is to:",
+          [
+            "Show off",
+            "Communicate with God",
+            "Compete with others",
+            "Avoid responsibility"
+          ],
+          1,
+          "Prayer is a way of communicating with God."
+        ]
+      ],
+      "structured": [
+        [
+          "Give three ways learners can demonstrate care for God's creation at school.",
+          "Plant and protect trees; conserve water; dispose of waste properly; avoid damaging plants and habitats; participate in environmental clean-ups.",
+          3
+        ],
+        [
+          "Explain two lessons Christians can learn from the story of the Good Samaritan.",
+          "Show compassion to people in need regardless of background; take practical action to help others rather than ignoring suffering.",
+          4
+        ]
+      ]
+    },
+    {
+      "id": "ire",
+      "name": "Islamic Religious Education",
+      "icon": "☪️",
+      "mcq": [
+        [
+          "The holy book revealed to Prophet Muhammad (PBUH) is the:",
+          [
+            "Tawrah",
+            "Zabur",
+            "Qur'an",
+            "Injil"
+          ],
+          2,
+          "The Qur'an was revealed to Prophet Muhammad (PBUH)."
+        ],
+        [
+          "The obligatory daily prayers in Islam are:",
+          [
+            "Three",
+            "Four",
+            "Five",
+            "Six"
+          ],
+          2,
+          "Muslims are required to perform five daily prayers."
+        ],
+        [
+          "Zakat mainly teaches Muslims about:",
+          [
+            "Selfishness",
+            "Charity and sharing",
+            "Pride",
+            "Wastefulness"
+          ],
+          1,
+          "Zakat supports those in need and purifies wealth."
+        ],
+        [
+          "The month of fasting is:",
+          [
+            "Muharram",
+            "Ramadan",
+            "Shawwal",
+            "Rajab"
+          ],
+          1,
+          "Muslims observe obligatory fasting during Ramadan."
+        ],
+        [
+          "A person who tells the truth demonstrates:",
+          [
+            "Amanah only",
+            "Sidq",
+            "Hasad",
+            "Kibr"
+          ],
+          1,
+          "Sidq refers to truthfulness."
+        ]
+      ],
+      "structured": [
+        [
+          "State three benefits of fasting during Ramadan.",
+          "Develops self-discipline; encourages empathy for people who are hungry; strengthens devotion to Allah; promotes patience and gratitude. Any three.",
+          3
+        ],
+        [
+          "Explain two ways Muslims can promote peaceful coexistence in their community.",
+          "Respect neighbours and people of other backgrounds; resolve disagreements peacefully; help those in need; avoid insults and discrimination.",
+          4
+        ]
+      ]
+    },
+    {
+      "id": "social-studies",
+      "name": "Social Studies",
+      "icon": "🌍",
+      "mcq": [
+        [
+          "A map key is used to:",
+          [
+            "Show the map's title",
+            "Explain symbols on a map",
+            "Measure rainfall",
+            "Show population only"
+          ],
+          1,
+          "A key explains the meaning of symbols used on a map."
+        ],
+        [
+          "Which is a physical feature of the environment?",
+          [
+            "Road",
+            "Bridge",
+            "Mountain",
+            "Market"
+          ],
+          2,
+          "A mountain is a natural landform."
+        ],
+        [
+          "The main purpose of a constitution is to:",
+          [
+            "Organise school games",
+            "Provide the framework for governing a country",
+            "Set market prices",
+            "Control weather"
+          ],
+          1,
+          "A constitution establishes government structures, powers and rights."
+        ],
+        [
+          "Which practice helps conserve water?",
+          [
+            "Leaving taps running",
+            "Repairing leaking taps",
+            "Dumping waste in rivers",
+            "Washing one item at a time under a running tap"
+          ],
+          1,
+          "Repairing leaks prevents unnecessary water loss."
+        ],
+        [
+          "A compass direction between north and east is:",
+          [
+            "North-west",
+            "South-east",
+            "North-east",
+            "South-west"
+          ],
+          2,
+          "North-east lies halfway between north and east."
+        ]
+      ],
+      "structured": [
+        [
+          "Give three reasons why communities should protect forests.",
+          "Forests conserve biodiversity; protect water catchments; reduce soil erosion; absorb carbon dioxide; provide sustainable resources and livelihoods.",
+          3
+        ],
+        [
+          "State two responsibilities of a responsible citizen and explain one.",
+          "Obey laws, respect others' rights, pay lawful taxes, protect public property, participate peacefully in community affairs. Explain one responsibility with an example.",
+          3
+        ]
+      ]
+    }
+  ]
+}
