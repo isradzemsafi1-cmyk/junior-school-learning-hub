@@ -276,4 +276,15 @@ using (
    and g.auth_user_id=(select auth.uid()) and lg.can_receive_academic_updates)
 );
 
+
+drop policy if exists "guardians read approved assessments" on public.school_assessments;
+create policy "guardians read approved assessments" on public.school_assessments for select to authenticated
+using (
+ status in ('approved','locked') and exists(
+  select 1 from public.learner_guardians lg join public.guardians g on g.id=lg.guardian_id
+  where lg.school_id=school_assessments.school_id and lg.can_receive_academic_updates
+   and g.auth_user_id=(select auth.uid())
+ )
+);
+
 commit;
