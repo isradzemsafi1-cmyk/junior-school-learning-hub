@@ -7,7 +7,7 @@ const $=id=>document.getElementById(id), esc=s=>String(s??'').replace(/[&<>"']/g
 const msg=(id,s,bad)=>{const e=$(id);if(e){e.textContent=s;e.classList.toggle('error',!!bad)}};
 const avg=a=>a.length?a.reduce((s,x)=>s+x,0)/a.length:null, pct=m=>m.raw_score==null||!Number(m.maximum_score)?null:Number(m.raw_score)/Number(m.maximum_score)*100;
 const group=(a,k)=>{const m=new Map();a.forEach(x=>{const v=k(x);if(!m.has(v))m.set(v,[]);m.get(v).push(x)});return [...m].map(([key,items])=>({key,items}))};
-let extra={strands:[],links:[],assignments:[],interventions:[],staff:[],guardians:[],communications:[],settings:null};
+let extra={strands:[],links:[],assignments:[],interventions:[],staff:[],guardians:[],communications:[],settings:null,migrationMissing:false};
 const adminRoles=['school_owner','director','headteacher','deputy_headteacher','dos','administrator'];
 const isAdmin=()=>adminRoles.includes(role);
 function addTab(id,label){const nav=document.querySelector('.tabs');if(nav&&!$('tab-'+id))nav.insertAdjacentHTML('beforeend','<button id="tab-'+id+'" onclick="tab(\''+id+'\',this)">'+label+'</button>')}
@@ -23,8 +23,8 @@ function options(id,items,label,empty){const e=$(id);if(!e)return;const old=e.va
 async function fetchExtras(){
  if(!db||!schoolId)return;
  const specs=[['curriculum_strands','strands'],['assessment_component_strands','links'],['assessment_staff_assignments','assignments'],['learner_interventions','interventions'],['staff_profiles','staff'],['guardians','guardians'],['guardian_communications','communications']];
- for(const [table,key] of specs){const {data,error}=await db.from(table).select('*').eq('school_id',schoolId);if(error){extra[key]=[];if(error.code!=='42P01'&&!String(error.message).toLowerCase().includes('does not exist'))console.warn('CBE READY '+table,error.message);continue}extra[key]=data||[]}
- const {data:s,error}=await db.from('school_cbe_settings').select('*').eq('school_id',schoolId).maybeSingle();extra.settings=error?null:s;if(extra.settings?.percentage_bands?.length){bands=extra.settings.percentage_bands;renderBands();overview();analysis()}
+ let missing=[];for(const [table,key] of specs){const {data,error}=await db.from(table).select('*').eq('school_id',schoolId);if(error){extra[key]=[];if(error.code==='42P01'||error.code==='PGRST205'||String(error.message).toLowerCase().includes('does not exist')||String(error.message).toLowerCase().includes('could not find the table'))missing.push(table);else console.warn('CBE READY '+table,error.message);continue}extra[key]=data||[]}
+ const {data:s,error}=await db.from('school_cbe_settings').select('*').eq('school_id',schoolId).maybeSingle();extra.settings=error?null:s;if(error&&(error.code==='42P01'||error.code==='PGRST205'||String(error.message).toLowerCase().includes('could not find the table')))missing.push('school_cbe_settings');extra.migrationMissing=missing.length>0;if(extra.migrationMissing)msg('globalMsg','CBE READY V6.12 database migration 007 is not installed in this Supabase project. The new curriculum, intervention and staff-assignment screens are preview-only until the migration is applied in development.',true);if(extra.settings?.percentage_bands?.length){bands=extra.settings.percentage_bands;renderBands();overview();analysis()}
  fillExtras();renderStrands();renderInterventions();renderAssignments();renderCbeEvidence();
 }
 function fillExtras(){
