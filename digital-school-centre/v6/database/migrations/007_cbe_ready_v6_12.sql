@@ -309,7 +309,8 @@ create policy "guardians read linked report snapshots" on public.report_card_sna
 using (
  exists(select 1 from public.learner_guardians lg join public.guardians g on g.id=lg.guardian_id
   where lg.learner_id=report_card_snapshots.learner_id and lg.school_id=report_card_snapshots.school_id
-   and g.auth_user_id=(select auth.uid()) and lg.can_receive_academic_updates)
+   and g.auth_user_id=(select auth.uid()) and lg.can_receive_academic_updates
+   and exists(select 1 from public.school_assessments a where a.id=report_card_snapshots.assessment_id and a.school_id=report_card_snapshots.school_id and a.status in ('approved','locked')))
 );
 
 
