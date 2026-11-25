@@ -693,11 +693,17 @@
       ]
     },
     "remainingReleaseBlockers": [
-      "Structured-question templates and generic prompts remain and require subject-specific replacement.",
-      "Correct answers and explanations still require subject-matter review against source papers, schemes and marking guides.",
-      "Term 2 and Term 3 do not yet have complete 80-MCQ plus 120-structured banks for all ten learning areas.",
+      "More generic/template structured prompts remain in the Term 1 bank and must be replaced.",
+      "All Term 1 MCQ answers and explanations require subject-matter review against source papers, schemes and scoring guides; answer positions were balanced without changing option text.",
+      "Term 2 and Term 3 still lack complete 80-MCQ plus 120-structured banks for all ten learning areas.",
       "The complete 30-bank validator has not passed."
-    ]
+    ],
+    "structuredQuestionImprovement": {
+      "status": "50 subject-specific questions committed",
+      "count": 50,
+      "distribution": "5 replacement questions in each of the 10 learning areas",
+      "note": "These replace five generic/template prompts per area. They are authored practice questions with marking guides; they still require independent subject-matter review. Other generic structured prompts remain."
+    }
   },
   "term2Draft": {
     "mcq": 45,
