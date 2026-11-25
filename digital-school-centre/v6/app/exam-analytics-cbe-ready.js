@@ -24,7 +24,7 @@ async function fetchExtras(){
  if(!db||!schoolId)return;
  const specs=[['curriculum_strands','strands'],['assessment_component_strands','links'],['assessment_staff_assignments','assignments'],['learner_interventions','interventions'],['staff_profiles','staff'],['guardians','guardians'],['guardian_communications','communications']];
  for(const [table,key] of specs){const {data,error}=await db.from(table).select('*').eq('school_id',schoolId);if(error){extra[key]=[];if(error.code!=='42P01'&&!String(error.message).toLowerCase().includes('does not exist'))console.warn('CBE READY '+table,error.message);continue}extra[key]=data||[]}
- const {data:s,error}=await db.from('school_cbe_settings').select('*').eq('school_id',schoolId).maybeSingle();extra.settings=error?null:s;
+ const {data:s,error}=await db.from('school_cbe_settings').select('*').eq('school_id',schoolId).maybeSingle();extra.settings=error?null:s;if(extra.settings?.percentage_bands?.length){bands=extra.settings.percentage_bands;renderBands();overview();analysis()}
  fillExtras();renderStrands();renderInterventions();renderAssignments();renderCbeEvidence();
 }
 function fillExtras(){
