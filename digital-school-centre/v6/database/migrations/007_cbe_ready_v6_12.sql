@@ -71,6 +71,7 @@ create index if not exists idx_interventions_learner on public.learner_intervent
 create table if not exists public.school_cbe_settings (
   school_id uuid primary key references public.schools(id) on delete cascade,
   support_threshold numeric not null default 50 check (support_threshold between 0 and 100),
+  percentage_bands jsonb not null default '[{"name":"Exceeding","min":80,"max":100},{"name":"Meeting","min":60,"max":79.99},{"name":"Approaching","min":40,"max":59.99},{"name":"Below","min":0,"max":39.99}]'::jsonb,
   achievement_scale jsonb not null default '[]'::jsonb,
   updated_by uuid references auth.users(id),
   updated_at timestamptz not null default now()
