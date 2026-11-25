@@ -484,6 +484,424 @@
           ],
           0,
           "The open end should point away from everyone because hot liquid or vapour may spurt."
+        ],
+        [
+          "Which part of a microscope is looked through when viewing a specimen?",
+          [
+            "Eyepiece lens",
+            "Stage clip",
+            "Mirror arm",
+            "Base"
+          ],
+          0,
+          "The eyepiece is the lens through which the learner looks."
+        ],
+        [
+          "Which microscope part holds the slide in position?",
+          [
+            "Stage clips",
+            "Coarse adjustment knob",
+            "Eyepiece",
+            "Base"
+          ],
+          0,
+          "Stage clips keep the slide steady on the stage."
+        ],
+        [
+          "Which microscope control is used for rough focusing at low power?",
+          [
+            "Coarse adjustment knob",
+            "Fine adjustment knob only",
+            "Stage clip",
+            "Arm"
+          ],
+          0,
+          "The coarse adjustment knob makes large focusing movements, usually at low power."
+        ],
+        [
+          "Which apparatus is used to measure temperature?",
+          [
+            "Thermometer",
+            "Balance",
+            "Pipette filler",
+            "Tripod"
+          ],
+          0,
+          "A thermometer measures temperature."
+        ],
+        [
+          "Which apparatus is used to support a beaker during heating?",
+          [
+            "Tripod stand",
+            "Dropper",
+            "Thermometer",
+            "Funnel"
+          ],
+          0,
+          "A tripod stand supports apparatus above a flame."
+        ],
+        [
+          "What is the role of wire gauze during heating?",
+          [
+            "Spread heat and support a container",
+            "Measure mass",
+            "Measure volume",
+            "Stop all heat transfer"
+          ],
+          0,
+          "Wire gauze supports glassware and helps distribute heat."
+        ],
+        [
+          "Which action is unsafe when working with a Bunsen burner?",
+          [
+            "Leaving a lit burner unattended",
+            "Tying back long hair",
+            "Keeping flammable materials away",
+            "Checking the hose connection"
+          ],
+          0,
+          "A lit burner should never be left unattended."
+        ],
+        [
+          "What should be done before lighting a Bunsen burner?",
+          [
+            "Check the hose and follow the teacher's lighting procedure",
+            "Open the gas fully and walk away",
+            "Place paper beside the flame",
+            "Touch the barrel to test it"
+          ],
+          0,
+          "The equipment should be checked and lit only under supervision."
+        ],
+        [
+          "Why is a blue Bunsen burner flame generally hotter than a yellow luminous flame?",
+          [
+            "More air mixes with the gas, allowing more complete combustion",
+            "It contains no gas",
+            "It is produced without oxygen",
+            "It has a larger base"
+          ],
+          0,
+          "Greater air supply supports more complete combustion and a hotter flame."
+        ],
+        [
+          "Which gas is essential for aerobic respiration?",
+          [
+            "Oxygen",
+            "Nitrogen",
+            "Carbon dioxide",
+            "Argon"
+          ],
+          0,
+          "Aerobic respiration uses oxygen to release energy from food."
+        ],
+        [
+          "Which gas is present in air in the greatest amount after nitrogen?",
+          [
+            "Oxygen",
+            "Carbon dioxide",
+            "Hydrogen",
+            "Helium"
+          ],
+          0,
+          "Oxygen makes up about 21% of dry air."
+        ],
+        [
+          "Which statement about carbon dioxide in air is correct?",
+          [
+            "It is present in a small proportion and used in photosynthesis",
+            "It forms about 78% of air",
+            "It is the main gas used in breathing",
+            "It is absent from the atmosphere"
+          ],
+          0,
+          "Carbon dioxide is a trace gas used by plants in photosynthesis."
+        ],
+        [
+          "Which gas is commonly used in some fire extinguishers because it does not support combustion?",
+          [
+            "Carbon dioxide",
+            "Oxygen",
+            "Hydrogen",
+            "Chlorine"
+          ],
+          0,
+          "Carbon dioxide can displace oxygen around a fire and is used in suitable extinguishers."
+        ],
+        [
+          "Which of these is an example of friction being harmful?",
+          [
+            "Wear of machine parts",
+            "Walking without slipping",
+            "A car stopping when brakes are applied",
+            "Writing with a pencil"
+          ],
+          0,
+          "Friction can cause wear and unwanted heating in machine parts."
+        ],
+        [
+          "Which change is most likely to increase friction between two surfaces?",
+          [
+            "Making the surfaces rougher",
+            "Adding oil",
+            "Using ball bearings",
+            "Polishing the surfaces"
+          ],
+          0,
+          "Rougher surfaces generally increase friction."
+        ],
+        [
+          "Why do vehicle tyres have grooves?",
+          [
+            "To improve grip and help channel water away",
+            "To make the vehicle heavier",
+            "To eliminate all friction",
+            "To reduce the tyre diameter"
+          ],
+          0,
+          "Grooves improve traction, especially on wet roads."
+        ],
+        [
+          "Which statement about friction is correct?",
+          [
+            "It can produce heat",
+            "It always makes objects move faster",
+            "It acts only in liquids",
+            "It has no effect on motion"
+          ],
+          0,
+          "Friction converts some mechanical energy into heat."
+        ],
+        [
+          "Which blood group has neither A nor B antigen on red blood cells?",
+          [
+            "O",
+            "AB",
+            "A",
+            "B"
+          ],
+          0,
+          "Group O red cells lack A and B antigens."
+        ],
+        [
+          "Which blood group has both anti-A and anti-B antibodies in plasma in the basic ABO system?",
+          [
+            "O",
+            "AB",
+            "A",
+            "B"
+          ],
+          0,
+          "Group O plasma normally contains anti-A and anti-B antibodies."
+        ],
+        [
+          "Which blood group has A antigen and anti-B antibodies in the basic ABO system?",
+          [
+            "A",
+            "B",
+            "AB",
+            "O"
+          ],
+          0,
+          "Group A red cells carry A antigen; plasma normally has anti-B antibodies."
+        ],
+        [
+          "Which bone forms the shoulder-to-elbow part of the arm?",
+          [
+            "Humerus",
+            "Radius",
+            "Femur",
+            "Tibia"
+          ],
+          0,
+          "The humerus extends from the shoulder to the elbow."
+        ],
+        [
+          "Which pair consists of bones in the forearm?",
+          [
+            "Radius and ulna",
+            "Femur and tibia",
+            "Skull and ribs",
+            "Humerus and femur"
+          ],
+          0,
+          "The radius and ulna are the two forearm bones."
+        ],
+        [
+          "Which bone protects the spinal cord?",
+          [
+            "Vertebral column",
+            "Femur",
+            "Pelvis",
+            "Radius"
+          ],
+          0,
+          "The vertebrae surround and protect the spinal cord."
+        ],
+        [
+          "Which part of the skeleton protects the lungs?",
+          [
+            "Rib cage",
+            "Pelvis",
+            "Skull",
+            "Hand bones"
+          ],
+          0,
+          "The rib cage surrounds the chest and protects the lungs."
+        ],
+        [
+          "Which organ receives oxygen-poor blood from the body before it is sent to the lungs?",
+          [
+            "Right side of the heart",
+            "Left side of the heart",
+            "Stomach",
+            "Brain"
+          ],
+          0,
+          "The right side of the heart receives blood from the body and pumps it to the lungs."
+        ],
+        [
+          "Which side of the heart pumps oxygen-rich blood to the rest of the body?",
+          [
+            "Left side",
+            "Right side",
+            "Both atria only",
+            "Neither side"
+          ],
+          0,
+          "The left ventricle pumps oxygenated blood into the aorta and body."
+        ],
+        [
+          "What is the main function of capillaries?",
+          [
+            "Allow exchange of substances between blood and tissues",
+            "Pump blood out of the heart",
+            "Carry air into lungs",
+            "Make bones move"
+          ],
+          0,
+          "Their thin walls allow exchange of gases, nutrients and wastes."
+        ],
+        [
+          "Which first-aid action is appropriate for a small superficial burn?",
+          [
+            "Cool it under cool running water and report it",
+            "Apply butter immediately",
+            "Burst any blisters",
+            "Rub the area hard"
+          ],
+          0,
+          "Cool running water helps limit tissue damage; report the injury and seek help."
+        ],
+        [
+          "Why should disposable gloves be used when giving first aid to a bleeding person?",
+          [
+            "To reduce contact with blood and infection risk",
+            "To make the wound bleed faster",
+            "To replace handwashing permanently",
+            "To stop the need for medical help"
+          ],
+          0,
+          "Gloves provide a barrier against blood-borne infection."
+        ],
+        [
+          "Which item is best for securing a wound dressing?",
+          [
+            "Bandage",
+            "Thermometer",
+            "Measuring cylinder",
+            "Microscope slide"
+          ],
+          0,
+          "A bandage can hold a dressing in place."
+        ],
+        [
+          "A solid has a mass of 72 g and a volume of 9 cm³. What is its density?",
+          [
+            "8 g/cm³",
+            "9 g/cm³",
+            "63 g/cm³",
+            "81 g/cm³"
+          ],
+          0,
+          "72 divided by 9 equals 8 g/cm³."
+        ],
+        [
+          "A liquid has a density of 2 g/cm³ and a volume of 15 cm³. What is its mass?",
+          [
+            "30 g",
+            "7.5 g",
+            "17 g",
+            "0.13 g"
+          ],
+          0,
+          "Mass = density × volume = 2 × 15 = 30 g."
+        ],
+        [
+          "A substance has a mass of 48 g and density of 6 g/cm³. What is its volume?",
+          [
+            "8 cm³",
+            "42 cm³",
+            "54 cm³",
+            "288 cm³"
+          ],
+          0,
+          "Volume = mass ÷ density = 48 ÷ 6 = 8 cm³."
+        ],
+        [
+          "Which unit is appropriate for density of a small solid measured in grams and cubic centimetres?",
+          [
+            "g/cm³",
+            "cm/g",
+            "g × cm³",
+            "cm²"
+          ],
+          0,
+          "Density is mass divided by volume, so g/cm³ is appropriate."
+        ],
+        [
+          "If an object is fully immersed in water, the rise in water level represents the object's what?",
+          [
+            "Volume",
+            "Mass",
+            "Temperature",
+            "Weight"
+          ],
+          0,
+          "The displaced water volume equals the volume of the immersed object."
+        ],
+        [
+          "Which reading is correct for a clear water meniscus?",
+          [
+            "The bottom of the curve",
+            "The highest point of the curve",
+            "The cylinder rim",
+            "The midpoint of the cylinder"
+          ],
+          0,
+          "Read the bottom of the concave meniscus at eye level."
+        ],
+        [
+          "What does red litmus paper do in an alkaline solution?",
+          [
+            "Turns blue",
+            "Turns redder",
+            "Turns black",
+            "Dissolves immediately"
+          ],
+          0,
+          "Alkalis turn red litmus paper blue."
+        ],
+        [
+          "Which of the following is a safe way to smell a substance when instructed to do so?",
+          [
+            "Waft vapour gently towards the nose",
+            "Put the nose directly over the container",
+            "Shake the container near the face",
+            "Taste a tiny amount"
+          ],
+          0,
+          "Wafting reduces direct exposure to concentrated vapours."
         ]
       ],
       "structured": [
@@ -636,6 +1054,156 @@
           "A learner mixes two unknown substances and notices heat and gas. State three actions the learner should take.",
           "Award 1 mark each: stop mixing; move away if unsafe and avoid inhaling fumes; alert teacher immediately; do not touch/taste mixture; follow teacher's emergency instructions.",
           3
+        ],
+        [
+          "Explain the difference between mass and volume, giving the unit commonly used for each in the laboratory.",
+          "Mass is the amount of matter (g or kg); volume is the space occupied (cm³ or mL). Award 1 mark for each correct definition and 1 for each suitable unit.",
+          4
+        ],
+        [
+          "A learner measures 25 mL of water. Convert this volume into cubic centimetres.",
+          "Award 1 mark for recognising 1 mL = 1 cm³ and 1 mark for 25 cm³.",
+          2
+        ],
+        [
+          "A stone is placed in a measuring cylinder. Water rises from 40 cm³ to 57 cm³. Determine the volume of the stone and show the calculation.",
+          "Award 1 mark for subtraction; 1 mark for 57 − 40; 1 mark for 17 cm³.",
+          3
+        ],
+        [
+          "Describe two sources of error when measuring liquid volume and how to reduce each error.",
+          "Award 1 mark per error and 1 per remedy: parallax—read at eye level; tilted cylinder—stand upright; unsettled liquid—allow it to settle; wrong meniscus point—read bottom for water.",
+          4
+        ],
+        [
+          "State the relationship between density, mass and volume, and rearrange the formula to make mass the subject.",
+          "Award 1 mark for D=m/V; 1 mark for m=D×V.",
+          2
+        ],
+        [
+          "A sample has density 5 g/cm³ and volume 12 cm³. Calculate its mass.",
+          "Award 1 mark for formula; 1 for substitution; 1 for 60 g.",
+          3
+        ],
+        [
+          "A metal has mass 96 g and density 8 g/cm³. Calculate its volume.",
+          "Award 1 mark for formula; 1 for substitution; 1 for 12 cm³.",
+          3
+        ],
+        [
+          "Explain why equal volumes of two different substances may have different masses.",
+          "Award up to 2 marks: substances have different densities; at equal volume, the substance with greater density has greater mass.",
+          2
+        ],
+        [
+          "Describe the difference between arteries and veins.",
+          "Award up to 3 marks: arteries carry blood away from heart; veins carry blood towards heart; arteries generally have thicker elastic walls while veins have valves in many regions.",
+          3
+        ],
+        [
+          "State the roles of the right atrium, right ventricle, left atrium and left ventricle.",
+          "Award 1 mark each: right atrium receives body blood; right ventricle pumps to lungs; left atrium receives lung blood; left ventricle pumps to body.",
+          4
+        ],
+        [
+          "Explain why the left ventricle has a thicker muscular wall than the right ventricle.",
+          "Award up to 2 marks: it pumps blood around the whole body; it must generate higher pressure than the right ventricle, which pumps to the nearby lungs.",
+          2
+        ],
+        [
+          "Give three ways in which the skeleton helps the human body to move.",
+          "Award 1 mark each: bones provide attachment for muscles; joints allow movement; muscles pull on bones acting as levers.",
+          3
+        ],
+        [
+          "Compare the functions of the skull and the rib cage.",
+          "Award 2 marks: skull protects brain; rib cage protects heart and lungs.",
+          2
+        ],
+        [
+          "Describe the location of the femur, tibia, radius and humerus in the human body.",
+          "Award 1 mark each: femur—thigh; tibia—lower leg; radius—forearm; humerus—upper arm.",
+          4
+        ],
+        [
+          "Explain why a microscope should be placed on a firm, level bench.",
+          "Award up to 2 marks: prevents it from falling; provides stable viewing and focusing.",
+          2
+        ],
+        [
+          "Outline the correct sequence for focusing a prepared slide using a light microscope.",
+          "Award up to 4 marks: place slide on stage and secure; select low-power objective; look through eyepiece and use coarse focus carefully; use fine focus for a clear image; adjust light as needed.",
+          4
+        ],
+        [
+          "State three ways to prevent accidents when using heating equipment.",
+          "Award 1 mark each: tie back long hair; keep flammables away; use tongs/heatproof mats; never leave flame unattended; turn off gas after use.",
+          3
+        ],
+        [
+          "Explain why a learner should allow heated glassware to cool before handling it.",
+          "Award up to 2 marks: hot glass may cause burns; hot glass can look similar to cool glass, so use tongs or heatproof protection.",
+          2
+        ],
+        [
+          "Describe how friction helps a cyclist to control a bicycle.",
+          "Award up to 3 marks: tyre-road friction provides grip; brake-pad friction slows wheel rotation; hand grip prevents slipping on handlebars.",
+          3
+        ],
+        [
+          "State two disadvantages of excessive friction in machines and one way to reduce each disadvantage.",
+          "Award 1 mark each for wear and energy loss/heat; 1 mark each for lubrication, bearings or smoother surfaces.",
+          4
+        ],
+        [
+          "Explain why friction is necessary for a person to walk without slipping.",
+          "Award up to 2 marks: shoe pushes backward against ground; friction from ground acts forward and provides grip for walking.",
+          2
+        ],
+        [
+          "State the approximate percentages of nitrogen and oxygen in dry air and explain why air is described as a mixture.",
+          "Award 2 marks for nitrogen about 78% and oxygen about 21%; 1 mark because gases are physically mixed, not chemically combined, and proportions can vary slightly.",
+          3
+        ],
+        [
+          "Describe an investigation to show that air contains oxygen, identifying one observation and a safety precaution.",
+          "Award up to 3 marks: describe a suitable teacher-supervised demonstration; observation showing oxygen supports combustion; include safe handling of flame/hot apparatus and adult supervision.",
+          3
+        ],
+        [
+          "Give two reasons why oxygen is important to living things and one reason why carbon dioxide is important to plants.",
+          "Award 1 mark each: oxygen used in aerobic respiration; supports energy release; carbon dioxide is a raw material for photosynthesis.",
+          3
+        ],
+        [
+          "Explain why carbon dioxide can help put out some fires.",
+          "Award up to 2 marks: it does not support combustion; it can form a layer that reduces oxygen reaching the fire. Mention suitable extinguisher use only.",
+          2
+        ],
+        [
+          "State four functions of a first-aid kit in a school setting.",
+          "Award 1 mark each: provide immediate basic care; protect wounds; control minor bleeding; reduce contamination; support safe response while help is obtained.",
+          4
+        ],
+        [
+          "Describe the precautions to take before helping a learner who has collapsed in the laboratory.",
+          "Award up to 3 marks: check scene safety; call teacher/first aider; do not crowd or move learner unnecessarily; check responsiveness/breathing only if trained; seek emergency help.",
+          3
+        ],
+        [
+          "Explain why a learner should report every laboratory injury, even if it appears minor.",
+          "Award up to 2 marks: injuries may worsen or become infected; teacher can provide correct first aid and record/monitor incident.",
+          2
+        ],
+        [
+          "Distinguish between an acid and an alkali using their effect on litmus and give one example of each.",
+          "Award 1 mark each for litmus effect and 1 each for examples: acid turns blue litmus red (e.g. vinegar/lemon juice); alkali turns red litmus blue (e.g. soap solution/limewater).",
+          4
+        ],
+        [
+          "A learner obtains a density of 0.8 g/cm³ for a sample. Explain what this value means.",
+          "Award up to 2 marks: each cubic centimetre of the sample has a mass of 0.8 g.",
+          2
         ]
       ]
     },
