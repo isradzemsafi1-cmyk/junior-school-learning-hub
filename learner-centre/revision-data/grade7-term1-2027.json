@@ -5231,8 +5231,440 @@
     {
       "id": "social-studies",
       "name": "Social Studies",
-      "mcq": [],
-      "structured": []
+      "mcq": [
+        [
+          "Which is a component of Social Studies?",
+          [
+            "Geography",
+            "Algebra only",
+            "Chemistry only",
+            "Music only"
+          ],
+          0,
+          "Geography is a component of Social Studies."
+        ],
+        [
+          "The outermost solid layer of the Earth is the:",
+          [
+            "Crust",
+            "Outer core",
+            "Inner core",
+            "Mantle"
+          ],
+          0,
+          "The crust is the Earth's outermost solid layer."
+        ],
+        [
+          "The Earth rotates on its:",
+          [
+            "Axis",
+            "Orbit around the Sun",
+            "Equator only",
+            "Atmosphere"
+          ],
+          0,
+          "Rotation is the spinning of Earth on its axis."
+        ],
+        [
+          "One effect of Earth's rotation is:",
+          [
+            "Day and night",
+            "The annual seasons only",
+            "Eclipses every day",
+            "Formation of continents"
+          ],
+          0,
+          "Rotation causes day and night."
+        ],
+        [
+          "The Earth takes approximately ____ to revolve around the Sun.",
+          [
+            "24 hours",
+            "7 days",
+            "365¼ days",
+            "30 days"
+          ],
+          2,
+          "One revolution takes about 365¼ days."
+        ],
+        [
+          "Which instrument measures rainfall?",
+          [
+            "Rain gauge",
+            "Wind vane",
+            "Thermometer",
+            "Barometer"
+          ],
+          0,
+          "A rain gauge measures rainfall."
+        ],
+        [
+          "Which instrument measures air temperature?",
+          [
+            "Thermometer",
+            "Anemometer",
+            "Rain gauge",
+            "Wind vane"
+          ],
+          0,
+          "A thermometer measures temperature."
+        ],
+        [
+          "Which instrument shows wind direction?",
+          [
+            "Wind vane",
+            "Barometer",
+            "Rain gauge",
+            "Hygrometer"
+          ],
+          0,
+          "A wind vane indicates wind direction."
+        ],
+        [
+          "The total number of people living in an area is its:",
+          [
+            "Population",
+            "Climate",
+            "Relief",
+            "Vegetation"
+          ],
+          0,
+          "Population is the total number of people."
+        ],
+        [
+          "An area with many people per unit area is:",
+          [
+            "Densely populated",
+            "Sparsely populated",
+            "Uninhabited",
+            "Deserted"
+          ],
+          0,
+          "Densely populated areas have many people in a given area."
+        ],
+        [
+          "The way of life of a community is called:",
+          [
+            "Culture",
+            "Weather",
+            "Mineral",
+            "Latitude"
+          ],
+          0,
+          "Culture refers to a community's way of life."
+        ],
+        [
+          "Which is an example of cultural heritage?",
+          [
+            "Traditional dance",
+            "Rainfall",
+            "Longitude",
+            "Air pressure"
+          ],
+          0,
+          "Traditional dance is part of cultural heritage."
+        ],
+        [
+          "Which mineral is mined at Lake Magadi?",
+          [
+            "Soda ash",
+            "Gold",
+            "Coal",
+            "Iron ore"
+          ],
+          0,
+          "Lake Magadi is known for soda ash."
+        ],
+        [
+          "Fluorspar in Kenya has been mined around:",
+          [
+            "Kerio Valley",
+            "Lake Victoria",
+            "Lamu Island",
+            "Mount Kenya summit"
+          ],
+          0,
+          "The Kerio Valley area is known for fluorspar deposits."
+        ],
+        [
+          "Diatomite is associated with deposits around:",
+          [
+            "Kariandusi near Gilgil",
+            "Mombasa Island",
+            "Lake Magadi",
+            "Kisumu port"
+          ],
+          0,
+          "Kariandusi near Gilgil is a known diatomite locality."
+        ],
+        [
+          "Which is an element of weather?",
+          [
+            "Humidity",
+            "Population",
+            "Language",
+            "Mineral"
+          ],
+          0,
+          "Humidity is an element of weather."
+        ],
+        [
+          "Which is a suitable site for a weather station?",
+          [
+            "Open ground away from obstructions",
+            "Inside a crowded classroom",
+            "Under a large tree",
+            "Beside a smoky chimney"
+          ],
+          0,
+          "An open site reduces interference with observations."
+        ],
+        [
+          "A place where objects and records of the past are preserved is a:",
+          [
+            "Museum",
+            "Market",
+            "Stadium",
+            "Factory"
+          ],
+          0,
+          "Museums preserve historical and cultural objects."
+        ],
+        [
+          "The capital city of Burundi is:",
+          [
+            "Gitega",
+            "Rabat",
+            "Nairobi",
+            "Kigali"
+          ],
+          0,
+          "Gitega is Burundi's capital."
+        ],
+        [
+          "The planet known as the Red Planet is:",
+          [
+            "Mars",
+            "Venus",
+            "Jupiter",
+            "Mercury"
+          ],
+          0,
+          "Mars appears reddish due to iron oxide on its surface."
+        ],
+        [
+          "The planet known as the Evening Star is:",
+          [
+            "Venus",
+            "Saturn",
+            "Neptune",
+            "Earth"
+          ],
+          0,
+          "Venus is often visible as the evening star."
+        ],
+        [
+          "The largest planet in the solar system is:",
+          [
+            "Jupiter",
+            "Mercury",
+            "Mars",
+            "Venus"
+          ],
+          0,
+          "Jupiter is the largest planet."
+        ],
+        [
+          "The planet with prominent rings is:",
+          [
+            "Saturn",
+            "Earth",
+            "Mercury",
+            "Mars"
+          ],
+          0,
+          "Saturn is famous for its ring system."
+        ],
+        [
+          "The Equator is a line of:",
+          [
+            "Latitude",
+            "Longitude",
+            "Altitude",
+            "Time zone"
+          ],
+          0,
+          "The Equator is 0° latitude."
+        ],
+        [
+          "Which is a use of maps?",
+          [
+            "Locating places and planning routes",
+            "Measuring body temperature",
+            "Predicting personal income",
+            "Making rainfall"
+          ],
+          0,
+          "Maps help locate places and plan journeys."
+        ]
+      ],
+      "structured": [
+        [
+          "Name three components of Social Studies.",
+          "Geography, History, Civics/Government, Economics or related social sciences. Any three (1 each).",
+          3
+        ],
+        [
+          "Name the four main internal layers/regions of the Earth commonly shown in a cross-section.",
+          "Crust, mantle, outer core and inner core. (1 each)",
+          4
+        ],
+        [
+          "Distinguish between rotation and revolution of the Earth.",
+          "Rotation is spinning on its axis (1); revolution is movement around the Sun along an orbit (1).",
+          2
+        ],
+        [
+          "State two effects of Earth's rotation and two effects of its revolution.",
+          "Rotation: day/night and apparent movement of sun/stars or time differences (any two); revolution: year and seasonal changes when combined with axial tilt (any two).",
+          4
+        ],
+        [
+          "Name three weather-measuring instruments and state what each measures.",
+          "Thermometer—temperature; rain gauge—rainfall; wind vane—wind direction; anemometer—wind speed; barometer—air pressure; hygrometer—humidity. Any three pairs.",
+          3
+        ],
+        [
+          "Give one example of a community from each group: Bantu, Nilotes, Cushites, Europeans and Asians.",
+          "Examples: Bantu—Kikuyu/Luhya/Kamba; Nilotes—Luo/Maasai/Kalenjin; Cushites—Somali/Rendille; Europeans—British/French; Asians—Indian/Chinese. One each.",
+          5
+        ],
+        [
+          "Define population and population density.",
+          "Population is the total number of people in an area (1); population density is the number of people per unit area (1).",
+          2
+        ],
+        [
+          "Name the Kenyan localities associated with soda ash, fluorspar and diatomite.",
+          "Soda ash—Lake Magadi; fluorspar—Kerio Valley; diatomite—Kariandusi/Gilgil. (1 each)",
+          3
+        ],
+        [
+          "State two factors to consider when siting a weather station.",
+          "Open level ground; away from buildings/trees; secure and accessible; representative of local conditions. Any two.",
+          2
+        ],
+        [
+          "Differentiate between densely and sparsely populated areas.",
+          "Densely populated areas have many people per unit area; sparsely populated areas have few people per unit area. (2)",
+          2
+        ],
+        [
+          "Define culture and give two aspects of culture.",
+          "Culture is a community's way of life (1); language, food, dress, beliefs, customs, music, dance or ceremonies. Any two (1 each).",
+          3
+        ],
+        [
+          "What is cultural heritage? Give three examples of places or institutions that preserve it.",
+          "Inherited cultural/historical features and practices (1); museums, monuments, historic buildings, cultural centres. Any three (1 each).",
+          4
+        ],
+        [
+          "State three elements of weather.",
+          "Temperature, rainfall, wind, humidity, air pressure, cloud cover. Any three.",
+          3
+        ],
+        [
+          "What are monuments and why are they important?",
+          "Structures/statues commemorating people or events (1); preserve memory/history and educate future generations (1).",
+          2
+        ],
+        [
+          "Name the capital cities of Burundi and Morocco.",
+          "Burundi—Gitega; Morocco—Rabat. (1 each)",
+          2
+        ],
+        [
+          "State three facts about planet Earth.",
+          "Third planet from the Sun; supports known life; has liquid water; approximately spherical; has one natural moon. Any three.",
+          3
+        ],
+        [
+          "On which two dates is the Sun overhead at the Equator during the equinoxes?",
+          "Around 20/21 March and 22/23 September. (1 each)",
+          2
+        ],
+        [
+          "Name three main components/gases of the atmosphere.",
+          "Nitrogen, oxygen and argon/carbon dioxide/water vapour. Any three valid constituents.",
+          3
+        ],
+        [
+          "Define horticulture.",
+          "The growing of fruits, vegetables, flowers and ornamental plants. (1)",
+          1
+        ],
+        [
+          "Name three important lines of latitude crossing or near Africa.",
+          "Equator, Tropic of Cancer and Tropic of Capricorn. (1 each)",
+          3
+        ],
+        [
+          "Explain how to calculate local time using longitude.",
+          "Earth rotates 360° in 24 hours, so 15° = 1 hour and 1° = 4 minutes; add time eastward and subtract westward. (3)",
+          3
+        ],
+        [
+          "Freetown is at 15°W and it is 7:00 a.m. What is the local time at Cape Town, 18°E? Show working.",
+          "Longitude difference = 33° (1); time difference = 33×4 = 132 min = 2 h 12 min (1); Cape Town is east, add: 9:12 a.m. (1).",
+          3
+        ],
+        [
+          "State three importance of maps in everyday life.",
+          "Locating places, route planning/navigation, showing distribution of features, planning development, studying regions. Any three.",
+          3
+        ],
+        [
+          "Name three components of the solar system.",
+          "Sun, planets, moons, asteroids, comets, meteoroids. Any three.",
+          3
+        ],
+        [
+          "Name the planets referred to as the Red Planet, Evening Star, largest planet and ringed planet.",
+          "Mars; Venus; Jupiter; Saturn. (1 each)",
+          4
+        ],
+        [
+          "Name two theories that have been used to explain the origin of the solar system.",
+          "Nebular hypothesis and planetesimal/tidal hypothesis. (1 each)",
+          2
+        ],
+        [
+          "Outline the nebular hypothesis of the origin of the solar system.",
+          "A rotating cloud of gas and dust contracted under gravity; the central mass formed the Sun; remaining material flattened into a disc and accreted to form planets and other bodies. Award up to 5 for ordered points.",
+          5
+        ],
+        [
+          "Give three names used to describe the Earth's shape.",
+          "Spherical, oblate spheroid, geoid. (1 each)",
+          3
+        ],
+        [
+          "State three pieces of evidence that the Earth is approximately spherical.",
+          "Ships disappear hull-first over horizon; circular shadow during lunar eclipse; circumnavigation; photographs from space; changing stars with latitude. Any three.",
+          3
+        ],
+        [
+          "State four effects of Earth's rotation on human activities.",
+          "Creates day/night cycle; causes differences in local time; influences daily work/rest schedules; apparent movement of Sun affects timing of activities. Any four explained.",
+          4
+        ]
+      ],
+      "source": {
+        "paper": "OPENER 001 2027 TERM 1 GRADE 7",
+        "pages": "79–85",
+        "basis": "Social Studies components; Earth structure, rotation/revolution; weather instruments/elements; communities; population; minerals; culture/heritage; African capitals; latitude/time calculation; maps; solar system; origin theories; shape of Earth and effects of rotation. Supplementary practice items added by JSLH."
+      }
     }
   ]
 }
