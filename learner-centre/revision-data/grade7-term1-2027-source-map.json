@@ -1,0 +1,174 @@
+{
+  "grade": 7,
+  "term": 1,
+  "year": 2027,
+  "source": "User-uploaded OPENER 001 2027 Term 1 Grade 7 PDF (86 pages)",
+  "status": "source-audit",
+  "note": "Topic map extracted from the supplied paper. This is not the 2,000-question bank and must not be presented as completed learner content.",
+  "areas": [
+    {
+      "id": "agriculture",
+      "name": "Agriculture & Nutrition",
+      "sourcePages": "3-9",
+      "topics": [
+        "water conservation challenges in agricultural environments",
+        "agroforestry meaning and environmental conservation",
+        "benefits and care of agroforestry trees",
+        "planting materials for agroforestry",
+        "structures for conserving surface runoff",
+        "crop planting sites",
+        "soil tilth and categories by planting-material size",
+        "ground seedbed preparation",
+        "categories of planting materials",
+        "vegetative planting materials",
+        "methods and timing of planting",
+        "weed identification",
+        "factors determining planting time",
+        "roles of Home Science education",
+        "roasting guidelines and safety",
+        "factors when buying household goods and services",
+        "re-use and recycling of kitchen tools",
+        "nutritional deficiency diseases",
+        "improvising food-preparation equipment",
+        "sales outlets and methods of buying",
+        "saving income and challenges when buying",
+        "plant identification",
+        "uses of fibres and cotton properties"
+      ]
+    },
+    {
+      "id": "cre",
+      "name": "CRE",
+      "sourcePages": "10-14",
+      "topics": [
+        "similarities between biblical and African creation stories",
+        "Christian care for animals, fish and birds",
+        "effects of misuse of natural resources",
+        "uses and divisions of the Bible",
+        "major prophet book writers",
+        "life skills for healthy relationships",
+        "drug abuse and reasons among young people",
+        "social media platforms, misuse and online stranger risks",
+        "meaning and importance of studying CRE",
+        "moral and religious values",
+        "first biblical creation account",
+        "second biblical creation account Genesis 2:4-25",
+        "attributes of God",
+        "similarities and differences between the two creation accounts"
+      ]
+    },
+    {
+      "id": "creative-arts",
+      "name": "Creative Arts & Sports",
+      "sourcePages": "15-20 onward",
+      "topics": [
+        "types of eye views",
+        "three-dimensional art forms",
+        "still-life drawing and composition",
+        "painting tools and materials",
+        "colour wheel and primary colours",
+        "analogous colours",
+        "properties of colour",
+        "perspective and its components",
+        "tints and shades",
+        "colour intensity and gradation",
+        "netball and handball skills",
+        "passes, reception, pivoting and marking",
+        "court dimensions, penalties and rules",
+        "landing techniques and game safety"
+      ]
+    },
+    {
+      "id": "integrated-science",
+      "name": "Integrated Science",
+      "sourcePages": "from page 21 onward",
+      "topics": [
+        "laboratory apparatus identification",
+        "first-aid kit components",
+        "density calculations",
+        "reading a meniscus",
+        "laboratory safety and injury response"
+      ]
+    },
+    {
+      "id": "ire",
+      "name": "IRE",
+      "sourcePages": "from page 21 onward",
+      "topics": [
+        "Islamic worship and purification topics in the supplied paper; detailed page extraction required before question drafting"
+      ]
+    },
+    {
+      "id": "english",
+      "name": "English",
+      "sourcePages": "from page 21 onward",
+      "topics": [
+        "comprehension using the Owl's daughter passage",
+        "vocabulary in context",
+        "personal pronouns",
+        "identifying subjects and objects in sentences"
+      ]
+    },
+    {
+      "id": "kiswahili",
+      "name": "Kiswahili",
+      "sourcePages": "from page 21 onward",
+      "topics": [
+        "Kiswahili language skills and grammar as covered in the supplied paper; detailed page extraction required before question drafting"
+      ]
+    },
+    {
+      "id": "mathematics",
+      "name": "Mathematics",
+      "sourcePages": "from page 21 onward",
+      "topics": [
+        "fractions in a salary context",
+        "LCM and HCF",
+        "capacity and related calculations"
+      ]
+    },
+    {
+      "id": "pre-technical",
+      "name": "Pre-Technical Studies",
+      "sourcePages": "from page 21 onward",
+      "topics": [
+        "metals and non-metals",
+        "physical properties of materials",
+        "careers and local materials",
+        "computer safety",
+        "UPS functions",
+        "computer ergonomics and user posture",
+        "computer generations",
+        "computer laboratory environment and fire safety",
+        "keyboard keys and computer shutdown"
+      ]
+    },
+    {
+      "id": "social-studies",
+      "name": "Social Studies",
+      "sourcePages": "79-85",
+      "topics": [
+        "components of Social Studies",
+        "internal and external structure of the Earth",
+        "effects of rotation and revolution",
+        "weather instruments and elements",
+        "communities in Kenya",
+        "population distribution and density",
+        "mineral resources and mining locations in Kenya",
+        "weather station siting",
+        "culture and heritage sites",
+        "capital cities of African countries",
+        "road signs and road safety",
+        "facts about Earth and important latitudes",
+        "atmosphere",
+        "maps and their uses",
+        "solar system and planets",
+        "theories on origin of the solar system and Earth",
+        "shape and proofs of Earth's sphericity",
+        "effects of Earth's rotation on human activities",
+        "local time calculation using longitude"
+      ]
+    }
+  ],
+  "nextBuildRule": "Draft and verify the 80 MCQ + 120 structured questions for each area using the complete page text and curriculum scope. Clearly label curriculum-created supplementary practice. Do not deploy until all 30 area-term files pass the repository validator."
+}
