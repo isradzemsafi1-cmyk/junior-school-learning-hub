@@ -7135,6 +7135,116 @@
           ],
           2,
           "Cube volume is side cubed."
+        ],
+        [
+          "Find 15% of 240.",
+          [
+            "36",
+            "24",
+            "15",
+            "48"
+          ],
+          0,
+          "0.15 × 240 = 36."
+        ],
+        [
+          "Find the HCF of 24 and 36.",
+          [
+            "12",
+            "6",
+            "18",
+            "72"
+          ],
+          0,
+          "12 is the greatest common factor."
+        ],
+        [
+          "Find the LCM of 6 and 8.",
+          [
+            "24",
+            "48",
+            "14",
+            "2"
+          ],
+          0,
+          "24 is the smallest common multiple."
+        ],
+        [
+          "Solve 3x + 5 = 20.",
+          [
+            "5",
+            "15",
+            "25",
+            "3"
+          ],
+          0,
+          "3x = 15, so x = 5."
+        ],
+        [
+          "Find the area of a 12 cm by 5 cm rectangle.",
+          [
+            "60 cm²",
+            "34 cm²",
+            "17 cm²",
+            "120 cm²"
+          ],
+          0,
+          "Area = length × width."
+        ],
+        [
+          "Find the circumference of a circle with radius 7 cm, π=22/7.",
+          [
+            "44 cm",
+            "154 cm",
+            "22 cm",
+            "49 cm"
+          ],
+          0,
+          "2πr = 44 cm."
+        ],
+        [
+          "Express 0.35 as a percentage.",
+          [
+            "35%",
+            "3.5%",
+            "0.35%",
+            "350%"
+          ],
+          0,
+          "Multiply by 100."
+        ],
+        [
+          "Find ⅔ of 45.",
+          [
+            "30",
+            "15",
+            "20",
+            "35"
+          ],
+          0,
+          "45 ÷ 3 × 2 = 30."
+        ],
+        [
+          "A triangle has angles 50° and 60°. Find the third angle.",
+          [
+            "70°",
+            "80°",
+            "90°",
+            "110°"
+          ],
+          0,
+          "Angles in a triangle total 180°."
+        ],
+        [
+          "Convert 3.6 km to metres.",
+          [
+            "3,600 m",
+            "360 m",
+            "36,000 m",
+            "360,000 m"
+          ],
+          0,
+          "1 km = 1,000 m."
         ]
       ],
       "structured": [
@@ -7262,12 +7372,62 @@
           "How many days are there in November, December and January? Show your working.",
           "30 + 31 + 31 = 92 days. (1)",
           1
+        ],
+        [
+          "Convert 4.2 hectares to square metres and 3.75 km to metres.",
+          "42,000 m² (2); 3,750 m (2).",
+          4
+        ],
+        [
+          "A trader buys an item for KSh 1,200 and sells it for KSh 1,500. Find profit and profit percentage.",
+          "Profit=300 (2); 300/1200×100=25% (2).",
+          4
+        ],
+        [
+          "Find HCF and LCM of 18 and 30 by prime factorisation.",
+          "18=2×3²; 30=2×3×5; HCF=6; LCM=90. Award up to 4.",
+          4
+        ],
+        [
+          "A rectangular garden is 18 m by 11 m. Find perimeter and area.",
+          "Perimeter=58 m (2); area=198 m² (2).",
+          4
+        ],
+        [
+          "Solve 4x−7=21 and 2y+9=25.",
+          "x=7 (2); y=8 (2).",
+          4
+        ],
+        [
+          "Simplify 5/6−1/3 and 2/5×15/4.",
+          "1/2 (2); 3/2 or 1½ (2).",
+          4
+        ],
+        [
+          "A tank contains 240 litres. If 35% is used, how many litres remain?",
+          "Used=84 L; remaining=156 L. Working and answer (4).",
+          4
+        ],
+        [
+          "Find mean, median and range of 5, 7, 9, 9, 10.",
+          "Mean=8; median=9; range=5. (4)",
+          4
+        ],
+        [
+          "A bus leaves at 8:35 a.m. and arrives at 11:10 a.m. Find journey time.",
+          "2 hours 35 minutes. (2)",
+          2
+        ],
+        [
+          "A map scale is 1:50,000. What actual distance is represented by 6 cm?",
+          "300,000 cm = 3 km. (4)",
+          4
         ]
       ],
       "source": {
         "paper": "OPENER 001 2027 TERM 1 GRADE 7",
         "pages": "60–69",
-        "basis": "Triangle angles, circle area, metric area/volume conversion, prime factors, GCD/LCM, fractions, decimals, algebra, perimeter, square geometry and calendar arithmetic. Original JSLH practice items supplement the paper."
+        "basis": "Triangle angles, circle area, metric area/volume conversion, prime factors, GCD/LCM, fractions, decimals, algebra, perimeter, square geometry and calendar arithmetic. Original JSLH practice items supplement the paper. Supplementary JSLH practice questions aligned to learning area topics."
       }
     },
     {
@@ -7548,6 +7708,116 @@
           ],
           0,
           "A UPS supplies temporary power during an outage."
+        ],
+        [
+          "Which property makes copper useful for electrical wiring?",
+          [
+            "Good electrical conductivity",
+            "Brittleness",
+            "Transparency",
+            "Absorbency"
+          ],
+          0,
+          "Copper conducts electricity well."
+        ],
+        [
+          "A material containing iron as its main constituent is:",
+          [
+            "Ferrous",
+            "Non-ferrous",
+            "Synthetic",
+            "Ceramic"
+          ],
+          0,
+          "Ferrous materials contain iron."
+        ],
+        [
+          "Which is a non-ferrous metal?",
+          [
+            "Aluminium",
+            "Cast iron",
+            "Mild steel",
+            "Wrought iron"
+          ],
+          0,
+          "Aluminium is non-ferrous."
+        ],
+        [
+          "Which is a natural material?",
+          [
+            "Timber",
+            "Nylon",
+            "Plastic",
+            "PVC"
+          ],
+          0,
+          "Timber comes from trees."
+        ],
+        [
+          "Which device provides temporary backup power to a computer?",
+          [
+            "UPS",
+            "Mouse",
+            "Monitor",
+            "Keyboard"
+          ],
+          0,
+          "A UPS supplies temporary backup power."
+        ],
+        [
+          "Which is an input device?",
+          [
+            "Keyboard",
+            "Monitor",
+            "Speaker",
+            "Printer"
+          ],
+          0,
+          "A keyboard sends data into a computer."
+        ],
+        [
+          "Which posture is best when using a computer?",
+          [
+            "Back supported and screen near eye level",
+            "Bending over the keyboard",
+            "Sitting without support",
+            "Looking sharply down"
+          ],
+          0,
+          "Good posture reduces strain."
+        ],
+        [
+          "The main purpose of a fuse is to:",
+          [
+            "Protect a circuit from excessive current",
+            "Increase voltage",
+            "Store electricity",
+            "Produce sound"
+          ],
+          0,
+          "A fuse breaks a circuit when current is excessive."
+        ],
+        [
+          "An entrepreneur is a person who:",
+          [
+            "Organises a business and takes calculated risks",
+            "Avoids all planning",
+            "Never sells goods",
+            "Only works for government"
+          ],
+          0,
+          "Entrepreneurs organise resources and pursue opportunities."
+        ],
+        [
+          "Which is a safe workshop practice?",
+          [
+            "Wear appropriate protective equipment",
+            "Run between workbenches",
+            "Leave tools on the floor",
+            "Operate machines without instruction"
+          ],
+          0,
+          "PPE reduces exposure to hazards."
         ]
       ],
       "structured": [
@@ -7675,12 +7945,62 @@
           "Identify three facilities that ensure proper ventilation in a room.",
           "Windows, doors, ventilators/air vents, fans or air-conditioning. Any three.",
           3
+        ],
+        [
+          "Differentiate between ferrous and non-ferrous metals and give two examples of each.",
+          "Ferrous contain iron, e.g. steel/cast iron; non-ferrous do not have iron as main constituent, e.g. copper/aluminium. (4)",
+          4
+        ],
+        [
+          "State four properties of metals useful in construction.",
+          "Strength, hardness, malleability, ductility, conductivity, durability. Any four.",
+          4
+        ],
+        [
+          "Differentiate natural and synthetic materials with two examples each.",
+          "Natural occur in nature e.g. timber/cotton; synthetic are manufactured e.g. nylon/PVC. (4)",
+          4
+        ],
+        [
+          "State four factors to consider when selecting a material for an object.",
+          "Strength, durability, cost, availability, appearance, weight, workability and intended use. Any four.",
+          4
+        ],
+        [
+          "Give four workshop safety rules.",
+          "Wear PPE; follow instructions; use correct tool; keep floor clear; report damage; store tools safely. Any four.",
+          4
+        ],
+        [
+          "Explain the function of a fuse and a UPS.",
+          "Fuse interrupts circuit when current is excessive (2); UPS provides temporary backup power (2).",
+          4
+        ],
+        [
+          "State four ergonomic practices when using a computer.",
+          "Back supported; feet flat; screen near eye level; wrists neutral; adequate lighting; take breaks. Any four.",
+          4
+        ],
+        [
+          "Name four input devices and their functions.",
+          "Keyboard—text; mouse—pointer; microphone—sound; scanner—images/documents. Any four pairs.",
+          4
+        ],
+        [
+          "Name four output devices and their functions.",
+          "Monitor—visual display; printer—hard copy; speakers—sound; projector—large display. Any four pairs.",
+          4
+        ],
+        [
+          "State four qualities of a successful entrepreneur.",
+          "Creativity, persistence, confidence, planning, responsible risk-taking, problem-solving and honesty. Any four.",
+          4
         ]
       ],
       "source": {
         "paper": "OPENER 001 2027 TERM 1 GRADE 7",
         "pages": "70–78",
-        "basis": "Materials and their properties; ferrous/non-ferrous and natural/synthetic materials; careers; entrepreneurship; personal goals; talents and abilities; business environment; needs/wants; computer safety, ergonomics, UPS, third-generation computers and keyboard. Original JSLH supplementary practice included."
+        "basis": "Materials and their properties; ferrous/non-ferrous and natural/synthetic materials; careers; entrepreneurship; personal goals; talents and abilities; business environment; needs/wants; computer safety, ergonomics, UPS, third-generation computers and keyboard. Original JSLH supplementary practice included. Supplementary JSLH practice questions aligned to learning area topics."
       }
     },
     {
