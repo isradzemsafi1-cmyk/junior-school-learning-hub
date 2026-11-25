@@ -1,0 +1,85 @@
+{
+  "title": "Grade 7 Prior Materials Inventory and Reuse Assessment",
+  "generatedAt": "2026-11-25",
+  "purpose": "Identify existing JSLH and supplied materials that can be reused to complete the 2027 Grade 7 Revision Centre without inflating counts or publishing weak content.",
+  "verifiedRepositoryAssets": [
+    {
+      "path": "learner-centre/quiz-bank/data/grade7/catalog.json",
+      "verified": true,
+      "totalFiles": 135,
+      "totalQuestions": 4050,
+      "learningAreas": 9,
+      "terms": [
+        1,
+        2,
+        3
+      ],
+      "questionsPerFile": 30
+    },
+    {
+      "path": "learner-centre/revision-data/grade7-term1-2027.json",
+      "verified": true,
+      "mcq": 800,
+      "structured": 1202,
+      "total": 2002,
+      "learningAreas": 10
+    },
+    {
+      "path": "learner-centre/revision-data/grade7-term3-2026.json",
+      "verified": true,
+      "mcq": 70,
+      "structured": 20,
+      "total": 90,
+      "description": "Starter set only; five MCQs and two structured questions per learning area"
+    },
+    {
+      "path": "grade7-teacher-resources/Assessments/Term_1_2027/",
+      "verified": true,
+      "description": "Question papers and scoring guides exist for several Grade 7 learning areas"
+    },
+    {
+      "path": "grade7-teacher-resources/Assessments/Term_2_2027/",
+      "verified": true,
+      "description": "Question papers and scoring guides exist for several Grade 7 learning areas; coverage is incomplete"
+    },
+    {
+      "path": "grade7-teacher-resources/Assessments/Term_3_2027/",
+      "verified": true,
+      "description": "Question papers and scoring guides exist for several Grade 7 learning areas; coverage is incomplete"
+    }
+  ],
+  "sampleQualityInspection": [
+    {
+      "path": "learner-centre/quiz-bank/data/grade7/agriculture-nutrition/term2/animal-welfare-and-housing/questions.json",
+      "finding": "Questions use repeated generic stems and distractors, not actual content knowledge."
+    },
+    {
+      "path": "learner-centre/quiz-bank/data/grade7/mathematics/term3/chance-and-simple-probability/questions.json",
+      "finding": "Questions use generic placeholder wording rather than probability calculations or interpretation."
+    },
+    {
+      "path": "learner-centre/quiz-bank/data/grade7/english/term2/functional-writing/questions.json",
+      "finding": "Questions use generic placeholder wording rather than functional-writing tasks."
+    }
+  ],
+  "sourceMaterialFromUser": [
+    {
+      "title": "OPENER 001 2027 Term 1 Grade 7",
+      "pages": 86,
+      "role": "Use as a Term 1 topic and assessment source; extract, verify and adapt questions with provenance labels."
+    },
+    {
+      "title": "SIGNAL Grade 7 Term 3 2026 Assessment",
+      "pages": 52,
+      "role": "Use as a Term 3 source where paper content and page images can be inspected; avoid repeated/unclear pages and preserve source distinctions."
+    }
+  ],
+  "missingOrWeakCoverage": [
+    "The 4,050 topic bank has nine learning areas and does not include IRE.",
+    "The 4,050 topic bank has 30 items per file but sample files inspected contain template questions and should not be counted as valid revision questions.",
+    "The Term 2 and Term 3 2027 draft batches contain only 5 MCQs and 2 structured questions per area, and are identical across the two terms.",
+    "The 2,002-question Term 1 bank has structured question templates and severe MCQ answer-position bias, requiring editorial and answer-key review."
+  ],
+  "buildDecision": "Reuse existing files as source maps and curriculum-topic indexes, not as validated question counts. Extract actual questions from user-provided assessment PDFs and existing question papers/scoring guides, then supplement with original JSLH questions mapped to the Grade 7 KICD curriculum. Maintain source attribution/provenance internally, verify every answer, balance MCQ answer positions, create marking guides, and run validation before release.",
+  "releaseGate": "No production publication until every required learning-area/term bank meets 80 MCQs and 120 structured questions, all items are subject-specific, answer keys/marking guides are verified, and duplicate/template checks pass."
+}
