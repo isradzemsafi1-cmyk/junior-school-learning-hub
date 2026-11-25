@@ -11,7 +11,7 @@ const group=(a,k)=>{const m=new Map();a.forEach(x=>{const v=k(x);if(!m.has(v))m.
 function say(id,msg,error){const e=$(id);if(e){e.textContent=msg;e.classList.toggle('error',!!error)}}
 function addUI(){
  const nav=document.querySelector('.tabs');
- if(nav&&!$('tabProgress'))nav.insertAdjacentHTML('beforeend','<button id="tabProgress" onclick="tab(\\'progress\\',this)">Learner Progress</button>');
+ if(nav&&!$('tabProgress'))nav.insertAdjacentHTML('beforeend','<button id="tabProgress" onclick="tab(\'progress\',this)">Learner Progress</button>');
  const marks=$('p-marks');
  if(marks&&!$('rosterPanel')){
   const first=marks.querySelector('.panel');
