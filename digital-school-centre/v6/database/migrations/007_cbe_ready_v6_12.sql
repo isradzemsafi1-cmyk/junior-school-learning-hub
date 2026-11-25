@@ -134,6 +134,7 @@ using (
   select 1 from public.assessment_staff_assignments a
   join public.learners l on l.id=learner_interventions.learner_id and l.school_id=learner_interventions.school_id
   where a.school_id=learner_interventions.school_id and a.user_id=(select auth.uid()) and a.active
+    and exists (select 1 from public.school_memberships sm where sm.school_id=a.school_id and sm.user_id=(select auth.uid()) and sm.active and sm.role in ('teacher','class_teacher'))
     and a.grade_id=l.grade_id and (a.stream_id is null or a.stream_id=l.stream_id)
     and (a.learning_area_id is null or a.learning_area_id=learner_interventions.learning_area_id)
  )
@@ -146,6 +147,7 @@ with check (
   select 1 from public.assessment_staff_assignments a
   join public.learners l on l.id=learner_interventions.learner_id and l.school_id=learner_interventions.school_id
   where a.school_id=learner_interventions.school_id and a.user_id=(select auth.uid()) and a.active
+    and exists (select 1 from public.school_memberships sm where sm.school_id=a.school_id and sm.user_id=(select auth.uid()) and sm.active and sm.role in ('teacher','class_teacher'))
     and a.grade_id=l.grade_id and (a.stream_id is null or a.stream_id=l.stream_id)
     and (a.learning_area_id is null or a.learning_area_id=learner_interventions.learning_area_id)
  )
@@ -158,6 +160,7 @@ using (
   select 1 from public.assessment_staff_assignments a
   join public.learners l on l.id=learner_interventions.learner_id and l.school_id=learner_interventions.school_id
   where a.school_id=learner_interventions.school_id and a.user_id=(select auth.uid()) and a.active
+    and exists (select 1 from public.school_memberships sm where sm.school_id=a.school_id and sm.user_id=(select auth.uid()) and sm.active and sm.role in ('teacher','class_teacher'))
     and a.grade_id=l.grade_id and (a.stream_id is null or a.stream_id=l.stream_id)
     and (a.learning_area_id is null or a.learning_area_id=learner_interventions.learning_area_id)
  )
@@ -168,6 +171,7 @@ with check (
   select 1 from public.assessment_staff_assignments a
   join public.learners l on l.id=learner_interventions.learner_id and l.school_id=learner_interventions.school_id
   where a.school_id=learner_interventions.school_id and a.user_id=(select auth.uid()) and a.active
+    and exists (select 1 from public.school_memberships sm where sm.school_id=a.school_id and sm.user_id=(select auth.uid()) and sm.active and sm.role in ('teacher','class_teacher'))
     and a.grade_id=l.grade_id and (a.stream_id is null or a.stream_id=l.stream_id)
     and (a.learning_area_id is null or a.learning_area_id=learner_interventions.learning_area_id)
  )
@@ -192,6 +196,7 @@ using (
  exists (
   select 1 from public.assessment_staff_assignments a
   where a.school_id=learners.school_id and a.user_id=(select auth.uid()) and a.active
+    and exists (select 1 from public.school_memberships sm where sm.school_id=a.school_id and sm.user_id=(select auth.uid()) and sm.active and sm.role in ('teacher','class_teacher'))
     and a.grade_id=learners.grade_id and (a.stream_id is null or a.stream_id=learners.stream_id)
  )
 );
@@ -208,6 +213,7 @@ using (
   select 1 from public.learners l
   join public.assessment_components c on c.id=assessment_marks.component_id and c.school_id=assessment_marks.school_id
   join public.assessment_staff_assignments a on a.school_id=l.school_id and a.user_id=(select auth.uid()) and a.active
+    and exists (select 1 from public.school_memberships sm where sm.school_id=a.school_id and sm.user_id=(select auth.uid()) and sm.active and sm.role in ('teacher','class_teacher'))
   where l.id=assessment_marks.learner_id and l.school_id=assessment_marks.school_id
     and a.grade_id=l.grade_id and (a.stream_id is null or a.stream_id=l.stream_id)
     and (a.learning_area_id is null or a.learning_area_id=c.learning_area_id)
@@ -221,6 +227,7 @@ with check (
   select 1 from public.learners l
   join public.assessment_components c on c.id=assessment_marks.component_id and c.school_id=assessment_marks.school_id
   join public.assessment_staff_assignments a on a.school_id=l.school_id and a.user_id=(select auth.uid()) and a.active
+    and exists (select 1 from public.school_memberships sm where sm.school_id=a.school_id and sm.user_id=(select auth.uid()) and sm.active and sm.role in ('teacher','class_teacher'))
   where l.id=assessment_marks.learner_id and l.school_id=assessment_marks.school_id
     and a.grade_id=l.grade_id and (a.stream_id is null or a.stream_id=l.stream_id)
     and (a.learning_area_id is null or a.learning_area_id=c.learning_area_id)
@@ -235,6 +242,7 @@ using (
   select 1 from public.learners l
   join public.assessment_components c on c.id=assessment_marks.component_id and c.school_id=assessment_marks.school_id
   join public.assessment_staff_assignments a on a.school_id=l.school_id and a.user_id=(select auth.uid()) and a.active
+    and exists (select 1 from public.school_memberships sm where sm.school_id=a.school_id and sm.user_id=(select auth.uid()) and sm.active and sm.role in ('teacher','class_teacher'))
   where l.id=assessment_marks.learner_id and l.school_id=assessment_marks.school_id
     and a.grade_id=l.grade_id and (a.stream_id is null or a.stream_id=l.stream_id)
     and (a.learning_area_id is null or a.learning_area_id=c.learning_area_id)
@@ -245,6 +253,7 @@ with check (
   select 1 from public.learners l
   join public.assessment_components c on c.id=assessment_marks.component_id and c.school_id=assessment_marks.school_id
   join public.assessment_staff_assignments a on a.school_id=l.school_id and a.user_id=(select auth.uid()) and a.active
+    and exists (select 1 from public.school_memberships sm where sm.school_id=a.school_id and sm.user_id=(select auth.uid()) and sm.active and sm.role in ('teacher','class_teacher'))
   where l.id=assessment_marks.learner_id and l.school_id=assessment_marks.school_id
     and a.grade_id=l.grade_id and (a.stream_id is null or a.stream_id=l.stream_id)
     and (a.learning_area_id is null or a.learning_area_id=c.learning_area_id)
