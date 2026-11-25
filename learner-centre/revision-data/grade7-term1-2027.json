@@ -6004,6 +6004,116 @@
           ],
           0,
           "Iqaamah signals the immediate commencement of congregational prayer."
+        ],
+        [
+          "The direction Muslims face during Swalah is called:",
+          [
+            "Qibla",
+            "Mihrab",
+            "Minbar",
+            "Mina"
+          ],
+          0,
+          "Qibla is the direction of the Kaaba."
+        ],
+        [
+          "Which action nullifies Wudhu?",
+          [
+            "Passing urine",
+            "Washing the face",
+            "Rinsing the mouth",
+            "Washing the hands"
+          ],
+          0,
+          "Passing urine nullifies ablution."
+        ],
+        [
+          "Tayammum is performed using:",
+          [
+            "Clean earth or dust",
+            "Cooking oil",
+            "Perfume",
+            "Salt water"
+          ],
+          0,
+          "Tayammum uses clean earth when its conditions are met."
+        ],
+        [
+          "Which prayer is performed at dawn?",
+          [
+            "Fajr",
+            "Dhuhr",
+            "Asr",
+            "Isha"
+          ],
+          0,
+          "Fajr is the dawn prayer."
+        ],
+        [
+          "The call announcing prayer time is:",
+          [
+            "Adhan",
+            "Iqaamah",
+            "Khutbah",
+            "Zakat"
+          ],
+          0,
+          "Adhan announces the entry of prayer time."
+        ],
+        [
+          "A person who calls the Adhan is a:",
+          [
+            "Muadhin",
+            "Qadi",
+            "Khatib",
+            "Muezzin's assistant"
+          ],
+          0,
+          "A Muadhin makes the call to prayer."
+        ],
+        [
+          "Ghusl involves:",
+          [
+            "Washing the whole body",
+            "Washing only the hands",
+            "Changing clothes only",
+            "Applying perfume"
+          ],
+          0,
+          "Ghusl is the ritual washing of the whole body."
+        ],
+        [
+          "Istinjaa means:",
+          [
+            "Cleaning after relieving oneself",
+            "Calling people to prayer",
+            "Facing the Qibla",
+            "Giving charity"
+          ],
+          0,
+          "Istinjaa is cleaning after relieving oneself."
+        ],
+        [
+          "Which water is suitable for purification?",
+          [
+            "Pure and purifying water",
+            "Polluted water",
+            "Water mixed with impurity",
+            "Dirty stagnant water"
+          ],
+          0,
+          "Purification requires pure and purifying water."
+        ],
+        [
+          "Iqaamah announces that:",
+          [
+            "The congregational prayer is about to begin",
+            "The fasting month has ended",
+            "A journey is starting",
+            "The mosque is closing"
+          ],
+          0,
+          "Iqaamah signals the immediate start of prayer."
         ]
       ],
       "structured": [
@@ -6131,12 +6241,137 @@
           "Name three types of prayers in Islam.",
           "Fard/obligatory, Sunnah, Nafl/voluntary; other valid categories taught. Any three.",
           3
+        ],
+        [
+          "Name the five daily obligatory prayers in order.",
+          "Fajr, Dhuhr, Asr, Maghrib and Isha. (1 each)",
+          5
+        ],
+        [
+          "State four conditions for performing Swalah.",
+          "Purity; clean body/clothes/place; covering awrah; facing Qibla; prayer time entered; intention. Any four.",
+          4
+        ],
+        [
+          "Differentiate between Wudhu and Ghusl.",
+          "Wudhu washes specified body parts (1); Ghusl washes the whole body (1).",
+          2
+        ],
+        [
+          "State four actions that nullify Wudhu according to the syllabus.",
+          "Passing urine, stool or wind; deep sleep/unconsciousness; loss of consciousness; other nullifiers taught in class. Any four.",
+          4
+        ],
+        [
+          "Outline the steps of performing Wudhu.",
+          "Intention; wash hands; rinse mouth/nose; wash face; wash arms to elbows; wipe head/ears; wash feet. Award up to 7.",
+          7
+        ],
+        [
+          "State four situations in which Tayammum may be permitted.",
+          "No water; water use would cause harm; inability to reach water; water reserved for essential survival. Any four.",
+          4
+        ],
+        [
+          "Outline the steps of Tayammum.",
+          "Make intention; touch clean earth; wipe face; wipe hands/arms according to the taught procedure. Award up to 4.",
+          4
+        ],
+        [
+          "Give four examples of Najaasat.",
+          "Urine, faeces, blood, vomit and other impurities in the taught classification. Any four.",
+          4
+        ],
+        [
+          "State four reasons cleanliness is important in Islam.",
+          "Required for worship; protects health; promotes dignity; demonstrates obedience and discipline. Any four.",
+          4
+        ],
+        [
+          "Give four examples of toilet etiquette in Islam.",
+          "Enter with left foot; maintain privacy; clean oneself; avoid prohibited direction; leave with right foot; recite taught supplications. Any four.",
+          4
+        ],
+        [
+          "State four qualities of a good Muadhin.",
+          "Trustworthy; mature; clear voice; knows prayer times; understands the Adhan. Any four.",
+          4
+        ],
+        [
+          "Differentiate between Adhan and Iqaamah.",
+          "Adhan announces prayer time (1); Iqaamah signals that congregational prayer is about to start (1).",
+          2
+        ],
+        [
+          "State four Sunnah acts associated with Wudhu.",
+          "Begin with Bismillah; wash hands first; rinse mouth/nose; begin with right side; repeat washing as taught; use miswak. Any four.",
+          4
+        ],
+        [
+          "Explain the importance of Ghusl.",
+          "Restores major ritual purity; permits worship requiring it; promotes cleanliness. Any three.",
+          3
+        ],
+        [
+          "Name four voluntary prayers taught in IRE.",
+          "Examples: Tahajjud, Duha, Witr, Tahiyyatul Masjid and Sunnah rawatib. Any four as taught.",
+          4
+        ],
+        [
+          "State four times when voluntary prayers are prohibited or discouraged in the syllabus.",
+          "At sunrise; at zenith; at sunset; after Fajr until sunrise; after Asr until sunset. Any four, observing class distinctions.",
+          4
+        ],
+        [
+          "Explain the purpose of Iqaamah.",
+          "It informs worshippers that the obligatory congregational prayer is about to begin. (2)",
+          2
+        ],
+        [
+          "State four reasons a Muslim should observe purification before Swalah.",
+          "After relieving oneself; after passing wind; after sleep that nullifies Wudhu; after major impurity requiring Ghusl. Any four.",
+          4
+        ],
+        [
+          "Describe the importance of facing the Qibla during Swalah.",
+          "It follows the prescribed direction of prayer and unites Muslims in worship. (2)",
+          2
+        ],
+        [
+          "Give four circumstances that may excuse a worshipper from facing the Qibla as taught.",
+          "Physical inability/illness; danger or fear; genuine inability to determine direction after reasonable effort; other syllabus-approved circumstances. Any four.",
+          4
+        ],
+        [
+          "State four examples of acts that require Ghusl in the taught topic.",
+          "After janabah; after menstruation ends; after postnatal bleeding ends; other compulsory cases taught. Distinguish obligatory from recommended occasions.",
+          4
+        ],
+        [
+          "Explain the meaning of Najaasat.",
+          "Najaasat is physical impurity that must be removed for ritual cleanliness. (2)",
+          2
+        ],
+        [
+          "State three categories of water using the exact classification taught in class.",
+          "Award for the three correct water categories and their class descriptions. Do not accept invented categories.",
+          3
+        ],
+        [
+          "Describe four ways of maintaining cleanliness in a mosque.",
+          "Remove dirt; keep footwear in designated place; avoid littering; maintain personal cleanliness; respect prayer areas. Any four.",
+          4
+        ],
+        [
+          "Explain the role of a Muadhin in a Muslim community.",
+          "Calls the Adhan at the correct time and helps inform the community that prayer time has entered. (2)",
+          2
         ]
       ],
       "source": {
         "paper": "OPENER 001 2027 TERM 1 GRADE 7",
         "pages": "40–45",
-        "basis": "Shahada/Tashahhud, Swalah, conditions, Twahara/Najaasat, water classes, Ghusl, Wudhu, Tayammum, Istinjaa, Qibla, prayer times, Muadhin, Adhan/Iqaamah and types of prayer."
+        "basis": "Shahada/Tashahhud, Swalah, conditions, Twahara/Najaasat, water classes, Ghusl, Wudhu, Tayammum, Istinjaa, Qibla, prayer times, Muadhin, Adhan/Iqaamah and types of prayer. Added supplementary JSLH practice aligned to the listed source topics."
       }
     },
     {
@@ -6252,6 +6487,116 @@
           ],
           0,
           "Isimu jamii huchunguza lugha katika muktadha wa jamii."
+        ],
+        [
+          "Kinyume cha neno 'jasiri' ni:",
+          [
+            "Mwoga",
+            "Shupavu",
+            "Mwenye bidii",
+            "Mwenye nguvu"
+          ],
+          0,
+          "Mwoga ni kinyume cha jasiri."
+        ],
+        [
+          "Wingi wa neno 'kikapu' ni:",
+          [
+            "Vikapu",
+            "Makapu",
+            "Mikapu",
+            "Bakapu"
+          ],
+          0,
+          "Kikapu huwa vikapu katika ngeli ya KI-VI."
+        ],
+        [
+          "Katika sentensi 'Mtoto alikimbia haraka', neno 'haraka' ni:",
+          [
+            "Kielezi",
+            "Nomino",
+            "Kitenzi",
+            "Kiwakilishi"
+          ],
+          0,
+          "Haraka hueleza namna kitendo kilivyofanyika."
+        ],
+        [
+          "Kitenzi katika sentensi 'Wanafunzi wanasoma vitabu' ni:",
+          [
+            "Wanasoma",
+            "Wanafunzi",
+            "Vitabu",
+            "Wana"
+          ],
+          0,
+          "Wanasoma ndicho kitendo."
+        ],
+        [
+          "Alama inayotumiwa mwishoni mwa swali ni:",
+          [
+            "Alama ya kuuliza",
+            "Koma",
+            "Nukta",
+            "Kistari"
+          ],
+          0,
+          "Alama ya kuuliza huonyesha swali."
+        ],
+        [
+          "Kinyume cha 'ingia' ni:",
+          [
+            "Toka",
+            "Fika",
+            "Kaa",
+            "Simama"
+          ],
+          0,
+          "Toka ni kinyume cha ingia."
+        ],
+        [
+          "Neno 'ingawa' huonyesha:",
+          [
+            "Ukinzani wa mawazo",
+            "Umiliki",
+            "Idadi",
+            "Mahali"
+          ],
+          0,
+          "Ingawa huunganisha mawazo yenye ukinzani."
+        ],
+        [
+          "Wingi wa 'jicho' ni:",
+          [
+            "Macho",
+            "Majicho",
+            "Vijicho",
+            "Mijicho"
+          ],
+          0,
+          "Jicho huwa macho."
+        ],
+        [
+          "Neno 'mrefu' ni:",
+          [
+            "Kivumishi",
+            "Kielezi",
+            "Kitenzi",
+            "Kiunganishi"
+          ],
+          0,
+          "Mrefu hueleza sifa ya nomino."
+        ],
+        [
+          "Ni salamu ipi inayofaa asubuhi?",
+          [
+            "Habari za asubuhi",
+            "Usiku mwema",
+            "Kwaheri",
+            "Pole kwa msiba"
+          ],
+          0,
+          "Habari za asubuhi ni salamu ya asubuhi."
         ]
       ],
       "structured": [
@@ -6379,12 +6724,137 @@
           "Andika sentensi mbili zenye vivumishi na upige mstari vivumishi hivyo.",
           "Sentensi mbili sahihi (1 kila moja); vivumishi vimeonyeshwa kwa usahihi (1 kila kimoja).",
           4
+        ],
+        [
+          "Andika kinyume cha maneno haya: jasiri, safi, ingia na furaha.",
+          "Mwoga; chafu; toka; huzuni. (1 kila moja)",
+          4
+        ],
+        [
+          "Tunga sentensi moja kwa kila neno: shangwe, polepole na mwalimu.",
+          "Sentensi tatu sahihi zinazoonyesha matumizi ya maneno. (1 kila moja)",
+          3
+        ],
+        [
+          "Taja aina nne za maneno na utoe mfano mmoja kwa kila aina.",
+          "Nomino—mtoto; kitenzi—soma; kivumishi—mrefu; kielezi—haraka. (1 kila moja)",
+          4
+        ],
+        [
+          "Badilisha sentensi iwe wakati uliopita: Watoto wanacheza uwanjani.",
+          "Watoto walicheza uwanjani. (2)",
+          2
+        ],
+        [
+          "Badilisha sentensi iwe wakati ujao: Mwanafunzi anasoma kitabu.",
+          "Mwanafunzi atasoma kitabu. (2)",
+          2
+        ],
+        [
+          "Andika wingi wa: kikapu, jicho, mwalimu, kiti na ua.",
+          "Vikapu; macho; walimu; viti; maua. (1 kila moja)",
+          5
+        ],
+        [
+          "Taja ngeli za nomino: mtoto, kitabu, jiwe na mti.",
+          "A-WA; KI-VI; LI-YA; U-I kwa uainishaji wa kawaida wa shule. (1 kila moja)",
+          4
+        ],
+        [
+          "Eleza tofauti kati ya nomino na kitenzi.",
+          "Nomino hutaja mtu/kitu/mahali/hali (1); kitenzi huonyesha tendo au hali (1).",
+          2
+        ],
+        [
+          "Gawa maneno haya katika silabi: mwalimu, kikapu na mwanafunzi.",
+          "Mwa-li-mu; ki-ka-pu; mwa-na-fun-zi. (1 kila moja)",
+          3
+        ],
+        [
+          "Taja maneno mawili yenye konsonanti 'ny' na mawili yenye 'nd'.",
+          "Nyumba, nyanya; ndizi, ndege. (1 kila moja)",
+          4
+        ],
+        [
+          "Tunga sentensi mbili zenye viunganishi 'ingawa' na 'kwa sababu'.",
+          "Sentensi sahihi moja kwa kila kiunganishi. (1 kila moja)",
+          2
+        ],
+        [
+          "Weka alama za uakifishaji: mama alisema watoto nendeni nyumbani sasa.",
+          "Mama alisema, “Watoto, nendeni nyumbani sasa.” (2)",
+          2
+        ],
+        [
+          "Eleza maana ya mawasiliano na utoe mifano mitatu.",
+          "Mawasiliano ni kupashana habari/ujumbe (1); simu, mazungumzo, barua, ishara, redio n.k. (3).",
+          4
+        ],
+        [
+          "Taja faida nne za mawasiliano katika jamii.",
+          "Hutoa taarifa; huunganisha watu; hurahisisha biashara; hueneza elimu; huonya hatari; huimarisha ushirikiano. Any four.",
+          4
+        ],
+        [
+          "Eleza tofauti mbili kati ya mawasiliano ya jadi na ya kisasa.",
+          "Tofauti mbili zilizoelezwa, kama ngoma/mjumbe dhidi ya simu/intaneti, kasi na umbali wa ujumbe. (2 kila moja)",
+          4
+        ],
+        [
+          "Taja sifa nne za mazungumzo bora.",
+          "Kusikiliza; kuheshimu zamu; kutumia lugha ya adabu; kuzungumza wazi; kujibu mada. Any four.",
+          4
+        ],
+        [
+          "Andika aya ya maneno 60–80 kuhusu umuhimu wa michezo shuleni.",
+          "Hoja (3); mpangilio (2); sarufi/msamiati (2); tahajia/uakifishaji (1); urefu (1).",
+          9
+        ],
+        [
+          "Andika mazungumzo ya mistari minane kati ya mwanafunzi na mwalimu kuhusu usafi wa shule.",
+          "Mada (3); zamu za wazungumzaji (2); adabu (2); sarufi/uakifishaji (2); mtiririko (1).",
+          10
+        ],
+        [
+          "Eleza maana ya methali na utoe methali mbili pamoja na maana zake.",
+          "Methali ni usemi mfupi wenye hekima/mafunzo (2); methali mbili na maana zake (2 kila moja).",
+          6
+        ],
+        [
+          "Taja vipengele vinne vya hadithi.",
+          "Wahusika, mandhari, ploti, dhamira, mgogoro na mwisho. Any four.",
+          4
+        ],
+        [
+          "Eleza maana ya kiimbo na umuhimu wake.",
+          "Kiimbo ni kupanda na kushuka kwa sauti (2); huonyesha hisia/nia na aina ya sentensi (2).",
+          4
+        ],
+        [
+          "Taja alama nne za uandishi na matumizi yake.",
+          "Nukta, koma, alama ya kuuliza, alama za kunukuu pamoja na matumizi sahihi. (1 kila moja)",
+          4
+        ],
+        [
+          "Andika barua ya kirafiki kwa rafiki ukimweleza maandalizi ya mtihani.",
+          "Anwani/tarehe (1); salamu (1); maelezo (4); hitimisho (1); sahihi/jina (1); lugha (2).",
+          10
+        ],
+        [
+          "Taja njia nne za kutambua maana ya neno jipya katika kifungu.",
+          "Muktadha; viambishi; visawe/kinyume; kamusi; sentensi jirani. Any four.",
+          4
+        ],
+        [
+          "Eleza tofauti kati ya lugha rasmi na lugha isiyo rasmi.",
+          "Lugha rasmi hutumika katika mazingira rasmi; isiyo rasmi hutumika katika mazungumzo ya kawaida. Toa tofauti mbili zilizoelezwa. (4)",
+          4
         ]
       ],
       "source": {
         "paper": "OPENER 001 2027 TERM 1 GRADE 7",
         "pages": "46–59",
-        "basis": "Ufahamu kuhusu mawasiliano ya jadi na kisasa; sarufi, sauti, konsonanti, miundo ya silabi, ngeli, vinyume, ukanusho, aina za maneno, shadda, uakifishaji, isimu jamii, ufahamu wa michezo na insha."
+        "basis": "Ufahamu kuhusu mawasiliano ya jadi na kisasa; sarufi, sauti, konsonanti, miundo ya silabi, ngeli, vinyume, ukanusho, aina za maneno, shadda, uakifishaji, isimu jamii, ufahamu wa michezo na insha. Added supplementary JSLH practice aligned to the listed source topics."
       }
     },
     {
