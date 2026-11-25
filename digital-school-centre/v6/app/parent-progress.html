@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>JSLH Parent Learning Progress</title><script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script><script src="./supabase-config.js"></script>
+<style>
+:root{font-family:Inter,system-ui,Arial;color:#17243b;background:#f3f6fb}*{box-sizing:border-box}body{margin:0}header{background:linear-gradient(110deg,#10213d,#2457d6);color:#fff;padding:20px 5vw}main{max-width:1050px;margin:25px auto;padding:0 15px}.panel{background:white;border:1px solid #e1e8f1;border-radius:14px;padding:18px;margin:12px 0}.hidden{display:none!important}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:10px}.field{display:flex;flex-direction:column;gap:5px}.field label{font-size:11px;font-weight:800;text-transform:uppercase;color:#617087}.field input,.field select{padding:11px;border:1px solid #cbd6e5;border-radius:8px;font:inherit}.btn{padding:10px 14px;border:0;border-radius:8px;background:#2457d6;color:white;font-weight:700;cursor:pointer}.muted,.status{font-size:13px;color:#68778f;line-height:1.5}.error{color:#b33b49}.tablewrap{overflow:auto;border:1px solid #e1e8f1;border-radius:9px}table{width:100%;border-collapse:collapse;font-size:13px}td,th{padding:10px;border-bottom:1px solid #edf1f6;text-align:left}th{background:#f5f8fc;font-size:11px;text-transform:uppercase}.empty{padding:20px;text-align:center;color:#738198;background:#f8faff;border:1px dashed #d5dfeb;border-radius:9px}
+</style></head><body>
+<header><h1>JSLH PARENT & GUARDIAN PORTAL</h1><div>Secure access to approved learner progress reports</div></header>
+<main>
+<section id="auth" class="panel"><h2>Parent / guardian sign in</h2><p class="muted">Sign in using the account linked to your learner by the school. Only approved or locked report snapshots are shown.</p><div class="grid"><div class="field"><label>Email</label><input id="email" type="email" autocomplete="username"></div><div class="field"><label>Password</label><input id="password" type="password" autocomplete="current-password"></div></div><p><button class="btn" id="signIn">Sign in</button></p><div id="authMsg" class="status"></div></section>
+<section id="portal" class="hidden">
+<div class="panel"><div style="display:flex;justify-content:space-between;gap:12px;align-items:center;flex-wrap:wrap"><div><h2>My linked learners</h2><p class="muted">Only learners linked to your verified guardian account are available.</p></div><button class="btn" id="signOut">Sign out</button></div><div class="field"><label>Select learner</label><select id="learner"></select></div><div id="learnerInfo" class="status"></div></div>
+<div class="panel"><h2>Approved report cards</h2><div id="reports"><div class="empty">Select a learner to view available reports.</div></div></div>
+</section>
+</main>
+<script>
+'use strict';
+const $=id=>document.getElementById(id),esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+let db=null,guardian=null,links=[];
+function status(id,s,bad){$(id).textContent=s;$(id).classList.toggle('error',!!bad)}
+function show(id,on){$(id).classList.toggle('hidden',!on)}
+async function start(){
+ const c=window.DSC_SUPABASE_CONFIG||{};if(!window.supabase||!c.url||!c.anonKey){status('authMsg','Portal configuration is unavailable.',true);return}
+ db=window.supabase.createClient(c.url,c.anonKey);
+ const {data:{session}}=await db.auth.getSession();if(session)await loadPortal(session.user.id);
+ $('signIn').addEventListener('click',async()=>{const {data,error}=await db.auth.signInWithPassword({email:$('email').value.trim(),password:$('password').value});if(error)return status('authMsg',error.message,true);await loadPortal(data.user.id)});
+ $('signOut').addEventListener('click',async()=>{await db.auth.signOut();show('portal',false);show('auth',true)});
+ $('learner').addEventListener('change',loadReports);
+ db.auth.onAuthStateChange((event,session)=>{if(!session){show('portal',false);show('auth',true)}});
+}
+async function loadPortal(userId){
+ show('auth',false);show('portal',true);
+ const {data:g,error}=await db.from('guardians').select('id,full_name').eq('auth_user_id',userId);
+ if(error){show('portal',false);show('auth',true);return status('authMsg',error.message,true)}
+ if(!g?.length){show('portal',false);show('auth',true);return status('authMsg','This login is not yet linked to a guardian profile. Contact the school administrator.',true)}
+ guardian=g[0];
+ const {data:l,error:le}=await db.from('learner_guardians').select('learner_id,relationship,learners(id,full_name,admission_number,grade_id)').eq('guardian_id',guardian.id).eq('can_receive_academic_updates',true);
+ if(le){show('portal',false);show('auth',true);return status('authMsg',le.message,true)}
+ links=(l||[]).map(x=>({...x,learner:x.learners})).filter(x=>x.learner);
+ $('learner').innerHTML='<option value="">Select learner</option>'+links.map(x=>'<option value="'+esc(x.learner_id)+'">'+esc(x.learner.full_name)+' · '+esc(x.learner.admission_number)+'</option>').join('');
+ status('learnerInfo',links.length?('Welcome, '+guardian.full_name+'. '+links.length+' linked learner(s) found.'):'No learner is currently linked for academic updates. Please contact the school.');
+ $('reports').innerHTML='<div class="empty">Select a learner to view available reports.</div>';
+}
+async function loadReports(){
+ const id=$('learner').value;if(!id){$('reports').innerHTML='<div class="empty">Select a learner to view available reports.</div>';return}
+ const {data:r,error}=await db.from('report_card_snapshots').select('id,snapshot,generated_at').eq('learner_id',id).order('generated_at',{ascending:false});
+ if(error){$('reports').innerHTML='<div class="empty">'+esc(error.message)+'</div>';return}
+ if(!r?.length){$('reports').innerHTML='<div class="empty">No approved report cards have been published for this learner yet.</div>';return}
+ $('reports').innerHTML=r.map(x=>{const s=x.snapshot||{},learner=s.learner||{},results=s.results||[];return '<article class="panel"><h3>'+esc(s.assessment||'Assessment report')+'</h3><p class="muted">'+esc(s.school_name||'School')+' · Published '+esc(new Date(x.generated_at).toLocaleDateString())+'</p><p><b>Learner:</b> '+esc(learner.name||'')+' · <b>Admission:</b> '+esc(learner.admission_number||'')+'</p><p><b>Numeric mean:</b> '+(s.average_percentage==null?'—':Number(s.average_percentage).toFixed(1)+'%')+'</p><div class="tablewrap"><table><tr><th>Learning area</th><th>Component</th><th>Score</th><th>Percentage</th><th>Achievement</th><th>Teacher comment</th></tr>'+results.map(z=>'<tr><td>'+esc(z.learning_area||'')+'</td><td>'+esc(z.component||'')+'</td><td>'+(z.raw_score==null?'—':esc(z.raw_score)+' / '+esc(z.maximum_score))+'</td><td>'+(z.percentage==null?'—':Number(z.percentage).toFixed(1)+'%')+'</td><td>'+esc(z.achievement_code||'—')+'</td><td>'+esc(z.teacher_comment||'—')+'</td></tr>').join('')+'</table></div><button class="btn" onclick="window.print()">Print report</button></article>'}).join('');
+}
+start();
+</script></body></html>
