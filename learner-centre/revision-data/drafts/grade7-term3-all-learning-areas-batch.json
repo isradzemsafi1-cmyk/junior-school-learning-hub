@@ -1,0 +1,667 @@
+{
+  "grade": 7,
+  "term": 3,
+  "year": 2027,
+  "title": "JSLH Grade 7 Term 3 Revision Bank — Batch Draft",
+  "status": "development draft; partial coverage; not production-ready",
+  "sourceBasis": "Original JSLH supplementary practice questions aligned with the Grade 7 2027 schemes of work. This batch is a first-pass coverage set, not a substitute for the full target of 80 MCQs and 120 structured questions per learning area.",
+  "learningAreas": [
+    {
+      "id": "agriculture",
+      "name": "Agriculture & Nutrition",
+      "mcq": [
+        [
+          "Which practice helps reduce soil erosion on a sloping farm?",
+          [
+            "Constructing contour terraces",
+            "Removing all vegetation",
+            "Ploughing downhill",
+            "Leaving soil bare"
+          ],
+          0,
+          "Contour terraces slow surface runoff and reduce soil loss."
+        ],
+        [
+          "Which planting material is commonly used to propagate cassava?",
+          [
+            "Stem cuttings",
+            "Bulbs",
+            "Spores",
+            "Runners"
+          ],
+          0,
+          "Cassava is commonly propagated vegetatively using stem cuttings."
+        ],
+        [
+          "Why should food handlers wash their hands before preparing food?",
+          [
+            "To reduce transfer of disease-causing microorganisms",
+            "To make food cook faster",
+            "To increase food weight",
+            "To change the food colour"
+          ],
+          0,
+          "Handwashing reduces contamination by microorganisms."
+        ],
+        [
+          "Which is an example of reusing a household resource?",
+          [
+            "Using a clean jar to store dry food",
+            "Burning plastic waste",
+            "Throwing away a repairable bucket",
+            "Pouring oil into a drain"
+          ],
+          0,
+          "A clean jar can serve another useful purpose, reducing waste."
+        ],
+        [
+          "Which nutrient is mainly needed for growth and repair of body tissues?",
+          [
+            "Proteins",
+            "Vitamins only",
+            "Water only",
+            "Roughage"
+          ],
+          0,
+          "Proteins supply amino acids needed for growth and tissue repair."
+        ]
+      ],
+      "structured": [
+        [
+          "Explain three ways a farmer can conserve soil on a sloping piece of land.",
+          "Any three explained: terracing; contour farming; planting cover crops/grass strips; mulching; agroforestry; controlled grazing. One mark each.",
+          3
+        ],
+        [
+          "State four safe practices to observe when preparing food at home.",
+          "Any four: wash hands; clean utensils and surfaces; use safe water; separate raw and cooked foods; cook thoroughly; cover food; store at safe temperatures. One mark each.",
+          4
+        ]
+      ]
+    },
+    {
+      "id": "creative-arts",
+      "name": "Creative Arts & Sports",
+      "mcq": [
+        [
+          "Which element of art refers to the lightness or darkness of a colour?",
+          [
+            "Value",
+            "Texture",
+            "Shape",
+            "Space"
+          ],
+          0,
+          "Value describes how light or dark a colour appears."
+        ],
+        [
+          "A tint is made by mixing a colour with:",
+          [
+            "White",
+            "Black",
+            "Grey only",
+            "Brown"
+          ],
+          0,
+          "Adding white makes a colour lighter and produces a tint."
+        ],
+        [
+          "In a team game, why is communication important?",
+          [
+            "It helps players coordinate their actions",
+            "It guarantees every shot scores",
+            "It replaces all rules",
+            "It prevents the need for practice"
+          ],
+          0,
+          "Players communicate to coordinate movement, passing and tactics."
+        ],
+        [
+          "Which item is suitable as a simple percussion instrument?",
+          [
+            "Shaker",
+            "Whistle used only for refereeing",
+            "Ruler used as a drawing guide",
+            "Paintbrush"
+          ],
+          0,
+          "A shaker produces sound when shaken and is a percussion instrument."
+        ],
+        [
+          "What should performers do before using a stage or performance space?",
+          [
+            "Check the space for hazards",
+            "Run without looking",
+            "Block all exits",
+            "Scatter equipment on the floor"
+          ],
+          0,
+          "Checking the space helps identify hazards and prevent injuries."
+        ]
+      ],
+      "structured": [
+        [
+          "Describe four steps for preparing a simple visual-art composition.",
+          "Award one mark each for: select subject/theme; plan arrangement/sketch; choose suitable materials/colours; develop details and review/finish neatly.",
+          4
+        ],
+        [
+          "Give four safety practices for learners taking part in a physical activity.",
+          "Any four: warm up; use suitable clothing/footwear; check playing area/equipment; follow rules; use correct technique; drink water/rest; cool down. One mark each.",
+          4
+        ]
+      ]
+    },
+    {
+      "id": "cre",
+      "name": "CRE",
+      "mcq": [
+        [
+          "In Christian teaching, forgiveness mainly involves:",
+          [
+            "Releasing resentment and being willing to reconcile",
+            "Seeking revenge",
+            "Pretending wrongdoing is always acceptable",
+            "Refusing to listen"
+          ],
+          0,
+          "Forgiveness involves letting go of resentment; reconciliation may follow where appropriate."
+        ],
+        [
+          "Which action best demonstrates service to others?",
+          [
+            "Helping an elderly neighbour carry water",
+            "Mocking a classmate",
+            "Keeping shared resources for oneself",
+            "Ignoring someone in need"
+          ],
+          0,
+          "Helping a neighbour is a practical act of service."
+        ],
+        [
+          "Stewardship teaches Christians to:",
+          [
+            "Care responsibly for God's creation",
+            "Waste natural resources",
+            "Pollute rivers",
+            "Destroy habitats"
+          ],
+          0,
+          "Stewardship emphasises responsible care for creation."
+        ],
+        [
+          "Which value is shown by returning a lost item to its owner?",
+          [
+            "Honesty",
+            "Greed",
+            "Pride",
+            "Jealousy"
+          ],
+          0,
+          "Returning property demonstrates honesty and respect for others."
+        ],
+        [
+          "A peaceful response to disagreement is to:",
+          [
+            "Listen respectfully and discuss the issue",
+            "Use threats",
+            "Spread rumours",
+            "Refuse every compromise"
+          ],
+          0,
+          "Respectful dialogue helps resolve disagreements peacefully."
+        ]
+      ],
+      "structured": [
+        [
+          "Give four ways a Grade 7 learner can demonstrate Christian service in school or the community.",
+          "Any four explained: help vulnerable people; share resources; care for the sick; volunteer in community work; encourage others; protect public property; support classmates.",
+          4
+        ],
+        [
+          "Explain three reasons Christians are encouraged to care for the environment.",
+          "Any three: creation is God's gift; protects life and health; conserves resources for future generations; expresses responsibility/stewardship; protects biodiversity. One mark each.",
+          3
+        ]
+      ]
+    },
+    {
+      "id": "english",
+      "name": "English",
+      "mcq": [
+        [
+          "Choose the correctly punctuated sentence.",
+          [
+            "Where are you going?",
+            "Where are you going.",
+            "where are you going?",
+            "Where are you going,"
+          ],
+          0,
+          "A direct question begins with a capital letter and ends with a question mark."
+        ],
+        [
+          "Identify the adjective in: 'The careful learner completed the task.'",
+          [
+            "careful",
+            "learner",
+            "completed",
+            "task"
+          ],
+          0,
+          "Careful describes the noun learner."
+        ],
+        [
+          "Choose the correct verb: 'Each of the players ___ a water bottle.'",
+          [
+            "has",
+            "have",
+            "are having",
+            "were"
+          ],
+          0,
+          "Each is singular, so it takes the singular verb has."
+        ],
+        [
+          "Which tense is used in: 'They visited the museum yesterday'?",
+          [
+            "Simple past",
+            "Simple present",
+            "Present continuous",
+            "Future"
+          ],
+          0,
+          "Visited expresses an action completed in the past."
+        ],
+        [
+          "The main purpose of a formal letter is to:",
+          [
+            "Communicate an official message to a recipient",
+            "Tell only imaginary events",
+            "List unrelated words",
+            "Replace every spoken conversation"
+          ],
+          0,
+          "A formal letter communicates information or a request in an organised, respectful format."
+        ]
+      ],
+      "structured": [
+        [
+          "Rewrite correctly: 'the children was playing when it begin to rain.'",
+          "The children were playing when it began to rain. Award 1 for were, 1 for began, 1 for capitalisation and full stop.",
+          3
+        ],
+        [
+          "State four features of a well-organised formal letter.",
+          "Any four: sender's address/date; recipient's address; appropriate salutation; clear subject/reference where appropriate; formal language; organised paragraphs; suitable closing; signature/name. One mark each.",
+          4
+        ]
+      ]
+    },
+    {
+      "id": "integrated-science",
+      "name": "Integrated Science",
+      "mcq": [
+        [
+          "Heat transfer through a metal spoon placed in hot tea mainly occurs by:",
+          [
+            "Conduction",
+            "Convection",
+            "Radiation only",
+            "Evaporation"
+          ],
+          0,
+          "Conduction transfers thermal energy through a material by particle interactions."
+        ],
+        [
+          "Which force opposes motion between two surfaces in contact?",
+          [
+            "Friction",
+            "Magnetism",
+            "Upthrust only",
+            "Gravity only"
+          ],
+          0,
+          "Friction acts between surfaces in contact and opposes relative motion."
+        ],
+        [
+          "Which method can make river water safer before drinking at home?",
+          [
+            "Boiling it adequately",
+            "Adding soil",
+            "Leaving it uncovered",
+            "Mixing it with untreated water"
+          ],
+          0,
+          "Boiling kills many disease-causing microorganisms, although safe storage is still needed."
+        ],
+        [
+          "Which organ pumps blood around the human body?",
+          [
+            "Heart",
+            "Lungs",
+            "Stomach",
+            "Kidney"
+          ],
+          0,
+          "The heart contracts to pump blood through the circulatory system."
+        ],
+        [
+          "Which of these is a renewable source of energy?",
+          [
+            "Sunlight",
+            "Coal",
+            "Petroleum",
+            "Natural gas"
+          ],
+          0,
+          "Sunlight is naturally replenished and is a renewable energy source."
+        ]
+      ],
+      "structured": [
+        [
+          "Describe how heat is transferred by conduction and give one everyday example.",
+          "Heat moves through a material from a hotter region to a cooler region by particle interactions (2); example such as a metal cooking spoon becoming hot (1).",
+          3
+        ],
+        [
+          "State four ways learners can help protect water sources in their community.",
+          "Any four: avoid dumping waste; plant vegetation near water sources; use latrines properly; dispose chemicals safely; conserve water; report pollution; organise clean-ups. One mark each.",
+          4
+        ]
+      ]
+    },
+    {
+      "id": "ire",
+      "name": "IRE",
+      "mcq": [
+        [
+          "Which of the following is an obligatory daily prayer in Islam?",
+          [
+            "Fajr",
+            "Duha",
+            "Tahajjud",
+            "Witr"
+          ],
+          0,
+          "Fajr is one of the five obligatory daily prayers."
+        ],
+        [
+          "The term Wudhu refers to:",
+          [
+            "Ritual ablution before prayer",
+            "The call to prayer",
+            "The pilgrimage",
+            "The giving of Zakat"
+          ],
+          0,
+          "Wudhu is the prescribed minor ritual purification."
+        ],
+        [
+          "Which quality should a Muslim demonstrate when entrusted with another person's property?",
+          [
+            "Trustworthiness",
+            "Dishonesty",
+            "Arrogance",
+            "Wastefulness"
+          ],
+          0,
+          "Trustworthiness requires safeguarding what has been entrusted to someone."
+        ],
+        [
+          "The Adhan is called to:",
+          [
+            "Announce the time for prayer",
+            "End the fasting month",
+            "Begin a business meeting",
+            "Mark the end of a lesson"
+          ],
+          0,
+          "The Adhan announces that the time for an obligatory prayer has begun."
+        ],
+        [
+          "Which action is an example of sadaqah?",
+          [
+            "Voluntary charity",
+            "Breaking a promise",
+            "Taking another person's property",
+            "Mocking a neighbour"
+          ],
+          0,
+          "Sadaqah is voluntary charity and can include helpful acts."
+        ]
+      ],
+      "structured": [
+        [
+          "State four nullifiers of Wudhu as taught in basic Islamic practice.",
+          "Any four accepted syllabus-appropriate examples: passing urine; passing stool; passing wind; deep sleep/loss of consciousness. One mark each.",
+          4
+        ],
+        [
+          "Explain three ways a Muslim learner can show good manners towards neighbours.",
+          "Any three: greet respectfully; assist when in need; avoid disturbing them; share appropriately; visit when suitable; protect their property; speak kindly. One mark each.",
+          3
+        ]
+      ]
+    },
+    {
+      "id": "kiswahili",
+      "name": "Kiswahili",
+      "mcq": [
+        [
+          "Katika sentensi 'Mtoto mwerevu amefaulu', kivumishi ni kipi?",
+          [
+            "mwerevu",
+            "Mtoto",
+            "amefaulu",
+            "sentensi"
+          ],
+          0,
+          "Mwerevu kinaeleza sifa ya nomino mtoto."
+        ],
+        [
+          "Wingi wa neno 'jicho' ni:",
+          [
+            "macho",
+            "majicho",
+            "vijicho",
+            "mijicho"
+          ],
+          0,
+          "Jicho katika umoja huwa macho katika wingi."
+        ],
+        [
+          "Chagua sentensi iliyo katika wakati uliopita.",
+          [
+            "Wanafunzi walisoma jana.",
+            "Wanafunzi wanasoma sasa.",
+            "Wanafunzi watasoma kesho.",
+            "Wanafunzi husoma kila siku."
+          ],
+          0,
+          "Kiambishi -li- huonyesha wakati uliopita katika walisoma."
+        ],
+        [
+          "Kinyume cha neno 'jasiri' ni:",
+          [
+            "mwoga",
+            "hodari",
+            "shujaa",
+            "mwenye nguvu"
+          ],
+          0,
+          "Mwoga ni kinyume cha jasiri."
+        ],
+        [
+          "Alama gani hutumika mwishoni mwa sentensi ya swali?",
+          [
+            "Alama ya kuuliza (?)",
+            "Koma (,)",
+            "Nukta (.)",
+            "Alama ya mshangao (! )"
+          ],
+          0,
+          "Alama ya kuuliza huonyesha kuwa sentensi ni swali."
+        ]
+      ],
+      "structured": [
+        [
+          "Andika sentensi tatu zinazoonyesha matumizi sahihi ya vivumishi.",
+          "Sentensi tatu sahihi zenye nomino na vivumishi vinavyopatana kisarufi: alama 1 kila sentensi.",
+          3
+        ],
+        [
+          "Taja sifa nne za barua rasmi.",
+          "Anwani ya mwandishi; tarehe; anwani ya mpokeaji; salamu rasmi; kichwa/somo; lugha rasmi; hitimisho/sahihi. Alama 1 kila sifa nne.",
+          4
+        ]
+      ]
+    },
+    {
+      "id": "pre-technical",
+      "name": "Pre-Technical Studies",
+      "mcq": [
+        [
+          "A triangular frame is commonly used in structures because it:",
+          [
+            "Provides rigidity and resists changing shape",
+            "Always weighs nothing",
+            "Can never be damaged",
+            "Needs no joints"
+          ],
+          0,
+          "Triangles form stable frames because their shape is resistant to distortion."
+        ],
+        [
+          "Which simple machine is a wheelbarrow an example of?",
+          [
+            "Second-class lever",
+            "First-class lever",
+            "Third-class lever",
+            "Pulley only"
+          ],
+          0,
+          "The load lies between the wheel (fulcrum) and the effort at the handles."
+        ],
+        [
+          "Which action helps protect a computer from electrical damage during a power interruption?",
+          [
+            "Using a suitable UPS",
+            "Pouring water near it",
+            "Blocking its ventilation",
+            "Pulling the power cable while running"
+          ],
+          0,
+          "A suitable uninterruptible power supply provides temporary backup and can help protect against abrupt outages."
+        ],
+        [
+          "Which material is usually attracted by a magnet?",
+          [
+            "Iron",
+            "Wood",
+            "Glass",
+            "Plastic"
+          ],
+          0,
+          "Iron is a ferromagnetic material and is attracted by magnets."
+        ],
+        [
+          "Why should a learner smooth rough edges after cutting a workpiece?",
+          [
+            "To improve finish and reduce injury risk",
+            "To make the material heavier",
+            "To remove all measurements",
+            "To weaken every joint"
+          ],
+          0,
+          "Smoothing sharp edges improves finish and makes the item safer to handle."
+        ]
+      ],
+      "structured": [
+        [
+          "Describe four stages in making a simple model from a design brief.",
+          "Interpret the need/brief (1); sketch and plan (1); select materials/tools and measure/mark out (1); make, join, finish and evaluate (1).",
+          4
+        ],
+        [
+          "Give four safe practices when using hand tools in a workshop.",
+          "Use the correct tool; inspect tools; secure the workpiece; wear appropriate protective equipment; keep workspace tidy; cut away from the body where appropriate; return tools safely. Any four.",
+          4
+        ]
+      ]
+    },
+    {
+      "id": "social-studies",
+      "name": "Social Studies",
+      "mcq": [
+        [
+          "Population density is calculated by dividing:",
+          [
+            "Total population by land area",
+            "Land area by rainfall",
+            "Births by deaths",
+            "Total rainfall by population"
+          ],
+          0,
+          "Population density is population divided by the area it occupies."
+        ],
+        [
+          "Which instrument measures rainfall?",
+          [
+            "Rain gauge",
+            "Wind vane",
+            "Barometer",
+            "Thermometer"
+          ],
+          0,
+          "A rain gauge collects and measures the amount of precipitation."
+        ],
+        [
+          "A map key is used to:",
+          [
+            "Explain the symbols used on a map",
+            "Show the age of the map reader",
+            "Measure temperature",
+            "List all countries alphabetically"
+          ],
+          0,
+          "The key or legend explains the meaning of map symbols."
+        ],
+        [
+          "Which action helps preserve cultural heritage?",
+          [
+            "Protecting historical sites and traditional knowledge",
+            "Destroying monuments",
+            "Mocking cultural practices",
+            "Selling protected artefacts illegally"
+          ],
+          0,
+          "Protecting heritage sites and knowledge helps preserve them for future generations."
+        ],
+        [
+          "Which line of latitude divides Earth into the Northern and Southern Hemispheres?",
+          [
+            "Equator",
+            "Prime Meridian",
+            "Tropic of Cancer",
+            "Arctic Circle"
+          ],
+          0,
+          "The Equator is at 0° latitude and separates the two hemispheres."
+        ]
+      ],
+      "structured": [
+        [
+          "Explain three factors that influence where people choose to settle.",
+          "Any three explained: water availability; fertile land; employment; transport/accessibility; security; climate; social services; relief. One mark each.",
+          3
+        ],
+        [
+          "State four elements that should be included when preparing a simple map of a local area.",
+          "Title; key/legend; scale; north direction/orientation; clear symbols; labelled features. Any four, one mark each.",
+          4
+        ]
+      ]
+    }
+  ]
+}

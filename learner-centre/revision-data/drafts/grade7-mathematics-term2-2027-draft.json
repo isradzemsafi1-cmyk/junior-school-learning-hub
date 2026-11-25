@@ -1,0 +1,218 @@
+{
+  "grade": 7,
+  "term": 2,
+  "year": 2027,
+  "learningArea": "Mathematics",
+  "title": "JSLH Grade 7 Mathematics Term 2 Revision Draft",
+  "contentStatus": "draft; partial set; not connected to learner-centre production bank",
+  "sourceBasis": "Original JSLH questions aligned to the Grade 7 2027 Mathematics Term 2 scheme: algebraic expressions and simple equations; length, mass and capacity; time and temperature; angles and plane figures; perimeter and area.",
+  "mcq": [
+    [
+      "Simplify 4a + 3a − 2a.",
+      [
+        "5a",
+        "9a",
+        "5a²",
+        "a"
+      ],
+      0,
+      "Like terms have the same variable part. Add 4 + 3 and subtract 2 to obtain 5a."
+    ],
+    [
+      "Find the value of 3x + 5 when x = 4.",
+      [
+        "17",
+        "12",
+        "20",
+        "27"
+      ],
+      0,
+      "Substitute 4 for x: 3 × 4 + 5 = 12 + 5 = 17."
+    ],
+    [
+      "Solve x + 9 = 23.",
+      [
+        "14",
+        "32",
+        "13",
+        "12"
+      ],
+      0,
+      "Subtract 9 from both sides: x = 23 − 9 = 14."
+    ],
+    [
+      "Solve 5y = 35.",
+      [
+        "7",
+        "30",
+        "40",
+        "175"
+      ],
+      0,
+      "Divide both sides by 5: y = 35 ÷ 5 = 7."
+    ],
+    [
+      "Which expression represents 'six less than twice n'?",
+      [
+        "2n − 6",
+        "6 − 2n",
+        "2(n − 6)",
+        "n − 12"
+      ],
+      0,
+      "Twice n is 2n; six less than this is 2n − 6."
+    ],
+    [
+      "Convert 3.6 metres into centimetres.",
+      [
+        "360 cm",
+        "36 cm",
+        "3 600 cm",
+        "0.36 cm"
+      ],
+      0,
+      "One metre is 100 centimetres; 3.6 × 100 = 360 cm."
+    ],
+    [
+      "A parcel has a mass of 2.75 kg. What is this mass in grams?",
+      [
+        "2 750 g",
+        "275 g",
+        "27 500 g",
+        "0.275 g"
+      ],
+      0,
+      "One kilogram is 1 000 grams; 2.75 × 1 000 = 2 750 g."
+    ],
+    [
+      "How many millilitres are in 1.25 litres?",
+      [
+        "1 250 ml",
+        "125 ml",
+        "12 500 ml",
+        "12.5 ml"
+      ],
+      0,
+      "One litre is 1 000 millilitres; 1.25 × 1 000 = 1 250 ml."
+    ],
+    [
+      "A lesson starts at 10:35 a.m. and lasts 45 minutes. When does it end?",
+      [
+        "11:20 a.m.",
+        "11:10 a.m.",
+        "10:80 a.m.",
+        "11:25 a.m."
+      ],
+      0,
+      "From 10:35 to 11:00 is 25 minutes; 20 minutes remain, giving 11:20 a.m."
+    ],
+    [
+      "The temperature rises from 18°C to 27°C. What is the increase?",
+      [
+        "9°C",
+        "45°C",
+        "8°C",
+        "−9°C"
+      ],
+      0,
+      "The increase is 27 − 18 = 9°C."
+    ],
+    [
+      "An angle measuring 125° is:",
+      [
+        "Obtuse",
+        "Acute",
+        "Right",
+        "Reflex"
+      ],
+      0,
+      "An obtuse angle is greater than 90° and less than 180°."
+    ],
+    [
+      "Two angles on a straight line are 68° and x°. Find x.",
+      [
+        "112°",
+        "22°",
+        "68°",
+        "292°"
+      ],
+      0,
+      "Angles on a straight line add up to 180°; x = 180° − 68° = 112°."
+    ],
+    [
+      "Which quadrilateral has exactly one pair of parallel sides?",
+      [
+        "Trapezium",
+        "Square",
+        "Rhombus",
+        "Rectangle"
+      ],
+      0,
+      "A trapezium has one pair of parallel sides under the usual school definition."
+    ],
+    [
+      "A rectangle is 8 cm long and 5 cm wide. Its perimeter is:",
+      [
+        "26 cm",
+        "40 cm",
+        "13 cm",
+        "80 cm"
+      ],
+      0,
+      "Perimeter = 2(length + width) = 2(8 + 5) = 26 cm."
+    ],
+    [
+      "Find the area of a triangle with base 10 cm and perpendicular height 6 cm.",
+      [
+        "30 cm²",
+        "60 cm²",
+        "16 cm²",
+        "32 cm²"
+      ],
+      0,
+      "Area = ½ × base × height = ½ × 10 × 6 = 30 cm²."
+    ]
+  ],
+  "structured": [
+    [
+      "Simplify 7p − 3p + 2q − q. Show the collection of like terms.",
+      "Collect p terms: 7p − 3p = 4p (1 mark). Collect q terms: 2q − q = q (1 mark). Final answer 4p + q (1 mark).",
+      3
+    ],
+    [
+      "A number is multiplied by 4 and then 7 is added. The result is 31. Form an equation and find the number.",
+      "Let the number be x (1). Equation 4x + 7 = 31 (1). Subtract 7: 4x = 24 (1). Divide by 4: x = 6 (1).",
+      4
+    ],
+    [
+      "A ribbon is 3.45 m long. Convert its length into centimetres and millimetres.",
+      "3.45 × 100 = 345 cm (2). 3.45 × 1 000 = 3 450 mm (2). Correct units required.",
+      4
+    ],
+    [
+      "A container holds 2 litres 350 millilitres of water. Express the capacity in millilitres. If 875 ml is poured out, how much remains?",
+      "2 litres = 2 000 ml (1); total = 2 350 ml (1); remaining = 2 350 − 875 = 1 475 ml (2).",
+      4
+    ],
+    [
+      "A bus leaves at 08:47 and arrives at 11:12. Calculate the journey time.",
+      "08:47 to 09:00 = 13 minutes (1); 09:00 to 11:00 = 2 hours (1); 11:00 to 11:12 = 12 minutes (1); total = 2 hours 25 minutes (1).",
+      4
+    ],
+    [
+      "An angle on a straight line is divided into two parts. One part is 3x° and the other is 60°. Find x.",
+      "Angles on a straight line total 180° (1); 3x + 60 = 180 (1); 3x = 120 (1); x = 40 (1).",
+      4
+    ],
+    [
+      "A rectangular garden measures 12 m by 7 m. Find its perimeter and area.",
+      "Perimeter = 2(12 + 7) = 38 m (2); area = 12 × 7 = 84 m² (2). Units must be correct.",
+      4
+    ],
+    [
+      "A triangular sign has a base of 18 cm and a perpendicular height of 9 cm. Calculate its area. Explain why the perpendicular height is used.",
+      "Area = ½ × 18 × 9 = 81 cm² (2); the height is the perpendicular distance from the base to the opposite vertex (1); correct square units (1).",
+      4
+    ]
+  ]
+}
