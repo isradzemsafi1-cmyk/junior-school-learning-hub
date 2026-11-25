@@ -63,7 +63,7 @@ function renderStrandAnalysis(){
  const aid=$('strandExam')?.value;if(!aid)return;
  const grade=$('strandGrade')?.value;
  const marks=data.marks.filter(m=>m.assessment_id===aid).map(m=>{const learner=data.learners.find(l=>l.id===m.learner_id),component=data.components.find(c=>c.id===m.component_id),links=extra.links.filter(x=>x.component_id===m.component_id),p=pct(m);return {m,learner,component,links,p}}).filter(x=>x.learner&&x.component&&(!grade||x.learner.grade_id===grade));
- const rows=extra.strands.map(s=>{const linked=marks.filter(x=>x.links.some(l=>l.strand_id===s.id)&&x.p!=null),values=linked.map(x=>x.p);return {s,n:values.length,mean:avg(values),learners:new Set(linked.map(x=>x.learner.id)).size}});
+ const rows=extra.strands.map(s=>{const linked=marks.filter(x=>x.links.some(l=>l.strand_id===s.id)&&x.p!=null);const weighted=linked.map(x=>{const map=x.links.find(l=>l.strand_id===s.id);return {p:x.p,w:map?Number(map.weight)||1:1}});const total=weighted.reduce((z,x)=>z+x.w,0);const mean=total?weighted.reduce((z,x)=>z+x.p*x.w,0)/total:null;return {s,n:linked.length,mean,learners:new Set(linked.map(x=>x.learner.id)).size}});
  $('strandAnalysis').innerHTML=rows.length?'<div class="tablewrap"><table><tr><th>Strand</th><th>Sub-strand</th><th>Scored entries</th><th>Learners</th><th>Mean</th></tr>'+rows.map(x=>'<tr><td>'+esc(x.s.strand_name)+'</td><td>'+esc(x.s.sub_strand_name)+'</td><td>'+x.n+'</td><td>'+x.learners+'</td><td>'+ (x.mean==null?'—':x.mean.toFixed(1)+'%')+'</td></tr>').join('')+'</table></div>':'<div class="empty">Add strands and map them to assessment components to see strand-level analysis.</div>';
 }
 function renderCbeEvidence(){
@@ -120,7 +120,7 @@ function exportProgress(){
 function install(){
  addUI();bind();
  const priorTab=window.tab;
- window.tab=function(t,b){['cbe','strands','interventions','access'].forEach(k=>$('p-'+k)?.classList.add('hidden'));if(['cbe','strands','interventions','access'].includes(t)){priorTab(t,b);$('p-'+t)?.classList.remove('hidden');if(t==='strands')renderStrandAnalysis();if(t==='interventions')renderInterventions();if(t==='access')renderAssignments();if(t==='cbe')renderCbeEvidence();return}priorTab(t,b)};
+ window.tab=function(t,b){['cbe','strands','interventions','access'].forEach(k=>$('p-'+k)?.classList.add('hidden'));if(['cbe','strands','interventions','access'].includes(t)){priorTab(t,b);$('p-'+t)?.classList.remove('hidden');if(t==='strands')renderStrandAnalysis();if(t==='interventions')renderInterventions();if(t==='access')renderAssignments();if(t==='cbe')renderCbeEvidence();return}priorTab(t,b);if(t==='progress')renderProgress()};
  const priorLoad=window.loadAll;
  window.loadAll=async function(){await priorLoad();addUI();await fetchExtras();renderProgress()};
  const p=$('p-progress');if(p&&!$('progressExport'))p.insertAdjacentHTML('beforeend','<div class="actions no-print"><button class="btn alt" id="progressExport">Export learner progress CSV</button><button class="btn alt" onclick="window.print()">Print learner progress</button></div>');
