@@ -29,7 +29,8 @@ create table if not exists public.curriculum_strands (
   active boolean not null default true,
   created_at timestamptz not null default now(),
   constraint curriculum_strands_area_school_fk foreign key (learning_area_id,school_id) references public.learning_areas(id,school_id),
-  constraint curriculum_strands_name_unique unique (school_id,learning_area_id,strand_name,sub_strand_name)
+  constraint curriculum_strands_name_unique unique (school_id,learning_area_id,strand_name,sub_strand_name),
+  constraint curriculum_strands_id_school_unique unique (id,school_id)
 );
 create index if not exists idx_curriculum_strands_area on public.curriculum_strands(school_id,learning_area_id,active);
 
@@ -37,10 +38,11 @@ create table if not exists public.assessment_component_strands (
   id uuid primary key default gen_random_uuid(),
   school_id uuid not null references public.schools(id) on delete cascade,
   component_id uuid not null,
-  strand_id uuid not null references public.curriculum_strands(id) on delete cascade,
+  strand_id uuid not null,
   weight numeric not null default 1 check (weight > 0),
   created_at timestamptz not null default now(),
   constraint acs_component_school_fk foreign key (component_id,school_id) references public.assessment_components(id,school_id),
+  constraint acs_strand_school_fk foreign key (strand_id,school_id) references public.curriculum_strands(id,school_id) on delete cascade,
   constraint acs_unique unique (component_id,strand_id)
 );
 create index if not exists idx_acs_strand on public.assessment_component_strands(school_id,strand_id);
@@ -50,7 +52,7 @@ create table if not exists public.learner_interventions (
   school_id uuid not null references public.schools(id) on delete cascade,
   learner_id uuid not null,
   learning_area_id uuid,
-  strand_id uuid references public.curriculum_strands(id) on delete set null,
+  strand_id uuid,
   concern text not null,
   action_plan text not null,
   review_date date,
@@ -61,7 +63,8 @@ create table if not exists public.learner_interventions (
   created_at timestamptz not null default now(),
   updated_at timestamptz not null default now(),
   constraint intervention_learner_school_fk foreign key (learner_id,school_id) references public.learners(id,school_id),
-  constraint intervention_area_school_fk foreign key (learning_area_id,school_id) references public.learning_areas(id,school_id)
+  constraint intervention_area_school_fk foreign key (learning_area_id,school_id) references public.learning_areas(id,school_id),
+  constraint intervention_strand_school_fk foreign key (strand_id,school_id) references public.curriculum_strands(id,school_id) on delete set null
 );
 create index if not exists idx_interventions_learner on public.learner_interventions(school_id,learner_id,status);
 
@@ -76,7 +79,7 @@ create table if not exists public.school_cbe_settings (
 create table if not exists public.guardian_communications (
   id uuid primary key default gen_random_uuid(),
   school_id uuid not null references public.schools(id) on delete cascade,
-  guardian_id uuid not null references public.guardians(id) on delete cascade,
+  guardian_id uuid not null,
   learner_id uuid not null,
   channel text not null check (channel in ('sms','email','portal')),
   subject text,
@@ -86,7 +89,8 @@ create table if not exists public.guardian_communications (
   queued_by uuid references auth.users(id),
   sent_at timestamptz,
   created_at timestamptz not null default now(),
-  constraint guardian_comm_learner_school_fk foreign key (learner_id,school_id) references public.learners(id,school_id)
+  constraint guardian_comm_learner_school_fk foreign key (learner_id,school_id) references public.learners(id,school_id),
+  constraint guardian_comm_guardian_school_fk foreign key (guardian_id,school_id) references public.guardians(id,school_id) on delete cascade
 );
 create index if not exists idx_guardian_comm_queue on public.guardian_communications(school_id,status,created_at);
 
