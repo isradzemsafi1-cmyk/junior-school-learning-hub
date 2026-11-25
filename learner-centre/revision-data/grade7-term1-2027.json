@@ -2328,6 +2328,226 @@
           ],
           0,
           "The source credits Daya Nandan."
+        ],
+        [
+          "Which word is closest in meaning to 'surrendered' as used in the sentence 'The robber surrendered himself at the police station'?",
+          [
+            "Gave himself up",
+            "Escaped",
+            "Celebrated",
+            "Argued"
+          ],
+          0,
+          "To surrender oneself is to give oneself up to an authority."
+        ],
+        [
+          "Which word is closest in meaning to 'disclosed'?",
+          [
+            "Revealed",
+            "Concealed",
+            "Forgot",
+            "Borrowed"
+          ],
+          0,
+          "To disclose information is to reveal it."
+        ],
+        [
+          "Which word is closest in meaning to 'rewarded'?",
+          [
+            "Recompensed",
+            "Punished",
+            "Ignored",
+            "Accused"
+          ],
+          0,
+          "To reward is to give something in recognition of an action."
+        ],
+        [
+          "Choose the correct direct speech: The lady said that she would come afterwards.",
+          [
+            "The lady said, 'I will come afterwards.'",
+            "The lady said, 'She comes yesterday.'",
+            "The lady said, 'I came afterwards.'",
+            "The lady said, 'I would came afterwards.'"
+          ],
+          0,
+          "In direct speech, the speaker's original words are placed in quotation marks."
+        ],
+        [
+          "Which adjective order is correct?",
+          [
+            "A cheap scarlet Japanese car",
+            "A Japanese cheap scarlet car",
+            "A scarlet Japanese cheap car",
+            "A car cheap Japanese scarlet"
+          ],
+          0,
+          "Opinion/price, colour, then origin is the usual adjective order."
+        ],
+        [
+          "Choose the correct question tag: 'We shall go to the party, ____?'",
+          [
+            "shall we",
+            "shan't we",
+            "will we",
+            "don't we"
+          ],
+          1,
+          "A positive statement with shall takes the negative tag shan't we."
+        ],
+        [
+          "Which is the correct comparative form of 'smart' when comparing two brothers?",
+          [
+            "Smarter",
+            "Smartest",
+            "More smartest",
+            "Most smart"
+          ],
+          0,
+          "The comparative form of smart is smarter."
+        ],
+        [
+          "Complete the conditional sentence: 'If you had practised well, you ____ won the race.'",
+          [
+            "will have",
+            "would have",
+            "would",
+            "shall"
+          ],
+          1,
+          "A third conditional uses would have plus the past participle."
+        ],
+        [
+          "The phrasal verb 'do away with' means:",
+          [
+            "Abolish or get rid of",
+            "Look after",
+            "Search for",
+            "Put on"
+          ],
+          0,
+          "To do away with something is to abolish or eliminate it."
+        ],
+        [
+          "Choose the correct past participle: 'The suspect was ____ after being found guilty.'",
+          [
+            "hanged",
+            "hunged",
+            "hang",
+            "hanging"
+          ],
+          0,
+          "Hanged is traditionally used for execution as a legal punishment."
+        ],
+        [
+          "Complete correctly: 'Barely had we reached home ____ it started to drizzle.'",
+          [
+            "when",
+            "than",
+            "then",
+            "while"
+          ],
+          0,
+          "The construction is 'barely...when'."
+        ],
+        [
+          "Choose the correct preposition: 'Do you prefer reading ____ writing?'",
+          [
+            "to",
+            "than",
+            "from",
+            "with"
+          ],
+          0,
+          "The verb prefer is commonly followed by to when comparing two activities."
+        ],
+        [
+          "Choose the correct word: 'In modern times students are mostly ____ to hard work.'",
+          [
+            "averse",
+            "adverse",
+            "eligible",
+            "illegible"
+          ],
+          0,
+          "Averse means having a strong dislike or opposition."
+        ],
+        [
+          "A person who reads news during a broadcast is a:",
+          [
+            "Newsreader",
+            "Poet",
+            "Novelist",
+            "Referee"
+          ],
+          0,
+          "A newsreader presents news on radio or television."
+        ],
+        [
+          "A woman whose husband has died is a:",
+          [
+            "Widow",
+            "Bride",
+            "Spinster",
+            "Niece"
+          ],
+          0,
+          "A widow is a woman whose spouse has died."
+        ],
+        [
+          "Which suffix completes the adjective meaning 'without care'?",
+          [
+            "-less",
+            "-ful",
+            "-ment",
+            "-tion"
+          ],
+          0,
+          "Careless means without care; the suffix is -less."
+        ],
+        [
+          "Choose the correct relative pronoun: 'This is the teacher to ____ I reported the issue.'",
+          [
+            "whom",
+            "which",
+            "whose",
+            "who"
+          ],
+          0,
+          "Whom is used as the object of the preposition to."
+        ],
+        [
+          "Which word is an adverb of manner in 'She spoke politely to the visitors'?",
+          [
+            "Politely",
+            "She",
+            "Visitors",
+            "The"
+          ],
+          0,
+          "Politely describes how she spoke."
+        ],
+        [
+          "Which expression is suitable when you want to interrupt someone politely?",
+          [
+            "Excuse me, may I come in?",
+            "Go away!",
+            "Be quiet!",
+            "You are wrong."
+          ],
+          0,
+          "A polite request acknowledges the other speaker."
+        ],
+        [
+          "Which statement best expresses the main advice in the examination-preparation dialogue?",
+          [
+            "Understand ideas, concentrate and practise with past papers",
+            "Memorise without understanding",
+            "Keep using a phone while studying",
+            "Avoid reading texts"
+          ],
+          0,
+          "The teacher advises understanding, focused study and practice with old papers."
         ]
       ],
       "structured": [
@@ -2405,12 +2625,137 @@
           "State the main message of the school-life poem.",
           "School is valuable and joyful through learning, teachers, friendships and recreation. (2)",
           2
+        ],
+        [
+          "Give a synonym for each word as used in the source paper: (a) surrendered (b) disclosed (c) rewarded.",
+          "(a) gave himself/herself up (1); (b) revealed/made known (1); (c) recompensed/recognised (1).",
+          3
+        ],
+        [
+          "Rewrite in direct speech: The lady said that she would come afterwards.",
+          "The lady said, “I will come afterwards.” Award 1 for correct quotation and 1 for tense/pronoun change.",
+          2
+        ],
+        [
+          "Rewrite in direct speech: George says that he is reading a storybook.",
+          "George says, “I am reading a storybook.” (2)",
+          2
+        ],
+        [
+          "Rewrite in direct speech: The teacher asked the children why they were running.",
+          "The teacher asked, “Why are you running, children?” (2)",
+          2
+        ],
+        [
+          "Arrange the adjectives correctly: (a) Japanese, scarlet, cheap car (b) big, beautiful, Swahili girl.",
+          "(a) a cheap scarlet Japanese car (1); (b) a beautiful big Swahili girl (1).",
+          2
+        ],
+        [
+          "Supply suitable question tags: (a) Tom would clear the matter, ____? (b) We shall go, ____? (c) There will not be a meeting, ____?",
+          "(a) wouldn't he? (1); (b) shan't we? (1); (c) will there? (1).",
+          3
+        ],
+        [
+          "Give the correct comparative/superlative forms: (a) smart (two brothers) (b) beautiful (among all).",
+          "(a) smarter (1); (b) most beautiful (1).",
+          2
+        ],
+        [
+          "Complete using will, would or would have: (a) If you had practised, you ____ won. (b) If I were told to go, I ____ go. (c) They ____ be patient if he promises to pay.",
+          "(a) would have (1); (b) would (1); (c) will (1).",
+          3
+        ],
+        [
+          "Explain the meaning of these phrasal verbs: (a) do away with (b) look up (c) wind up.",
+          "(a) abolish/get rid of (1); (b) raise one's eyes/look upwards (1); (c) bring to an end/conclude (1).",
+          3
+        ],
+        [
+          "Use the correct forms of the verbs in brackets: (a) The sick baby was ____ on the bed. (lie) (b) When do you ____? (sing) (c) The criminal was ____ for the murder. (hang)",
+          "(a) lying (1); (b) sing (1); (c) hanged (1).",
+          3
+        ],
+        [
+          "Complete the sentences: (a) He was ____ happy to see his parents. (b) Barely had we reached home ____ it started raining. (c) It is such a shame ____ I cannot attend.",
+          "(a) very/so (1); (b) when (1); (c) that (1).",
+          3
+        ],
+        [
+          "Fill in the correct prepositions: (a) prefer reading ____ writing (b) acquitted ____ the charges (c) drove ____ the big hotel.",
+          "(a) to (1); (b) of (1); (c) past/by (1).",
+          3
+        ],
+        [
+          "Differentiate between 'adverse' and 'averse' and use each in a sentence.",
+          "Adverse means unfavourable/harmful (1); averse means opposed/disinclined (1); two correct contextual sentences (1 each).",
+          4
+        ],
+        [
+          "Give one word for each: (a) a woman whose husband has died (b) a girl about to marry (c) a person who writes poems (d) a person who reads news on air.",
+          "(a) widow (1); (b) bride (1); (c) poet (1); (d) newsreader (1).",
+          4
+        ],
+        [
+          "Form adjectives using the suffix -less: (a) care (b) use (c) cloud.",
+          "(a) careless (1); (b) useless (1); (c) cloudless (1).",
+          3
+        ],
+        [
+          "Fill in who, whose, which or whom: (a) the teacher to ____ I spoke (b) the learner ____ book was lost (c) the pen ____ I bought.",
+          "(a) whom (1); (b) whose (1); (c) which (1).",
+          3
+        ],
+        [
+          "Change into indirect speech: “Come to my office, Njoroge,” said Timothy.",
+          "Timothy told/asked Njoroge to go to his office. Award 1 for reporting verb and 1 for correct command structure/pronoun.",
+          2
+        ],
+        [
+          "Change into indirect speech: “Where are all the sailors?” asked the captain.",
+          "The captain asked where all the sailors were. (2)",
+          2
+        ],
+        [
+          "Change into indirect speech: “Are you Mr Rotich?” said the visitor.",
+          "The visitor asked whether/if he was Mr Rotich. (2)",
+          2
+        ],
+        [
+          "Identify the part of speech of the underlined word in each sentence: (a) a warm sweater (b) a brand new car (c) they disembarked.",
+          "(a) warm—adjective (1); (b) brand—adverb/intensifier (1); (c) disembarked—verb (1).",
+          3
+        ],
+        [
+          "Give five appropriate expressions used in polite conversation in these situations: apologising, thanking, interrupting, asking for repetition and greeting.",
+          "Accept suitable expressions such as 'I am sorry'; 'Thank you'; 'Excuse me'; 'Pardon, could you repeat that?'; 'Good morning'. (1 each).",
+          5
+        ],
+        [
+          "From the school-values passage, state four virtues learners are encouraged to practise.",
+          "Love, hard work, politeness, respect, honesty, self-control and integrity. Any four (1 each).",
+          4
+        ],
+        [
+          "According to the examination-preparation dialogue, state four ways a learner can prepare effectively.",
+          "Put away distractions such as a mobile phone; read texts thoroughly; understand rather than memorise; concentrate on one theme at a time; study in groups; practise past papers. Any four (1 each).",
+          4
+        ],
+        [
+          "From the poem about school life, state four activities or experiences the writer values.",
+          "Learning in class; lessons from teachers; recess/meals; playing with friends; school events/competitions; storytelling, spelling and drawing. Any four (1 each).",
+          4
+        ],
+        [
+          "Write a friendly letter to your guardian describing life in your new junior school. Include the correct format.",
+          "Award: writer's address/date (1); salutation (1); relevant opening and account of school life (2); coherent details about lessons, teachers, friends/activities (3); suitable closing and name (2); grammar and organisation (1).",
+          10
         ]
       ],
       "source": {
         "paper": "OPENER 001 2027 TERM 1 GRADE 7",
         "pages": "22–33",
-        "basis": "Writing, grammar, oral skills, etiquette, comprehension, dialogue, poetry and folktale. This is an initial source-based batch; supplementary questions are original JSLH items."
+        "basis": "Writing, grammar, oral skills, etiquette, comprehension, dialogue, poetry and folktale. This is an initial source-based batch; supplementary questions are original JSLH items. English-specific source coverage: friendly letter to guardian; synonyms; direct/indirect speech; adjective order and comparison; question tags; modal auxiliaries and conditionals; phrasal verbs; verb forms; conjunctions/prepositions; commonly confused words; one-word substitutions; suffixes; relative pronouns; parts of speech; oral etiquette; comprehension of school values, examination preparation, a school-life poem and a narrative; subject and object identification. This batch includes original JSLH practice based on these skills."
       }
     },
     {
