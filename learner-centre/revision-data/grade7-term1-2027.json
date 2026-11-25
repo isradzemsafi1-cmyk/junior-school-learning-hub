@@ -2823,6 +2823,281 @@
           ],
           0,
           "A friendly letter ends with a closing phrase and the writer's name."
+        ],
+        [
+          "Choose the correct word: 'The news ____ encouraging.'",
+          [
+            "is",
+            "are",
+            "were",
+            "have"
+          ],
+          0,
+          "News is treated as a singular uncountable noun."
+        ],
+        [
+          "Choose the correct verb: 'Each of the learners ____ a textbook.'",
+          [
+            "has",
+            "have",
+            "are",
+            "were"
+          ],
+          0,
+          "Each is singular and takes has."
+        ],
+        [
+          "Choose the correct word: 'The team ____ practising every afternoon.'",
+          [
+            "is",
+            "are always",
+            "were",
+            "have"
+          ],
+          0,
+          "A team is treated as a singular collective noun in this sentence."
+        ],
+        [
+          "Which sentence uses the present perfect tense?",
+          [
+            "I have finished my work.",
+            "I finish my work.",
+            "I finished my work yesterday.",
+            "I will finish my work."
+          ],
+          0,
+          "Have finished is the present perfect form."
+        ],
+        [
+          "Choose the correct conjunction: 'You will not improve ____ you practise.'",
+          [
+            "unless",
+            "because",
+            "although",
+            "so"
+          ],
+          0,
+          "Unless means if not."
+        ],
+        [
+          "Which sentence is correctly punctuated?",
+          [
+            "After lunch, we went to the library.",
+            "After lunch we, went to the library.",
+            "After, lunch we went to the library.",
+            "After lunch we went, to the library."
+          ],
+          0,
+          "A comma may follow an introductory phrase."
+        ],
+        [
+          "Choose the correct possessive form: 'The books belonging to the girls.'",
+          [
+            "The girls' books",
+            "The girl's books",
+            "The girls books",
+            "The girl books"
+          ],
+          0,
+          "The plural noun girls takes an apostrophe after s."
+        ],
+        [
+          "Which word is a conjunction?",
+          [
+            "Although",
+            "Quickly",
+            "Beautiful",
+            "Teacher"
+          ],
+          0,
+          "Although joins clauses and expresses contrast."
+        ],
+        [
+          "Which is an example of an imperative sentence?",
+          [
+            "Please close the door.",
+            "The door is closed.",
+            "Did you close the door?",
+            "What a door!"
+          ],
+          0,
+          "An imperative gives a command or request."
+        ],
+        [
+          "Choose the correct sentence.",
+          [
+            "There are fewer books on this shelf.",
+            "There is fewer books on this shelf.",
+            "There are less books on this shelf.",
+            "There were little books on this shelf."
+          ],
+          0,
+          "Fewer is used with countable plural nouns."
+        ],
+        [
+          "Choose the correct homophone to complete: 'The pupils left ____ bags in class.'",
+          [
+            "their",
+            "there",
+            "they're",
+            "thier"
+          ],
+          0,
+          "Their is the possessive determiner."
+        ],
+        [
+          "Choose the correct word: 'The principal gave us good ____.'",
+          [
+            "advice",
+            "advise",
+            "adviced",
+            "advising"
+          ],
+          0,
+          "Advice is the noun."
+        ],
+        [
+          "Which word is closest in meaning to 'integrity'?",
+          [
+            "Honesty",
+            "Greed",
+            "Fear",
+            "Carelessness"
+          ],
+          0,
+          "Integrity includes honesty and strong moral principles."
+        ],
+        [
+          "Which word is the opposite of 'generous'?",
+          [
+            "Stingy",
+            "Kind",
+            "Helpful",
+            "Giving"
+          ],
+          0,
+          "Stingy means unwilling to give."
+        ],
+        [
+          "Which sentence shows correct subject-verb agreement?",
+          [
+            "The children are ready.",
+            "The children is ready.",
+            "The child are ready.",
+            "The children was ready."
+          ],
+          0,
+          "Plural subject children takes are."
+        ],
+        [
+          "Choose the correct form: 'If I ____ enough time, I would visit you.'",
+          [
+            "had",
+            "have",
+            "will have",
+            "has"
+          ],
+          0,
+          "A second conditional uses if + past simple."
+        ],
+        [
+          "Which is the correct plural of 'analysis'?",
+          [
+            "Analyses",
+            "Analysises",
+            "Analysis",
+            "Analys"
+          ],
+          0,
+          "The plural of analysis is analyses."
+        ],
+        [
+          "Which is the correct comparative form of 'good'?",
+          [
+            "Better",
+            "Gooder",
+            "Best",
+            "More good"
+          ],
+          0,
+          "Better is the irregular comparative."
+        ],
+        [
+          "Which word is an interjection?",
+          [
+            "Hurrah!",
+            "Under",
+            "Because",
+            "Carefully"
+          ],
+          0,
+          "Hurrah expresses a sudden feeling."
+        ],
+        [
+          "Which expression is most appropriate when disagreeing politely?",
+          [
+            "I see your point, but I think...",
+            "You are foolish.",
+            "That is nonsense.",
+            "Keep quiet."
+          ],
+          0,
+          "Polite disagreement acknowledges the other person's view."
+        ],
+        [
+          "What is the central purpose of a topic sentence?",
+          [
+            "To introduce the main idea of a paragraph",
+            "To give the writer's address",
+            "To list every punctuation mark",
+            "To end a whole book"
+          ],
+          0,
+          "A topic sentence states the paragraph's main idea."
+        ],
+        [
+          "Which is a suitable concluding sentence for a friendly letter?",
+          [
+            "I hope to hear from you soon.",
+            "Once upon a time.",
+            "Question number five.",
+            "The weather is a noun."
+          ],
+          0,
+          "A friendly letter may close by expressing hope for a reply."
+        ],
+        [
+          "Which of these is a suitable source of evidence when answering a comprehension question?",
+          [
+            "Information stated or clearly implied in the passage",
+            "An unrelated personal story",
+            "A guess unrelated to the text",
+            "A fact from a different subject"
+          ],
+          0,
+          "Comprehension answers should be supported by the passage."
+        ],
+        [
+          "Which word describes the feeling created by a poem?",
+          [
+            "Mood",
+            "Margin",
+            "Paragraph",
+            "Heading"
+          ],
+          0,
+          "Mood is the feeling or atmosphere created by a literary work."
+        ],
+        [
+          "Which feature helps a reader follow events in a narrative?",
+          [
+            "Logical sequence",
+            "Random unrelated sentences",
+            "Missing punctuation",
+            "Repeated titles only"
+          ],
+          0,
+          "A clear sequence helps readers follow the plot."
         ]
       ],
       "structured": [
@@ -3225,12 +3500,212 @@
           "Write a summary of a short passage in your own words, keeping only its main points.",
           "Award: identifies main ideas (4); concise and relevant (2); own words (2); grammar and sequence (2).",
           10
+        ],
+        [
+          "Choose the correct verb forms: (a) Each learner ____ ready. (b) The news ____ surprising. (c) The team ____ practising. (is/are)",
+          "(a) is (1); (b) is (1); (c) is (1).",
+          3
+        ],
+        [
+          "Rewrite in the present perfect tense: 'They complete the assignment.'",
+          "They have completed the assignment. (2)",
+          2
+        ],
+        [
+          "Rewrite in the past perfect tense: 'The bus leaves before we arrive.'",
+          "The bus had left before we arrived. (2)",
+          2
+        ],
+        [
+          "Complete using fewer or less: (a) ____ learners attended today. (b) We have ____ water left.",
+          "(a) fewer (1); (b) less (1).",
+          2
+        ],
+        [
+          "Correct the errors: 'The childrens has bringed there books.'",
+          "The children have brought their books. Award 1 for children/have brought and 1 for their.",
+          2
+        ],
+        [
+          "Write the plural forms of: (a) analysis (b) tooth (c) shelf (d) ox (e) sheep.",
+          "(a) analyses (1); (b) teeth (1); (c) shelves (1); (d) oxen (1); (e) sheep (1).",
+          5
+        ],
+        [
+          "Explain the difference between a phrase and a clause.",
+          "A phrase is a group of words without a subject-verb combination (1); a clause contains a subject and a verb (1).",
+          2
+        ],
+        [
+          "Identify the main clause and subordinate clause: 'Although it was late, the learners continued reading.'",
+          "Subordinate clause—Although it was late (1); main clause—the learners continued reading (1).",
+          2
+        ],
+        [
+          "Combine using 'unless': 'You will fail to improve. You do not practise.'",
+          "You will fail to improve unless you practise. (2)",
+          2
+        ],
+        [
+          "Rewrite as an imperative request: 'You should open the window.'",
+          "Please open the window. (2)",
+          2
+        ],
+        [
+          "Punctuate: my brother asked have you seen the new library",
+          "My brother asked, “Have you seen the new library?” (2)",
+          2
+        ],
+        [
+          "Use an apostrophe correctly in: (a) the books of the teachers (b) the uniform of James.",
+          "(a) the teachers' books (1); (b) James's uniform/James' uniform (1).",
+          2
+        ],
+        [
+          "Write two sentences to distinguish the homophones 'their' and 'there'.",
+          "One correct sentence using their as possession (1); one using there to indicate place/existence (1).",
+          2
+        ],
+        [
+          "Use 'advice' and 'advise' in separate sentences.",
+          "One sentence using advice as a noun (1); one using advise as a verb (1).",
+          2
+        ],
+        [
+          "Give synonyms for: (a) integrity (b) generous (c) nuisance (d) grasp.",
+          "(a) honesty (1); (b) giving/kind (1); (c) annoyance/trouble (1); (d) understand/comprehend (1).",
+          4
+        ],
+        [
+          "Give antonyms for: (a) generous (b) ancient (c) victory (d) accept.",
+          "(a) stingy (1); (b) modern (1); (c) defeat (1); (d) reject (1).",
+          4
+        ],
+        [
+          "Write a paragraph of 80–100 words explaining why honesty is important in school.",
+          "Award: relevant points and examples (4); organisation/coherence (2); grammar and vocabulary (2); spelling/punctuation (1); word limit (1).",
+          10
+        ],
+        [
+          "Write a dialogue of eight lines between two learners planning a group study session.",
+          "Award: relevant planning details (3); clear turn-taking (2); polite expressions (2); grammar/punctuation (2); coherence (1).",
+          10
+        ],
+        [
+          "State four ways to make a comprehension answer accurate.",
+          "Read the question carefully; locate relevant passage section; answer in own words where required; use evidence from text; keep answer focused. Any four.",
+          4
+        ],
+        [
+          "Explain the difference between the mood and theme of a poem.",
+          "Mood is the feeling/atmosphere created (1); theme is the central message or idea (1).",
+          2
+        ],
+        [
+          "Name four features of a well-organised narrative.",
+          "Setting, characters, plot/events in sequence, conflict/problem, climax, resolution. Any four.",
+          4
+        ],
+        [
+          "Write a narrative of 120–150 words beginning: 'The moment I opened the classroom door, everyone became silent.'",
+          "Award: relevance to opening (2); logical plot and development (3); descriptive language (2); organisation and ending (1); grammar/spelling/punctuation (2).",
+          10
+        ],
+        [
+          "Prepare a short announcement inviting learners to a school reading club meeting. Include venue, day and time.",
+          "Award: clear announcement heading/opening (1); purpose (1); venue/day/time (3); audience and invitation (1); clear language (2); accuracy (2).",
+          10
+        ],
+        [
+          "Give three differences between formal and informal language.",
+          "Formal language is used in official situations; informal language in familiar settings; formal expressions avoid slang; informal speech may use contractions/colloquial forms. Any three clear contrasts.",
+          3
+        ],
+        [
+          "Explain why a speaker should maintain eye contact during an oral presentation.",
+          "It engages the audience, shows confidence and helps the speaker judge audience response. Any two explained.",
+          4
+        ],
+        [
+          "Write five questions you could ask a visitor about their career, using correct question forms.",
+          "Five relevant, grammatically correct questions. (1 each)",
+          5
+        ],
+        [
+          "Identify the topic sentence in a paragraph of your own and write two supporting sentences.",
+          "Topic sentence clearly states one main idea (1); two relevant supporting sentences (1 each).",
+          3
+        ],
+        [
+          "Write a friendly letter to a friend describing a school club you have joined.",
+          "Award: address/date (1); salutation (1); club and activities described (3); personal response/details (2); closing/name (1); language accuracy (2).",
+          10
+        ],
+        [
+          "Write a short poem of four lines about responsible use of social media. Include at least one pair of rhyming words.",
+          "Relevant theme (2); four coherent lines (2); rhyme (1); language/creativity (2).",
+          7
+        ],
+        [
+          "Explain two ways a reader can infer a character's feelings from a story.",
+          "Use character's words/dialogue; actions/behaviour; description and reactions of others. Any two explained.",
+          4
+        ],
+        [
+          "Write a summary in 50–60 words of a passage about the benefits of reading, using your own words.",
+          "Award: main points (4); own words (2); concise within limit (2); grammar/coherence (2).",
+          10
+        ],
+        [
+          "Write five sentences using these conjunctions: although, because, unless, while and therefore.",
+          "Five meaningful and correctly constructed sentences, one per conjunction. (1 each)",
+          5
+        ],
+        [
+          "Write a short set of instructions explaining how a new learner can borrow a book from the school library.",
+          "Award: ordered steps (3); clear imperative verbs (2); relevant process (2); grammar and punctuation (2); suitable closing (1).",
+          10
+        ],
+        [
+          "Describe three ways to show respect during a conversation.",
+          "Listen without interrupting; use polite language; allow others to speak; acknowledge views; maintain suitable tone. Any three explained.",
+          3
+        ],
+        [
+          "Write a short paragraph distinguishing fact from opinion, with one example of each.",
+          "Fact is verifiable (1); opinion expresses belief/judgement (1); correct example of fact (1); correct example of opinion (1).",
+          4
+        ],
+        [
+          "Correct the sentence and explain two corrections: 'If she will study hard, she would pass her exams.'",
+          "If she studied hard, she would pass her exams. (2); explanation of if-clause past form and would in result clause (1 each).",
+          4
+        ],
+        [
+          "Write a suitable subject line and opening for an email to your class teacher requesting permission to join a school club.",
+          "Relevant subject line (1); respectful salutation (1); clear purpose in opening (2).",
+          4
+        ],
+        [
+          "Give four examples of figurative language or sound devices used in poetry.",
+          "Simile, metaphor, personification, alliteration, onomatopoeia, repetition, rhyme. Any four.",
+          4
+        ],
+        [
+          "Explain how a title can help a reader predict the content of a passage.",
+          "It signals the topic, setting or central idea and activates relevant expectations before reading. Award up to 2.",
+          2
+        ],
+        [
+          "Write a short review of a book you have read, stating its title, main character, favourite event and recommendation.",
+          "Award: title/author if known (1); main character (2); event (2); reasoned recommendation (2); organisation and language (3).",
+          10
         ]
       ],
       "source": {
         "paper": "OPENER 001 2027 TERM 1 GRADE 7",
         "pages": "22–33",
-        "basis": "Writing, grammar, oral skills, etiquette, comprehension, dialogue, poetry and folktale. This is an initial source-based batch; supplementary questions are original JSLH items. English-specific source coverage: friendly letter to guardian; synonyms; direct/indirect speech; adjective order and comparison; question tags; modal auxiliaries and conditionals; phrasal verbs; verb forms; conjunctions/prepositions; commonly confused words; one-word substitutions; suffixes; relative pronouns; parts of speech; oral etiquette; comprehension of school values, examination preparation, a school-life poem and a narrative; subject and object identification. This batch includes original JSLH practice based on these skills. Additional JSLH supplementary English practice: synonyms/antonyms, parts of speech, sentence construction, tense, voice, conjunctions, punctuation, reported speech, question tags, relative pronouns, word formation, oral communication, letter writing, dialogue, narrative, poetry and reading skills."
+        "basis": "Writing, grammar, oral skills, etiquette, comprehension, dialogue, poetry and folktale. This is an initial source-based batch; supplementary questions are original JSLH items. English-specific source coverage: friendly letter to guardian; synonyms; direct/indirect speech; adjective order and comparison; question tags; modal auxiliaries and conditionals; phrasal verbs; verb forms; conjunctions/prepositions; commonly confused words; one-word substitutions; suffixes; relative pronouns; parts of speech; oral etiquette; comprehension of school values, examination preparation, a school-life poem and a narrative; subject and object identification. This batch includes original JSLH practice based on these skills. Additional JSLH supplementary English practice: synonyms/antonyms, parts of speech, sentence construction, tense, voice, conjunctions, punctuation, reported speech, question tags, relative pronouns, word formation, oral communication, letter writing, dialogue, narrative, poetry and reading skills. Further JSLH supplementary English practice: agreement, tense, conjunctions, punctuation, possessives, homophones, vocabulary, comprehension strategies, narrative, oral presentation, poetry, summaries, instructions and formal/informal communication."
       }
     },
     {
